@@ -1,4 +1,4 @@
-package com.breeze.health.entity.weixin.resp;
+package com.breeze.health.beans.weixin.resp;
 
 /**
  * 音乐消息

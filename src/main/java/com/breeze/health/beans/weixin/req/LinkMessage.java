@@ -1,4 +1,4 @@
-package com.breeze.health.entity.weixin.req;
+package com.breeze.health.beans.weixin.req;
 
 /**
  * 链接消息

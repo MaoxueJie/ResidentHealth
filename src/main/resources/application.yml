@@ -1,5 +1,7 @@
+app:
+    basepath: http://gruvum.natappfree.cc
 server:
-  port: 3000
+    port: 8080
   
 spring:
     datasource:
@@ -22,6 +24,11 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
+    mvc:
+        view:
+            prefix: /WEB-INF/views/
+            suffix: .jsp
+            
 mybatis:
     mapper-locations: classpath:mapping/*.xml
     type-aliases-package: com.breeze.health.entity

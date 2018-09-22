@@ -1,8 +1,8 @@
-package com.breeze.health.entity.weixin.sendmessage;
+package com.breeze.health.beans.weixin.sendmessage;
 
 import java.util.List;
 
-import com.breeze.health.entity.weixin.resp.Article;
+import com.breeze.health.beans.weixin.resp.Article;
 
 
 /**

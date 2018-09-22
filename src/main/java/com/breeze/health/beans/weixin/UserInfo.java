@@ -1,4 +1,4 @@
-package com.breeze.health.entity.weixin;
+package com.breeze.health.beans.weixin;
 
 import java.util.List;
 

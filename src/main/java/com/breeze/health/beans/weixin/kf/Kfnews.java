@@ -1,8 +1,9 @@
-package com.breeze.health.entity.weixin.kf;
+package com.breeze.health.beans.weixin.kf;
 
 import java.util.List;
 
-import com.breeze.health.entity.weixin.resp.Article;
+import com.breeze.health.beans.weixin.resp.Article;
+
 
 
 /**

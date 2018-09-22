@@ -1,4 +1,4 @@
-package com.breeze.health.entity.weixin.resp;
+package com.breeze.health.beans.weixin.resp;
 
 /**
  * 消息基类（公众帐号 -> 普通用户）

@@ -15,10 +15,10 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 
-import com.breeze.health.entity.weixin.resp.Article;
-import com.breeze.health.entity.weixin.resp.MusicMessage;
-import com.breeze.health.entity.weixin.resp.NewsMessage;
-import com.breeze.health.entity.weixin.resp.TextMessage;
+import com.breeze.health.beans.weixin.resp.Article;
+import com.breeze.health.beans.weixin.resp.MusicMessage;
+import com.breeze.health.beans.weixin.resp.NewsMessage;
+import com.breeze.health.beans.weixin.resp.TextMessage;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;

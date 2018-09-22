@@ -5,17 +5,17 @@ public class ComplexButton {
 	private String type;        //菜单类型
 	private String key;         //key值
 	private String url;
-	private Button[] sub_button;    //子级菜单
+	private ComplexButton[] sub_button;    //子级菜单
 	public String getName() {
 	    return name;
 	}
 	public void setName(String name) {
 	    this.name = name;
 	}
-	public Button[] getSub_button(){
+	public ComplexButton[] getSub_button(){
 	    return sub_button;
 	}
-	public void setSub_button(Button[] sub_button) {
+	public void setSub_button(ComplexButton[] sub_button) {
 	    this.sub_button = sub_button;
 	}
 	public String getType() {

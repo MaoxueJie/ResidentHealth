@@ -1,4 +1,4 @@
-package com.breeze.health.entity.weixin.kf;
+package com.breeze.health.beans.weixin.kf;
 
 public class BaseText extends Basebean {
 	 private Kftext text;

@@ -33,16 +33,18 @@ import org.springframework.web.servlet.view.RedirectView;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.breeze.health.WebApplicationStarter;
+import com.breeze.health.config.Config;
 import com.breeze.health.config.WexinConfig;
-import com.breeze.health.entity.weixin.resp.Article;
-import com.breeze.health.entity.weixin.resp.NewsMessage;
-import com.breeze.health.entity.weixin.resp.TextMessage;
+import com.breeze.health.beans.weixin.resp.Article;
+import com.breeze.health.beans.weixin.resp.NewsMessage;
+import com.breeze.health.beans.weixin.resp.TextMessage;
 import com.breeze.health.mapper.UserMapper;
 import com.breeze.health.util.SignUtil;
 import com.breeze.health.util.wexin.WechatMessageUtil;
 
 
 @Controller
+@SuppressWarnings("all")
 public class WexinController {
 	private static Logger logger = LoggerFactory.getLogger(WexinController.class);
 	
@@ -174,27 +176,32 @@ public class WexinController {
 
 	}
 	
+	@RequestMapping(value = "/wechatMenu/{menuId}", method = RequestMethod.GET)
+	@ResponseBody
+	public ModelAndView verifyToken1(HttpServletRequest request, HttpServletResponse response,@PathVariable String menuId) throws IOException {
+		logger.info("memu=="+menuId);
+
+		String appId= WexinConfig.getAppid();
+		
+		String oauthUrl = Config.getBasepath()+"wechat/oauth";
+		
+		String redirectUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + appId + "&redirect_uri="
+				+ oauthUrl + "&response_type=code&scope=snsapi_base&state=" + menuId + "#wechat_redirect";
+		logger.info("redirectUrl=="+redirectUrl);
+		
+		return new ModelAndView(new RedirectView(redirectUrl));
+	}
 	
 	@RequestMapping(value = "/wechat/oauth", method = RequestMethod.GET)
-	public ModelAndView weixinOAuth(HttpServletRequest request, HttpServletResponse response, Model model,
-			@PathVariable String pubName) {
-		// 寰楀埌code
-		String CODE = request.getParameter("code");
+	public ModelAndView weixinOAuth(HttpServletRequest request, HttpServletResponse response, Model model) {
+		String code = request.getParameter("code");
 		String state = request.getParameter("state");
-		String wx_pub="";
-		if("sinovo".equals(pubName)){
-			wx_pub="0";
-		}else if("bx".equals(pubName)){
-			wx_pub="1";
-		}else if("zjj".equals(pubName)){
-			wx_pub="2";
-		}
 
-		String APPID = WexinConfig.getAppid();
-		String SECRET =WexinConfig.getAppsecret();
+		String appid = WexinConfig.getAppid();
+		String secret =WexinConfig.getAppsecret();
 
 		String URL = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code"
-				.replace("APPID", APPID).replace("SECRET", SECRET).replace("CODE", CODE);
+				.replace("APPID", appid).replace("SECRET", secret).replace("CODE", code);
 		
 		HttpClient client = new HttpClient();
 		GetMethod get = new GetMethod(URL);
@@ -203,50 +210,27 @@ public class WexinController {
 			client.executeMethod(get);
 			responseBady = get.getResponseBodyAsString();
 		} catch (HttpException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("http exception",e);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("io exception",e);
 		}
-		String NODEPATH = "";
+		String path = Config.getBasepath();
 		JSONObject jsonObj;
 		try {
 			jsonObj = new JSONObject(responseBady);
 			String openid = jsonObj.get("openid").toString();
 
 			String url="";
-			
-			
-			String parm="openId="+openid+"&wx_pub="+wx_pub +"&timestamp="+System.currentTimeMillis();//鍙傛暟
-			if(false){
-				url=NODEPATH+"writeInfo?"+parm;
-			}else{
-				if ("test".equals(state)) {
-					url = NODEPATH+"myDoctor?"+parm;
-				} else if ("BASEINFO".equals(state)) {
-					// 鎴戠殑鍩烘湰淇℃伅
-					url = NODEPATH + "patientDetails?"+parm;
-				} else if ("ASK".equals(state)) {
-					// 鎴戠殑鎻愰棶
-					url = NODEPATH + "askAnswerList?"+parm;
-				} else if ("VISIT".equals(state)) {
-					// 鎴戠殑澶嶈瘖
-					url = NODEPATH + "reVisitList?"+parm;
-				} else if ("MEASURE".equals(state)) {
-					// 鎴戠殑鎸囨爣
-					url = NODEPATH + "indexData?"+parm;
-				} else if ("DOC".equals(state)) {
-					// 鎴戠殑鍖荤敓
-					url = NODEPATH+"myDoctor?"+parm;
-				}else  if (false){//鍖荤敓涓汉涓婚〉
-					
-					url = NODEPATH+"drHomePage?"+parm+"&docId="+state+"&patientId=";
-				}
+
+			String parm="openId="+openid+"&timestamp="+System.currentTimeMillis();//鍙傛暟
+			if ("base".equals(state)) {
+				url=path+"base?"+parm;
+			}else if ("report".equals(state)) {
+				url=path+"report?"+parm;
+			}else if ("living".equals(state)) {
+				url=path+"living?"+parm;
 			}
-
 			return new ModelAndView(new RedirectView(url));
-
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

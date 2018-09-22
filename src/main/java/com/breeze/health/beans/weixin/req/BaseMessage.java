@@ -1,4 +1,4 @@
-package com.breeze.health.entity.weixin.req;
+package com.breeze.health.beans.weixin.req;
 
 /**
  * 消息基类（普通用户 -> 公众帐号）
