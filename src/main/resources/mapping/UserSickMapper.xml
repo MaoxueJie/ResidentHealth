@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.breeze.health.mapper.UserSickMapper" >
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserSick" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="high_blood_pressure" property="highBloodPressure" jdbcType="INTEGER" />
+    <result column="high_blood_pressure_years" property="highBloodPressureYears" jdbcType="INTEGER" />
+    <result column="coronary_heart_disease" property="coronaryHeartDisease" jdbcType="INTEGER" />
+    <result column="coronary_heart_disease_years" property="coronaryHeartDiseaseYears" jdbcType="INTEGER" />
+    <result column="hyperlipidemia" property="hyperlipidemia" jdbcType="INTEGER" />
+    <result column="hyperlipidemia_years" property="hyperlipidemiaYears" jdbcType="INTEGER" />
+    <result column="diabetes" property="diabetes" jdbcType="INTEGER" />
+    <result column="diabetes_years" property="diabetesYears" jdbcType="INTEGER" />
+    <result column="cerebrovascular_disease" property="cerebrovascularDisease" jdbcType="INTEGER" />
+    <result column="cerebrovascular_disease_years" property="cerebrovascularDiseaseYears" jdbcType="INTEGER" />
+    <result column="chronic_gastritis" property="chronicGastritis" jdbcType="INTEGER" />
+    <result column="chronic_gastritis_years" property="chronicGastritisYears" jdbcType="INTEGER" />
+    <result column="stomach_ulcer" property="stomachUlcer" jdbcType="INTEGER" />
+    <result column="stomach_ulcer_years" property="stomachUlcerYears" jdbcType="INTEGER" />
+    <result column="bronchial_asthma" property="bronchialAsthma" jdbcType="INTEGER" />
+    <result column="bronchial_asthma_years" property="bronchialAsthmaYears" jdbcType="INTEGER" />
+    <result column="copd" property="copd" jdbcType="INTEGER" />
+    <result column="copd_years" property="copdYears" jdbcType="INTEGER" />
+    <result column="osteoporosis" property="osteoporosis" jdbcType="INTEGER" />
+    <result column="osteoporosis_years" property="osteoporosisYears" jdbcType="INTEGER" />
+    <result column="glaucoma" property="glaucoma" jdbcType="INTEGER" />
+    <result column="glaucoma_years" property="glaucomaYears" jdbcType="INTEGER" />
+    <result column="cataract" property="cataract" jdbcType="INTEGER" />
+    <result column="cataract_years" property="cataractYears" jdbcType="INTEGER" />
+    <result column="others" property="others" jdbcType="VARCHAR" />
+    <result column="antihypertensive_drug" property="antihypertensiveDrug" jdbcType="INTEGER" />
+    <result column="lipid lowering_drug" property="lipidLoweringDrug" jdbcType="INTEGER" />
+    <result column="hypoglycemic_agents" property="hypoglycemicAgents" jdbcType="INTEGER" />
+    <result column="antiplatelet_drug" property="antiplateletDrug" jdbcType="INTEGER" />
+    <result column="grandfather" property="grandfather" jdbcType="VARCHAR" />
+    <result column="grandmother" property="grandmother" jdbcType="VARCHAR" />
+    <result column="father" property="father" jdbcType="VARCHAR" />
+    <result column="mother" property="mother" jdbcType="VARCHAR" />
+    <result column="brothers" property="brothers" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, user_id, high_blood_pressure, high_blood_pressure_years, coronary_heart_disease, 
+    coronary_heart_disease_years, hyperlipidemia, hyperlipidemia_years, diabetes, diabetes_years, 
+    cerebrovascular_disease, cerebrovascular_disease_years, chronic_gastritis, chronic_gastritis_years, 
+    stomach_ulcer, stomach_ulcer_years, bronchial_asthma, bronchial_asthma_years, copd, 
+    copd_years, osteoporosis, osteoporosis_years, glaucoma, glaucoma_years, cataract, 
+    cataract_years, others, antihypertensive_drug, "lipid lowering_drug", hypoglycemic_agents, 
+    antiplatelet_drug, grandfather, grandmother, father, mother, brothers, create_time, 
+    update_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserSickExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_sick
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_sick
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_user_sick
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.breeze.health.entity.UserSick" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_sick (user_id, high_blood_pressure, high_blood_pressure_years, 
+      coronary_heart_disease, coronary_heart_disease_years, 
+      hyperlipidemia, hyperlipidemia_years, diabetes, 
+      diabetes_years, cerebrovascular_disease, 
+      cerebrovascular_disease_years, chronic_gastritis, 
+      chronic_gastritis_years, stomach_ulcer, stomach_ulcer_years, 
+      bronchial_asthma, bronchial_asthma_years, 
+      copd, copd_years, osteoporosis, 
+      osteoporosis_years, glaucoma, glaucoma_years, 
+      cataract, cataract_years, others, 
+      antihypertensive_drug, "lipid lowering_drug", 
+      hypoglycemic_agents, antiplatelet_drug, grandfather, 
+      grandmother, father, mother, 
+      brothers, create_time, update_time
+      )
+    values (#{userId,jdbcType=BIGINT}, #{highBloodPressure,jdbcType=INTEGER}, #{highBloodPressureYears,jdbcType=INTEGER}, 
+      #{coronaryHeartDisease,jdbcType=INTEGER}, #{coronaryHeartDiseaseYears,jdbcType=INTEGER}, 
+      #{hyperlipidemia,jdbcType=INTEGER}, #{hyperlipidemiaYears,jdbcType=INTEGER}, #{diabetes,jdbcType=INTEGER}, 
+      #{diabetesYears,jdbcType=INTEGER}, #{cerebrovascularDisease,jdbcType=INTEGER}, 
+      #{cerebrovascularDiseaseYears,jdbcType=INTEGER}, #{chronicGastritis,jdbcType=INTEGER}, 
+      #{chronicGastritisYears,jdbcType=INTEGER}, #{stomachUlcer,jdbcType=INTEGER}, #{stomachUlcerYears,jdbcType=INTEGER}, 
+      #{bronchialAsthma,jdbcType=INTEGER}, #{bronchialAsthmaYears,jdbcType=INTEGER}, 
+      #{copd,jdbcType=INTEGER}, #{copdYears,jdbcType=INTEGER}, #{osteoporosis,jdbcType=INTEGER}, 
+      #{osteoporosisYears,jdbcType=INTEGER}, #{glaucoma,jdbcType=INTEGER}, #{glaucomaYears,jdbcType=INTEGER}, 
+      #{cataract,jdbcType=INTEGER}, #{cataractYears,jdbcType=INTEGER}, #{others,jdbcType=VARCHAR}, 
+      #{antihypertensiveDrug,jdbcType=INTEGER}, #{lipidLoweringDrug,jdbcType=INTEGER}, 
+      #{hypoglycemicAgents,jdbcType=INTEGER}, #{antiplateletDrug,jdbcType=INTEGER}, #{grandfather,jdbcType=VARCHAR}, 
+      #{grandmother,jdbcType=VARCHAR}, #{father,jdbcType=VARCHAR}, #{mother,jdbcType=VARCHAR}, 
+      #{brothers,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.breeze.health.entity.UserSick" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_sick
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="highBloodPressure != null" >
+        high_blood_pressure,
+      </if>
+      <if test="highBloodPressureYears != null" >
+        high_blood_pressure_years,
+      </if>
+      <if test="coronaryHeartDisease != null" >
+        coronary_heart_disease,
+      </if>
+      <if test="coronaryHeartDiseaseYears != null" >
+        coronary_heart_disease_years,
+      </if>
+      <if test="hyperlipidemia != null" >
+        hyperlipidemia,
+      </if>
+      <if test="hyperlipidemiaYears != null" >
+        hyperlipidemia_years,
+      </if>
+      <if test="diabetes != null" >
+        diabetes,
+      </if>
+      <if test="diabetesYears != null" >
+        diabetes_years,
+      </if>
+      <if test="cerebrovascularDisease != null" >
+        cerebrovascular_disease,
+      </if>
+      <if test="cerebrovascularDiseaseYears != null" >
+        cerebrovascular_disease_years,
+      </if>
+      <if test="chronicGastritis != null" >
+        chronic_gastritis,
+      </if>
+      <if test="chronicGastritisYears != null" >
+        chronic_gastritis_years,
+      </if>
+      <if test="stomachUlcer != null" >
+        stomach_ulcer,
+      </if>
+      <if test="stomachUlcerYears != null" >
+        stomach_ulcer_years,
+      </if>
+      <if test="bronchialAsthma != null" >
+        bronchial_asthma,
+      </if>
+      <if test="bronchialAsthmaYears != null" >
+        bronchial_asthma_years,
+      </if>
+      <if test="copd != null" >
+        copd,
+      </if>
+      <if test="copdYears != null" >
+        copd_years,
+      </if>
+      <if test="osteoporosis != null" >
+        osteoporosis,
+      </if>
+      <if test="osteoporosisYears != null" >
+        osteoporosis_years,
+      </if>
+      <if test="glaucoma != null" >
+        glaucoma,
+      </if>
+      <if test="glaucomaYears != null" >
+        glaucoma_years,
+      </if>
+      <if test="cataract != null" >
+        cataract,
+      </if>
+      <if test="cataractYears != null" >
+        cataract_years,
+      </if>
+      <if test="others != null" >
+        others,
+      </if>
+      <if test="antihypertensiveDrug != null" >
+        antihypertensive_drug,
+      </if>
+      <if test="lipidLoweringDrug != null" >
+        "lipid lowering_drug",
+      </if>
+      <if test="hypoglycemicAgents != null" >
+        hypoglycemic_agents,
+      </if>
+      <if test="antiplateletDrug != null" >
+        antiplatelet_drug,
+      </if>
+      <if test="grandfather != null" >
+        grandfather,
+      </if>
+      <if test="grandmother != null" >
+        grandmother,
+      </if>
+      <if test="father != null" >
+        father,
+      </if>
+      <if test="mother != null" >
+        mother,
+      </if>
+      <if test="brothers != null" >
+        brothers,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="highBloodPressure != null" >
+        #{highBloodPressure,jdbcType=INTEGER},
+      </if>
+      <if test="highBloodPressureYears != null" >
+        #{highBloodPressureYears,jdbcType=INTEGER},
+      </if>
+      <if test="coronaryHeartDisease != null" >
+        #{coronaryHeartDisease,jdbcType=INTEGER},
+      </if>
+      <if test="coronaryHeartDiseaseYears != null" >
+        #{coronaryHeartDiseaseYears,jdbcType=INTEGER},
+      </if>
+      <if test="hyperlipidemia != null" >
+        #{hyperlipidemia,jdbcType=INTEGER},
+      </if>
+      <if test="hyperlipidemiaYears != null" >
+        #{hyperlipidemiaYears,jdbcType=INTEGER},
+      </if>
+      <if test="diabetes != null" >
+        #{diabetes,jdbcType=INTEGER},
+      </if>
+      <if test="diabetesYears != null" >
+        #{diabetesYears,jdbcType=INTEGER},
+      </if>
+      <if test="cerebrovascularDisease != null" >
+        #{cerebrovascularDisease,jdbcType=INTEGER},
+      </if>
+      <if test="cerebrovascularDiseaseYears != null" >
+        #{cerebrovascularDiseaseYears,jdbcType=INTEGER},
+      </if>
+      <if test="chronicGastritis != null" >
+        #{chronicGastritis,jdbcType=INTEGER},
+      </if>
+      <if test="chronicGastritisYears != null" >
+        #{chronicGastritisYears,jdbcType=INTEGER},
+      </if>
+      <if test="stomachUlcer != null" >
+        #{stomachUlcer,jdbcType=INTEGER},
+      </if>
+      <if test="stomachUlcerYears != null" >
+        #{stomachUlcerYears,jdbcType=INTEGER},
+      </if>
+      <if test="bronchialAsthma != null" >
+        #{bronchialAsthma,jdbcType=INTEGER},
+      </if>
+      <if test="bronchialAsthmaYears != null" >
+        #{bronchialAsthmaYears,jdbcType=INTEGER},
+      </if>
+      <if test="copd != null" >
+        #{copd,jdbcType=INTEGER},
+      </if>
+      <if test="copdYears != null" >
+        #{copdYears,jdbcType=INTEGER},
+      </if>
+      <if test="osteoporosis != null" >
+        #{osteoporosis,jdbcType=INTEGER},
+      </if>
+      <if test="osteoporosisYears != null" >
+        #{osteoporosisYears,jdbcType=INTEGER},
+      </if>
+      <if test="glaucoma != null" >
+        #{glaucoma,jdbcType=INTEGER},
+      </if>
+      <if test="glaucomaYears != null" >
+        #{glaucomaYears,jdbcType=INTEGER},
+      </if>
+      <if test="cataract != null" >
+        #{cataract,jdbcType=INTEGER},
+      </if>
+      <if test="cataractYears != null" >
+        #{cataractYears,jdbcType=INTEGER},
+      </if>
+      <if test="others != null" >
+        #{others,jdbcType=VARCHAR},
+      </if>
+      <if test="antihypertensiveDrug != null" >
+        #{antihypertensiveDrug,jdbcType=INTEGER},
+      </if>
+      <if test="lipidLoweringDrug != null" >
+        #{lipidLoweringDrug,jdbcType=INTEGER},
+      </if>
+      <if test="hypoglycemicAgents != null" >
+        #{hypoglycemicAgents,jdbcType=INTEGER},
+      </if>
+      <if test="antiplateletDrug != null" >
+        #{antiplateletDrug,jdbcType=INTEGER},
+      </if>
+      <if test="grandfather != null" >
+        #{grandfather,jdbcType=VARCHAR},
+      </if>
+      <if test="grandmother != null" >
+        #{grandmother,jdbcType=VARCHAR},
+      </if>
+      <if test="father != null" >
+        #{father,jdbcType=VARCHAR},
+      </if>
+      <if test="mother != null" >
+        #{mother,jdbcType=VARCHAR},
+      </if>
+      <if test="brothers != null" >
+        #{brothers,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserSickExample" resultType="java.lang.Integer" >
+    select count(*) from t_user_sick
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserSick" >
+    update t_user_sick
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="highBloodPressure != null" >
+        high_blood_pressure = #{highBloodPressure,jdbcType=INTEGER},
+      </if>
+      <if test="highBloodPressureYears != null" >
+        high_blood_pressure_years = #{highBloodPressureYears,jdbcType=INTEGER},
+      </if>
+      <if test="coronaryHeartDisease != null" >
+        coronary_heart_disease = #{coronaryHeartDisease,jdbcType=INTEGER},
+      </if>
+      <if test="coronaryHeartDiseaseYears != null" >
+        coronary_heart_disease_years = #{coronaryHeartDiseaseYears,jdbcType=INTEGER},
+      </if>
+      <if test="hyperlipidemia != null" >
+        hyperlipidemia = #{hyperlipidemia,jdbcType=INTEGER},
+      </if>
+      <if test="hyperlipidemiaYears != null" >
+        hyperlipidemia_years = #{hyperlipidemiaYears,jdbcType=INTEGER},
+      </if>
+      <if test="diabetes != null" >
+        diabetes = #{diabetes,jdbcType=INTEGER},
+      </if>
+      <if test="diabetesYears != null" >
+        diabetes_years = #{diabetesYears,jdbcType=INTEGER},
+      </if>
+      <if test="cerebrovascularDisease != null" >
+        cerebrovascular_disease = #{cerebrovascularDisease,jdbcType=INTEGER},
+      </if>
+      <if test="cerebrovascularDiseaseYears != null" >
+        cerebrovascular_disease_years = #{cerebrovascularDiseaseYears,jdbcType=INTEGER},
+      </if>
+      <if test="chronicGastritis != null" >
+        chronic_gastritis = #{chronicGastritis,jdbcType=INTEGER},
+      </if>
+      <if test="chronicGastritisYears != null" >
+        chronic_gastritis_years = #{chronicGastritisYears,jdbcType=INTEGER},
+      </if>
+      <if test="stomachUlcer != null" >
+        stomach_ulcer = #{stomachUlcer,jdbcType=INTEGER},
+      </if>
+      <if test="stomachUlcerYears != null" >
+        stomach_ulcer_years = #{stomachUlcerYears,jdbcType=INTEGER},
+      </if>
+      <if test="bronchialAsthma != null" >
+        bronchial_asthma = #{bronchialAsthma,jdbcType=INTEGER},
+      </if>
+      <if test="bronchialAsthmaYears != null" >
+        bronchial_asthma_years = #{bronchialAsthmaYears,jdbcType=INTEGER},
+      </if>
+      <if test="copd != null" >
+        copd = #{copd,jdbcType=INTEGER},
+      </if>
+      <if test="copdYears != null" >
+        copd_years = #{copdYears,jdbcType=INTEGER},
+      </if>
+      <if test="osteoporosis != null" >
+        osteoporosis = #{osteoporosis,jdbcType=INTEGER},
+      </if>
+      <if test="osteoporosisYears != null" >
+        osteoporosis_years = #{osteoporosisYears,jdbcType=INTEGER},
+      </if>
+      <if test="glaucoma != null" >
+        glaucoma = #{glaucoma,jdbcType=INTEGER},
+      </if>
+      <if test="glaucomaYears != null" >
+        glaucoma_years = #{glaucomaYears,jdbcType=INTEGER},
+      </if>
+      <if test="cataract != null" >
+        cataract = #{cataract,jdbcType=INTEGER},
+      </if>
+      <if test="cataractYears != null" >
+        cataract_years = #{cataractYears,jdbcType=INTEGER},
+      </if>
+      <if test="others != null" >
+        others = #{others,jdbcType=VARCHAR},
+      </if>
+      <if test="antihypertensiveDrug != null" >
+        antihypertensive_drug = #{antihypertensiveDrug,jdbcType=INTEGER},
+      </if>
+      <if test="lipidLoweringDrug != null" >
+        "lipid lowering_drug" = #{lipidLoweringDrug,jdbcType=INTEGER},
+      </if>
+      <if test="hypoglycemicAgents != null" >
+        hypoglycemic_agents = #{hypoglycemicAgents,jdbcType=INTEGER},
+      </if>
+      <if test="antiplateletDrug != null" >
+        antiplatelet_drug = #{antiplateletDrug,jdbcType=INTEGER},
+      </if>
+      <if test="grandfather != null" >
+        grandfather = #{grandfather,jdbcType=VARCHAR},
+      </if>
+      <if test="grandmother != null" >
+        grandmother = #{grandmother,jdbcType=VARCHAR},
+      </if>
+      <if test="father != null" >
+        father = #{father,jdbcType=VARCHAR},
+      </if>
+      <if test="mother != null" >
+        mother = #{mother,jdbcType=VARCHAR},
+      </if>
+      <if test="brothers != null" >
+        brothers = #{brothers,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserSick" >
+    update t_user_sick
+    set user_id = #{userId,jdbcType=BIGINT},
+      high_blood_pressure = #{highBloodPressure,jdbcType=INTEGER},
+      high_blood_pressure_years = #{highBloodPressureYears,jdbcType=INTEGER},
+      coronary_heart_disease = #{coronaryHeartDisease,jdbcType=INTEGER},
+      coronary_heart_disease_years = #{coronaryHeartDiseaseYears,jdbcType=INTEGER},
+      hyperlipidemia = #{hyperlipidemia,jdbcType=INTEGER},
+      hyperlipidemia_years = #{hyperlipidemiaYears,jdbcType=INTEGER},
+      diabetes = #{diabetes,jdbcType=INTEGER},
+      diabetes_years = #{diabetesYears,jdbcType=INTEGER},
+      cerebrovascular_disease = #{cerebrovascularDisease,jdbcType=INTEGER},
+      cerebrovascular_disease_years = #{cerebrovascularDiseaseYears,jdbcType=INTEGER},
+      chronic_gastritis = #{chronicGastritis,jdbcType=INTEGER},
+      chronic_gastritis_years = #{chronicGastritisYears,jdbcType=INTEGER},
+      stomach_ulcer = #{stomachUlcer,jdbcType=INTEGER},
+      stomach_ulcer_years = #{stomachUlcerYears,jdbcType=INTEGER},
+      bronchial_asthma = #{bronchialAsthma,jdbcType=INTEGER},
+      bronchial_asthma_years = #{bronchialAsthmaYears,jdbcType=INTEGER},
+      copd = #{copd,jdbcType=INTEGER},
+      copd_years = #{copdYears,jdbcType=INTEGER},
+      osteoporosis = #{osteoporosis,jdbcType=INTEGER},
+      osteoporosis_years = #{osteoporosisYears,jdbcType=INTEGER},
+      glaucoma = #{glaucoma,jdbcType=INTEGER},
+      glaucoma_years = #{glaucomaYears,jdbcType=INTEGER},
+      cataract = #{cataract,jdbcType=INTEGER},
+      cataract_years = #{cataractYears,jdbcType=INTEGER},
+      others = #{others,jdbcType=VARCHAR},
+      antihypertensive_drug = #{antihypertensiveDrug,jdbcType=INTEGER},
+      "lipid lowering_drug" = #{lipidLoweringDrug,jdbcType=INTEGER},
+      hypoglycemic_agents = #{hypoglycemicAgents,jdbcType=INTEGER},
+      antiplatelet_drug = #{antiplateletDrug,jdbcType=INTEGER},
+      grandfather = #{grandfather,jdbcType=VARCHAR},
+      grandmother = #{grandmother,jdbcType=VARCHAR},
+      father = #{father,jdbcType=VARCHAR},
+      mother = #{mother,jdbcType=VARCHAR},
+      brothers = #{brothers,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

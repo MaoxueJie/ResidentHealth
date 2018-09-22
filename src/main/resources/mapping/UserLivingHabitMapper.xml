@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.breeze.health.mapper.UserLivingHabitMapper" >
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserLivingHabit" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="smoking" property="smoking" jdbcType="INTEGER" />
+    <result column="smoking_val1" property="smokingVal1" jdbcType="INTEGER" />
+    <result column="smoking_val2" property="smokingVal2" jdbcType="INTEGER" />
+    <result column="smoking_val3" property="smokingVal3" jdbcType="INTEGER" />
+    <result column="smoking_val4" property="smokingVal4" jdbcType="INTEGER" />
+    <result column="smoking_age" property="smokingAge" jdbcType="INTEGER" />
+    <result column="partner_smoking" property="partnerSmoking" jdbcType="INTEGER" />
+    <result column="passive_smoking" property="passiveSmoking" jdbcType="INTEGER" />
+    <result column="drinking" property="drinking" jdbcType="INTEGER" />
+    <result column="drinking_val1" property="drinkingVal1" jdbcType="INTEGER" />
+    <result column="drinking_types" property="drinkingTypes" jdbcType="VARCHAR" />
+    <result column="drinking_val2" property="drinkingVal2" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, user_id, smoking, smoking_val1, smoking_val2, smoking_val3, smoking_val4, smoking_age, 
+    partner_smoking, passive_smoking, drinking, drinking_val1, drinking_types, drinking_val2, 
+    create_time, update_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserLivingHabitExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_living_habit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_living_habit
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_user_living_habit
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.breeze.health.entity.UserLivingHabit" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_living_habit (user_id, smoking, smoking_val1, 
+      smoking_val2, smoking_val3, smoking_val4, 
+      smoking_age, partner_smoking, passive_smoking, 
+      drinking, drinking_val1, drinking_types, 
+      drinking_val2, create_time, update_time
+      )
+    values (#{userId,jdbcType=BIGINT}, #{smoking,jdbcType=INTEGER}, #{smokingVal1,jdbcType=INTEGER}, 
+      #{smokingVal2,jdbcType=INTEGER}, #{smokingVal3,jdbcType=INTEGER}, #{smokingVal4,jdbcType=INTEGER}, 
+      #{smokingAge,jdbcType=INTEGER}, #{partnerSmoking,jdbcType=INTEGER}, #{passiveSmoking,jdbcType=INTEGER}, 
+      #{drinking,jdbcType=INTEGER}, #{drinkingVal1,jdbcType=INTEGER}, #{drinkingTypes,jdbcType=VARCHAR}, 
+      #{drinkingVal2,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.breeze.health.entity.UserLivingHabit" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_living_habit
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="smoking != null" >
+        smoking,
+      </if>
+      <if test="smokingVal1 != null" >
+        smoking_val1,
+      </if>
+      <if test="smokingVal2 != null" >
+        smoking_val2,
+      </if>
+      <if test="smokingVal3 != null" >
+        smoking_val3,
+      </if>
+      <if test="smokingVal4 != null" >
+        smoking_val4,
+      </if>
+      <if test="smokingAge != null" >
+        smoking_age,
+      </if>
+      <if test="partnerSmoking != null" >
+        partner_smoking,
+      </if>
+      <if test="passiveSmoking != null" >
+        passive_smoking,
+      </if>
+      <if test="drinking != null" >
+        drinking,
+      </if>
+      <if test="drinkingVal1 != null" >
+        drinking_val1,
+      </if>
+      <if test="drinkingTypes != null" >
+        drinking_types,
+      </if>
+      <if test="drinkingVal2 != null" >
+        drinking_val2,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="smoking != null" >
+        #{smoking,jdbcType=INTEGER},
+      </if>
+      <if test="smokingVal1 != null" >
+        #{smokingVal1,jdbcType=INTEGER},
+      </if>
+      <if test="smokingVal2 != null" >
+        #{smokingVal2,jdbcType=INTEGER},
+      </if>
+      <if test="smokingVal3 != null" >
+        #{smokingVal3,jdbcType=INTEGER},
+      </if>
+      <if test="smokingVal4 != null" >
+        #{smokingVal4,jdbcType=INTEGER},
+      </if>
+      <if test="smokingAge != null" >
+        #{smokingAge,jdbcType=INTEGER},
+      </if>
+      <if test="partnerSmoking != null" >
+        #{partnerSmoking,jdbcType=INTEGER},
+      </if>
+      <if test="passiveSmoking != null" >
+        #{passiveSmoking,jdbcType=INTEGER},
+      </if>
+      <if test="drinking != null" >
+        #{drinking,jdbcType=INTEGER},
+      </if>
+      <if test="drinkingVal1 != null" >
+        #{drinkingVal1,jdbcType=INTEGER},
+      </if>
+      <if test="drinkingTypes != null" >
+        #{drinkingTypes,jdbcType=VARCHAR},
+      </if>
+      <if test="drinkingVal2 != null" >
+        #{drinkingVal2,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserLivingHabitExample" resultType="java.lang.Integer" >
+    select count(*) from t_user_living_habit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserLivingHabit" >
+    update t_user_living_habit
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="smoking != null" >
+        smoking = #{smoking,jdbcType=INTEGER},
+      </if>
+      <if test="smokingVal1 != null" >
+        smoking_val1 = #{smokingVal1,jdbcType=INTEGER},
+      </if>
+      <if test="smokingVal2 != null" >
+        smoking_val2 = #{smokingVal2,jdbcType=INTEGER},
+      </if>
+      <if test="smokingVal3 != null" >
+        smoking_val3 = #{smokingVal3,jdbcType=INTEGER},
+      </if>
+      <if test="smokingVal4 != null" >
+        smoking_val4 = #{smokingVal4,jdbcType=INTEGER},
+      </if>
+      <if test="smokingAge != null" >
+        smoking_age = #{smokingAge,jdbcType=INTEGER},
+      </if>
+      <if test="partnerSmoking != null" >
+        partner_smoking = #{partnerSmoking,jdbcType=INTEGER},
+      </if>
+      <if test="passiveSmoking != null" >
+        passive_smoking = #{passiveSmoking,jdbcType=INTEGER},
+      </if>
+      <if test="drinking != null" >
+        drinking = #{drinking,jdbcType=INTEGER},
+      </if>
+      <if test="drinkingVal1 != null" >
+        drinking_val1 = #{drinkingVal1,jdbcType=INTEGER},
+      </if>
+      <if test="drinkingTypes != null" >
+        drinking_types = #{drinkingTypes,jdbcType=VARCHAR},
+      </if>
+      <if test="drinkingVal2 != null" >
+        drinking_val2 = #{drinkingVal2,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserLivingHabit" >
+    update t_user_living_habit
+    set user_id = #{userId,jdbcType=BIGINT},
+      smoking = #{smoking,jdbcType=INTEGER},
+      smoking_val1 = #{smokingVal1,jdbcType=INTEGER},
+      smoking_val2 = #{smokingVal2,jdbcType=INTEGER},
+      smoking_val3 = #{smokingVal3,jdbcType=INTEGER},
+      smoking_val4 = #{smokingVal4,jdbcType=INTEGER},
+      smoking_age = #{smokingAge,jdbcType=INTEGER},
+      partner_smoking = #{partnerSmoking,jdbcType=INTEGER},
+      passive_smoking = #{passiveSmoking,jdbcType=INTEGER},
+      drinking = #{drinking,jdbcType=INTEGER},
+      drinking_val1 = #{drinkingVal1,jdbcType=INTEGER},
+      drinking_types = #{drinkingTypes,jdbcType=VARCHAR},
+      drinking_val2 = #{drinkingVal2,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
