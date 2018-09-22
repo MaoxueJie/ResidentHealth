@@ -1,43 +1,43 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.breeze.health.mapper.UserLivingMealMapper" >
-  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserLivingMeal" >
-    <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="user_id" property="userId" jdbcType="BIGINT" />
-    <result column="meal" property="meal" jdbcType="INTEGER" />
-    <result column="breakfast" property="breakfast" jdbcType="INTEGER" />
-    <result column="extra_meal1" property="extraMeal1" jdbcType="INTEGER" />
-    <result column="lunch" property="lunch" jdbcType="INTEGER" />
-    <result column="extra_meal2" property="extraMeal2" jdbcType="INTEGER" />
-    <result column="dinner" property="dinner" jdbcType="INTEGER" />
-    <result column="meal_desc" property="mealDesc" jdbcType="VARCHAR" />
-    <result column="alizarin" property="alizarin" jdbcType="INTEGER" />
-    <result column="preference" property="preference" jdbcType="INTEGER" />
-    <result column="sweets" property="sweets" jdbcType="INTEGER" />
-    <result column="fruit" property="fruit" jdbcType="INTEGER" />
-    <result column="sugary_drink" property="sugaryDrink" jdbcType="INTEGER" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.breeze.health.mapper.UserLivingMealMapper">
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserLivingMeal">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="meal" jdbcType="INTEGER" property="meal" />
+    <result column="breakfast" jdbcType="INTEGER" property="breakfast" />
+    <result column="extra_meal1" jdbcType="INTEGER" property="extraMeal1" />
+    <result column="lunch" jdbcType="INTEGER" property="lunch" />
+    <result column="extra_meal2" jdbcType="INTEGER" property="extraMeal2" />
+    <result column="dinner" jdbcType="INTEGER" property="dinner" />
+    <result column="meal_desc" jdbcType="VARCHAR" property="mealDesc" />
+    <result column="alizarin" jdbcType="INTEGER" property="alizarin" />
+    <result column="preference" jdbcType="INTEGER" property="preference" />
+    <result column="sweets" jdbcType="INTEGER" property="sweets" />
+    <result column="fruit" jdbcType="INTEGER" property="fruit" />
+    <result column="sugary_drink" jdbcType="INTEGER" property="sugaryDrink" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue" >
+                <when test="criterion.singleValue">
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue" >
+                <when test="criterion.betweenValue">
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue" >
+                <when test="criterion.listValue">
                   and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
                     #{listItem}
                   </foreach>
                 </when>
@@ -48,35 +48,35 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List" >
+  <sql id="Base_Column_List">
     id, user_id, meal, breakfast, extra_meal1, lunch, extra_meal2, dinner, meal_desc, 
     alizarin, preference, sweets, fruit, sugary_drink, create_time, update_time
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserLivingMealExample" >
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserLivingMealExample" resultMap="BaseResultMap">
     select
-    <if test="distinct" >
+    <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
     from t_user_living_meal
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null" >
+    <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_user_living_meal
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_user_living_meal
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.breeze.health.entity.UserLivingMeal" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserLivingMeal" useGeneratedKeys="true">
     insert into t_user_living_meal (user_id, meal, breakfast, 
       extra_meal1, lunch, extra_meal2, 
       dinner, meal_desc, alizarin, 
@@ -90,161 +90,423 @@
       #{sugaryDrink,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.breeze.health.entity.UserLivingMeal" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserLivingMeal" useGeneratedKeys="true">
     insert into t_user_living_meal
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="userId != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
         user_id,
       </if>
-      <if test="meal != null" >
+      <if test="meal != null">
         meal,
       </if>
-      <if test="breakfast != null" >
+      <if test="breakfast != null">
         breakfast,
       </if>
-      <if test="extraMeal1 != null" >
+      <if test="extraMeal1 != null">
         extra_meal1,
       </if>
-      <if test="lunch != null" >
+      <if test="lunch != null">
         lunch,
       </if>
-      <if test="extraMeal2 != null" >
+      <if test="extraMeal2 != null">
         extra_meal2,
       </if>
-      <if test="dinner != null" >
+      <if test="dinner != null">
         dinner,
       </if>
-      <if test="mealDesc != null" >
+      <if test="mealDesc != null">
         meal_desc,
       </if>
-      <if test="alizarin != null" >
+      <if test="alizarin != null">
         alizarin,
       </if>
-      <if test="preference != null" >
+      <if test="preference != null">
         preference,
       </if>
-      <if test="sweets != null" >
+      <if test="sweets != null">
         sweets,
       </if>
-      <if test="fruit != null" >
+      <if test="fruit != null">
         fruit,
       </if>
-      <if test="sugaryDrink != null" >
+      <if test="sugaryDrink != null">
         sugary_drink,
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time,
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="userId != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
         #{userId,jdbcType=BIGINT},
       </if>
-      <if test="meal != null" >
+      <if test="meal != null">
         #{meal,jdbcType=INTEGER},
       </if>
-      <if test="breakfast != null" >
+      <if test="breakfast != null">
         #{breakfast,jdbcType=INTEGER},
       </if>
-      <if test="extraMeal1 != null" >
+      <if test="extraMeal1 != null">
         #{extraMeal1,jdbcType=INTEGER},
       </if>
-      <if test="lunch != null" >
+      <if test="lunch != null">
         #{lunch,jdbcType=INTEGER},
       </if>
-      <if test="extraMeal2 != null" >
+      <if test="extraMeal2 != null">
         #{extraMeal2,jdbcType=INTEGER},
       </if>
-      <if test="dinner != null" >
+      <if test="dinner != null">
         #{dinner,jdbcType=INTEGER},
       </if>
-      <if test="mealDesc != null" >
+      <if test="mealDesc != null">
         #{mealDesc,jdbcType=VARCHAR},
       </if>
-      <if test="alizarin != null" >
+      <if test="alizarin != null">
         #{alizarin,jdbcType=INTEGER},
       </if>
-      <if test="preference != null" >
+      <if test="preference != null">
         #{preference,jdbcType=INTEGER},
       </if>
-      <if test="sweets != null" >
+      <if test="sweets != null">
         #{sweets,jdbcType=INTEGER},
       </if>
-      <if test="fruit != null" >
+      <if test="fruit != null">
         #{fruit,jdbcType=INTEGER},
       </if>
-      <if test="sugaryDrink != null" >
+      <if test="sugaryDrink != null">
         #{sugaryDrink,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.breeze.health.entity.UserLivingMealExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserLivingMealExample" resultType="java.lang.Integer">
     select count(*) from t_user_living_meal
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserLivingMeal" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserLivingMeal">
     update t_user_living_meal
-    <set >
-      <if test="userId != null" >
+    <set>
+      <if test="userId != null">
         user_id = #{userId,jdbcType=BIGINT},
       </if>
-      <if test="meal != null" >
+      <if test="meal != null">
         meal = #{meal,jdbcType=INTEGER},
       </if>
-      <if test="breakfast != null" >
+      <if test="breakfast != null">
         breakfast = #{breakfast,jdbcType=INTEGER},
       </if>
-      <if test="extraMeal1 != null" >
+      <if test="extraMeal1 != null">
         extra_meal1 = #{extraMeal1,jdbcType=INTEGER},
       </if>
-      <if test="lunch != null" >
+      <if test="lunch != null">
         lunch = #{lunch,jdbcType=INTEGER},
       </if>
-      <if test="extraMeal2 != null" >
+      <if test="extraMeal2 != null">
         extra_meal2 = #{extraMeal2,jdbcType=INTEGER},
       </if>
-      <if test="dinner != null" >
+      <if test="dinner != null">
         dinner = #{dinner,jdbcType=INTEGER},
       </if>
-      <if test="mealDesc != null" >
+      <if test="mealDesc != null">
         meal_desc = #{mealDesc,jdbcType=VARCHAR},
       </if>
-      <if test="alizarin != null" >
+      <if test="alizarin != null">
         alizarin = #{alizarin,jdbcType=INTEGER},
       </if>
-      <if test="preference != null" >
+      <if test="preference != null">
         preference = #{preference,jdbcType=INTEGER},
       </if>
-      <if test="sweets != null" >
+      <if test="sweets != null">
         sweets = #{sweets,jdbcType=INTEGER},
       </if>
-      <if test="fruit != null" >
+      <if test="fruit != null">
         fruit = #{fruit,jdbcType=INTEGER},
       </if>
-      <if test="sugaryDrink != null" >
+      <if test="sugaryDrink != null">
         sugary_drink = #{sugaryDrink,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserLivingMeal" >
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserLivingMeal">
+    update t_user_living_meal
+    set user_id = #{userId,jdbcType=BIGINT},
+      meal = #{meal,jdbcType=INTEGER},
+      breakfast = #{breakfast,jdbcType=INTEGER},
+      extra_meal1 = #{extraMeal1,jdbcType=INTEGER},
+      lunch = #{lunch,jdbcType=INTEGER},
+      extra_meal2 = #{extraMeal2,jdbcType=INTEGER},
+      dinner = #{dinner,jdbcType=INTEGER},
+      meal_desc = #{mealDesc,jdbcType=VARCHAR},
+      alizarin = #{alizarin,jdbcType=INTEGER},
+      preference = #{preference,jdbcType=INTEGER},
+      sweets = #{sweets,jdbcType=INTEGER},
+      fruit = #{fruit,jdbcType=INTEGER},
+      sugary_drink = #{sugaryDrink,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserLivingMeal">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="meal" jdbcType="INTEGER" property="meal" />
+    <result column="breakfast" jdbcType="INTEGER" property="breakfast" />
+    <result column="extra_meal1" jdbcType="INTEGER" property="extraMeal1" />
+    <result column="lunch" jdbcType="INTEGER" property="lunch" />
+    <result column="extra_meal2" jdbcType="INTEGER" property="extraMeal2" />
+    <result column="dinner" jdbcType="INTEGER" property="dinner" />
+    <result column="meal_desc" jdbcType="VARCHAR" property="mealDesc" />
+    <result column="alizarin" jdbcType="INTEGER" property="alizarin" />
+    <result column="preference" jdbcType="INTEGER" property="preference" />
+    <result column="sweets" jdbcType="INTEGER" property="sweets" />
+    <result column="fruit" jdbcType="INTEGER" property="fruit" />
+    <result column="sugary_drink" jdbcType="INTEGER" property="sugaryDrink" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, user_id, meal, breakfast, extra_meal1, lunch, extra_meal2, dinner, meal_desc, 
+    alizarin, preference, sweets, fruit, sugary_drink, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserLivingMealExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_living_meal
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_living_meal
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user_living_meal
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserLivingMeal" useGeneratedKeys="true">
+    insert into t_user_living_meal (user_id, meal, breakfast, 
+      extra_meal1, lunch, extra_meal2, 
+      dinner, meal_desc, alizarin, 
+      preference, sweets, fruit, 
+      sugary_drink, create_time, update_time
+      )
+    values (#{userId,jdbcType=BIGINT}, #{meal,jdbcType=INTEGER}, #{breakfast,jdbcType=INTEGER}, 
+      #{extraMeal1,jdbcType=INTEGER}, #{lunch,jdbcType=INTEGER}, #{extraMeal2,jdbcType=INTEGER}, 
+      #{dinner,jdbcType=INTEGER}, #{mealDesc,jdbcType=VARCHAR}, #{alizarin,jdbcType=INTEGER}, 
+      #{preference,jdbcType=INTEGER}, #{sweets,jdbcType=INTEGER}, #{fruit,jdbcType=INTEGER}, 
+      #{sugaryDrink,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserLivingMeal" useGeneratedKeys="true">
+    insert into t_user_living_meal
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="meal != null">
+        meal,
+      </if>
+      <if test="breakfast != null">
+        breakfast,
+      </if>
+      <if test="extraMeal1 != null">
+        extra_meal1,
+      </if>
+      <if test="lunch != null">
+        lunch,
+      </if>
+      <if test="extraMeal2 != null">
+        extra_meal2,
+      </if>
+      <if test="dinner != null">
+        dinner,
+      </if>
+      <if test="mealDesc != null">
+        meal_desc,
+      </if>
+      <if test="alizarin != null">
+        alizarin,
+      </if>
+      <if test="preference != null">
+        preference,
+      </if>
+      <if test="sweets != null">
+        sweets,
+      </if>
+      <if test="fruit != null">
+        fruit,
+      </if>
+      <if test="sugaryDrink != null">
+        sugary_drink,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="meal != null">
+        #{meal,jdbcType=INTEGER},
+      </if>
+      <if test="breakfast != null">
+        #{breakfast,jdbcType=INTEGER},
+      </if>
+      <if test="extraMeal1 != null">
+        #{extraMeal1,jdbcType=INTEGER},
+      </if>
+      <if test="lunch != null">
+        #{lunch,jdbcType=INTEGER},
+      </if>
+      <if test="extraMeal2 != null">
+        #{extraMeal2,jdbcType=INTEGER},
+      </if>
+      <if test="dinner != null">
+        #{dinner,jdbcType=INTEGER},
+      </if>
+      <if test="mealDesc != null">
+        #{mealDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="alizarin != null">
+        #{alizarin,jdbcType=INTEGER},
+      </if>
+      <if test="preference != null">
+        #{preference,jdbcType=INTEGER},
+      </if>
+      <if test="sweets != null">
+        #{sweets,jdbcType=INTEGER},
+      </if>
+      <if test="fruit != null">
+        #{fruit,jdbcType=INTEGER},
+      </if>
+      <if test="sugaryDrink != null">
+        #{sugaryDrink,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserLivingMealExample" resultType="java.lang.Integer">
+    select count(*) from t_user_living_meal
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserLivingMeal">
+    update t_user_living_meal
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="meal != null">
+        meal = #{meal,jdbcType=INTEGER},
+      </if>
+      <if test="breakfast != null">
+        breakfast = #{breakfast,jdbcType=INTEGER},
+      </if>
+      <if test="extraMeal1 != null">
+        extra_meal1 = #{extraMeal1,jdbcType=INTEGER},
+      </if>
+      <if test="lunch != null">
+        lunch = #{lunch,jdbcType=INTEGER},
+      </if>
+      <if test="extraMeal2 != null">
+        extra_meal2 = #{extraMeal2,jdbcType=INTEGER},
+      </if>
+      <if test="dinner != null">
+        dinner = #{dinner,jdbcType=INTEGER},
+      </if>
+      <if test="mealDesc != null">
+        meal_desc = #{mealDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="alizarin != null">
+        alizarin = #{alizarin,jdbcType=INTEGER},
+      </if>
+      <if test="preference != null">
+        preference = #{preference,jdbcType=INTEGER},
+      </if>
+      <if test="sweets != null">
+        sweets = #{sweets,jdbcType=INTEGER},
+      </if>
+      <if test="fruit != null">
+        fruit = #{fruit,jdbcType=INTEGER},
+      </if>
+      <if test="sugaryDrink != null">
+        sugary_drink = #{sugaryDrink,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserLivingMeal">
     update t_user_living_meal
     set user_id = #{userId,jdbcType=BIGINT},
       meal = #{meal,jdbcType=INTEGER},

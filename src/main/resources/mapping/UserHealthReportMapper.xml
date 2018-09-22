@@ -1,36 +1,43 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.breeze.health.mapper.UserHealthReportMapper" >
-  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserHealthReport" >
-    <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="user_id" property="userId" jdbcType="BIGINT" />
-    <result column="sick_report" property="sickReport" jdbcType="VARCHAR" />
-    <result column="meal_report" property="mealReport" jdbcType="VARCHAR" />
-    <result column="movement_report" property="movementReport" jdbcType="VARCHAR" />
-    <result column="smoking_report" property="smokingReport" jdbcType="VARCHAR" />
-    <result column="psychological_report" property="psychologicalReport" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.breeze.health.mapper.UserHealthReportMapper">
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserHealthReport">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="sick_id" jdbcType="BIGINT" property="sickId" />
+    <result column="meal_id" jdbcType="BIGINT" property="mealId" />
+    <result column="movement_id" jdbcType="BIGINT" property="movementId" />
+    <result column="habit_id" jdbcType="BIGINT" property="habitId" />
+    <result column="ad8_id" jdbcType="BIGINT" property="ad8Id" />
+    <result column="gad7_id" jdbcType="BIGINT" property="gad7Id" />
+    <result column="phq9_id" jdbcType="BIGINT" property="phq9Id" />
+    <result column="sick_report" jdbcType="VARCHAR" property="sickReport" />
+    <result column="meal_report" jdbcType="VARCHAR" property="mealReport" />
+    <result column="movement_report" jdbcType="VARCHAR" property="movementReport" />
+    <result column="smoking_report" jdbcType="VARCHAR" property="smokingReport" />
+    <result column="psychological_report" jdbcType="VARCHAR" property="psychologicalReport" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue" >
+                <when test="criterion.singleValue">
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue" >
+                <when test="criterion.betweenValue">
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue" >
+                <when test="criterion.listValue">
                   and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
                     #{listItem}
                   </foreach>
                 </when>
@@ -41,35 +48,291 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List" >
-    id, user_id, sick_report, meal_report, movement_report, smoking_report, psychological_report, 
-    create_time, update_time
+  <sql id="Base_Column_List">
+    id, user_id, sick_id, meal_id, movement_id, habit_id, ad8_id, gad7_id, phq9_id, sick_report, 
+    meal_report, movement_report, smoking_report, psychological_report, create_time, 
+    update_time
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserHealthReportExample" >
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserHealthReportExample" resultMap="BaseResultMap">
     select
-    <if test="distinct" >
+    <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
     from t_user_health_report
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null" >
+    <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_user_health_report
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_user_health_report
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.breeze.health.entity.UserHealthReport" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserHealthReport" useGeneratedKeys="true">
+    insert into t_user_health_report (user_id, sick_id, meal_id, 
+      movement_id, habit_id, ad8_id, 
+      gad7_id, phq9_id, sick_report, 
+      meal_report, movement_report, smoking_report, 
+      psychological_report, create_time, update_time
+      )
+    values (#{userId,jdbcType=BIGINT}, #{sickId,jdbcType=BIGINT}, #{mealId,jdbcType=BIGINT}, 
+      #{movementId,jdbcType=BIGINT}, #{habitId,jdbcType=BIGINT}, #{ad8Id,jdbcType=BIGINT}, 
+      #{gad7Id,jdbcType=BIGINT}, #{phq9Id,jdbcType=BIGINT}, #{sickReport,jdbcType=VARCHAR}, 
+      #{mealReport,jdbcType=VARCHAR}, #{movementReport,jdbcType=VARCHAR}, #{smokingReport,jdbcType=VARCHAR}, 
+      #{psychologicalReport,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserHealthReport" useGeneratedKeys="true">
+    insert into t_user_health_report
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="sickId != null">
+        sick_id,
+      </if>
+      <if test="mealId != null">
+        meal_id,
+      </if>
+      <if test="movementId != null">
+        movement_id,
+      </if>
+      <if test="habitId != null">
+        habit_id,
+      </if>
+      <if test="ad8Id != null">
+        ad8_id,
+      </if>
+      <if test="gad7Id != null">
+        gad7_id,
+      </if>
+      <if test="phq9Id != null">
+        phq9_id,
+      </if>
+      <if test="sickReport != null">
+        sick_report,
+      </if>
+      <if test="mealReport != null">
+        meal_report,
+      </if>
+      <if test="movementReport != null">
+        movement_report,
+      </if>
+      <if test="smokingReport != null">
+        smoking_report,
+      </if>
+      <if test="psychologicalReport != null">
+        psychological_report,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="sickId != null">
+        #{sickId,jdbcType=BIGINT},
+      </if>
+      <if test="mealId != null">
+        #{mealId,jdbcType=BIGINT},
+      </if>
+      <if test="movementId != null">
+        #{movementId,jdbcType=BIGINT},
+      </if>
+      <if test="habitId != null">
+        #{habitId,jdbcType=BIGINT},
+      </if>
+      <if test="ad8Id != null">
+        #{ad8Id,jdbcType=BIGINT},
+      </if>
+      <if test="gad7Id != null">
+        #{gad7Id,jdbcType=BIGINT},
+      </if>
+      <if test="phq9Id != null">
+        #{phq9Id,jdbcType=BIGINT},
+      </if>
+      <if test="sickReport != null">
+        #{sickReport,jdbcType=VARCHAR},
+      </if>
+      <if test="mealReport != null">
+        #{mealReport,jdbcType=VARCHAR},
+      </if>
+      <if test="movementReport != null">
+        #{movementReport,jdbcType=VARCHAR},
+      </if>
+      <if test="smokingReport != null">
+        #{smokingReport,jdbcType=VARCHAR},
+      </if>
+      <if test="psychologicalReport != null">
+        #{psychologicalReport,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserHealthReportExample" resultType="java.lang.Integer">
+    select count(*) from t_user_health_report
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserHealthReport">
+    update t_user_health_report
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="sickId != null">
+        sick_id = #{sickId,jdbcType=BIGINT},
+      </if>
+      <if test="mealId != null">
+        meal_id = #{mealId,jdbcType=BIGINT},
+      </if>
+      <if test="movementId != null">
+        movement_id = #{movementId,jdbcType=BIGINT},
+      </if>
+      <if test="habitId != null">
+        habit_id = #{habitId,jdbcType=BIGINT},
+      </if>
+      <if test="ad8Id != null">
+        ad8_id = #{ad8Id,jdbcType=BIGINT},
+      </if>
+      <if test="gad7Id != null">
+        gad7_id = #{gad7Id,jdbcType=BIGINT},
+      </if>
+      <if test="phq9Id != null">
+        phq9_id = #{phq9Id,jdbcType=BIGINT},
+      </if>
+      <if test="sickReport != null">
+        sick_report = #{sickReport,jdbcType=VARCHAR},
+      </if>
+      <if test="mealReport != null">
+        meal_report = #{mealReport,jdbcType=VARCHAR},
+      </if>
+      <if test="movementReport != null">
+        movement_report = #{movementReport,jdbcType=VARCHAR},
+      </if>
+      <if test="smokingReport != null">
+        smoking_report = #{smokingReport,jdbcType=VARCHAR},
+      </if>
+      <if test="psychologicalReport != null">
+        psychological_report = #{psychologicalReport,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserHealthReport">
+    update t_user_health_report
+    set user_id = #{userId,jdbcType=BIGINT},
+      sick_id = #{sickId,jdbcType=BIGINT},
+      meal_id = #{mealId,jdbcType=BIGINT},
+      movement_id = #{movementId,jdbcType=BIGINT},
+      habit_id = #{habitId,jdbcType=BIGINT},
+      ad8_id = #{ad8Id,jdbcType=BIGINT},
+      gad7_id = #{gad7Id,jdbcType=BIGINT},
+      phq9_id = #{phq9Id,jdbcType=BIGINT},
+      sick_report = #{sickReport,jdbcType=VARCHAR},
+      meal_report = #{mealReport,jdbcType=VARCHAR},
+      movement_report = #{movementReport,jdbcType=VARCHAR},
+      smoking_report = #{smokingReport,jdbcType=VARCHAR},
+      psychological_report = #{psychologicalReport,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserHealthReport">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="sick_report" jdbcType="VARCHAR" property="sickReport" />
+    <result column="meal_report" jdbcType="VARCHAR" property="mealReport" />
+    <result column="movement_report" jdbcType="VARCHAR" property="movementReport" />
+    <result column="smoking_report" jdbcType="VARCHAR" property="smokingReport" />
+    <result column="psychological_report" jdbcType="VARCHAR" property="psychologicalReport" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, user_id, sick_report, meal_report, movement_report, smoking_report, psychological_report, 
+    create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserHealthReportExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_health_report
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_health_report
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user_health_report
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserHealthReport" useGeneratedKeys="true">
     insert into t_user_health_report (user_id, sick_report, meal_report, 
       movement_report, smoking_report, psychological_report, 
       create_time, update_time)
@@ -77,98 +340,98 @@
       #{movementReport,jdbcType=VARCHAR}, #{smokingReport,jdbcType=VARCHAR}, #{psychologicalReport,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.breeze.health.entity.UserHealthReport" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserHealthReport" useGeneratedKeys="true">
     insert into t_user_health_report
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="userId != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
         user_id,
       </if>
-      <if test="sickReport != null" >
+      <if test="sickReport != null">
         sick_report,
       </if>
-      <if test="mealReport != null" >
+      <if test="mealReport != null">
         meal_report,
       </if>
-      <if test="movementReport != null" >
+      <if test="movementReport != null">
         movement_report,
       </if>
-      <if test="smokingReport != null" >
+      <if test="smokingReport != null">
         smoking_report,
       </if>
-      <if test="psychologicalReport != null" >
+      <if test="psychologicalReport != null">
         psychological_report,
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time,
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="userId != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
         #{userId,jdbcType=BIGINT},
       </if>
-      <if test="sickReport != null" >
+      <if test="sickReport != null">
         #{sickReport,jdbcType=VARCHAR},
       </if>
-      <if test="mealReport != null" >
+      <if test="mealReport != null">
         #{mealReport,jdbcType=VARCHAR},
       </if>
-      <if test="movementReport != null" >
+      <if test="movementReport != null">
         #{movementReport,jdbcType=VARCHAR},
       </if>
-      <if test="smokingReport != null" >
+      <if test="smokingReport != null">
         #{smokingReport,jdbcType=VARCHAR},
       </if>
-      <if test="psychologicalReport != null" >
+      <if test="psychologicalReport != null">
         #{psychologicalReport,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.breeze.health.entity.UserHealthReportExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserHealthReportExample" resultType="java.lang.Integer">
     select count(*) from t_user_health_report
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserHealthReport" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserHealthReport">
     update t_user_health_report
-    <set >
-      <if test="userId != null" >
+    <set>
+      <if test="userId != null">
         user_id = #{userId,jdbcType=BIGINT},
       </if>
-      <if test="sickReport != null" >
+      <if test="sickReport != null">
         sick_report = #{sickReport,jdbcType=VARCHAR},
       </if>
-      <if test="mealReport != null" >
+      <if test="mealReport != null">
         meal_report = #{mealReport,jdbcType=VARCHAR},
       </if>
-      <if test="movementReport != null" >
+      <if test="movementReport != null">
         movement_report = #{movementReport,jdbcType=VARCHAR},
       </if>
-      <if test="smokingReport != null" >
+      <if test="smokingReport != null">
         smoking_report = #{smokingReport,jdbcType=VARCHAR},
       </if>
-      <if test="psychologicalReport != null" >
+      <if test="psychologicalReport != null">
         psychological_report = #{psychologicalReport,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserHealthReport" >
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserHealthReport">
     update t_user_health_report
     set user_id = #{userId,jdbcType=BIGINT},
       sick_report = #{sickReport,jdbcType=VARCHAR},
