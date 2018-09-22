@@ -48,19 +48,6 @@ import com.breeze.health.util.wexin.WechatMessageUtil;
 public class WexinController {
 	private static Logger logger = LoggerFactory.getLogger(WexinController.class);
 	
-	@Autowired
-	UserMapper userMapper;
-
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	@ResponseBody
-	public String index(){
-		logger.info("_________________________________________________________" + WexinConfig.getAppid());
-		logger.info("userMapper="+userMapper);
-		return "hello world";
-	}
-	
-	
-
 	@RequestMapping(value = "/wechat", method = RequestMethod.GET)
 	public void wechatService(
 			PrintWriter out,

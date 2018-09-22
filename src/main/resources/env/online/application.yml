@@ -1,0 +1,45 @@
+app:
+    basepath: http://gruvum.natappfree.cc
+server:
+    port: 80
+  
+spring:
+    datasource:
+        name: test
+        url: jdbc:mysql://119.27.164.126:3306/health?autoReconnect=true&amp;characterEncoding=utf-8
+        username: jiemaoxue
+        password: Jiemaoxue1984
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 1
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+    mvc:
+        view:
+            prefix: /WEB-INF/views/
+            suffix: .jsp
+            
+mybatis:
+    mapper-locations: classpath:mapping/*.xml
+    type-aliases-package: com.breeze.health.entity
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
+wexin:
+    appid: wx336e204e851303d6
+    appsecret: 34ab89470c9ea9e5d6e3fe00a76bfe9d
+    token: 698D51A19D8A121CE581499D7B701668
