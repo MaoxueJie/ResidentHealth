@@ -204,8 +204,8 @@ public class MenuUtil {
     }
     
     //{"menu":{"button":[{"name":"中心介绍","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/h/introduce.html"},{"name":"推荐医生","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/h/drIntro.html"},{"name":"个人中心","sub_button":[{"name":"我的基本信息","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/BASEINFO"},{"name":"我的医生","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/DOC"},{"name":"我的提问","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/ASK"},{"name":"我的复诊","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/VISIT"},{"name":"我的指标","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/MEASURE"}]}]}}
-    public static void main(String args[])
-    {
-    	createMenu();
-    }
+    //public static void main(String args[])
+    //{
+    	//createMenu();
+    //}
 }
