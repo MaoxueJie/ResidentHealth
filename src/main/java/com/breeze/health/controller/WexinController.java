@@ -22,6 +22,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,6 +40,7 @@ import com.breeze.health.beans.weixin.resp.Article;
 import com.breeze.health.beans.weixin.resp.NewsMessage;
 import com.breeze.health.beans.weixin.resp.TextMessage;
 import com.breeze.health.mapper.UserMapper;
+import com.breeze.health.service.UserService;
 import com.breeze.health.util.SignUtil;
 import com.breeze.health.util.wexin.WechatMessageUtil;
 
@@ -47,6 +49,9 @@ import com.breeze.health.util.wexin.WechatMessageUtil;
 @SuppressWarnings("all")
 public class WexinController {
 	private static Logger logger = LoggerFactory.getLogger(WexinController.class);
+	
+	@Autowired
+	UserService userService;
 	
 	@RequestMapping(value = "/wechat", method = RequestMethod.GET)
 	public void wechatService(
@@ -63,102 +68,119 @@ public class WexinController {
 
 	}
 
-	
-	@ResponseBody
-	@RequestMapping(value = "/wechat", method = RequestMethod.POST)
-	public void wechatServicePost(PrintWriter out, HttpServletRequest request,
+	@RequestMapping(value = "/wechat", method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+	public void wechatServicePost(HttpServletRequest request,
 			HttpServletResponse response) {
-		logger.info("--------Start!----------");
-
-		Map<String, String> map = WechatMessageUtil.xmlToMap(request);
-		String respContent = "未知的消息类型！";
-		String MSGType=WechatMessageUtil.MESSAGE_TEXT;
-		
-		String qrCodeId="";
-		
-		logger.info(JSON.toJSONString(map));
-		// 发送方帐号（一个OpenID）
-		String fromUserName = map.get("FromUserName");
-		// 开发者微信号
-		String toUserName = map.get("ToUserName");
-		// 消息类型
-		String msgType = map.get("MsgType");
-		// 默认回复一个"success"
-		String responseMessage = "";
-
-		// 文本消息
-		if (WechatMessageUtil.MESSAGE_TEXT.equals(msgType)) {// 文本消息
-			respContent = "您发送的是文本消息！";
-		}
-		// 图片消息
-		else if (WechatMessageUtil.MESSAtGE_IMAGE.equals(msgType)) {
-			respContent = "您发送的是图片消息！";
-		}
-		// 语音消息
-		else if (WechatMessageUtil.MESSAGE_VOICE.equals(msgType)) {
-			respContent = "您发送的是语音消息！";
-		}
-		// 图文消息
-		else if (WechatMessageUtil.MESSAGE_NEWS.equals(msgType)) {
-			respContent = "您发送的是图文消息！";
-		}
-		// 视频消息
-		else if (WechatMessageUtil.MESSAGE_VIDEO.equals(msgType)) {
-			respContent = "您发送的是视频消息！";
-		}
-		// 小视频消息
-		else if (WechatMessageUtil.MESSAGE_SHORTVIDEO.equals(msgType)) {
-			respContent = "您发送的是小视频消息！";
-		}
-		// 地理位置消息
-		else if (WechatMessageUtil.MESSAGE_LOCATION.equals(msgType)) {
-			respContent = "您发送的是地理位置消息！";
-		}
-		// 链接消息
-		else if (WechatMessageUtil.MESSAGE_LINK.equals(msgType)) {
-			respContent = "您发送的是链接消息！";
-		}
-		// 事件推送
-		else if (WechatMessageUtil.MESSAGE_EVENT.equals(msgType)) {
-			// 事件类型
-			String eventType = map.get("Event");
-			// 关注
-			if (eventType.equals(WechatMessageUtil.MESSAGE_EVENT_SUBSCRIBE)) {
-				String eventKey = map.get("EventKey");
-				if (!"".equals(eventKey)) {
-					qrCodeId = eventKey.split("qrscene_")[1];
-				} else {
-					respContent = "谢谢您的关注！";
+		try{
+			request.setCharacterEncoding("UTF-8"); 
+			response.setCharacterEncoding("UTF-8");
+			
+			logger.info("--------Start!----------");
+	
+			Map<String, String> map = WechatMessageUtil.xmlToMap(request);
+			String respContent = "未知的消息类型！";
+			String MSGType=WechatMessageUtil.MESSAGE_TEXT;
+			
+			String qrCodeId="";
+			
+			logger.info(JSON.toJSONString(map));
+			// 发送方帐号（一个OpenID）
+			String fromUserName = map.get("FromUserName");
+			// 开发者微信号
+			String toUserName = map.get("ToUserName");
+			// 消息类型
+			String msgType = map.get("MsgType");
+			// 默认回复一个"success"
+			String responseMessage = "";
+			
+			TextMessage textMessage = new TextMessage();
+			textMessage.setMsgType(MSGType);
+			textMessage.setToUserName(fromUserName);
+			textMessage.setFromUserName(toUserName);
+			textMessage.setCreateTime(System.currentTimeMillis());
+			textMessage.setFuncFlag(0);
+	
+			// 文本消息
+			if (WechatMessageUtil.MESSAGE_TEXT.equals(msgType)) {// 文本消息
+				respContent = "您发送的是文本消息！";
+			}
+			// 图片消息
+			else if (WechatMessageUtil.MESSAtGE_IMAGE.equals(msgType)) {
+				respContent = "您发送的是图片消息！";
+			}
+			// 语音消息
+			else if (WechatMessageUtil.MESSAGE_VOICE.equals(msgType)) {
+				respContent = "您发送的是语音消息！";
+			}
+			// 图文消息
+			else if (WechatMessageUtil.MESSAGE_NEWS.equals(msgType)) {
+				respContent = "您发送的是图文消息！";
+			}
+			// 视频消息
+			else if (WechatMessageUtil.MESSAGE_VIDEO.equals(msgType)) {
+				respContent = "您发送的是视频消息！";
+			}
+			// 小视频消息
+			else if (WechatMessageUtil.MESSAGE_SHORTVIDEO.equals(msgType)) {
+				respContent = "您发送的是小视频消息！";
+			}
+			// 地理位置消息
+			else if (WechatMessageUtil.MESSAGE_LOCATION.equals(msgType)) {
+				respContent = "您发送的是地理位置消息！";
+			}
+			// 链接消息
+			else if (WechatMessageUtil.MESSAGE_LINK.equals(msgType)) {
+				respContent = "您发送的是链接消息！";
+			}
+			// 事件推送
+			else if (WechatMessageUtil.MESSAGE_EVENT.equals(msgType)) {
+				// 事件类型
+				String eventType = map.get("Event");
+				// 关注
+				if (eventType.equals(WechatMessageUtil.MESSAGE_EVENT_SUBSCRIBE)) {
+					String eventKey = map.get("EventKey");
+					if (!"".equals(eventKey)) {
+						qrCodeId = eventKey.split("qrscene_")[1];
+					} else {
+						respContent = "谢谢您的关注！";
+					}
+					userService.bindWexin(fromUserName);
 				}
-				//WechatSubscribeService.processSubscribe(fromUserName, wx_pub, qrCodeId);
+				// 取消关注
+				else if (eventType
+						.equals(WechatMessageUtil.MESSAGE_EVENT_UNSUBSCRIBE)) {
+					// TODO 取消订阅后用户不会再收到公众账号发送的消息，因此不需要回复
+					userService.unbindWexin(fromUserName);
+				}
+	
+				// 扫描带参数二维码
+				if (eventType.equals(WechatMessageUtil.MESSAGE_EVENT_SCAN)) {
+					//doc_infomation=true;
+					qrCodeId = map.get("EventKey");
+				}
+				// 上报地理位置
+				else if (eventType
+						.equals(WechatMessageUtil.MESSAGE_EVENT_LOCATION_UP)) {
+					// TODO 处理上报地理位置事件
+				}
+				// 自定义菜单
+				else if (eventType.equals(WechatMessageUtil.MESSAGE_EVENT_CLICK)) {
+					
+				}
 			}
-			// 取消关注
-			else if (eventType
-					.equals(WechatMessageUtil.MESSAGE_EVENT_UNSUBSCRIBE)) {
-				// TODO 取消订阅后用户不会再收到公众账号发送的消息，因此不需要回复
-				//WechatSubscribeService.processUnsubscribe(fromUserName, wx_pub);
+			if (!StringUtils.isEmpty(respContent))
+			{
+				textMessage.setContent(respContent);
+				responseMessage = WechatMessageUtil.textMessageToXml(textMessage);
 			}
-
-			// 扫描带参数二维码
-			if (eventType.equals(WechatMessageUtil.MESSAGE_EVENT_SCAN)) {
-				//doc_infomation=true;
-				qrCodeId = map.get("EventKey");
-			}
-			// 上报地理位置
-			else if (eventType
-					.equals(WechatMessageUtil.MESSAGE_EVENT_LOCATION_UP)) {
-				// TODO 处理上报地理位置事件
-			}
-			// 自定义菜单
-			else if (eventType.equals(WechatMessageUtil.MESSAGE_EVENT_CLICK)) {
-				
-			}
+			logger.info(responseMessage);
+			
+			response.getWriter().print(responseMessage);
+			response.getWriter().flush();
+		}catch(Exception e)
+		{
+			logger.error("",e);
 		}
-
-		logger.info(responseMessage);
-
-		out.print(responseMessage);
-		out.flush();
 		logger.info("--------End!----------");
 
 	}
@@ -216,6 +238,12 @@ public class WexinController {
 				url=path+"report?"+parm;
 			}else if ("living".equals(state)) {
 				url=path+"living?"+parm;
+			}else if ("sick".equals(state)) {
+				url=path+"sick?"+parm;
+			}else if ("phy".equals(state)) {
+				url=path+"phy?"+parm;
+			}else if ("psy".equals(state)) {
+				url=path+"psy?"+parm;
 			}
 			return new ModelAndView(new RedirectView(url));
 		} catch (JSONException e) {

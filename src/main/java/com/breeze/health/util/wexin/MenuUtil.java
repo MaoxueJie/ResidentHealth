@@ -112,6 +112,9 @@ public class MenuUtil {
 	}
     
     private static void createMenu(){
+    	
+    	String path = "http://9vk892.natappfree.cc";
+    	
     	Menu menu = new Menu();
     	ComplexButton[] buttons = new ComplexButton[3];
     	ComplexButton button1 = new ComplexButton();
@@ -122,25 +125,25 @@ public class MenuUtil {
     	b1.setName("生活习惯");
     	b1.setType("view");
     	b1.setSub_button(new ComplexButton[0]);
-    	b1.setUrl("http://www.baidu.com");
+    	b1.setUrl(path+"/wechatMenu/living");
     	subbs1[0] = b1;
     	ComplexButton b2 = new ComplexButton();
     	b2.setName("生理指标");
     	b2.setType("view");
     	b2.setSub_button(new ComplexButton[0]);
-    	b2.setUrl("http://www.baidu.com");
+    	b2.setUrl(path+"/wechatMenu/phy");
     	subbs1[1] = b2;
     	ComplexButton b3 = new ComplexButton();
     	b3.setName("情绪认知");
     	b3.setType("view");
     	b3.setSub_button(new ComplexButton[0]);
-    	b3.setUrl("http://www.baidu.com");
+    	b3.setUrl(path+"/wechatMenu/psy");
     	subbs1[2] = b3;
     	ComplexButton b4 = new ComplexButton();
     	b4.setName("健康状况");
     	b4.setType("view");
     	b4.setSub_button(new ComplexButton[0]);
-    	b4.setUrl("http://www.baidu.com");
+    	b4.setUrl(path+"/wechatMenu/sick");
     	subbs1[3] = b4;
     	button1.setSub_button(subbs1);
     	buttons[0] = button1;
@@ -185,13 +188,13 @@ public class MenuUtil {
     	ssb1.setName("基本信息");
     	ssb1.setType("view");
     	ssb1.setSub_button(new ComplexButton[0]);
-    	ssb1.setUrl("http://gruvum.natappfree.cc/wechatMenu/base");
+    	ssb1.setUrl(path+"/wechatMenu/base");
     	subbs3[0] = ssb1;
     	ComplexButton ssb2 = new ComplexButton();
     	ssb2.setName("查看报告");
     	ssb2.setType("view");
     	ssb2.setSub_button(new ComplexButton[0]);
-    	ssb2.setUrl("http://www.baidu.com");
+    	ssb2.setUrl(path+"/wechatMenu/report");
     	subbs3[1] = ssb2;
     	button3.setSub_button(subbs3);
     	buttons[2] = button3;
@@ -201,8 +204,8 @@ public class MenuUtil {
     }
     
     //{"menu":{"button":[{"name":"中心介绍","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/h/introduce.html"},{"name":"推荐医生","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/h/drIntro.html"},{"name":"个人中心","sub_button":[{"name":"我的基本信息","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/BASEINFO"},{"name":"我的医生","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/DOC"},{"name":"我的提问","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/ASK"},{"name":"我的复诊","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/VISIT"},{"name":"我的指标","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/MEASURE"}]}]}}
-    /*public static void main(String args[])
+    public static void main(String args[])
     {
     	createMenu();
-    }*/
+    }
 }

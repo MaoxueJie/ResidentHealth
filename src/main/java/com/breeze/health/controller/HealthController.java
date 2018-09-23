@@ -17,35 +17,35 @@ import com.breeze.health.mapper.UserMapper;
 @SuppressWarnings("all")
 public class HealthController {
 	private static Logger logger = LoggerFactory.getLogger(HealthController.class);
-
+	//基本信息
 	@RequestMapping(value = "/base", method = {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView userInfo(){
 		ModelAndView view = new ModelAndView();
 		view.setViewName("user");
 		return view;
 	}
-	
+	//查看报告
 	@RequestMapping(value = "/report", method = {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView report(){
 		return null;
 	}
 	
-
+	//生活习惯
 	@RequestMapping(value = "/living", method = {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView living(){
 		return null;
 	}
-	
+	//健康状况
 	@RequestMapping(value = "/sick", method = {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView sick(){
 		return null;
 	}
-	
+	//生理指标
 	@RequestMapping(value = "/phy", method = {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView physiological(){
 		return null;
 	}
-	
+	//情绪认知（心理健康）
 	@RequestMapping(value = "/psy", method = {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView psychological(){
 		return null;

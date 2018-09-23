@@ -13,7 +13,8 @@ import org.springframework.context.annotation.Configuration;
 @SpringBootApplication
 @Configuration
 @ComponentScan(basePackages = {"com.breeze.health.controller",
-		"com.breeze.health.config"})
+		"com.breeze.health.config",
+		"com.breeze.health.service"})
 @MapperScan(basePackages = {"com.breeze.health.mapper"})
 public class WebApplicationStarter extends SpringBootServletInitializer {
 
