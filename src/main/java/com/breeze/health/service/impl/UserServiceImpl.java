@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.breeze.health.beans.vo.Result;
+import com.breeze.health.beans.vo.UserBaseInfoVo;
 import com.breeze.health.entity.User;
 import com.breeze.health.entity.WexinAccount;
 import com.breeze.health.entity.WexinAccountExample;
@@ -84,6 +85,18 @@ public class UserServiceImpl implements UserService{
 			ret.setMessage("解绑微信失败");
 		}
 		return ret;
+	}
+
+	@Override
+	public Result<Void> addOrUpdateBaseInfo(UserBaseInfoVo vo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Result<UserBaseInfoVo> getBaseInfo(Long userId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

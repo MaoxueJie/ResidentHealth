@@ -228,10 +228,9 @@ public class WexinController {
 		try {
 			jsonObj = new JSONObject(responseBady);
 			String openid = jsonObj.get("openid").toString();
-
+			request.getSession().setAttribute("openid", openid);
 			String url="";
-
-			String parm="openId="+openid+"&timestamp="+System.currentTimeMillis();//鍙傛暟
+			String parm="timestamp="+System.currentTimeMillis();//鍙傛暟
 			if ("base".equals(state)) {
 				url=path+"base?"+parm;
 			}else if ("report".equals(state)) {

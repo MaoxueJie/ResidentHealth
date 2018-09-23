@@ -1,5 +1,8 @@
 package com.breeze.health.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +22,11 @@ public class HealthController {
 	private static Logger logger = LoggerFactory.getLogger(HealthController.class);
 	//基本信息
 	@RequestMapping(value = "/base", method = {RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView userInfo(){
+	public ModelAndView userInfo(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView view = new ModelAndView();
+		
+		logger.info("openId="+request.getSession().getAttribute("openid"));
+		
 		view.setViewName("user");
 		return view;
 	}
