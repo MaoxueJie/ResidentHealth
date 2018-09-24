@@ -6,6 +6,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserPsychologicalAD8Vo;
@@ -23,6 +24,7 @@ import com.breeze.health.mapper.UserPsychologicalPHQ9Mapper;
 import com.breeze.health.service.PsyService;
 import com.breeze.health.util.BeanUtils;
 
+@Service("psyService")
 public class PsyServiceImpl implements PsyService{
 	private static Logger logger = LoggerFactory.getLogger(PsyServiceImpl.class);
 	
