@@ -73,7 +73,7 @@ public class HealthController {
 		try{
 			result = livingService.getLivingHabit(habit);
 		}catch (Exception e){
-			result = new Result<>();
+			result = new Result<UserLivingHabit>();
 			e.printStackTrace();
 		}
 		return result;
@@ -101,7 +101,7 @@ public class HealthController {
 		try{
 			result = livingService.getUserLivingMovement(movement);
 		}catch (Exception e){
-			result = new Result<>();
+			result = new Result<UserLivingMovement>();
 			e.printStackTrace();
 		}
 		return result;
@@ -129,7 +129,7 @@ public class HealthController {
 		try{
 			result = livingService.getUserLivingMeal(meal);
 		}catch (Exception e){
-			result = new Result<>();
+			result = new Result<UserLivingMeal>();
 			e.printStackTrace();
 		}
 		return result;
@@ -168,7 +168,7 @@ public class HealthController {
 		try{
 			result = livingService.getUserPhysiological(Phy);
 		}catch (Exception e){
-			result = new Result<>();
+			result = new Result<UserPhysiological>();
 			e.printStackTrace();
 		}
 		return result;
