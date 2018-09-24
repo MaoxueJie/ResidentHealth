@@ -1,7 +1,7 @@
 package com.breeze.health.entity;
 
 import java.util.Date;
-
+//运动
 public class UserLivingMovement {
     private Long id;
 

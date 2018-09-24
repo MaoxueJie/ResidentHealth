@@ -1,34 +1,21 @@
 package com.breeze.health.entity;
 
 import java.util.Date;
-
+//嗜好
 public class UserLivingHabit {
     private Long id;
-
     private Long userId;
-
     private Integer smoking;
-
     private Integer smokingVal1;
-
     private Integer smokingVal2;
-
     private Integer smokingVal3;
-
     private Integer smokingVal4;
-
     private Integer smokingAge;
-
     private Integer partnerSmoking;
-
     private Integer passiveSmoking;
-
     private Integer drinking;
-
     private Integer drinkingVal1;
-
     private String drinkingTypes;
-
     private Integer drinkingVal2;
 
     private Date createTime;
