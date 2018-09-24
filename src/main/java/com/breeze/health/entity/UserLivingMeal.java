@@ -1,40 +1,24 @@
 package com.breeze.health.entity;
 
 import java.util.Date;
-
+//饮食习惯
 public class UserLivingMeal {
     private Long id;
-
     private Long userId;
-
     private Integer meal;
-
     private Integer breakfast;
-
     private Integer extraMeal1;
-
     private Integer lunch;
-
     private Integer extraMeal2;
-
     private Integer dinner;
-
     private String mealDesc;
-
     private Integer alizarin;
-
     private Integer preference;
-
     private Integer sweets;
-
     private Integer fruit;
-
     private Integer sugaryDrink;
-
     private Date createTime;
-
     private Date updateTime;
-
     public Long getId() {
         return id;
     }

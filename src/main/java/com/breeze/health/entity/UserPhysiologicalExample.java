@@ -6,7 +6,15 @@ import java.util.List;
 
 public class UserPhysiologicalExample {
     protected String orderByClause;
+    protected String limit;
 
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;

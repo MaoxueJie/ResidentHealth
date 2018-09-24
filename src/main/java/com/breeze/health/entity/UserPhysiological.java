@@ -1,46 +1,31 @@
 package com.breeze.health.entity;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
+import java.util.Date;
+//相关指标
 public class UserPhysiological {
     private Long id;
-
     private Long userId;
-
     private Float height;
-
     private Float weight;
-
     private Float abdominalCircumference;
-
     private Float hipCircumference;
-
     private Integer heartRate;
-
     private Integer breatheRate;
-
     private Float temperature;
-
     private Float bloodPressure;
-
     private Integer measuringFrequency;
-
     private Integer bloodSugar;
-
     private Float bloodSugarMinValue;
-
     private Float bloodSugarMaxValue;
-
     private Integer bloodLipid;
-
     private Float bloodLipidValue;
-
     private Float uricAcid;
-
     private Float bloodOxygen;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
     private Date createTime;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
     private Date updateTime;
 
     public Long getId() {

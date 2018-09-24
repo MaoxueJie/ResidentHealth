@@ -6,6 +6,15 @@ import java.util.List;
 
 public class UserLivingMovementExample {
     protected String orderByClause;
+    protected String limit;//
+
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
 
     protected boolean distinct;
 
