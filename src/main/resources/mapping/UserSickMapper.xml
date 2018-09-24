@@ -30,7 +30,7 @@
     <result column="cataract_years" property="cataractYears" jdbcType="INTEGER" />
     <result column="others" property="others" jdbcType="VARCHAR" />
     <result column="antihypertensive_drug" property="antihypertensiveDrug" jdbcType="INTEGER" />
-    <result column="lipid lowering_drug" property="lipidLoweringDrug" jdbcType="INTEGER" />
+    <result column="lipid_lowering_drug" property="lipidLoweringDrug" jdbcType="INTEGER" />
     <result column="hypoglycemic_agents" property="hypoglycemicAgents" jdbcType="INTEGER" />
     <result column="antiplatelet_drug" property="antiplateletDrug" jdbcType="INTEGER" />
     <result column="grandfather" property="grandfather" jdbcType="VARCHAR" />
@@ -76,7 +76,7 @@
     cerebrovascular_disease, cerebrovascular_disease_years, chronic_gastritis, chronic_gastritis_years, 
     stomach_ulcer, stomach_ulcer_years, bronchial_asthma, bronchial_asthma_years, copd, 
     copd_years, osteoporosis, osteoporosis_years, glaucoma, glaucoma_years, cataract, 
-    cataract_years, others, antihypertensive_drug, "lipid lowering_drug", hypoglycemic_agents, 
+    cataract_years, others, antihypertensive_drug, lipid_lowering_drug, hypoglycemic_agents, 
     antiplatelet_drug, grandfather, grandmother, father, mother, brothers, create_time, 
     update_time
   </sql>
@@ -115,7 +115,7 @@
       copd, copd_years, osteoporosis, 
       osteoporosis_years, glaucoma, glaucoma_years, 
       cataract, cataract_years, others, 
-      antihypertensive_drug, "lipid lowering_drug", 
+      antihypertensive_drug, lipid_lowering_drug, 
       hypoglycemic_agents, antiplatelet_drug, grandfather, 
       grandmother, father, mother, 
       brothers, create_time, update_time
@@ -221,7 +221,7 @@
         antihypertensive_drug,
       </if>
       <if test="lipidLoweringDrug != null" >
-        "lipid lowering_drug",
+        lipid_lowering_drug,
       </if>
       <if test="hypoglycemicAgents != null" >
         hypoglycemic_agents,
@@ -456,7 +456,7 @@
         antihypertensive_drug = #{antihypertensiveDrug,jdbcType=INTEGER},
       </if>
       <if test="lipidLoweringDrug != null" >
-        "lipid lowering_drug" = #{lipidLoweringDrug,jdbcType=INTEGER},
+        lipid_lowering_drug = #{lipidLoweringDrug,jdbcType=INTEGER},
       </if>
       <if test="hypoglycemicAgents != null" >
         hypoglycemic_agents = #{hypoglycemicAgents,jdbcType=INTEGER},
@@ -517,7 +517,7 @@
       cataract_years = #{cataractYears,jdbcType=INTEGER},
       others = #{others,jdbcType=VARCHAR},
       antihypertensive_drug = #{antihypertensiveDrug,jdbcType=INTEGER},
-      "lipid lowering_drug" = #{lipidLoweringDrug,jdbcType=INTEGER},
+      lipid_lowering_drug = #{lipidLoweringDrug,jdbcType=INTEGER},
       hypoglycemic_agents = #{hypoglycemicAgents,jdbcType=INTEGER},
       antiplatelet_drug = #{antiplateletDrug,jdbcType=INTEGER},
       grandfather = #{grandfather,jdbcType=VARCHAR},

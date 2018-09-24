@@ -5,6 +5,7 @@
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="user_id" property="userId" jdbcType="BIGINT" />
     <result column="sick_id" property="sickId" jdbcType="BIGINT" />
+    <result column="phy_id" property="phyId" jdbcType="BIGINT" />
     <result column="meal_id" property="mealId" jdbcType="BIGINT" />
     <result column="movement_id" property="movementId" jdbcType="BIGINT" />
     <result column="habit_id" property="habitId" jdbcType="BIGINT" />
@@ -49,9 +50,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, user_id, sick_id, meal_id, movement_id, habit_id, ad8_id, gad7_id, phq9_id, sick_report, 
-    meal_report, movement_report, smoking_report, psychological_report, create_time, 
-    update_time
+    id, user_id, sick_id, phy_id, meal_id, movement_id, habit_id, ad8_id, gad7_id, phq9_id, 
+    sick_report, meal_report, movement_report, smoking_report, psychological_report, 
+    create_time, update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserHealthReportExample" >
     select
@@ -78,18 +79,18 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.breeze.health.entity.UserHealthReport" useGeneratedKeys="true" keyProperty="id" >
-    insert into t_user_health_report (user_id, sick_id, meal_id, 
-      movement_id, habit_id, ad8_id, 
-      gad7_id, phq9_id, sick_report, 
-      meal_report, movement_report, smoking_report, 
-      psychological_report, create_time, update_time
-      )
-    values (#{userId,jdbcType=BIGINT}, #{sickId,jdbcType=BIGINT}, #{mealId,jdbcType=BIGINT}, 
-      #{movementId,jdbcType=BIGINT}, #{habitId,jdbcType=BIGINT}, #{ad8Id,jdbcType=BIGINT}, 
-      #{gad7Id,jdbcType=BIGINT}, #{phq9Id,jdbcType=BIGINT}, #{sickReport,jdbcType=VARCHAR}, 
-      #{mealReport,jdbcType=VARCHAR}, #{movementReport,jdbcType=VARCHAR}, #{smokingReport,jdbcType=VARCHAR}, 
-      #{psychologicalReport,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-      )
+    insert into t_user_health_report (user_id, sick_id, phy_id, 
+      meal_id, movement_id, habit_id, 
+      ad8_id, gad7_id, phq9_id, 
+      sick_report, meal_report, movement_report, 
+      smoking_report, psychological_report, create_time, 
+      update_time)
+    values (#{userId,jdbcType=BIGINT}, #{sickId,jdbcType=BIGINT}, #{phyId,jdbcType=BIGINT}, 
+      #{mealId,jdbcType=BIGINT}, #{movementId,jdbcType=BIGINT}, #{habitId,jdbcType=BIGINT}, 
+      #{ad8Id,jdbcType=BIGINT}, #{gad7Id,jdbcType=BIGINT}, #{phq9Id,jdbcType=BIGINT}, 
+      #{sickReport,jdbcType=VARCHAR}, #{mealReport,jdbcType=VARCHAR}, #{movementReport,jdbcType=VARCHAR}, 
+      #{smokingReport,jdbcType=VARCHAR}, #{psychologicalReport,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserHealthReport" useGeneratedKeys="true" keyProperty="id" >
     insert into t_user_health_report
@@ -99,6 +100,9 @@
       </if>
       <if test="sickId != null" >
         sick_id,
+      </if>
+      <if test="phyId != null" >
+        phy_id,
       </if>
       <if test="mealId != null" >
         meal_id,
@@ -146,6 +150,9 @@
       </if>
       <if test="sickId != null" >
         #{sickId,jdbcType=BIGINT},
+      </if>
+      <if test="phyId != null" >
+        #{phyId,jdbcType=BIGINT},
       </if>
       <if test="mealId != null" >
         #{mealId,jdbcType=BIGINT},
@@ -203,6 +210,9 @@
       <if test="sickId != null" >
         sick_id = #{sickId,jdbcType=BIGINT},
       </if>
+      <if test="phyId != null" >
+        phy_id = #{phyId,jdbcType=BIGINT},
+      </if>
       <if test="mealId != null" >
         meal_id = #{mealId,jdbcType=BIGINT},
       </if>
@@ -249,6 +259,7 @@
     update t_user_health_report
     set user_id = #{userId,jdbcType=BIGINT},
       sick_id = #{sickId,jdbcType=BIGINT},
+      phy_id = #{phyId,jdbcType=BIGINT},
       meal_id = #{mealId,jdbcType=BIGINT},
       movement_id = #{movementId,jdbcType=BIGINT},
       habit_id = #{habitId,jdbcType=BIGINT},

@@ -1796,62 +1796,62 @@ public class UserSickExample {
         }
 
         public Criteria andLipidLoweringDrugIsNull() {
-            addCriterion("\"lipid lowering_drug\" is null");
+            addCriterion("lipid_lowering_drug is null");
             return (Criteria) this;
         }
 
         public Criteria andLipidLoweringDrugIsNotNull() {
-            addCriterion("\"lipid lowering_drug\" is not null");
+            addCriterion("lipid_lowering_drug is not null");
             return (Criteria) this;
         }
 
         public Criteria andLipidLoweringDrugEqualTo(Integer value) {
-            addCriterion("\"lipid lowering_drug\" =", value, "lipidLoweringDrug");
+            addCriterion("lipid_lowering_drug =", value, "lipidLoweringDrug");
             return (Criteria) this;
         }
 
         public Criteria andLipidLoweringDrugNotEqualTo(Integer value) {
-            addCriterion("\"lipid lowering_drug\" <>", value, "lipidLoweringDrug");
+            addCriterion("lipid_lowering_drug <>", value, "lipidLoweringDrug");
             return (Criteria) this;
         }
 
         public Criteria andLipidLoweringDrugGreaterThan(Integer value) {
-            addCriterion("\"lipid lowering_drug\" >", value, "lipidLoweringDrug");
+            addCriterion("lipid_lowering_drug >", value, "lipidLoweringDrug");
             return (Criteria) this;
         }
 
         public Criteria andLipidLoweringDrugGreaterThanOrEqualTo(Integer value) {
-            addCriterion("\"lipid lowering_drug\" >=", value, "lipidLoweringDrug");
+            addCriterion("lipid_lowering_drug >=", value, "lipidLoweringDrug");
             return (Criteria) this;
         }
 
         public Criteria andLipidLoweringDrugLessThan(Integer value) {
-            addCriterion("\"lipid lowering_drug\" <", value, "lipidLoweringDrug");
+            addCriterion("lipid_lowering_drug <", value, "lipidLoweringDrug");
             return (Criteria) this;
         }
 
         public Criteria andLipidLoweringDrugLessThanOrEqualTo(Integer value) {
-            addCriterion("\"lipid lowering_drug\" <=", value, "lipidLoweringDrug");
+            addCriterion("lipid_lowering_drug <=", value, "lipidLoweringDrug");
             return (Criteria) this;
         }
 
         public Criteria andLipidLoweringDrugIn(List<Integer> values) {
-            addCriterion("\"lipid lowering_drug\" in", values, "lipidLoweringDrug");
+            addCriterion("lipid_lowering_drug in", values, "lipidLoweringDrug");
             return (Criteria) this;
         }
 
         public Criteria andLipidLoweringDrugNotIn(List<Integer> values) {
-            addCriterion("\"lipid lowering_drug\" not in", values, "lipidLoweringDrug");
+            addCriterion("lipid_lowering_drug not in", values, "lipidLoweringDrug");
             return (Criteria) this;
         }
 
         public Criteria andLipidLoweringDrugBetween(Integer value1, Integer value2) {
-            addCriterion("\"lipid lowering_drug\" between", value1, value2, "lipidLoweringDrug");
+            addCriterion("lipid_lowering_drug between", value1, value2, "lipidLoweringDrug");
             return (Criteria) this;
         }
 
         public Criteria andLipidLoweringDrugNotBetween(Integer value1, Integer value2) {
-            addCriterion("\"lipid lowering_drug\" not between", value1, value2, "lipidLoweringDrug");
+            addCriterion("lipid_lowering_drug not between", value1, value2, "lipidLoweringDrug");
             return (Criteria) this;
         }
 

@@ -645,6 +645,66 @@ public class UserPsychologicalGAD7Example {
             return (Criteria) this;
         }
 
+        public Criteria andAffectIsNull() {
+            addCriterion("affect is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAffectIsNotNull() {
+            addCriterion("affect is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAffectEqualTo(Integer value) {
+            addCriterion("affect =", value, "affect");
+            return (Criteria) this;
+        }
+
+        public Criteria andAffectNotEqualTo(Integer value) {
+            addCriterion("affect <>", value, "affect");
+            return (Criteria) this;
+        }
+
+        public Criteria andAffectGreaterThan(Integer value) {
+            addCriterion("affect >", value, "affect");
+            return (Criteria) this;
+        }
+
+        public Criteria andAffectGreaterThanOrEqualTo(Integer value) {
+            addCriterion("affect >=", value, "affect");
+            return (Criteria) this;
+        }
+
+        public Criteria andAffectLessThan(Integer value) {
+            addCriterion("affect <", value, "affect");
+            return (Criteria) this;
+        }
+
+        public Criteria andAffectLessThanOrEqualTo(Integer value) {
+            addCriterion("affect <=", value, "affect");
+            return (Criteria) this;
+        }
+
+        public Criteria andAffectIn(List<Integer> values) {
+            addCriterion("affect in", values, "affect");
+            return (Criteria) this;
+        }
+
+        public Criteria andAffectNotIn(List<Integer> values) {
+            addCriterion("affect not in", values, "affect");
+            return (Criteria) this;
+        }
+
+        public Criteria andAffectBetween(Integer value1, Integer value2) {
+            addCriterion("affect between", value1, value2, "affect");
+            return (Criteria) this;
+        }
+
+        public Criteria andAffectNotBetween(Integer value1, Integer value2) {
+            addCriterion("affect not between", value1, value2, "affect");
+            return (Criteria) this;
+        }
+
         public Criteria andScoreIsNull() {
             addCriterion("score is null");
             return (Criteria) this;

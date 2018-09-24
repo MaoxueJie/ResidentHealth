@@ -36,6 +36,8 @@ import com.alibaba.fastjson.JSONException;
 import com.breeze.health.WebApplicationStarter;
 import com.breeze.health.config.Config;
 import com.breeze.health.config.WexinConfig;
+import com.breeze.health.beans.vo.Result;
+import com.breeze.health.beans.vo.UserVo;
 import com.breeze.health.beans.weixin.resp.Article;
 import com.breeze.health.beans.weixin.resp.NewsMessage;
 import com.breeze.health.beans.weixin.resp.TextMessage;
@@ -228,21 +230,31 @@ public class WexinController {
 		try {
 			jsonObj = new JSONObject(responseBady);
 			String openid = jsonObj.get("openid").toString();
-			request.getSession().setAttribute("openid", openid);
+
 			String url="";
-			String parm="timestamp="+System.currentTimeMillis();//鍙傛暟
-			if ("base".equals(state)) {
-				url=path+"base?"+parm;
-			}else if ("report".equals(state)) {
-				url=path+"report?"+parm;
-			}else if ("living".equals(state)) {
-				url=path+"living?"+parm;
-			}else if ("sick".equals(state)) {
-				url=path+"sick?"+parm;
-			}else if ("phy".equals(state)) {
-				url=path+"phy?"+parm;
-			}else if ("psy".equals(state)) {
-				url=path+"psy?"+parm;
+			
+			Result<UserVo> userRet = userService.getUserByOpenId(openid);
+			if (userRet.isSuccess())
+			{
+				request.getSession().setAttribute("openid", openid);
+				request.getSession().setAttribute("user", userRet.getData());
+				String parm="timestamp="+System.currentTimeMillis();//鍙傛暟
+				if ("base".equals(state)) {
+					url=path+"base?"+parm;
+				}else if ("report".equals(state)) {
+					url=path+"report?"+parm;
+				}else if ("living".equals(state)) {
+					url=path+"living?"+parm;
+				}else if ("sick".equals(state)) {
+					url=path+"sick?"+parm;
+				}else if ("phy".equals(state)) {
+					url=path+"phy?"+parm;
+				}else if ("psy".equals(state)) {
+					url=path+"psy?"+parm;
+				}
+			}else
+			{
+				url=path+"error";
 			}
 			return new ModelAndView(new RedirectView(url));
 		} catch (JSONException e) {

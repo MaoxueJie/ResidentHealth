@@ -9,6 +9,8 @@ public class UserHealthReport {
 
     private Long sickId;
 
+    private Long phyId;
+
     private Long mealId;
 
     private Long movementId;
@@ -57,6 +59,14 @@ public class UserHealthReport {
 
     public void setSickId(Long sickId) {
         this.sickId = sickId;
+    }
+
+    public Long getPhyId() {
+        return phyId;
+    }
+
+    public void setPhyId(Long phyId) {
+        this.phyId = phyId;
     }
 
     public Long getMealId() {

@@ -285,6 +285,66 @@ public class UserHealthReportExample {
             return (Criteria) this;
         }
 
+        public Criteria andPhyIdIsNull() {
+            addCriterion("phy_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhyIdIsNotNull() {
+            addCriterion("phy_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhyIdEqualTo(Long value) {
+            addCriterion("phy_id =", value, "phyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhyIdNotEqualTo(Long value) {
+            addCriterion("phy_id <>", value, "phyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhyIdGreaterThan(Long value) {
+            addCriterion("phy_id >", value, "phyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhyIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("phy_id >=", value, "phyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhyIdLessThan(Long value) {
+            addCriterion("phy_id <", value, "phyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhyIdLessThanOrEqualTo(Long value) {
+            addCriterion("phy_id <=", value, "phyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhyIdIn(List<Long> values) {
+            addCriterion("phy_id in", values, "phyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhyIdNotIn(List<Long> values) {
+            addCriterion("phy_id not in", values, "phyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhyIdBetween(Long value1, Long value2) {
+            addCriterion("phy_id between", value1, value2, "phyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhyIdNotBetween(Long value1, Long value2) {
+            addCriterion("phy_id not between", value1, value2, "phyId");
+            return (Criteria) this;
+        }
+
         public Criteria andMealIdIsNull() {
             addCriterion("meal_id is null");
             return (Criteria) this;

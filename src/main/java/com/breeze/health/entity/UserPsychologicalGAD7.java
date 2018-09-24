@@ -21,6 +21,8 @@ public class UserPsychologicalGAD7 {
 
     private Integer q7;
 
+    private Integer affect;
+
     private Integer score;
 
     private Date createTime;
@@ -97,6 +99,14 @@ public class UserPsychologicalGAD7 {
 
     public void setQ7(Integer q7) {
         this.q7 = q7;
+    }
+
+    public Integer getAffect() {
+        return affect;
+    }
+
+    public void setAffect(Integer affect) {
+        this.affect = affect;
     }
 
     public Integer getScore() {
