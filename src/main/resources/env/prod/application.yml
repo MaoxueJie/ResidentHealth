@@ -1,5 +1,5 @@
 app:
-    basepath: http://gruvum.natappfree.cc
+    basepath: http://119.27.164.126/8000
 server:
     port: 8000
   
@@ -27,7 +27,7 @@ spring:
     mvc:
         view:
             prefix: /WEB-INF/views/
-            suffix: .jsp
+            suffix: .html
             
 mybatis:
     mapper-locations: classpath:mapping/*.xml
