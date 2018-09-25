@@ -65,14 +65,14 @@ public class HealthController {
 	@ResponseBody
 	public Result<UserBaseInfoVo> getUserInfo(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		return userService.getBaseInfo(user.getId());
+		return userService.getBaseInfo(1l);
 	}
 	
 	@RequestMapping(value = "/base/add", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	public Result<Void> addUserInfo(HttpServletRequest request, HttpServletResponse response,UserBaseInfoVo vo){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		vo.setUserId(user.getId());
+		vo.setUserId(1l);
 		return userService.addOrUpdateBaseInfo(vo);
 	}
 	
@@ -81,7 +81,7 @@ public class HealthController {
 	@ResponseBody
 	public Result<UserReportVo> getReport(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		return reportService.getReprot(user.getId());
+		return reportService.getReprot(1l);
 	}
 	
 	//生活习惯
@@ -91,11 +91,12 @@ public class HealthController {
 	}
 
 	//保存生活习惯--嗜好
-	@RequestMapping(value="/living/addHabit")
+	@RequestMapping(value="/living/habit/add")
 	@ResponseBody
 	public Result<String> saveHabit(UserLivingHabit habit){
 		Result<String> result = null;
 		try{
+			habit.setUserId(1l);
 			result = livingService.addLivingHabit(habit);
 		}catch (Exception e){
 			logger.error("保存生活习惯--嗜好习惯发生异常,{}",e.getMessage());
@@ -105,11 +106,12 @@ public class HealthController {
 		return result;
 	}
 	//获取最近一条嗜好
-	@RequestMapping(value="/living/getHabit")
+	@RequestMapping(value="/living/habit/get")
 	@ResponseBody
 	public Result<UserLivingHabit> getUserLivingHabit(UserLivingHabit habit){
 		Result<UserLivingHabit> result = null;
 		try{
+			habit.setUserId(1l);
 			result = livingService.getLivingHabit(habit);
 		}catch (Exception e){
 			result = new Result<UserLivingHabit>();
@@ -119,11 +121,12 @@ public class HealthController {
 	}
 
 	//保存生活习惯--运动
-	@RequestMapping(value="/living/addMovement")
+	@RequestMapping(value="/living/movement/add")
 	@ResponseBody
 	public Result<String> saveMovement(UserLivingMovement movement){
 		Result<String> result = null;
 		try{
+			movement.setUserId(1l);
 			result = livingService.addLivingMovement(movement);
 		}catch (Exception e){
 			logger.error("保存生活习惯--运动习惯发生异常,{}",e.getMessage());
@@ -133,11 +136,12 @@ public class HealthController {
 		return result;
 	}
 	//获取最近一条运动
-	@RequestMapping(value="/living/getMovement")
+	@RequestMapping(value="/living/movement/get")
 	@ResponseBody
 	public Result<UserLivingMovement> getUserLivingMovement(UserLivingMovement movement){
 		Result<UserLivingMovement> result = null;
 		try{
+			movement.setUserId(1l);
 			result = livingService.getUserLivingMovement(movement);
 		}catch (Exception e){
 			result = new Result<UserLivingMovement>();
@@ -147,11 +151,12 @@ public class HealthController {
 	}
 
 	//保存生活习惯--饮食
-	@RequestMapping(value="/living/addMeal")
+	@RequestMapping(value="/living/meal/add")
 	@ResponseBody
 	public Result<String> saveMovement(UserLivingMeal meal){
 		Result<String> result = null;
 		try{
+			meal.setUserId(1l);
 			result = livingService.addUserLivingMeal(meal);
 		}catch (Exception e){
 			logger.error("保存生活习惯--饮食习惯发生异常,{}",e.getMessage());
@@ -161,11 +166,12 @@ public class HealthController {
 		return result;
 	}
 	//获取最近一条饮食
-	@RequestMapping(value="/living/getMeal")
+	@RequestMapping(value="/living/meal/get")
 	@ResponseBody
 	public Result<UserLivingMeal> getUserLivingMeal(UserLivingMeal meal){
 		Result<UserLivingMeal> result = null;
 		try{
+			meal.setUserId(1l);
 			result = livingService.getUserLivingMeal(meal);
 		}catch (Exception e){
 			result = new Result<UserLivingMeal>();
@@ -184,7 +190,7 @@ public class HealthController {
 	@RequestMapping(value = "/sick/get", method = {RequestMethod.GET,RequestMethod.POST})
 	public Result<UserSickVo> getSick(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		return sickService.getSick(user.getId());
+		return sickService.getSick(1l);
 	}
 	
 	//健康状况
@@ -192,7 +198,7 @@ public class HealthController {
 	@ResponseBody
 	public Result<Void> addSick(HttpServletRequest request, HttpServletResponse response,UserSickVo vo){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		vo.setUserId(user.getId());
+		vo.setUserId(1l);
 		return sickService.addOrUpdateSick(vo);
 	}
 	//生理指标
@@ -202,11 +208,12 @@ public class HealthController {
 	}
 
 	//保存生理指标--相关指标
-	@RequestMapping(value="/phy/addPhy")
+	@RequestMapping(value="/phy/add")
 	@ResponseBody
 	public Result<String> savePhy(UserPhysiological Phy){
 		Result<String> result = null;
 		try{
+			Phy.setUserId(1l);
 			result = livingService.addUserPhysiological(Phy);
 		}catch (Exception e){
 			logger.error("保存生理指标--相关指标发生异常,{}",e.getMessage());
@@ -216,11 +223,12 @@ public class HealthController {
 		return result;
 	}
 	//获取最近一条生理指标--相关指标
-	@RequestMapping(value="/phy/getPhy")
+	@RequestMapping(value="/phy/get")
 	@ResponseBody
 	public Result<UserPhysiological> getPhy(UserPhysiological Phy){
 		Result<UserPhysiological> result = null;
 		try{
+			Phy.setUserId(1l);
 			result = livingService.getUserPhysiological(Phy);
 		}catch (Exception e){
 			result = new Result<UserPhysiological>();
@@ -238,39 +246,39 @@ public class HealthController {
 	@RequestMapping(value = "/psy/ad8/add", method = {RequestMethod.GET,RequestMethod.POST})
 	public Result<Void> addPsychologicalAD8(HttpServletRequest request, HttpServletResponse response,UserPsychologicalAD8Vo vo){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		vo.setUserId(user.getId());
+		vo.setUserId(1l);
 		return psyService.addOrUpdatePsyAD8(vo);
 	}
 	
 	@RequestMapping(value = "/psy/ad8/get", method = {RequestMethod.GET,RequestMethod.POST})
 	public Result<UserPsychologicalAD8Vo> getPsychologicalAD8(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		return psyService.getPsyAd8(user.getId());
+		return psyService.getPsyAd8(1l);
 	}
 	
 	@RequestMapping(value = "/psy/gad7/add", method = {RequestMethod.GET,RequestMethod.POST})
 	public Result<Void> addPsychologicalGAD7(HttpServletRequest request, HttpServletResponse response,UserPsychologicalGAD7Vo vo){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		vo.setUserId(user.getId());
+		vo.setUserId(1l);
 		return psyService.addOrUpdatePsyGAD7(vo);
 	}
 	
 	@RequestMapping(value = "/psy/gad7/get", method = {RequestMethod.GET,RequestMethod.POST})
 	public Result<UserPsychologicalGAD7Vo> getPsychologicalGAD7(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		return psyService.getPsyGAD7(user.getId());
+		return psyService.getPsyGAD7(1l);
 	}
 	
 	@RequestMapping(value = "/psy/phq9/add", method = {RequestMethod.GET,RequestMethod.POST})
 	public Result<Void> addPsychologicalPHQ9(HttpServletRequest request, HttpServletResponse response,UserPsychologicalPHQ9Vo vo){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		vo.setUserId(user.getId());
+		vo.setUserId(1l);
 		return psyService.addOrUpdatePsyPHQ9(vo);
 	}
 	
 	@RequestMapping(value = "/psy/phq9/get", method = {RequestMethod.GET,RequestMethod.POST})
 	public Result<UserPsychologicalPHQ9Vo> getPsychologicalPHQ9(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		return psyService.getPsyPHQ9(user.getId());
+		return psyService.getPsyPHQ9(1l);
 	}
 }
