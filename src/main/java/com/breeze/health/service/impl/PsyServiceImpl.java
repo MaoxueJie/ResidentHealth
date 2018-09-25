@@ -103,6 +103,7 @@ public class PsyServiceImpl implements PsyService{
 		try{
 			UserPsychologicalAD8Example example = new UserPsychologicalAD8Example();
 			example.createCriteria().andUserIdEqualTo(userId);
+			example.setOrderByClause("id desc");
 			List<UserPsychologicalAD8> ad8s = userPsychologicalAD8Mapper.selectByExample(example);
 			if (ad8s!= null && ad8s.size()>0)
 			{
