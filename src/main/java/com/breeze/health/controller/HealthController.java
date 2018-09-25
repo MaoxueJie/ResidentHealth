@@ -28,6 +28,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.support.TransactionTemplate;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -237,6 +238,13 @@ public class HealthController {
 		return result;
 	}
 
+	
+	//情绪认知（心理健康）
+	@RequestMapping(value = "/{file}", method = {RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView psychological(@PathVariable String file){
+		return new ModelAndView(file);
+	}
+	
 	//情绪认知（心理健康）
 	@RequestMapping(value = "/psy", method = {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView psychological(){
