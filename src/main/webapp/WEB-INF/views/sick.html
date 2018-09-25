@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title>健康状况</title>
+	<!-- 引入 WeUI -->
+	<link rel="stylesheet" href="./css/weui.css"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<script src="./js/zepto.min.js"></script>
+	<!-- <script src="./js/jweixin-1.0.0.js"></script> -->
+	<script src="./js/weui.js"></script>
+	<script src="./js/questionnaire.js"></script>
+</head>
+<body ontouchstart>
+	<div class="page">
+		<form action="">
+			
+			<div class="page__bd_spacing">
+				<h2 class="page__title">健康状况调查</h2>
+			</div>
+			
+			<div class="weui-cells__title">是否患有高血压病？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="highBloodPressure1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="highBloodPressure" id="highBloodPressure1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="highBloodPressure2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="highBloodPressure" class="weui-check" id="highBloodPressure2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">病程</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="highBloodPressureYears" placeholder="几年">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">是否患有冠心病？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="coronaryHeartDisease1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="coronaryHeartDisease" id="coronaryHeartDisease1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="coronaryHeartDisease2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="coronaryHeartDisease" class="weui-check" id="coronaryHeartDisease2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">病程</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="coronaryHeartDiseaseYears" placeholder="几年">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">是否患有高脂血症？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="hyperlipidemia1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="gender" id="hyperlipidemia1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="hyperlipidemia2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="gender" class="weui-check" id="hyperlipidemia2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">病程</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="hyperlipidemiaYears" placeholder="几年">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">是否患有糖尿病？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="diabetes1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="diabetes" id="diabetes1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="diabetes2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="diabetes" class="weui-check" id="diabetes2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">病程</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="diabetesYears" placeholder="几年">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">是否患有脑血管疾病？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="cerebrovascularDisease1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="cerebrovascularDisease" id="cerebrovascularDisease1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="cerebrovascularDisease2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="cerebrovascularDisease" class="weui-check" id="cerebrovascularDisease2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">病程</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="cerebrovascularDiseaseYears" placeholder="几年">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">是否患有慢性胃炎？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="chronicGastritis1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="chronicGastritis" id="chronicGastritis1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="chronicGastritis2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="chronicGastritis" class="weui-check" id="chronicGastritis2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">病程</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="chronicGastritisYears" placeholder="几年">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">是否患有胃溃疡？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="stomachUlcer1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="stomachUlcer" id="stomachUlcer1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="stomachUlcer2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="stomachUlcer" class="weui-check" id="stomachUlcer2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">病程</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="stomachUlcerYears" placeholder="几年">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">是否患有支气管哮喘？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="bronchialAsthma1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="bronchialAsthma" id="bronchialAsthma1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bronchialAsthma2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bronchialAsthma" class="weui-check" id="bronchialAsthma2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">病程</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="familyDesc" placeholder="几年">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">是否患有COPD？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="copd1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="copd" id="copd1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="copd2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="copd" class="weui-check" id="copd2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">病程</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="copdYears" placeholder="几年">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">是否患有骨质疏松症？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="osteoporosis1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="osteoporosis" id="osteoporosis1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="osteoporosis2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="osteoporosis" class="weui-check" id="osteoporosis2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">病程</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="osteoporosisYears" placeholder="几年">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">是否患有青光眼？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="glaucoma1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="glaucoma" id="glaucoma1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="glaucoma2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="glaucoma" class="weui-check" id="glaucoma2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">病程</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="glaucomaYears" placeholder="几年">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">是否患有白内障？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="cataract1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="cataract" id="cataract1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="cataract2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="cataract" class="weui-check" id="cataract2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">病程</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="cataractYears" placeholder="几年">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">其他</div>
+			<div class="weui-cells">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="others[]" placeholder="描述病症及病程">
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="others[]" placeholder="描述病症及病程">
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="others[]" placeholder="描述病症及病程">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">是否服用过抗高血压药？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="antihypertensiveDrug1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="antihypertensiveDrug" id="antihypertensiveDrug1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="antihypertensiveDrug2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="antihypertensiveDrug" class="weui-check" id="antihypertensiveDrug2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">是否服用过降脂药？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="lipidLoweringDrug1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="lipidLoweringDrug" id="lipidLoweringDrug1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="lipidLoweringDrug2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="lipidLoweringDrug" class="weui-check" id="lipidLoweringDrug2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">是否服用过降糖药？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="hypoglycemicAgents1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="hypoglycemicAgents" id="hypoglycemicAgents1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="hypoglycemicAgents2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="hypoglycemicAgents" class="weui-check" id="hypoglycemicAgents2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">是否服用过抗血小板药？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="antiplateletDrug1">
+					<div class="weui-cell__bd">
+						<p>否</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="antiplateletDrug" id="antiplateletDrug1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="antiplateletDrug2">
+
+					<div class="weui-cell__bd">
+						<p>是</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="antiplateletDrug" class="weui-check" id="antiplateletDrug2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+			
+			<div class="weui-cells__title">您的家人是否患有高血压?</div>
+			<div class="weui-cells weui-cells_checkbox">
+				<label class="weui-cell weui-check__label" for="gxy1">
+					<div class="weui-cell__hd">
+						<input type="checkbox" class="weui-check" name="yaogxy" id="gxy1" checked="checked">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>祖父/外祖父</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="gxy2">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaogxy" class="weui-check" id="gxy2">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>祖母/外祖母</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="gxy3">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaogxy" class="weui-check" id="gxy3">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>父亲</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="gxy4">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaogxy" class="weui-check" id="gxy4">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>母亲</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="gxy5">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaogxy" class="weui-check" id="gxy5">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>兄弟/姐妹</p>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">您的家人是否患有糖尿病?</div>
+			<div class="weui-cells weui-cells_checkbox">
+				<label class="weui-cell weui-check__label" for="tnb1">
+					<div class="weui-cell__hd">
+						<input type="checkbox" class="weui-check" name="yaotnb" id="tnb1" checked="checked">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>祖父/外祖父</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tnb2">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaotnb" class="weui-check" id="tnb2">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>祖母/外祖母</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tnb3">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaotnb" class="weui-check" id="tnb3">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>父亲</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tnb4">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaotnb" class="weui-check" id="tnb4">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>母亲</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tnb5">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaotnb" class="weui-check" id="tnb5">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>兄弟/姐妹</p>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">您的家人是否患有冠心病?</div>
+			<div class="weui-cells weui-cells_checkbox">
+				<label class="weui-cell weui-check__label" for="gxb1">
+					<div class="weui-cell__hd">
+						<input type="checkbox" class="weui-check" name="yaogxb" id="gxb1" checked="checked">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>祖父/外祖父</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="gxb2">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaogxb" class="weui-check" id="gxb2">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>祖母/外祖母</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="gxb3">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaogxb" class="weui-check" id="gxb3">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>父亲</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="gxb4">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaogxb" class="weui-check" id="gxb4">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>母亲</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="gxb5">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaogxb" class="weui-check" id="gxb5">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>兄弟/姐妹</p>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">您的家人是否患有脑卒中?</div>
+			<div class="weui-cells weui-cells_checkbox">
+				<label class="weui-cell weui-check__label" for="ncz1">
+					<div class="weui-cell__hd">
+						<input type="checkbox" class="weui-check" name="yaoncz" id="ncz1" checked="checked">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>祖父/外祖父</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="ncz2">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaoncz" class="weui-check" id="ncz2">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>祖母/外祖母</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="ncz3">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaoncz" class="weui-check" id="ncz3">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>父亲</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="ncz4">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaoncz" class="weui-check" id="ncz4">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>母亲</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="ncz5">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaoncz" class="weui-check" id="ncz5">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>兄弟/姐妹</p>
+					</div>
+				</label>
+			</div>
+			<div class="align_center mt30">
+				<a class="weui-btn btn-primary" id="submitBtn" href="javascript:;">提交</a>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

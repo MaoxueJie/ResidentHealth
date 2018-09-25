@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title>生理指标</title>
+	<!-- 引入 WeUI -->
+	<link rel="stylesheet" href="./css/weui.css"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<script src="./js/zepto.min.js"></script>
+	<!-- <script src="./js/jweixin-1.0.0.js"></script> -->
+	<script src="./js/weui.js"></script>
+	<script src="./js/questionnaire.js"></script>
+</head>
+<body ontouchstart>
+	<div class="page">
+		<form action="">
+			
+			<div class="page__bd_spacing">
+				<h2 class="page__title">生理指标调查</h2>
+			</div>
+
+			<div class="weui-cells__title">相关指标</div>
+			<div class="weui-cells weui-cells_form">
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">身高(cm)</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="height" type="number" placeholder="填写">
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">体重(kg)</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="weight" type="number" placeholder="填写">
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">BMI(kg/㎡)</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" id="bmi" disabled" value="">
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">腹围(cm)</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="abdominalCircumference" type="number" placeholder="填写">
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">臀围(cm)</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="hipCircumference" type="number" placeholder="填写">
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">心率(次/分)</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="heartRate" type="number" placeholder="填写">
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">呼吸(次/分)</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="breatheRate" type="number" placeholder="填写">
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">体温(℃)</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="temperature" type="number" placeholder="填写">
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">血压(mmHg)</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodPressure" type="number" placeholder="填写">
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="weui-cells__title">血压测量频率：</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="measuringFrequency1">
+					<div class="weui-cell__bd">
+						<p>从未测过</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="measuringFrequency" id="measuringFrequency1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="measuringFrequency2">
+					<div class="weui-cell__bd">
+						<p>偶尔测（每年少于2次）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="measuringFrequency" class="weui-check" id="measuringFrequency2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="measuringFrequency3">
+					<div class="weui-cell__bd">
+						<p>2-6个月1次</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="measuringFrequency" class="weui-check" id="measuringFrequency3" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="measuringFrequency4">
+					<div class="weui-cell__bd">
+						<p>每月1-4次</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="measuringFrequency" class="weui-check" id="measuringFrequency4" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="measuringFrequency5">
+					<div class="weui-cell__bd">
+						<p>每周1次以上</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="measuringFrequency" class="weui-check" id="measuringFrequency5" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">血糖测试频率：</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for=bloodSugar1">
+					<div class="weui-cell__bd">
+						<p>从未测过</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name=bloodSugar" id=bloodSugar1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for=bloodSugar2">
+					<div class="weui-cell__bd">
+						<p>体检测过（正常，过高、过低，不记得了）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name=bloodSugar" class="weui-check" id=bloodSugar2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for=bloodSugar3">
+					<div class="weui-cell__bd">
+						<p>经常监测</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name=bloodSugar" class="weui-check" id=bloodSugar3" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">血糖低值</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodSugarMinValue" type="number" placeholder="填写">
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">血糖高值</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodSugarMaxValue" type="number" placeholder="填写">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells__title">血脂测试频率：</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for=bloodLipid1">
+					<div class="weui-cell__bd">
+						<p>从未测过</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name=bloodLipid" id=bloodLipid1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for=bloodLipid2">
+					<div class="weui-cell__bd">
+						<p>体检测过（正常，过高、过低，不记得了）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name=bloodLipid" class="weui-check" id=bloodLipid2" value="2" checked="checked">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for=bloodLipid3">
+					<div class="weui-cell__bd">
+						<p>经常监测</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name=bloodLipid" class="weui-check" id=bloodLipid3" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">血脂值</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodLipidValue" type="number" placeholder="填写">
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells">
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">尿酸</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="uricAcid" type="number" placeholder="填写">
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">血氧值</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodOxygen" type="number" placeholder="填写">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="align_center mt30">
+				<a class="weui-btn btn-primary" id="submitBtn" href="javascript:;">提交</a>
+			</div>
+
+		</form>
+	</div>
+
+</body>
+</html>
