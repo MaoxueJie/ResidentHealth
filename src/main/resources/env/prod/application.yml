@@ -25,9 +25,9 @@ spring:
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
     mvc:
-        view:
-            prefix: /WEB-INF/views/
-            suffix: .html
+        static-path-pattern: /**
+    resources:
+        static-locations: classpath:/public/
             
 mybatis:
     mapper-locations: classpath:mapping/*.xml

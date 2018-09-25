@@ -54,7 +54,7 @@ public class HealthController {
 	//基本信息
 	@RequestMapping(value = "/base", method = {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView userInfo(HttpServletRequest request, HttpServletResponse response){
-		return new ModelAndView("user");
+		return new ModelAndView("base");
 	}
 	//查看报告
 	@RequestMapping(value = "/report", method = {RequestMethod.GET,RequestMethod.POST})
