@@ -252,6 +252,7 @@ public class HealthController {
 	}
 	
 	@RequestMapping(value = "/psy/ad8/add", method = {RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
 	public Result<Void> addPsychologicalAD8(HttpServletRequest request, HttpServletResponse response,UserPsychologicalAD8Vo vo){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
 		vo.setUserId(1l);
@@ -259,12 +260,14 @@ public class HealthController {
 	}
 	
 	@RequestMapping(value = "/psy/ad8/get", method = {RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
 	public Result<UserPsychologicalAD8Vo> getPsychologicalAD8(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
 		return psyService.getPsyAd8(1l);
 	}
 	
 	@RequestMapping(value = "/psy/gad7/add", method = {RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
 	public Result<Void> addPsychologicalGAD7(HttpServletRequest request, HttpServletResponse response,UserPsychologicalGAD7Vo vo){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
 		vo.setUserId(1l);
@@ -272,12 +275,14 @@ public class HealthController {
 	}
 	
 	@RequestMapping(value = "/psy/gad7/get", method = {RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
 	public Result<UserPsychologicalGAD7Vo> getPsychologicalGAD7(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
 		return psyService.getPsyGAD7(1l);
 	}
 	
 	@RequestMapping(value = "/psy/phq9/add", method = {RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
 	public Result<Void> addPsychologicalPHQ9(HttpServletRequest request, HttpServletResponse response,UserPsychologicalPHQ9Vo vo){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
 		vo.setUserId(1l);
@@ -285,6 +290,7 @@ public class HealthController {
 	}
 	
 	@RequestMapping(value = "/psy/phq9/get", method = {RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
 	public Result<UserPsychologicalPHQ9Vo> getPsychologicalPHQ9(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
 		return psyService.getPsyPHQ9(1l);

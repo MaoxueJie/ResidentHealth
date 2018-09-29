@@ -2,11 +2,14 @@ package com.breeze.health.beans.vo;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class UserBaseInfoVo {
 	private Long id;
 
     private Long userId;
 
+    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
     private Date birthday;
 
     private Integer gender;
