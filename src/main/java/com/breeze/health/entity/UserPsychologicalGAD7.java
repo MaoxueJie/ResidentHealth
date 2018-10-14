@@ -5,25 +5,25 @@ import java.util.Date;
 public class UserPsychologicalGAD7 {
     private Long id;
 
-    private Long userId;
+    private Long psyId;
 
-    private Integer q1;
+    private Integer gad7Q1;
 
-    private Integer q2;
+    private Integer gad7Q2;
 
-    private Integer q3;
+    private Integer gad7Q3;
 
-    private Integer q4;
+    private Integer gad7Q4;
 
-    private Integer q5;
+    private Integer gad7Q5;
 
-    private Integer q6;
+    private Integer gad7Q6;
 
-    private Integer q7;
+    private Integer gad7Q7;
 
-    private Integer affect;
+    private Integer gad7Affect;
 
-    private Integer score;
+    private Integer gad7Score;
 
     private Date createTime;
 
@@ -37,84 +37,84 @@ public class UserPsychologicalGAD7 {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getPsyId() {
+        return psyId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setPsyId(Long psyId) {
+        this.psyId = psyId;
     }
 
-    public Integer getQ1() {
-        return q1;
+    public Integer getGad7Q1() {
+        return gad7Q1;
     }
 
-    public void setQ1(Integer q1) {
-        this.q1 = q1;
+    public void setGad7Q1(Integer gad7Q1) {
+        this.gad7Q1 = gad7Q1;
     }
 
-    public Integer getQ2() {
-        return q2;
+    public Integer getGad7Q2() {
+        return gad7Q2;
     }
 
-    public void setQ2(Integer q2) {
-        this.q2 = q2;
+    public void setGad7Q2(Integer gad7Q2) {
+        this.gad7Q2 = gad7Q2;
     }
 
-    public Integer getQ3() {
-        return q3;
+    public Integer getGad7Q3() {
+        return gad7Q3;
     }
 
-    public void setQ3(Integer q3) {
-        this.q3 = q3;
+    public void setGad7Q3(Integer gad7Q3) {
+        this.gad7Q3 = gad7Q3;
     }
 
-    public Integer getQ4() {
-        return q4;
+    public Integer getGad7Q4() {
+        return gad7Q4;
     }
 
-    public void setQ4(Integer q4) {
-        this.q4 = q4;
+    public void setGad7Q4(Integer gad7Q4) {
+        this.gad7Q4 = gad7Q4;
     }
 
-    public Integer getQ5() {
-        return q5;
+    public Integer getGad7Q5() {
+        return gad7Q5;
     }
 
-    public void setQ5(Integer q5) {
-        this.q5 = q5;
+    public void setGad7Q5(Integer gad7Q5) {
+        this.gad7Q5 = gad7Q5;
     }
 
-    public Integer getQ6() {
-        return q6;
+    public Integer getGad7Q6() {
+        return gad7Q6;
     }
 
-    public void setQ6(Integer q6) {
-        this.q6 = q6;
+    public void setGad7Q6(Integer gad7Q6) {
+        this.gad7Q6 = gad7Q6;
     }
 
-    public Integer getQ7() {
-        return q7;
+    public Integer getGad7Q7() {
+        return gad7Q7;
     }
 
-    public void setQ7(Integer q7) {
-        this.q7 = q7;
+    public void setGad7Q7(Integer gad7Q7) {
+        this.gad7Q7 = gad7Q7;
     }
 
-    public Integer getAffect() {
-        return affect;
+    public Integer getGad7Affect() {
+        return gad7Affect;
     }
 
-    public void setAffect(Integer affect) {
-        this.affect = affect;
+    public void setGad7Affect(Integer gad7Affect) {
+        this.gad7Affect = gad7Affect;
     }
 
-    public Integer getScore() {
-        return score;
+    public Integer getGad7Score() {
+        return gad7Score;
     }
 
-    public void setScore(Integer score) {
-        this.score = score;
+    public void setGad7Score(Integer gad7Score) {
+        this.gad7Score = gad7Score;
     }
 
     public Date getCreateTime() {

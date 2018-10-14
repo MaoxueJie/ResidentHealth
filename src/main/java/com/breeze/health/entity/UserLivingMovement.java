@@ -1,11 +1,11 @@
 package com.breeze.health.entity;
 
 import java.util.Date;
-//运动
+
 public class UserLivingMovement {
     private Long id;
 
-    private Long userId;
+    private Long livingId;
 
     private Integer violentMovement;
 
@@ -39,12 +39,12 @@ public class UserLivingMovement {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getLivingId() {
+        return livingId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setLivingId(Long livingId) {
+        this.livingId = livingId;
     }
 
     public Integer getViolentMovement() {

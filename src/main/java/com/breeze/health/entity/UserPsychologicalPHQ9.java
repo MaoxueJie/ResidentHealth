@@ -5,29 +5,29 @@ import java.util.Date;
 public class UserPsychologicalPHQ9 {
     private Long id;
 
-    private Long userId;
+    private Long psyId;
 
-    private Integer q1;
+    private Integer phq9Q1;
 
-    private Integer q2;
+    private Integer phq9Q2;
 
-    private Integer q3;
+    private Integer phq9Q3;
 
-    private Integer q4;
+    private Integer phq9Q4;
 
-    private Integer q5;
+    private Integer phq9Q5;
 
-    private Integer q6;
+    private Integer phq9Q6;
 
-    private Integer q7;
+    private Integer phq9Q7;
 
-    private Integer q8;
+    private Integer phq9Q8;
 
-    private Integer q9;
+    private Integer phq9Q9;
 
-    private Integer affect;
+    private Integer phq9Affect;
 
-    private Integer score;
+    private Integer phq9Score;
 
     private Date createTime;
 
@@ -41,100 +41,100 @@ public class UserPsychologicalPHQ9 {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getPsyId() {
+        return psyId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setPsyId(Long psyId) {
+        this.psyId = psyId;
     }
 
-    public Integer getQ1() {
-        return q1;
+    public Integer getPhq9Q1() {
+        return phq9Q1;
     }
 
-    public void setQ1(Integer q1) {
-        this.q1 = q1;
+    public void setPhq9Q1(Integer phq9Q1) {
+        this.phq9Q1 = phq9Q1;
     }
 
-    public Integer getQ2() {
-        return q2;
+    public Integer getPhq9Q2() {
+        return phq9Q2;
     }
 
-    public void setQ2(Integer q2) {
-        this.q2 = q2;
+    public void setPhq9Q2(Integer phq9Q2) {
+        this.phq9Q2 = phq9Q2;
     }
 
-    public Integer getQ3() {
-        return q3;
+    public Integer getPhq9Q3() {
+        return phq9Q3;
     }
 
-    public void setQ3(Integer q3) {
-        this.q3 = q3;
+    public void setPhq9Q3(Integer phq9Q3) {
+        this.phq9Q3 = phq9Q3;
     }
 
-    public Integer getQ4() {
-        return q4;
+    public Integer getPhq9Q4() {
+        return phq9Q4;
     }
 
-    public void setQ4(Integer q4) {
-        this.q4 = q4;
+    public void setPhq9Q4(Integer phq9Q4) {
+        this.phq9Q4 = phq9Q4;
     }
 
-    public Integer getQ5() {
-        return q5;
+    public Integer getPhq9Q5() {
+        return phq9Q5;
     }
 
-    public void setQ5(Integer q5) {
-        this.q5 = q5;
+    public void setPhq9Q5(Integer phq9Q5) {
+        this.phq9Q5 = phq9Q5;
     }
 
-    public Integer getQ6() {
-        return q6;
+    public Integer getPhq9Q6() {
+        return phq9Q6;
     }
 
-    public void setQ6(Integer q6) {
-        this.q6 = q6;
+    public void setPhq9Q6(Integer phq9Q6) {
+        this.phq9Q6 = phq9Q6;
     }
 
-    public Integer getQ7() {
-        return q7;
+    public Integer getPhq9Q7() {
+        return phq9Q7;
     }
 
-    public void setQ7(Integer q7) {
-        this.q7 = q7;
+    public void setPhq9Q7(Integer phq9Q7) {
+        this.phq9Q7 = phq9Q7;
     }
 
-    public Integer getQ8() {
-        return q8;
+    public Integer getPhq9Q8() {
+        return phq9Q8;
     }
 
-    public void setQ8(Integer q8) {
-        this.q8 = q8;
+    public void setPhq9Q8(Integer phq9Q8) {
+        this.phq9Q8 = phq9Q8;
     }
 
-    public Integer getQ9() {
-        return q9;
+    public Integer getPhq9Q9() {
+        return phq9Q9;
     }
 
-    public void setQ9(Integer q9) {
-        this.q9 = q9;
+    public void setPhq9Q9(Integer phq9Q9) {
+        this.phq9Q9 = phq9Q9;
     }
 
-    public Integer getAffect() {
-        return affect;
+    public Integer getPhq9Affect() {
+        return phq9Affect;
     }
 
-    public void setAffect(Integer affect) {
-        this.affect = affect;
+    public void setPhq9Affect(Integer phq9Affect) {
+        this.phq9Affect = phq9Affect;
     }
 
-    public Integer getScore() {
-        return score;
+    public Integer getPhq9Score() {
+        return phq9Score;
     }
 
-    public void setScore(Integer score) {
-        this.score = score;
+    public void setPhq9Score(Integer phq9Score) {
+        this.phq9Score = phq9Score;
     }
 
     public Date getCreateTime() {

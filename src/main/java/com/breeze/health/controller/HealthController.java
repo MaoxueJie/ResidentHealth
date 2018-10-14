@@ -6,9 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserBaseInfoVo;
-import com.breeze.health.beans.vo.UserPsychologicalAD8Vo;
-import com.breeze.health.beans.vo.UserPsychologicalGAD7Vo;
-import com.breeze.health.beans.vo.UserPsychologicalPHQ9Vo;
+import com.breeze.health.beans.vo.UserPsychologicalVo;
+import com.breeze.health.beans.vo.UserPsychologicalVo;
+import com.breeze.health.beans.vo.UserPsychologicalVo;
 import com.breeze.health.beans.vo.UserReportVo;
 import com.breeze.health.beans.vo.UserSickVo;
 import com.breeze.health.beans.vo.UserVo;
@@ -90,14 +90,13 @@ public class HealthController {
 	public ModelAndView living(){
 		return new ModelAndView("living");
 	}
-
+	/*
 	//保存生活习惯--嗜好
 	@RequestMapping(value="/living/habit/add")
 	@ResponseBody
 	public Result<String> saveHabit(UserLivingHabit habit){
 		Result<String> result = null;
 		try{
-			habit.setUserId(1l);
 			result = livingService.addLivingHabit(habit);
 		}catch (Exception e){
 			logger.error("保存生活习惯--嗜好习惯发生异常,{}",e.getMessage());
@@ -112,7 +111,6 @@ public class HealthController {
 	public Result<UserLivingHabit> getUserLivingHabit(UserLivingHabit habit){
 		Result<UserLivingHabit> result = null;
 		try{
-			habit.setUserId(1l);
 			result = livingService.getLivingHabit(habit);
 		}catch (Exception e){
 			result = new Result<UserLivingHabit>();
@@ -127,7 +125,6 @@ public class HealthController {
 	public Result<String> saveMovement(UserLivingMovement movement){
 		Result<String> result = null;
 		try{
-			movement.setUserId(1l);
 			result = livingService.addLivingMovement(movement);
 		}catch (Exception e){
 			logger.error("保存生活习惯--运动习惯发生异常,{}",e.getMessage());
@@ -142,7 +139,6 @@ public class HealthController {
 	public Result<UserLivingMovement> getUserLivingMovement(UserLivingMovement movement){
 		Result<UserLivingMovement> result = null;
 		try{
-			movement.setUserId(1l);
 			result = livingService.getUserLivingMovement(movement);
 		}catch (Exception e){
 			result = new Result<UserLivingMovement>();
@@ -157,7 +153,6 @@ public class HealthController {
 	public Result<String> saveMovement(UserLivingMeal meal){
 		Result<String> result = null;
 		try{
-			meal.setUserId(1l);
 			result = livingService.addUserLivingMeal(meal);
 		}catch (Exception e){
 			logger.error("保存生活习惯--饮食习惯发生异常,{}",e.getMessage());
@@ -172,7 +167,6 @@ public class HealthController {
 	public Result<UserLivingMeal> getUserLivingMeal(UserLivingMeal meal){
 		Result<UserLivingMeal> result = null;
 		try{
-			meal.setUserId(1l);
 			result = livingService.getUserLivingMeal(meal);
 		}catch (Exception e){
 			result = new Result<UserLivingMeal>();
@@ -250,18 +244,18 @@ public class HealthController {
 	public ModelAndView psychological(){
 		return new ModelAndView("psy");
 	}
-	
+
 	@RequestMapping(value = "/psy/ad8/add", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
-	public Result<Void> addPsychologicalAD8(HttpServletRequest request, HttpServletResponse response,UserPsychologicalAD8Vo vo){
+	public Result<Void> addPsychologicalAD8(HttpServletRequest request, HttpServletResponse response,UserPsychologicalVo vo){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		vo.setUserId(1l);
+		
 		return psyService.addOrUpdatePsyAD8(vo);
 	}
 	
 	@RequestMapping(value = "/psy/ad8/get", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
-	public Result<UserPsychologicalAD8Vo> getPsychologicalAD8(HttpServletRequest request, HttpServletResponse response){
+	public Result<UserPsychologicalVo> getPsychologicalAD8(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
 		return psyService.getPsyAd8(1l);
 	}
@@ -294,5 +288,5 @@ public class HealthController {
 	public Result<UserPsychologicalPHQ9Vo> getPsychologicalPHQ9(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
 		return psyService.getPsyPHQ9(1l);
-	}
+	}*/
 }

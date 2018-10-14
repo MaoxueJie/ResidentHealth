@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.breeze.health.mapper.UserTCMPingheMapper">
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserTCMPinghe">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="tcm_id" jdbcType="BIGINT" property="tcmId" />
+    <result column="pinghe_q1" jdbcType="INTEGER" property="pingheQ1" />
+    <result column="pinghe_q2" jdbcType="INTEGER" property="pingheQ2" />
+    <result column="pinghe_q3" jdbcType="INTEGER" property="pingheQ3" />
+    <result column="pinghe_q4" jdbcType="INTEGER" property="pingheQ4" />
+    <result column="pinghe_q5" jdbcType="INTEGER" property="pingheQ5" />
+    <result column="pinghe_q6" jdbcType="INTEGER" property="pingheQ6" />
+    <result column="pinghe_q7" jdbcType="INTEGER" property="pingheQ7" />
+    <result column="pinghe_q8" jdbcType="INTEGER" property="pingheQ8" />
+    <result column="pinghe_score" jdbcType="INTEGER" property="pingheScore" />
+    <result column="pinghe_result" jdbcType="INTEGER" property="pingheResult" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, tcm_id, pinghe_q1, pinghe_q2, pinghe_q3, pinghe_q4, pinghe_q5, pinghe_q6, pinghe_q7, 
+    pinghe_q8, pinghe_score, pinghe_result, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserTCMPingheExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_pinghe
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_pinghe
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user_tcm_constitution_pinghe
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserTCMPinghe" useGeneratedKeys="true">
+    insert into t_user_tcm_constitution_pinghe (tcm_id, pinghe_q1, pinghe_q2, 
+      pinghe_q3, pinghe_q4, pinghe_q5, 
+      pinghe_q6, pinghe_q7, pinghe_q8, 
+      pinghe_score, pinghe_result, create_time, 
+      update_time)
+    values (#{tcmId,jdbcType=BIGINT}, #{pingheQ1,jdbcType=INTEGER}, #{pingheQ2,jdbcType=INTEGER}, 
+      #{pingheQ3,jdbcType=INTEGER}, #{pingheQ4,jdbcType=INTEGER}, #{pingheQ5,jdbcType=INTEGER}, 
+      #{pingheQ6,jdbcType=INTEGER}, #{pingheQ7,jdbcType=INTEGER}, #{pingheQ8,jdbcType=INTEGER}, 
+      #{pingheScore,jdbcType=INTEGER}, #{pingheResult,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserTCMPinghe" useGeneratedKeys="true">
+    insert into t_user_tcm_constitution_pinghe
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tcmId != null">
+        tcm_id,
+      </if>
+      <if test="pingheQ1 != null">
+        pinghe_q1,
+      </if>
+      <if test="pingheQ2 != null">
+        pinghe_q2,
+      </if>
+      <if test="pingheQ3 != null">
+        pinghe_q3,
+      </if>
+      <if test="pingheQ4 != null">
+        pinghe_q4,
+      </if>
+      <if test="pingheQ5 != null">
+        pinghe_q5,
+      </if>
+      <if test="pingheQ6 != null">
+        pinghe_q6,
+      </if>
+      <if test="pingheQ7 != null">
+        pinghe_q7,
+      </if>
+      <if test="pingheQ8 != null">
+        pinghe_q8,
+      </if>
+      <if test="pingheScore != null">
+        pinghe_score,
+      </if>
+      <if test="pingheResult != null">
+        pinghe_result,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tcmId != null">
+        #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="pingheQ1 != null">
+        #{pingheQ1,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ2 != null">
+        #{pingheQ2,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ3 != null">
+        #{pingheQ3,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ4 != null">
+        #{pingheQ4,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ5 != null">
+        #{pingheQ5,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ6 != null">
+        #{pingheQ6,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ7 != null">
+        #{pingheQ7,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ8 != null">
+        #{pingheQ8,jdbcType=INTEGER},
+      </if>
+      <if test="pingheScore != null">
+        #{pingheScore,jdbcType=INTEGER},
+      </if>
+      <if test="pingheResult != null">
+        #{pingheResult,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserTCMPingheExample" resultType="java.lang.Integer">
+    select count(*) from t_user_tcm_constitution_pinghe
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserTCMPinghe">
+    update t_user_tcm_constitution_pinghe
+    <set>
+      <if test="tcmId != null">
+        tcm_id = #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="pingheQ1 != null">
+        pinghe_q1 = #{pingheQ1,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ2 != null">
+        pinghe_q2 = #{pingheQ2,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ3 != null">
+        pinghe_q3 = #{pingheQ3,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ4 != null">
+        pinghe_q4 = #{pingheQ4,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ5 != null">
+        pinghe_q5 = #{pingheQ5,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ6 != null">
+        pinghe_q6 = #{pingheQ6,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ7 != null">
+        pinghe_q7 = #{pingheQ7,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ8 != null">
+        pinghe_q8 = #{pingheQ8,jdbcType=INTEGER},
+      </if>
+      <if test="pingheScore != null">
+        pinghe_score = #{pingheScore,jdbcType=INTEGER},
+      </if>
+      <if test="pingheResult != null">
+        pinghe_result = #{pingheResult,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserTCMPinghe">
+    update t_user_tcm_constitution_pinghe
+    set tcm_id = #{tcmId,jdbcType=BIGINT},
+      pinghe_q1 = #{pingheQ1,jdbcType=INTEGER},
+      pinghe_q2 = #{pingheQ2,jdbcType=INTEGER},
+      pinghe_q3 = #{pingheQ3,jdbcType=INTEGER},
+      pinghe_q4 = #{pingheQ4,jdbcType=INTEGER},
+      pinghe_q5 = #{pingheQ5,jdbcType=INTEGER},
+      pinghe_q6 = #{pingheQ6,jdbcType=INTEGER},
+      pinghe_q7 = #{pingheQ7,jdbcType=INTEGER},
+      pinghe_q8 = #{pingheQ8,jdbcType=INTEGER},
+      pinghe_score = #{pingheScore,jdbcType=INTEGER},
+      pinghe_result = #{pingheResult,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserTCMPinghe">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="tcm_id" jdbcType="BIGINT" property="tcmId" />
+    <result column="pinghe_q1" jdbcType="INTEGER" property="pingheQ1" />
+    <result column="pinghe_q2" jdbcType="INTEGER" property="pingheQ2" />
+    <result column="pinghe_q3" jdbcType="INTEGER" property="pingheQ3" />
+    <result column="pinghe_q4" jdbcType="INTEGER" property="pingheQ4" />
+    <result column="pinghe_q5" jdbcType="INTEGER" property="pingheQ5" />
+    <result column="pinghe_q6" jdbcType="INTEGER" property="pingheQ6" />
+    <result column="pinghe_q7" jdbcType="INTEGER" property="pingheQ7" />
+    <result column="pinghe_q8" jdbcType="INTEGER" property="pingheQ8" />
+    <result column="pinghe_score" jdbcType="INTEGER" property="pingheScore" />
+    <result column="pinghe_result" jdbcType="INTEGER" property="pingheResult" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, tcm_id, pinghe_q1, pinghe_q2, pinghe_q3, pinghe_q4, pinghe_q5, pinghe_q6, pinghe_q7, 
+    pinghe_q8, pinghe_score, pinghe_result, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserTCMPingheExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_pinghe
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_pinghe
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user_tcm_constitution_pinghe
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserTCMPinghe" useGeneratedKeys="true">
+    insert into t_user_tcm_constitution_pinghe (tcm_id, pinghe_q1, pinghe_q2, 
+      pinghe_q3, pinghe_q4, pinghe_q5, 
+      pinghe_q6, pinghe_q7, pinghe_q8, 
+      pinghe_score, pinghe_result, create_time, 
+      update_time)
+    values (#{tcmId,jdbcType=BIGINT}, #{pingheQ1,jdbcType=INTEGER}, #{pingheQ2,jdbcType=INTEGER}, 
+      #{pingheQ3,jdbcType=INTEGER}, #{pingheQ4,jdbcType=INTEGER}, #{pingheQ5,jdbcType=INTEGER}, 
+      #{pingheQ6,jdbcType=INTEGER}, #{pingheQ7,jdbcType=INTEGER}, #{pingheQ8,jdbcType=INTEGER}, 
+      #{pingheScore,jdbcType=INTEGER}, #{pingheResult,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserTCMPinghe" useGeneratedKeys="true">
+    insert into t_user_tcm_constitution_pinghe
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tcmId != null">
+        tcm_id,
+      </if>
+      <if test="pingheQ1 != null">
+        pinghe_q1,
+      </if>
+      <if test="pingheQ2 != null">
+        pinghe_q2,
+      </if>
+      <if test="pingheQ3 != null">
+        pinghe_q3,
+      </if>
+      <if test="pingheQ4 != null">
+        pinghe_q4,
+      </if>
+      <if test="pingheQ5 != null">
+        pinghe_q5,
+      </if>
+      <if test="pingheQ6 != null">
+        pinghe_q6,
+      </if>
+      <if test="pingheQ7 != null">
+        pinghe_q7,
+      </if>
+      <if test="pingheQ8 != null">
+        pinghe_q8,
+      </if>
+      <if test="pingheScore != null">
+        pinghe_score,
+      </if>
+      <if test="pingheResult != null">
+        pinghe_result,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tcmId != null">
+        #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="pingheQ1 != null">
+        #{pingheQ1,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ2 != null">
+        #{pingheQ2,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ3 != null">
+        #{pingheQ3,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ4 != null">
+        #{pingheQ4,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ5 != null">
+        #{pingheQ5,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ6 != null">
+        #{pingheQ6,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ7 != null">
+        #{pingheQ7,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ8 != null">
+        #{pingheQ8,jdbcType=INTEGER},
+      </if>
+      <if test="pingheScore != null">
+        #{pingheScore,jdbcType=INTEGER},
+      </if>
+      <if test="pingheResult != null">
+        #{pingheResult,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserTCMPingheExample" resultType="java.lang.Integer">
+    select count(*) from t_user_tcm_constitution_pinghe
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserTCMPinghe">
+    update t_user_tcm_constitution_pinghe
+    <set>
+      <if test="tcmId != null">
+        tcm_id = #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="pingheQ1 != null">
+        pinghe_q1 = #{pingheQ1,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ2 != null">
+        pinghe_q2 = #{pingheQ2,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ3 != null">
+        pinghe_q3 = #{pingheQ3,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ4 != null">
+        pinghe_q4 = #{pingheQ4,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ5 != null">
+        pinghe_q5 = #{pingheQ5,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ6 != null">
+        pinghe_q6 = #{pingheQ6,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ7 != null">
+        pinghe_q7 = #{pingheQ7,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ8 != null">
+        pinghe_q8 = #{pingheQ8,jdbcType=INTEGER},
+      </if>
+      <if test="pingheScore != null">
+        pinghe_score = #{pingheScore,jdbcType=INTEGER},
+      </if>
+      <if test="pingheResult != null">
+        pinghe_result = #{pingheResult,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserTCMPinghe">
+    update t_user_tcm_constitution_pinghe
+    set tcm_id = #{tcmId,jdbcType=BIGINT},
+      pinghe_q1 = #{pingheQ1,jdbcType=INTEGER},
+      pinghe_q2 = #{pingheQ2,jdbcType=INTEGER},
+      pinghe_q3 = #{pingheQ3,jdbcType=INTEGER},
+      pinghe_q4 = #{pingheQ4,jdbcType=INTEGER},
+      pinghe_q5 = #{pingheQ5,jdbcType=INTEGER},
+      pinghe_q6 = #{pingheQ6,jdbcType=INTEGER},
+      pinghe_q7 = #{pingheQ7,jdbcType=INTEGER},
+      pinghe_q8 = #{pingheQ8,jdbcType=INTEGER},
+      pinghe_score = #{pingheScore,jdbcType=INTEGER},
+      pinghe_result = #{pingheResult,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserTCMPinghe">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="tcm_id" jdbcType="BIGINT" property="tcmId" />
+    <result column="pinghe_q1" jdbcType="INTEGER" property="pingheQ1" />
+    <result column="pinghe_q2" jdbcType="INTEGER" property="pingheQ2" />
+    <result column="pinghe_q3" jdbcType="INTEGER" property="pingheQ3" />
+    <result column="pinghe_q4" jdbcType="INTEGER" property="pingheQ4" />
+    <result column="pinghe_q5" jdbcType="INTEGER" property="pingheQ5" />
+    <result column="pinghe_q6" jdbcType="INTEGER" property="pingheQ6" />
+    <result column="pinghe_q7" jdbcType="INTEGER" property="pingheQ7" />
+    <result column="pinghe_q8" jdbcType="INTEGER" property="pingheQ8" />
+    <result column="pinghe_score" jdbcType="INTEGER" property="pingheScore" />
+    <result column="pinghe_result" jdbcType="INTEGER" property="pingheResult" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, tcm_id, pinghe_q1, pinghe_q2, pinghe_q3, pinghe_q4, pinghe_q5, pinghe_q6, pinghe_q7, 
+    pinghe_q8, pinghe_score, pinghe_result, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserTCMPingheExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_pinghe
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_pinghe
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user_tcm_constitution_pinghe
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserTCMPinghe" useGeneratedKeys="true">
+    insert into t_user_tcm_constitution_pinghe (tcm_id, pinghe_q1, pinghe_q2, 
+      pinghe_q3, pinghe_q4, pinghe_q5, 
+      pinghe_q6, pinghe_q7, pinghe_q8, 
+      pinghe_score, pinghe_result, create_time, 
+      update_time)
+    values (#{tcmId,jdbcType=BIGINT}, #{pingheQ1,jdbcType=INTEGER}, #{pingheQ2,jdbcType=INTEGER}, 
+      #{pingheQ3,jdbcType=INTEGER}, #{pingheQ4,jdbcType=INTEGER}, #{pingheQ5,jdbcType=INTEGER}, 
+      #{pingheQ6,jdbcType=INTEGER}, #{pingheQ7,jdbcType=INTEGER}, #{pingheQ8,jdbcType=INTEGER}, 
+      #{pingheScore,jdbcType=INTEGER}, #{pingheResult,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserTCMPinghe" useGeneratedKeys="true">
+    insert into t_user_tcm_constitution_pinghe
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tcmId != null">
+        tcm_id,
+      </if>
+      <if test="pingheQ1 != null">
+        pinghe_q1,
+      </if>
+      <if test="pingheQ2 != null">
+        pinghe_q2,
+      </if>
+      <if test="pingheQ3 != null">
+        pinghe_q3,
+      </if>
+      <if test="pingheQ4 != null">
+        pinghe_q4,
+      </if>
+      <if test="pingheQ5 != null">
+        pinghe_q5,
+      </if>
+      <if test="pingheQ6 != null">
+        pinghe_q6,
+      </if>
+      <if test="pingheQ7 != null">
+        pinghe_q7,
+      </if>
+      <if test="pingheQ8 != null">
+        pinghe_q8,
+      </if>
+      <if test="pingheScore != null">
+        pinghe_score,
+      </if>
+      <if test="pingheResult != null">
+        pinghe_result,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tcmId != null">
+        #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="pingheQ1 != null">
+        #{pingheQ1,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ2 != null">
+        #{pingheQ2,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ3 != null">
+        #{pingheQ3,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ4 != null">
+        #{pingheQ4,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ5 != null">
+        #{pingheQ5,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ6 != null">
+        #{pingheQ6,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ7 != null">
+        #{pingheQ7,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ8 != null">
+        #{pingheQ8,jdbcType=INTEGER},
+      </if>
+      <if test="pingheScore != null">
+        #{pingheScore,jdbcType=INTEGER},
+      </if>
+      <if test="pingheResult != null">
+        #{pingheResult,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserTCMPingheExample" resultType="java.lang.Integer">
+    select count(*) from t_user_tcm_constitution_pinghe
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserTCMPinghe">
+    update t_user_tcm_constitution_pinghe
+    <set>
+      <if test="tcmId != null">
+        tcm_id = #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="pingheQ1 != null">
+        pinghe_q1 = #{pingheQ1,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ2 != null">
+        pinghe_q2 = #{pingheQ2,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ3 != null">
+        pinghe_q3 = #{pingheQ3,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ4 != null">
+        pinghe_q4 = #{pingheQ4,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ5 != null">
+        pinghe_q5 = #{pingheQ5,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ6 != null">
+        pinghe_q6 = #{pingheQ6,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ7 != null">
+        pinghe_q7 = #{pingheQ7,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ8 != null">
+        pinghe_q8 = #{pingheQ8,jdbcType=INTEGER},
+      </if>
+      <if test="pingheScore != null">
+        pinghe_score = #{pingheScore,jdbcType=INTEGER},
+      </if>
+      <if test="pingheResult != null">
+        pinghe_result = #{pingheResult,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserTCMPinghe">
+    update t_user_tcm_constitution_pinghe
+    set tcm_id = #{tcmId,jdbcType=BIGINT},
+      pinghe_q1 = #{pingheQ1,jdbcType=INTEGER},
+      pinghe_q2 = #{pingheQ2,jdbcType=INTEGER},
+      pinghe_q3 = #{pingheQ3,jdbcType=INTEGER},
+      pinghe_q4 = #{pingheQ4,jdbcType=INTEGER},
+      pinghe_q5 = #{pingheQ5,jdbcType=INTEGER},
+      pinghe_q6 = #{pingheQ6,jdbcType=INTEGER},
+      pinghe_q7 = #{pingheQ7,jdbcType=INTEGER},
+      pinghe_q8 = #{pingheQ8,jdbcType=INTEGER},
+      pinghe_score = #{pingheScore,jdbcType=INTEGER},
+      pinghe_result = #{pingheResult,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserTCMPinghe">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="tcm_id" jdbcType="BIGINT" property="tcmId" />
+    <result column="pinghe_q1" jdbcType="INTEGER" property="pingheQ1" />
+    <result column="pinghe_q2" jdbcType="INTEGER" property="pingheQ2" />
+    <result column="pinghe_q3" jdbcType="INTEGER" property="pingheQ3" />
+    <result column="pinghe_q4" jdbcType="INTEGER" property="pingheQ4" />
+    <result column="pinghe_q5" jdbcType="INTEGER" property="pingheQ5" />
+    <result column="pinghe_q6" jdbcType="INTEGER" property="pingheQ6" />
+    <result column="pinghe_q7" jdbcType="INTEGER" property="pingheQ7" />
+    <result column="pinghe_q8" jdbcType="INTEGER" property="pingheQ8" />
+    <result column="pinghe_result" jdbcType="INTEGER" property="pingheResult" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, tcm_id, pinghe_q1, pinghe_q2, pinghe_q3, pinghe_q4, pinghe_q5, pinghe_q6, pinghe_q7, 
+    pinghe_q8, pinghe_result, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserTCMPingheExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_pinghe
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_pinghe
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user_tcm_constitution_pinghe
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserTCMPinghe" useGeneratedKeys="true">
+    insert into t_user_tcm_constitution_pinghe (tcm_id, pinghe_q1, pinghe_q2, 
+      pinghe_q3, pinghe_q4, pinghe_q5, 
+      pinghe_q6, pinghe_q7, pinghe_q8, 
+      pinghe_result, create_time, update_time
+      )
+    values (#{tcmId,jdbcType=BIGINT}, #{pingheQ1,jdbcType=INTEGER}, #{pingheQ2,jdbcType=INTEGER}, 
+      #{pingheQ3,jdbcType=INTEGER}, #{pingheQ4,jdbcType=INTEGER}, #{pingheQ5,jdbcType=INTEGER}, 
+      #{pingheQ6,jdbcType=INTEGER}, #{pingheQ7,jdbcType=INTEGER}, #{pingheQ8,jdbcType=INTEGER}, 
+      #{pingheResult,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserTCMPinghe" useGeneratedKeys="true">
+    insert into t_user_tcm_constitution_pinghe
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tcmId != null">
+        tcm_id,
+      </if>
+      <if test="pingheQ1 != null">
+        pinghe_q1,
+      </if>
+      <if test="pingheQ2 != null">
+        pinghe_q2,
+      </if>
+      <if test="pingheQ3 != null">
+        pinghe_q3,
+      </if>
+      <if test="pingheQ4 != null">
+        pinghe_q4,
+      </if>
+      <if test="pingheQ5 != null">
+        pinghe_q5,
+      </if>
+      <if test="pingheQ6 != null">
+        pinghe_q6,
+      </if>
+      <if test="pingheQ7 != null">
+        pinghe_q7,
+      </if>
+      <if test="pingheQ8 != null">
+        pinghe_q8,
+      </if>
+      <if test="pingheResult != null">
+        pinghe_result,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tcmId != null">
+        #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="pingheQ1 != null">
+        #{pingheQ1,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ2 != null">
+        #{pingheQ2,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ3 != null">
+        #{pingheQ3,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ4 != null">
+        #{pingheQ4,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ5 != null">
+        #{pingheQ5,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ6 != null">
+        #{pingheQ6,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ7 != null">
+        #{pingheQ7,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ8 != null">
+        #{pingheQ8,jdbcType=INTEGER},
+      </if>
+      <if test="pingheResult != null">
+        #{pingheResult,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserTCMPingheExample" resultType="java.lang.Integer">
+    select count(*) from t_user_tcm_constitution_pinghe
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserTCMPinghe">
+    update t_user_tcm_constitution_pinghe
+    <set>
+      <if test="tcmId != null">
+        tcm_id = #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="pingheQ1 != null">
+        pinghe_q1 = #{pingheQ1,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ2 != null">
+        pinghe_q2 = #{pingheQ2,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ3 != null">
+        pinghe_q3 = #{pingheQ3,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ4 != null">
+        pinghe_q4 = #{pingheQ4,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ5 != null">
+        pinghe_q5 = #{pingheQ5,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ6 != null">
+        pinghe_q6 = #{pingheQ6,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ7 != null">
+        pinghe_q7 = #{pingheQ7,jdbcType=INTEGER},
+      </if>
+      <if test="pingheQ8 != null">
+        pinghe_q8 = #{pingheQ8,jdbcType=INTEGER},
+      </if>
+      <if test="pingheResult != null">
+        pinghe_result = #{pingheResult,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserTCMPinghe">
+    update t_user_tcm_constitution_pinghe
+    set tcm_id = #{tcmId,jdbcType=BIGINT},
+      pinghe_q1 = #{pingheQ1,jdbcType=INTEGER},
+      pinghe_q2 = #{pingheQ2,jdbcType=INTEGER},
+      pinghe_q3 = #{pingheQ3,jdbcType=INTEGER},
+      pinghe_q4 = #{pingheQ4,jdbcType=INTEGER},
+      pinghe_q5 = #{pingheQ5,jdbcType=INTEGER},
+      pinghe_q6 = #{pingheQ6,jdbcType=INTEGER},
+      pinghe_q7 = #{pingheQ7,jdbcType=INTEGER},
+      pinghe_q8 = #{pingheQ8,jdbcType=INTEGER},
+      pinghe_result = #{pingheResult,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserTCMPinghe">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="tcm_id" jdbcType="BIGINT" property="tcmId" />
+    <result column="q1" jdbcType="INTEGER" property="q1" />
+    <result column="q2" jdbcType="INTEGER" property="q2" />
+    <result column="q3" jdbcType="INTEGER" property="q3" />
+    <result column="q4" jdbcType="INTEGER" property="q4" />
+    <result column="q5" jdbcType="INTEGER" property="q5" />
+    <result column="q6" jdbcType="INTEGER" property="q6" />
+    <result column="q7" jdbcType="INTEGER" property="q7" />
+    <result column="q8" jdbcType="INTEGER" property="q8" />
+    <result column="result" jdbcType="INTEGER" property="result" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, tcm_id, q1, q2, q3, q4, q5, q6, q7, q8, result, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserTCMPingheExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_pinghe
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_pinghe
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user_tcm_constitution_pinghe
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserTCMPinghe" useGeneratedKeys="true">
+    insert into t_user_tcm_constitution_pinghe (tcm_id, q1, q2, 
+      q3, q4, q5, q6, 
+      q7, q8, result, create_time, 
+      update_time)
+    values (#{tcmId,jdbcType=BIGINT}, #{q1,jdbcType=INTEGER}, #{q2,jdbcType=INTEGER}, 
+      #{q3,jdbcType=INTEGER}, #{q4,jdbcType=INTEGER}, #{q5,jdbcType=INTEGER}, #{q6,jdbcType=INTEGER}, 
+      #{q7,jdbcType=INTEGER}, #{q8,jdbcType=INTEGER}, #{result,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserTCMPinghe" useGeneratedKeys="true">
+    insert into t_user_tcm_constitution_pinghe
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tcmId != null">
+        tcm_id,
+      </if>
+      <if test="q1 != null">
+        q1,
+      </if>
+      <if test="q2 != null">
+        q2,
+      </if>
+      <if test="q3 != null">
+        q3,
+      </if>
+      <if test="q4 != null">
+        q4,
+      </if>
+      <if test="q5 != null">
+        q5,
+      </if>
+      <if test="q6 != null">
+        q6,
+      </if>
+      <if test="q7 != null">
+        q7,
+      </if>
+      <if test="q8 != null">
+        q8,
+      </if>
+      <if test="result != null">
+        result,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tcmId != null">
+        #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="q1 != null">
+        #{q1,jdbcType=INTEGER},
+      </if>
+      <if test="q2 != null">
+        #{q2,jdbcType=INTEGER},
+      </if>
+      <if test="q3 != null">
+        #{q3,jdbcType=INTEGER},
+      </if>
+      <if test="q4 != null">
+        #{q4,jdbcType=INTEGER},
+      </if>
+      <if test="q5 != null">
+        #{q5,jdbcType=INTEGER},
+      </if>
+      <if test="q6 != null">
+        #{q6,jdbcType=INTEGER},
+      </if>
+      <if test="q7 != null">
+        #{q7,jdbcType=INTEGER},
+      </if>
+      <if test="q8 != null">
+        #{q8,jdbcType=INTEGER},
+      </if>
+      <if test="result != null">
+        #{result,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserTCMPingheExample" resultType="java.lang.Integer">
+    select count(*) from t_user_tcm_constitution_pinghe
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserTCMPinghe">
+    update t_user_tcm_constitution_pinghe
+    <set>
+      <if test="tcmId != null">
+        tcm_id = #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="q1 != null">
+        q1 = #{q1,jdbcType=INTEGER},
+      </if>
+      <if test="q2 != null">
+        q2 = #{q2,jdbcType=INTEGER},
+      </if>
+      <if test="q3 != null">
+        q3 = #{q3,jdbcType=INTEGER},
+      </if>
+      <if test="q4 != null">
+        q4 = #{q4,jdbcType=INTEGER},
+      </if>
+      <if test="q5 != null">
+        q5 = #{q5,jdbcType=INTEGER},
+      </if>
+      <if test="q6 != null">
+        q6 = #{q6,jdbcType=INTEGER},
+      </if>
+      <if test="q7 != null">
+        q7 = #{q7,jdbcType=INTEGER},
+      </if>
+      <if test="q8 != null">
+        q8 = #{q8,jdbcType=INTEGER},
+      </if>
+      <if test="result != null">
+        result = #{result,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserTCMPinghe">
+    update t_user_tcm_constitution_pinghe
+    set tcm_id = #{tcmId,jdbcType=BIGINT},
+      q1 = #{q1,jdbcType=INTEGER},
+      q2 = #{q2,jdbcType=INTEGER},
+      q3 = #{q3,jdbcType=INTEGER},
+      q4 = #{q4,jdbcType=INTEGER},
+      q5 = #{q5,jdbcType=INTEGER},
+      q6 = #{q6,jdbcType=INTEGER},
+      q7 = #{q7,jdbcType=INTEGER},
+      q8 = #{q8,jdbcType=INTEGER},
+      result = #{result,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

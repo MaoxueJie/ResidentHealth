@@ -1,47 +1,62 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.breeze.health.mapper.UserPhysiologicalMapper" >
-  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPhysiological" >
-    <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="user_id" property="userId" jdbcType="BIGINT" />
-    <result column="height" property="height" jdbcType="REAL" />
-    <result column="weight" property="weight" jdbcType="REAL" />
-    <result column="abdominal_circumference" property="abdominalCircumference" jdbcType="REAL" />
-    <result column="hip_circumference" property="hipCircumference" jdbcType="REAL" />
-    <result column="heart_rate" property="heartRate" jdbcType="INTEGER" />
-    <result column="breathe_rate" property="breatheRate" jdbcType="INTEGER" />
-    <result column="temperature" property="temperature" jdbcType="REAL" />
-    <result column="blood_pressure" property="bloodPressure" jdbcType="REAL" />
-    <result column="measuring_frequency" property="measuringFrequency" jdbcType="INTEGER" />
-    <result column="blood_sugar" property="bloodSugar" jdbcType="INTEGER" />
-    <result column="blood_sugar_min_value" property="bloodSugarMinValue" jdbcType="REAL" />
-    <result column="blood_sugar_max_value" property="bloodSugarMaxValue" jdbcType="REAL" />
-    <result column="blood_lipid" property="bloodLipid" jdbcType="INTEGER" />
-    <result column="blood_lipid_value" property="bloodLipidValue" jdbcType="REAL" />
-    <result column="uric_acid" property="uricAcid" jdbcType="REAL" />
-    <result column="blood_oxygen" property="bloodOxygen" jdbcType="REAL" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.breeze.health.mapper.UserPhysiologicalMapper">
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPhysiological">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="height" jdbcType="REAL" property="height" />
+    <result column="weight" jdbcType="REAL" property="weight" />
+    <result column="abdominal_circumference" jdbcType="REAL" property="abdominalCircumference" />
+    <result column="hip_circumference" jdbcType="REAL" property="hipCircumference" />
+    <result column="heart_rate" jdbcType="INTEGER" property="heartRate" />
+    <result column="breathe_rate" jdbcType="INTEGER" property="breatheRate" />
+    <result column="temperature" jdbcType="REAL" property="temperature" />
+    <result column="blood_pressure" jdbcType="INTEGER" property="bloodPressure" />
+    <result column="blood_pressure_situation" jdbcType="INTEGER" property="bloodPressureSituation" />
+    <result column="blood_pressure_val1" jdbcType="REAL" property="bloodPressureVal1" />
+    <result column="blood_pressure_val2" jdbcType="REAL" property="bloodPressureVal2" />
+    <result column="blood_pressure_val3" jdbcType="REAL" property="bloodPressureVal3" />
+    <result column="blood_pressure_val4" jdbcType="REAL" property="bloodPressureVal4" />
+    <result column="blood_pressure_val5" jdbcType="REAL" property="bloodPressureVal5" />
+    <result column="blood_pressure_val6" jdbcType="REAL" property="bloodPressureVal6" />
+    <result column="blood_sugar" jdbcType="INTEGER" property="bloodSugar" />
+    <result column="blood_sugar_situation" jdbcType="INTEGER" property="bloodSugarSituation" />
+    <result column="blood_sugar_val1" jdbcType="REAL" property="bloodSugarVal1" />
+    <result column="blood_sugar_val2" jdbcType="REAL" property="bloodSugarVal2" />
+    <result column="blood_lipid" jdbcType="INTEGER" property="bloodLipid" />
+    <result column="blood_lipid_situation" jdbcType="INTEGER" property="bloodLipidSituation" />
+    <result column="blood_lipid_val1" jdbcType="REAL" property="bloodLipidVal1" />
+    <result column="blood_lipid_val2" jdbcType="REAL" property="bloodLipidVal2" />
+    <result column="blood_lipid_val3" jdbcType="REAL" property="bloodLipidVal3" />
+    <result column="blood_lipid_val4" jdbcType="REAL" property="bloodLipidVal4" />
+    <result column="uric_acid" jdbcType="INTEGER" property="uricAcid" />
+    <result column="uric_acid_situation" jdbcType="INTEGER" property="uricAcidSituation" />
+    <result column="uric_acid_val" jdbcType="REAL" property="uricAcidVal" />
+    <result column="blood_oxygen" jdbcType="INTEGER" property="bloodOxygen" />
+    <result column="blood_oxygen_situation" jdbcType="INTEGER" property="bloodOxygenSituation" />
+    <result column="blood_oxygen_val" jdbcType="REAL" property="bloodOxygenVal" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue" >
+                <when test="criterion.singleValue">
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue" >
+                <when test="criterion.betweenValue">
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue" >
+                <when test="criterion.listValue">
                   and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
                     #{listItem}
                   </foreach>
                 </when>
@@ -52,40 +67,2465 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List" >
+  <sql id="Base_Column_List">
+    id, user_id, height, weight, abdominal_circumference, hip_circumference, heart_rate, 
+    breathe_rate, temperature, blood_pressure, blood_pressure_situation, blood_pressure_val1, 
+    blood_pressure_val2, blood_pressure_val3, blood_pressure_val4, blood_pressure_val5, 
+    blood_pressure_val6, blood_sugar, blood_sugar_situation, blood_sugar_val1, blood_sugar_val2, 
+    blood_lipid, blood_lipid_situation, blood_lipid_val1, blood_lipid_val2, blood_lipid_val3, 
+    blood_lipid_val4, uric_acid, uric_acid_situation, uric_acid_val, blood_oxygen, blood_oxygen_situation, 
+    blood_oxygen_val, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserPhysiologicalExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_physiological
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_physiological
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user_physiological
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true">
+    insert into t_user_physiological (user_id, height, weight, 
+      abdominal_circumference, hip_circumference, heart_rate, 
+      breathe_rate, temperature, blood_pressure, 
+      blood_pressure_situation, blood_pressure_val1, 
+      blood_pressure_val2, blood_pressure_val3, blood_pressure_val4, 
+      blood_pressure_val5, blood_pressure_val6, blood_sugar, 
+      blood_sugar_situation, blood_sugar_val1, blood_sugar_val2, 
+      blood_lipid, blood_lipid_situation, blood_lipid_val1, 
+      blood_lipid_val2, blood_lipid_val3, blood_lipid_val4, 
+      uric_acid, uric_acid_situation, uric_acid_val, 
+      blood_oxygen, blood_oxygen_situation, blood_oxygen_val, 
+      create_time, update_time)
+    values (#{userId,jdbcType=BIGINT}, #{height,jdbcType=REAL}, #{weight,jdbcType=REAL}, 
+      #{abdominalCircumference,jdbcType=REAL}, #{hipCircumference,jdbcType=REAL}, #{heartRate,jdbcType=INTEGER}, 
+      #{breatheRate,jdbcType=INTEGER}, #{temperature,jdbcType=REAL}, #{bloodPressure,jdbcType=INTEGER}, 
+      #{bloodPressureSituation,jdbcType=INTEGER}, #{bloodPressureVal1,jdbcType=REAL}, 
+      #{bloodPressureVal2,jdbcType=REAL}, #{bloodPressureVal3,jdbcType=REAL}, #{bloodPressureVal4,jdbcType=REAL}, 
+      #{bloodPressureVal5,jdbcType=REAL}, #{bloodPressureVal6,jdbcType=REAL}, #{bloodSugar,jdbcType=INTEGER}, 
+      #{bloodSugarSituation,jdbcType=INTEGER}, #{bloodSugarVal1,jdbcType=REAL}, #{bloodSugarVal2,jdbcType=REAL}, 
+      #{bloodLipid,jdbcType=INTEGER}, #{bloodLipidSituation,jdbcType=INTEGER}, #{bloodLipidVal1,jdbcType=REAL}, 
+      #{bloodLipidVal2,jdbcType=REAL}, #{bloodLipidVal3,jdbcType=REAL}, #{bloodLipidVal4,jdbcType=REAL}, 
+      #{uricAcid,jdbcType=INTEGER}, #{uricAcidSituation,jdbcType=INTEGER}, #{uricAcidVal,jdbcType=REAL}, 
+      #{bloodOxygen,jdbcType=INTEGER}, #{bloodOxygenSituation,jdbcType=INTEGER}, #{bloodOxygenVal,jdbcType=REAL}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true">
+    insert into t_user_physiological
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="abdominalCircumference != null">
+        abdominal_circumference,
+      </if>
+      <if test="hipCircumference != null">
+        hip_circumference,
+      </if>
+      <if test="heartRate != null">
+        heart_rate,
+      </if>
+      <if test="breatheRate != null">
+        breathe_rate,
+      </if>
+      <if test="temperature != null">
+        temperature,
+      </if>
+      <if test="bloodPressure != null">
+        blood_pressure,
+      </if>
+      <if test="bloodPressureSituation != null">
+        blood_pressure_situation,
+      </if>
+      <if test="bloodPressureVal1 != null">
+        blood_pressure_val1,
+      </if>
+      <if test="bloodPressureVal2 != null">
+        blood_pressure_val2,
+      </if>
+      <if test="bloodPressureVal3 != null">
+        blood_pressure_val3,
+      </if>
+      <if test="bloodPressureVal4 != null">
+        blood_pressure_val4,
+      </if>
+      <if test="bloodPressureVal5 != null">
+        blood_pressure_val5,
+      </if>
+      <if test="bloodPressureVal6 != null">
+        blood_pressure_val6,
+      </if>
+      <if test="bloodSugar != null">
+        blood_sugar,
+      </if>
+      <if test="bloodSugarSituation != null">
+        blood_sugar_situation,
+      </if>
+      <if test="bloodSugarVal1 != null">
+        blood_sugar_val1,
+      </if>
+      <if test="bloodSugarVal2 != null">
+        blood_sugar_val2,
+      </if>
+      <if test="bloodLipid != null">
+        blood_lipid,
+      </if>
+      <if test="bloodLipidSituation != null">
+        blood_lipid_situation,
+      </if>
+      <if test="bloodLipidVal1 != null">
+        blood_lipid_val1,
+      </if>
+      <if test="bloodLipidVal2 != null">
+        blood_lipid_val2,
+      </if>
+      <if test="bloodLipidVal3 != null">
+        blood_lipid_val3,
+      </if>
+      <if test="bloodLipidVal4 != null">
+        blood_lipid_val4,
+      </if>
+      <if test="uricAcid != null">
+        uric_acid,
+      </if>
+      <if test="uricAcidSituation != null">
+        uric_acid_situation,
+      </if>
+      <if test="uricAcidVal != null">
+        uric_acid_val,
+      </if>
+      <if test="bloodOxygen != null">
+        blood_oxygen,
+      </if>
+      <if test="bloodOxygenSituation != null">
+        blood_oxygen_situation,
+      </if>
+      <if test="bloodOxygenVal != null">
+        blood_oxygen_val,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=REAL},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=REAL},
+      </if>
+      <if test="abdominalCircumference != null">
+        #{abdominalCircumference,jdbcType=REAL},
+      </if>
+      <if test="hipCircumference != null">
+        #{hipCircumference,jdbcType=REAL},
+      </if>
+      <if test="heartRate != null">
+        #{heartRate,jdbcType=INTEGER},
+      </if>
+      <if test="breatheRate != null">
+        #{breatheRate,jdbcType=INTEGER},
+      </if>
+      <if test="temperature != null">
+        #{temperature,jdbcType=REAL},
+      </if>
+      <if test="bloodPressure != null">
+        #{bloodPressure,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureSituation != null">
+        #{bloodPressureSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureVal1 != null">
+        #{bloodPressureVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal2 != null">
+        #{bloodPressureVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal3 != null">
+        #{bloodPressureVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal4 != null">
+        #{bloodPressureVal4,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal5 != null">
+        #{bloodPressureVal5,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal6 != null">
+        #{bloodPressureVal6,jdbcType=REAL},
+      </if>
+      <if test="bloodSugar != null">
+        #{bloodSugar,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarSituation != null">
+        #{bloodSugarSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarVal1 != null">
+        #{bloodSugarVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodSugarVal2 != null">
+        #{bloodSugarVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipid != null">
+        #{bloodLipid,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidSituation != null">
+        #{bloodLipidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidVal1 != null">
+        #{bloodLipidVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal2 != null">
+        #{bloodLipidVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal3 != null">
+        #{bloodLipidVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal4 != null">
+        #{bloodLipidVal4,jdbcType=REAL},
+      </if>
+      <if test="uricAcid != null">
+        #{uricAcid,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidSituation != null">
+        #{uricAcidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidVal != null">
+        #{uricAcidVal,jdbcType=REAL},
+      </if>
+      <if test="bloodOxygen != null">
+        #{bloodOxygen,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenSituation != null">
+        #{bloodOxygenSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenVal != null">
+        #{bloodOxygenVal,jdbcType=REAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserPhysiologicalExample" resultType="java.lang.Integer">
+    select count(*) from t_user_physiological
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPhysiological">
+    update t_user_physiological
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="height != null">
+        height = #{height,jdbcType=REAL},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=REAL},
+      </if>
+      <if test="abdominalCircumference != null">
+        abdominal_circumference = #{abdominalCircumference,jdbcType=REAL},
+      </if>
+      <if test="hipCircumference != null">
+        hip_circumference = #{hipCircumference,jdbcType=REAL},
+      </if>
+      <if test="heartRate != null">
+        heart_rate = #{heartRate,jdbcType=INTEGER},
+      </if>
+      <if test="breatheRate != null">
+        breathe_rate = #{breatheRate,jdbcType=INTEGER},
+      </if>
+      <if test="temperature != null">
+        temperature = #{temperature,jdbcType=REAL},
+      </if>
+      <if test="bloodPressure != null">
+        blood_pressure = #{bloodPressure,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureSituation != null">
+        blood_pressure_situation = #{bloodPressureSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureVal1 != null">
+        blood_pressure_val1 = #{bloodPressureVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal2 != null">
+        blood_pressure_val2 = #{bloodPressureVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal3 != null">
+        blood_pressure_val3 = #{bloodPressureVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal4 != null">
+        blood_pressure_val4 = #{bloodPressureVal4,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal5 != null">
+        blood_pressure_val5 = #{bloodPressureVal5,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal6 != null">
+        blood_pressure_val6 = #{bloodPressureVal6,jdbcType=REAL},
+      </if>
+      <if test="bloodSugar != null">
+        blood_sugar = #{bloodSugar,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarSituation != null">
+        blood_sugar_situation = #{bloodSugarSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarVal1 != null">
+        blood_sugar_val1 = #{bloodSugarVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodSugarVal2 != null">
+        blood_sugar_val2 = #{bloodSugarVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipid != null">
+        blood_lipid = #{bloodLipid,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidSituation != null">
+        blood_lipid_situation = #{bloodLipidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidVal1 != null">
+        blood_lipid_val1 = #{bloodLipidVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal2 != null">
+        blood_lipid_val2 = #{bloodLipidVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal3 != null">
+        blood_lipid_val3 = #{bloodLipidVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal4 != null">
+        blood_lipid_val4 = #{bloodLipidVal4,jdbcType=REAL},
+      </if>
+      <if test="uricAcid != null">
+        uric_acid = #{uricAcid,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidSituation != null">
+        uric_acid_situation = #{uricAcidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidVal != null">
+        uric_acid_val = #{uricAcidVal,jdbcType=REAL},
+      </if>
+      <if test="bloodOxygen != null">
+        blood_oxygen = #{bloodOxygen,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenSituation != null">
+        blood_oxygen_situation = #{bloodOxygenSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenVal != null">
+        blood_oxygen_val = #{bloodOxygenVal,jdbcType=REAL},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPhysiological">
+    update t_user_physiological
+    set user_id = #{userId,jdbcType=BIGINT},
+      height = #{height,jdbcType=REAL},
+      weight = #{weight,jdbcType=REAL},
+      abdominal_circumference = #{abdominalCircumference,jdbcType=REAL},
+      hip_circumference = #{hipCircumference,jdbcType=REAL},
+      heart_rate = #{heartRate,jdbcType=INTEGER},
+      breathe_rate = #{breatheRate,jdbcType=INTEGER},
+      temperature = #{temperature,jdbcType=REAL},
+      blood_pressure = #{bloodPressure,jdbcType=INTEGER},
+      blood_pressure_situation = #{bloodPressureSituation,jdbcType=INTEGER},
+      blood_pressure_val1 = #{bloodPressureVal1,jdbcType=REAL},
+      blood_pressure_val2 = #{bloodPressureVal2,jdbcType=REAL},
+      blood_pressure_val3 = #{bloodPressureVal3,jdbcType=REAL},
+      blood_pressure_val4 = #{bloodPressureVal4,jdbcType=REAL},
+      blood_pressure_val5 = #{bloodPressureVal5,jdbcType=REAL},
+      blood_pressure_val6 = #{bloodPressureVal6,jdbcType=REAL},
+      blood_sugar = #{bloodSugar,jdbcType=INTEGER},
+      blood_sugar_situation = #{bloodSugarSituation,jdbcType=INTEGER},
+      blood_sugar_val1 = #{bloodSugarVal1,jdbcType=REAL},
+      blood_sugar_val2 = #{bloodSugarVal2,jdbcType=REAL},
+      blood_lipid = #{bloodLipid,jdbcType=INTEGER},
+      blood_lipid_situation = #{bloodLipidSituation,jdbcType=INTEGER},
+      blood_lipid_val1 = #{bloodLipidVal1,jdbcType=REAL},
+      blood_lipid_val2 = #{bloodLipidVal2,jdbcType=REAL},
+      blood_lipid_val3 = #{bloodLipidVal3,jdbcType=REAL},
+      blood_lipid_val4 = #{bloodLipidVal4,jdbcType=REAL},
+      uric_acid = #{uricAcid,jdbcType=INTEGER},
+      uric_acid_situation = #{uricAcidSituation,jdbcType=INTEGER},
+      uric_acid_val = #{uricAcidVal,jdbcType=REAL},
+      blood_oxygen = #{bloodOxygen,jdbcType=INTEGER},
+      blood_oxygen_situation = #{bloodOxygenSituation,jdbcType=INTEGER},
+      blood_oxygen_val = #{bloodOxygenVal,jdbcType=REAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPhysiological">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="height" jdbcType="REAL" property="height" />
+    <result column="weight" jdbcType="REAL" property="weight" />
+    <result column="abdominal_circumference" jdbcType="REAL" property="abdominalCircumference" />
+    <result column="hip_circumference" jdbcType="REAL" property="hipCircumference" />
+    <result column="heart_rate" jdbcType="INTEGER" property="heartRate" />
+    <result column="breathe_rate" jdbcType="INTEGER" property="breatheRate" />
+    <result column="temperature" jdbcType="REAL" property="temperature" />
+    <result column="blood_pressure" jdbcType="INTEGER" property="bloodPressure" />
+    <result column="blood_pressure_situation" jdbcType="INTEGER" property="bloodPressureSituation" />
+    <result column="blood_pressure_val1" jdbcType="REAL" property="bloodPressureVal1" />
+    <result column="blood_pressure_val2" jdbcType="REAL" property="bloodPressureVal2" />
+    <result column="blood_pressure_val3" jdbcType="REAL" property="bloodPressureVal3" />
+    <result column="blood_pressure_val4" jdbcType="REAL" property="bloodPressureVal4" />
+    <result column="blood_pressure_val5" jdbcType="REAL" property="bloodPressureVal5" />
+    <result column="blood_pressure_val6" jdbcType="REAL" property="bloodPressureVal6" />
+    <result column="blood_sugar" jdbcType="INTEGER" property="bloodSugar" />
+    <result column="blood_sugar_situation" jdbcType="INTEGER" property="bloodSugarSituation" />
+    <result column="blood_sugar_val1" jdbcType="REAL" property="bloodSugarVal1" />
+    <result column="blood_sugar_val2" jdbcType="REAL" property="bloodSugarVal2" />
+    <result column="blood_lipid" jdbcType="INTEGER" property="bloodLipid" />
+    <result column="blood_lipid_situation" jdbcType="INTEGER" property="bloodLipidSituation" />
+    <result column="blood_lipid_val1" jdbcType="REAL" property="bloodLipidVal1" />
+    <result column="blood_lipid_val2" jdbcType="REAL" property="bloodLipidVal2" />
+    <result column="blood_lipid_val3" jdbcType="REAL" property="bloodLipidVal3" />
+    <result column="blood_lipid_val4" jdbcType="REAL" property="bloodLipidVal4" />
+    <result column="uric_acid" jdbcType="INTEGER" property="uricAcid" />
+    <result column="uric_acid_situation" jdbcType="INTEGER" property="uricAcidSituation" />
+    <result column="uric_acid_val" jdbcType="REAL" property="uricAcidVal" />
+    <result column="blood_oxygen" jdbcType="INTEGER" property="bloodOxygen" />
+    <result column="blood_oxygen_situation" jdbcType="INTEGER" property="bloodOxygenSituation" />
+    <result column="blood_oxygen_val" jdbcType="REAL" property="bloodOxygenVal" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, user_id, height, weight, abdominal_circumference, hip_circumference, heart_rate, 
+    breathe_rate, temperature, blood_pressure, blood_pressure_situation, blood_pressure_val1, 
+    blood_pressure_val2, blood_pressure_val3, blood_pressure_val4, blood_pressure_val5, 
+    blood_pressure_val6, blood_sugar, blood_sugar_situation, blood_sugar_val1, blood_sugar_val2, 
+    blood_lipid, blood_lipid_situation, blood_lipid_val1, blood_lipid_val2, blood_lipid_val3, 
+    blood_lipid_val4, uric_acid, uric_acid_situation, uric_acid_val, blood_oxygen, blood_oxygen_situation, 
+    blood_oxygen_val, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserPhysiologicalExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_physiological
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_physiological
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user_physiological
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true">
+    insert into t_user_physiological (user_id, height, weight, 
+      abdominal_circumference, hip_circumference, heart_rate, 
+      breathe_rate, temperature, blood_pressure, 
+      blood_pressure_situation, blood_pressure_val1, 
+      blood_pressure_val2, blood_pressure_val3, blood_pressure_val4, 
+      blood_pressure_val5, blood_pressure_val6, blood_sugar, 
+      blood_sugar_situation, blood_sugar_val1, blood_sugar_val2, 
+      blood_lipid, blood_lipid_situation, blood_lipid_val1, 
+      blood_lipid_val2, blood_lipid_val3, blood_lipid_val4, 
+      uric_acid, uric_acid_situation, uric_acid_val, 
+      blood_oxygen, blood_oxygen_situation, blood_oxygen_val, 
+      create_time, update_time)
+    values (#{userId,jdbcType=BIGINT}, #{height,jdbcType=REAL}, #{weight,jdbcType=REAL}, 
+      #{abdominalCircumference,jdbcType=REAL}, #{hipCircumference,jdbcType=REAL}, #{heartRate,jdbcType=INTEGER}, 
+      #{breatheRate,jdbcType=INTEGER}, #{temperature,jdbcType=REAL}, #{bloodPressure,jdbcType=INTEGER}, 
+      #{bloodPressureSituation,jdbcType=INTEGER}, #{bloodPressureVal1,jdbcType=REAL}, 
+      #{bloodPressureVal2,jdbcType=REAL}, #{bloodPressureVal3,jdbcType=REAL}, #{bloodPressureVal4,jdbcType=REAL}, 
+      #{bloodPressureVal5,jdbcType=REAL}, #{bloodPressureVal6,jdbcType=REAL}, #{bloodSugar,jdbcType=INTEGER}, 
+      #{bloodSugarSituation,jdbcType=INTEGER}, #{bloodSugarVal1,jdbcType=REAL}, #{bloodSugarVal2,jdbcType=REAL}, 
+      #{bloodLipid,jdbcType=INTEGER}, #{bloodLipidSituation,jdbcType=INTEGER}, #{bloodLipidVal1,jdbcType=REAL}, 
+      #{bloodLipidVal2,jdbcType=REAL}, #{bloodLipidVal3,jdbcType=REAL}, #{bloodLipidVal4,jdbcType=REAL}, 
+      #{uricAcid,jdbcType=INTEGER}, #{uricAcidSituation,jdbcType=INTEGER}, #{uricAcidVal,jdbcType=REAL}, 
+      #{bloodOxygen,jdbcType=INTEGER}, #{bloodOxygenSituation,jdbcType=INTEGER}, #{bloodOxygenVal,jdbcType=REAL}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true">
+    insert into t_user_physiological
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="abdominalCircumference != null">
+        abdominal_circumference,
+      </if>
+      <if test="hipCircumference != null">
+        hip_circumference,
+      </if>
+      <if test="heartRate != null">
+        heart_rate,
+      </if>
+      <if test="breatheRate != null">
+        breathe_rate,
+      </if>
+      <if test="temperature != null">
+        temperature,
+      </if>
+      <if test="bloodPressure != null">
+        blood_pressure,
+      </if>
+      <if test="bloodPressureSituation != null">
+        blood_pressure_situation,
+      </if>
+      <if test="bloodPressureVal1 != null">
+        blood_pressure_val1,
+      </if>
+      <if test="bloodPressureVal2 != null">
+        blood_pressure_val2,
+      </if>
+      <if test="bloodPressureVal3 != null">
+        blood_pressure_val3,
+      </if>
+      <if test="bloodPressureVal4 != null">
+        blood_pressure_val4,
+      </if>
+      <if test="bloodPressureVal5 != null">
+        blood_pressure_val5,
+      </if>
+      <if test="bloodPressureVal6 != null">
+        blood_pressure_val6,
+      </if>
+      <if test="bloodSugar != null">
+        blood_sugar,
+      </if>
+      <if test="bloodSugarSituation != null">
+        blood_sugar_situation,
+      </if>
+      <if test="bloodSugarVal1 != null">
+        blood_sugar_val1,
+      </if>
+      <if test="bloodSugarVal2 != null">
+        blood_sugar_val2,
+      </if>
+      <if test="bloodLipid != null">
+        blood_lipid,
+      </if>
+      <if test="bloodLipidSituation != null">
+        blood_lipid_situation,
+      </if>
+      <if test="bloodLipidVal1 != null">
+        blood_lipid_val1,
+      </if>
+      <if test="bloodLipidVal2 != null">
+        blood_lipid_val2,
+      </if>
+      <if test="bloodLipidVal3 != null">
+        blood_lipid_val3,
+      </if>
+      <if test="bloodLipidVal4 != null">
+        blood_lipid_val4,
+      </if>
+      <if test="uricAcid != null">
+        uric_acid,
+      </if>
+      <if test="uricAcidSituation != null">
+        uric_acid_situation,
+      </if>
+      <if test="uricAcidVal != null">
+        uric_acid_val,
+      </if>
+      <if test="bloodOxygen != null">
+        blood_oxygen,
+      </if>
+      <if test="bloodOxygenSituation != null">
+        blood_oxygen_situation,
+      </if>
+      <if test="bloodOxygenVal != null">
+        blood_oxygen_val,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=REAL},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=REAL},
+      </if>
+      <if test="abdominalCircumference != null">
+        #{abdominalCircumference,jdbcType=REAL},
+      </if>
+      <if test="hipCircumference != null">
+        #{hipCircumference,jdbcType=REAL},
+      </if>
+      <if test="heartRate != null">
+        #{heartRate,jdbcType=INTEGER},
+      </if>
+      <if test="breatheRate != null">
+        #{breatheRate,jdbcType=INTEGER},
+      </if>
+      <if test="temperature != null">
+        #{temperature,jdbcType=REAL},
+      </if>
+      <if test="bloodPressure != null">
+        #{bloodPressure,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureSituation != null">
+        #{bloodPressureSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureVal1 != null">
+        #{bloodPressureVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal2 != null">
+        #{bloodPressureVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal3 != null">
+        #{bloodPressureVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal4 != null">
+        #{bloodPressureVal4,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal5 != null">
+        #{bloodPressureVal5,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal6 != null">
+        #{bloodPressureVal6,jdbcType=REAL},
+      </if>
+      <if test="bloodSugar != null">
+        #{bloodSugar,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarSituation != null">
+        #{bloodSugarSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarVal1 != null">
+        #{bloodSugarVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodSugarVal2 != null">
+        #{bloodSugarVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipid != null">
+        #{bloodLipid,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidSituation != null">
+        #{bloodLipidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidVal1 != null">
+        #{bloodLipidVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal2 != null">
+        #{bloodLipidVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal3 != null">
+        #{bloodLipidVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal4 != null">
+        #{bloodLipidVal4,jdbcType=REAL},
+      </if>
+      <if test="uricAcid != null">
+        #{uricAcid,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidSituation != null">
+        #{uricAcidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidVal != null">
+        #{uricAcidVal,jdbcType=REAL},
+      </if>
+      <if test="bloodOxygen != null">
+        #{bloodOxygen,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenSituation != null">
+        #{bloodOxygenSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenVal != null">
+        #{bloodOxygenVal,jdbcType=REAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserPhysiologicalExample" resultType="java.lang.Integer">
+    select count(*) from t_user_physiological
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPhysiological">
+    update t_user_physiological
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="height != null">
+        height = #{height,jdbcType=REAL},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=REAL},
+      </if>
+      <if test="abdominalCircumference != null">
+        abdominal_circumference = #{abdominalCircumference,jdbcType=REAL},
+      </if>
+      <if test="hipCircumference != null">
+        hip_circumference = #{hipCircumference,jdbcType=REAL},
+      </if>
+      <if test="heartRate != null">
+        heart_rate = #{heartRate,jdbcType=INTEGER},
+      </if>
+      <if test="breatheRate != null">
+        breathe_rate = #{breatheRate,jdbcType=INTEGER},
+      </if>
+      <if test="temperature != null">
+        temperature = #{temperature,jdbcType=REAL},
+      </if>
+      <if test="bloodPressure != null">
+        blood_pressure = #{bloodPressure,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureSituation != null">
+        blood_pressure_situation = #{bloodPressureSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureVal1 != null">
+        blood_pressure_val1 = #{bloodPressureVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal2 != null">
+        blood_pressure_val2 = #{bloodPressureVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal3 != null">
+        blood_pressure_val3 = #{bloodPressureVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal4 != null">
+        blood_pressure_val4 = #{bloodPressureVal4,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal5 != null">
+        blood_pressure_val5 = #{bloodPressureVal5,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal6 != null">
+        blood_pressure_val6 = #{bloodPressureVal6,jdbcType=REAL},
+      </if>
+      <if test="bloodSugar != null">
+        blood_sugar = #{bloodSugar,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarSituation != null">
+        blood_sugar_situation = #{bloodSugarSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarVal1 != null">
+        blood_sugar_val1 = #{bloodSugarVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodSugarVal2 != null">
+        blood_sugar_val2 = #{bloodSugarVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipid != null">
+        blood_lipid = #{bloodLipid,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidSituation != null">
+        blood_lipid_situation = #{bloodLipidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidVal1 != null">
+        blood_lipid_val1 = #{bloodLipidVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal2 != null">
+        blood_lipid_val2 = #{bloodLipidVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal3 != null">
+        blood_lipid_val3 = #{bloodLipidVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal4 != null">
+        blood_lipid_val4 = #{bloodLipidVal4,jdbcType=REAL},
+      </if>
+      <if test="uricAcid != null">
+        uric_acid = #{uricAcid,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidSituation != null">
+        uric_acid_situation = #{uricAcidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidVal != null">
+        uric_acid_val = #{uricAcidVal,jdbcType=REAL},
+      </if>
+      <if test="bloodOxygen != null">
+        blood_oxygen = #{bloodOxygen,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenSituation != null">
+        blood_oxygen_situation = #{bloodOxygenSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenVal != null">
+        blood_oxygen_val = #{bloodOxygenVal,jdbcType=REAL},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPhysiological">
+    update t_user_physiological
+    set user_id = #{userId,jdbcType=BIGINT},
+      height = #{height,jdbcType=REAL},
+      weight = #{weight,jdbcType=REAL},
+      abdominal_circumference = #{abdominalCircumference,jdbcType=REAL},
+      hip_circumference = #{hipCircumference,jdbcType=REAL},
+      heart_rate = #{heartRate,jdbcType=INTEGER},
+      breathe_rate = #{breatheRate,jdbcType=INTEGER},
+      temperature = #{temperature,jdbcType=REAL},
+      blood_pressure = #{bloodPressure,jdbcType=INTEGER},
+      blood_pressure_situation = #{bloodPressureSituation,jdbcType=INTEGER},
+      blood_pressure_val1 = #{bloodPressureVal1,jdbcType=REAL},
+      blood_pressure_val2 = #{bloodPressureVal2,jdbcType=REAL},
+      blood_pressure_val3 = #{bloodPressureVal3,jdbcType=REAL},
+      blood_pressure_val4 = #{bloodPressureVal4,jdbcType=REAL},
+      blood_pressure_val5 = #{bloodPressureVal5,jdbcType=REAL},
+      blood_pressure_val6 = #{bloodPressureVal6,jdbcType=REAL},
+      blood_sugar = #{bloodSugar,jdbcType=INTEGER},
+      blood_sugar_situation = #{bloodSugarSituation,jdbcType=INTEGER},
+      blood_sugar_val1 = #{bloodSugarVal1,jdbcType=REAL},
+      blood_sugar_val2 = #{bloodSugarVal2,jdbcType=REAL},
+      blood_lipid = #{bloodLipid,jdbcType=INTEGER},
+      blood_lipid_situation = #{bloodLipidSituation,jdbcType=INTEGER},
+      blood_lipid_val1 = #{bloodLipidVal1,jdbcType=REAL},
+      blood_lipid_val2 = #{bloodLipidVal2,jdbcType=REAL},
+      blood_lipid_val3 = #{bloodLipidVal3,jdbcType=REAL},
+      blood_lipid_val4 = #{bloodLipidVal4,jdbcType=REAL},
+      uric_acid = #{uricAcid,jdbcType=INTEGER},
+      uric_acid_situation = #{uricAcidSituation,jdbcType=INTEGER},
+      uric_acid_val = #{uricAcidVal,jdbcType=REAL},
+      blood_oxygen = #{bloodOxygen,jdbcType=INTEGER},
+      blood_oxygen_situation = #{bloodOxygenSituation,jdbcType=INTEGER},
+      blood_oxygen_val = #{bloodOxygenVal,jdbcType=REAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPhysiological">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="height" jdbcType="REAL" property="height" />
+    <result column="weight" jdbcType="REAL" property="weight" />
+    <result column="abdominal_circumference" jdbcType="REAL" property="abdominalCircumference" />
+    <result column="hip_circumference" jdbcType="REAL" property="hipCircumference" />
+    <result column="heart_rate" jdbcType="INTEGER" property="heartRate" />
+    <result column="breathe_rate" jdbcType="INTEGER" property="breatheRate" />
+    <result column="temperature" jdbcType="REAL" property="temperature" />
+    <result column="blood_pressure" jdbcType="INTEGER" property="bloodPressure" />
+    <result column="blood_pressure_situation" jdbcType="INTEGER" property="bloodPressureSituation" />
+    <result column="blood_pressure_val1" jdbcType="REAL" property="bloodPressureVal1" />
+    <result column="blood_pressure_val2" jdbcType="REAL" property="bloodPressureVal2" />
+    <result column="blood_pressure_val3" jdbcType="REAL" property="bloodPressureVal3" />
+    <result column="blood_pressure_val4" jdbcType="REAL" property="bloodPressureVal4" />
+    <result column="blood_pressure_val5" jdbcType="REAL" property="bloodPressureVal5" />
+    <result column="blood_pressure_val6" jdbcType="REAL" property="bloodPressureVal6" />
+    <result column="blood_sugar" jdbcType="INTEGER" property="bloodSugar" />
+    <result column="blood_sugar_situation" jdbcType="INTEGER" property="bloodSugarSituation" />
+    <result column="blood_sugar_val1" jdbcType="REAL" property="bloodSugarVal1" />
+    <result column="blood_sugar_val2" jdbcType="REAL" property="bloodSugarVal2" />
+    <result column="blood_lipid" jdbcType="INTEGER" property="bloodLipid" />
+    <result column="blood_lipid_situation" jdbcType="INTEGER" property="bloodLipidSituation" />
+    <result column="blood_lipid_val1" jdbcType="REAL" property="bloodLipidVal1" />
+    <result column="blood_lipid_val2" jdbcType="REAL" property="bloodLipidVal2" />
+    <result column="blood_lipid_val3" jdbcType="REAL" property="bloodLipidVal3" />
+    <result column="blood_lipid_val4" jdbcType="REAL" property="bloodLipidVal4" />
+    <result column="uric_acid" jdbcType="INTEGER" property="uricAcid" />
+    <result column="uric_acid_situation" jdbcType="INTEGER" property="uricAcidSituation" />
+    <result column="uric_acid_val" jdbcType="REAL" property="uricAcidVal" />
+    <result column="blood_oxygen" jdbcType="INTEGER" property="bloodOxygen" />
+    <result column="blood_oxygen_situation" jdbcType="INTEGER" property="bloodOxygenSituation" />
+    <result column="blood_oxygen_val" jdbcType="REAL" property="bloodOxygenVal" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, user_id, height, weight, abdominal_circumference, hip_circumference, heart_rate, 
+    breathe_rate, temperature, blood_pressure, blood_pressure_situation, blood_pressure_val1, 
+    blood_pressure_val2, blood_pressure_val3, blood_pressure_val4, blood_pressure_val5, 
+    blood_pressure_val6, blood_sugar, blood_sugar_situation, blood_sugar_val1, blood_sugar_val2, 
+    blood_lipid, blood_lipid_situation, blood_lipid_val1, blood_lipid_val2, blood_lipid_val3, 
+    blood_lipid_val4, uric_acid, uric_acid_situation, uric_acid_val, blood_oxygen, blood_oxygen_situation, 
+    blood_oxygen_val, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserPhysiologicalExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_physiological
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_physiological
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user_physiological
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true">
+    insert into t_user_physiological (user_id, height, weight, 
+      abdominal_circumference, hip_circumference, heart_rate, 
+      breathe_rate, temperature, blood_pressure, 
+      blood_pressure_situation, blood_pressure_val1, 
+      blood_pressure_val2, blood_pressure_val3, blood_pressure_val4, 
+      blood_pressure_val5, blood_pressure_val6, blood_sugar, 
+      blood_sugar_situation, blood_sugar_val1, blood_sugar_val2, 
+      blood_lipid, blood_lipid_situation, blood_lipid_val1, 
+      blood_lipid_val2, blood_lipid_val3, blood_lipid_val4, 
+      uric_acid, uric_acid_situation, uric_acid_val, 
+      blood_oxygen, blood_oxygen_situation, blood_oxygen_val, 
+      create_time, update_time)
+    values (#{userId,jdbcType=BIGINT}, #{height,jdbcType=REAL}, #{weight,jdbcType=REAL}, 
+      #{abdominalCircumference,jdbcType=REAL}, #{hipCircumference,jdbcType=REAL}, #{heartRate,jdbcType=INTEGER}, 
+      #{breatheRate,jdbcType=INTEGER}, #{temperature,jdbcType=REAL}, #{bloodPressure,jdbcType=INTEGER}, 
+      #{bloodPressureSituation,jdbcType=INTEGER}, #{bloodPressureVal1,jdbcType=REAL}, 
+      #{bloodPressureVal2,jdbcType=REAL}, #{bloodPressureVal3,jdbcType=REAL}, #{bloodPressureVal4,jdbcType=REAL}, 
+      #{bloodPressureVal5,jdbcType=REAL}, #{bloodPressureVal6,jdbcType=REAL}, #{bloodSugar,jdbcType=INTEGER}, 
+      #{bloodSugarSituation,jdbcType=INTEGER}, #{bloodSugarVal1,jdbcType=REAL}, #{bloodSugarVal2,jdbcType=REAL}, 
+      #{bloodLipid,jdbcType=INTEGER}, #{bloodLipidSituation,jdbcType=INTEGER}, #{bloodLipidVal1,jdbcType=REAL}, 
+      #{bloodLipidVal2,jdbcType=REAL}, #{bloodLipidVal3,jdbcType=REAL}, #{bloodLipidVal4,jdbcType=REAL}, 
+      #{uricAcid,jdbcType=INTEGER}, #{uricAcidSituation,jdbcType=INTEGER}, #{uricAcidVal,jdbcType=REAL}, 
+      #{bloodOxygen,jdbcType=INTEGER}, #{bloodOxygenSituation,jdbcType=INTEGER}, #{bloodOxygenVal,jdbcType=REAL}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true">
+    insert into t_user_physiological
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="abdominalCircumference != null">
+        abdominal_circumference,
+      </if>
+      <if test="hipCircumference != null">
+        hip_circumference,
+      </if>
+      <if test="heartRate != null">
+        heart_rate,
+      </if>
+      <if test="breatheRate != null">
+        breathe_rate,
+      </if>
+      <if test="temperature != null">
+        temperature,
+      </if>
+      <if test="bloodPressure != null">
+        blood_pressure,
+      </if>
+      <if test="bloodPressureSituation != null">
+        blood_pressure_situation,
+      </if>
+      <if test="bloodPressureVal1 != null">
+        blood_pressure_val1,
+      </if>
+      <if test="bloodPressureVal2 != null">
+        blood_pressure_val2,
+      </if>
+      <if test="bloodPressureVal3 != null">
+        blood_pressure_val3,
+      </if>
+      <if test="bloodPressureVal4 != null">
+        blood_pressure_val4,
+      </if>
+      <if test="bloodPressureVal5 != null">
+        blood_pressure_val5,
+      </if>
+      <if test="bloodPressureVal6 != null">
+        blood_pressure_val6,
+      </if>
+      <if test="bloodSugar != null">
+        blood_sugar,
+      </if>
+      <if test="bloodSugarSituation != null">
+        blood_sugar_situation,
+      </if>
+      <if test="bloodSugarVal1 != null">
+        blood_sugar_val1,
+      </if>
+      <if test="bloodSugarVal2 != null">
+        blood_sugar_val2,
+      </if>
+      <if test="bloodLipid != null">
+        blood_lipid,
+      </if>
+      <if test="bloodLipidSituation != null">
+        blood_lipid_situation,
+      </if>
+      <if test="bloodLipidVal1 != null">
+        blood_lipid_val1,
+      </if>
+      <if test="bloodLipidVal2 != null">
+        blood_lipid_val2,
+      </if>
+      <if test="bloodLipidVal3 != null">
+        blood_lipid_val3,
+      </if>
+      <if test="bloodLipidVal4 != null">
+        blood_lipid_val4,
+      </if>
+      <if test="uricAcid != null">
+        uric_acid,
+      </if>
+      <if test="uricAcidSituation != null">
+        uric_acid_situation,
+      </if>
+      <if test="uricAcidVal != null">
+        uric_acid_val,
+      </if>
+      <if test="bloodOxygen != null">
+        blood_oxygen,
+      </if>
+      <if test="bloodOxygenSituation != null">
+        blood_oxygen_situation,
+      </if>
+      <if test="bloodOxygenVal != null">
+        blood_oxygen_val,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=REAL},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=REAL},
+      </if>
+      <if test="abdominalCircumference != null">
+        #{abdominalCircumference,jdbcType=REAL},
+      </if>
+      <if test="hipCircumference != null">
+        #{hipCircumference,jdbcType=REAL},
+      </if>
+      <if test="heartRate != null">
+        #{heartRate,jdbcType=INTEGER},
+      </if>
+      <if test="breatheRate != null">
+        #{breatheRate,jdbcType=INTEGER},
+      </if>
+      <if test="temperature != null">
+        #{temperature,jdbcType=REAL},
+      </if>
+      <if test="bloodPressure != null">
+        #{bloodPressure,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureSituation != null">
+        #{bloodPressureSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureVal1 != null">
+        #{bloodPressureVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal2 != null">
+        #{bloodPressureVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal3 != null">
+        #{bloodPressureVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal4 != null">
+        #{bloodPressureVal4,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal5 != null">
+        #{bloodPressureVal5,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal6 != null">
+        #{bloodPressureVal6,jdbcType=REAL},
+      </if>
+      <if test="bloodSugar != null">
+        #{bloodSugar,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarSituation != null">
+        #{bloodSugarSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarVal1 != null">
+        #{bloodSugarVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodSugarVal2 != null">
+        #{bloodSugarVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipid != null">
+        #{bloodLipid,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidSituation != null">
+        #{bloodLipidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidVal1 != null">
+        #{bloodLipidVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal2 != null">
+        #{bloodLipidVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal3 != null">
+        #{bloodLipidVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal4 != null">
+        #{bloodLipidVal4,jdbcType=REAL},
+      </if>
+      <if test="uricAcid != null">
+        #{uricAcid,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidSituation != null">
+        #{uricAcidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidVal != null">
+        #{uricAcidVal,jdbcType=REAL},
+      </if>
+      <if test="bloodOxygen != null">
+        #{bloodOxygen,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenSituation != null">
+        #{bloodOxygenSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenVal != null">
+        #{bloodOxygenVal,jdbcType=REAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserPhysiologicalExample" resultType="java.lang.Integer">
+    select count(*) from t_user_physiological
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPhysiological">
+    update t_user_physiological
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="height != null">
+        height = #{height,jdbcType=REAL},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=REAL},
+      </if>
+      <if test="abdominalCircumference != null">
+        abdominal_circumference = #{abdominalCircumference,jdbcType=REAL},
+      </if>
+      <if test="hipCircumference != null">
+        hip_circumference = #{hipCircumference,jdbcType=REAL},
+      </if>
+      <if test="heartRate != null">
+        heart_rate = #{heartRate,jdbcType=INTEGER},
+      </if>
+      <if test="breatheRate != null">
+        breathe_rate = #{breatheRate,jdbcType=INTEGER},
+      </if>
+      <if test="temperature != null">
+        temperature = #{temperature,jdbcType=REAL},
+      </if>
+      <if test="bloodPressure != null">
+        blood_pressure = #{bloodPressure,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureSituation != null">
+        blood_pressure_situation = #{bloodPressureSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureVal1 != null">
+        blood_pressure_val1 = #{bloodPressureVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal2 != null">
+        blood_pressure_val2 = #{bloodPressureVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal3 != null">
+        blood_pressure_val3 = #{bloodPressureVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal4 != null">
+        blood_pressure_val4 = #{bloodPressureVal4,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal5 != null">
+        blood_pressure_val5 = #{bloodPressureVal5,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal6 != null">
+        blood_pressure_val6 = #{bloodPressureVal6,jdbcType=REAL},
+      </if>
+      <if test="bloodSugar != null">
+        blood_sugar = #{bloodSugar,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarSituation != null">
+        blood_sugar_situation = #{bloodSugarSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarVal1 != null">
+        blood_sugar_val1 = #{bloodSugarVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodSugarVal2 != null">
+        blood_sugar_val2 = #{bloodSugarVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipid != null">
+        blood_lipid = #{bloodLipid,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidSituation != null">
+        blood_lipid_situation = #{bloodLipidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidVal1 != null">
+        blood_lipid_val1 = #{bloodLipidVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal2 != null">
+        blood_lipid_val2 = #{bloodLipidVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal3 != null">
+        blood_lipid_val3 = #{bloodLipidVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal4 != null">
+        blood_lipid_val4 = #{bloodLipidVal4,jdbcType=REAL},
+      </if>
+      <if test="uricAcid != null">
+        uric_acid = #{uricAcid,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidSituation != null">
+        uric_acid_situation = #{uricAcidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidVal != null">
+        uric_acid_val = #{uricAcidVal,jdbcType=REAL},
+      </if>
+      <if test="bloodOxygen != null">
+        blood_oxygen = #{bloodOxygen,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenSituation != null">
+        blood_oxygen_situation = #{bloodOxygenSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenVal != null">
+        blood_oxygen_val = #{bloodOxygenVal,jdbcType=REAL},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPhysiological">
+    update t_user_physiological
+    set user_id = #{userId,jdbcType=BIGINT},
+      height = #{height,jdbcType=REAL},
+      weight = #{weight,jdbcType=REAL},
+      abdominal_circumference = #{abdominalCircumference,jdbcType=REAL},
+      hip_circumference = #{hipCircumference,jdbcType=REAL},
+      heart_rate = #{heartRate,jdbcType=INTEGER},
+      breathe_rate = #{breatheRate,jdbcType=INTEGER},
+      temperature = #{temperature,jdbcType=REAL},
+      blood_pressure = #{bloodPressure,jdbcType=INTEGER},
+      blood_pressure_situation = #{bloodPressureSituation,jdbcType=INTEGER},
+      blood_pressure_val1 = #{bloodPressureVal1,jdbcType=REAL},
+      blood_pressure_val2 = #{bloodPressureVal2,jdbcType=REAL},
+      blood_pressure_val3 = #{bloodPressureVal3,jdbcType=REAL},
+      blood_pressure_val4 = #{bloodPressureVal4,jdbcType=REAL},
+      blood_pressure_val5 = #{bloodPressureVal5,jdbcType=REAL},
+      blood_pressure_val6 = #{bloodPressureVal6,jdbcType=REAL},
+      blood_sugar = #{bloodSugar,jdbcType=INTEGER},
+      blood_sugar_situation = #{bloodSugarSituation,jdbcType=INTEGER},
+      blood_sugar_val1 = #{bloodSugarVal1,jdbcType=REAL},
+      blood_sugar_val2 = #{bloodSugarVal2,jdbcType=REAL},
+      blood_lipid = #{bloodLipid,jdbcType=INTEGER},
+      blood_lipid_situation = #{bloodLipidSituation,jdbcType=INTEGER},
+      blood_lipid_val1 = #{bloodLipidVal1,jdbcType=REAL},
+      blood_lipid_val2 = #{bloodLipidVal2,jdbcType=REAL},
+      blood_lipid_val3 = #{bloodLipidVal3,jdbcType=REAL},
+      blood_lipid_val4 = #{bloodLipidVal4,jdbcType=REAL},
+      uric_acid = #{uricAcid,jdbcType=INTEGER},
+      uric_acid_situation = #{uricAcidSituation,jdbcType=INTEGER},
+      uric_acid_val = #{uricAcidVal,jdbcType=REAL},
+      blood_oxygen = #{bloodOxygen,jdbcType=INTEGER},
+      blood_oxygen_situation = #{bloodOxygenSituation,jdbcType=INTEGER},
+      blood_oxygen_val = #{bloodOxygenVal,jdbcType=REAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPhysiological">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="height" jdbcType="REAL" property="height" />
+    <result column="weight" jdbcType="REAL" property="weight" />
+    <result column="abdominal_circumference" jdbcType="REAL" property="abdominalCircumference" />
+    <result column="hip_circumference" jdbcType="REAL" property="hipCircumference" />
+    <result column="heart_rate" jdbcType="INTEGER" property="heartRate" />
+    <result column="breathe_rate" jdbcType="INTEGER" property="breatheRate" />
+    <result column="temperature" jdbcType="REAL" property="temperature" />
+    <result column="blood_pressure" jdbcType="INTEGER" property="bloodPressure" />
+    <result column="blood_pressure_situation" jdbcType="INTEGER" property="bloodPressureSituation" />
+    <result column="blood_pressure_val1" jdbcType="REAL" property="bloodPressureVal1" />
+    <result column="blood_pressure_val2" jdbcType="REAL" property="bloodPressureVal2" />
+    <result column="blood_pressure_val3" jdbcType="REAL" property="bloodPressureVal3" />
+    <result column="blood_pressure_val4" jdbcType="REAL" property="bloodPressureVal4" />
+    <result column="blood_pressure_val5" jdbcType="REAL" property="bloodPressureVal5" />
+    <result column="blood_pressure_val6" jdbcType="REAL" property="bloodPressureVal6" />
+    <result column="blood_sugar" jdbcType="INTEGER" property="bloodSugar" />
+    <result column="blood_sugar_situation" jdbcType="INTEGER" property="bloodSugarSituation" />
+    <result column="blood_sugar_val1" jdbcType="REAL" property="bloodSugarVal1" />
+    <result column="blood_sugar_val2" jdbcType="REAL" property="bloodSugarVal2" />
+    <result column="blood_lipid" jdbcType="INTEGER" property="bloodLipid" />
+    <result column="blood_lipid_situation" jdbcType="INTEGER" property="bloodLipidSituation" />
+    <result column="blood_lipid_val1" jdbcType="REAL" property="bloodLipidVal1" />
+    <result column="blood_lipid_val2" jdbcType="REAL" property="bloodLipidVal2" />
+    <result column="blood_lipid_val3" jdbcType="REAL" property="bloodLipidVal3" />
+    <result column="blood_lipid_val4" jdbcType="REAL" property="bloodLipidVal4" />
+    <result column="uric_acid" jdbcType="INTEGER" property="uricAcid" />
+    <result column="uric_acid_situation" jdbcType="INTEGER" property="uricAcidSituation" />
+    <result column="uric_acid_val" jdbcType="REAL" property="uricAcidVal" />
+    <result column="blood_oxygen" jdbcType="INTEGER" property="bloodOxygen" />
+    <result column="blood_oxygen_situation" jdbcType="INTEGER" property="bloodOxygenSituation" />
+    <result column="blood_oxygen_val" jdbcType="REAL" property="bloodOxygenVal" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, user_id, height, weight, abdominal_circumference, hip_circumference, heart_rate, 
+    breathe_rate, temperature, blood_pressure, blood_pressure_situation, blood_pressure_val1, 
+    blood_pressure_val2, blood_pressure_val3, blood_pressure_val4, blood_pressure_val5, 
+    blood_pressure_val6, blood_sugar, blood_sugar_situation, blood_sugar_val1, blood_sugar_val2, 
+    blood_lipid, blood_lipid_situation, blood_lipid_val1, blood_lipid_val2, blood_lipid_val3, 
+    blood_lipid_val4, uric_acid, uric_acid_situation, uric_acid_val, blood_oxygen, blood_oxygen_situation, 
+    blood_oxygen_val, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserPhysiologicalExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_physiological
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_physiological
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user_physiological
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true">
+    insert into t_user_physiological (user_id, height, weight, 
+      abdominal_circumference, hip_circumference, heart_rate, 
+      breathe_rate, temperature, blood_pressure, 
+      blood_pressure_situation, blood_pressure_val1, 
+      blood_pressure_val2, blood_pressure_val3, blood_pressure_val4, 
+      blood_pressure_val5, blood_pressure_val6, blood_sugar, 
+      blood_sugar_situation, blood_sugar_val1, blood_sugar_val2, 
+      blood_lipid, blood_lipid_situation, blood_lipid_val1, 
+      blood_lipid_val2, blood_lipid_val3, blood_lipid_val4, 
+      uric_acid, uric_acid_situation, uric_acid_val, 
+      blood_oxygen, blood_oxygen_situation, blood_oxygen_val, 
+      create_time, update_time)
+    values (#{userId,jdbcType=BIGINT}, #{height,jdbcType=REAL}, #{weight,jdbcType=REAL}, 
+      #{abdominalCircumference,jdbcType=REAL}, #{hipCircumference,jdbcType=REAL}, #{heartRate,jdbcType=INTEGER}, 
+      #{breatheRate,jdbcType=INTEGER}, #{temperature,jdbcType=REAL}, #{bloodPressure,jdbcType=INTEGER}, 
+      #{bloodPressureSituation,jdbcType=INTEGER}, #{bloodPressureVal1,jdbcType=REAL}, 
+      #{bloodPressureVal2,jdbcType=REAL}, #{bloodPressureVal3,jdbcType=REAL}, #{bloodPressureVal4,jdbcType=REAL}, 
+      #{bloodPressureVal5,jdbcType=REAL}, #{bloodPressureVal6,jdbcType=REAL}, #{bloodSugar,jdbcType=INTEGER}, 
+      #{bloodSugarSituation,jdbcType=INTEGER}, #{bloodSugarVal1,jdbcType=REAL}, #{bloodSugarVal2,jdbcType=REAL}, 
+      #{bloodLipid,jdbcType=INTEGER}, #{bloodLipidSituation,jdbcType=INTEGER}, #{bloodLipidVal1,jdbcType=REAL}, 
+      #{bloodLipidVal2,jdbcType=REAL}, #{bloodLipidVal3,jdbcType=REAL}, #{bloodLipidVal4,jdbcType=REAL}, 
+      #{uricAcid,jdbcType=INTEGER}, #{uricAcidSituation,jdbcType=INTEGER}, #{uricAcidVal,jdbcType=REAL}, 
+      #{bloodOxygen,jdbcType=INTEGER}, #{bloodOxygenSituation,jdbcType=INTEGER}, #{bloodOxygenVal,jdbcType=REAL}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true">
+    insert into t_user_physiological
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="abdominalCircumference != null">
+        abdominal_circumference,
+      </if>
+      <if test="hipCircumference != null">
+        hip_circumference,
+      </if>
+      <if test="heartRate != null">
+        heart_rate,
+      </if>
+      <if test="breatheRate != null">
+        breathe_rate,
+      </if>
+      <if test="temperature != null">
+        temperature,
+      </if>
+      <if test="bloodPressure != null">
+        blood_pressure,
+      </if>
+      <if test="bloodPressureSituation != null">
+        blood_pressure_situation,
+      </if>
+      <if test="bloodPressureVal1 != null">
+        blood_pressure_val1,
+      </if>
+      <if test="bloodPressureVal2 != null">
+        blood_pressure_val2,
+      </if>
+      <if test="bloodPressureVal3 != null">
+        blood_pressure_val3,
+      </if>
+      <if test="bloodPressureVal4 != null">
+        blood_pressure_val4,
+      </if>
+      <if test="bloodPressureVal5 != null">
+        blood_pressure_val5,
+      </if>
+      <if test="bloodPressureVal6 != null">
+        blood_pressure_val6,
+      </if>
+      <if test="bloodSugar != null">
+        blood_sugar,
+      </if>
+      <if test="bloodSugarSituation != null">
+        blood_sugar_situation,
+      </if>
+      <if test="bloodSugarVal1 != null">
+        blood_sugar_val1,
+      </if>
+      <if test="bloodSugarVal2 != null">
+        blood_sugar_val2,
+      </if>
+      <if test="bloodLipid != null">
+        blood_lipid,
+      </if>
+      <if test="bloodLipidSituation != null">
+        blood_lipid_situation,
+      </if>
+      <if test="bloodLipidVal1 != null">
+        blood_lipid_val1,
+      </if>
+      <if test="bloodLipidVal2 != null">
+        blood_lipid_val2,
+      </if>
+      <if test="bloodLipidVal3 != null">
+        blood_lipid_val3,
+      </if>
+      <if test="bloodLipidVal4 != null">
+        blood_lipid_val4,
+      </if>
+      <if test="uricAcid != null">
+        uric_acid,
+      </if>
+      <if test="uricAcidSituation != null">
+        uric_acid_situation,
+      </if>
+      <if test="uricAcidVal != null">
+        uric_acid_val,
+      </if>
+      <if test="bloodOxygen != null">
+        blood_oxygen,
+      </if>
+      <if test="bloodOxygenSituation != null">
+        blood_oxygen_situation,
+      </if>
+      <if test="bloodOxygenVal != null">
+        blood_oxygen_val,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=REAL},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=REAL},
+      </if>
+      <if test="abdominalCircumference != null">
+        #{abdominalCircumference,jdbcType=REAL},
+      </if>
+      <if test="hipCircumference != null">
+        #{hipCircumference,jdbcType=REAL},
+      </if>
+      <if test="heartRate != null">
+        #{heartRate,jdbcType=INTEGER},
+      </if>
+      <if test="breatheRate != null">
+        #{breatheRate,jdbcType=INTEGER},
+      </if>
+      <if test="temperature != null">
+        #{temperature,jdbcType=REAL},
+      </if>
+      <if test="bloodPressure != null">
+        #{bloodPressure,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureSituation != null">
+        #{bloodPressureSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureVal1 != null">
+        #{bloodPressureVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal2 != null">
+        #{bloodPressureVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal3 != null">
+        #{bloodPressureVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal4 != null">
+        #{bloodPressureVal4,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal5 != null">
+        #{bloodPressureVal5,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal6 != null">
+        #{bloodPressureVal6,jdbcType=REAL},
+      </if>
+      <if test="bloodSugar != null">
+        #{bloodSugar,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarSituation != null">
+        #{bloodSugarSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarVal1 != null">
+        #{bloodSugarVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodSugarVal2 != null">
+        #{bloodSugarVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipid != null">
+        #{bloodLipid,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidSituation != null">
+        #{bloodLipidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidVal1 != null">
+        #{bloodLipidVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal2 != null">
+        #{bloodLipidVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal3 != null">
+        #{bloodLipidVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal4 != null">
+        #{bloodLipidVal4,jdbcType=REAL},
+      </if>
+      <if test="uricAcid != null">
+        #{uricAcid,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidSituation != null">
+        #{uricAcidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidVal != null">
+        #{uricAcidVal,jdbcType=REAL},
+      </if>
+      <if test="bloodOxygen != null">
+        #{bloodOxygen,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenSituation != null">
+        #{bloodOxygenSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenVal != null">
+        #{bloodOxygenVal,jdbcType=REAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserPhysiologicalExample" resultType="java.lang.Integer">
+    select count(*) from t_user_physiological
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPhysiological">
+    update t_user_physiological
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="height != null">
+        height = #{height,jdbcType=REAL},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=REAL},
+      </if>
+      <if test="abdominalCircumference != null">
+        abdominal_circumference = #{abdominalCircumference,jdbcType=REAL},
+      </if>
+      <if test="hipCircumference != null">
+        hip_circumference = #{hipCircumference,jdbcType=REAL},
+      </if>
+      <if test="heartRate != null">
+        heart_rate = #{heartRate,jdbcType=INTEGER},
+      </if>
+      <if test="breatheRate != null">
+        breathe_rate = #{breatheRate,jdbcType=INTEGER},
+      </if>
+      <if test="temperature != null">
+        temperature = #{temperature,jdbcType=REAL},
+      </if>
+      <if test="bloodPressure != null">
+        blood_pressure = #{bloodPressure,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureSituation != null">
+        blood_pressure_situation = #{bloodPressureSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureVal1 != null">
+        blood_pressure_val1 = #{bloodPressureVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal2 != null">
+        blood_pressure_val2 = #{bloodPressureVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal3 != null">
+        blood_pressure_val3 = #{bloodPressureVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal4 != null">
+        blood_pressure_val4 = #{bloodPressureVal4,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal5 != null">
+        blood_pressure_val5 = #{bloodPressureVal5,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal6 != null">
+        blood_pressure_val6 = #{bloodPressureVal6,jdbcType=REAL},
+      </if>
+      <if test="bloodSugar != null">
+        blood_sugar = #{bloodSugar,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarSituation != null">
+        blood_sugar_situation = #{bloodSugarSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarVal1 != null">
+        blood_sugar_val1 = #{bloodSugarVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodSugarVal2 != null">
+        blood_sugar_val2 = #{bloodSugarVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipid != null">
+        blood_lipid = #{bloodLipid,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidSituation != null">
+        blood_lipid_situation = #{bloodLipidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidVal1 != null">
+        blood_lipid_val1 = #{bloodLipidVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal2 != null">
+        blood_lipid_val2 = #{bloodLipidVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal3 != null">
+        blood_lipid_val3 = #{bloodLipidVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal4 != null">
+        blood_lipid_val4 = #{bloodLipidVal4,jdbcType=REAL},
+      </if>
+      <if test="uricAcid != null">
+        uric_acid = #{uricAcid,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidSituation != null">
+        uric_acid_situation = #{uricAcidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidVal != null">
+        uric_acid_val = #{uricAcidVal,jdbcType=REAL},
+      </if>
+      <if test="bloodOxygen != null">
+        blood_oxygen = #{bloodOxygen,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenSituation != null">
+        blood_oxygen_situation = #{bloodOxygenSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenVal != null">
+        blood_oxygen_val = #{bloodOxygenVal,jdbcType=REAL},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPhysiological">
+    update t_user_physiological
+    set user_id = #{userId,jdbcType=BIGINT},
+      height = #{height,jdbcType=REAL},
+      weight = #{weight,jdbcType=REAL},
+      abdominal_circumference = #{abdominalCircumference,jdbcType=REAL},
+      hip_circumference = #{hipCircumference,jdbcType=REAL},
+      heart_rate = #{heartRate,jdbcType=INTEGER},
+      breathe_rate = #{breatheRate,jdbcType=INTEGER},
+      temperature = #{temperature,jdbcType=REAL},
+      blood_pressure = #{bloodPressure,jdbcType=INTEGER},
+      blood_pressure_situation = #{bloodPressureSituation,jdbcType=INTEGER},
+      blood_pressure_val1 = #{bloodPressureVal1,jdbcType=REAL},
+      blood_pressure_val2 = #{bloodPressureVal2,jdbcType=REAL},
+      blood_pressure_val3 = #{bloodPressureVal3,jdbcType=REAL},
+      blood_pressure_val4 = #{bloodPressureVal4,jdbcType=REAL},
+      blood_pressure_val5 = #{bloodPressureVal5,jdbcType=REAL},
+      blood_pressure_val6 = #{bloodPressureVal6,jdbcType=REAL},
+      blood_sugar = #{bloodSugar,jdbcType=INTEGER},
+      blood_sugar_situation = #{bloodSugarSituation,jdbcType=INTEGER},
+      blood_sugar_val1 = #{bloodSugarVal1,jdbcType=REAL},
+      blood_sugar_val2 = #{bloodSugarVal2,jdbcType=REAL},
+      blood_lipid = #{bloodLipid,jdbcType=INTEGER},
+      blood_lipid_situation = #{bloodLipidSituation,jdbcType=INTEGER},
+      blood_lipid_val1 = #{bloodLipidVal1,jdbcType=REAL},
+      blood_lipid_val2 = #{bloodLipidVal2,jdbcType=REAL},
+      blood_lipid_val3 = #{bloodLipidVal3,jdbcType=REAL},
+      blood_lipid_val4 = #{bloodLipidVal4,jdbcType=REAL},
+      uric_acid = #{uricAcid,jdbcType=INTEGER},
+      uric_acid_situation = #{uricAcidSituation,jdbcType=INTEGER},
+      uric_acid_val = #{uricAcidVal,jdbcType=REAL},
+      blood_oxygen = #{bloodOxygen,jdbcType=INTEGER},
+      blood_oxygen_situation = #{bloodOxygenSituation,jdbcType=INTEGER},
+      blood_oxygen_val = #{bloodOxygenVal,jdbcType=REAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPhysiological">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="height" jdbcType="REAL" property="height" />
+    <result column="weight" jdbcType="REAL" property="weight" />
+    <result column="abdominal_circumference" jdbcType="REAL" property="abdominalCircumference" />
+    <result column="hip_circumference" jdbcType="REAL" property="hipCircumference" />
+    <result column="heart_rate" jdbcType="INTEGER" property="heartRate" />
+    <result column="breathe_rate" jdbcType="INTEGER" property="breatheRate" />
+    <result column="temperature" jdbcType="REAL" property="temperature" />
+    <result column="blood_pressure" jdbcType="INTEGER" property="bloodPressure" />
+    <result column="blood_pressure_situation" jdbcType="INTEGER" property="bloodPressureSituation" />
+    <result column="blood_pressure_val1" jdbcType="REAL" property="bloodPressureVal1" />
+    <result column="blood_pressure_val2" jdbcType="REAL" property="bloodPressureVal2" />
+    <result column="blood_pressure_val3" jdbcType="REAL" property="bloodPressureVal3" />
+    <result column="blood_pressure_val4" jdbcType="REAL" property="bloodPressureVal4" />
+    <result column="blood_pressure_val5" jdbcType="REAL" property="bloodPressureVal5" />
+    <result column="blood_pressure_val6" jdbcType="REAL" property="bloodPressureVal6" />
+    <result column="blood_sugar" jdbcType="INTEGER" property="bloodSugar" />
+    <result column="blood_sugar_situation" jdbcType="INTEGER" property="bloodSugarSituation" />
+    <result column="blood_sugar_val1" jdbcType="REAL" property="bloodSugarVal1" />
+    <result column="blood_sugar_val2" jdbcType="REAL" property="bloodSugarVal2" />
+    <result column="blood_lipid" jdbcType="INTEGER" property="bloodLipid" />
+    <result column="blood_lipid_situation" jdbcType="INTEGER" property="bloodLipidSituation" />
+    <result column="blood_lipid_val1" jdbcType="REAL" property="bloodLipidVal1" />
+    <result column="blood_lipid_val2" jdbcType="REAL" property="bloodLipidVal2" />
+    <result column="blood_lipid_val3" jdbcType="REAL" property="bloodLipidVal3" />
+    <result column="blood_lipid_val4" jdbcType="REAL" property="bloodLipidVal4" />
+    <result column="uric_acid" jdbcType="INTEGER" property="uricAcid" />
+    <result column="uric_acid_situation" jdbcType="INTEGER" property="uricAcidSituation" />
+    <result column="uric_acid_val" jdbcType="REAL" property="uricAcidVal" />
+    <result column="blood_oxygen" jdbcType="INTEGER" property="bloodOxygen" />
+    <result column="blood_oxygen_situation" jdbcType="INTEGER" property="bloodOxygenSituation" />
+    <result column="blood_oxygen_val" jdbcType="REAL" property="bloodOxygenVal" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, user_id, height, weight, abdominal_circumference, hip_circumference, heart_rate, 
+    breathe_rate, temperature, blood_pressure, blood_pressure_situation, blood_pressure_val1, 
+    blood_pressure_val2, blood_pressure_val3, blood_pressure_val4, blood_pressure_val5, 
+    blood_pressure_val6, blood_sugar, blood_sugar_situation, blood_sugar_val1, blood_sugar_val2, 
+    blood_lipid, blood_lipid_situation, blood_lipid_val1, blood_lipid_val2, blood_lipid_val3, 
+    blood_lipid_val4, uric_acid, uric_acid_situation, uric_acid_val, blood_oxygen, blood_oxygen_situation, 
+    blood_oxygen_val, create_time, update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserPhysiologicalExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_physiological
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_physiological
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user_physiological
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true">
+    insert into t_user_physiological (user_id, height, weight, 
+      abdominal_circumference, hip_circumference, heart_rate, 
+      breathe_rate, temperature, blood_pressure, 
+      blood_pressure_situation, blood_pressure_val1, 
+      blood_pressure_val2, blood_pressure_val3, blood_pressure_val4, 
+      blood_pressure_val5, blood_pressure_val6, blood_sugar, 
+      blood_sugar_situation, blood_sugar_val1, blood_sugar_val2, 
+      blood_lipid, blood_lipid_situation, blood_lipid_val1, 
+      blood_lipid_val2, blood_lipid_val3, blood_lipid_val4, 
+      uric_acid, uric_acid_situation, uric_acid_val, 
+      blood_oxygen, blood_oxygen_situation, blood_oxygen_val, 
+      create_time, update_time)
+    values (#{userId,jdbcType=BIGINT}, #{height,jdbcType=REAL}, #{weight,jdbcType=REAL}, 
+      #{abdominalCircumference,jdbcType=REAL}, #{hipCircumference,jdbcType=REAL}, #{heartRate,jdbcType=INTEGER}, 
+      #{breatheRate,jdbcType=INTEGER}, #{temperature,jdbcType=REAL}, #{bloodPressure,jdbcType=INTEGER}, 
+      #{bloodPressureSituation,jdbcType=INTEGER}, #{bloodPressureVal1,jdbcType=REAL}, 
+      #{bloodPressureVal2,jdbcType=REAL}, #{bloodPressureVal3,jdbcType=REAL}, #{bloodPressureVal4,jdbcType=REAL}, 
+      #{bloodPressureVal5,jdbcType=REAL}, #{bloodPressureVal6,jdbcType=REAL}, #{bloodSugar,jdbcType=INTEGER}, 
+      #{bloodSugarSituation,jdbcType=INTEGER}, #{bloodSugarVal1,jdbcType=REAL}, #{bloodSugarVal2,jdbcType=REAL}, 
+      #{bloodLipid,jdbcType=INTEGER}, #{bloodLipidSituation,jdbcType=INTEGER}, #{bloodLipidVal1,jdbcType=REAL}, 
+      #{bloodLipidVal2,jdbcType=REAL}, #{bloodLipidVal3,jdbcType=REAL}, #{bloodLipidVal4,jdbcType=REAL}, 
+      #{uricAcid,jdbcType=INTEGER}, #{uricAcidSituation,jdbcType=INTEGER}, #{uricAcidVal,jdbcType=REAL}, 
+      #{bloodOxygen,jdbcType=INTEGER}, #{bloodOxygenSituation,jdbcType=INTEGER}, #{bloodOxygenVal,jdbcType=REAL}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true">
+    insert into t_user_physiological
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="abdominalCircumference != null">
+        abdominal_circumference,
+      </if>
+      <if test="hipCircumference != null">
+        hip_circumference,
+      </if>
+      <if test="heartRate != null">
+        heart_rate,
+      </if>
+      <if test="breatheRate != null">
+        breathe_rate,
+      </if>
+      <if test="temperature != null">
+        temperature,
+      </if>
+      <if test="bloodPressure != null">
+        blood_pressure,
+      </if>
+      <if test="bloodPressureSituation != null">
+        blood_pressure_situation,
+      </if>
+      <if test="bloodPressureVal1 != null">
+        blood_pressure_val1,
+      </if>
+      <if test="bloodPressureVal2 != null">
+        blood_pressure_val2,
+      </if>
+      <if test="bloodPressureVal3 != null">
+        blood_pressure_val3,
+      </if>
+      <if test="bloodPressureVal4 != null">
+        blood_pressure_val4,
+      </if>
+      <if test="bloodPressureVal5 != null">
+        blood_pressure_val5,
+      </if>
+      <if test="bloodPressureVal6 != null">
+        blood_pressure_val6,
+      </if>
+      <if test="bloodSugar != null">
+        blood_sugar,
+      </if>
+      <if test="bloodSugarSituation != null">
+        blood_sugar_situation,
+      </if>
+      <if test="bloodSugarVal1 != null">
+        blood_sugar_val1,
+      </if>
+      <if test="bloodSugarVal2 != null">
+        blood_sugar_val2,
+      </if>
+      <if test="bloodLipid != null">
+        blood_lipid,
+      </if>
+      <if test="bloodLipidSituation != null">
+        blood_lipid_situation,
+      </if>
+      <if test="bloodLipidVal1 != null">
+        blood_lipid_val1,
+      </if>
+      <if test="bloodLipidVal2 != null">
+        blood_lipid_val2,
+      </if>
+      <if test="bloodLipidVal3 != null">
+        blood_lipid_val3,
+      </if>
+      <if test="bloodLipidVal4 != null">
+        blood_lipid_val4,
+      </if>
+      <if test="uricAcid != null">
+        uric_acid,
+      </if>
+      <if test="uricAcidSituation != null">
+        uric_acid_situation,
+      </if>
+      <if test="uricAcidVal != null">
+        uric_acid_val,
+      </if>
+      <if test="bloodOxygen != null">
+        blood_oxygen,
+      </if>
+      <if test="bloodOxygenSituation != null">
+        blood_oxygen_situation,
+      </if>
+      <if test="bloodOxygenVal != null">
+        blood_oxygen_val,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=REAL},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=REAL},
+      </if>
+      <if test="abdominalCircumference != null">
+        #{abdominalCircumference,jdbcType=REAL},
+      </if>
+      <if test="hipCircumference != null">
+        #{hipCircumference,jdbcType=REAL},
+      </if>
+      <if test="heartRate != null">
+        #{heartRate,jdbcType=INTEGER},
+      </if>
+      <if test="breatheRate != null">
+        #{breatheRate,jdbcType=INTEGER},
+      </if>
+      <if test="temperature != null">
+        #{temperature,jdbcType=REAL},
+      </if>
+      <if test="bloodPressure != null">
+        #{bloodPressure,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureSituation != null">
+        #{bloodPressureSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureVal1 != null">
+        #{bloodPressureVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal2 != null">
+        #{bloodPressureVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal3 != null">
+        #{bloodPressureVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal4 != null">
+        #{bloodPressureVal4,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal5 != null">
+        #{bloodPressureVal5,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal6 != null">
+        #{bloodPressureVal6,jdbcType=REAL},
+      </if>
+      <if test="bloodSugar != null">
+        #{bloodSugar,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarSituation != null">
+        #{bloodSugarSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarVal1 != null">
+        #{bloodSugarVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodSugarVal2 != null">
+        #{bloodSugarVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipid != null">
+        #{bloodLipid,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidSituation != null">
+        #{bloodLipidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidVal1 != null">
+        #{bloodLipidVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal2 != null">
+        #{bloodLipidVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal3 != null">
+        #{bloodLipidVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal4 != null">
+        #{bloodLipidVal4,jdbcType=REAL},
+      </if>
+      <if test="uricAcid != null">
+        #{uricAcid,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidSituation != null">
+        #{uricAcidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidVal != null">
+        #{uricAcidVal,jdbcType=REAL},
+      </if>
+      <if test="bloodOxygen != null">
+        #{bloodOxygen,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenSituation != null">
+        #{bloodOxygenSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenVal != null">
+        #{bloodOxygenVal,jdbcType=REAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserPhysiologicalExample" resultType="java.lang.Integer">
+    select count(*) from t_user_physiological
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPhysiological">
+    update t_user_physiological
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="height != null">
+        height = #{height,jdbcType=REAL},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=REAL},
+      </if>
+      <if test="abdominalCircumference != null">
+        abdominal_circumference = #{abdominalCircumference,jdbcType=REAL},
+      </if>
+      <if test="hipCircumference != null">
+        hip_circumference = #{hipCircumference,jdbcType=REAL},
+      </if>
+      <if test="heartRate != null">
+        heart_rate = #{heartRate,jdbcType=INTEGER},
+      </if>
+      <if test="breatheRate != null">
+        breathe_rate = #{breatheRate,jdbcType=INTEGER},
+      </if>
+      <if test="temperature != null">
+        temperature = #{temperature,jdbcType=REAL},
+      </if>
+      <if test="bloodPressure != null">
+        blood_pressure = #{bloodPressure,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureSituation != null">
+        blood_pressure_situation = #{bloodPressureSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodPressureVal1 != null">
+        blood_pressure_val1 = #{bloodPressureVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal2 != null">
+        blood_pressure_val2 = #{bloodPressureVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal3 != null">
+        blood_pressure_val3 = #{bloodPressureVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal4 != null">
+        blood_pressure_val4 = #{bloodPressureVal4,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal5 != null">
+        blood_pressure_val5 = #{bloodPressureVal5,jdbcType=REAL},
+      </if>
+      <if test="bloodPressureVal6 != null">
+        blood_pressure_val6 = #{bloodPressureVal6,jdbcType=REAL},
+      </if>
+      <if test="bloodSugar != null">
+        blood_sugar = #{bloodSugar,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarSituation != null">
+        blood_sugar_situation = #{bloodSugarSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodSugarVal1 != null">
+        blood_sugar_val1 = #{bloodSugarVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodSugarVal2 != null">
+        blood_sugar_val2 = #{bloodSugarVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipid != null">
+        blood_lipid = #{bloodLipid,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidSituation != null">
+        blood_lipid_situation = #{bloodLipidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodLipidVal1 != null">
+        blood_lipid_val1 = #{bloodLipidVal1,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal2 != null">
+        blood_lipid_val2 = #{bloodLipidVal2,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal3 != null">
+        blood_lipid_val3 = #{bloodLipidVal3,jdbcType=REAL},
+      </if>
+      <if test="bloodLipidVal4 != null">
+        blood_lipid_val4 = #{bloodLipidVal4,jdbcType=REAL},
+      </if>
+      <if test="uricAcid != null">
+        uric_acid = #{uricAcid,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidSituation != null">
+        uric_acid_situation = #{uricAcidSituation,jdbcType=INTEGER},
+      </if>
+      <if test="uricAcidVal != null">
+        uric_acid_val = #{uricAcidVal,jdbcType=REAL},
+      </if>
+      <if test="bloodOxygen != null">
+        blood_oxygen = #{bloodOxygen,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenSituation != null">
+        blood_oxygen_situation = #{bloodOxygenSituation,jdbcType=INTEGER},
+      </if>
+      <if test="bloodOxygenVal != null">
+        blood_oxygen_val = #{bloodOxygenVal,jdbcType=REAL},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPhysiological">
+    update t_user_physiological
+    set user_id = #{userId,jdbcType=BIGINT},
+      height = #{height,jdbcType=REAL},
+      weight = #{weight,jdbcType=REAL},
+      abdominal_circumference = #{abdominalCircumference,jdbcType=REAL},
+      hip_circumference = #{hipCircumference,jdbcType=REAL},
+      heart_rate = #{heartRate,jdbcType=INTEGER},
+      breathe_rate = #{breatheRate,jdbcType=INTEGER},
+      temperature = #{temperature,jdbcType=REAL},
+      blood_pressure = #{bloodPressure,jdbcType=INTEGER},
+      blood_pressure_situation = #{bloodPressureSituation,jdbcType=INTEGER},
+      blood_pressure_val1 = #{bloodPressureVal1,jdbcType=REAL},
+      blood_pressure_val2 = #{bloodPressureVal2,jdbcType=REAL},
+      blood_pressure_val3 = #{bloodPressureVal3,jdbcType=REAL},
+      blood_pressure_val4 = #{bloodPressureVal4,jdbcType=REAL},
+      blood_pressure_val5 = #{bloodPressureVal5,jdbcType=REAL},
+      blood_pressure_val6 = #{bloodPressureVal6,jdbcType=REAL},
+      blood_sugar = #{bloodSugar,jdbcType=INTEGER},
+      blood_sugar_situation = #{bloodSugarSituation,jdbcType=INTEGER},
+      blood_sugar_val1 = #{bloodSugarVal1,jdbcType=REAL},
+      blood_sugar_val2 = #{bloodSugarVal2,jdbcType=REAL},
+      blood_lipid = #{bloodLipid,jdbcType=INTEGER},
+      blood_lipid_situation = #{bloodLipidSituation,jdbcType=INTEGER},
+      blood_lipid_val1 = #{bloodLipidVal1,jdbcType=REAL},
+      blood_lipid_val2 = #{bloodLipidVal2,jdbcType=REAL},
+      blood_lipid_val3 = #{bloodLipidVal3,jdbcType=REAL},
+      blood_lipid_val4 = #{bloodLipidVal4,jdbcType=REAL},
+      uric_acid = #{uricAcid,jdbcType=INTEGER},
+      uric_acid_situation = #{uricAcidSituation,jdbcType=INTEGER},
+      uric_acid_val = #{uricAcidVal,jdbcType=REAL},
+      blood_oxygen = #{bloodOxygen,jdbcType=INTEGER},
+      blood_oxygen_situation = #{bloodOxygenSituation,jdbcType=INTEGER},
+      blood_oxygen_val = #{bloodOxygenVal,jdbcType=REAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPhysiological">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="height" jdbcType="REAL" property="height" />
+    <result column="weight" jdbcType="REAL" property="weight" />
+    <result column="abdominal_circumference" jdbcType="REAL" property="abdominalCircumference" />
+    <result column="hip_circumference" jdbcType="REAL" property="hipCircumference" />
+    <result column="heart_rate" jdbcType="INTEGER" property="heartRate" />
+    <result column="breathe_rate" jdbcType="INTEGER" property="breatheRate" />
+    <result column="temperature" jdbcType="REAL" property="temperature" />
+    <result column="blood_pressure" jdbcType="REAL" property="bloodPressure" />
+    <result column="measuring_frequency" jdbcType="INTEGER" property="measuringFrequency" />
+    <result column="blood_sugar" jdbcType="INTEGER" property="bloodSugar" />
+    <result column="blood_sugar_min_value" jdbcType="REAL" property="bloodSugarMinValue" />
+    <result column="blood_sugar_max_value" jdbcType="REAL" property="bloodSugarMaxValue" />
+    <result column="blood_lipid" jdbcType="INTEGER" property="bloodLipid" />
+    <result column="blood_lipid_value" jdbcType="REAL" property="bloodLipidValue" />
+    <result column="uric_acid" jdbcType="REAL" property="uricAcid" />
+    <result column="blood_oxygen" jdbcType="REAL" property="bloodOxygen" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
     id, user_id, height, weight, abdominal_circumference, hip_circumference, heart_rate, 
     breathe_rate, temperature, blood_pressure, measuring_frequency, blood_sugar, blood_sugar_min_value, 
     blood_sugar_max_value, blood_lipid, blood_lipid_value, uric_acid, blood_oxygen, create_time, 
     update_time
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserPhysiologicalExample" >
+  <select id="selectByExample" parameterType="com.breeze.health.entity.UserPhysiologicalExample" resultMap="BaseResultMap">
     select
-    <if test="distinct" >
+    <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
     from t_user_physiological
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null" >
+    <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
     <if test="limit != null">
       limit ${limit}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_user_physiological
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_user_physiological
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true">
     insert into t_user_physiological (user_id, height, weight, 
       abdominal_circumference, hip_circumference, heart_rate, 
       breathe_rate, temperature, blood_pressure, 
@@ -101,197 +2541,197 @@
       #{uricAcid,jdbcType=REAL}, #{bloodOxygen,jdbcType=REAL}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true" keyProperty="id" >
+  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserPhysiological" useGeneratedKeys="true">
     insert into t_user_physiological
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="userId != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
         user_id,
       </if>
-      <if test="height != null" >
+      <if test="height != null">
         height,
       </if>
-      <if test="weight != null" >
+      <if test="weight != null">
         weight,
       </if>
-      <if test="abdominalCircumference != null" >
+      <if test="abdominalCircumference != null">
         abdominal_circumference,
       </if>
-      <if test="hipCircumference != null" >
+      <if test="hipCircumference != null">
         hip_circumference,
       </if>
-      <if test="heartRate != null" >
+      <if test="heartRate != null">
         heart_rate,
       </if>
-      <if test="breatheRate != null" >
+      <if test="breatheRate != null">
         breathe_rate,
       </if>
-      <if test="temperature != null" >
+      <if test="temperature != null">
         temperature,
       </if>
-      <if test="bloodPressure != null" >
+      <if test="bloodPressure != null">
         blood_pressure,
       </if>
-      <if test="measuringFrequency != null" >
+      <if test="measuringFrequency != null">
         measuring_frequency,
       </if>
-      <if test="bloodSugar != null" >
+      <if test="bloodSugar != null">
         blood_sugar,
       </if>
-      <if test="bloodSugarMinValue != null" >
+      <if test="bloodSugarMinValue != null">
         blood_sugar_min_value,
       </if>
-      <if test="bloodSugarMaxValue != null" >
+      <if test="bloodSugarMaxValue != null">
         blood_sugar_max_value,
       </if>
-      <if test="bloodLipid != null" >
+      <if test="bloodLipid != null">
         blood_lipid,
       </if>
-      <if test="bloodLipidValue != null" >
+      <if test="bloodLipidValue != null">
         blood_lipid_value,
       </if>
-      <if test="uricAcid != null" >
+      <if test="uricAcid != null">
         uric_acid,
       </if>
-      <if test="bloodOxygen != null" >
+      <if test="bloodOxygen != null">
         blood_oxygen,
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time,
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="userId != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
         #{userId,jdbcType=BIGINT},
       </if>
-      <if test="height != null" >
+      <if test="height != null">
         #{height,jdbcType=REAL},
       </if>
-      <if test="weight != null" >
+      <if test="weight != null">
         #{weight,jdbcType=REAL},
       </if>
-      <if test="abdominalCircumference != null" >
+      <if test="abdominalCircumference != null">
         #{abdominalCircumference,jdbcType=REAL},
       </if>
-      <if test="hipCircumference != null" >
+      <if test="hipCircumference != null">
         #{hipCircumference,jdbcType=REAL},
       </if>
-      <if test="heartRate != null" >
+      <if test="heartRate != null">
         #{heartRate,jdbcType=INTEGER},
       </if>
-      <if test="breatheRate != null" >
+      <if test="breatheRate != null">
         #{breatheRate,jdbcType=INTEGER},
       </if>
-      <if test="temperature != null" >
+      <if test="temperature != null">
         #{temperature,jdbcType=REAL},
       </if>
-      <if test="bloodPressure != null" >
+      <if test="bloodPressure != null">
         #{bloodPressure,jdbcType=REAL},
       </if>
-      <if test="measuringFrequency != null" >
+      <if test="measuringFrequency != null">
         #{measuringFrequency,jdbcType=INTEGER},
       </if>
-      <if test="bloodSugar != null" >
+      <if test="bloodSugar != null">
         #{bloodSugar,jdbcType=INTEGER},
       </if>
-      <if test="bloodSugarMinValue != null" >
+      <if test="bloodSugarMinValue != null">
         #{bloodSugarMinValue,jdbcType=REAL},
       </if>
-      <if test="bloodSugarMaxValue != null" >
+      <if test="bloodSugarMaxValue != null">
         #{bloodSugarMaxValue,jdbcType=REAL},
       </if>
-      <if test="bloodLipid != null" >
+      <if test="bloodLipid != null">
         #{bloodLipid,jdbcType=INTEGER},
       </if>
-      <if test="bloodLipidValue != null" >
+      <if test="bloodLipidValue != null">
         #{bloodLipidValue,jdbcType=REAL},
       </if>
-      <if test="uricAcid != null" >
+      <if test="uricAcid != null">
         #{uricAcid,jdbcType=REAL},
       </if>
-      <if test="bloodOxygen != null" >
+      <if test="bloodOxygen != null">
         #{bloodOxygen,jdbcType=REAL},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.breeze.health.entity.UserPhysiologicalExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserPhysiologicalExample" resultType="java.lang.Integer">
     select count(*) from t_user_physiological
-    <if test="_parameter != null" >
+    <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPhysiological" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPhysiological">
     update t_user_physiological
-    <set >
-      <if test="userId != null" >
+    <set>
+      <if test="userId != null">
         user_id = #{userId,jdbcType=BIGINT},
       </if>
-      <if test="height != null" >
+      <if test="height != null">
         height = #{height,jdbcType=REAL},
       </if>
-      <if test="weight != null" >
+      <if test="weight != null">
         weight = #{weight,jdbcType=REAL},
       </if>
-      <if test="abdominalCircumference != null" >
+      <if test="abdominalCircumference != null">
         abdominal_circumference = #{abdominalCircumference,jdbcType=REAL},
       </if>
-      <if test="hipCircumference != null" >
+      <if test="hipCircumference != null">
         hip_circumference = #{hipCircumference,jdbcType=REAL},
       </if>
-      <if test="heartRate != null" >
+      <if test="heartRate != null">
         heart_rate = #{heartRate,jdbcType=INTEGER},
       </if>
-      <if test="breatheRate != null" >
+      <if test="breatheRate != null">
         breathe_rate = #{breatheRate,jdbcType=INTEGER},
       </if>
-      <if test="temperature != null" >
+      <if test="temperature != null">
         temperature = #{temperature,jdbcType=REAL},
       </if>
-      <if test="bloodPressure != null" >
+      <if test="bloodPressure != null">
         blood_pressure = #{bloodPressure,jdbcType=REAL},
       </if>
-      <if test="measuringFrequency != null" >
+      <if test="measuringFrequency != null">
         measuring_frequency = #{measuringFrequency,jdbcType=INTEGER},
       </if>
-      <if test="bloodSugar != null" >
+      <if test="bloodSugar != null">
         blood_sugar = #{bloodSugar,jdbcType=INTEGER},
       </if>
-      <if test="bloodSugarMinValue != null" >
+      <if test="bloodSugarMinValue != null">
         blood_sugar_min_value = #{bloodSugarMinValue,jdbcType=REAL},
       </if>
-      <if test="bloodSugarMaxValue != null" >
+      <if test="bloodSugarMaxValue != null">
         blood_sugar_max_value = #{bloodSugarMaxValue,jdbcType=REAL},
       </if>
-      <if test="bloodLipid != null" >
+      <if test="bloodLipid != null">
         blood_lipid = #{bloodLipid,jdbcType=INTEGER},
       </if>
-      <if test="bloodLipidValue != null" >
+      <if test="bloodLipidValue != null">
         blood_lipid_value = #{bloodLipidValue,jdbcType=REAL},
       </if>
-      <if test="uricAcid != null" >
+      <if test="uricAcid != null">
         uric_acid = #{uricAcid,jdbcType=REAL},
       </if>
-      <if test="bloodOxygen != null" >
+      <if test="bloodOxygen != null">
         blood_oxygen = #{bloodOxygen,jdbcType=REAL},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPhysiological" >
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPhysiological">
     update t_user_physiological
     set user_id = #{userId,jdbcType=BIGINT},
       height = #{height,jdbcType=REAL},

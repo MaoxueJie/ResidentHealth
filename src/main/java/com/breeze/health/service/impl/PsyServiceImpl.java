@@ -7,26 +7,42 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.TransactionCallback;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import com.breeze.health.beans.vo.Result;
-import com.breeze.health.beans.vo.UserPsychologicalAD8Vo;
-import com.breeze.health.beans.vo.UserPsychologicalGAD7Vo;
-import com.breeze.health.beans.vo.UserPsychologicalPHQ9Vo;
+import com.breeze.health.beans.vo.UserPhysiologicalVo;
+import com.breeze.health.beans.vo.UserPsySuicideVo;
+import com.breeze.health.beans.vo.UserPsychologicalVo;
+import com.breeze.health.beans.vo.UserPsychologicalVo;
+import com.breeze.health.beans.vo.UserPsychologicalVo;
+import com.breeze.health.entity.UserPhysiological;
+import com.breeze.health.entity.UserPhysiologicalExample;
+import com.breeze.health.entity.UserPsychological;
 import com.breeze.health.entity.UserPsychologicalAD8;
 import com.breeze.health.entity.UserPsychologicalAD8Example;
+import com.breeze.health.entity.UserPsychologicalExample;
 import com.breeze.health.entity.UserPsychologicalGAD7;
 import com.breeze.health.entity.UserPsychologicalGAD7Example;
 import com.breeze.health.entity.UserPsychologicalPHQ9;
 import com.breeze.health.entity.UserPsychologicalPHQ9Example;
+import com.breeze.health.entity.UserPsychologicalSuicide;
+import com.breeze.health.entity.UserPsychologicalSuicideExample;
 import com.breeze.health.mapper.UserPsychologicalAD8Mapper;
 import com.breeze.health.mapper.UserPsychologicalGAD7Mapper;
+import com.breeze.health.mapper.UserPsychologicalMapper;
 import com.breeze.health.mapper.UserPsychologicalPHQ9Mapper;
+import com.breeze.health.mapper.UserPsychologicalSuicideMapper;
 import com.breeze.health.service.PsyService;
 import com.breeze.health.util.BeanUtils;
 
 @Service("psyService")
 public class PsyServiceImpl implements PsyService{
 	private static Logger logger = LoggerFactory.getLogger(PsyServiceImpl.class);
+	
+	@Autowired
+	UserPsychologicalMapper userPsychologicalMapper;
 	
 	@Autowired
 	UserPsychologicalAD8Mapper userPsychologicalAD8Mapper;
@@ -37,58 +53,221 @@ public class PsyServiceImpl implements PsyService{
 	@Autowired
 	UserPsychologicalGAD7Mapper userPsychologicalGAD7Mapper;
 	
+	@Autowired
+	UserPsychologicalSuicideMapper userPsychologicalSuicideMapper;
+	
+	@Autowired
+	TransactionTemplate transactionTemplate;
+	
+	
+	
 	@Override
-	public Result<Void> addOrUpdatePsyAD8(UserPsychologicalAD8Vo vo) {
+	public Result<Void> addOrUpdatePsy(UserPsychologicalVo vo) {
 		Result<Void> ret = new Result<Void>();
 		try{
-			Date now = new Date();
-			UserPsychologicalAD8 ad8 = new UserPsychologicalAD8();
+			final Date now = new Date();
+			
+			final UserPsychological psy = new UserPsychological();
+			BeanUtils.copyProperties(vo, psy);
+			
+			
+			final UserPsychologicalAD8 ad8 = new UserPsychologicalAD8();
 			BeanUtils.copyProperties(vo, ad8);
-			int score = 0;
-			if(ad8.getQ1()!=null && ad8.getQ1()==2)
+			int ad8Score = 0;
+			if(ad8.getAd8Q1()!=null && ad8.getAd8Q1()==2)
 			{
-				score += 1;
+				ad8Score += 1;
 			}
-			if(ad8.getQ2()!=null && ad8.getQ2()==2)
+			if(ad8.getAd8Q2()!=null && ad8.getAd8Q2()==2)
 			{
-				score += 1;
+				ad8Score += 1;
 			}
-			if(ad8.getQ3()!=null && ad8.getQ3()==2)
+			if(ad8.getAd8Q3()!=null && ad8.getAd8Q3()==2)
 			{
-				score += 1;
+				ad8Score += 1;
 			}
-			if(ad8.getQ4()!=null && ad8.getQ4()==2)
+			if(ad8.getAd8Q4()!=null && ad8.getAd8Q4()==2)
 			{
-				score += 1;
+				ad8Score += 1;
 			}
-			if(ad8.getQ5()!=null && ad8.getQ5()==2)
+			if(ad8.getAd8Q5()!=null && ad8.getAd8Q5()==2)
 			{
-				score += 1;
+				ad8Score += 1;
 			}
-			if(ad8.getQ6()!=null && ad8.getQ6()==2)
+			if(ad8.getAd8Q6()!=null && ad8.getAd8Q6()==2)
 			{
-				score += 1;
+				ad8Score += 1;
 			}
-			if(ad8.getQ7()!=null && ad8.getQ7()==2)
+			if(ad8.getAd8Q7()!=null && ad8.getAd8Q7()==2)
 			{
-				score += 1;
+				ad8Score += 1;
 			}
-			if(ad8.getQ8()!=null && ad8.getQ8()==2)
+			if(ad8.getAd8Q8()!=null && ad8.getAd8Q8()==2)
 			{
-				score += 1;
+				ad8Score += 1;
 			}
-			ad8.setScore(score);
-			if (ad8.getId()!=null)
+			ad8.setAd8Score(ad8Score);
+			
+			
+			final UserPsychologicalGAD7 gad7 = new UserPsychologicalGAD7();
+			BeanUtils.copyProperties(vo, gad7);
+			int gad7Score = 0;
+			if (gad7.getGad7Q1()!=null)
 			{
-				ad8.setUpdateTime(now);
-				userPsychologicalAD8Mapper.updateByPrimaryKeySelective(ad8);
-			}else
-			{
-				ad8.setCreateTime(now);
-				ad8.setUpdateTime(now);
-				userPsychologicalAD8Mapper.insert(ad8);
+				gad7Score += gad7.getGad7Q1();
 			}
-			ret.setSuccess(true);
+			if (gad7.getGad7Q2()!=null)
+			{
+				gad7Score += gad7.getGad7Q2();
+			}
+			if (gad7.getGad7Q3()!=null)
+			{
+				gad7Score += gad7.getGad7Q3();
+			}
+			if (gad7.getGad7Q4()!=null)
+			{
+				gad7Score += gad7.getGad7Q4();
+			}
+			if (gad7.getGad7Q5()!=null)
+			{
+				gad7Score += gad7.getGad7Q5();
+			}
+			if (gad7.getGad7Q6()!=null)
+			{
+				gad7Score += gad7.getGad7Q6();
+			}
+			if (gad7.getGad7Q7()!=null)
+			{
+				gad7Score += gad7.getGad7Q7();
+			}
+			gad7.setGad7Score(gad7Score);
+			
+			
+			final UserPsychologicalPHQ9 phq9 = new UserPsychologicalPHQ9();
+			BeanUtils.copyProperties(vo, phq9);
+			int phq9Score = 0;
+			if (phq9.getPhq9Q1()!=null)
+			{
+				phq9Score += phq9.getPhq9Q1();
+			}
+			if (phq9.getPhq9Q2()!=null)
+			{
+				phq9Score += phq9.getPhq9Q2();
+			}
+			if (phq9.getPhq9Q3()!=null)
+			{
+				phq9Score += phq9.getPhq9Q3();
+			}
+			if (phq9.getPhq9Q4()!=null)
+			{
+				phq9Score += phq9.getPhq9Q4();
+			}
+			if (phq9.getPhq9Q5()!=null)
+			{
+				phq9Score += phq9.getPhq9Q5();
+			}
+			if (phq9.getPhq9Q6()!=null)
+			{
+				phq9Score += phq9.getPhq9Q6();
+			}
+			if (phq9.getPhq9Q7()!=null)
+			{
+				phq9Score += phq9.getPhq9Q7();
+			}
+			if (phq9.getPhq9Q8()!=null)
+			{
+				phq9Score += phq9.getPhq9Q8();
+			}
+			if (phq9.getPhq9Q9()!=null)
+			{
+				phq9Score += phq9.getPhq9Q9();
+			}
+			phq9.setPhq9Score(phq9Score);
+			
+			ret = transactionTemplate.execute(new TransactionCallback<Result<Void>>() {
+				@Override
+				public Result<Void> doInTransaction(TransactionStatus arg0) {
+					Result<Void> result = new Result<Void>();
+					if (psy.getId()!=null)
+					{
+						psy.setUpdateTime(now);
+						userPsychologicalMapper.updateByPrimaryKeySelective(psy);
+						UserPsychologicalAD8Example ad8Example = new UserPsychologicalAD8Example();
+						ad8Example.createCriteria().andPsyIdEqualTo(psy.getId());
+						List<UserPsychologicalAD8> ad8s = userPsychologicalAD8Mapper.selectByExample(ad8Example);
+						if (ad8s.size()>0)
+						{
+							ad8.setId(ad8s.get(0).getId());
+							ad8.setPsyId(psy.getId());
+							ad8.setUpdateTime(now);
+							userPsychologicalAD8Mapper.updateByPrimaryKeySelective(ad8);
+						}else
+						{
+							ad8.setPsyId(psy.getId());
+							ad8.setCreateTime(now);
+							ad8.setUpdateTime(now);
+							userPsychologicalAD8Mapper.insertSelective(ad8);
+						}
+						
+						UserPsychologicalGAD7Example gad7Example = new UserPsychologicalGAD7Example();
+						gad7Example.createCriteria().andPsyIdEqualTo(psy.getId());
+						List<UserPsychologicalGAD7> gad7s = userPsychologicalGAD7Mapper.selectByExample(gad7Example);
+						if (gad7s.size()>0)
+						{
+							gad7.setId(gad7s.get(0).getId());
+							gad7.setPsyId(psy.getId());
+							gad7.setUpdateTime(now);
+							userPsychologicalGAD7Mapper.updateByPrimaryKeySelective(gad7);
+						}else
+						{
+							gad7.setPsyId(psy.getId());
+							gad7.setCreateTime(now);
+							gad7.setUpdateTime(now);
+							userPsychologicalGAD7Mapper.updateByPrimaryKeySelective(gad7);
+						}
+
+						UserPsychologicalPHQ9Example phq9Example = new UserPsychologicalPHQ9Example();
+						phq9Example.createCriteria().andPsyIdEqualTo(psy.getId());
+						List<UserPsychologicalPHQ9> phq9s = userPsychologicalPHQ9Mapper.selectByExample(phq9Example);
+						if (phq9s.size()>0)
+						{
+							phq9.setId(phq9s.get(0).getId());
+							phq9.setPsyId(psy.getId());
+							phq9.setUpdateTime(now);
+							userPsychologicalPHQ9Mapper.updateByPrimaryKeySelective(phq9);
+						}else
+						{
+							phq9.setPsyId(psy.getId());
+							phq9.setCreateTime(now);
+							phq9.setUpdateTime(now);
+							userPsychologicalPHQ9Mapper.updateByPrimaryKeySelective(phq9);
+						}
+						
+					}else
+					{
+						psy.setCreateTime(now);
+						psy.setUpdateTime(now);
+						userPsychologicalMapper.insertSelective(psy);
+						
+						ad8.setPsyId(psy.getId());
+						ad8.setCreateTime(now);
+						ad8.setUpdateTime(now);
+						userPsychologicalAD8Mapper.insert(ad8);
+						
+						gad7.setPsyId(psy.getId());
+						gad7.setCreateTime(now);
+						gad7.setUpdateTime(now);
+						userPsychologicalGAD7Mapper.insert(gad7);
+						
+						phq9.setPsyId(psy.getId());
+						phq9.setCreateTime(now);
+						phq9.setUpdateTime(now);
+						userPsychologicalPHQ9Mapper.insert(phq9);
+					}
+					result.setSuccess(true);
+					return result;
+				}
+			});
 		}catch(Exception e)
 		{
 			logger.error("添加或更AD8异常", e);
@@ -98,199 +277,104 @@ public class PsyServiceImpl implements PsyService{
 	}
 
 	@Override
-	public Result<UserPsychologicalAD8Vo> getPsyAd8(Long userId) {
-		Result<UserPsychologicalAD8Vo> ret = new Result<UserPsychologicalAD8Vo>();
+	public Result<UserPsychologicalVo> getPsy(Long userId) {
+		Result<UserPsychologicalVo> ret = new Result<UserPsychologicalVo>();
 		try{
-			UserPsychologicalAD8Example example = new UserPsychologicalAD8Example();
+			UserPsychologicalExample example = new UserPsychologicalExample();
 			example.createCriteria().andUserIdEqualTo(userId);
 			example.setOrderByClause("id desc");
-			List<UserPsychologicalAD8> ad8s = userPsychologicalAD8Mapper.selectByExample(example);
-			if (ad8s!= null && ad8s.size()>0)
+			List<UserPsychological> psys = userPsychologicalMapper.selectByExample(example);
+			if (psys!= null && psys.size()>0)
 			{
-				UserPsychologicalAD8Vo vo = new UserPsychologicalAD8Vo();
-				BeanUtils.copyProperties(ad8s.get(0), vo);
+				UserPsychologicalVo vo = new UserPsychologicalVo();
+
+				UserPsychologicalAD8Example ad8Example = new UserPsychologicalAD8Example();
+				ad8Example.createCriteria().andPsyIdEqualTo(psys.get(0).getId());
+				List<UserPsychologicalAD8> ad8s = userPsychologicalAD8Mapper.selectByExample(ad8Example);
+				if (ad8s!= null && ad8s.size()>0)
+				{
+					BeanUtils.copyProperties(ad8s.get(0), vo);
+				}
+				
+				UserPsychologicalGAD7Example gad7Example = new UserPsychologicalGAD7Example();
+				gad7Example.createCriteria().andPsyIdEqualTo(psys.get(0).getId());
+				List<UserPsychologicalGAD7> gad7s = userPsychologicalGAD7Mapper.selectByExample(gad7Example);
+				if (gad7s!= null && gad7s.size()>0)
+				{
+					BeanUtils.copyProperties(gad7s.get(0), vo);
+				}
+				
+				UserPsychologicalPHQ9Example phq9Example = new UserPsychologicalPHQ9Example();
+				phq9Example.createCriteria().andPsyIdEqualTo(psys.get(0).getId());
+				List<UserPsychologicalPHQ9> phq9s = userPsychologicalPHQ9Mapper.selectByExample(phq9Example);
+				if (phq9s!= null && phq9s.size()>0)
+				{
+					BeanUtils.copyProperties(phq9s.get(0), vo);
+				}
+				
+				BeanUtils.copyProperties(psys.get(0), vo);
+
 				ret.setSuccess(true);
 				ret.setData(vo);
 			}else
 			{
-				ret.setMessage("无AD8");
+				ret.setMessage("未获取到心理测试");
 			}
 		}catch(Exception e)
 		{
-			logger.error("获取AD8异常", e);
-			ret.setMessage("获取AD8失败");
+			logger.error("获取心理测试异常", e);
+			ret.setMessage("获取心理测试异常");
 		}
 		return ret;
 	}
 
 	@Override
-	public Result<Void> addOrUpdatePsyGAD7(UserPsychologicalGAD7Vo vo) {
+	public Result<Void> addOrUpdatePsySuicide(UserPsySuicideVo vo) {
 		Result<Void> ret = new Result<Void>();
 		try{
 			Date now = new Date();
-			UserPsychologicalGAD7 gad7 = new UserPsychologicalGAD7();
-			BeanUtils.copyProperties(vo, gad7);
-			int score = 0;
-			if (gad7.getQ1()!=null)
+			UserPsychologicalSuicide suicide = new UserPsychologicalSuicide();
+			BeanUtils.copyProperties(vo, suicide);
+			if (suicide.getId()!=null)
 			{
-				score += gad7.getQ1();
-			}
-			if (gad7.getQ2()!=null)
-			{
-				score += gad7.getQ2();
-			}
-			if (gad7.getQ3()!=null)
-			{
-				score += gad7.getQ3();
-			}
-			if (gad7.getQ4()!=null)
-			{
-				score += gad7.getQ4();
-			}
-			if (gad7.getQ5()!=null)
-			{
-				score += gad7.getQ5();
-			}
-			if (gad7.getQ6()!=null)
-			{
-				score += gad7.getQ6();
-			}
-			if (gad7.getQ7()!=null)
-			{
-				score += gad7.getQ7();
-			}
-
-			gad7.setScore(score);
-			if (gad7.getId()!=null)
-			{
-				gad7.setUpdateTime(now);
-				userPsychologicalGAD7Mapper.updateByPrimaryKeySelective(gad7);
+				suicide.setUpdateTime(now);
+				userPsychologicalSuicideMapper.updateByPrimaryKeySelective(suicide);
 			}else
 			{
-				gad7.setCreateTime(now);
-				gad7.setUpdateTime(now);
-				userPsychologicalGAD7Mapper.insert(gad7);
+				suicide.setCreateTime(now);
+				suicide.setUpdateTime(now);
+				userPsychologicalSuicideMapper.insert(suicide);
 			}
 			ret.setSuccess(true);
 		}catch(Exception e)
 		{
-			logger.error("添加或更GAD7异常", e);
-			ret.setMessage("更新GAD7失败");
+			logger.error("添加或更心理测试异常", e);
+			ret.setMessage("更新心理测试失败");
 		}
 		return ret;
 	}
 
 	@Override
-	public Result<UserPsychologicalGAD7Vo> getPsyGAD7(Long userId) {
-		Result<UserPsychologicalGAD7Vo> ret = new Result<UserPsychologicalGAD7Vo>();
+	public Result<UserPsySuicideVo> getPsySuicide(Long userId) {
+		Result<UserPsySuicideVo> ret = new Result<UserPsySuicideVo>();
 		try{
-			UserPsychologicalGAD7Example example = new UserPsychologicalGAD7Example();
+			UserPsychologicalSuicideExample example = new UserPsychologicalSuicideExample();
 			example.createCriteria().andUserIdEqualTo(userId);
-			List<UserPsychologicalGAD7> gad7s = userPsychologicalGAD7Mapper.selectByExample(example);
-			if (gad7s!= null && gad7s.size()>0)
+			List<UserPsychologicalSuicide> suicides = userPsychologicalSuicideMapper.selectByExample(example);
+			if (suicides!= null && suicides.size()>0)
 			{
-				UserPsychologicalGAD7Vo vo = new UserPsychologicalGAD7Vo();
-				BeanUtils.copyProperties(gad7s.get(0), vo);
+				UserPsySuicideVo vo = new UserPsySuicideVo();
+				BeanUtils.copyProperties(suicides.get(0), vo);
 				ret.setSuccess(true);
 				ret.setData(vo);
 			}else
 			{
-				ret.setMessage("无GAD7");
+				ret.setMessage("未获取到心理测试");
 			}
 		}catch(Exception e)
 		{
-			logger.error("获取GAD7异常", e);
-			ret.setMessage("获取GAD7失败");
-		}
-		return ret;
-	}
-
-	@Override
-	public Result<Void> addOrUpdatePsyPHQ9(UserPsychologicalPHQ9Vo vo) {
-		Result<Void> ret = new Result<Void>();
-		try{
-			Date now = new Date();
-			UserPsychologicalPHQ9 phq9 = new UserPsychologicalPHQ9();
-			BeanUtils.copyProperties(vo, phq9);
-			int score = 0;
-			if (phq9.getQ1()!=null)
-			{
-				score += phq9.getQ1();
-			}
-			if (phq9.getQ2()!=null)
-			{
-				score += phq9.getQ2();
-			}
-			if (phq9.getQ3()!=null)
-			{
-				score += phq9.getQ3();
-			}
-			if (phq9.getQ4()!=null)
-			{
-				score += phq9.getQ4();
-			}
-			if (phq9.getQ5()!=null)
-			{
-				score += phq9.getQ5();
-			}
-			if (phq9.getQ6()!=null)
-			{
-				score += phq9.getQ6();
-			}
-			if (phq9.getQ7()!=null)
-			{
-				score += phq9.getQ7();
-			}
-			if (phq9.getQ8()!=null)
-			{
-				score += phq9.getQ8();
-			}
-			if (phq9.getQ9()!=null)
-			{
-				score += phq9.getQ9();
-			}
-
-			phq9.setScore(score);
-			if (phq9.getId()!=null)
-			{
-				phq9.setUpdateTime(now);
-				userPsychologicalPHQ9Mapper.updateByPrimaryKeySelective(phq9);
-			}else
-			{
-				phq9.setCreateTime(now);
-				phq9.setUpdateTime(now);
-				userPsychologicalPHQ9Mapper.insert(phq9);
-			}
-			ret.setSuccess(true);
-		}catch(Exception e)
-		{
-			logger.error("添加或更PHQ9异常", e);
-			ret.setMessage("更新PHQ9失败");
-		}
-		return ret;
-	}
-
-	@Override
-	public Result<UserPsychologicalPHQ9Vo> getPsyPHQ9(Long userId) {
-		Result<UserPsychologicalPHQ9Vo> ret = new Result<UserPsychologicalPHQ9Vo>();
-		try{
-			UserPsychologicalPHQ9Example example = new UserPsychologicalPHQ9Example();
-			example.createCriteria().andUserIdEqualTo(userId);
-			List<UserPsychologicalPHQ9> phq9s = userPsychologicalPHQ9Mapper.selectByExample(example);
-			if (phq9s!= null && phq9s.size()>0)
-			{
-				UserPsychologicalPHQ9Vo vo = new UserPsychologicalPHQ9Vo();
-				BeanUtils.copyProperties(phq9s.get(0), vo);
-				ret.setSuccess(true);
-				ret.setData(vo);
-			}else
-			{
-				ret.setMessage("无PHQ9");
-			}
-		}catch(Exception e)
-		{
-			logger.error("获取PHQ9异常", e);
-			ret.setMessage("获取PHQ9失败");
+			logger.error("获取心理测试异常", e);
+			ret.setMessage("获取心理测试失败");
 		}
 		return ret;
 	}

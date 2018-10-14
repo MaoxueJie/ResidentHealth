@@ -165,603 +165,603 @@ public class UserPsychologicalAD8Example {
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIsNull() {
-            addCriterion("user_id is null");
+        public Criteria andPsyIdIsNull() {
+            addCriterion("psy_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIsNotNull() {
-            addCriterion("user_id is not null");
+        public Criteria andPsyIdIsNotNull() {
+            addCriterion("psy_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdEqualTo(Long value) {
-            addCriterion("user_id =", value, "userId");
+        public Criteria andPsyIdEqualTo(Long value) {
+            addCriterion("psy_id =", value, "psyId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotEqualTo(Long value) {
-            addCriterion("user_id <>", value, "userId");
+        public Criteria andPsyIdNotEqualTo(Long value) {
+            addCriterion("psy_id <>", value, "psyId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThan(Long value) {
-            addCriterion("user_id >", value, "userId");
+        public Criteria andPsyIdGreaterThan(Long value) {
+            addCriterion("psy_id >", value, "psyId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("user_id >=", value, "userId");
+        public Criteria andPsyIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("psy_id >=", value, "psyId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThan(Long value) {
-            addCriterion("user_id <", value, "userId");
+        public Criteria andPsyIdLessThan(Long value) {
+            addCriterion("psy_id <", value, "psyId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThanOrEqualTo(Long value) {
-            addCriterion("user_id <=", value, "userId");
+        public Criteria andPsyIdLessThanOrEqualTo(Long value) {
+            addCriterion("psy_id <=", value, "psyId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIn(List<Long> values) {
-            addCriterion("user_id in", values, "userId");
+        public Criteria andPsyIdIn(List<Long> values) {
+            addCriterion("psy_id in", values, "psyId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotIn(List<Long> values) {
-            addCriterion("user_id not in", values, "userId");
+        public Criteria andPsyIdNotIn(List<Long> values) {
+            addCriterion("psy_id not in", values, "psyId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdBetween(Long value1, Long value2) {
-            addCriterion("user_id between", value1, value2, "userId");
+        public Criteria andPsyIdBetween(Long value1, Long value2) {
+            addCriterion("psy_id between", value1, value2, "psyId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotBetween(Long value1, Long value2) {
-            addCriterion("user_id not between", value1, value2, "userId");
+        public Criteria andPsyIdNotBetween(Long value1, Long value2) {
+            addCriterion("psy_id not between", value1, value2, "psyId");
             return (Criteria) this;
         }
 
-        public Criteria andQ1IsNull() {
-            addCriterion("q1 is null");
+        public Criteria andAd8Q1IsNull() {
+            addCriterion("ad8_q1 is null");
             return (Criteria) this;
         }
 
-        public Criteria andQ1IsNotNull() {
-            addCriterion("q1 is not null");
+        public Criteria andAd8Q1IsNotNull() {
+            addCriterion("ad8_q1 is not null");
             return (Criteria) this;
         }
 
-        public Criteria andQ1EqualTo(Integer value) {
-            addCriterion("q1 =", value, "q1");
+        public Criteria andAd8Q1EqualTo(Integer value) {
+            addCriterion("ad8_q1 =", value, "ad8Q1");
             return (Criteria) this;
         }
 
-        public Criteria andQ1NotEqualTo(Integer value) {
-            addCriterion("q1 <>", value, "q1");
+        public Criteria andAd8Q1NotEqualTo(Integer value) {
+            addCriterion("ad8_q1 <>", value, "ad8Q1");
             return (Criteria) this;
         }
 
-        public Criteria andQ1GreaterThan(Integer value) {
-            addCriterion("q1 >", value, "q1");
+        public Criteria andAd8Q1GreaterThan(Integer value) {
+            addCriterion("ad8_q1 >", value, "ad8Q1");
             return (Criteria) this;
         }
 
-        public Criteria andQ1GreaterThanOrEqualTo(Integer value) {
-            addCriterion("q1 >=", value, "q1");
+        public Criteria andAd8Q1GreaterThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q1 >=", value, "ad8Q1");
             return (Criteria) this;
         }
 
-        public Criteria andQ1LessThan(Integer value) {
-            addCriterion("q1 <", value, "q1");
+        public Criteria andAd8Q1LessThan(Integer value) {
+            addCriterion("ad8_q1 <", value, "ad8Q1");
             return (Criteria) this;
         }
 
-        public Criteria andQ1LessThanOrEqualTo(Integer value) {
-            addCriterion("q1 <=", value, "q1");
+        public Criteria andAd8Q1LessThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q1 <=", value, "ad8Q1");
             return (Criteria) this;
         }
 
-        public Criteria andQ1In(List<Integer> values) {
-            addCriterion("q1 in", values, "q1");
+        public Criteria andAd8Q1In(List<Integer> values) {
+            addCriterion("ad8_q1 in", values, "ad8Q1");
             return (Criteria) this;
         }
 
-        public Criteria andQ1NotIn(List<Integer> values) {
-            addCriterion("q1 not in", values, "q1");
+        public Criteria andAd8Q1NotIn(List<Integer> values) {
+            addCriterion("ad8_q1 not in", values, "ad8Q1");
             return (Criteria) this;
         }
 
-        public Criteria andQ1Between(Integer value1, Integer value2) {
-            addCriterion("q1 between", value1, value2, "q1");
+        public Criteria andAd8Q1Between(Integer value1, Integer value2) {
+            addCriterion("ad8_q1 between", value1, value2, "ad8Q1");
             return (Criteria) this;
         }
 
-        public Criteria andQ1NotBetween(Integer value1, Integer value2) {
-            addCriterion("q1 not between", value1, value2, "q1");
+        public Criteria andAd8Q1NotBetween(Integer value1, Integer value2) {
+            addCriterion("ad8_q1 not between", value1, value2, "ad8Q1");
             return (Criteria) this;
         }
 
-        public Criteria andQ2IsNull() {
-            addCriterion("q2 is null");
+        public Criteria andAd8Q2IsNull() {
+            addCriterion("ad8_q2 is null");
             return (Criteria) this;
         }
 
-        public Criteria andQ2IsNotNull() {
-            addCriterion("q2 is not null");
+        public Criteria andAd8Q2IsNotNull() {
+            addCriterion("ad8_q2 is not null");
             return (Criteria) this;
         }
 
-        public Criteria andQ2EqualTo(Integer value) {
-            addCriterion("q2 =", value, "q2");
+        public Criteria andAd8Q2EqualTo(Integer value) {
+            addCriterion("ad8_q2 =", value, "ad8Q2");
             return (Criteria) this;
         }
 
-        public Criteria andQ2NotEqualTo(Integer value) {
-            addCriterion("q2 <>", value, "q2");
+        public Criteria andAd8Q2NotEqualTo(Integer value) {
+            addCriterion("ad8_q2 <>", value, "ad8Q2");
             return (Criteria) this;
         }
 
-        public Criteria andQ2GreaterThan(Integer value) {
-            addCriterion("q2 >", value, "q2");
+        public Criteria andAd8Q2GreaterThan(Integer value) {
+            addCriterion("ad8_q2 >", value, "ad8Q2");
             return (Criteria) this;
         }
 
-        public Criteria andQ2GreaterThanOrEqualTo(Integer value) {
-            addCriterion("q2 >=", value, "q2");
+        public Criteria andAd8Q2GreaterThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q2 >=", value, "ad8Q2");
             return (Criteria) this;
         }
 
-        public Criteria andQ2LessThan(Integer value) {
-            addCriterion("q2 <", value, "q2");
+        public Criteria andAd8Q2LessThan(Integer value) {
+            addCriterion("ad8_q2 <", value, "ad8Q2");
             return (Criteria) this;
         }
 
-        public Criteria andQ2LessThanOrEqualTo(Integer value) {
-            addCriterion("q2 <=", value, "q2");
+        public Criteria andAd8Q2LessThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q2 <=", value, "ad8Q2");
             return (Criteria) this;
         }
 
-        public Criteria andQ2In(List<Integer> values) {
-            addCriterion("q2 in", values, "q2");
+        public Criteria andAd8Q2In(List<Integer> values) {
+            addCriterion("ad8_q2 in", values, "ad8Q2");
             return (Criteria) this;
         }
 
-        public Criteria andQ2NotIn(List<Integer> values) {
-            addCriterion("q2 not in", values, "q2");
+        public Criteria andAd8Q2NotIn(List<Integer> values) {
+            addCriterion("ad8_q2 not in", values, "ad8Q2");
             return (Criteria) this;
         }
 
-        public Criteria andQ2Between(Integer value1, Integer value2) {
-            addCriterion("q2 between", value1, value2, "q2");
+        public Criteria andAd8Q2Between(Integer value1, Integer value2) {
+            addCriterion("ad8_q2 between", value1, value2, "ad8Q2");
             return (Criteria) this;
         }
 
-        public Criteria andQ2NotBetween(Integer value1, Integer value2) {
-            addCriterion("q2 not between", value1, value2, "q2");
+        public Criteria andAd8Q2NotBetween(Integer value1, Integer value2) {
+            addCriterion("ad8_q2 not between", value1, value2, "ad8Q2");
             return (Criteria) this;
         }
 
-        public Criteria andQ3IsNull() {
-            addCriterion("q3 is null");
+        public Criteria andAd8Q3IsNull() {
+            addCriterion("ad8_q3 is null");
             return (Criteria) this;
         }
 
-        public Criteria andQ3IsNotNull() {
-            addCriterion("q3 is not null");
+        public Criteria andAd8Q3IsNotNull() {
+            addCriterion("ad8_q3 is not null");
             return (Criteria) this;
         }
 
-        public Criteria andQ3EqualTo(Integer value) {
-            addCriterion("q3 =", value, "q3");
+        public Criteria andAd8Q3EqualTo(Integer value) {
+            addCriterion("ad8_q3 =", value, "ad8Q3");
             return (Criteria) this;
         }
 
-        public Criteria andQ3NotEqualTo(Integer value) {
-            addCriterion("q3 <>", value, "q3");
+        public Criteria andAd8Q3NotEqualTo(Integer value) {
+            addCriterion("ad8_q3 <>", value, "ad8Q3");
             return (Criteria) this;
         }
 
-        public Criteria andQ3GreaterThan(Integer value) {
-            addCriterion("q3 >", value, "q3");
+        public Criteria andAd8Q3GreaterThan(Integer value) {
+            addCriterion("ad8_q3 >", value, "ad8Q3");
             return (Criteria) this;
         }
 
-        public Criteria andQ3GreaterThanOrEqualTo(Integer value) {
-            addCriterion("q3 >=", value, "q3");
+        public Criteria andAd8Q3GreaterThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q3 >=", value, "ad8Q3");
             return (Criteria) this;
         }
 
-        public Criteria andQ3LessThan(Integer value) {
-            addCriterion("q3 <", value, "q3");
+        public Criteria andAd8Q3LessThan(Integer value) {
+            addCriterion("ad8_q3 <", value, "ad8Q3");
             return (Criteria) this;
         }
 
-        public Criteria andQ3LessThanOrEqualTo(Integer value) {
-            addCriterion("q3 <=", value, "q3");
+        public Criteria andAd8Q3LessThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q3 <=", value, "ad8Q3");
             return (Criteria) this;
         }
 
-        public Criteria andQ3In(List<Integer> values) {
-            addCriterion("q3 in", values, "q3");
+        public Criteria andAd8Q3In(List<Integer> values) {
+            addCriterion("ad8_q3 in", values, "ad8Q3");
             return (Criteria) this;
         }
 
-        public Criteria andQ3NotIn(List<Integer> values) {
-            addCriterion("q3 not in", values, "q3");
+        public Criteria andAd8Q3NotIn(List<Integer> values) {
+            addCriterion("ad8_q3 not in", values, "ad8Q3");
             return (Criteria) this;
         }
 
-        public Criteria andQ3Between(Integer value1, Integer value2) {
-            addCriterion("q3 between", value1, value2, "q3");
+        public Criteria andAd8Q3Between(Integer value1, Integer value2) {
+            addCriterion("ad8_q3 between", value1, value2, "ad8Q3");
             return (Criteria) this;
         }
 
-        public Criteria andQ3NotBetween(Integer value1, Integer value2) {
-            addCriterion("q3 not between", value1, value2, "q3");
+        public Criteria andAd8Q3NotBetween(Integer value1, Integer value2) {
+            addCriterion("ad8_q3 not between", value1, value2, "ad8Q3");
             return (Criteria) this;
         }
 
-        public Criteria andQ4IsNull() {
-            addCriterion("q4 is null");
+        public Criteria andAd8Q4IsNull() {
+            addCriterion("ad8_q4 is null");
             return (Criteria) this;
         }
 
-        public Criteria andQ4IsNotNull() {
-            addCriterion("q4 is not null");
+        public Criteria andAd8Q4IsNotNull() {
+            addCriterion("ad8_q4 is not null");
             return (Criteria) this;
         }
 
-        public Criteria andQ4EqualTo(Integer value) {
-            addCriterion("q4 =", value, "q4");
+        public Criteria andAd8Q4EqualTo(Integer value) {
+            addCriterion("ad8_q4 =", value, "ad8Q4");
             return (Criteria) this;
         }
 
-        public Criteria andQ4NotEqualTo(Integer value) {
-            addCriterion("q4 <>", value, "q4");
+        public Criteria andAd8Q4NotEqualTo(Integer value) {
+            addCriterion("ad8_q4 <>", value, "ad8Q4");
             return (Criteria) this;
         }
 
-        public Criteria andQ4GreaterThan(Integer value) {
-            addCriterion("q4 >", value, "q4");
+        public Criteria andAd8Q4GreaterThan(Integer value) {
+            addCriterion("ad8_q4 >", value, "ad8Q4");
             return (Criteria) this;
         }
 
-        public Criteria andQ4GreaterThanOrEqualTo(Integer value) {
-            addCriterion("q4 >=", value, "q4");
+        public Criteria andAd8Q4GreaterThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q4 >=", value, "ad8Q4");
             return (Criteria) this;
         }
 
-        public Criteria andQ4LessThan(Integer value) {
-            addCriterion("q4 <", value, "q4");
+        public Criteria andAd8Q4LessThan(Integer value) {
+            addCriterion("ad8_q4 <", value, "ad8Q4");
             return (Criteria) this;
         }
 
-        public Criteria andQ4LessThanOrEqualTo(Integer value) {
-            addCriterion("q4 <=", value, "q4");
+        public Criteria andAd8Q4LessThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q4 <=", value, "ad8Q4");
             return (Criteria) this;
         }
 
-        public Criteria andQ4In(List<Integer> values) {
-            addCriterion("q4 in", values, "q4");
+        public Criteria andAd8Q4In(List<Integer> values) {
+            addCriterion("ad8_q4 in", values, "ad8Q4");
             return (Criteria) this;
         }
 
-        public Criteria andQ4NotIn(List<Integer> values) {
-            addCriterion("q4 not in", values, "q4");
+        public Criteria andAd8Q4NotIn(List<Integer> values) {
+            addCriterion("ad8_q4 not in", values, "ad8Q4");
             return (Criteria) this;
         }
 
-        public Criteria andQ4Between(Integer value1, Integer value2) {
-            addCriterion("q4 between", value1, value2, "q4");
+        public Criteria andAd8Q4Between(Integer value1, Integer value2) {
+            addCriterion("ad8_q4 between", value1, value2, "ad8Q4");
             return (Criteria) this;
         }
 
-        public Criteria andQ4NotBetween(Integer value1, Integer value2) {
-            addCriterion("q4 not between", value1, value2, "q4");
+        public Criteria andAd8Q4NotBetween(Integer value1, Integer value2) {
+            addCriterion("ad8_q4 not between", value1, value2, "ad8Q4");
             return (Criteria) this;
         }
 
-        public Criteria andQ5IsNull() {
-            addCriterion("q5 is null");
+        public Criteria andAd8Q5IsNull() {
+            addCriterion("ad8_q5 is null");
             return (Criteria) this;
         }
 
-        public Criteria andQ5IsNotNull() {
-            addCriterion("q5 is not null");
+        public Criteria andAd8Q5IsNotNull() {
+            addCriterion("ad8_q5 is not null");
             return (Criteria) this;
         }
 
-        public Criteria andQ5EqualTo(Integer value) {
-            addCriterion("q5 =", value, "q5");
+        public Criteria andAd8Q5EqualTo(Integer value) {
+            addCriterion("ad8_q5 =", value, "ad8Q5");
             return (Criteria) this;
         }
 
-        public Criteria andQ5NotEqualTo(Integer value) {
-            addCriterion("q5 <>", value, "q5");
+        public Criteria andAd8Q5NotEqualTo(Integer value) {
+            addCriterion("ad8_q5 <>", value, "ad8Q5");
             return (Criteria) this;
         }
 
-        public Criteria andQ5GreaterThan(Integer value) {
-            addCriterion("q5 >", value, "q5");
+        public Criteria andAd8Q5GreaterThan(Integer value) {
+            addCriterion("ad8_q5 >", value, "ad8Q5");
             return (Criteria) this;
         }
 
-        public Criteria andQ5GreaterThanOrEqualTo(Integer value) {
-            addCriterion("q5 >=", value, "q5");
+        public Criteria andAd8Q5GreaterThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q5 >=", value, "ad8Q5");
             return (Criteria) this;
         }
 
-        public Criteria andQ5LessThan(Integer value) {
-            addCriterion("q5 <", value, "q5");
+        public Criteria andAd8Q5LessThan(Integer value) {
+            addCriterion("ad8_q5 <", value, "ad8Q5");
             return (Criteria) this;
         }
 
-        public Criteria andQ5LessThanOrEqualTo(Integer value) {
-            addCriterion("q5 <=", value, "q5");
+        public Criteria andAd8Q5LessThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q5 <=", value, "ad8Q5");
             return (Criteria) this;
         }
 
-        public Criteria andQ5In(List<Integer> values) {
-            addCriterion("q5 in", values, "q5");
+        public Criteria andAd8Q5In(List<Integer> values) {
+            addCriterion("ad8_q5 in", values, "ad8Q5");
             return (Criteria) this;
         }
 
-        public Criteria andQ5NotIn(List<Integer> values) {
-            addCriterion("q5 not in", values, "q5");
+        public Criteria andAd8Q5NotIn(List<Integer> values) {
+            addCriterion("ad8_q5 not in", values, "ad8Q5");
             return (Criteria) this;
         }
 
-        public Criteria andQ5Between(Integer value1, Integer value2) {
-            addCriterion("q5 between", value1, value2, "q5");
+        public Criteria andAd8Q5Between(Integer value1, Integer value2) {
+            addCriterion("ad8_q5 between", value1, value2, "ad8Q5");
             return (Criteria) this;
         }
 
-        public Criteria andQ5NotBetween(Integer value1, Integer value2) {
-            addCriterion("q5 not between", value1, value2, "q5");
+        public Criteria andAd8Q5NotBetween(Integer value1, Integer value2) {
+            addCriterion("ad8_q5 not between", value1, value2, "ad8Q5");
             return (Criteria) this;
         }
 
-        public Criteria andQ6IsNull() {
-            addCriterion("q6 is null");
+        public Criteria andAd8Q6IsNull() {
+            addCriterion("ad8_q6 is null");
             return (Criteria) this;
         }
 
-        public Criteria andQ6IsNotNull() {
-            addCriterion("q6 is not null");
+        public Criteria andAd8Q6IsNotNull() {
+            addCriterion("ad8_q6 is not null");
             return (Criteria) this;
         }
 
-        public Criteria andQ6EqualTo(Integer value) {
-            addCriterion("q6 =", value, "q6");
+        public Criteria andAd8Q6EqualTo(Integer value) {
+            addCriterion("ad8_q6 =", value, "ad8Q6");
             return (Criteria) this;
         }
 
-        public Criteria andQ6NotEqualTo(Integer value) {
-            addCriterion("q6 <>", value, "q6");
+        public Criteria andAd8Q6NotEqualTo(Integer value) {
+            addCriterion("ad8_q6 <>", value, "ad8Q6");
             return (Criteria) this;
         }
 
-        public Criteria andQ6GreaterThan(Integer value) {
-            addCriterion("q6 >", value, "q6");
+        public Criteria andAd8Q6GreaterThan(Integer value) {
+            addCriterion("ad8_q6 >", value, "ad8Q6");
             return (Criteria) this;
         }
 
-        public Criteria andQ6GreaterThanOrEqualTo(Integer value) {
-            addCriterion("q6 >=", value, "q6");
+        public Criteria andAd8Q6GreaterThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q6 >=", value, "ad8Q6");
             return (Criteria) this;
         }
 
-        public Criteria andQ6LessThan(Integer value) {
-            addCriterion("q6 <", value, "q6");
+        public Criteria andAd8Q6LessThan(Integer value) {
+            addCriterion("ad8_q6 <", value, "ad8Q6");
             return (Criteria) this;
         }
 
-        public Criteria andQ6LessThanOrEqualTo(Integer value) {
-            addCriterion("q6 <=", value, "q6");
+        public Criteria andAd8Q6LessThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q6 <=", value, "ad8Q6");
             return (Criteria) this;
         }
 
-        public Criteria andQ6In(List<Integer> values) {
-            addCriterion("q6 in", values, "q6");
+        public Criteria andAd8Q6In(List<Integer> values) {
+            addCriterion("ad8_q6 in", values, "ad8Q6");
             return (Criteria) this;
         }
 
-        public Criteria andQ6NotIn(List<Integer> values) {
-            addCriterion("q6 not in", values, "q6");
+        public Criteria andAd8Q6NotIn(List<Integer> values) {
+            addCriterion("ad8_q6 not in", values, "ad8Q6");
             return (Criteria) this;
         }
 
-        public Criteria andQ6Between(Integer value1, Integer value2) {
-            addCriterion("q6 between", value1, value2, "q6");
+        public Criteria andAd8Q6Between(Integer value1, Integer value2) {
+            addCriterion("ad8_q6 between", value1, value2, "ad8Q6");
             return (Criteria) this;
         }
 
-        public Criteria andQ6NotBetween(Integer value1, Integer value2) {
-            addCriterion("q6 not between", value1, value2, "q6");
+        public Criteria andAd8Q6NotBetween(Integer value1, Integer value2) {
+            addCriterion("ad8_q6 not between", value1, value2, "ad8Q6");
             return (Criteria) this;
         }
 
-        public Criteria andQ7IsNull() {
-            addCriterion("q7 is null");
+        public Criteria andAd8Q7IsNull() {
+            addCriterion("ad8_q7 is null");
             return (Criteria) this;
         }
 
-        public Criteria andQ7IsNotNull() {
-            addCriterion("q7 is not null");
+        public Criteria andAd8Q7IsNotNull() {
+            addCriterion("ad8_q7 is not null");
             return (Criteria) this;
         }
 
-        public Criteria andQ7EqualTo(Integer value) {
-            addCriterion("q7 =", value, "q7");
+        public Criteria andAd8Q7EqualTo(Integer value) {
+            addCriterion("ad8_q7 =", value, "ad8Q7");
             return (Criteria) this;
         }
 
-        public Criteria andQ7NotEqualTo(Integer value) {
-            addCriterion("q7 <>", value, "q7");
+        public Criteria andAd8Q7NotEqualTo(Integer value) {
+            addCriterion("ad8_q7 <>", value, "ad8Q7");
             return (Criteria) this;
         }
 
-        public Criteria andQ7GreaterThan(Integer value) {
-            addCriterion("q7 >", value, "q7");
+        public Criteria andAd8Q7GreaterThan(Integer value) {
+            addCriterion("ad8_q7 >", value, "ad8Q7");
             return (Criteria) this;
         }
 
-        public Criteria andQ7GreaterThanOrEqualTo(Integer value) {
-            addCriterion("q7 >=", value, "q7");
+        public Criteria andAd8Q7GreaterThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q7 >=", value, "ad8Q7");
             return (Criteria) this;
         }
 
-        public Criteria andQ7LessThan(Integer value) {
-            addCriterion("q7 <", value, "q7");
+        public Criteria andAd8Q7LessThan(Integer value) {
+            addCriterion("ad8_q7 <", value, "ad8Q7");
             return (Criteria) this;
         }
 
-        public Criteria andQ7LessThanOrEqualTo(Integer value) {
-            addCriterion("q7 <=", value, "q7");
+        public Criteria andAd8Q7LessThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q7 <=", value, "ad8Q7");
             return (Criteria) this;
         }
 
-        public Criteria andQ7In(List<Integer> values) {
-            addCriterion("q7 in", values, "q7");
+        public Criteria andAd8Q7In(List<Integer> values) {
+            addCriterion("ad8_q7 in", values, "ad8Q7");
             return (Criteria) this;
         }
 
-        public Criteria andQ7NotIn(List<Integer> values) {
-            addCriterion("q7 not in", values, "q7");
+        public Criteria andAd8Q7NotIn(List<Integer> values) {
+            addCriterion("ad8_q7 not in", values, "ad8Q7");
             return (Criteria) this;
         }
 
-        public Criteria andQ7Between(Integer value1, Integer value2) {
-            addCriterion("q7 between", value1, value2, "q7");
+        public Criteria andAd8Q7Between(Integer value1, Integer value2) {
+            addCriterion("ad8_q7 between", value1, value2, "ad8Q7");
             return (Criteria) this;
         }
 
-        public Criteria andQ7NotBetween(Integer value1, Integer value2) {
-            addCriterion("q7 not between", value1, value2, "q7");
+        public Criteria andAd8Q7NotBetween(Integer value1, Integer value2) {
+            addCriterion("ad8_q7 not between", value1, value2, "ad8Q7");
             return (Criteria) this;
         }
 
-        public Criteria andQ8IsNull() {
-            addCriterion("q8 is null");
+        public Criteria andAd8Q8IsNull() {
+            addCriterion("ad8_q8 is null");
             return (Criteria) this;
         }
 
-        public Criteria andQ8IsNotNull() {
-            addCriterion("q8 is not null");
+        public Criteria andAd8Q8IsNotNull() {
+            addCriterion("ad8_q8 is not null");
             return (Criteria) this;
         }
 
-        public Criteria andQ8EqualTo(Integer value) {
-            addCriterion("q8 =", value, "q8");
+        public Criteria andAd8Q8EqualTo(Integer value) {
+            addCriterion("ad8_q8 =", value, "ad8Q8");
             return (Criteria) this;
         }
 
-        public Criteria andQ8NotEqualTo(Integer value) {
-            addCriterion("q8 <>", value, "q8");
+        public Criteria andAd8Q8NotEqualTo(Integer value) {
+            addCriterion("ad8_q8 <>", value, "ad8Q8");
             return (Criteria) this;
         }
 
-        public Criteria andQ8GreaterThan(Integer value) {
-            addCriterion("q8 >", value, "q8");
+        public Criteria andAd8Q8GreaterThan(Integer value) {
+            addCriterion("ad8_q8 >", value, "ad8Q8");
             return (Criteria) this;
         }
 
-        public Criteria andQ8GreaterThanOrEqualTo(Integer value) {
-            addCriterion("q8 >=", value, "q8");
+        public Criteria andAd8Q8GreaterThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q8 >=", value, "ad8Q8");
             return (Criteria) this;
         }
 
-        public Criteria andQ8LessThan(Integer value) {
-            addCriterion("q8 <", value, "q8");
+        public Criteria andAd8Q8LessThan(Integer value) {
+            addCriterion("ad8_q8 <", value, "ad8Q8");
             return (Criteria) this;
         }
 
-        public Criteria andQ8LessThanOrEqualTo(Integer value) {
-            addCriterion("q8 <=", value, "q8");
+        public Criteria andAd8Q8LessThanOrEqualTo(Integer value) {
+            addCriterion("ad8_q8 <=", value, "ad8Q8");
             return (Criteria) this;
         }
 
-        public Criteria andQ8In(List<Integer> values) {
-            addCriterion("q8 in", values, "q8");
+        public Criteria andAd8Q8In(List<Integer> values) {
+            addCriterion("ad8_q8 in", values, "ad8Q8");
             return (Criteria) this;
         }
 
-        public Criteria andQ8NotIn(List<Integer> values) {
-            addCriterion("q8 not in", values, "q8");
+        public Criteria andAd8Q8NotIn(List<Integer> values) {
+            addCriterion("ad8_q8 not in", values, "ad8Q8");
             return (Criteria) this;
         }
 
-        public Criteria andQ8Between(Integer value1, Integer value2) {
-            addCriterion("q8 between", value1, value2, "q8");
+        public Criteria andAd8Q8Between(Integer value1, Integer value2) {
+            addCriterion("ad8_q8 between", value1, value2, "ad8Q8");
             return (Criteria) this;
         }
 
-        public Criteria andQ8NotBetween(Integer value1, Integer value2) {
-            addCriterion("q8 not between", value1, value2, "q8");
+        public Criteria andAd8Q8NotBetween(Integer value1, Integer value2) {
+            addCriterion("ad8_q8 not between", value1, value2, "ad8Q8");
             return (Criteria) this;
         }
 
-        public Criteria andScoreIsNull() {
-            addCriterion("score is null");
+        public Criteria andAd8ScoreIsNull() {
+            addCriterion("ad8_score is null");
             return (Criteria) this;
         }
 
-        public Criteria andScoreIsNotNull() {
-            addCriterion("score is not null");
+        public Criteria andAd8ScoreIsNotNull() {
+            addCriterion("ad8_score is not null");
             return (Criteria) this;
         }
 
-        public Criteria andScoreEqualTo(Integer value) {
-            addCriterion("score =", value, "score");
+        public Criteria andAd8ScoreEqualTo(Integer value) {
+            addCriterion("ad8_score =", value, "ad8Score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreNotEqualTo(Integer value) {
-            addCriterion("score <>", value, "score");
+        public Criteria andAd8ScoreNotEqualTo(Integer value) {
+            addCriterion("ad8_score <>", value, "ad8Score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreGreaterThan(Integer value) {
-            addCriterion("score >", value, "score");
+        public Criteria andAd8ScoreGreaterThan(Integer value) {
+            addCriterion("ad8_score >", value, "ad8Score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreGreaterThanOrEqualTo(Integer value) {
-            addCriterion("score >=", value, "score");
+        public Criteria andAd8ScoreGreaterThanOrEqualTo(Integer value) {
+            addCriterion("ad8_score >=", value, "ad8Score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreLessThan(Integer value) {
-            addCriterion("score <", value, "score");
+        public Criteria andAd8ScoreLessThan(Integer value) {
+            addCriterion("ad8_score <", value, "ad8Score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreLessThanOrEqualTo(Integer value) {
-            addCriterion("score <=", value, "score");
+        public Criteria andAd8ScoreLessThanOrEqualTo(Integer value) {
+            addCriterion("ad8_score <=", value, "ad8Score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreIn(List<Integer> values) {
-            addCriterion("score in", values, "score");
+        public Criteria andAd8ScoreIn(List<Integer> values) {
+            addCriterion("ad8_score in", values, "ad8Score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreNotIn(List<Integer> values) {
-            addCriterion("score not in", values, "score");
+        public Criteria andAd8ScoreNotIn(List<Integer> values) {
+            addCriterion("ad8_score not in", values, "ad8Score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreBetween(Integer value1, Integer value2) {
-            addCriterion("score between", value1, value2, "score");
+        public Criteria andAd8ScoreBetween(Integer value1, Integer value2) {
+            addCriterion("ad8_score between", value1, value2, "ad8Score");
             return (Criteria) this;
         }
 
-        public Criteria andScoreNotBetween(Integer value1, Integer value2) {
-            addCriterion("score not between", value1, value2, "score");
+        public Criteria andAd8ScoreNotBetween(Integer value1, Integer value2) {
+            addCriterion("ad8_score not between", value1, value2, "ad8Score");
             return (Criteria) this;
         }
 

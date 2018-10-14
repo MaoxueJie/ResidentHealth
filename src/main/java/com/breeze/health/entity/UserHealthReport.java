@@ -11,17 +11,11 @@ public class UserHealthReport {
 
     private Long phyId;
 
-    private Long mealId;
+    private Long livingId;
 
-    private Long movementId;
+    private Long psyId;
 
-    private Long habitId;
-
-    private Long ad8Id;
-
-    private Long gad7Id;
-
-    private Long phq9Id;
+    private Long tcmId;
 
     private String sickReport;
 
@@ -32,6 +26,8 @@ public class UserHealthReport {
     private String smokingReport;
 
     private String psychologicalReport;
+
+    private String tcmReport;
 
     private Date createTime;
 
@@ -69,52 +65,28 @@ public class UserHealthReport {
         this.phyId = phyId;
     }
 
-    public Long getMealId() {
-        return mealId;
+    public Long getLivingId() {
+        return livingId;
     }
 
-    public void setMealId(Long mealId) {
-        this.mealId = mealId;
+    public void setLivingId(Long livingId) {
+        this.livingId = livingId;
     }
 
-    public Long getMovementId() {
-        return movementId;
+    public Long getPsyId() {
+        return psyId;
     }
 
-    public void setMovementId(Long movementId) {
-        this.movementId = movementId;
+    public void setPsyId(Long psyId) {
+        this.psyId = psyId;
     }
 
-    public Long getHabitId() {
-        return habitId;
+    public Long getTcmId() {
+        return tcmId;
     }
 
-    public void setHabitId(Long habitId) {
-        this.habitId = habitId;
-    }
-
-    public Long getAd8Id() {
-        return ad8Id;
-    }
-
-    public void setAd8Id(Long ad8Id) {
-        this.ad8Id = ad8Id;
-    }
-
-    public Long getGad7Id() {
-        return gad7Id;
-    }
-
-    public void setGad7Id(Long gad7Id) {
-        this.gad7Id = gad7Id;
-    }
-
-    public Long getPhq9Id() {
-        return phq9Id;
-    }
-
-    public void setPhq9Id(Long phq9Id) {
-        this.phq9Id = phq9Id;
+    public void setTcmId(Long tcmId) {
+        this.tcmId = tcmId;
     }
 
     public String getSickReport() {
@@ -155,6 +127,14 @@ public class UserHealthReport {
 
     public void setPsychologicalReport(String psychologicalReport) {
         this.psychologicalReport = psychologicalReport == null ? null : psychologicalReport.trim();
+    }
+
+    public String getTcmReport() {
+        return tcmReport;
+    }
+
+    public void setTcmReport(String tcmReport) {
+        this.tcmReport = tcmReport == null ? null : tcmReport.trim();
     }
 
     public Date getCreateTime() {

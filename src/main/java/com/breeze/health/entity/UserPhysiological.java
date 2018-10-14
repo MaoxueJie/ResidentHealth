@@ -1,31 +1,76 @@
 package com.breeze.health.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import java.util.Date;
-//相关指标
+
 public class UserPhysiological {
     private Long id;
+
     private Long userId;
+
     private Float height;
+
     private Float weight;
+
     private Float abdominalCircumference;
+
     private Float hipCircumference;
+
     private Integer heartRate;
+
     private Integer breatheRate;
+
     private Float temperature;
-    private Float bloodPressure;
-    private Integer measuringFrequency;
+
+    private Integer bloodPressure;
+
+    private Integer bloodPressureSituation;
+
+    private Float bloodPressureVal1;
+
+    private Float bloodPressureVal2;
+
+    private Float bloodPressureVal3;
+
+    private Float bloodPressureVal4;
+
+    private Float bloodPressureVal5;
+
+    private Float bloodPressureVal6;
+
     private Integer bloodSugar;
-    private Float bloodSugarMinValue;
-    private Float bloodSugarMaxValue;
+
+    private Integer bloodSugarSituation;
+
+    private Float bloodSugarVal1;
+
+    private Float bloodSugarVal2;
+
     private Integer bloodLipid;
-    private Float bloodLipidValue;
-    private Float uricAcid;
-    private Float bloodOxygen;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
+
+    private Integer bloodLipidSituation;
+
+    private Float bloodLipidVal1;
+
+    private Float bloodLipidVal2;
+
+    private Float bloodLipidVal3;
+
+    private Float bloodLipidVal4;
+
+    private Integer uricAcid;
+
+    private Integer uricAcidSituation;
+
+    private Float uricAcidVal;
+
+    private Integer bloodOxygen;
+
+    private Integer bloodOxygenSituation;
+
+    private Float bloodOxygenVal;
+
     private Date createTime;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
+
     private Date updateTime;
 
     public Long getId() {
@@ -100,20 +145,68 @@ public class UserPhysiological {
         this.temperature = temperature;
     }
 
-    public Float getBloodPressure() {
+    public Integer getBloodPressure() {
         return bloodPressure;
     }
 
-    public void setBloodPressure(Float bloodPressure) {
+    public void setBloodPressure(Integer bloodPressure) {
         this.bloodPressure = bloodPressure;
     }
 
-    public Integer getMeasuringFrequency() {
-        return measuringFrequency;
+    public Integer getBloodPressureSituation() {
+        return bloodPressureSituation;
     }
 
-    public void setMeasuringFrequency(Integer measuringFrequency) {
-        this.measuringFrequency = measuringFrequency;
+    public void setBloodPressureSituation(Integer bloodPressureSituation) {
+        this.bloodPressureSituation = bloodPressureSituation;
+    }
+
+    public Float getBloodPressureVal1() {
+        return bloodPressureVal1;
+    }
+
+    public void setBloodPressureVal1(Float bloodPressureVal1) {
+        this.bloodPressureVal1 = bloodPressureVal1;
+    }
+
+    public Float getBloodPressureVal2() {
+        return bloodPressureVal2;
+    }
+
+    public void setBloodPressureVal2(Float bloodPressureVal2) {
+        this.bloodPressureVal2 = bloodPressureVal2;
+    }
+
+    public Float getBloodPressureVal3() {
+        return bloodPressureVal3;
+    }
+
+    public void setBloodPressureVal3(Float bloodPressureVal3) {
+        this.bloodPressureVal3 = bloodPressureVal3;
+    }
+
+    public Float getBloodPressureVal4() {
+        return bloodPressureVal4;
+    }
+
+    public void setBloodPressureVal4(Float bloodPressureVal4) {
+        this.bloodPressureVal4 = bloodPressureVal4;
+    }
+
+    public Float getBloodPressureVal5() {
+        return bloodPressureVal5;
+    }
+
+    public void setBloodPressureVal5(Float bloodPressureVal5) {
+        this.bloodPressureVal5 = bloodPressureVal5;
+    }
+
+    public Float getBloodPressureVal6() {
+        return bloodPressureVal6;
+    }
+
+    public void setBloodPressureVal6(Float bloodPressureVal6) {
+        this.bloodPressureVal6 = bloodPressureVal6;
     }
 
     public Integer getBloodSugar() {
@@ -124,20 +217,28 @@ public class UserPhysiological {
         this.bloodSugar = bloodSugar;
     }
 
-    public Float getBloodSugarMinValue() {
-        return bloodSugarMinValue;
+    public Integer getBloodSugarSituation() {
+        return bloodSugarSituation;
     }
 
-    public void setBloodSugarMinValue(Float bloodSugarMinValue) {
-        this.bloodSugarMinValue = bloodSugarMinValue;
+    public void setBloodSugarSituation(Integer bloodSugarSituation) {
+        this.bloodSugarSituation = bloodSugarSituation;
     }
 
-    public Float getBloodSugarMaxValue() {
-        return bloodSugarMaxValue;
+    public Float getBloodSugarVal1() {
+        return bloodSugarVal1;
     }
 
-    public void setBloodSugarMaxValue(Float bloodSugarMaxValue) {
-        this.bloodSugarMaxValue = bloodSugarMaxValue;
+    public void setBloodSugarVal1(Float bloodSugarVal1) {
+        this.bloodSugarVal1 = bloodSugarVal1;
+    }
+
+    public Float getBloodSugarVal2() {
+        return bloodSugarVal2;
+    }
+
+    public void setBloodSugarVal2(Float bloodSugarVal2) {
+        this.bloodSugarVal2 = bloodSugarVal2;
     }
 
     public Integer getBloodLipid() {
@@ -148,28 +249,92 @@ public class UserPhysiological {
         this.bloodLipid = bloodLipid;
     }
 
-    public Float getBloodLipidValue() {
-        return bloodLipidValue;
+    public Integer getBloodLipidSituation() {
+        return bloodLipidSituation;
     }
 
-    public void setBloodLipidValue(Float bloodLipidValue) {
-        this.bloodLipidValue = bloodLipidValue;
+    public void setBloodLipidSituation(Integer bloodLipidSituation) {
+        this.bloodLipidSituation = bloodLipidSituation;
     }
 
-    public Float getUricAcid() {
+    public Float getBloodLipidVal1() {
+        return bloodLipidVal1;
+    }
+
+    public void setBloodLipidVal1(Float bloodLipidVal1) {
+        this.bloodLipidVal1 = bloodLipidVal1;
+    }
+
+    public Float getBloodLipidVal2() {
+        return bloodLipidVal2;
+    }
+
+    public void setBloodLipidVal2(Float bloodLipidVal2) {
+        this.bloodLipidVal2 = bloodLipidVal2;
+    }
+
+    public Float getBloodLipidVal3() {
+        return bloodLipidVal3;
+    }
+
+    public void setBloodLipidVal3(Float bloodLipidVal3) {
+        this.bloodLipidVal3 = bloodLipidVal3;
+    }
+
+    public Float getBloodLipidVal4() {
+        return bloodLipidVal4;
+    }
+
+    public void setBloodLipidVal4(Float bloodLipidVal4) {
+        this.bloodLipidVal4 = bloodLipidVal4;
+    }
+
+    public Integer getUricAcid() {
         return uricAcid;
     }
 
-    public void setUricAcid(Float uricAcid) {
+    public void setUricAcid(Integer uricAcid) {
         this.uricAcid = uricAcid;
     }
 
-    public Float getBloodOxygen() {
+    public Integer getUricAcidSituation() {
+        return uricAcidSituation;
+    }
+
+    public void setUricAcidSituation(Integer uricAcidSituation) {
+        this.uricAcidSituation = uricAcidSituation;
+    }
+
+    public Float getUricAcidVal() {
+        return uricAcidVal;
+    }
+
+    public void setUricAcidVal(Float uricAcidVal) {
+        this.uricAcidVal = uricAcidVal;
+    }
+
+    public Integer getBloodOxygen() {
         return bloodOxygen;
     }
 
-    public void setBloodOxygen(Float bloodOxygen) {
+    public void setBloodOxygen(Integer bloodOxygen) {
         this.bloodOxygen = bloodOxygen;
+    }
+
+    public Integer getBloodOxygenSituation() {
+        return bloodOxygenSituation;
+    }
+
+    public void setBloodOxygenSituation(Integer bloodOxygenSituation) {
+        this.bloodOxygenSituation = bloodOxygenSituation;
+    }
+
+    public Float getBloodOxygenVal() {
+        return bloodOxygenVal;
+    }
+
+    public void setBloodOxygenVal(Float bloodOxygenVal) {
+        this.bloodOxygenVal = bloodOxygenVal;
     }
 
     public Date getCreateTime() {

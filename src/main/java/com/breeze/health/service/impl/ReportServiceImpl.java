@@ -12,6 +12,8 @@ import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserReportVo;
 import com.breeze.health.entity.UserHealthReport;
 import com.breeze.health.entity.UserHealthReportExample;
+import com.breeze.health.entity.UserLiving;
+import com.breeze.health.entity.UserLivingExample;
 import com.breeze.health.entity.UserLivingHabit;
 import com.breeze.health.entity.UserLivingHabitExample;
 import com.breeze.health.entity.UserLivingMeal;
@@ -20,8 +22,10 @@ import com.breeze.health.entity.UserLivingMovement;
 import com.breeze.health.entity.UserLivingMovementExample;
 import com.breeze.health.entity.UserPhysiological;
 import com.breeze.health.entity.UserPhysiologicalExample;
+import com.breeze.health.entity.UserPsychological;
 import com.breeze.health.entity.UserPsychologicalAD8;
 import com.breeze.health.entity.UserPsychologicalAD8Example;
+import com.breeze.health.entity.UserPsychologicalExample;
 import com.breeze.health.entity.UserPsychologicalGAD7;
 import com.breeze.health.entity.UserPsychologicalGAD7Example;
 import com.breeze.health.entity.UserPsychologicalPHQ9;
@@ -30,11 +34,13 @@ import com.breeze.health.entity.UserSick;
 import com.breeze.health.entity.UserSickExample;
 import com.breeze.health.mapper.UserHealthReportMapper;
 import com.breeze.health.mapper.UserLivingHabitMapper;
+import com.breeze.health.mapper.UserLivingMapper;
 import com.breeze.health.mapper.UserLivingMealMapper;
 import com.breeze.health.mapper.UserLivingMovementMapper;
 import com.breeze.health.mapper.UserPhysiologicalMapper;
 import com.breeze.health.mapper.UserPsychologicalAD8Mapper;
 import com.breeze.health.mapper.UserPsychologicalGAD7Mapper;
+import com.breeze.health.mapper.UserPsychologicalMapper;
 import com.breeze.health.mapper.UserPsychologicalPHQ9Mapper;
 import com.breeze.health.mapper.UserSickMapper;
 import com.breeze.health.service.ReportService;
@@ -51,6 +57,9 @@ public class ReportServiceImpl implements ReportService{
 	UserPhysiologicalMapper userPhysiologicalMapper;
 	
 	@Autowired
+	UserPsychologicalMapper userPsychologicalMapper;
+	
+	@Autowired
 	UserPsychologicalAD8Mapper userPsychologicalAD8Mapper;
 	
 	@Autowired
@@ -58,6 +67,9 @@ public class ReportServiceImpl implements ReportService{
 	
 	@Autowired
 	UserPsychologicalPHQ9Mapper userPsychologicalPHQ9Mapper;
+	
+	@Autowired
+	UserLivingMapper userLivingMapper;
 	
 	@Autowired
 	UserLivingHabitMapper userLivingHabitMapper;
@@ -105,9 +117,24 @@ public class ReportServiceImpl implements ReportService{
 				return ret;
 			}
 			
+			UserPsychological psy = null;
+			UserPsychologicalExample psyExample = new UserPsychologicalExample();
+			psyExample.createCriteria().andUserIdEqualTo(userId);
+			psyExample.setOrderByClause(" id desc");
+			PageHelper.startPage(1, 1);
+			List psys = userPsychologicalMapper.selectByExample(psyExample);
+			if (psys!=null && psys.size()>0)
+			{
+				psy = (UserPsychological)psys.get(0);
+			}else
+			{
+				ret.setMessage("请先完成心理测试");
+				return ret;
+			}
+			
 			UserPsychologicalAD8 ad8 = null;
 			UserPsychologicalAD8Example ad8Example = new UserPsychologicalAD8Example();
-			ad8Example.createCriteria().andUserIdEqualTo(userId);
+			ad8Example.createCriteria().andPsyIdEqualTo(psy.getId());
 			ad8Example.setOrderByClause(" id desc");
 			PageHelper.startPage(1, 1);
 			List ad8s = userPsychologicalAD8Mapper.selectByExample(ad8Example);
@@ -122,7 +149,7 @@ public class ReportServiceImpl implements ReportService{
 			
 			UserPsychologicalGAD7 gad7 = null;
 			UserPsychologicalGAD7Example gad7Example = new UserPsychologicalGAD7Example();
-			gad7Example.createCriteria().andUserIdEqualTo(userId);
+			gad7Example.createCriteria().andPsyIdEqualTo(psy.getId());
 			gad7Example.setOrderByClause(" id desc");
 			PageHelper.startPage(1, 1);
 			List gad7s = userPsychologicalGAD7Mapper.selectByExample(gad7Example);
@@ -137,7 +164,7 @@ public class ReportServiceImpl implements ReportService{
 			
 			UserPsychologicalPHQ9 phq9 = null;
 			UserPsychologicalPHQ9Example phq9Example = new UserPsychologicalPHQ9Example();
-			phq9Example.createCriteria().andUserIdEqualTo(userId);
+			phq9Example.createCriteria().andPsyIdEqualTo(psy.getId());
 			phq9Example.setOrderByClause(" id desc");
 			PageHelper.startPage(1, 1);
 			List phq9s = userPsychologicalPHQ9Mapper.selectByExample(phq9Example);
@@ -150,9 +177,24 @@ public class ReportServiceImpl implements ReportService{
 				return ret;
 			}
 			
+			UserLiving living = null;
+			UserLivingExample livingExample = new UserLivingExample();
+			livingExample.createCriteria().andUserIdEqualTo(userId);
+			livingExample.setOrderByClause(" id desc");
+			PageHelper.startPage(1, 1);
+			List livings = userLivingMapper.selectByExample(livingExample);
+			if (livings!=null && livings.size()>0)
+			{
+				living = (UserLiving)livings.get(0);
+			}else
+			{
+				ret.setMessage("请先完成生活习惯测试");
+				return ret;
+			}
+			
 			UserLivingMeal meal = null;
 			UserLivingMealExample mealExample = new UserLivingMealExample();
-			mealExample.createCriteria().andUserIdEqualTo(userId);
+			mealExample.createCriteria().andLivingIdEqualTo(living.getId());
 			mealExample.setOrderByClause(" id desc");
 			PageHelper.startPage(1, 1);
 			List meals = userLivingMealMapper.selectByExample(mealExample);
@@ -167,7 +209,7 @@ public class ReportServiceImpl implements ReportService{
 			
 			UserLivingMovement movement = null;
 			UserLivingMovementExample movementExample = new UserLivingMovementExample();
-			movementExample.createCriteria().andUserIdEqualTo(userId);
+			movementExample.createCriteria().andLivingIdEqualTo(living.getId());
 			movementExample.setOrderByClause(" id desc");
 			PageHelper.startPage(1, 1);
 			List movements = userLivingMovementMapper.selectByExample(movementExample);
@@ -182,7 +224,7 @@ public class ReportServiceImpl implements ReportService{
 			
 			UserLivingHabit habit = null;
 			UserLivingHabitExample habitExample = new UserLivingHabitExample();
-			habitExample.createCriteria().andUserIdEqualTo(userId);
+			habitExample.createCriteria().andLivingIdEqualTo(living.getId());
 			habitExample.setOrderByClause(" id desc");
 			PageHelper.startPage(1, 1);
 			List habits = userLivingHabitMapper.selectByExample(habitExample);
@@ -196,9 +238,7 @@ public class ReportServiceImpl implements ReportService{
 			}
 			UserHealthReportExample reportExample = new UserHealthReportExample();
 			reportExample.createCriteria().andSickIdEqualTo(sick.getId()).andPhyIdEqualTo(phy.getId())
-										.andGad7IdEqualTo(gad7.getId()).andPhq9IdEqualTo(phq9.getId())
-										.andAd8IdEqualTo(ad8.getId()).andMealIdEqualTo(meal.getId())
-										.andMovementIdEqualTo(movement.getId()).andHabitIdEqualTo(habit.getId());
+										.andPsyIdEqualTo(psy.getId()).andLivingIdEqualTo(living.getId());
 			List<UserHealthReport> reports = userHealthReportMapper.selectByExample(reportExample);
 			
 			if (reports!=null && reports.size()>0)
@@ -325,54 +365,50 @@ public class ReportServiceImpl implements ReportService{
 				String psychologicalReport = "";
 				
 				psychologicalReport = "随着年龄的增长，人们的记忆力会逐渐下降，进而可能出现其他认知功能的下降。测试显示您存在记忆力下降的情况，建议您进行认知功能的相关测试，同时有意进行相关的认知功能锻炼，可延缓认知功能下降的进程。";
-				if (ad8.getScore()>=2)
+				if (ad8.getAd8Score()>=2)
 				{
 					//认知功能受损
 					psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在认知功能受损，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
 				}
 				
-				if (gad7.getScore()>=5 && gad7.getScore()<=9)
+				if (gad7.getGad7Score()>=5 && gad7.getGad7Score()<=9)
 				{
 					//可能有轻微焦虑症
 					psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在轻微焦虑症，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
-				}else if (gad7.getScore()>=10 && gad7.getScore()<=13)
+				}else if (gad7.getGad7Score()>=10 && gad7.getGad7Score()<=13)
 				{
 					//可能有中度焦虑症
 					psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在中度焦虑症，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
-				}else if (gad7.getScore()>=14 && gad7.getScore()<=18)
+				}else if (gad7.getGad7Score()>=14 && gad7.getGad7Score()<=18)
 				{
 					//可能有中重度焦虑症
 					psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在中重度焦虑症，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
-				}else if (gad7.getScore()>=19)
+				}else if (gad7.getGad7Score()>=19)
 				{
 					//可能有重度焦虑症
 					psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在重度焦虑症，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
 				}
 				
-				if (phq9.getScore()>=5 && phq9.getScore()<=9)
+				if (phq9.getPhq9Score()>=5 && phq9.getPhq9Score()<=9)
 				{
 					//轻度抑郁
 					psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在轻度抑郁，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
-				}else if (phq9.getScore()>=10 && phq9.getScore()<=14)
+				}else if (phq9.getPhq9Score()>=10 && phq9.getPhq9Score()<=14)
 				{
 					//中度抑郁
 					psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在中度抑郁，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
-				}else if (phq9.getScore()>=15 && phq9.getScore()<=19)
+				}else if (phq9.getPhq9Score()>=15 && phq9.getPhq9Score()<=19)
 				{
 					//中重度抑郁
 					psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在中重度抑郁，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
-				}else if(phq9.getScore()>=20){
+				}else if(phq9.getPhq9Score()>=20){
 					//重度抑郁
 					psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在重度抑郁，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
 				}
 				Date now = new Date();
 				UserHealthReport report = new UserHealthReport();
-				report.setAd8Id(ad8.getId());
-				report.setPhq9Id(phq9.getId());
-				report.setGad7Id(gad7.getId());
-				report.setMealId(meal.getId());
-				report.setMovementId(movement.getId());
-				report.setHabitId(habit.getId());
+				report.setLivingId(living.getId());
+				report.setPsyId(psy.getId());
 				report.setSickId(sick.getId());
 				report.setPhyId(phy.getId());
 				report.setUserId(userId);

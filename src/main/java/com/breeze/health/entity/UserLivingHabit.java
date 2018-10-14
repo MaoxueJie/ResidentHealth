@@ -1,22 +1,33 @@
 package com.breeze.health.entity;
 
 import java.util.Date;
-//嗜好
+
 public class UserLivingHabit {
     private Long id;
-    private Long userId;
+
+    private Long livingId;
+
     private Integer smoking;
+
     private Integer smokingVal1;
+
     private Integer smokingVal2;
+
     private Integer smokingVal3;
+
     private Integer smokingVal4;
+
     private Integer smokingAge;
+
     private Integer partnerSmoking;
+
     private Integer passiveSmoking;
+
     private Integer drinking;
-    private Integer drinkingVal1;
+
     private String drinkingTypes;
-    private Integer drinkingVal2;
+
+    private Integer drinkingVal;
 
     private Date createTime;
 
@@ -30,12 +41,12 @@ public class UserLivingHabit {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getLivingId() {
+        return livingId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setLivingId(Long livingId) {
+        this.livingId = livingId;
     }
 
     public Integer getSmoking() {
@@ -110,14 +121,6 @@ public class UserLivingHabit {
         this.drinking = drinking;
     }
 
-    public Integer getDrinkingVal1() {
-        return drinkingVal1;
-    }
-
-    public void setDrinkingVal1(Integer drinkingVal1) {
-        this.drinkingVal1 = drinkingVal1;
-    }
-
     public String getDrinkingTypes() {
         return drinkingTypes;
     }
@@ -126,12 +129,12 @@ public class UserLivingHabit {
         this.drinkingTypes = drinkingTypes == null ? null : drinkingTypes.trim();
     }
 
-    public Integer getDrinkingVal2() {
-        return drinkingVal2;
+    public Integer getDrinkingVal() {
+        return drinkingVal;
     }
 
-    public void setDrinkingVal2(Integer drinkingVal2) {
-        this.drinkingVal2 = drinkingVal2;
+    public void setDrinkingVal(Integer drinkingVal) {
+        this.drinkingVal = drinkingVal;
     }
 
     public Date getCreateTime() {

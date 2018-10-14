@@ -6,15 +6,6 @@ import java.util.List;
 
 public class UserLivingMovementExample {
     protected String orderByClause;
-    protected String limit;//
-
-    public String getLimit() {
-        return limit;
-    }
-
-    public void setLimit(String limit) {
-        this.limit = limit;
-    }
 
     protected boolean distinct;
 
@@ -174,63 +165,63 @@ public class UserLivingMovementExample {
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIsNull() {
-            addCriterion("user_id is null");
+        public Criteria andLivingIdIsNull() {
+            addCriterion("living_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIsNotNull() {
-            addCriterion("user_id is not null");
+        public Criteria andLivingIdIsNotNull() {
+            addCriterion("living_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdEqualTo(Long value) {
-            addCriterion("user_id =", value, "userId");
+        public Criteria andLivingIdEqualTo(Long value) {
+            addCriterion("living_id =", value, "livingId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotEqualTo(Long value) {
-            addCriterion("user_id <>", value, "userId");
+        public Criteria andLivingIdNotEqualTo(Long value) {
+            addCriterion("living_id <>", value, "livingId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThan(Long value) {
-            addCriterion("user_id >", value, "userId");
+        public Criteria andLivingIdGreaterThan(Long value) {
+            addCriterion("living_id >", value, "livingId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("user_id >=", value, "userId");
+        public Criteria andLivingIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("living_id >=", value, "livingId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThan(Long value) {
-            addCriterion("user_id <", value, "userId");
+        public Criteria andLivingIdLessThan(Long value) {
+            addCriterion("living_id <", value, "livingId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThanOrEqualTo(Long value) {
-            addCriterion("user_id <=", value, "userId");
+        public Criteria andLivingIdLessThanOrEqualTo(Long value) {
+            addCriterion("living_id <=", value, "livingId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIn(List<Long> values) {
-            addCriterion("user_id in", values, "userId");
+        public Criteria andLivingIdIn(List<Long> values) {
+            addCriterion("living_id in", values, "livingId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotIn(List<Long> values) {
-            addCriterion("user_id not in", values, "userId");
+        public Criteria andLivingIdNotIn(List<Long> values) {
+            addCriterion("living_id not in", values, "livingId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdBetween(Long value1, Long value2) {
-            addCriterion("user_id between", value1, value2, "userId");
+        public Criteria andLivingIdBetween(Long value1, Long value2) {
+            addCriterion("living_id between", value1, value2, "livingId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotBetween(Long value1, Long value2) {
-            addCriterion("user_id not between", value1, value2, "userId");
+        public Criteria andLivingIdNotBetween(Long value1, Long value2) {
+            addCriterion("living_id not between", value1, value2, "livingId");
             return (Criteria) this;
         }
 
