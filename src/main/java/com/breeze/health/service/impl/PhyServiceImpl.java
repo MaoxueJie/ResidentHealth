@@ -15,6 +15,7 @@ import com.breeze.health.entity.UserPhysiologicalExample;
 import com.breeze.health.mapper.UserPhysiologicalMapper;
 import com.breeze.health.service.PhyService;
 import com.breeze.health.util.BeanUtils;
+import com.github.pagehelper.PageHelper;
 
 @Service("phyService")
 public class PhyServiceImpl implements PhyService{
@@ -54,7 +55,9 @@ public class PhyServiceImpl implements PhyService{
 		try{
 			UserPhysiologicalExample example = new UserPhysiologicalExample();
 			example.createCriteria().andUserIdEqualTo(userId);
-			List<UserPhysiological> phys = userPhysiologicalMapper.selectByExample(example);
+			example.setOrderByClause(" id desc");
+			PageHelper.startPage(1, 1);
+			List phys = userPhysiologicalMapper.selectByExample(example);
 			if (phys!= null && phys.size()>0)
 			{
 				UserPhysiologicalVo vo = new UserPhysiologicalVo();

@@ -53,6 +53,7 @@ import com.breeze.health.mapper.UserTCMYangxuMapper;
 import com.breeze.health.mapper.UserTCMYinxuMapper;
 import com.breeze.health.service.TCMService;
 import com.breeze.health.util.BeanUtils;
+import com.github.pagehelper.PageHelper;
 
 public class TCMServiceImpl implements TCMService{
 	private static Logger logger = LoggerFactory.getLogger(TCMServiceImpl.class);
@@ -358,14 +359,15 @@ public class TCMServiceImpl implements TCMService{
 		try{
 			UserTCMExample example = new UserTCMExample();
 			example.createCriteria().andUserIdEqualTo(userId);
-			example.setOrderByClause("id desc");
-			List<UserTCM> tcms = userTCMMapper.selectByExample(example);
+			example.setOrderByClause(" id desc");
+			PageHelper.startPage(1, 1);
+			List tcms = userTCMMapper.selectByExample(example);
 			if (tcms!= null && tcms.size()>0)
 			{
 				UserTCMVo vo = new UserTCMVo();
 
 				UserTCMPingheExample pingheExample = new UserTCMPingheExample();
-				pingheExample.createCriteria().andTcmIdEqualTo(tcms.get(0).getId());
+				pingheExample.createCriteria().andTcmIdEqualTo(((UserTCM)tcms.get(0)).getId());
 				List<UserTCMPinghe> pinghes = userTCMPingheMapper.selectByExample(pingheExample);
 				if (pinghes!= null && pinghes.size()>0)
 				{
@@ -373,7 +375,7 @@ public class TCMServiceImpl implements TCMService{
 				}
 				
 				UserTCMQixuExample qixuExample = new UserTCMQixuExample();
-				qixuExample.createCriteria().andTcmIdEqualTo(tcms.get(0).getId());
+				qixuExample.createCriteria().andTcmIdEqualTo(((UserTCM)tcms.get(0)).getId());
 				List<UserTCMQixu> qixus = userTCMQixuMapper.selectByExample(qixuExample);
 				if (qixus!= null && qixus.size()>0)
 				{
@@ -381,7 +383,7 @@ public class TCMServiceImpl implements TCMService{
 				}
 				
 				UserTCMQiyuExample qiyuExample = new UserTCMQiyuExample();
-				qiyuExample.createCriteria().andTcmIdEqualTo(tcms.get(0).getId());
+				qiyuExample.createCriteria().andTcmIdEqualTo(((UserTCM)tcms.get(0)).getId());
 				List<UserTCMQiyu> qiyus = userTCMQiyuMapper.selectByExample(qiyuExample);
 				if (qiyus.size()>0)
 				{
@@ -389,7 +391,7 @@ public class TCMServiceImpl implements TCMService{
 				}
 				
 				UserTCMShireExample shireExample = new UserTCMShireExample();
-				shireExample.createCriteria().andTcmIdEqualTo(tcms.get(0).getId());
+				shireExample.createCriteria().andTcmIdEqualTo(((UserTCM)tcms.get(0)).getId());
 				List<UserTCMShire> shires = userTCMShireMapper.selectByExample(shireExample);
 				if (shires.size()>0)
 				{
@@ -397,7 +399,7 @@ public class TCMServiceImpl implements TCMService{
 				}
 				
 				UserTCMTanshiExample tanshiExample = new UserTCMTanshiExample();
-				tanshiExample.createCriteria().andTcmIdEqualTo(tcms.get(0).getId());
+				tanshiExample.createCriteria().andTcmIdEqualTo(((UserTCM)tcms.get(0)).getId());
 				List<UserTCMTanshi> tanshis = userTCMTanshiMapper.selectByExample(tanshiExample);
 				if (tanshis.size()>0)
 				{
@@ -405,7 +407,7 @@ public class TCMServiceImpl implements TCMService{
 				}
 				
 				UserTCMTebingExample tebingExample = new UserTCMTebingExample();
-				tebingExample.createCriteria().andTcmIdEqualTo(tcms.get(0).getId());
+				tebingExample.createCriteria().andTcmIdEqualTo(((UserTCM)tcms.get(0)).getId());
 				List<UserTCMTebing> tebings = userTCMTebingMapper.selectByExample(tebingExample);
 				if (tebings.size()>0)
 				{
@@ -413,7 +415,7 @@ public class TCMServiceImpl implements TCMService{
 				}
 				
 				UserTCMXueyuExample xueyuExample = new UserTCMXueyuExample();
-				xueyuExample.createCriteria().andTcmIdEqualTo(tcms.get(0).getId());
+				xueyuExample.createCriteria().andTcmIdEqualTo(((UserTCM)tcms.get(0)).getId());
 				List<UserTCMXueyu> xueyus = userTCMXueyuMapper.selectByExample(xueyuExample);
 				if (xueyus.size()>0)
 				{
@@ -421,7 +423,7 @@ public class TCMServiceImpl implements TCMService{
 				}
 				
 				UserTCMYangxuExample yangxuExample = new UserTCMYangxuExample();
-				yangxuExample.createCriteria().andTcmIdEqualTo(tcms.get(0).getId());
+				yangxuExample.createCriteria().andTcmIdEqualTo(((UserTCM)tcms.get(0)).getId());
 				List<UserTCMYangxu> yangxus = userTCMYangxuMapper.selectByExample(yangxuExample);
 				if (yangxus.size()>0)
 				{
@@ -429,7 +431,7 @@ public class TCMServiceImpl implements TCMService{
 				}
 				
 				UserTCMYinxuExample yinxuExample = new UserTCMYinxuExample();
-				yinxuExample.createCriteria().andTcmIdEqualTo(tcms.get(0).getId());
+				yinxuExample.createCriteria().andTcmIdEqualTo(((UserTCM)tcms.get(0)).getId());
 				List<UserTCMYinxu> yinxus = userTCMYinxuMapper.selectByExample(yinxuExample);
 				if (yinxus.size()>0)
 				{

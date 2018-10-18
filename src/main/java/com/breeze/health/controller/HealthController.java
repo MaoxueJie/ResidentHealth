@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserBaseInfoVo;
+import com.breeze.health.beans.vo.UserLivingVo;
+import com.breeze.health.beans.vo.UserPhysiologicalVo;
+import com.breeze.health.beans.vo.UserPsySuicideVo;
 import com.breeze.health.beans.vo.UserPsychologicalVo;
 import com.breeze.health.beans.vo.UserPsychologicalVo;
 import com.breeze.health.beans.vo.UserPsychologicalVo;
@@ -18,6 +21,7 @@ import com.breeze.health.entity.UserLivingMeal;
 import com.breeze.health.entity.UserLivingMovement;
 import com.breeze.health.entity.UserPhysiological;
 import com.breeze.health.service.LivingService;
+import com.breeze.health.service.PhyService;
 import com.breeze.health.service.PsyService;
 import com.breeze.health.service.ReportService;
 import com.breeze.health.service.SickService;
@@ -51,29 +55,22 @@ public class HealthController {
 	private SickService sickService;
 	@Resource
 	private PsyService psyService;
-	//基本信息
-	@RequestMapping(value = "/base", method = {RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView userInfo(HttpServletRequest request, HttpServletResponse response){
-		return new ModelAndView("base");
-	}
-	//查看报告
-	@RequestMapping(value = "/report", method = {RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView report(){
-		return new ModelAndView("report");
-	}
+	@Resource
+	private PhyService phyService;
+	
 	
 	@RequestMapping(value = "/base/get", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	public Result<UserBaseInfoVo> getUserInfo(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		return userService.getBaseInfo(1l);
+		return userService.getBaseInfo(user.getId());
 	}
 	
 	@RequestMapping(value = "/base/add", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	public Result<Void> addUserInfo(HttpServletRequest request, HttpServletResponse response,UserBaseInfoVo vo){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		vo.setUserId(1l);
+		vo.setUserId(user.getId());
 		return userService.addOrUpdateBaseInfo(vo);
 	}
 	
@@ -82,211 +79,88 @@ public class HealthController {
 	@ResponseBody
 	public Result<UserReportVo> getReport(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		return reportService.getReprot(1l);
+		return reportService.getReprot(user.getId());
 	}
 	
-	//生活习惯
-	@RequestMapping(value = "/living", method = {RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView living(){
-		return new ModelAndView("living");
-	}
-	/*
+
 	//保存生活习惯--嗜好
-	@RequestMapping(value="/living/habit/add")
+	@RequestMapping(value="/living/add")
 	@ResponseBody
-	public Result<String> saveHabit(UserLivingHabit habit){
-		Result<String> result = null;
-		try{
-			result = livingService.addLivingHabit(habit);
-		}catch (Exception e){
-			logger.error("保存生活习惯--嗜好习惯发生异常,{}",e.getMessage());
-			logger.error("{},{}",e.getMessage(),e);
-			e.printStackTrace();
-		}
-		return result;
+	public Result<Void> saveLiving(HttpServletRequest request,UserLivingVo vo){
+		UserVo user = (UserVo)request.getSession().getAttribute("user");
+		vo.setUserId(user.getId());
+		return livingService.addOrUpdateLiving(vo);
 	}
 	//获取最近一条嗜好
-	@RequestMapping(value="/living/habit/get")
+	@RequestMapping(value="/living/get")
 	@ResponseBody
-	public Result<UserLivingHabit> getUserLivingHabit(UserLivingHabit habit){
-		Result<UserLivingHabit> result = null;
-		try{
-			result = livingService.getLivingHabit(habit);
-		}catch (Exception e){
-			result = new Result<UserLivingHabit>();
-			e.printStackTrace();
-		}
-		return result;
+	public Result<UserLivingVo> getUserLiving(HttpServletRequest request){
+		UserVo user = (UserVo)request.getSession().getAttribute("user");
+		return livingService.getLiving(user.getId());
 	}
 
-	//保存生活习惯--运动
-	@RequestMapping(value="/living/movement/add")
-	@ResponseBody
-	public Result<String> saveMovement(UserLivingMovement movement){
-		Result<String> result = null;
-		try{
-			result = livingService.addLivingMovement(movement);
-		}catch (Exception e){
-			logger.error("保存生活习惯--运动习惯发生异常,{}",e.getMessage());
-			logger.error("{},{}",e.getMessage(),e);
-			e.printStackTrace();
-		}
-		return result;
-	}
-	//获取最近一条运动
-	@RequestMapping(value="/living/movement/get")
-	@ResponseBody
-	public Result<UserLivingMovement> getUserLivingMovement(UserLivingMovement movement){
-		Result<UserLivingMovement> result = null;
-		try{
-			result = livingService.getUserLivingMovement(movement);
-		}catch (Exception e){
-			result = new Result<UserLivingMovement>();
-			e.printStackTrace();
-		}
-		return result;
-	}
-
-	//保存生活习惯--饮食
-	@RequestMapping(value="/living/meal/add")
-	@ResponseBody
-	public Result<String> saveMovement(UserLivingMeal meal){
-		Result<String> result = null;
-		try{
-			result = livingService.addUserLivingMeal(meal);
-		}catch (Exception e){
-			logger.error("保存生活习惯--饮食习惯发生异常,{}",e.getMessage());
-			logger.error("{},{}",e.getMessage(),e);
-			e.printStackTrace();
-		}
-		return result;
-	}
-	//获取最近一条饮食
-	@RequestMapping(value="/living/meal/get")
-	@ResponseBody
-	public Result<UserLivingMeal> getUserLivingMeal(UserLivingMeal meal){
-		Result<UserLivingMeal> result = null;
-		try{
-			result = livingService.getUserLivingMeal(meal);
-		}catch (Exception e){
-			result = new Result<UserLivingMeal>();
-			e.printStackTrace();
-		}
-		return result;
-	}
-
-	//健康状况
-	@RequestMapping(value = "/sick", method = {RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView sick(){
-		return new ModelAndView("sick");
-	}
 	//健康状况
 	@ResponseBody
 	@RequestMapping(value = "/sick/get", method = {RequestMethod.GET,RequestMethod.POST})
 	public Result<UserSickVo> getSick(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		return sickService.getSick(1l);
+		return sickService.getSick(user.getId());
 	}
 	
 	//健康状况
 	@RequestMapping(value = "/sick/add", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
-	public Result<Void> addSick(HttpServletRequest request, HttpServletResponse response,UserSickVo vo){
+	public Result<Void> addSick(HttpServletRequest request,UserSickVo vo){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		vo.setUserId(1l);
+		vo.setUserId(user.getId());
 		return sickService.addOrUpdateSick(vo);
-	}
-	//生理指标
-	@RequestMapping(value = "/phy", method = {RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView physiological(){
-		return new ModelAndView("phy");
 	}
 
 	//保存生理指标--相关指标
 	@RequestMapping(value="/phy/add")
 	@ResponseBody
-	public Result<String> savePhy(UserPhysiological Phy){
-		Result<String> result = null;
-		try{
-			Phy.setUserId(1l);
-			result = livingService.addUserPhysiological(Phy);
-		}catch (Exception e){
-			logger.error("保存生理指标--相关指标发生异常,{}",e.getMessage());
-			logger.error("{},{}",e.getMessage(),e);
-			e.printStackTrace();
-		}
-		return result;
+	public Result<Void> savePhy(HttpServletRequest request,UserPhysiologicalVo vo){
+		UserVo user = (UserVo)request.getSession().getAttribute("user");
+		vo.setUserId(user.getId());
+		return phyService.addOrUpdatePhy(vo);
 	}
 	//获取最近一条生理指标--相关指标
 	@RequestMapping(value="/phy/get")
 	@ResponseBody
-	public Result<UserPhysiological> getPhy(UserPhysiological Phy){
-		Result<UserPhysiological> result = null;
-		try{
-			Phy.setUserId(1l);
-			result = livingService.getUserPhysiological(Phy);
-		}catch (Exception e){
-			result = new Result<UserPhysiological>();
-			e.printStackTrace();
-		}
-		return result;
-	}
-
-	
-	//情绪认知（心理健康）
-	@RequestMapping(value = "/{file}", method = {RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView psychological(@PathVariable String file){
-		return new ModelAndView(file);
+	public Result<UserPhysiologicalVo> getPhy(HttpServletRequest request){
+		UserVo user = (UserVo)request.getSession().getAttribute("user");
+		return phyService.getPhy(user.getId());
 	}
 	
 	//情绪认知（心理健康）
-	@RequestMapping(value = "/psy", method = {RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView psychological(){
-		return new ModelAndView("psy");
+	@RequestMapping(value = "/psy/add", method = {RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
+	public Result<Void> addPsychologicalAD8(HttpServletRequest request,UserPsychologicalVo vo){
+		UserVo user = (UserVo)request.getSession().getAttribute("user");
+		vo.setUserId(user.getId());
+		return psyService.addOrUpdatePsy(vo);
 	}
+	
+	@RequestMapping(value = "/psy/get", method = {RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
+	public Result<UserPsychologicalVo> getPsychological(HttpServletRequest request){
+		UserVo user = (UserVo)request.getSession().getAttribute("user");
+		return psyService.getPsy(user.getId());
+	}
+	
 
-	@RequestMapping(value = "/psy/ad8/add", method = {RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value = "/psy/suicide/add", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
-	public Result<Void> addPsychologicalAD8(HttpServletRequest request, HttpServletResponse response,UserPsychologicalVo vo){
+	public Result<Void> addPsychologicalSuicide(HttpServletRequest request, HttpServletResponse response,UserPsySuicideVo vo){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		
-		return psyService.addOrUpdatePsyAD8(vo);
+		vo.setUserId(user.getId());
+		return psyService.addOrUpdatePsySuicide(vo);
 	}
 	
-	@RequestMapping(value = "/psy/ad8/get", method = {RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value = "/psy/suicide/get", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
-	public Result<UserPsychologicalVo> getPsychologicalAD8(HttpServletRequest request, HttpServletResponse response){
+	public Result<UserPsySuicideVo> getPsychologicalSuicide(HttpServletRequest request, HttpServletResponse response){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		return psyService.getPsyAd8(1l);
+		return psyService.getPsySuicide(user.getId());
 	}
-	
-	@RequestMapping(value = "/psy/gad7/add", method = {RequestMethod.GET,RequestMethod.POST})
-	@ResponseBody
-	public Result<Void> addPsychologicalGAD7(HttpServletRequest request, HttpServletResponse response,UserPsychologicalGAD7Vo vo){
-		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		vo.setUserId(1l);
-		return psyService.addOrUpdatePsyGAD7(vo);
-	}
-	
-	@RequestMapping(value = "/psy/gad7/get", method = {RequestMethod.GET,RequestMethod.POST})
-	@ResponseBody
-	public Result<UserPsychologicalGAD7Vo> getPsychologicalGAD7(HttpServletRequest request, HttpServletResponse response){
-		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		return psyService.getPsyGAD7(1l);
-	}
-	
-	@RequestMapping(value = "/psy/phq9/add", method = {RequestMethod.GET,RequestMethod.POST})
-	@ResponseBody
-	public Result<Void> addPsychologicalPHQ9(HttpServletRequest request, HttpServletResponse response,UserPsychologicalPHQ9Vo vo){
-		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		vo.setUserId(1l);
-		return psyService.addOrUpdatePsyPHQ9(vo);
-	}
-	
-	@RequestMapping(value = "/psy/phq9/get", method = {RequestMethod.GET,RequestMethod.POST})
-	@ResponseBody
-	public Result<UserPsychologicalPHQ9Vo> getPsychologicalPHQ9(HttpServletRequest request, HttpServletResponse response){
-		UserVo user = (UserVo)request.getSession().getAttribute("user");
-		return psyService.getPsyPHQ9(1l);
-	}*/
 }

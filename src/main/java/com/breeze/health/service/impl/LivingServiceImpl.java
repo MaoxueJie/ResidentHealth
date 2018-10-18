@@ -11,6 +11,7 @@ import com.breeze.health.mapper.UserLivingMovementMapper;
 import com.breeze.health.mapper.UserPhysiologicalMapper;
 import com.breeze.health.service.LivingService;
 import com.breeze.health.util.BeanUtils;
+import com.github.pagehelper.PageHelper;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -161,14 +162,15 @@ public class LivingServiceImpl implements LivingService {
 		try{
 			UserLivingExample example = new UserLivingExample();
 			example.createCriteria().andUserIdEqualTo(userId);
-			example.setOrderByClause("id desc");
-			List<UserLiving> livings = userLivingMapper.selectByExample(example);
+			example.setOrderByClause(" id desc");
+			PageHelper.startPage(1, 1);
+			List livings = userLivingMapper.selectByExample(example);
 			if (livings!= null && livings.size()>0)
 			{
 				UserLivingVo vo = new UserLivingVo();
 
 				UserLivingMealExample mealExample = new UserLivingMealExample();
-				mealExample.createCriteria().andLivingIdEqualTo(livings.get(0).getId());
+				mealExample.createCriteria().andLivingIdEqualTo(((UserLiving)livings.get(0)).getId());
 				List<UserLivingMeal> meals = userLivingMealMapper.selectByExample(mealExample);
 				if (meals!= null && meals.size()>0)
 				{
@@ -176,7 +178,7 @@ public class LivingServiceImpl implements LivingService {
 				}
 				
 				UserLivingMovementExample movementExample = new UserLivingMovementExample();
-				movementExample.createCriteria().andLivingIdEqualTo(livings.get(0).getId());
+				movementExample.createCriteria().andLivingIdEqualTo(((UserLiving)livings.get(0)).getId());
 				List<UserLivingMovement> movements = userLivingMovementMapper.selectByExample(movementExample);
 				if (movements!= null && movements.size()>0)
 				{
@@ -184,7 +186,7 @@ public class LivingServiceImpl implements LivingService {
 				}
 				
 				UserLivingHabitExample habitExample = new UserLivingHabitExample();
-				habitExample.createCriteria().andLivingIdEqualTo(livings.get(0).getId());
+				habitExample.createCriteria().andLivingIdEqualTo(((UserLiving)livings.get(0)).getId());
 				List<UserLivingHabit> habits = userLivingHabitMapper.selectByExample(habitExample);
 				if (habits!= null && habits.size()>0)
 				{

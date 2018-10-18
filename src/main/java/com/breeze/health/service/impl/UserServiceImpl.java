@@ -21,6 +21,7 @@ import com.breeze.health.mapper.UserMapper;
 import com.breeze.health.mapper.WexinAccountMapper;
 import com.breeze.health.service.UserService;
 import com.breeze.health.util.BeanUtils;
+import com.github.pagehelper.PageHelper;
 
 @Service("userService")
 public class UserServiceImpl implements UserService{
@@ -78,10 +79,12 @@ public class UserServiceImpl implements UserService{
 			Date now = new Date();
 			WexinAccountExample example = new WexinAccountExample();
 			example.createCriteria().andOpenIdEqualTo(openId);
-			List<WexinAccount> accounts = wexinAccountMapper.selectByExample(example);
+			example.setOrderByClause(" id desc");
+			PageHelper.startPage(1, 1);
+			List accounts = wexinAccountMapper.selectByExample(example);
 			if (accounts!=null && accounts.size()>0)
 			{
-				WexinAccount account = accounts.get(0);
+				WexinAccount account = (WexinAccount)accounts.get(0);
 				account.setStatus(0);
 				account.setUpdateTime(now);
 				wexinAccountMapper.updateByPrimaryKeySelective(account);
@@ -127,7 +130,9 @@ public class UserServiceImpl implements UserService{
 		try{
 			UserBaseInfoExample example = new UserBaseInfoExample();
 			example.createCriteria().andUserIdEqualTo(userId);
-			List<UserBaseInfo> bases = userBaseInfoMapper.selectByExample(example);
+			example.setOrderByClause(" id desc");
+			PageHelper.startPage(1, 1);
+			List bases = userBaseInfoMapper.selectByExample(example);
 			if (bases!= null && bases.size()>0)
 			{
 				UserBaseInfoVo vo = new UserBaseInfoVo();

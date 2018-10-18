@@ -36,6 +36,7 @@ import com.breeze.health.mapper.UserPsychologicalPHQ9Mapper;
 import com.breeze.health.mapper.UserPsychologicalSuicideMapper;
 import com.breeze.health.service.PsyService;
 import com.breeze.health.util.BeanUtils;
+import com.github.pagehelper.PageHelper;
 
 @Service("psyService")
 public class PsyServiceImpl implements PsyService{
@@ -282,14 +283,15 @@ public class PsyServiceImpl implements PsyService{
 		try{
 			UserPsychologicalExample example = new UserPsychologicalExample();
 			example.createCriteria().andUserIdEqualTo(userId);
-			example.setOrderByClause("id desc");
-			List<UserPsychological> psys = userPsychologicalMapper.selectByExample(example);
+			example.setOrderByClause(" id desc");
+			PageHelper.startPage(1, 1);
+			List psys = userPsychologicalMapper.selectByExample(example);
 			if (psys!= null && psys.size()>0)
 			{
 				UserPsychologicalVo vo = new UserPsychologicalVo();
 
 				UserPsychologicalAD8Example ad8Example = new UserPsychologicalAD8Example();
-				ad8Example.createCriteria().andPsyIdEqualTo(psys.get(0).getId());
+				ad8Example.createCriteria().andPsyIdEqualTo(((UserPsychological)psys.get(0)).getId());
 				List<UserPsychologicalAD8> ad8s = userPsychologicalAD8Mapper.selectByExample(ad8Example);
 				if (ad8s!= null && ad8s.size()>0)
 				{
@@ -297,7 +299,7 @@ public class PsyServiceImpl implements PsyService{
 				}
 				
 				UserPsychologicalGAD7Example gad7Example = new UserPsychologicalGAD7Example();
-				gad7Example.createCriteria().andPsyIdEqualTo(psys.get(0).getId());
+				gad7Example.createCriteria().andPsyIdEqualTo(((UserPsychological)psys.get(0)).getId());
 				List<UserPsychologicalGAD7> gad7s = userPsychologicalGAD7Mapper.selectByExample(gad7Example);
 				if (gad7s!= null && gad7s.size()>0)
 				{
@@ -305,7 +307,7 @@ public class PsyServiceImpl implements PsyService{
 				}
 				
 				UserPsychologicalPHQ9Example phq9Example = new UserPsychologicalPHQ9Example();
-				phq9Example.createCriteria().andPsyIdEqualTo(psys.get(0).getId());
+				phq9Example.createCriteria().andPsyIdEqualTo(((UserPsychological)psys.get(0)).getId());
 				List<UserPsychologicalPHQ9> phq9s = userPsychologicalPHQ9Mapper.selectByExample(phq9Example);
 				if (phq9s!= null && phq9s.size()>0)
 				{
@@ -360,7 +362,8 @@ public class PsyServiceImpl implements PsyService{
 		try{
 			UserPsychologicalSuicideExample example = new UserPsychologicalSuicideExample();
 			example.createCriteria().andUserIdEqualTo(userId);
-			List<UserPsychologicalSuicide> suicides = userPsychologicalSuicideMapper.selectByExample(example);
+			PageHelper.startPage(1, 1);
+			List suicides = userPsychologicalSuicideMapper.selectByExample(example);
 			if (suicides!= null && suicides.size()>0)
 			{
 				UserPsySuicideVo vo = new UserPsySuicideVo();

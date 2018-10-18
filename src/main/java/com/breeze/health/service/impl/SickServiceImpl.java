@@ -18,6 +18,7 @@ import com.breeze.health.entity.UserSickExample;
 import com.breeze.health.mapper.UserSickMapper;
 import com.breeze.health.service.SickService;
 import com.breeze.health.util.BeanUtils;
+import com.github.pagehelper.PageHelper;
 
 @Service("sickService")
 public class SickServiceImpl implements SickService{
@@ -57,7 +58,9 @@ public class SickServiceImpl implements SickService{
 		try{
 			UserSickExample example = new UserSickExample();
 			example.createCriteria().andUserIdEqualTo(userId);
-			List<UserSick> sicks = userSickMapper.selectByExample(example);
+			example.setOrderByClause(" id desc");
+			PageHelper.startPage(1, 1);
+			List sicks = userSickMapper.selectByExample(example);
 			if (sicks!= null && sicks.size()>0)
 			{
 				UserSickVo vo = new UserSickVo();
