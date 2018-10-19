@@ -1,12 +1,19 @@
 package com.breeze.health;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.boot.SpringApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
+import com.breeze.health.filter.AuthenticationFilter;
 
 
 
@@ -28,4 +35,14 @@ public class WebApplicationStarter extends SpringBootServletInitializer {
         new SpringApplication(WebApplicationStarter.class).run(args);
     }
 
+    @Bean
+    public FilterRegistrationBean  filterRegistrationBean() {
+		FilterRegistrationBean registrationBean = new FilterRegistrationBean();
+		AuthenticationFilter authFilter = new AuthenticationFilter();
+		registrationBean.setFilter(authFilter);
+		List<String> urlPatterns = new ArrayList<String>();
+	    urlPatterns.add("/user/*");
+	    registrationBean.setUrlPatterns(urlPatterns);
+	    return registrationBean;
+    }
 }
