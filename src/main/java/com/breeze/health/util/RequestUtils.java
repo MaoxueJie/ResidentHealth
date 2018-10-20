@@ -365,11 +365,6 @@ public class RequestUtils {
 		}
 		return ip;
 	}
-
-	public static void main(String[] args) {
-		System.out.println(RequestUtils.ipIsInNet(
-				"121.101.212.110-121.101.212.120", "121.101.212.111"));
-	}
 	
 	/**
 	 * @功能：获取访问参数
