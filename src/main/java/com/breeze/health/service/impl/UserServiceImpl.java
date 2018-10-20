@@ -3,6 +3,7 @@ package com.breeze.health.service.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import com.breeze.health.beans.vo.UserVo;
 import com.breeze.health.entity.User;
 import com.breeze.health.entity.UserBaseInfo;
 import com.breeze.health.entity.UserBaseInfoExample;
+import com.breeze.health.entity.UserExample;
 import com.breeze.health.entity.WexinAccount;
 import com.breeze.health.entity.WexinAccountExample;
 import com.breeze.health.mapper.UserBaseInfoMapper;
@@ -34,7 +36,8 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	WexinAccountMapper wexinAccountMapper;
-
+	
+	
 	@Override
 	public Result<Void> bindWexin(String openId) {
 		Result<Void> ret = new Result<Void>();
@@ -51,12 +54,12 @@ public class UserServiceImpl implements UserService{
 				wexinAccountMapper.updateByPrimaryKeySelective(account);
 			}else
 			{
-				User user = new User();
-				user.setCreateTime(now);
-				user.setUpdateTime(now);
-				userMapper.insert(user);
+				//User user = new User();
+				//user.setCreateTime(now);
+				//user.setUpdateTime(now);
+				//userMapper.insert(user);
 				WexinAccount account = new WexinAccount();
-				account.setUserId(user.getId());
+				//account.setUserId(user.getId());
 				account.setStatus(1);
 				account.setOpenId(openId);
 				account.setCreateTime(now);
@@ -180,6 +183,90 @@ public class UserServiceImpl implements UserService{
 		{
 			logger.error("获取用户异常", e);
 			ret.setMessage("获取用户异常");
+		}
+		return ret;
+	}
+
+	@Override
+	public Result<UserVo> loginOrRegister(String mobile, String verificationCode) {
+		Result<UserVo> ret = new Result<UserVo>();
+		try{
+			if (StringUtils.isBlank(mobile))
+			{
+				ret.setSuccess(false);
+				ret.setMessage("请输入手机号码");
+				return ret;
+			}
+			mobile = mobile.trim();
+			
+			//验证验证马
+			
+			
+			UserExample example = new UserExample();
+			example.createCriteria().andMobileEqualTo(mobile);
+			List<User> users = userMapper.selectByExample(example);
+			if (users!=null && users.size()>0)
+			{
+				UserVo vo = new UserVo();
+				BeanUtils.copyProperties(users.get(0), vo);
+				ret.setSuccess(true);
+				ret.setData(vo);
+			}else
+			{
+				Date now = new Date();
+				User user = new User();
+				user.setMobile(mobile);
+				user.setCreateTime(now);
+				user.setUpdateTime(now);
+				userMapper.insertSelective(user);
+				
+				UserVo vo = new UserVo();
+				BeanUtils.copyProperties(user, vo);
+				ret.setSuccess(true);
+				ret.setData(vo);
+			}
+			
+		}catch(Exception e)
+		{
+			logger.error("登陆或注册异常", e);
+			ret.setMessage("登陆或注册失败");
+		}
+		return ret;
+	}
+
+	@Override
+	public Result<Void> sendVertificationCode(String mobile) {
+		Result<Void> ret = new Result<Void>();
+		try{
+			ret.setSuccess(true);
+		}catch(Exception e)
+		{
+			logger.error("发送验证码异常", e);
+			ret.setMessage("发送验证码失败");
+		}
+		return ret;
+	}
+
+	@Override
+	public Result<UserVo> getUserById(Long userId) {
+		Result<UserVo> ret = new Result<UserVo>();
+		try{
+			User user = userMapper.selectByPrimaryKey(userId);
+			if (user!=null)
+			{
+				UserVo vo = new UserVo();
+				BeanUtils.copyProperties(user, vo);
+				ret.setSuccess(true);
+				ret.setData(vo);
+			}else
+			{
+				ret.setSuccess(false);
+				ret.setMessage("没有此用户");
+			}
+		}catch(Exception e)
+		{
+			logger.error("获取用户异常", e);
+			ret.setMessage("获取用户失败");
 		}
 		return ret;
 	}

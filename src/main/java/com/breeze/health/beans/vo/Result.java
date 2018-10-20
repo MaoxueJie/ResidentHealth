@@ -3,7 +3,7 @@ package com.breeze.health.beans.vo;
 public class Result<E> implements java.io.Serializable{
 
 	private boolean success = false;
-	private Integer code;
+	private Integer code = -1;
 	private String 	message = "";
 	private E		data;
 	
@@ -24,6 +24,8 @@ public class Result<E> implements java.io.Serializable{
 		return success;
 	}
 	public void setSuccess(boolean success) {
+		if (success);
+			this.code = 0;
 		this.success = success;
 	}
 	public String getMessage() {

@@ -232,29 +232,29 @@ public class WexinController {
 			String openid = jsonObj.get("openid").toString();
 
 			String url="";
-			
-			Result<UserVo> userRet = userService.getUserByOpenId(openid);
-			if (userRet.isSuccess())
+			request.getSession().setAttribute("openid", openid);
+			UserVo user = (UserVo)request.getSession().getAttribute("user");
+			//Result<UserVo> userRet = userService.getUserByOpenId(openid);
+
+			if (user!=null)
 			{
-				request.getSession().setAttribute("openid", openid);
-				request.getSession().setAttribute("user", userRet.getData());
 				String parm="timestamp="+System.currentTimeMillis();//鍙傛暟
 				if ("base".equals(state)) {
-					url=path+"base?"+parm;
+					url=path+"base.html?"+parm;
 				}else if ("report".equals(state)) {
-					url=path+"report?"+parm;
+					url=path+"report.html?"+parm;
 				}else if ("living".equals(state)) {
-					url=path+"living?"+parm;
+					url=path+"living.html?"+parm;
 				}else if ("sick".equals(state)) {
-					url=path+"sick?"+parm;
+					url=path+"sick.html?"+parm;
 				}else if ("phy".equals(state)) {
-					url=path+"phy?"+parm;
+					url=path+"phy.html?"+parm;
 				}else if ("psy".equals(state)) {
-					url=path+"psy?"+parm;
+					url=path+"psy.html?"+parm;
 				}
 			}else
 			{
-				url=path+"error";
+				url=path+"login.html";
 			}
 			return new ModelAndView(new RedirectView(url));
 		} catch (JSONException e) {

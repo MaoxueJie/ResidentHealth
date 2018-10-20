@@ -8,6 +8,8 @@ public class UserVo {
     private String mobile;
 
     private String pwd;
+    
+    private String token;
 
     private Date createTime;
 
@@ -52,4 +54,13 @@ public class UserVo {
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+	
 }

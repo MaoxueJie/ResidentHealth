@@ -35,14 +35,5 @@ public class WebApplicationStarter extends SpringBootServletInitializer {
         new SpringApplication(WebApplicationStarter.class).run(args);
     }
 
-    @Bean
-    public FilterRegistrationBean  filterRegistrationBean() {
-		FilterRegistrationBean registrationBean = new FilterRegistrationBean();
-		AuthenticationFilter authFilter = new AuthenticationFilter();
-		registrationBean.setFilter(authFilter);
-		List<String> urlPatterns = new ArrayList<String>();
-	    urlPatterns.add("/user/*");
-	    registrationBean.setUrlPatterns(urlPatterns);
-	    return registrationBean;
-    }
+    
 }

@@ -14,4 +14,11 @@ public interface UserService {
 	public Result<UserBaseInfoVo> getBaseInfo(Long userId);
 	
 	public Result<UserVo> getUserByOpenId(String openId);
+	
+	public Result<UserVo> getUserById(Long userId);
+	
+	public Result<UserVo> loginOrRegister(String mobile,String verificationCode);
+	
+	public Result<Void> sendVertificationCode(String mobile);
+	
 }
