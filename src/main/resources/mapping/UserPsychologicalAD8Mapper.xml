@@ -1,40 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.breeze.health.mapper.UserPsychologicalAD8Mapper">
-  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPsychologicalAD8">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="psy_id" jdbcType="BIGINT" property="psyId" />
-    <result column="ad8_q1" jdbcType="INTEGER" property="ad8Q1" />
-    <result column="ad8_q2" jdbcType="INTEGER" property="ad8Q2" />
-    <result column="ad8_q3" jdbcType="INTEGER" property="ad8Q3" />
-    <result column="ad8_q4" jdbcType="INTEGER" property="ad8Q4" />
-    <result column="ad8_q5" jdbcType="INTEGER" property="ad8Q5" />
-    <result column="ad8_q6" jdbcType="INTEGER" property="ad8Q6" />
-    <result column="ad8_q7" jdbcType="INTEGER" property="ad8Q7" />
-    <result column="ad8_q8" jdbcType="INTEGER" property="ad8Q8" />
-    <result column="ad8_score" jdbcType="INTEGER" property="ad8Score" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.breeze.health.mapper.UserPsychologicalAD8Mapper" >
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPsychologicalAD8" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="psy_id" property="psyId" jdbcType="BIGINT" />
+    <result column="ad8_q1" property="ad8Q1" jdbcType="INTEGER" />
+    <result column="ad8_q2" property="ad8Q2" jdbcType="INTEGER" />
+    <result column="ad8_q3" property="ad8Q3" jdbcType="INTEGER" />
+    <result column="ad8_q4" property="ad8Q4" jdbcType="INTEGER" />
+    <result column="ad8_q5" property="ad8Q5" jdbcType="INTEGER" />
+    <result column="ad8_q6" property="ad8Q6" jdbcType="INTEGER" />
+    <result column="ad8_q7" property="ad8Q7" jdbcType="INTEGER" />
+    <result column="ad8_q8" property="ad8Q8" jdbcType="INTEGER" />
+    <result column="ad8_score" property="ad8Score" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue">
+                <when test="criterion.singleValue" >
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue">
+                <when test="criterion.betweenValue" >
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue">
+                <when test="criterion.listValue" >
                   and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
                     #{listItem}
                   </foreach>
                 </when>
@@ -45,35 +45,35 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     id, psy_id, ad8_q1, ad8_q2, ad8_q3, ad8_q4, ad8_q5, ad8_q6, ad8_q7, ad8_q8, ad8_score, 
     create_time, update_time
   </sql>
-  <select id="selectByExample" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" resultMap="BaseResultMap">
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" >
     select
-    <if test="distinct">
+    <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
     from t_user_psychological_ad8
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null">
+    <if test="orderByClause != null" >
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from t_user_psychological_ad8
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from t_user_psychological_ad8
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true">
+  <insert id="insert" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true" keyProperty="id" >
     insert into t_user_psychological_ad8 (psy_id, ad8_q1, ad8_q2, 
       ad8_q3, ad8_q4, ad8_q5, 
       ad8_q6, ad8_q7, ad8_q8, 
@@ -85,134 +85,134 @@
       #{ad8Score,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true">
+  <insert id="insertSelective" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true" keyProperty="id" >
     insert into t_user_psychological_ad8
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="psyId != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="psyId != null" >
         psy_id,
       </if>
-      <if test="ad8Q1 != null">
+      <if test="ad8Q1 != null" >
         ad8_q1,
       </if>
-      <if test="ad8Q2 != null">
+      <if test="ad8Q2 != null" >
         ad8_q2,
       </if>
-      <if test="ad8Q3 != null">
+      <if test="ad8Q3 != null" >
         ad8_q3,
       </if>
-      <if test="ad8Q4 != null">
+      <if test="ad8Q4 != null" >
         ad8_q4,
       </if>
-      <if test="ad8Q5 != null">
+      <if test="ad8Q5 != null" >
         ad8_q5,
       </if>
-      <if test="ad8Q6 != null">
+      <if test="ad8Q6 != null" >
         ad8_q6,
       </if>
-      <if test="ad8Q7 != null">
+      <if test="ad8Q7 != null" >
         ad8_q7,
       </if>
-      <if test="ad8Q8 != null">
+      <if test="ad8Q8 != null" >
         ad8_q8,
       </if>
-      <if test="ad8Score != null">
+      <if test="ad8Score != null" >
         ad8_score,
       </if>
-      <if test="createTime != null">
+      <if test="createTime != null" >
         create_time,
       </if>
-      <if test="updateTime != null">
+      <if test="updateTime != null" >
         update_time,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="psyId != null">
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="psyId != null" >
         #{psyId,jdbcType=BIGINT},
       </if>
-      <if test="ad8Q1 != null">
+      <if test="ad8Q1 != null" >
         #{ad8Q1,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q2 != null">
+      <if test="ad8Q2 != null" >
         #{ad8Q2,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q3 != null">
+      <if test="ad8Q3 != null" >
         #{ad8Q3,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q4 != null">
+      <if test="ad8Q4 != null" >
         #{ad8Q4,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q5 != null">
+      <if test="ad8Q5 != null" >
         #{ad8Q5,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q6 != null">
+      <if test="ad8Q6 != null" >
         #{ad8Q6,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q7 != null">
+      <if test="ad8Q7 != null" >
         #{ad8Q7,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q8 != null">
+      <if test="ad8Q8 != null" >
         #{ad8Q8,jdbcType=INTEGER},
       </if>
-      <if test="ad8Score != null">
+      <if test="ad8Score != null" >
         #{ad8Score,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null">
+      <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null">
+      <if test="updateTime != null" >
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" resultType="java.lang.Integer">
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" resultType="java.lang.Integer" >
     select count(*) from t_user_psychological_ad8
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPsychologicalAD8">
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPsychologicalAD8" >
     update t_user_psychological_ad8
-    <set>
-      <if test="psyId != null">
+    <set >
+      <if test="psyId != null" >
         psy_id = #{psyId,jdbcType=BIGINT},
       </if>
-      <if test="ad8Q1 != null">
+      <if test="ad8Q1 != null" >
         ad8_q1 = #{ad8Q1,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q2 != null">
+      <if test="ad8Q2 != null" >
         ad8_q2 = #{ad8Q2,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q3 != null">
+      <if test="ad8Q3 != null" >
         ad8_q3 = #{ad8Q3,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q4 != null">
+      <if test="ad8Q4 != null" >
         ad8_q4 = #{ad8Q4,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q5 != null">
+      <if test="ad8Q5 != null" >
         ad8_q5 = #{ad8Q5,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q6 != null">
+      <if test="ad8Q6 != null" >
         ad8_q6 = #{ad8Q6,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q7 != null">
+      <if test="ad8Q7 != null" >
         ad8_q7 = #{ad8Q7,jdbcType=INTEGER},
       </if>
-      <if test="ad8Q8 != null">
+      <if test="ad8Q8 != null" >
         ad8_q8 = #{ad8Q8,jdbcType=INTEGER},
       </if>
-      <if test="ad8Score != null">
+      <if test="ad8Score != null" >
         ad8_score = #{ad8Score,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null">
+      <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null">
+      <if test="updateTime != null" >
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPsychologicalAD8">
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPsychologicalAD8" >
     update t_user_psychological_ad8
     set psy_id = #{psyId,jdbcType=BIGINT},
       ad8_q1 = #{ad8Q1,jdbcType=INTEGER},
@@ -224,1135 +224,6 @@
       ad8_q7 = #{ad8Q7,jdbcType=INTEGER},
       ad8_q8 = #{ad8Q8,jdbcType=INTEGER},
       ad8_score = #{ad8Score,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPsychologicalAD8">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="psy_id" jdbcType="BIGINT" property="psyId" />
-    <result column="ad8_q1" jdbcType="INTEGER" property="ad8Q1" />
-    <result column="ad8_q2" jdbcType="INTEGER" property="ad8Q2" />
-    <result column="ad8_q3" jdbcType="INTEGER" property="ad8Q3" />
-    <result column="ad8_q4" jdbcType="INTEGER" property="ad8Q4" />
-    <result column="ad8_q5" jdbcType="INTEGER" property="ad8Q5" />
-    <result column="ad8_q6" jdbcType="INTEGER" property="ad8Q6" />
-    <result column="ad8_q7" jdbcType="INTEGER" property="ad8Q7" />
-    <result column="ad8_q8" jdbcType="INTEGER" property="ad8Q8" />
-    <result column="ad8_score" jdbcType="INTEGER" property="ad8Score" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-  </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List">
-    id, psy_id, ad8_q1, ad8_q2, ad8_q3, ad8_q4, ad8_q5, ad8_q6, ad8_q7, ad8_q8, ad8_score, 
-    create_time, update_time
-  </sql>
-  <select id="selectByExample" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from t_user_psychological_ad8
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from t_user_psychological_ad8
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from t_user_psychological_ad8
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true">
-    insert into t_user_psychological_ad8 (psy_id, ad8_q1, ad8_q2, 
-      ad8_q3, ad8_q4, ad8_q5, 
-      ad8_q6, ad8_q7, ad8_q8, 
-      ad8_score, create_time, update_time
-      )
-    values (#{psyId,jdbcType=BIGINT}, #{ad8Q1,jdbcType=INTEGER}, #{ad8Q2,jdbcType=INTEGER}, 
-      #{ad8Q3,jdbcType=INTEGER}, #{ad8Q4,jdbcType=INTEGER}, #{ad8Q5,jdbcType=INTEGER}, 
-      #{ad8Q6,jdbcType=INTEGER}, #{ad8Q7,jdbcType=INTEGER}, #{ad8Q8,jdbcType=INTEGER}, 
-      #{ad8Score,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-      )
-  </insert>
-  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true">
-    insert into t_user_psychological_ad8
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="psyId != null">
-        psy_id,
-      </if>
-      <if test="ad8Q1 != null">
-        ad8_q1,
-      </if>
-      <if test="ad8Q2 != null">
-        ad8_q2,
-      </if>
-      <if test="ad8Q3 != null">
-        ad8_q3,
-      </if>
-      <if test="ad8Q4 != null">
-        ad8_q4,
-      </if>
-      <if test="ad8Q5 != null">
-        ad8_q5,
-      </if>
-      <if test="ad8Q6 != null">
-        ad8_q6,
-      </if>
-      <if test="ad8Q7 != null">
-        ad8_q7,
-      </if>
-      <if test="ad8Q8 != null">
-        ad8_q8,
-      </if>
-      <if test="ad8Score != null">
-        ad8_score,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="psyId != null">
-        #{psyId,jdbcType=BIGINT},
-      </if>
-      <if test="ad8Q1 != null">
-        #{ad8Q1,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q2 != null">
-        #{ad8Q2,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q3 != null">
-        #{ad8Q3,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q4 != null">
-        #{ad8Q4,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q5 != null">
-        #{ad8Q5,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q6 != null">
-        #{ad8Q6,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q7 != null">
-        #{ad8Q7,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q8 != null">
-        #{ad8Q8,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Score != null">
-        #{ad8Score,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" resultType="java.lang.Integer">
-    select count(*) from t_user_psychological_ad8
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPsychologicalAD8">
-    update t_user_psychological_ad8
-    <set>
-      <if test="psyId != null">
-        psy_id = #{psyId,jdbcType=BIGINT},
-      </if>
-      <if test="ad8Q1 != null">
-        ad8_q1 = #{ad8Q1,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q2 != null">
-        ad8_q2 = #{ad8Q2,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q3 != null">
-        ad8_q3 = #{ad8Q3,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q4 != null">
-        ad8_q4 = #{ad8Q4,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q5 != null">
-        ad8_q5 = #{ad8Q5,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q6 != null">
-        ad8_q6 = #{ad8Q6,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q7 != null">
-        ad8_q7 = #{ad8Q7,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q8 != null">
-        ad8_q8 = #{ad8Q8,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Score != null">
-        ad8_score = #{ad8Score,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPsychologicalAD8">
-    update t_user_psychological_ad8
-    set psy_id = #{psyId,jdbcType=BIGINT},
-      ad8_q1 = #{ad8Q1,jdbcType=INTEGER},
-      ad8_q2 = #{ad8Q2,jdbcType=INTEGER},
-      ad8_q3 = #{ad8Q3,jdbcType=INTEGER},
-      ad8_q4 = #{ad8Q4,jdbcType=INTEGER},
-      ad8_q5 = #{ad8Q5,jdbcType=INTEGER},
-      ad8_q6 = #{ad8Q6,jdbcType=INTEGER},
-      ad8_q7 = #{ad8Q7,jdbcType=INTEGER},
-      ad8_q8 = #{ad8Q8,jdbcType=INTEGER},
-      ad8_score = #{ad8Score,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPsychologicalAD8">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="psy_id" jdbcType="BIGINT" property="psyId" />
-    <result column="ad8_q1" jdbcType="INTEGER" property="ad8Q1" />
-    <result column="ad8_q2" jdbcType="INTEGER" property="ad8Q2" />
-    <result column="ad8_q3" jdbcType="INTEGER" property="ad8Q3" />
-    <result column="ad8_q4" jdbcType="INTEGER" property="ad8Q4" />
-    <result column="ad8_q5" jdbcType="INTEGER" property="ad8Q5" />
-    <result column="ad8_q6" jdbcType="INTEGER" property="ad8Q6" />
-    <result column="ad8_q7" jdbcType="INTEGER" property="ad8Q7" />
-    <result column="ad8_q8" jdbcType="INTEGER" property="ad8Q8" />
-    <result column="ad8_score" jdbcType="INTEGER" property="ad8Score" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-  </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List">
-    id, psy_id, ad8_q1, ad8_q2, ad8_q3, ad8_q4, ad8_q5, ad8_q6, ad8_q7, ad8_q8, ad8_score, 
-    create_time, update_time
-  </sql>
-  <select id="selectByExample" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from t_user_psychological_ad8
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from t_user_psychological_ad8
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from t_user_psychological_ad8
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true">
-    insert into t_user_psychological_ad8 (psy_id, ad8_q1, ad8_q2, 
-      ad8_q3, ad8_q4, ad8_q5, 
-      ad8_q6, ad8_q7, ad8_q8, 
-      ad8_score, create_time, update_time
-      )
-    values (#{psyId,jdbcType=BIGINT}, #{ad8Q1,jdbcType=INTEGER}, #{ad8Q2,jdbcType=INTEGER}, 
-      #{ad8Q3,jdbcType=INTEGER}, #{ad8Q4,jdbcType=INTEGER}, #{ad8Q5,jdbcType=INTEGER}, 
-      #{ad8Q6,jdbcType=INTEGER}, #{ad8Q7,jdbcType=INTEGER}, #{ad8Q8,jdbcType=INTEGER}, 
-      #{ad8Score,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-      )
-  </insert>
-  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true">
-    insert into t_user_psychological_ad8
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="psyId != null">
-        psy_id,
-      </if>
-      <if test="ad8Q1 != null">
-        ad8_q1,
-      </if>
-      <if test="ad8Q2 != null">
-        ad8_q2,
-      </if>
-      <if test="ad8Q3 != null">
-        ad8_q3,
-      </if>
-      <if test="ad8Q4 != null">
-        ad8_q4,
-      </if>
-      <if test="ad8Q5 != null">
-        ad8_q5,
-      </if>
-      <if test="ad8Q6 != null">
-        ad8_q6,
-      </if>
-      <if test="ad8Q7 != null">
-        ad8_q7,
-      </if>
-      <if test="ad8Q8 != null">
-        ad8_q8,
-      </if>
-      <if test="ad8Score != null">
-        ad8_score,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="psyId != null">
-        #{psyId,jdbcType=BIGINT},
-      </if>
-      <if test="ad8Q1 != null">
-        #{ad8Q1,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q2 != null">
-        #{ad8Q2,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q3 != null">
-        #{ad8Q3,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q4 != null">
-        #{ad8Q4,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q5 != null">
-        #{ad8Q5,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q6 != null">
-        #{ad8Q6,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q7 != null">
-        #{ad8Q7,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q8 != null">
-        #{ad8Q8,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Score != null">
-        #{ad8Score,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" resultType="java.lang.Integer">
-    select count(*) from t_user_psychological_ad8
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPsychologicalAD8">
-    update t_user_psychological_ad8
-    <set>
-      <if test="psyId != null">
-        psy_id = #{psyId,jdbcType=BIGINT},
-      </if>
-      <if test="ad8Q1 != null">
-        ad8_q1 = #{ad8Q1,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q2 != null">
-        ad8_q2 = #{ad8Q2,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q3 != null">
-        ad8_q3 = #{ad8Q3,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q4 != null">
-        ad8_q4 = #{ad8Q4,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q5 != null">
-        ad8_q5 = #{ad8Q5,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q6 != null">
-        ad8_q6 = #{ad8Q6,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q7 != null">
-        ad8_q7 = #{ad8Q7,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q8 != null">
-        ad8_q8 = #{ad8Q8,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Score != null">
-        ad8_score = #{ad8Score,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPsychologicalAD8">
-    update t_user_psychological_ad8
-    set psy_id = #{psyId,jdbcType=BIGINT},
-      ad8_q1 = #{ad8Q1,jdbcType=INTEGER},
-      ad8_q2 = #{ad8Q2,jdbcType=INTEGER},
-      ad8_q3 = #{ad8Q3,jdbcType=INTEGER},
-      ad8_q4 = #{ad8Q4,jdbcType=INTEGER},
-      ad8_q5 = #{ad8Q5,jdbcType=INTEGER},
-      ad8_q6 = #{ad8Q6,jdbcType=INTEGER},
-      ad8_q7 = #{ad8Q7,jdbcType=INTEGER},
-      ad8_q8 = #{ad8Q8,jdbcType=INTEGER},
-      ad8_score = #{ad8Score,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPsychologicalAD8">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="psy_id" jdbcType="BIGINT" property="psyId" />
-    <result column="ad8_q1" jdbcType="INTEGER" property="ad8Q1" />
-    <result column="ad8_q2" jdbcType="INTEGER" property="ad8Q2" />
-    <result column="ad8_q3" jdbcType="INTEGER" property="ad8Q3" />
-    <result column="ad8_q4" jdbcType="INTEGER" property="ad8Q4" />
-    <result column="ad8_q5" jdbcType="INTEGER" property="ad8Q5" />
-    <result column="ad8_q6" jdbcType="INTEGER" property="ad8Q6" />
-    <result column="ad8_q7" jdbcType="INTEGER" property="ad8Q7" />
-    <result column="ad8_q8" jdbcType="INTEGER" property="ad8Q8" />
-    <result column="ad8_score" jdbcType="INTEGER" property="ad8Score" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-  </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List">
-    id, psy_id, ad8_q1, ad8_q2, ad8_q3, ad8_q4, ad8_q5, ad8_q6, ad8_q7, ad8_q8, ad8_score, 
-    create_time, update_time
-  </sql>
-  <select id="selectByExample" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from t_user_psychological_ad8
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from t_user_psychological_ad8
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from t_user_psychological_ad8
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true">
-    insert into t_user_psychological_ad8 (psy_id, ad8_q1, ad8_q2, 
-      ad8_q3, ad8_q4, ad8_q5, 
-      ad8_q6, ad8_q7, ad8_q8, 
-      ad8_score, create_time, update_time
-      )
-    values (#{psyId,jdbcType=BIGINT}, #{ad8Q1,jdbcType=INTEGER}, #{ad8Q2,jdbcType=INTEGER}, 
-      #{ad8Q3,jdbcType=INTEGER}, #{ad8Q4,jdbcType=INTEGER}, #{ad8Q5,jdbcType=INTEGER}, 
-      #{ad8Q6,jdbcType=INTEGER}, #{ad8Q7,jdbcType=INTEGER}, #{ad8Q8,jdbcType=INTEGER}, 
-      #{ad8Score,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-      )
-  </insert>
-  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true">
-    insert into t_user_psychological_ad8
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="psyId != null">
-        psy_id,
-      </if>
-      <if test="ad8Q1 != null">
-        ad8_q1,
-      </if>
-      <if test="ad8Q2 != null">
-        ad8_q2,
-      </if>
-      <if test="ad8Q3 != null">
-        ad8_q3,
-      </if>
-      <if test="ad8Q4 != null">
-        ad8_q4,
-      </if>
-      <if test="ad8Q5 != null">
-        ad8_q5,
-      </if>
-      <if test="ad8Q6 != null">
-        ad8_q6,
-      </if>
-      <if test="ad8Q7 != null">
-        ad8_q7,
-      </if>
-      <if test="ad8Q8 != null">
-        ad8_q8,
-      </if>
-      <if test="ad8Score != null">
-        ad8_score,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="psyId != null">
-        #{psyId,jdbcType=BIGINT},
-      </if>
-      <if test="ad8Q1 != null">
-        #{ad8Q1,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q2 != null">
-        #{ad8Q2,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q3 != null">
-        #{ad8Q3,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q4 != null">
-        #{ad8Q4,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q5 != null">
-        #{ad8Q5,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q6 != null">
-        #{ad8Q6,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q7 != null">
-        #{ad8Q7,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q8 != null">
-        #{ad8Q8,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Score != null">
-        #{ad8Score,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" resultType="java.lang.Integer">
-    select count(*) from t_user_psychological_ad8
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPsychologicalAD8">
-    update t_user_psychological_ad8
-    <set>
-      <if test="psyId != null">
-        psy_id = #{psyId,jdbcType=BIGINT},
-      </if>
-      <if test="ad8Q1 != null">
-        ad8_q1 = #{ad8Q1,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q2 != null">
-        ad8_q2 = #{ad8Q2,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q3 != null">
-        ad8_q3 = #{ad8Q3,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q4 != null">
-        ad8_q4 = #{ad8Q4,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q5 != null">
-        ad8_q5 = #{ad8Q5,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q6 != null">
-        ad8_q6 = #{ad8Q6,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q7 != null">
-        ad8_q7 = #{ad8Q7,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Q8 != null">
-        ad8_q8 = #{ad8Q8,jdbcType=INTEGER},
-      </if>
-      <if test="ad8Score != null">
-        ad8_score = #{ad8Score,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPsychologicalAD8">
-    update t_user_psychological_ad8
-    set psy_id = #{psyId,jdbcType=BIGINT},
-      ad8_q1 = #{ad8Q1,jdbcType=INTEGER},
-      ad8_q2 = #{ad8Q2,jdbcType=INTEGER},
-      ad8_q3 = #{ad8Q3,jdbcType=INTEGER},
-      ad8_q4 = #{ad8Q4,jdbcType=INTEGER},
-      ad8_q5 = #{ad8Q5,jdbcType=INTEGER},
-      ad8_q6 = #{ad8Q6,jdbcType=INTEGER},
-      ad8_q7 = #{ad8Q7,jdbcType=INTEGER},
-      ad8_q8 = #{ad8Q8,jdbcType=INTEGER},
-      ad8_score = #{ad8Score,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPsychologicalAD8">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="psy_id" jdbcType="BIGINT" property="psyId" />
-    <result column="q1" jdbcType="INTEGER" property="q1" />
-    <result column="q2" jdbcType="INTEGER" property="q2" />
-    <result column="q3" jdbcType="INTEGER" property="q3" />
-    <result column="q4" jdbcType="INTEGER" property="q4" />
-    <result column="q5" jdbcType="INTEGER" property="q5" />
-    <result column="q6" jdbcType="INTEGER" property="q6" />
-    <result column="q7" jdbcType="INTEGER" property="q7" />
-    <result column="q8" jdbcType="INTEGER" property="q8" />
-    <result column="score" jdbcType="INTEGER" property="score" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-  </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List">
-    id, psy_id, q1, q2, q3, q4, q5, q6, q7, q8, score, create_time, update_time
-  </sql>
-  <select id="selectByExample" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from t_user_psychological_ad8
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from t_user_psychological_ad8
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from t_user_psychological_ad8
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true">
-    insert into t_user_psychological_ad8 (psy_id, q1, q2, 
-      q3, q4, q5, q6, 
-      q7, q8, score, create_time, 
-      update_time)
-    values (#{psyId,jdbcType=BIGINT}, #{q1,jdbcType=INTEGER}, #{q2,jdbcType=INTEGER}, 
-      #{q3,jdbcType=INTEGER}, #{q4,jdbcType=INTEGER}, #{q5,jdbcType=INTEGER}, #{q6,jdbcType=INTEGER}, 
-      #{q7,jdbcType=INTEGER}, #{q8,jdbcType=INTEGER}, #{score,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true">
-    insert into t_user_psychological_ad8
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="psyId != null">
-        psy_id,
-      </if>
-      <if test="q1 != null">
-        q1,
-      </if>
-      <if test="q2 != null">
-        q2,
-      </if>
-      <if test="q3 != null">
-        q3,
-      </if>
-      <if test="q4 != null">
-        q4,
-      </if>
-      <if test="q5 != null">
-        q5,
-      </if>
-      <if test="q6 != null">
-        q6,
-      </if>
-      <if test="q7 != null">
-        q7,
-      </if>
-      <if test="q8 != null">
-        q8,
-      </if>
-      <if test="score != null">
-        score,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="psyId != null">
-        #{psyId,jdbcType=BIGINT},
-      </if>
-      <if test="q1 != null">
-        #{q1,jdbcType=INTEGER},
-      </if>
-      <if test="q2 != null">
-        #{q2,jdbcType=INTEGER},
-      </if>
-      <if test="q3 != null">
-        #{q3,jdbcType=INTEGER},
-      </if>
-      <if test="q4 != null">
-        #{q4,jdbcType=INTEGER},
-      </if>
-      <if test="q5 != null">
-        #{q5,jdbcType=INTEGER},
-      </if>
-      <if test="q6 != null">
-        #{q6,jdbcType=INTEGER},
-      </if>
-      <if test="q7 != null">
-        #{q7,jdbcType=INTEGER},
-      </if>
-      <if test="q8 != null">
-        #{q8,jdbcType=INTEGER},
-      </if>
-      <if test="score != null">
-        #{score,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" resultType="java.lang.Integer">
-    select count(*) from t_user_psychological_ad8
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPsychologicalAD8">
-    update t_user_psychological_ad8
-    <set>
-      <if test="psyId != null">
-        psy_id = #{psyId,jdbcType=BIGINT},
-      </if>
-      <if test="q1 != null">
-        q1 = #{q1,jdbcType=INTEGER},
-      </if>
-      <if test="q2 != null">
-        q2 = #{q2,jdbcType=INTEGER},
-      </if>
-      <if test="q3 != null">
-        q3 = #{q3,jdbcType=INTEGER},
-      </if>
-      <if test="q4 != null">
-        q4 = #{q4,jdbcType=INTEGER},
-      </if>
-      <if test="q5 != null">
-        q5 = #{q5,jdbcType=INTEGER},
-      </if>
-      <if test="q6 != null">
-        q6 = #{q6,jdbcType=INTEGER},
-      </if>
-      <if test="q7 != null">
-        q7 = #{q7,jdbcType=INTEGER},
-      </if>
-      <if test="q8 != null">
-        q8 = #{q8,jdbcType=INTEGER},
-      </if>
-      <if test="score != null">
-        score = #{score,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPsychologicalAD8">
-    update t_user_psychological_ad8
-    set psy_id = #{psyId,jdbcType=BIGINT},
-      q1 = #{q1,jdbcType=INTEGER},
-      q2 = #{q2,jdbcType=INTEGER},
-      q3 = #{q3,jdbcType=INTEGER},
-      q4 = #{q4,jdbcType=INTEGER},
-      q5 = #{q5,jdbcType=INTEGER},
-      q6 = #{q6,jdbcType=INTEGER},
-      q7 = #{q7,jdbcType=INTEGER},
-      q8 = #{q8,jdbcType=INTEGER},
-      score = #{score,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPsychologicalAD8">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="user_id" jdbcType="BIGINT" property="userId" />
-    <result column="q1" jdbcType="INTEGER" property="q1" />
-    <result column="q2" jdbcType="INTEGER" property="q2" />
-    <result column="q3" jdbcType="INTEGER" property="q3" />
-    <result column="q4" jdbcType="INTEGER" property="q4" />
-    <result column="q5" jdbcType="INTEGER" property="q5" />
-    <result column="q6" jdbcType="INTEGER" property="q6" />
-    <result column="q7" jdbcType="INTEGER" property="q7" />
-    <result column="q8" jdbcType="INTEGER" property="q8" />
-    <result column="score" jdbcType="INTEGER" property="score" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-  </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List">
-    id, user_id, q1, q2, q3, q4, q5, q6, q7, q8, score, create_time, update_time
-  </sql>
-  <select id="selectByExample" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from t_user_psychological_ad8
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from t_user_psychological_ad8
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from t_user_psychological_ad8
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" keyProperty="id" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true">
-    insert into t_user_psychological_ad8 (user_id, q1, q2, 
-      q3, q4, q5, q6, 
-      q7, q8, score, create_time, 
-      update_time)
-    values (#{userId,jdbcType=BIGINT}, #{q1,jdbcType=INTEGER}, #{q2,jdbcType=INTEGER}, 
-      #{q3,jdbcType=INTEGER}, #{q4,jdbcType=INTEGER}, #{q5,jdbcType=INTEGER}, #{q6,jdbcType=INTEGER}, 
-      #{q7,jdbcType=INTEGER}, #{q8,jdbcType=INTEGER}, #{score,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" keyProperty="id" parameterType="com.breeze.health.entity.UserPsychologicalAD8" useGeneratedKeys="true">
-    insert into t_user_psychological_ad8
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="userId != null">
-        user_id,
-      </if>
-      <if test="q1 != null">
-        q1,
-      </if>
-      <if test="q2 != null">
-        q2,
-      </if>
-      <if test="q3 != null">
-        q3,
-      </if>
-      <if test="q4 != null">
-        q4,
-      </if>
-      <if test="q5 != null">
-        q5,
-      </if>
-      <if test="q6 != null">
-        q6,
-      </if>
-      <if test="q7 != null">
-        q7,
-      </if>
-      <if test="q8 != null">
-        q8,
-      </if>
-      <if test="score != null">
-        score,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="userId != null">
-        #{userId,jdbcType=BIGINT},
-      </if>
-      <if test="q1 != null">
-        #{q1,jdbcType=INTEGER},
-      </if>
-      <if test="q2 != null">
-        #{q2,jdbcType=INTEGER},
-      </if>
-      <if test="q3 != null">
-        #{q3,jdbcType=INTEGER},
-      </if>
-      <if test="q4 != null">
-        #{q4,jdbcType=INTEGER},
-      </if>
-      <if test="q5 != null">
-        #{q5,jdbcType=INTEGER},
-      </if>
-      <if test="q6 != null">
-        #{q6,jdbcType=INTEGER},
-      </if>
-      <if test="q7 != null">
-        #{q7,jdbcType=INTEGER},
-      </if>
-      <if test="q8 != null">
-        #{q8,jdbcType=INTEGER},
-      </if>
-      <if test="score != null">
-        #{score,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.breeze.health.entity.UserPsychologicalAD8Example" resultType="java.lang.Integer">
-    select count(*) from t_user_psychological_ad8
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPsychologicalAD8">
-    update t_user_psychological_ad8
-    <set>
-      <if test="userId != null">
-        user_id = #{userId,jdbcType=BIGINT},
-      </if>
-      <if test="q1 != null">
-        q1 = #{q1,jdbcType=INTEGER},
-      </if>
-      <if test="q2 != null">
-        q2 = #{q2,jdbcType=INTEGER},
-      </if>
-      <if test="q3 != null">
-        q3 = #{q3,jdbcType=INTEGER},
-      </if>
-      <if test="q4 != null">
-        q4 = #{q4,jdbcType=INTEGER},
-      </if>
-      <if test="q5 != null">
-        q5 = #{q5,jdbcType=INTEGER},
-      </if>
-      <if test="q6 != null">
-        q6 = #{q6,jdbcType=INTEGER},
-      </if>
-      <if test="q7 != null">
-        q7 = #{q7,jdbcType=INTEGER},
-      </if>
-      <if test="q8 != null">
-        q8 = #{q8,jdbcType=INTEGER},
-      </if>
-      <if test="score != null">
-        score = #{score,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPsychologicalAD8">
-    update t_user_psychological_ad8
-    set user_id = #{userId,jdbcType=BIGINT},
-      q1 = #{q1,jdbcType=INTEGER},
-      q2 = #{q2,jdbcType=INTEGER},
-      q3 = #{q3,jdbcType=INTEGER},
-      q4 = #{q4,jdbcType=INTEGER},
-      q5 = #{q5,jdbcType=INTEGER},
-      q6 = #{q6,jdbcType=INTEGER},
-      q7 = #{q7,jdbcType=INTEGER},
-      q8 = #{q8,jdbcType=INTEGER},
-      score = #{score,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}

@@ -240,17 +240,17 @@ public class WexinController {
 			{
 				String parm="timestamp="+System.currentTimeMillis();//鍙傛暟
 				if ("base".equals(state)) {
-					url=path+"base.html?"+parm;
+					url=path+"static/base.html?"+parm;
 				}else if ("report".equals(state)) {
-					url=path+"report.html?"+parm;
+					url=path+"static/report.html?"+parm;
 				}else if ("living".equals(state)) {
-					url=path+"living.html?"+parm;
+					url=path+"static/living.html?"+parm;
 				}else if ("sick".equals(state)) {
-					url=path+"sick.html?"+parm;
+					url=path+"static/sick.html?"+parm;
 				}else if ("phy".equals(state)) {
-					url=path+"phy.html?"+parm;
+					url=path+"static/phy.html?"+parm;
 				}else if ("psy".equals(state)) {
-					url=path+"psy.html?"+parm;
+					url=path+"static/psy.html?"+parm;
 				}
 			}else
 			{

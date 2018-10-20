@@ -44,4 +44,13 @@ public class UserController {
 		return userService.sendVertificationCode(mobile);
 	}
 	
+	@RequestMapping(value = "/logout", method = {RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
+	public Result<Void> userLogout(HttpServletRequest request,  HttpServletResponse response,String mobile,String verificationCode){
+		Result<Void> ret = new Result<Void>();
+		RequestUtils.deleteCookie(request, response, "Authentication");
+		request.getSession().setAttribute("user", null);
+		ret.setSuccess(true);
+		return ret; 
+	}
 }

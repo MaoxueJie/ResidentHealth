@@ -1,8 +1,8 @@
 app:
-    basepath: http://119.27.164.126/8000
+    basepath: http://ehealth.drshuo.com/crd
 server:
     port: 8000
-  
+    context-path: /cfd
 spring:
     datasource:
         name: test

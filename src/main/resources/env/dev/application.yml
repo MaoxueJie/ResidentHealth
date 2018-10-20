@@ -2,7 +2,7 @@ app:
     basepath: http://9vk892.natappfree.cc
 server:
     port: 8080
-  
+    context-path: /cfd
 spring:
     datasource:
         name: test
