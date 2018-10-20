@@ -19,7 +19,19 @@ public class ApplicationConfig {
 		authFilter.setUserService(userService);
 		registrationBean.setFilter(authFilter);
 		List<String> urlPatterns = new ArrayList<String>();
-	    urlPatterns.add("/user/*");
+	    urlPatterns.add("/base/add");
+	    urlPatterns.add("/base/get");
+	    urlPatterns.add("/living/add");
+	    urlPatterns.add("/living/get");
+	    urlPatterns.add("/sick/add");
+	    urlPatterns.add("/sick/get");
+	    urlPatterns.add("/phy/add");
+	    urlPatterns.add("/phy/get");
+	    urlPatterns.add("/psy/add");
+	    urlPatterns.add("/psy/get");
+	    urlPatterns.add("/psy/suicide/add");
+	    urlPatterns.add("/psy/suicide/get");
+	    urlPatterns.add("/report/get");
 	    registrationBean.setUrlPatterns(urlPatterns);
 	    return registrationBean;
     }
