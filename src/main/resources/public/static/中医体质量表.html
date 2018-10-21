@@ -1,0 +1,3342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title>中医体质量表</title>
+	<!-- 引入 WeUI -->
+	<link rel="stylesheet" href="./css/weui.css"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<script src="./js/zepto.min.js"></script>
+	<!-- <script src="./js/jweixin-1.0.0.js"></script> -->
+	<script src="./js/weui.js"></script>
+	<script src="./js/questionnaire.js"></script>
+</head>
+<body ontouchstart>
+	<div class="page">
+		<form action="">
+			<div class="page__bd_spacing">
+				<h2 class="page__title">中医体质量表</h2>
+				<p class="page__desc">请根据近一年的体验和感觉，回答以下所有问题。</p>
+			</div>
+
+			<!-- 阳虚质 -->
+			<h3 class="mid_title">阳虚质</h3>
+
+			<div class="weui-cells__title">1.您手脚发凉吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yangxuQ11">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yangxuQ1" id="yangxuQ11" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ12">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ1" class="weui-check" id="yangxuQ12" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ13">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ1" class="weui-check" id="yangxuQ13" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ14">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ1" class="weui-check" id="yangxuQ14" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ15">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ1" class="weui-check" id="yangxuQ15" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">2.您胃脘部、背部或腰膝部怕冷吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yangxuQ21">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yangxuQ2" id="yangxuQ21" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ22">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ2" class="weui-check" id="yangxuQ22" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ23">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ2" class="weui-check" id="yangxuQ23" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ24">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ2" class="weui-check" id="yangxuQ24" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ25">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ2" class="weui-check" id="yangxuQ25" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">3.您感到怕冷、衣服比别人穿得多吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yangxuQ31">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yangxuQ3" id="yangxuQ31" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ32">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ3" class="weui-check" id="yangxuQ32" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ33">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ3" class="weui-check" id="yangxuQ33" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ34">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ3" class="weui-check" id="yangxuQ34" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ35">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ3" class="weui-check" id="yangxuQ35" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">4.您比一般人耐不了寒冷（冬天的寒冷，夏天的冷空调、电扇等）吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yangxuQ41">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yangxuQ4" id="yangxuQ41" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ42">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ4" class="weui-check" id="yangxuQ42" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ43">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ4" class="weui-check" id="yangxuQ43" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ44">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ4" class="weui-check" id="yangxuQ44" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ45">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ4" class="weui-check" id="yangxuQ45" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">5.您比别人容易患感冒吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yangxuQ51">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yangxuQ5" id="yangxuQ51" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ52">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ5" class="weui-check" id="yangxuQ52" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ53">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ5" class="weui-check" id="yangxuQ53" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ54">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ5" class="weui-check" id="yangxuQ54" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ55">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ5" class="weui-check" id="yangxuQ55" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">6.您吃（喝）凉的东西会感到不舒服或者怕吃（喝）凉东西吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yangxuQ61">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yangxuQ6" id="yangxuQ61" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ62">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ6" class="weui-check" id="yangxuQ62" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ63">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ6" class="weui-check" id="yangxuQ63" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ64">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ6" class="weui-check" id="yangxuQ64" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ65">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ6" class="weui-check" id="yangxuQ65" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">7.你受凉或吃（喝）凉的东西后，容易腹泻（拉肚子）吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yangxuQ71">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yangxuQ7" id="yangxuQ71" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ72">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ7" class="weui-check" id="yangxuQ72" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ73">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ7" class="weui-check" id="yangxuQ73" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ74">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ7" class="weui-check" id="yangxuQ74" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yangxuQ75">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yangxuQ7" class="weui-check" id="yangxuQ75" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<!-- 阴虚质 -->
+			<h3 class="mid_title">阴虚质</h3>
+
+			<div class="weui-cells__title">1.您感到手脚心发热吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yinxuQ11">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yinxuQ1" id="yinxuQ11" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ12">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ1" class="weui-check" id="yinxuQ12" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ13">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ1" class="weui-check" id="yinxuQ13" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ14">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ1" class="weui-check" id="yinxuQ14" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ15">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ1" class="weui-check" id="yinxuQ15" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">2.您感觉身体、脸上发热吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yinxuQ21">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yinxuQ2" id="yinxuQ21" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ22">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ2" class="weui-check" id="yinxuQ22" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ23">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ2" class="weui-check" id="yinxuQ23" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ24">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ2" class="weui-check" id="yinxuQ24" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ25">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ2" class="weui-check" id="yinxuQ25" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">3.您皮肤或口唇干吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yinxuQ31">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yinxuQ3" id="yinxuQ31" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ32">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ3" class="weui-check" id="yinxuQ32" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ33">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ3" class="weui-check" id="yinxuQ33" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ34">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ3" class="weui-check" id="yinxuQ34" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ35">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ3" class="weui-check" id="yinxuQ35" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">4.您口唇的颜色比一般人红吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yinxuQ41">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yinxuQ4" id="yinxuQ41" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ42">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ4" class="weui-check" id="yinxuQ42" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ43">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ4" class="weui-check" id="yinxuQ43" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ44">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ4" class="weui-check" id="yinxuQ44" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ45">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ4" class="weui-check" id="yinxuQ45" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">5.您容易便秘或大便干燥吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yinxuQ51">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yinxuQ5" id="yinxuQ51" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ52">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ5" class="weui-check" id="yinxuQ52" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ53">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ5" class="weui-check" id="yinxuQ53" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ54">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ5" class="weui-check" id="yinxuQ54" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ55">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ5" class="weui-check" id="yinxuQ55" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">6.您面部两颧潮红或偏红吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yinxuQ61">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yinxuQ6" id="yinxuQ61" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ62">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ6" class="weui-check" id="yinxuQ62" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ63">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ6" class="weui-check" id="yinxuQ63" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ64">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ6" class="weui-check" id="yinxuQ64" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ65">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ6" class="weui-check" id="yinxuQ65" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">7.您感到眼睛干涩吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yinxuQ71">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yinxuQ7" id="yinxuQ71" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ72">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ7" class="weui-check" id="yinxuQ72" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ73">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ7" class="weui-check" id="yinxuQ73" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ74">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ7" class="weui-check" id="yinxuQ74" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ75">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ7" class="weui-check" id="yinxuQ75" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">8.您活动量稍大就容易出虚汗吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="yinxuQ81">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="yinxuQ8" id="yinxuQ81" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ82">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ8" class="weui-check" id="yinxuQ82" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ83">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ8" class="weui-check" id="yinxuQ83" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ84">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ8" class="weui-check" id="yinxuQ84" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="yinxuQ85">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="yinxuQ8" class="weui-check" id="yinxuQ85" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<!-- 气虚质 -->
+			<h3 class="mid_title">气虚质</h3>
+
+			<div class="weui-cells__title">1.您容易疲乏吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qixuQ11">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qixuQ1" id="qixuQ11" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ12">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ1" class="weui-check" id="qixuQ12" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ13">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ1" class="weui-check" id="qixuQ13" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ14">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ1" class="weui-check" id="qixuQ14" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ15">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ1" class="weui-check" id="qixuQ15" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">2.您容易气短（呼吸短促，接不上气）吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qixuQ21">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qixuQ2" id="qixuQ21" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ22">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ2" class="weui-check" id="qixuQ22" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ23">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ2" class="weui-check" id="qixuQ23" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ24">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ2" class="weui-check" id="qixuQ24" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ25">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ2" class="weui-check" id="qixuQ25" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">3.您容易心慌吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qixuQ31">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qixuQ3" id="qixuQ31" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ32">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ3" class="weui-check" id="qixuQ32" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ33">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ3" class="weui-check" id="qixuQ33" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ34">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ3" class="weui-check" id="qixuQ34" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ35">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ3" class="weui-check" id="qixuQ35" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">4.您容易头晕或站起时晕眩吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qixuQ41">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qixuQ4" id="qixuQ41" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ42">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ4" class="weui-check" id="qixuQ42" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ43">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ4" class="weui-check" id="qixuQ43" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ44">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ4" class="weui-check" id="qixuQ44" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ45">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ4" class="weui-check" id="qixuQ45" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">5.您比别人容易患感冒吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qixuQ51">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qixuQ5" id="qixuQ51" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ52">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ5" class="weui-check" id="qixuQ52" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ53">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ5" class="weui-check" id="qixuQ53" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ54">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ5" class="weui-check" id="qixuQ54" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ55">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ5" class="weui-check" id="qixuQ55" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">6.您喜欢安静、懒得说话吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qixuQ61">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qixuQ6" id="qixuQ61" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ62">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ6" class="weui-check" id="qixuQ62" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ63">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ6" class="weui-check" id="qixuQ63" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ64">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ6" class="weui-check" id="qixuQ64" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ65">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ6" class="weui-check" id="qixuQ65" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">7.您说话声音无力吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qixuQ71">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qixuQ7" id="qixuQ71" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ72">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ7" class="weui-check" id="qixuQ72" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ73">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ7" class="weui-check" id="qixuQ73" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ74">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ7" class="weui-check" id="qixuQ74" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ75">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ7" class="weui-check" id="qixuQ75" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">8.您活动量稍大就容易出虚汗吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qixuQ81">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qixuQ8" id="qixuQ81" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ82">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ8" class="weui-check" id="qixuQ82" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ83">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ8" class="weui-check" id="qixuQ83" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ84">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ8" class="weui-check" id="qixuQ84" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qixuQ85">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qixuQ8" class="weui-check" id="qixuQ85" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<!-- 痰湿质 -->
+			<h3 class="mid_title">痰湿质</h3>
+
+			<div class="weui-cells__title">1.您感到胸闷或腹部胀满吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tanshiQ11">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tanshiQ1" id="tanshiQ11" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ12">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ1" class="weui-check" id="tanshiQ12" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ13">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ1" class="weui-check" id="tanshiQ13" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ14">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ1" class="weui-check" id="tanshiQ14" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ15">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ1" class="weui-check" id="tanshiQ15" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">2.您感到身体沉重不轻松或不爽快吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tanshiQ21">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tanshiQ2" id="tanshiQ21" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ22">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ2" class="weui-check" id="tanshiQ22" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ23">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ2" class="weui-check" id="tanshiQ23" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ24">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ2" class="weui-check" id="tanshiQ24" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ25">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ2" class="weui-check" id="tanshiQ25" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">3.您腹部肥满松软吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tanshiQ31">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tanshiQ3" id="tanshiQ31" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ32">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ3" class="weui-check" id="tanshiQ32" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ33">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ3" class="weui-check" id="tanshiQ33" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ34">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ3" class="weui-check" id="tanshiQ34" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ35">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ3" class="weui-check" id="tanshiQ35" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">4.您有额部油脂分泌多的现象吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tanshiQ41">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tanshiQ4" id="tanshiQ41" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ42">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ4" class="weui-check" id="tanshiQ42" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ43">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ4" class="weui-check" id="tanshiQ43" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ44">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ4" class="weui-check" id="tanshiQ44" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ45">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ4" class="weui-check" id="tanshiQ45" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">5.您上眼睑比别人肿（有轻微隆起的现象）吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tanshiQ51">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tanshiQ5" id="tanshiQ51" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ52">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ5" class="weui-check" id="tanshiQ52" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ53">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ5" class="weui-check" id="tanshiQ53" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ54">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ5" class="weui-check" id="tanshiQ54" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ55">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ5" class="weui-check" id="tanshiQ55" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">6.您嘴里有黏黏的感觉吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tanshiQ61">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tanshiQ6" id="tanshiQ61" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ62">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ6" class="weui-check" id="tanshiQ62" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ63">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ6" class="weui-check" id="tanshiQ63" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ64">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ6" class="weui-check" id="tanshiQ64" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ65">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ6" class="weui-check" id="tanshiQ65" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">7.您平时痰多，特别是咽喉部总感到有痰堵着吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tanshiQ71">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tanshiQ7" id="tanshiQ71" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ72">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ7" class="weui-check" id="tanshiQ72" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ73">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ7" class="weui-check" id="tanshiQ73" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ74">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ7" class="weui-check" id="tanshiQ74" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ75">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ7" class="weui-check" id="tanshiQ75" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">8.您舌苔厚腻或有舌苔厚厚的感觉吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tanshiQ81">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tanshiQ8" id="tanshiQ81" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ82">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ8" class="weui-check" id="tanshiQ82" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ83">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ8" class="weui-check" id="tanshiQ83" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ84">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ8" class="weui-check" id="tanshiQ84" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tanshiQ85">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tanshiQ8" class="weui-check" id="tanshiQ85" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<!-- 湿热质 -->
+			<h3 class="mid_title">湿热质</h3>
+
+			<div class="weui-cells__title">1.您面部或鼻部有油腻感或者油亮发光吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ11">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ1" id="shireQ11" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ12">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ1" class="weui-check" id="shireQ12" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ13">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ1" class="weui-check" id="shireQ13" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ14">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ1" class="weui-check" id="shireQ14" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ15">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ1" class="weui-check" id="shireQ15" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">2.你容易生痤疮或疮疖吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ21">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ2" id="shireQ21" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ22">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ2" class="weui-check" id="shireQ22" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ23">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ2" class="weui-check" id="shireQ23" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ24">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ2" class="weui-check" id="shireQ24" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ25">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ2" class="weui-check" id="shireQ25" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">3.您感到口苦或嘴里有异味吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ31">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ3" id="shireQ31" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ32">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ3" class="weui-check" id="shireQ32" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ33">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ3" class="weui-check" id="shireQ33" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ34">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ3" class="weui-check" id="shireQ34" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ35">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ3" class="weui-check" id="shireQ35" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">4.您有大便黏滞不爽、解不尽的感觉吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ41">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ4" id="shireQ41" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ42">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ4" class="weui-check" id="shireQ42" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ43">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ4" class="weui-check" id="shireQ43" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ44">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ4" class="weui-check" id="shireQ44" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ45">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ4" class="weui-check" id="shireQ45" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">5.您小便时尿道有发热感、尿色浓（深）吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ51">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ5" id="shireQ51" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ52">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ5" class="weui-check" id="shireQ52" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ53">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ5" class="weui-check" id="shireQ53" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ54">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ5" class="weui-check" id="shireQ54" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ55">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ5" class="weui-check" id="shireQ55" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">6.您带下色黄（白带颜色发黄）吗？（限女性回答）</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ61">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ6" id="shireQ61" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ62">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ6" class="weui-check" id="shireQ62" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ63">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ6" class="weui-check" id="shireQ63" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ64">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ6" class="weui-check" id="shireQ64" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ65">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ6" class="weui-check" id="shireQ65" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">7.您的阴囊部位潮湿吗？（限男性回答）</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ71">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ7" id="shireQ71" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ72">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ7" class="weui-check" id="shireQ72" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ73">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ7" class="weui-check" id="shireQ73" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ74">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ7" class="weui-check" id="shireQ74" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ75">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ7" class="weui-check" id="shireQ75" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<!-- 血瘀质 -->
+			<h3 class="mid_title">血瘀质</h3>
+
+			<div class="weui-cells__title">1.您的皮肤在不知不觉中会出现青紫瘀斑（皮下出血）吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ11">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ1" id="shireQ11" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ12">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ1" class="weui-check" id="shireQ12" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ13">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ1" class="weui-check" id="shireQ13" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ14">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ1" class="weui-check" id="shireQ14" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ15">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ1" class="weui-check" id="shireQ15" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">2.您两颧部有细微红丝吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ21">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ2" id="shireQ21" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ22">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ2" class="weui-check" id="shireQ22" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ23">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ2" class="weui-check" id="shireQ23" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ24">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ2" class="weui-check" id="shireQ24" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ25">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ2" class="weui-check" id="shireQ25" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">3.您身体上有哪里疼痛吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ31">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ3" id="shireQ31" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ32">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ3" class="weui-check" id="shireQ32" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ33">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ3" class="weui-check" id="shireQ33" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ34">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ3" class="weui-check" id="shireQ34" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ35">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ3" class="weui-check" id="shireQ35" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">4.您面色晦黯或容易出现褐斑吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ41">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ4" id="shireQ41" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ42">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ4" class="weui-check" id="shireQ42" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ43">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ4" class="weui-check" id="shireQ43" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ44">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ4" class="weui-check" id="shireQ44" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ45">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ4" class="weui-check" id="shireQ45" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">5.您容易有黑眼圈吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ51">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ5" id="shireQ51" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ52">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ5" class="weui-check" id="shireQ52" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ53">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ5" class="weui-check" id="shireQ53" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ54">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ5" class="weui-check" id="shireQ54" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ55">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ5" class="weui-check" id="shireQ55" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">6.您容易忘事（健忘）吗</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ61">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ6" id="shireQ61" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ62">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ6" class="weui-check" id="shireQ62" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ63">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ6" class="weui-check" id="shireQ63" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ64">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ6" class="weui-check" id="shireQ64" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ65">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ6" class="weui-check" id="shireQ65" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">7.您口唇颜色偏黯吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="shireQ71">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="shireQ7" id="shireQ71" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ72">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ7" class="weui-check" id="shireQ72" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ73">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ7" class="weui-check" id="shireQ73" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ74">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ7" class="weui-check" id="shireQ74" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="shireQ75">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="shireQ7" class="weui-check" id="shireQ75" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<!-- 气郁质 -->
+			<h3 class="mid_title">气郁质</h3>
+
+			<div class="weui-cells__title">1.您感到闷闷不乐吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qiyuQ11">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qiyuQ1" id="qiyuQ11" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ12">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ1" class="weui-check" id="qiyuQ12" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ13">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ1" class="weui-check" id="qiyuQ13" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ14">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ1" class="weui-check" id="qiyuQ14" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ15">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ1" class="weui-check" id="qiyuQ15" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">2.您容易精神紧张、焦虑不安吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qiyuQ21">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qiyuQ2" id="qiyuQ21" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ22">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ2" class="weui-check" id="qiyuQ22" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ23">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ2" class="weui-check" id="qiyuQ23" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ24">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ2" class="weui-check" id="qiyuQ24" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ25">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ2" class="weui-check" id="qiyuQ25" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">3.您多愁善感、感情脆弱吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qiyuQ31">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qiyuQ3" id="qiyuQ31" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ32">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ3" class="weui-check" id="qiyuQ32" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ33">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ3" class="weui-check" id="qiyuQ33" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ34">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ3" class="weui-check" id="qiyuQ34" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ35">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ3" class="weui-check" id="qiyuQ35" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">4.您容易感到害怕或受到惊吓吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qiyuQ41">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qiyuQ4" id="qiyuQ41" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ42">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ4" class="weui-check" id="qiyuQ42" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ43">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ4" class="weui-check" id="qiyuQ43" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ44">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ4" class="weui-check" id="qiyuQ44" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ45">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ4" class="weui-check" id="qiyuQ45" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">5.您胁肋部或乳房腹痛吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qiyuQ51">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qiyuQ5" id="qiyuQ51" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ52">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ5" class="weui-check" id="qiyuQ52" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ53">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ5" class="weui-check" id="qiyuQ53" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ54">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ5" class="weui-check" id="qiyuQ54" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ55">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ5" class="weui-check" id="qiyuQ55" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">6.您无缘无故叹气吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qiyuQ61">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qiyuQ6" id="qiyuQ61" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ62">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ6" class="weui-check" id="qiyuQ62" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ63">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ6" class="weui-check" id="qiyuQ63" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ64">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ6" class="weui-check" id="qiyuQ64" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ65">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ6" class="weui-check" id="qiyuQ65" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">7.您咽喉部有异物感，且吐之不出、咽之不下吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="qiyuQ71">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="qiyuQ7" id="qiyuQ71" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ72">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ7" class="weui-check" id="qiyuQ72" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ73">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ7" class="weui-check" id="qiyuQ73" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ74">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ7" class="weui-check" id="qiyuQ74" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="qiyuQ75">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="qiyuQ7" class="weui-check" id="qiyuQ75" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<!-- 特禀质 -->
+			<h3 class="mid_title">特禀质</h3>
+
+			<div class="weui-cells__title">1.您没有感冒也会打喷嚏吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tebingQ11">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tebingQ1" id="tebingQ11" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ12">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ1" class="weui-check" id="tebingQ12" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ13">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ1" class="weui-check" id="tebingQ13" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ14">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ1" class="weui-check" id="tebingQ14" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ15">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ1" class="weui-check" id="tebingQ15" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">2.您没有感冒也会鼻塞、流鼻涕吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tebingQ21">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tebingQ2" id="tebingQ21" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ22">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ2" class="weui-check" id="tebingQ22" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ23">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ2" class="weui-check" id="tebingQ23" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ24">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ2" class="weui-check" id="tebingQ24" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ25">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ2" class="weui-check" id="tebingQ25" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">3.您有因季节变化、温度变化或异味等原因而咳喘的现象吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tebingQ31">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tebingQ3" id="tebingQ31" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ32">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ3" class="weui-check" id="tebingQ32" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ33">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ3" class="weui-check" id="tebingQ33" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ34">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ3" class="weui-check" id="tebingQ34" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ35">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ3" class="weui-check" id="tebingQ35" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">4.您容易过敏（对药物、食物、气味、花粉或在季节交替、气候变化时）吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tebingQ41">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tebingQ4" id="tebingQ41" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ42">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ4" class="weui-check" id="tebingQ42" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ43">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ4" class="weui-check" id="tebingQ43" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ44">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ4" class="weui-check" id="tebingQ44" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ45">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ4" class="weui-check" id="tebingQ45" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">5.您的皮肤容易起荨麻疹（风团、风疹块、风疙瘩）吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tebingQ51">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tebingQ5" id="tebingQ51" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ52">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ5" class="weui-check" id="tebingQ52" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ53">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ5" class="weui-check" id="tebingQ53" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ54">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ5" class="weui-check" id="tebingQ54" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ55">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ5" class="weui-check" id="tebingQ55" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">6.您的皮肤因过敏出现过紫癜（紫红色瘀点、瘀斑）吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tebingQ61">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tebingQ6" id="tebingQ61" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ62">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ6" class="weui-check" id="tebingQ62" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ63">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ6" class="weui-check" id="tebingQ63" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ64">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ6" class="weui-check" id="tebingQ64" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ65">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ6" class="weui-check" id="tebingQ65" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">7.您的皮肤一抓就红，并出现抓痕吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="tebingQ71">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="tebingQ7" id="tebingQ71" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ72">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ7" class="weui-check" id="tebingQ72" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ73">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ7" class="weui-check" id="tebingQ73" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ74">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ7" class="weui-check" id="tebingQ74" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="tebingQ75">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="tebingQ7" class="weui-check" id="tebingQ75" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+						<!-- 平和质 -->
+			<h3 class="mid_title">平和质</h3>
+
+			<div class="weui-cells__title">1.您精力充沛吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="pingheQ11">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="pingheQ1" id="pingheQ11" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ12">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ1" class="weui-check" id="pingheQ12" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ13">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ1" class="weui-check" id="pingheQ13" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ14">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ1" class="weui-check" id="pingheQ14" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ15">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ1" class="weui-check" id="pingheQ15" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">2.您容易疲乏吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="pingheQ21">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="pingheQ2" id="pingheQ21" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ22">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ2" class="weui-check" id="pingheQ22" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ23">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ2" class="weui-check" id="pingheQ23" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ24">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ2" class="weui-check" id="pingheQ24" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ25">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ2" class="weui-check" id="pingheQ25" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">3.您说话声音无力吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="pingheQ31">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="pingheQ3" id="pingheQ31" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ32">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ3" class="weui-check" id="pingheQ32" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ33">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ3" class="weui-check" id="pingheQ33" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ34">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ3" class="weui-check" id="pingheQ34" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ35">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ3" class="weui-check" id="pingheQ35" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">4.您感到闷闷不乐吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="pingheQ41">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="pingheQ4" id="pingheQ41" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ42">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ4" class="weui-check" id="pingheQ42" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ43">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ4" class="weui-check" id="pingheQ43" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ44">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ4" class="weui-check" id="pingheQ44" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ45">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ4" class="weui-check" id="pingheQ45" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">5.您比一般 人耐受不了寒冷（冬天的寒冷，夏天的冷空调、电扇）吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="pingheQ51">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="pingheQ5" id="pingheQ51" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ52">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ5" class="weui-check" id="pingheQ52" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ53">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ5" class="weui-check" id="pingheQ53" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ54">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ5" class="weui-check" id="pingheQ54" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ55">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ5" class="weui-check" id="pingheQ55" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">6.您能适应外界自然和社会环境的变化吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="pingheQ61">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="pingheQ6" id="pingheQ61" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ62">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ6" class="weui-check" id="pingheQ62" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ63">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ6" class="weui-check" id="pingheQ63" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ64">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ6" class="weui-check" id="pingheQ64" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ65">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ6" class="weui-check" id="pingheQ65" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">7.您容易失眠吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="pingheQ71">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="pingheQ7" id="pingheQ71" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ72">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ7" class="weui-check" id="pingheQ72" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ73">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ7" class="weui-check" id="pingheQ73" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ74">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ7" class="weui-check" id="pingheQ74" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ75">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ7" class="weui-check" id="pingheQ75" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">8.您容易忘事（健忘）吗？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="pingheQ81">
+					<div class="weui-cell__bd">
+						<p>没有（根本不）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="pingheQ8" id="pingheQ81" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ82">
+					<div class="weui-cell__bd">
+						<p>很少（有一点）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ8" class="weui-check" id="pingheQ82" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ83">
+					<div class="weui-cell__bd">
+						<p>有时（有些）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ8" class="weui-check" id="pingheQ83" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ84">
+					<div class="weui-cell__bd">
+						<p>经常（相当）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ8" class="weui-check" id="pingheQ84" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="pingheQ85">
+					<div class="weui-cell__bd">
+						<p>总是（非常）</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="pingheQ8" class="weui-check" id="pingheQ85" value="5">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+			
+			
+			<div class="align_center mt30">
+				<a class="weui-btn btn-primary" id="submitBtn" href="javascript:;">提交</a>
+			</div>
+
+		</form>
+	</div>
+
+</body>
+</html>

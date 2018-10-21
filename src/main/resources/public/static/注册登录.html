@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<title>注册登录</title>
+	<!-- 引入 WeUI -->
+	<link rel="stylesheet" href="./css/style.css"/>
+	<script src="./js/zepto.min.js"></script>
+	<script src="./js/flexible.js"></script>
+	<script src="./js/questionnaire.js"></script>
+</head>
+<body ontouchstart>
+
+	<img src="./image/login_banner.jpg">
+	<div class="panel_content login_cont">
+		<div class="row">
+			<input type="text" name="tel" id="telForget" maxlength="11" placeholder="请输入手机号"/>
+		</div>
+		<div class="row">
+			<input type="text" name="vcode" class="vcode" id="vcodeForget" placeholder="请输入短信验证码"/>
+			<input type="button" class="btn_vcode" value="获取短信验证码"/>
+		</div>
+		<p class="errortip"></p>
+		<div class="row">
+			<span class="btn_orange" id="loginBtn">登 录</span>
+		</div>
+		
+	</div>
+
+</body>
+</html>
