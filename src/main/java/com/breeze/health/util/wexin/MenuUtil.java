@@ -113,14 +113,14 @@ public class MenuUtil {
     
     private static void createMenu(){
     	
-    	String path = "http://119.27.164.126/8000";
+    	String path = "http://ehealth.drshuo.com/cfd";
     	
     	Menu menu = new Menu();
     	ComplexButton[] buttons = new ComplexButton[3];
     	ComplexButton button1 = new ComplexButton();
     	button1.setName("健康监测");
     	button1.setType("view");
-    	ComplexButton[] subbs1 = new ComplexButton[4];
+    	ComplexButton[] subbs1 = new ComplexButton[5];
     	ComplexButton b1 = new ComplexButton();
     	b1.setName("生活习惯");
     	b1.setType("view");
@@ -145,6 +145,12 @@ public class MenuUtil {
     	b4.setSub_button(new ComplexButton[0]);
     	b4.setUrl(path+"/wechatMenu/sick");
     	subbs1[3] = b4;
+    	ComplexButton b5 = new ComplexButton();
+    	b5.setName("中医体质");
+    	b5.setType("view");
+    	b5.setSub_button(new ComplexButton[0]);
+    	b5.setUrl(path+"/wechatMenu/tcm");
+    	subbs1[4] = b5;
     	button1.setSub_button(subbs1);
     	buttons[0] = button1;
     	
