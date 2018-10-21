@@ -101,7 +101,7 @@ $(function(){
 					$('body').append( reportHtml );
 					window.scrollTo(0,0);
 				}else{
-					alert('获取数据失败！');
+					alert( json.message );
 				}
 			}
 		})
