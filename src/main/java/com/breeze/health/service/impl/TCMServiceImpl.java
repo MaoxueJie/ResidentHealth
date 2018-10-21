@@ -354,7 +354,7 @@ public class TCMServiceImpl implements TCMService{
 	}
 
 	@Override
-	public Result<UserTCMVo> getPsy(Long userId) {
+	public Result<UserTCMVo> getTCM(Long userId) {
 		Result<UserTCMVo> ret = new Result<UserTCMVo>();
 		try{
 			UserTCMExample example = new UserTCMExample();
