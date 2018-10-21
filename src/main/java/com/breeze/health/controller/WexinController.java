@@ -235,7 +235,6 @@ public class WexinController {
 			request.getSession().setAttribute("openid", openid);
 			UserVo user = (UserVo)request.getSession().getAttribute("user");
 			//Result<UserVo> userRet = userService.getUserByOpenId(openid);
-
 			if (user!=null)
 			{
 				String parm="timestamp="+System.currentTimeMillis();//鍙傛暟
@@ -254,7 +253,7 @@ public class WexinController {
 				}
 			}else
 			{
-				url=path+"login.html";
+				url=path+"static/login.html";
 			}
 			return new ModelAndView(new RedirectView(url));
 		} catch (JSONException e) {

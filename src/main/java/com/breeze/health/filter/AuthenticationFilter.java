@@ -39,10 +39,14 @@ public class AuthenticationFilter implements Filter{
 			throws IOException, ServletException {
 		HttpServletRequest httpRequest = (HttpServletRequest)request;
 		HttpServletResponse httpResponse = (HttpServletResponse)response;
+		String token = RequestUtils.getCookieValue(httpRequest, "Authentication");
+		if (StringUtils.isNotBlank(token))
+		{
+			RequestUtils.setCookie(httpRequest, httpResponse, "Authentication",token, 1800);
+		}
 		try{
 			if (httpRequest.getSession().getAttribute("user")==null)
 			{
-				String token = RequestUtils.getCookieValue(httpRequest, "Authentication");
 				String userId = DesUtil.decryptor(token);
 				Result<UserVo> ret = userService.getUserById(Long.parseLong(userId));
 				if (ret.isSuccess())
