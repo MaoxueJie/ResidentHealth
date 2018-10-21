@@ -2,7 +2,6 @@
 var CFD = CFD || {};
 $(document).ready(function(){
 	CFD.login = {
-		pass:{tel:false,pwd:false},
 		init: function(){
 			this.bindEvent();
 		},
@@ -24,9 +23,6 @@ $(document).ready(function(){
 					return false;
 				}else{
 					that.checkTel( null,$('#mobile') );
-					if( !that.pass.tel ){
-						return false;
-					}
 				}
 				that.login();
 			});
@@ -41,15 +37,15 @@ $(document).ready(function(){
 				success: function(json){
 					var data = json.data;
 					if( json.success ){
-						vcodeBtn.attr("disabled", true);
-						var i = 60;
+						vcodeBtn.prop("disabled", true);
+						var i = 6;
 						vcodeBtn.val(i + ' s');
 						var timer = setInterval(function () {
 							i--;
 							vcodeBtn.val(i + ' s');
 							if (i <= 0) {
 								clearInterval(timer);
-								vcodeBtn.attr("disabled", false).val('获取验证码');
+								vcodeBtn.prop("disabled", false).val('获取验证码');
 							}
 						}, 1000);
 					/*}else if( json.code == 1010 ){
@@ -78,7 +74,7 @@ $(document).ready(function(){
 			$('.btn_vcode').addClass('enable');
 		},
 		login: function(){
-			var that = this,tel = $.trim( $('#mobile').val() ),vcode = $('#vcode').val();
+			var that = this,tel = $.trim( $('#mobile').val() ),vcode = $('#vcodeForget').val();
 			$.ajax({
 				url: '/cfd/login',
 				type: 'post',
