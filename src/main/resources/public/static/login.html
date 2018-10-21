@@ -6,20 +6,23 @@
 	<title>注册登录</title>
 	<!-- 引入 WeUI -->
 	<link rel="stylesheet" href="./css/style.css"/>
+	<link rel="stylesheet" href="./css/login.css"/>
 	<script src="./js/zepto.min.js"></script>
 	<script src="./js/flexible.js"></script>
+	<script src="./js/login.js"></script>
 	<script src="./js/questionnaire.js"></script>
 </head>
 <body ontouchstart>
 
-	<img src="./image/login_banner.jpg">
+	<img class="login_banner" src="./image/login_banner.jpg">
+	<h3 class="login_title">快捷登录</h3>
 	<div class="panel_content login_cont">
 		<div class="row">
-			<input type="text" name="tel" id="telForget" maxlength="11" placeholder="请输入手机号"/>
+			<input type="text" name="mobile" id="mobile" maxlength="11" placeholder="请输入手机号"/>
 		</div>
 		<div class="row">
-			<input type="text" name="vcode" class="vcode" id="vcodeForget" placeholder="请输入短信验证码"/>
-			<input type="button" class="btn_vcode" value="获取短信验证码"/>
+			<input type="text" name="verificationCode" class="vcode" id="vcodeForget" placeholder="请输入验证码"/>
+			<input type="button" class="btn_vcode" value="获取验证码"/>
 		</div>
 		<p class="errortip"></p>
 		<div class="row">
