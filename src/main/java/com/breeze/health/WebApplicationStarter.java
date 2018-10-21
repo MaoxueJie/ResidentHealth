@@ -35,5 +35,4 @@ public class WebApplicationStarter extends SpringBootServletInitializer {
         new SpringApplication(WebApplicationStarter.class).run(args);
     }
 
-    
 }

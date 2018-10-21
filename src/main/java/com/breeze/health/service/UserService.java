@@ -19,6 +19,6 @@ public interface UserService {
 	
 	public Result<UserVo> loginOrRegister(String mobile,String verificationCode);
 	
-	public Result<Void> sendVertificationCode(String mobile);
+	public Result<String> sendVertificationCode(String mobile);
 	
 }

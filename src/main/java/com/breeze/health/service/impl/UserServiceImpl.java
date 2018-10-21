@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserBaseInfoVo;
 import com.breeze.health.beans.vo.UserVo;
+import com.breeze.health.cache.SmsCache;
 import com.breeze.health.entity.User;
 import com.breeze.health.entity.UserBaseInfo;
 import com.breeze.health.entity.UserBaseInfoExample;
@@ -198,9 +199,13 @@ public class UserServiceImpl implements UserService{
 				return ret;
 			}
 			mobile = mobile.trim();
-			
-			//验证验证马
-			
+			String code = SmsCache.get(mobile);
+			if (code==null || verificationCode==null || !code.equals(verificationCode))
+			{
+				ret.setSuccess(false);
+				ret.setMessage("验证码不通过");
+				return ret;
+			}
 			
 			UserExample example = new UserExample();
 			example.createCriteria().andMobileEqualTo(mobile);
@@ -235,9 +240,21 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public Result<Void> sendVertificationCode(String mobile) {
-		Result<Void> ret = new Result<Void>();
+	public Result<String> sendVertificationCode(String mobile) {
+		Result<String> ret = new Result<String>();
 		try{
+			if (StringUtils.isBlank(mobile))
+			{
+				ret.setSuccess(false);
+				ret.setMessage("请输入手机号码");
+				return ret;
+			}
+			mobile = mobile.trim();
+			
+			String code = generateSmsCode();
+			//发送验证码
+			SmsCache.put(mobile, code);
+			ret.setData(code);
 			ret.setSuccess(true);
 		}catch(Exception e)
 		{
@@ -269,6 +286,11 @@ public class UserServiceImpl implements UserService{
 			ret.setMessage("获取用户失败");
 		}
 		return ret;
+	}
+	
+	private String generateSmsCode()
+	{
+		return (int)((Math.random()*9+1)*100000) + "";	
 	}
 
 }

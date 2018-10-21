@@ -42,7 +42,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/send", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
-	public Result<Void> sendCode(HttpServletRequest request, String mobile){
+	public Result<String> sendCode(HttpServletRequest request, String mobile){
 		
 		return userService.sendVertificationCode(mobile);
 	}
