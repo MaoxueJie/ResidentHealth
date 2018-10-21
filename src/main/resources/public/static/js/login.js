@@ -28,10 +28,6 @@ $(document).ready(function(){
 						return false;
 					}
 				}
-				if( $('#pwdLogin').val() == '' ){
-					$('#pwdLogin').focus();
-					return false;
-				}
 				that.login();
 			});
 		},
@@ -40,7 +36,7 @@ $(document).ready(function(){
 			$.ajax({
 				url: '/send',
 				type: 'post',
-				data: {'tel':tel},
+				data: {'mobile':tel},
 				dataType: 'json',
 				success: function(json){
 					var data = json.data;
@@ -82,15 +78,15 @@ $(document).ready(function(){
 			$('.btn_vcode').addClass('enable');
 		},
 		login: function(){
-			var that = this,tel = $.trim( $('#mobile').val() ),pwd = $('#pwdLogin').val();
+			var that = this,tel = $.trim( $('#mobile').val() ),vcode = $('#vcode').val();
 			$.ajax({
-				url: '/user/ajaxlogin',
+				url: '/login',
 				type: 'post',
-				data: {'tel':tel,'password':pwd},
+				data: {'mobile':tel,'verificationCode':vcode},
 				dataType: 'json',
 				success: function(json){
 					var data = json.data;
-					if( json.code == 0 ){
+					if( json.success ){
 						if( data.redirect_url == '' ){
 							window.location.href = '/home';
 						}else{
