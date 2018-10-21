@@ -14,6 +14,7 @@ import com.breeze.health.beans.vo.UserPsychologicalVo;
 import com.breeze.health.beans.vo.UserPsychologicalVo;
 import com.breeze.health.beans.vo.UserReportVo;
 import com.breeze.health.beans.vo.UserSickVo;
+import com.breeze.health.beans.vo.UserTCMVo;
 import com.breeze.health.beans.vo.UserVo;
 import com.breeze.health.entity.UserBaseInfo;
 import com.breeze.health.entity.UserLivingHabit;
@@ -25,6 +26,7 @@ import com.breeze.health.service.PhyService;
 import com.breeze.health.service.PsyService;
 import com.breeze.health.service.ReportService;
 import com.breeze.health.service.SickService;
+import com.breeze.health.service.TCMService;
 import com.breeze.health.service.UserService;
 
 import org.slf4j.Logger;
@@ -57,6 +59,8 @@ public class HealthController {
 	private PsyService psyService;
 	@Resource
 	private PhyService phyService;
+	@Resource
+	private TCMService tcmService;
 	
 	
 	@RequestMapping(value = "/base/get", method = {RequestMethod.GET,RequestMethod.POST})
@@ -133,9 +137,25 @@ public class HealthController {
 	}
 	
 	//情绪认知（心理健康）
+	@RequestMapping(value = "/tcm/add", method = {RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
+	public Result<Void> addTCM(HttpServletRequest request,UserTCMVo vo){
+		UserVo user = (UserVo)request.getSession().getAttribute("user");
+		vo.setUserId(user.getId());
+		return tcmService.addOrUpdateTCM(vo);
+	}
+	
+	@RequestMapping(value = "/tcm/get", method = {RequestMethod.GET,RequestMethod.POST})
+	@ResponseBody
+	public Result<UserTCMVo> getTCM(HttpServletRequest request){
+		UserVo user = (UserVo)request.getSession().getAttribute("user");
+		return tcmService.getTCM(user.getId());
+	}
+	
+	//情绪认知（心理健康）
 	@RequestMapping(value = "/psy/add", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
-	public Result<Void> addPsychologicalAD8(HttpServletRequest request,UserPsychologicalVo vo){
+	public Result<Void> addPsychological(HttpServletRequest request,UserPsychologicalVo vo){
 		UserVo user = (UserVo)request.getSession().getAttribute("user");
 		vo.setUserId(user.getId());
 		return psyService.addOrUpdatePsy(vo);

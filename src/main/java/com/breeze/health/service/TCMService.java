@@ -7,5 +7,5 @@ import com.breeze.health.entity.UserTCM;
 
 public interface TCMService {
 	public Result<Void> addOrUpdateTCM(UserTCMVo vo);
-	public Result<UserTCMVo> getPsy(Long userId);
+	public Result<UserTCMVo> getTCM(Long userId);
 }
