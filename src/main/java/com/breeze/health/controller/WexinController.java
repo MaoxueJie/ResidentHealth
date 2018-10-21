@@ -230,11 +230,14 @@ public class WexinController {
 		try {
 			jsonObj = new JSONObject(responseBady);
 			logger.info(jsonObj.toString());
-			String openid = jsonObj.get("openid").toString();
+			if (jsonObj.has("openid"))
+			{
+				String openid = jsonObj.get("openid").toString();
+				request.getSession().setAttribute("openid", openid);
+			}
 			String url="";
-			request.getSession().setAttribute("openid", openid);
 			UserVo user = (UserVo)request.getSession().getAttribute("user");
-			//Result<UserVo> userRet = userService.getUserByOpenId(openid);
+			
 			if (user!=null)
 			{
 				String parm="timestamp="+System.currentTimeMillis();//鍙傛暟
