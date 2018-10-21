@@ -197,7 +197,7 @@ public class WexinController {
 		String oauthUrl = Config.getBasepath()+"wechat/oauth";
 		
 		String redirectUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + appId + "&redirect_uri="
-				+ oauthUrl + "&response_type=code&scope=snsapi_base&state=" + menuId + "#wechat_redirect";
+				+ oauthUrl + "&response_type=code&scope=snsapi_base&state=" + menuId + "&connect_redirect=1#wechat_redirect";
 		logger.info("redirectUrl=="+redirectUrl);
 		
 		return new ModelAndView(new RedirectView(redirectUrl));
@@ -229,12 +229,15 @@ public class WexinController {
 		JSONObject jsonObj;
 		try {
 			jsonObj = new JSONObject(responseBady);
-			String openid = jsonObj.get("openid").toString();
-
+			logger.info(jsonObj.toString());
+			if (jsonObj.has("openid"))
+			{
+				String openid = jsonObj.get("openid").toString();
+				request.getSession().setAttribute("openid", openid);
+			}
 			String url="";
-			request.getSession().setAttribute("openid", openid);
 			UserVo user = (UserVo)request.getSession().getAttribute("user");
-			//Result<UserVo> userRet = userService.getUserByOpenId(openid);
+			
 			if (user!=null)
 			{
 				String parm="timestamp="+System.currentTimeMillis();//鍙傛暟
@@ -250,11 +253,14 @@ public class WexinController {
 					url=path+"static/phy.html?"+parm;
 				}else if ("psy".equals(state)) {
 					url=path+"static/psy.html?"+parm;
+				}else if ("tcm".equals(state)) {
+					url=path+"static/tcm.html?"+parm;
 				}
 			}else
 			{
-				url=path+"static/login.html";
+				url=path+"static/login.html?state="+state;
 			}
+			logger.info("redirect="+url);
 			return new ModelAndView(new RedirectView(url));
 		} catch (JSONException e) {
 			e.printStackTrace();

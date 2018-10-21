@@ -128,7 +128,7 @@ public class RequestUtils {
 	 */
 	public static void setCookie(HttpServletRequest request,
                                  HttpServletResponse response, String name, String value, int maxAge) {
-		setCookie(request, response, name, value, maxAge, true);
+		setCookie(request, response, name, value, maxAge, false);
 	}
 
 	/**
@@ -158,12 +158,7 @@ public class RequestUtils {
 			cookie.setPath("/");
 			response.addCookie(cookie);
 		} catch (Exception e) {
-			logger.error("添加cookie信息出错,错误信息:" + e.toString());
-			try {
-				response.getWriter().println("请检查您的浏览器是否支持cookie");
-			} catch (IOException e1) {
-				logger.error("",e);
-			}
+			logger.error("添加cookie信息出错,错误信息:" + e.toString(),e);
 		}
 	}
 
