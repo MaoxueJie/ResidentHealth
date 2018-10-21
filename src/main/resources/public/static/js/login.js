@@ -34,26 +34,26 @@ $(document).ready(function(){
 		getVcode: function(vcodeBtn){
 			var that = this,tel = $.trim( vcodeBtn.closest('.panel_content').find('[name="mobile"]').val() );
 			$.ajax({
-				url: '/send',
+				url: '/cfd/send',
 				type: 'post',
 				data: {'mobile':tel},
 				dataType: 'json',
 				success: function(json){
 					var data = json.data;
-					if( json.code == 0 ){
+					if( json.success ){
 						vcodeBtn.attr("disabled", true);
 						var i = 60;
-                        vcodeBtn.val(i + 's');
-                        var timer = setInterval(function () {
-                            i--;
-                            vcodeBtn.val(i + 's');
-                            if (i <= 0) {
-                                clearInterval(timer);
-                                vcodeBtn.attr("disabled", false).val('获取验证码');
-                            }
-                        }, 1000);
-					}else if( json.code == 1010 ){
-						CFD.login.showError(vcodeBtn.prev(),json.msg);
+						vcodeBtn.val(i + ' s');
+						var timer = setInterval(function () {
+							i--;
+							vcodeBtn.val(i + ' s');
+							if (i <= 0) {
+								clearInterval(timer);
+								vcodeBtn.attr("disabled", false).val('获取验证码');
+							}
+						}, 1000);
+					/*}else if( json.code == 1010 ){
+						CFD.login.showError(vcodeBtn.prev(),json.msg);*/
 					}else{
 						var vcodeInput = vcodeBtn.prev();
 						CFD.login.showError(vcodeInput,'验证码发送失败,请稍后重试');
@@ -80,18 +80,13 @@ $(document).ready(function(){
 		login: function(){
 			var that = this,tel = $.trim( $('#mobile').val() ),vcode = $('#vcode').val();
 			$.ajax({
-				url: '/login',
+				url: '/cfd/login',
 				type: 'post',
 				data: {'mobile':tel,'verificationCode':vcode},
 				dataType: 'json',
 				success: function(json){
-					var data = json.data;
 					if( json.success ){
-						if( data.redirect_url == '' ){
-							window.location.href = '/home';
-						}else{
-							window.location.href = data.redirect_url;
-						}
+						window.location.href = '/cfd/static/' + that.getQueryString('state') + '.html';
 					}else{
 						that.showError( '',json.msg );
 					}
@@ -105,6 +100,11 @@ $(document).ready(function(){
 			}
 			$('.errortip').text(msg)
 		},
+		getQueryString: function( name ){	/* 获取url里的参数 */
+			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if(r!=null) return unescape(r[2]); return null;
+		}
 	}
 	CFD.login.init();
 })
