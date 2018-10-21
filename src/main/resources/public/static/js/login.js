@@ -38,7 +38,7 @@ $(document).ready(function(){
 					var data = json.data;
 					if( json.success ){
 						vcodeBtn.prop("disabled", true);
-						var i = 6;
+						var i = 60;
 						vcodeBtn.val(i + ' s');
 						var timer = setInterval(function () {
 							i--;
