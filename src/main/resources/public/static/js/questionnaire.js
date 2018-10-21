@@ -62,7 +62,7 @@ $(function(){
 						showResult();
 					}
 				}else{
-					alert('提交失败了 T_T');
+					alert( json.message );
 				}
 			}
 		})
