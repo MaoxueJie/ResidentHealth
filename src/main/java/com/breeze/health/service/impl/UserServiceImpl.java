@@ -13,6 +13,7 @@ import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserBaseInfoVo;
 import com.breeze.health.beans.vo.UserVo;
 import com.breeze.health.cache.SmsCache;
+import com.breeze.health.config.SMSConfig;
 import com.breeze.health.entity.User;
 import com.breeze.health.entity.UserBaseInfo;
 import com.breeze.health.entity.UserBaseInfoExample;
@@ -25,6 +26,8 @@ import com.breeze.health.mapper.WexinAccountMapper;
 import com.breeze.health.service.UserService;
 import com.breeze.health.util.BeanUtils;
 import com.github.pagehelper.PageHelper;
+import com.github.qcloudsms.SmsSingleSender;
+import com.github.qcloudsms.SmsSingleSenderResult;
 
 @Service("userService")
 public class UserServiceImpl implements UserService{
@@ -253,9 +256,20 @@ public class UserServiceImpl implements UserService{
 			
 			String code = generateSmsCode();
 			//发送验证码
-			SmsCache.put(mobile, code);
-			ret.setData(code);
-			ret.setSuccess(true);
+			String[] params = {code};//数组具体的元素个数和模板中变量个数必须一致，例如事例中templateId:5678对应一个变量，参数数组中元素个数也必须是一个
+		    SmsSingleSender ssender = new SmsSingleSender(SMSConfig.getAppid(), SMSConfig.getAppkey());
+		    SmsSingleSenderResult result = ssender.sendWithParam("86", mobile,
+		    		215054, params, "居民e健康", "", "");
+		    if (result.result==0)
+		    {
+				SmsCache.put(mobile, code);
+				//ret.setData(code);
+				ret.setSuccess(true);
+		    }else
+		    {
+		    	ret.setSuccess(false);
+		    	ret.setMessage("验证码发送失败");
+		    }	
 		}catch(Exception e)
 		{
 			logger.error("发送验证码异常", e);
