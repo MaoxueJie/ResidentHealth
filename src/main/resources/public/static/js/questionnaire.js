@@ -1,4 +1,4 @@
-$(function(){
+//$(function(){
 	var toastHtml = '';
 	toastHtml += '<div id="toast" style="display:none;">';
 	toastHtml += '	<div class="weui-mask_transparent"></div>';
@@ -40,6 +40,8 @@ $(function(){
 	};
 
 	var ajaxUrl, data;
+
+$(function(){
 	$('#submitBtn').click(function(){
 		var $form = $(this).closest('form');
 		ajaxUrl = $form.attr('action');
@@ -47,7 +49,9 @@ $(function(){
 		postDataFun( ajaxUrl,data );
 		showLoading();
 	})
+})
 	function postDataFun( ajaxUrl,data ){
+		var type = ajaxUrl.split('/')[2];
 		$.ajax({
 			url: ajaxUrl,
 			type: 'post',
@@ -55,12 +59,13 @@ $(function(){
 			dataType: 'json',
 			success: function(json){
 				if( json.success ){
-					if( ajaxUrl.indexOf('psy') == -1 ){
-						hideLoading();
-						showToast();
-					}else{
-						showResult();
-					}
+					//if( ajaxUrl.indexOf('psy') == -1 ){
+					//	hideLoading();
+					//	showToast();
+					//}else{
+						window.location.href = '/cfd/static/report.html?type=' + type;
+						//showResult();
+					//}
 				}else{
 					alert( json.message );
 				}
@@ -68,10 +73,10 @@ $(function(){
 		})
 	}
 
-	var title = ['','','','','','','GAD-7焦虑症筛查量表','AD8认知障碍自评表','PHQ-9抑郁症筛查量表',]
+	//var title = ['','','','','','','GAD-7焦虑症筛查量表','AD8认知障碍自评表','PHQ-9抑郁症筛查量表',]
 
 	function showResult(){
-		var n = ajaxUrl.replace(/[^0-9]/ig,"") - 1;
+		/*var n = ajaxUrl.replace(/[^0-9]/ig,"") - 1;
 		var reportHtml = '';
 		reportHtml += '<div class="evaluation_result">';
 		reportHtml += '	<div class="result_banner">'+ title[n] +'</div>';
@@ -86,26 +91,34 @@ $(function(){
 		reportHtml += '	<div class="align_center">';
 		reportHtml += '		<a class="weui-btn btn-primary" href="javascript:;">保存结果</a>';
 		reportHtml += '	</div>';
-		reportHtml += '</div>';
+		reportHtml += '</div>';*/
 
-		var getUrl = ajaxUrl.replace('add','get');
+		var getUrl = '/cfd/'+ getQueryString("type") +'/get';
 		$.ajax({
-			url: ajaxUrl,
+			url: getUrl,
 			type: 'post',
 			data: data,
 			dataType: 'json',
 			success: function(json){
 				if( json.success ){
-					hideLoading();
-					$('.page').hide();
-					$('body').append( reportHtml );
-					window.scrollTo(0,0);
+					//hideLoading();
+					//$('.page').hide();
+					//$('body').append( reportHtml );
+					//window.scrollTo(0,0);
+					$('#resultCont').html( json.data.resultMsg )
 				}else{
 					alert( json.message );
 				}
 			}
 		})
 	}
-})
+
+	/* 获取url里的参数 */
+	function getQueryString( name ){
+		var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if(r!=null) return unescape(r[2]); return null;
+	}
+//})
 
 
