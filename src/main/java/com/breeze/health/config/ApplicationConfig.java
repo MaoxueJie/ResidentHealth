@@ -29,6 +29,8 @@ public class ApplicationConfig {
 	    urlPatterns.add("/phy/get");
 	    urlPatterns.add("/psy/add");
 	    urlPatterns.add("/psy/get");
+	    urlPatterns.add("/tcm/add");
+	    urlPatterns.add("/tcm/get");
 	    urlPatterns.add("/psy/suicide/add");
 	    urlPatterns.add("/psy/suicide/get");
 	    urlPatterns.add("/report/get");
