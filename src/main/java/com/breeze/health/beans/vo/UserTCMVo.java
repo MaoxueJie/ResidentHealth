@@ -170,6 +170,9 @@ public class UserTCMVo {
 
     private Integer yinxuResult;
     
+    private String resultTitle;
+    
+    private String resultMsg;
     
     private Date createTime;
 
@@ -814,5 +817,22 @@ public class UserTCMVo {
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
+
+	public String getResultTitle() {
+		return resultTitle;
+	}
+
+	public void setResultTitle(String resultTitle) {
+		this.resultTitle = resultTitle;
+	}
+
+	public String getResultMsg() {
+		return resultMsg;
+	}
+
+	public void setResultMsg(String resultMsg) {
+		this.resultMsg = resultMsg;
+	}
     
+	
 }

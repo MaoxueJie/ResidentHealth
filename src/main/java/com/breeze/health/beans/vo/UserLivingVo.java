@@ -7,7 +7,6 @@ public class UserLivingVo {
 
     private Long userId;
     
-    
     private Integer meal;
 
     private Integer breakfast;
@@ -75,6 +74,10 @@ public class UserLivingVo {
     private String drinkingTypes;
 
     private Integer drinkingVal;
+    
+    private String resultTitle;
+    
+    private String resultMsg;
     
 
     private Date createTime;
@@ -376,5 +379,22 @@ public class UserLivingVo {
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
+
+	public String getResultTitle() {
+		return resultTitle;
+	}
+
+	public void setResultTitle(String resultTitle) {
+		this.resultTitle = resultTitle;
+	}
+
+	public String getResultMsg() {
+		return resultMsg;
+	}
+
+	public void setResultMsg(String resultMsg) {
+		this.resultMsg = resultMsg;
+	}
     
+	
 }

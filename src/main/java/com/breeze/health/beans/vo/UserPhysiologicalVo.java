@@ -38,6 +38,10 @@ public class UserPhysiologicalVo {
     private Float uricAcid;
 
     private Float bloodOxygen;
+    
+    private String resultTitle;
+    
+    private String resultMsg;
 
     private Date createTime;
 
@@ -203,4 +207,21 @@ public class UserPhysiologicalVo {
 		this.updateTime = updateTime;
 	}
 
+	public String getResultTitle() {
+		return resultTitle;
+	}
+
+	public void setResultTitle(String resultTitle) {
+		this.resultTitle = resultTitle;
+	}
+
+	public String getResultMsg() {
+		return resultMsg;
+	}
+
+	public void setResultMsg(String resultMsg) {
+		this.resultMsg = resultMsg;
+	}
+
+	
 }

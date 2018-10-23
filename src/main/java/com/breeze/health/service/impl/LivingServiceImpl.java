@@ -167,6 +167,10 @@ public class LivingServiceImpl implements LivingService {
 			List livings = userLivingMapper.selectByExample(example);
 			if (livings!= null && livings.size()>0)
 			{
+				UserLivingMeal meal= null;
+				UserLivingHabit habit = null;
+				UserLivingMovement movement = null;
+				
 				UserLivingVo vo = new UserLivingVo();
 
 				UserLivingMealExample mealExample = new UserLivingMealExample();
@@ -174,7 +178,8 @@ public class LivingServiceImpl implements LivingService {
 				List<UserLivingMeal> meals = userLivingMealMapper.selectByExample(mealExample);
 				if (meals!= null && meals.size()>0)
 				{
-					BeanUtils.copyProperties(meals.get(0), vo);
+					meal = meals.get(0);
+					BeanUtils.copyProperties(meal, vo);
 				}
 				
 				UserLivingMovementExample movementExample = new UserLivingMovementExample();
@@ -182,7 +187,8 @@ public class LivingServiceImpl implements LivingService {
 				List<UserLivingMovement> movements = userLivingMovementMapper.selectByExample(movementExample);
 				if (movements!= null && movements.size()>0)
 				{
-					BeanUtils.copyProperties(movements.get(0), vo);
+					movement = movements.get(0);
+					BeanUtils.copyProperties(movement, vo);
 				}
 				
 				UserLivingHabitExample habitExample = new UserLivingHabitExample();
@@ -190,11 +196,47 @@ public class LivingServiceImpl implements LivingService {
 				List<UserLivingHabit> habits = userLivingHabitMapper.selectByExample(habitExample);
 				if (habits!= null && habits.size()>0)
 				{
-					BeanUtils.copyProperties(habits.get(0), vo);
+					habit = habits.get(0);
+					BeanUtils.copyProperties(habit, vo);
 				}
 				
 				BeanUtils.copyProperties(livings.get(0), vo);
+				
+				String report = "";
+				if (meal!=null)
+				{
+					if (meal.getMeal()!=null && meal.getMeal()==2)
+					{
+						report += (report.length()==0?"":"\n")+"您的饮食习惯有待调整，相关知识请参见饮食指导。";
+					}
+				}
+				
+				if (movement!=null)
+				{
+					float violent = ((movement.getViolentMinutePerDay()==null?0:movement.getViolentMinutePerDay())*(movement.getViolentDaysPerWeek()==null?0:movement.getViolentDaysPerWeek()))/60f;
+					float moderate = ((movement.getModerateMinutePerDay()==null?0:movement.getModerateMinutePerDay())*(movement.getModerateDaysPerWeek()==null?0:movement.getModerateDaysPerWeek()))/60f;
+					float walk =  ((movement.getWalkMinutePerDay()==null?0:movement.getWalkMinutePerDay())*(movement.getWalkDaysPerWeek()==null?0:movement.getWalkDaysPerWeek()))/60f;
+					
+					moderate += 2*violent + walk/2;
+					
+					if (moderate<2)
+					{
+						report += (report.length()==0?"":"\n")+"您的运动量不足，运动形式和时间需要进行适当的调整 [运动指导]。";
+					}
+				}
 
+				if (habit!=null)
+				{
+					if (habit.getSmoking()!=null &&  (habit.getSmoking()==2 || habit.getSmoking()==3))
+					{
+						report += (report.length()==0?"":"\n")+"吸烟有害健康！您有吸烟的习惯，建议您向签约医生或社区护士咨询戒烟的指导，他们将会为您提供个性化的戒烟帮助。";
+					}else if(habit.getSmoking()!=null && habit.getSmoking()==4)
+					{
+						report += (report.length()==0?"":"\n")+"您已成功戒烟，是其他人的榜样，欢迎您在论坛中分享您成功戒烟的经验和感受，以帮助更多的吸烟者戒烟。";
+					}
+				}
+				vo.setResultTitle("不知道什么");
+				vo.setResultMsg(report);
 				ret.setSuccess(true);
 				ret.setData(vo);
 			}else

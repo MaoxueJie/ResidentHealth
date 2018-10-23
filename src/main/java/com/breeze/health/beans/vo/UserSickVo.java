@@ -74,6 +74,10 @@ public class UserSickVo {
     private String mother;
 
     private String brothers;
+    
+    private String resultTitle;
+    
+    private String resultMsg;
 
     private Date createTime;
 
@@ -381,6 +385,22 @@ public class UserSickVo {
 
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
+	}
+
+	public String getResultTitle() {
+		return resultTitle;
+	}
+
+	public void setResultTitle(String resultTitle) {
+		this.resultTitle = resultTitle;
+	}
+
+	public String getResultMsg() {
+		return resultMsg;
+	}
+
+	public void setResultMsg(String resultMsg) {
+		this.resultMsg = resultMsg;
 	}
     
 }

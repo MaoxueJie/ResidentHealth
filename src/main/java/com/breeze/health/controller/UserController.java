@@ -29,7 +29,7 @@ public class UserController {
 	@RequestMapping(value = "/login", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	public Result<UserVo> userLogin(HttpServletRequest request,  HttpServletResponse response,String mobile,String verificationCode){
-		Result<UserVo> ret = userService.loginOrRegister(mobile, verificationCode);
+		Result<UserVo> ret = userService.loginOrRegister(mobile, verificationCode,(String)request.getSession().getAttribute("openid"));
 		if (ret.isSuccess())
 		{
 			String token = DesUtil.encrypt(ret.getData().getId()+"");

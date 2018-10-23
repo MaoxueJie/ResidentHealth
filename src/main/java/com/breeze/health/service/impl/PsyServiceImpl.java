@@ -288,6 +288,11 @@ public class PsyServiceImpl implements PsyService{
 			List psys = userPsychologicalMapper.selectByExample(example);
 			if (psys!= null && psys.size()>0)
 			{
+				
+				UserPsychologicalAD8 ad8 = null;
+				UserPsychologicalGAD7 gad7 = null;
+				UserPsychologicalPHQ9 phq9 = null;
+				
 				UserPsychologicalVo vo = new UserPsychologicalVo();
 
 				UserPsychologicalAD8Example ad8Example = new UserPsychologicalAD8Example();
@@ -295,7 +300,8 @@ public class PsyServiceImpl implements PsyService{
 				List<UserPsychologicalAD8> ad8s = userPsychologicalAD8Mapper.selectByExample(ad8Example);
 				if (ad8s!= null && ad8s.size()>0)
 				{
-					BeanUtils.copyProperties(ad8s.get(0), vo);
+					ad8 = ad8s.get(0);
+					BeanUtils.copyProperties(ad8, vo);
 				}
 				
 				UserPsychologicalGAD7Example gad7Example = new UserPsychologicalGAD7Example();
@@ -303,7 +309,8 @@ public class PsyServiceImpl implements PsyService{
 				List<UserPsychologicalGAD7> gad7s = userPsychologicalGAD7Mapper.selectByExample(gad7Example);
 				if (gad7s!= null && gad7s.size()>0)
 				{
-					BeanUtils.copyProperties(gad7s.get(0), vo);
+					gad7 = gad7s.get(0) ;
+					BeanUtils.copyProperties(gad7, vo);
 				}
 				
 				UserPsychologicalPHQ9Example phq9Example = new UserPsychologicalPHQ9Example();
@@ -311,11 +318,64 @@ public class PsyServiceImpl implements PsyService{
 				List<UserPsychologicalPHQ9> phq9s = userPsychologicalPHQ9Mapper.selectByExample(phq9Example);
 				if (phq9s!= null && phq9s.size()>0)
 				{
-					BeanUtils.copyProperties(phq9s.get(0), vo);
+					phq9 = phq9s.get(0);
+					BeanUtils.copyProperties(phq9, vo);
 				}
 				
 				BeanUtils.copyProperties(psys.get(0), vo);
-
+				
+				String psychologicalReport = "";
+				
+				psychologicalReport = "随着年龄的增长，人们的记忆力会逐渐下降，进而可能出现其他认知功能的下降。测试显示您存在记忆力下降的情况，建议您进行认知功能的相关测试，同时有意进行相关的认知功能锻炼，可延缓认知功能下降的进程。";
+				if (ad8!=null)
+				{
+					if (ad8.getAd8Score()>=2)
+					{
+						//认知功能受损
+						psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在认知功能受损，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
+					}
+				}
+				if (gad7!=null)
+				{
+					if (gad7.getGad7Score()>=5 && gad7.getGad7Score()<=9)
+					{
+						//可能有轻微焦虑症
+						psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在轻微焦虑症，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
+					}else if (gad7.getGad7Score()>=10 && gad7.getGad7Score()<=13)
+					{
+						//可能有中度焦虑症
+						psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在中度焦虑症，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
+					}else if (gad7.getGad7Score()>=14 && gad7.getGad7Score()<=18)
+					{
+						//可能有中重度焦虑症
+						psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在中重度焦虑症，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
+					}else if (gad7.getGad7Score()>=19)
+					{
+						//可能有重度焦虑症
+						psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在重度焦虑症，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
+					}
+				}
+				if (phq9!=null)
+				{
+					if (phq9.getPhq9Score()>=5 && phq9.getPhq9Score()<=9)
+					{
+						//轻度抑郁
+						psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在轻度抑郁，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
+					}else if (phq9.getPhq9Score()>=10 && phq9.getPhq9Score()<=14)
+					{
+						//中度抑郁
+						psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在中度抑郁，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
+					}else if (phq9.getPhq9Score()>=15 && phq9.getPhq9Score()<=19)
+					{
+						//中重度抑郁
+						psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在中重度抑郁，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
+					}else if(phq9.getPhq9Score()>=20){
+						//重度抑郁
+						psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在重度抑郁，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
+					}
+				}
+				vo.setResultTitle("不知道是什么");
+				vo.setResultMsg(psychologicalReport);
 				ret.setSuccess(true);
 				ret.setData(vo);
 			}else

@@ -65,6 +65,10 @@ public class UserPsychologicalVo {
 
     private Integer phq9Score;
     
+    private String resultTitle;
+    
+    private String resultMsg;
+    
     
     private Date createTime;
 
@@ -327,4 +331,21 @@ public class UserPsychologicalVo {
 		this.userId = userId;
 	}
 
+	public String getResultTitle() {
+		return resultTitle;
+	}
+
+	public void setResultTitle(String resultTitle) {
+		this.resultTitle = resultTitle;
+	}
+
+	public String getResultMsg() {
+		return resultMsg;
+	}
+
+	public void setResultMsg(String resultMsg) {
+		this.resultMsg = resultMsg;
+	}
+
+	
 }

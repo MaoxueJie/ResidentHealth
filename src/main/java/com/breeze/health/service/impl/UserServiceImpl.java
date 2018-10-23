@@ -192,7 +192,7 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public Result<UserVo> loginOrRegister(String mobile, String verificationCode) {
+	public Result<UserVo> loginOrRegister(String mobile, String verificationCode,String openid) {
 		Result<UserVo> ret = new Result<UserVo>();
 		try{
 			if (StringUtils.isBlank(mobile))
@@ -210,6 +210,8 @@ public class UserServiceImpl implements UserService{
 				return ret;
 			}
 			
+			Date now = new Date();
+			
 			UserExample example = new UserExample();
 			example.createCriteria().andMobileEqualTo(mobile);
 			List<User> users = userMapper.selectByExample(example);
@@ -221,7 +223,7 @@ public class UserServiceImpl implements UserService{
 				ret.setData(vo);
 			}else
 			{
-				Date now = new Date();
+				
 				User user = new User();
 				user.setMobile(mobile);
 				user.setCreateTime(now);
@@ -232,6 +234,28 @@ public class UserServiceImpl implements UserService{
 				BeanUtils.copyProperties(user, vo);
 				ret.setSuccess(true);
 				ret.setData(vo);
+			}
+			if (ret.isSuccess())
+			{
+				try{
+					if (openid!=null)
+					{
+						WexinAccountExample wxaexample = new WexinAccountExample();
+						wxaexample.createCriteria().andOpenIdEqualTo(openid);
+						List<WexinAccount> accounts = wexinAccountMapper.selectByExample(wxaexample);
+						if (accounts!=null && accounts.size()>0)
+						{
+							WexinAccount account = accounts.get(0);
+							account.setStatus(1);
+							account.setUpdateTime(now);
+							account.setUserId(ret.getData().getId());
+							wexinAccountMapper.updateByPrimaryKeySelective(account);
+						}
+					}
+				}catch(Exception e)
+				{
+					
+				}
 			}
 			
 		}catch(Exception e)

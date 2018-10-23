@@ -17,7 +17,7 @@ public interface UserService {
 	
 	public Result<UserVo> getUserById(Long userId);
 	
-	public Result<UserVo> loginOrRegister(String mobile,String verificationCode);
+	public Result<UserVo> loginOrRegister(String mobile,String verificationCode,String openId);
 	
 	public Result<String> sendVertificationCode(String mobile);
 	
