@@ -162,25 +162,25 @@ public class MenuUtil {
     	sb1.setName("生活");
     	sb1.setType("view");
     	sb1.setSub_button(new ComplexButton[0]);
-    	sb1.setUrl("http://www.baidu.com");
+    	sb1.setUrl("https://www.baidu.com");
     	subbs2[0] = sb1;
     	ComplexButton sb2 = new ComplexButton();
     	sb2.setName("心理");
     	sb2.setType("view");
     	sb2.setSub_button(new ComplexButton[0]);
-    	sb2.setUrl("http://www.baidu.com");
+    	sb2.setUrl("https://www.baidu.com");
     	subbs2[1] = sb2;
     	ComplexButton sb3 = new ComplexButton();
     	sb3.setName("慢病");
     	sb3.setType("view");
     	sb3.setSub_button(new ComplexButton[0]);
-    	sb3.setUrl("http://www.baidu.com");
+    	sb3.setUrl("https://www.baidu.com");
     	subbs2[2] = sb3;
     	ComplexButton sb4 = new ComplexButton();
     	sb4.setName("中医");
     	sb4.setType("view");
     	sb4.setSub_button(new ComplexButton[0]);
-    	sb4.setUrl("http://www.baidu.com");
+    	sb4.setUrl("https://www.baidu.com");
     	subbs2[3] = sb4;
     	button2.setSub_button(subbs2);
     	
@@ -206,7 +206,7 @@ public class MenuUtil {
     	buttons[2] = button3;
     	
     	menu.setButton(buttons);
-    	createMenu(menu,getWXToken(GET_TOKEN_URL,"wx336e204e851303d6","34ab89470c9ea9e5d6e3fe00a76bfe9d"));
+    	createMenu(menu,getWXToken(GET_TOKEN_URL,"wxb3fa58ce48e65eca","1c64c98c2dc51a03e2b7c254f2abba03"));
     }
     
     //{"menu":{"button":[{"name":"中心介绍","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/h/introduce.html"},{"name":"推荐医生","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/h/drIntro.html"},{"name":"个人中心","sub_button":[{"name":"我的基本信息","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/BASEINFO"},{"name":"我的医生","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/DOC"},{"name":"我的提问","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/ASK"},{"name":"我的复诊","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/VISIT"},{"name":"我的指标","sub_button":[],"type":"view","url":"http://bjhc.tb360.org/wechatMenu/bx/MEASURE"}]}]}}

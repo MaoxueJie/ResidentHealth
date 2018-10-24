@@ -234,6 +234,7 @@ public class WexinController {
 			if (jsonObj.has("openid"))
 			{
 				String openid = jsonObj.get("openid").toString();
+				userService.bindWexin(openid);
 				request.getSession().setAttribute("openid", openid);
 				if (user==null){
 					user = userService.getUserByOpenId(openid).getData();

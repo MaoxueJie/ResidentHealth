@@ -53,9 +53,12 @@ public class UserServiceImpl implements UserService{
 			if (accounts!=null && accounts.size()>0)
 			{
 				WexinAccount account = accounts.get(0);
-				account.setStatus(1);
-				account.setUpdateTime(now);
-				wexinAccountMapper.updateByPrimaryKeySelective(account);
+				if (account.getStatus()==0)
+				{
+					account.setStatus(1);
+					account.setUpdateTime(now);
+					wexinAccountMapper.updateByPrimaryKeySelective(account);
+				}
 			}else
 			{
 				//User user = new User();
