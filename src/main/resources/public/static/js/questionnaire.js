@@ -63,13 +63,14 @@ $(function(){
 			dataType: 'json',
 			success: function(json){
 				if( json.success ){
-					//if( ajaxUrl.indexOf('psy') == -1 ){
-					//	hideLoading();
-					//	showToast();
-					//}else{
-						window.location.href = '/cfd/static/report.html?type=' + type;
+					if( type == 'base' || type == 'phy' ){
+						hideLoading();
+						showToast();
+						return false;
+					}else{
+						window.location.href = '/cfd/static/report_result.html?type=' + type;
 						//showResult();
-					//}
+					}
 				}else{
 					alert( json.message );
 				}

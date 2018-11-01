@@ -93,9 +93,18 @@ html,body{
 	text-align: center;
 	color: #555;
 }
+.weui-label{
+	width: 130px;
+}
+.weui-cell__ft{
+	color: inherit;
+}
 
-
-
+.weui-cell-input,
+.smoking_item,
+.drinking_item{
+	display: none;
+}
 
 
 
