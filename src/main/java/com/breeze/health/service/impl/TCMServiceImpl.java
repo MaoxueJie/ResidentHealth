@@ -106,47 +106,47 @@ public class TCMServiceImpl implements TCMService{
 			final UserTCMPinghe pinghe = new UserTCMPinghe(); 
 			BeanUtils.copyProperties(vo, pinghe);
 			orial = pinghe.getPingheQ1() - pinghe.getPingheQ2() - pinghe.getPingheQ3() - pinghe.getPingheQ4()-pinghe.getPingheQ5()+ pinghe.getPingheQ6()-pinghe.getPingheQ7()-pinghe.getPingheQ8() + 36;
-			pinghe.setPingheScore(((orial-8)/32)*100);
+			pinghe.setPingheScore(((orial-8)*100)/32);
 			
 			final UserTCMQixu qixu = new UserTCMQixu(); 
 			BeanUtils.copyProperties(vo, qixu);
 			orial = qixu.getQixuQ1()+qixu.getQixuQ2()+qixu.getQixuQ3()+qixu.getQixuQ4()+qixu.getQixuQ5()+qixu.getQixuQ6()+qixu.getQixuQ7()+qixu.getQixuQ8();
-			qixu.setQixuScore(((orial-8)/32)*100);
+			qixu.setQixuScore(((orial-8)*100)/32);
 			
 			final UserTCMQiyu qiyu = new UserTCMQiyu(); 
 			BeanUtils.copyProperties(vo, qiyu);
 			orial = qiyu.getQiyuQ1() + qiyu.getQiyuQ2() + qiyu.getQiyuQ3() + qiyu.getQiyuQ4() + qiyu.getQiyuQ5() + qiyu.getQiyuQ6() + qiyu.getQiyuQ7();
-			qiyu.setQiyuScore(((orial-7)/28)*100);
+			qiyu.setQiyuScore(((orial-7)*100)/28);
 			
 			final UserTCMShire shire = new UserTCMShire(); 
 			BeanUtils.copyProperties(vo, shire);
 			orial = shire.getShireQ1() + shire.getShireQ2()+ shire.getShireQ3()+ shire.getShireQ4()+ shire.getShireQ5()+ shire.getShireQ6()+ shire.getShireQ7();
-			shire.setShireScore(((orial-7)/28)*100);
+			shire.setShireScore(((orial-7)*100)/28);
 			
 			final UserTCMTanshi tanshi = new UserTCMTanshi(); 
 			BeanUtils.copyProperties(vo, tanshi);
 			orial =tanshi.getTanshiQ1() + tanshi.getTanshiQ2() + tanshi.getTanshiQ3() + tanshi.getTanshiQ4() + tanshi.getTanshiQ5() + tanshi.getTanshiQ6() + tanshi.getTanshiQ7() + tanshi.getTanshiQ8();
-			tanshi.setTanshiScore(((orial-8)/32)*100);
+			tanshi.setTanshiScore(((orial-8)*100)/32);
 			
 			final UserTCMTebing tebing = new UserTCMTebing(); 
 			BeanUtils.copyProperties(vo, tebing);
 			orial =tebing.getTebingQ1() + tebing.getTebingQ2() + tebing.getTebingQ3() + tebing.getTebingQ4() + tebing.getTebingQ5() + tebing.getTebingQ6() + tebing.getTebingQ7();
-			tebing.setTebingScore(((orial-7)/28)*100);
+			tebing.setTebingScore(((orial-7)*100)/28);
 			
 			final UserTCMXueyu xueyu = new UserTCMXueyu(); 
 			BeanUtils.copyProperties(vo, xueyu);
 			orial = xueyu.getXueyuQ1() + xueyu.getXueyuQ2() + xueyu.getXueyuQ3() + xueyu.getXueyuQ4() + xueyu.getXueyuQ5() + xueyu.getXueyuQ6() + xueyu.getXueyuQ7();
-			xueyu.setXueyuScore(((orial-7)/28)*100);
+			xueyu.setXueyuScore(((orial-7)*100)/28);
 			
 			final UserTCMYangxu yangxu = new UserTCMYangxu(); 
 			BeanUtils.copyProperties(vo, yangxu);
 			orial =yangxu.getYangxuQ1() + yangxu.getYangxuQ2() + yangxu.getYangxuQ3()+ yangxu.getYangxuQ4()+ yangxu.getYangxuQ5()+ yangxu.getYangxuQ6()+ yangxu.getYangxuQ7();
-			yangxu.setYangxuScore(((orial-7)/28)*100);
+			yangxu.setYangxuScore(((orial-7)*100)/28);
 			
 			final UserTCMYinxu yinxu = new UserTCMYinxu(); 
 			BeanUtils.copyProperties(vo, yinxu);
 			orial =yinxu.getYinxuQ1() + yinxu.getYinxuQ2() + yinxu.getYinxuQ3() + yinxu.getYinxuQ4() + yinxu.getYinxuQ5() + yinxu.getYinxuQ6() + yinxu.getYinxuQ7() + yinxu.getYinxuQ8();
-			yinxu.setYinxuScore(((orial-8)/32)*100);
+			yinxu.setYinxuScore(((orial-8)*100)/32);
 			
 			ret = transactionTemplate.execute(new TransactionCallback<Result<Void>>() {
 				@Override
@@ -522,14 +522,14 @@ public class TCMServiceImpl implements TCMService{
 				}
 				if (tcmResult.endsWith(","))
 					tcmResult = tcmResult.substring(0,tcmResult.length()-1);
-				vo.setResultTitle("中医体制测评结果");
+				vo.setResultTitle("中医体质测评结果");
 				vo.setResultMsg(resultMsg + tcmResult);
 				
 				ret.setSuccess(true);
 				ret.setData(vo);
 			}else
 			{
-				ret.setMessage("未获取到中医体制");
+				ret.setMessage("未获取到中医体质");
 			}
 		}catch(Exception e)
 		{
