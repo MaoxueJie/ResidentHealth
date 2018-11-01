@@ -21,24 +21,27 @@
 			</div>
 
 			<div class="weui-cells__title">相关指标</div>
-			<div class="weui-cells weui-cells_form">
+			<div class="weui-cells">
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label class="weui-label">身高(cm)</label></div>
 					<div class="weui-cell__bd">
 						<input class="weui-input" name="height" type="number" placeholder="填写">
 					</div>
+					<div class="weui-cell__ft">cm</div>
 				</div>
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label class="weui-label">体重(kg)</label></div>
 					<div class="weui-cell__bd">
 						<input class="weui-input" name="weight" type="number" placeholder="填写">
 					</div>
+					<div class="weui-cell__ft">kg</div>
 				</div>
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label class="weui-label">BMI(kg/㎡)</label></div>
 					<div class="weui-cell__bd">
-						<input class="weui-input" id="bmi" disabled" value="">
+						<input class="weui-input" id="bmi" disabled value="">
 					</div>
+					<div class="weui-cell__ft">kg/㎡</div>
 				</div>
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label class="weui-label">腹围(cm)</label></div>
@@ -135,7 +138,7 @@
 						<p>从未测过</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="bloodSugar" id=bloodSugar1" value="1">
+						<input type="radio" class="weui-check" name="bloodSugar" id="bloodSugar1" value="1">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
@@ -144,7 +147,7 @@
 						<p>体检测过（正常，过高、过低，不记得了）</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" name="bloodSugar" class="weui-check" id=bloodSugar2" value="2">
+						<input type="radio" name="bloodSugar" class="weui-check" id="bloodSugar2" value="2">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
@@ -153,7 +156,7 @@
 						<p>经常监测</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" name="bloodSugar" class="weui-check" id=bloodSugar3" value="3">
+						<input type="radio" name="bloodSugar" class="weui-check" id="bloodSugar3" value="3">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
@@ -178,7 +181,7 @@
 						<p>从未测过</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="bloodLipid" id=bloodLipid1" value="1">
+						<input type="radio" class="weui-check" name="bloodLipid" id="bloodLipid1" value="1">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
@@ -187,7 +190,7 @@
 						<p>体检测过（正常，过高、过低，不记得了）</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" name="bloodLipid" class="weui-check" id=bloodLipid2" value="2">
+						<input type="radio" name="bloodLipid" class="weui-check" id="bloodLipid2" value="2">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
@@ -196,7 +199,7 @@
 						<p>经常监测</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" name="bloodLipid" class="weui-check" id=bloodLipid3" value="3">
+						<input type="radio" name="bloodLipid" class="weui-check" id="bloodLipid3" value="3">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
@@ -230,6 +233,23 @@
 
 		</form>
 	</div>
+
+<script type="text/javascript">
+	$(function(){
+		$('input[name=weight],input[name=height]').blur(function(){
+			if( $('input[name=weight]').val() != '' && $('input[name=height]').val() != '' ){
+				caclBMI();
+			}
+		})
+
+		function caclBMI(){
+			var weight = $('input[name=weight]').val();
+			var height = $('input[name=height]').val();
+			var bmi = parseInt((weight/height)*1000)/1000;
+			$('#bmi').val( bmi );
+		}
+	})
+</script>
 
 </body>
 </html>
