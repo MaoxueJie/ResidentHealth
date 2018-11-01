@@ -715,52 +715,62 @@ public class UserTCMXueyuExample {
             return (Criteria) this;
         }
 
-        public Criteria andXueyuResultEqualTo(Integer value) {
+        public Criteria andXueyuResultEqualTo(String value) {
             addCriterion("xueyu_result =", value, "xueyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andXueyuResultNotEqualTo(Integer value) {
+        public Criteria andXueyuResultNotEqualTo(String value) {
             addCriterion("xueyu_result <>", value, "xueyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andXueyuResultGreaterThan(Integer value) {
+        public Criteria andXueyuResultGreaterThan(String value) {
             addCriterion("xueyu_result >", value, "xueyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andXueyuResultGreaterThanOrEqualTo(Integer value) {
+        public Criteria andXueyuResultGreaterThanOrEqualTo(String value) {
             addCriterion("xueyu_result >=", value, "xueyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andXueyuResultLessThan(Integer value) {
+        public Criteria andXueyuResultLessThan(String value) {
             addCriterion("xueyu_result <", value, "xueyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andXueyuResultLessThanOrEqualTo(Integer value) {
+        public Criteria andXueyuResultLessThanOrEqualTo(String value) {
             addCriterion("xueyu_result <=", value, "xueyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andXueyuResultIn(List<Integer> values) {
+        public Criteria andXueyuResultLike(String value) {
+            addCriterion("xueyu_result like", value, "xueyuResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andXueyuResultNotLike(String value) {
+            addCriterion("xueyu_result not like", value, "xueyuResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andXueyuResultIn(List<String> values) {
             addCriterion("xueyu_result in", values, "xueyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andXueyuResultNotIn(List<Integer> values) {
+        public Criteria andXueyuResultNotIn(List<String> values) {
             addCriterion("xueyu_result not in", values, "xueyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andXueyuResultBetween(Integer value1, Integer value2) {
+        public Criteria andXueyuResultBetween(String value1, String value2) {
             addCriterion("xueyu_result between", value1, value2, "xueyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andXueyuResultNotBetween(Integer value1, Integer value2) {
+        public Criteria andXueyuResultNotBetween(String value1, String value2) {
             addCriterion("xueyu_result not between", value1, value2, "xueyuResult");
             return (Criteria) this;
         }

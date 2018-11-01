@@ -235,7 +235,7 @@ public class LivingServiceImpl implements LivingService {
 						report += (report.length()==0?"":"\n")+"您已成功戒烟，是其他人的榜样，欢迎您在论坛中分享您成功戒烟的经验和感受，以帮助更多的吸烟者戒烟。";
 					}
 				}
-				vo.setResultTitle("不知道什么");
+				vo.setResultTitle("生活习惯测评结果");
 				vo.setResultMsg(report);
 				ret.setSuccess(true);
 				ret.setData(vo);

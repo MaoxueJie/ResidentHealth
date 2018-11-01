@@ -23,7 +23,7 @@ public class UserTCMYangxu {
 
     private Integer yangxuScore;
 
-    private Integer yangxuResult;
+    private String yangxuResult;
 
     private Date createTime;
 
@@ -109,12 +109,12 @@ public class UserTCMYangxu {
         this.yangxuScore = yangxuScore;
     }
 
-    public Integer getYangxuResult() {
+    public String getYangxuResult() {
         return yangxuResult;
     }
 
-    public void setYangxuResult(Integer yangxuResult) {
-        this.yangxuResult = yangxuResult;
+    public void setYangxuResult(String yangxuResult) {
+        this.yangxuResult = yangxuResult == null ? null : yangxuResult.trim();
     }
 
     public Date getCreateTime() {

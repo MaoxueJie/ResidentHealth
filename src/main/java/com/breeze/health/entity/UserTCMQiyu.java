@@ -23,7 +23,7 @@ public class UserTCMQiyu {
 
     private Integer qiyuScore;
 
-    private Integer qiyuResult;
+    private String qiyuResult;
 
     private Date createTime;
 
@@ -109,12 +109,12 @@ public class UserTCMQiyu {
         this.qiyuScore = qiyuScore;
     }
 
-    public Integer getQiyuResult() {
+    public String getQiyuResult() {
         return qiyuResult;
     }
 
-    public void setQiyuResult(Integer qiyuResult) {
-        this.qiyuResult = qiyuResult;
+    public void setQiyuResult(String qiyuResult) {
+        this.qiyuResult = qiyuResult == null ? null : qiyuResult.trim();
     }
 
     public Date getCreateTime() {

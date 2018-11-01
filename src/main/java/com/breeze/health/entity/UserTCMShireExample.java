@@ -715,52 +715,62 @@ public class UserTCMShireExample {
             return (Criteria) this;
         }
 
-        public Criteria andShireResultEqualTo(Integer value) {
+        public Criteria andShireResultEqualTo(String value) {
             addCriterion("shire_result =", value, "shireResult");
             return (Criteria) this;
         }
 
-        public Criteria andShireResultNotEqualTo(Integer value) {
+        public Criteria andShireResultNotEqualTo(String value) {
             addCriterion("shire_result <>", value, "shireResult");
             return (Criteria) this;
         }
 
-        public Criteria andShireResultGreaterThan(Integer value) {
+        public Criteria andShireResultGreaterThan(String value) {
             addCriterion("shire_result >", value, "shireResult");
             return (Criteria) this;
         }
 
-        public Criteria andShireResultGreaterThanOrEqualTo(Integer value) {
+        public Criteria andShireResultGreaterThanOrEqualTo(String value) {
             addCriterion("shire_result >=", value, "shireResult");
             return (Criteria) this;
         }
 
-        public Criteria andShireResultLessThan(Integer value) {
+        public Criteria andShireResultLessThan(String value) {
             addCriterion("shire_result <", value, "shireResult");
             return (Criteria) this;
         }
 
-        public Criteria andShireResultLessThanOrEqualTo(Integer value) {
+        public Criteria andShireResultLessThanOrEqualTo(String value) {
             addCriterion("shire_result <=", value, "shireResult");
             return (Criteria) this;
         }
 
-        public Criteria andShireResultIn(List<Integer> values) {
+        public Criteria andShireResultLike(String value) {
+            addCriterion("shire_result like", value, "shireResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andShireResultNotLike(String value) {
+            addCriterion("shire_result not like", value, "shireResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andShireResultIn(List<String> values) {
             addCriterion("shire_result in", values, "shireResult");
             return (Criteria) this;
         }
 
-        public Criteria andShireResultNotIn(List<Integer> values) {
+        public Criteria andShireResultNotIn(List<String> values) {
             addCriterion("shire_result not in", values, "shireResult");
             return (Criteria) this;
         }
 
-        public Criteria andShireResultBetween(Integer value1, Integer value2) {
+        public Criteria andShireResultBetween(String value1, String value2) {
             addCriterion("shire_result between", value1, value2, "shireResult");
             return (Criteria) this;
         }
 
-        public Criteria andShireResultNotBetween(Integer value1, Integer value2) {
+        public Criteria andShireResultNotBetween(String value1, String value2) {
             addCriterion("shire_result not between", value1, value2, "shireResult");
             return (Criteria) this;
         }

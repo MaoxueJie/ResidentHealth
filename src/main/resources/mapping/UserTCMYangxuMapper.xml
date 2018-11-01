@@ -12,7 +12,7 @@
     <result column="yangxu_q6" property="yangxuQ6" jdbcType="INTEGER" />
     <result column="yangxu_q7" property="yangxuQ7" jdbcType="INTEGER" />
     <result column="yangxu_score" property="yangxuScore" jdbcType="INTEGER" />
-    <result column="yangxu_result" property="yangxuResult" jdbcType="INTEGER" />
+    <result column="yangxu_result" property="yangxuResult" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -82,7 +82,7 @@
     values (#{tcmId,jdbcType=BIGINT}, #{yangxuQ1,jdbcType=INTEGER}, #{yangxuQ2,jdbcType=INTEGER}, 
       #{yangxuQ3,jdbcType=INTEGER}, #{yangxuQ4,jdbcType=INTEGER}, #{yangxuQ5,jdbcType=INTEGER}, 
       #{yangxuQ6,jdbcType=INTEGER}, #{yangxuQ7,jdbcType=INTEGER}, #{yangxuScore,jdbcType=INTEGER}, 
-      #{yangxuResult,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      #{yangxuResult,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserTCMYangxu" useGeneratedKeys="true" keyProperty="id" >
@@ -154,7 +154,7 @@
         #{yangxuScore,jdbcType=INTEGER},
       </if>
       <if test="yangxuResult != null" >
-        #{yangxuResult,jdbcType=INTEGER},
+        #{yangxuResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -201,7 +201,7 @@
         yangxu_score = #{yangxuScore,jdbcType=INTEGER},
       </if>
       <if test="yangxuResult != null" >
-        yangxu_result = #{yangxuResult,jdbcType=INTEGER},
+        yangxu_result = #{yangxuResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -223,7 +223,7 @@
       yangxu_q6 = #{yangxuQ6,jdbcType=INTEGER},
       yangxu_q7 = #{yangxuQ7,jdbcType=INTEGER},
       yangxu_score = #{yangxuScore,jdbcType=INTEGER},
-      yangxu_result = #{yangxuResult,jdbcType=INTEGER},
+      yangxu_result = #{yangxuResult,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}

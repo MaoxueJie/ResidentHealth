@@ -715,52 +715,62 @@ public class UserTCMQiyuExample {
             return (Criteria) this;
         }
 
-        public Criteria andQiyuResultEqualTo(Integer value) {
+        public Criteria andQiyuResultEqualTo(String value) {
             addCriterion("qiyu_result =", value, "qiyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQiyuResultNotEqualTo(Integer value) {
+        public Criteria andQiyuResultNotEqualTo(String value) {
             addCriterion("qiyu_result <>", value, "qiyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQiyuResultGreaterThan(Integer value) {
+        public Criteria andQiyuResultGreaterThan(String value) {
             addCriterion("qiyu_result >", value, "qiyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQiyuResultGreaterThanOrEqualTo(Integer value) {
+        public Criteria andQiyuResultGreaterThanOrEqualTo(String value) {
             addCriterion("qiyu_result >=", value, "qiyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQiyuResultLessThan(Integer value) {
+        public Criteria andQiyuResultLessThan(String value) {
             addCriterion("qiyu_result <", value, "qiyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQiyuResultLessThanOrEqualTo(Integer value) {
+        public Criteria andQiyuResultLessThanOrEqualTo(String value) {
             addCriterion("qiyu_result <=", value, "qiyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQiyuResultIn(List<Integer> values) {
+        public Criteria andQiyuResultLike(String value) {
+            addCriterion("qiyu_result like", value, "qiyuResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andQiyuResultNotLike(String value) {
+            addCriterion("qiyu_result not like", value, "qiyuResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andQiyuResultIn(List<String> values) {
             addCriterion("qiyu_result in", values, "qiyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQiyuResultNotIn(List<Integer> values) {
+        public Criteria andQiyuResultNotIn(List<String> values) {
             addCriterion("qiyu_result not in", values, "qiyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQiyuResultBetween(Integer value1, Integer value2) {
+        public Criteria andQiyuResultBetween(String value1, String value2) {
             addCriterion("qiyu_result between", value1, value2, "qiyuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQiyuResultNotBetween(Integer value1, Integer value2) {
+        public Criteria andQiyuResultNotBetween(String value1, String value2) {
             addCriterion("qiyu_result not between", value1, value2, "qiyuResult");
             return (Criteria) this;
         }

@@ -715,62 +715,52 @@ public class UserTCMQixuExample {
             return (Criteria) this;
         }
 
-        public Criteria andQixuScoreEqualTo(String value) {
+        public Criteria andQixuScoreEqualTo(Integer value) {
             addCriterion("qixu_score =", value, "qixuScore");
             return (Criteria) this;
         }
 
-        public Criteria andQixuScoreNotEqualTo(String value) {
+        public Criteria andQixuScoreNotEqualTo(Integer value) {
             addCriterion("qixu_score <>", value, "qixuScore");
             return (Criteria) this;
         }
 
-        public Criteria andQixuScoreGreaterThan(String value) {
+        public Criteria andQixuScoreGreaterThan(Integer value) {
             addCriterion("qixu_score >", value, "qixuScore");
             return (Criteria) this;
         }
 
-        public Criteria andQixuScoreGreaterThanOrEqualTo(String value) {
+        public Criteria andQixuScoreGreaterThanOrEqualTo(Integer value) {
             addCriterion("qixu_score >=", value, "qixuScore");
             return (Criteria) this;
         }
 
-        public Criteria andQixuScoreLessThan(String value) {
+        public Criteria andQixuScoreLessThan(Integer value) {
             addCriterion("qixu_score <", value, "qixuScore");
             return (Criteria) this;
         }
 
-        public Criteria andQixuScoreLessThanOrEqualTo(String value) {
+        public Criteria andQixuScoreLessThanOrEqualTo(Integer value) {
             addCriterion("qixu_score <=", value, "qixuScore");
             return (Criteria) this;
         }
 
-        public Criteria andQixuScoreLike(String value) {
-            addCriterion("qixu_score like", value, "qixuScore");
-            return (Criteria) this;
-        }
-
-        public Criteria andQixuScoreNotLike(String value) {
-            addCriterion("qixu_score not like", value, "qixuScore");
-            return (Criteria) this;
-        }
-
-        public Criteria andQixuScoreIn(List<String> values) {
+        public Criteria andQixuScoreIn(List<Integer> values) {
             addCriterion("qixu_score in", values, "qixuScore");
             return (Criteria) this;
         }
 
-        public Criteria andQixuScoreNotIn(List<String> values) {
+        public Criteria andQixuScoreNotIn(List<Integer> values) {
             addCriterion("qixu_score not in", values, "qixuScore");
             return (Criteria) this;
         }
 
-        public Criteria andQixuScoreBetween(String value1, String value2) {
+        public Criteria andQixuScoreBetween(Integer value1, Integer value2) {
             addCriterion("qixu_score between", value1, value2, "qixuScore");
             return (Criteria) this;
         }
 
-        public Criteria andQixuScoreNotBetween(String value1, String value2) {
+        public Criteria andQixuScoreNotBetween(Integer value1, Integer value2) {
             addCriterion("qixu_score not between", value1, value2, "qixuScore");
             return (Criteria) this;
         }
@@ -785,52 +775,62 @@ public class UserTCMQixuExample {
             return (Criteria) this;
         }
 
-        public Criteria andQixuResultEqualTo(Integer value) {
+        public Criteria andQixuResultEqualTo(String value) {
             addCriterion("qixu_result =", value, "qixuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQixuResultNotEqualTo(Integer value) {
+        public Criteria andQixuResultNotEqualTo(String value) {
             addCriterion("qixu_result <>", value, "qixuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQixuResultGreaterThan(Integer value) {
+        public Criteria andQixuResultGreaterThan(String value) {
             addCriterion("qixu_result >", value, "qixuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQixuResultGreaterThanOrEqualTo(Integer value) {
+        public Criteria andQixuResultGreaterThanOrEqualTo(String value) {
             addCriterion("qixu_result >=", value, "qixuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQixuResultLessThan(Integer value) {
+        public Criteria andQixuResultLessThan(String value) {
             addCriterion("qixu_result <", value, "qixuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQixuResultLessThanOrEqualTo(Integer value) {
+        public Criteria andQixuResultLessThanOrEqualTo(String value) {
             addCriterion("qixu_result <=", value, "qixuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQixuResultIn(List<Integer> values) {
+        public Criteria andQixuResultLike(String value) {
+            addCriterion("qixu_result like", value, "qixuResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andQixuResultNotLike(String value) {
+            addCriterion("qixu_result not like", value, "qixuResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andQixuResultIn(List<String> values) {
             addCriterion("qixu_result in", values, "qixuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQixuResultNotIn(List<Integer> values) {
+        public Criteria andQixuResultNotIn(List<String> values) {
             addCriterion("qixu_result not in", values, "qixuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQixuResultBetween(Integer value1, Integer value2) {
+        public Criteria andQixuResultBetween(String value1, String value2) {
             addCriterion("qixu_result between", value1, value2, "qixuResult");
             return (Criteria) this;
         }
 
-        public Criteria andQixuResultNotBetween(Integer value1, Integer value2) {
+        public Criteria andQixuResultNotBetween(String value1, String value2) {
             addCriterion("qixu_result not between", value1, value2, "qixuResult");
             return (Criteria) this;
         }

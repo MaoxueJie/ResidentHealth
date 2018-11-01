@@ -25,7 +25,7 @@ public class UserTCMYinxu {
 
     private Integer yinxuScore;
 
-    private Integer yinxuResult;
+    private String yinxuResult;
 
     private Date createTime;
 
@@ -119,12 +119,12 @@ public class UserTCMYinxu {
         this.yinxuScore = yinxuScore;
     }
 
-    public Integer getYinxuResult() {
+    public String getYinxuResult() {
         return yinxuResult;
     }
 
-    public void setYinxuResult(Integer yinxuResult) {
-        this.yinxuResult = yinxuResult;
+    public void setYinxuResult(String yinxuResult) {
+        this.yinxuResult = yinxuResult == null ? null : yinxuResult.trim();
     }
 
     public Date getCreateTime() {

@@ -139,7 +139,7 @@ public class SickServiceImpl implements SickService{
 				{
 					sickReport += ("".equals(sickReport)?"":"\n") + "您有骨质疏松症，除了遵医嘱用药外，还要注意适当运动、多晒太阳，但在活动过程中应注意安全，避免跌倒等情况的发生。您可关注骨质疏松症的日常护理。";
 				}
-				vo.setResultTitle("不知道事什么");
+				vo.setResultTitle("健康状况测评结果");
 				vo.setResultMsg(sickReport);
 				
 				ret.setSuccess(true);

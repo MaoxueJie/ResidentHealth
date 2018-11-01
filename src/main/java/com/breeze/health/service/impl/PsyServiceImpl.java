@@ -374,7 +374,7 @@ public class PsyServiceImpl implements PsyService{
 						psychologicalReport = "\n很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，经初步测试，结果提示您可能存在重度抑郁，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。";
 					}
 				}
-				vo.setResultTitle("不知道是什么");
+				vo.setResultTitle("情绪认知测评结果");
 				vo.setResultMsg(psychologicalReport);
 				ret.setSuccess(true);
 				ret.setData(vo);

@@ -23,8 +23,10 @@ public class UserTCMVo {
     private Integer pingheQ7;
 
     private Integer pingheQ8;
+    
+    private Integer pingheScore;
 
-    private Integer pingheResult;
+    private String pingheResult;
     
     
     private Integer qiyuQ1;
@@ -40,8 +42,10 @@ public class UserTCMVo {
     private Integer qiyuQ6;
 
     private Integer qiyuQ7;
+    
+    private Integer qixuScore;
 
-    private Integer qiyuResult;
+    private String qiyuResult;
     
     
     
@@ -60,8 +64,10 @@ public class UserTCMVo {
     private Integer qixuQ7;
 
     private Integer qixuQ8;
+    
+    private Integer qiyuScore;
 
-    private Integer qixuResult;
+    private String qixuResult;
     
 
     
@@ -78,8 +84,10 @@ public class UserTCMVo {
     private Integer shireQ6;
 
     private Integer shireQ7;
+    
+    private Integer shireScore;
 
-    private Integer shireResult;
+    private String shireResult;
     
     
     private Integer tanshiQ1;
@@ -97,8 +105,10 @@ public class UserTCMVo {
     private Integer tanshiQ7;
 
     private Integer tanshiQ8;
+    
+    private Integer tanshiScore;
 
-    private Integer tanshiResult;
+    private String tanshiResult;
     
     
     private Integer tebingQ1;
@@ -114,8 +124,10 @@ public class UserTCMVo {
     private Integer tebingQ6;
 
     private Integer tebingQ7;
+    
+    private Integer tebingScore;
 
-    private Integer tebingResult;
+    private String tebingResult;
     
     
     private Integer xueyuQ1;
@@ -131,8 +143,10 @@ public class UserTCMVo {
     private Integer xueyuQ6;
 
     private Integer xueyuQ7;
+    
+    private Integer xueyuScore;
 
-    private Integer xueyuResult;
+    private String xueyuResult;
     
     
     private Integer yangxuQ1;
@@ -148,8 +162,10 @@ public class UserTCMVo {
     private Integer yangxuQ6;
 
     private Integer yangxuQ7;
+    
+    private Integer yangxuScore;
 
-    private Integer yangxuResult;
+    private String yangxuResult;
     
     
     private Integer yinxuQ1;
@@ -167,8 +183,10 @@ public class UserTCMVo {
     private Integer yinxuQ7;
 
     private Integer yinxuQ8;
+    
+    private Integer yinxuScore;
 
-    private Integer yinxuResult;
+    private String yinxuResult;
     
     private String resultTitle;
     
@@ -258,13 +276,7 @@ public class UserTCMVo {
 		this.pingheQ8 = pingheQ8;
 	}
 
-	public Integer getPingheResult() {
-		return pingheResult;
-	}
-
-	public void setPingheResult(Integer pingheResult) {
-		this.pingheResult = pingheResult;
-	}
+	
 
 	public Integer getQiyuQ1() {
 		return qiyuQ1;
@@ -322,13 +334,7 @@ public class UserTCMVo {
 		this.qiyuQ7 = qiyuQ7;
 	}
 
-	public Integer getQiyuResult() {
-		return qiyuResult;
-	}
-
-	public void setQiyuResult(Integer qiyuResult) {
-		this.qiyuResult = qiyuResult;
-	}
+	
 
 	public Integer getQixuQ1() {
 		return qixuQ1;
@@ -394,13 +400,7 @@ public class UserTCMVo {
 		this.qixuQ8 = qixuQ8;
 	}
 
-	public Integer getQixuResult() {
-		return qixuResult;
-	}
-
-	public void setQixuResult(Integer qixuResult) {
-		this.qixuResult = qixuResult;
-	}
+	
 
 	public Integer getShireQ1() {
 		return shireQ1;
@@ -458,13 +458,7 @@ public class UserTCMVo {
 		this.shireQ7 = shireQ7;
 	}
 
-	public Integer getShireResult() {
-		return shireResult;
-	}
-
-	public void setShireResult(Integer shireResult) {
-		this.shireResult = shireResult;
-	}
+	
 
 	public Integer getTanshiQ1() {
 		return tanshiQ1;
@@ -530,13 +524,7 @@ public class UserTCMVo {
 		this.tanshiQ8 = tanshiQ8;
 	}
 
-	public Integer getTanshiResult() {
-		return tanshiResult;
-	}
-
-	public void setTanshiResult(Integer tanshiResult) {
-		this.tanshiResult = tanshiResult;
-	}
+	
 
 	public Integer getTebingQ1() {
 		return tebingQ1;
@@ -594,13 +582,7 @@ public class UserTCMVo {
 		this.tebingQ7 = tebingQ7;
 	}
 
-	public Integer getTebingResult() {
-		return tebingResult;
-	}
 
-	public void setTebingResult(Integer tebingResult) {
-		this.tebingResult = tebingResult;
-	}
 
 	public Integer getXueyuQ1() {
 		return xueyuQ1;
@@ -658,13 +640,7 @@ public class UserTCMVo {
 		this.xueyuQ7 = xueyuQ7;
 	}
 
-	public Integer getXueyuResult() {
-		return xueyuResult;
-	}
-
-	public void setXueyuResult(Integer xueyuResult) {
-		this.xueyuResult = xueyuResult;
-	}
+	
 
 	public Integer getYangxuQ1() {
 		return yangxuQ1;
@@ -722,13 +698,7 @@ public class UserTCMVo {
 		this.yangxuQ7 = yangxuQ7;
 	}
 
-	public Integer getYangxuResult() {
-		return yangxuResult;
-	}
-
-	public void setYangxuResult(Integer yangxuResult) {
-		this.yangxuResult = yangxuResult;
-	}
+	
 
 	public Integer getYinxuQ1() {
 		return yinxuQ1;
@@ -794,13 +764,6 @@ public class UserTCMVo {
 		this.yinxuQ8 = yinxuQ8;
 	}
 
-	public Integer getYinxuResult() {
-		return yinxuResult;
-	}
-
-	public void setYinxuResult(Integer yinxuResult) {
-		this.yinxuResult = yinxuResult;
-	}
 
 	public Date getCreateTime() {
 		return createTime;
@@ -832,6 +795,150 @@ public class UserTCMVo {
 
 	public void setResultMsg(String resultMsg) {
 		this.resultMsg = resultMsg;
+	}
+
+	public String getPingheResult() {
+		return pingheResult;
+	}
+
+	public void setPingheResult(String pingheResult) {
+		this.pingheResult = pingheResult;
+	}
+
+	public String getQiyuResult() {
+		return qiyuResult;
+	}
+
+	public void setQiyuResult(String qiyuResult) {
+		this.qiyuResult = qiyuResult;
+	}
+
+	public String getQixuResult() {
+		return qixuResult;
+	}
+
+	public void setQixuResult(String qixuResult) {
+		this.qixuResult = qixuResult;
+	}
+
+	public String getShireResult() {
+		return shireResult;
+	}
+
+	public void setShireResult(String shireResult) {
+		this.shireResult = shireResult;
+	}
+
+	public String getTanshiResult() {
+		return tanshiResult;
+	}
+
+	public void setTanshiResult(String tanshiResult) {
+		this.tanshiResult = tanshiResult;
+	}
+
+	public String getTebingResult() {
+		return tebingResult;
+	}
+
+	public void setTebingResult(String tebingResult) {
+		this.tebingResult = tebingResult;
+	}
+
+	public String getXueyuResult() {
+		return xueyuResult;
+	}
+
+	public void setXueyuResult(String xueyuResult) {
+		this.xueyuResult = xueyuResult;
+	}
+
+	public String getYangxuResult() {
+		return yangxuResult;
+	}
+
+	public void setYangxuResult(String yangxuResult) {
+		this.yangxuResult = yangxuResult;
+	}
+
+	public String getYinxuResult() {
+		return yinxuResult;
+	}
+
+	public void setYinxuResult(String yinxuResult) {
+		this.yinxuResult = yinxuResult;
+	}
+
+	public Integer getPingheScore() {
+		return pingheScore;
+	}
+
+	public void setPingheScore(Integer pingheScore) {
+		this.pingheScore = pingheScore;
+	}
+
+	public Integer getQixuScore() {
+		return qixuScore;
+	}
+
+	public void setQixuScore(Integer qixuScore) {
+		this.qixuScore = qixuScore;
+	}
+
+	public Integer getQiyuScore() {
+		return qiyuScore;
+	}
+
+	public void setQiyuScore(Integer qiyuScore) {
+		this.qiyuScore = qiyuScore;
+	}
+
+	public Integer getShireScore() {
+		return shireScore;
+	}
+
+	public void setShireScore(Integer shireScore) {
+		this.shireScore = shireScore;
+	}
+
+	public Integer getTanshiScore() {
+		return tanshiScore;
+	}
+
+	public void setTanshiScore(Integer tanshiScore) {
+		this.tanshiScore = tanshiScore;
+	}
+
+	public Integer getTebingScore() {
+		return tebingScore;
+	}
+
+	public void setTebingScore(Integer tebingScore) {
+		this.tebingScore = tebingScore;
+	}
+
+	public Integer getXueyuScore() {
+		return xueyuScore;
+	}
+
+	public void setXueyuScore(Integer xueyuScore) {
+		this.xueyuScore = xueyuScore;
+	}
+
+	public Integer getYangxuScore() {
+		return yangxuScore;
+	}
+
+	public void setYangxuScore(Integer yangxuScore) {
+		this.yangxuScore = yangxuScore;
+	}
+
+	public Integer getYinxuScore() {
+		return yinxuScore;
+	}
+
+	public void setYinxuScore(Integer yinxuScore) {
+		this.yinxuScore = yinxuScore;
 	}
     
 	

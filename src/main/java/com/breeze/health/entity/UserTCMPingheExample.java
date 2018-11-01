@@ -775,52 +775,62 @@ public class UserTCMPingheExample {
             return (Criteria) this;
         }
 
-        public Criteria andPingheResultEqualTo(Integer value) {
+        public Criteria andPingheResultEqualTo(String value) {
             addCriterion("pinghe_result =", value, "pingheResult");
             return (Criteria) this;
         }
 
-        public Criteria andPingheResultNotEqualTo(Integer value) {
+        public Criteria andPingheResultNotEqualTo(String value) {
             addCriterion("pinghe_result <>", value, "pingheResult");
             return (Criteria) this;
         }
 
-        public Criteria andPingheResultGreaterThan(Integer value) {
+        public Criteria andPingheResultGreaterThan(String value) {
             addCriterion("pinghe_result >", value, "pingheResult");
             return (Criteria) this;
         }
 
-        public Criteria andPingheResultGreaterThanOrEqualTo(Integer value) {
+        public Criteria andPingheResultGreaterThanOrEqualTo(String value) {
             addCriterion("pinghe_result >=", value, "pingheResult");
             return (Criteria) this;
         }
 
-        public Criteria andPingheResultLessThan(Integer value) {
+        public Criteria andPingheResultLessThan(String value) {
             addCriterion("pinghe_result <", value, "pingheResult");
             return (Criteria) this;
         }
 
-        public Criteria andPingheResultLessThanOrEqualTo(Integer value) {
+        public Criteria andPingheResultLessThanOrEqualTo(String value) {
             addCriterion("pinghe_result <=", value, "pingheResult");
             return (Criteria) this;
         }
 
-        public Criteria andPingheResultIn(List<Integer> values) {
+        public Criteria andPingheResultLike(String value) {
+            addCriterion("pinghe_result like", value, "pingheResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andPingheResultNotLike(String value) {
+            addCriterion("pinghe_result not like", value, "pingheResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andPingheResultIn(List<String> values) {
             addCriterion("pinghe_result in", values, "pingheResult");
             return (Criteria) this;
         }
 
-        public Criteria andPingheResultNotIn(List<Integer> values) {
+        public Criteria andPingheResultNotIn(List<String> values) {
             addCriterion("pinghe_result not in", values, "pingheResult");
             return (Criteria) this;
         }
 
-        public Criteria andPingheResultBetween(Integer value1, Integer value2) {
+        public Criteria andPingheResultBetween(String value1, String value2) {
             addCriterion("pinghe_result between", value1, value2, "pingheResult");
             return (Criteria) this;
         }
 
-        public Criteria andPingheResultNotBetween(Integer value1, Integer value2) {
+        public Criteria andPingheResultNotBetween(String value1, String value2) {
             addCriterion("pinghe_result not between", value1, value2, "pingheResult");
             return (Criteria) this;
         }

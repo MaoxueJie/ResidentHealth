@@ -12,7 +12,7 @@
     <result column="qiyu_q6" property="qiyuQ6" jdbcType="INTEGER" />
     <result column="qiyu_q7" property="qiyuQ7" jdbcType="INTEGER" />
     <result column="qiyu_score" property="qiyuScore" jdbcType="INTEGER" />
-    <result column="qiyu_result" property="qiyuResult" jdbcType="INTEGER" />
+    <result column="qiyu_result" property="qiyuResult" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -82,7 +82,7 @@
     values (#{tcmId,jdbcType=BIGINT}, #{qiyuQ1,jdbcType=INTEGER}, #{qiyuQ2,jdbcType=INTEGER}, 
       #{qiyuQ3,jdbcType=INTEGER}, #{qiyuQ4,jdbcType=INTEGER}, #{qiyuQ5,jdbcType=INTEGER}, 
       #{qiyuQ6,jdbcType=INTEGER}, #{qiyuQ7,jdbcType=INTEGER}, #{qiyuScore,jdbcType=INTEGER}, 
-      #{qiyuResult,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      #{qiyuResult,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserTCMQiyu" useGeneratedKeys="true" keyProperty="id" >
@@ -154,7 +154,7 @@
         #{qiyuScore,jdbcType=INTEGER},
       </if>
       <if test="qiyuResult != null" >
-        #{qiyuResult,jdbcType=INTEGER},
+        #{qiyuResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -201,7 +201,7 @@
         qiyu_score = #{qiyuScore,jdbcType=INTEGER},
       </if>
       <if test="qiyuResult != null" >
-        qiyu_result = #{qiyuResult,jdbcType=INTEGER},
+        qiyu_result = #{qiyuResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -223,7 +223,7 @@
       qiyu_q6 = #{qiyuQ6,jdbcType=INTEGER},
       qiyu_q7 = #{qiyuQ7,jdbcType=INTEGER},
       qiyu_score = #{qiyuScore,jdbcType=INTEGER},
-      qiyu_result = #{qiyuResult,jdbcType=INTEGER},
+      qiyu_result = #{qiyuResult,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}

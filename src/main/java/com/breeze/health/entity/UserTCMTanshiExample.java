@@ -775,52 +775,62 @@ public class UserTCMTanshiExample {
             return (Criteria) this;
         }
 
-        public Criteria andTanshiResultEqualTo(Integer value) {
+        public Criteria andTanshiResultEqualTo(String value) {
             addCriterion("tanshi_result =", value, "tanshiResult");
             return (Criteria) this;
         }
 
-        public Criteria andTanshiResultNotEqualTo(Integer value) {
+        public Criteria andTanshiResultNotEqualTo(String value) {
             addCriterion("tanshi_result <>", value, "tanshiResult");
             return (Criteria) this;
         }
 
-        public Criteria andTanshiResultGreaterThan(Integer value) {
+        public Criteria andTanshiResultGreaterThan(String value) {
             addCriterion("tanshi_result >", value, "tanshiResult");
             return (Criteria) this;
         }
 
-        public Criteria andTanshiResultGreaterThanOrEqualTo(Integer value) {
+        public Criteria andTanshiResultGreaterThanOrEqualTo(String value) {
             addCriterion("tanshi_result >=", value, "tanshiResult");
             return (Criteria) this;
         }
 
-        public Criteria andTanshiResultLessThan(Integer value) {
+        public Criteria andTanshiResultLessThan(String value) {
             addCriterion("tanshi_result <", value, "tanshiResult");
             return (Criteria) this;
         }
 
-        public Criteria andTanshiResultLessThanOrEqualTo(Integer value) {
+        public Criteria andTanshiResultLessThanOrEqualTo(String value) {
             addCriterion("tanshi_result <=", value, "tanshiResult");
             return (Criteria) this;
         }
 
-        public Criteria andTanshiResultIn(List<Integer> values) {
+        public Criteria andTanshiResultLike(String value) {
+            addCriterion("tanshi_result like", value, "tanshiResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andTanshiResultNotLike(String value) {
+            addCriterion("tanshi_result not like", value, "tanshiResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andTanshiResultIn(List<String> values) {
             addCriterion("tanshi_result in", values, "tanshiResult");
             return (Criteria) this;
         }
 
-        public Criteria andTanshiResultNotIn(List<Integer> values) {
+        public Criteria andTanshiResultNotIn(List<String> values) {
             addCriterion("tanshi_result not in", values, "tanshiResult");
             return (Criteria) this;
         }
 
-        public Criteria andTanshiResultBetween(Integer value1, Integer value2) {
+        public Criteria andTanshiResultBetween(String value1, String value2) {
             addCriterion("tanshi_result between", value1, value2, "tanshiResult");
             return (Criteria) this;
         }
 
-        public Criteria andTanshiResultNotBetween(Integer value1, Integer value2) {
+        public Criteria andTanshiResultNotBetween(String value1, String value2) {
             addCriterion("tanshi_result not between", value1, value2, "tanshiResult");
             return (Criteria) this;
         }

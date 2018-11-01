@@ -13,7 +13,7 @@
     <result column="yinxu_q7" property="yinxuQ7" jdbcType="INTEGER" />
     <result column="yinxu_q8" property="yinxuQ8" jdbcType="INTEGER" />
     <result column="yinxu_score" property="yinxuScore" jdbcType="INTEGER" />
-    <result column="yinxu_result" property="yinxuResult" jdbcType="INTEGER" />
+    <result column="yinxu_result" property="yinxuResult" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -83,7 +83,7 @@
     values (#{tcmId,jdbcType=BIGINT}, #{yinxuQ1,jdbcType=INTEGER}, #{yinxuQ2,jdbcType=INTEGER}, 
       #{yinxuQ3,jdbcType=INTEGER}, #{yinxuQ4,jdbcType=INTEGER}, #{yinxuQ5,jdbcType=INTEGER}, 
       #{yinxuQ6,jdbcType=INTEGER}, #{yinxuQ7,jdbcType=INTEGER}, #{yinxuQ8,jdbcType=INTEGER}, 
-      #{yinxuScore,jdbcType=INTEGER}, #{yinxuResult,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{yinxuScore,jdbcType=INTEGER}, #{yinxuResult,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserTCMYinxu" useGeneratedKeys="true" keyProperty="id" >
@@ -161,7 +161,7 @@
         #{yinxuScore,jdbcType=INTEGER},
       </if>
       <if test="yinxuResult != null" >
-        #{yinxuResult,jdbcType=INTEGER},
+        #{yinxuResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -211,7 +211,7 @@
         yinxu_score = #{yinxuScore,jdbcType=INTEGER},
       </if>
       <if test="yinxuResult != null" >
-        yinxu_result = #{yinxuResult,jdbcType=INTEGER},
+        yinxu_result = #{yinxuResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -234,7 +234,7 @@
       yinxu_q7 = #{yinxuQ7,jdbcType=INTEGER},
       yinxu_q8 = #{yinxuQ8,jdbcType=INTEGER},
       yinxu_score = #{yinxuScore,jdbcType=INTEGER},
-      yinxu_result = #{yinxuResult,jdbcType=INTEGER},
+      yinxu_result = #{yinxuResult,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}

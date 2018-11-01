@@ -13,7 +13,7 @@
     <result column="tanshi_q7" property="tanshiQ7" jdbcType="INTEGER" />
     <result column="tanshi_q8" property="tanshiQ8" jdbcType="INTEGER" />
     <result column="tanshi_score" property="tanshiScore" jdbcType="INTEGER" />
-    <result column="tanshi_result" property="tanshiResult" jdbcType="INTEGER" />
+    <result column="tanshi_result" property="tanshiResult" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -83,7 +83,7 @@
     values (#{tcmId,jdbcType=BIGINT}, #{tanshiQ1,jdbcType=INTEGER}, #{tanshiQ2,jdbcType=INTEGER}, 
       #{tanshiQ3,jdbcType=INTEGER}, #{tanshiQ4,jdbcType=INTEGER}, #{tanshiQ5,jdbcType=INTEGER}, 
       #{tanshiQ6,jdbcType=INTEGER}, #{tanshiQ7,jdbcType=INTEGER}, #{tanshiQ8,jdbcType=INTEGER}, 
-      #{tanshiScore,jdbcType=INTEGER}, #{tanshiResult,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{tanshiScore,jdbcType=INTEGER}, #{tanshiResult,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserTCMTanshi" useGeneratedKeys="true" keyProperty="id" >
@@ -161,7 +161,7 @@
         #{tanshiScore,jdbcType=INTEGER},
       </if>
       <if test="tanshiResult != null" >
-        #{tanshiResult,jdbcType=INTEGER},
+        #{tanshiResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -211,7 +211,7 @@
         tanshi_score = #{tanshiScore,jdbcType=INTEGER},
       </if>
       <if test="tanshiResult != null" >
-        tanshi_result = #{tanshiResult,jdbcType=INTEGER},
+        tanshi_result = #{tanshiResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -234,7 +234,7 @@
       tanshi_q7 = #{tanshiQ7,jdbcType=INTEGER},
       tanshi_q8 = #{tanshiQ8,jdbcType=INTEGER},
       tanshi_score = #{tanshiScore,jdbcType=INTEGER},
-      tanshi_result = #{tanshiResult,jdbcType=INTEGER},
+      tanshi_result = #{tanshiResult,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}

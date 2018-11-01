@@ -23,7 +23,7 @@ public class UserTCMTebing {
 
     private Integer tebingScore;
 
-    private Integer tebingResult;
+    private String tebingResult;
 
     private Date createTime;
 
@@ -109,12 +109,12 @@ public class UserTCMTebing {
         this.tebingScore = tebingScore;
     }
 
-    public Integer getTebingResult() {
+    public String getTebingResult() {
         return tebingResult;
     }
 
-    public void setTebingResult(Integer tebingResult) {
-        this.tebingResult = tebingResult;
+    public void setTebingResult(String tebingResult) {
+        this.tebingResult = tebingResult == null ? null : tebingResult.trim();
     }
 
     public Date getCreateTime() {

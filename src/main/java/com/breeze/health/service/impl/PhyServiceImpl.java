@@ -75,7 +75,7 @@ public class PhyServiceImpl implements PhyService{
 					report += ("".equals(report)?"":"\n") + "您的体重属于超重，建议您适当控制饮食、增加运动量，您可以采取饮食日记的形式记录3天的饮食情况，同时上传您的运动记录（或每天运动的步数），我们将根据您的饮食与运动习惯，给出更有针对性的建议。";
 					report += "\n能量摄入低于能量消耗（运动消耗）是减轻体重的基础，您可以利用自己熟悉的软件等工具的帮助，实现减重的目标。但一定要注意营养的均衡，尤其是要保证蛋白质及维生素的摄入。相关的饮食知识详见相关链接运动指导。";
 				}
-				vo.setResultTitle("不知道什么");
+				vo.setResultTitle("生理指标测评结果");
 				vo.setResultMsg(report);
 				ret.setSuccess(true);
 				ret.setData(vo);

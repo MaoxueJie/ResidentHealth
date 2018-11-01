@@ -25,7 +25,7 @@ public class UserTCMTanshi {
 
     private Integer tanshiScore;
 
-    private Integer tanshiResult;
+    private String tanshiResult;
 
     private Date createTime;
 
@@ -119,12 +119,12 @@ public class UserTCMTanshi {
         this.tanshiScore = tanshiScore;
     }
 
-    public Integer getTanshiResult() {
+    public String getTanshiResult() {
         return tanshiResult;
     }
 
-    public void setTanshiResult(Integer tanshiResult) {
-        this.tanshiResult = tanshiResult;
+    public void setTanshiResult(String tanshiResult) {
+        this.tanshiResult = tanshiResult == null ? null : tanshiResult.trim();
     }
 
     public Date getCreateTime() {

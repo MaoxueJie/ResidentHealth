@@ -25,7 +25,7 @@ public class UserTCMPinghe {
 
     private Integer pingheScore;
 
-    private Integer pingheResult;
+    private String pingheResult;
 
     private Date createTime;
 
@@ -119,12 +119,12 @@ public class UserTCMPinghe {
         this.pingheScore = pingheScore;
     }
 
-    public Integer getPingheResult() {
+    public String getPingheResult() {
         return pingheResult;
     }
 
-    public void setPingheResult(Integer pingheResult) {
-        this.pingheResult = pingheResult;
+    public void setPingheResult(String pingheResult) {
+        this.pingheResult = pingheResult == null ? null : pingheResult.trim();
     }
 
     public Date getCreateTime() {

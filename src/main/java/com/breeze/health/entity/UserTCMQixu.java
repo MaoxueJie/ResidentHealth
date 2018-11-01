@@ -23,9 +23,9 @@ public class UserTCMQixu {
 
     private Integer qixuQ8;
 
-    private String qixuScore;
+    private Integer qixuScore;
 
-    private Integer qixuResult;
+    private String qixuResult;
 
     private Date createTime;
 
@@ -111,20 +111,20 @@ public class UserTCMQixu {
         this.qixuQ8 = qixuQ8;
     }
 
-    public String getQixuScore() {
+    public Integer getQixuScore() {
         return qixuScore;
     }
 
-    public void setQixuScore(String qixuScore) {
-        this.qixuScore = qixuScore == null ? null : qixuScore.trim();
+    public void setQixuScore(Integer qixuScore) {
+        this.qixuScore = qixuScore;
     }
 
-    public Integer getQixuResult() {
+    public String getQixuResult() {
         return qixuResult;
     }
 
-    public void setQixuResult(Integer qixuResult) {
-        this.qixuResult = qixuResult;
+    public void setQixuResult(String qixuResult) {
+        this.qixuResult = qixuResult == null ? null : qixuResult.trim();
     }
 
     public Date getCreateTime() {

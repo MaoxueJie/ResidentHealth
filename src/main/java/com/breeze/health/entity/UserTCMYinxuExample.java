@@ -775,52 +775,62 @@ public class UserTCMYinxuExample {
             return (Criteria) this;
         }
 
-        public Criteria andYinxuResultEqualTo(Integer value) {
+        public Criteria andYinxuResultEqualTo(String value) {
             addCriterion("yinxu_result =", value, "yinxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYinxuResultNotEqualTo(Integer value) {
+        public Criteria andYinxuResultNotEqualTo(String value) {
             addCriterion("yinxu_result <>", value, "yinxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYinxuResultGreaterThan(Integer value) {
+        public Criteria andYinxuResultGreaterThan(String value) {
             addCriterion("yinxu_result >", value, "yinxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYinxuResultGreaterThanOrEqualTo(Integer value) {
+        public Criteria andYinxuResultGreaterThanOrEqualTo(String value) {
             addCriterion("yinxu_result >=", value, "yinxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYinxuResultLessThan(Integer value) {
+        public Criteria andYinxuResultLessThan(String value) {
             addCriterion("yinxu_result <", value, "yinxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYinxuResultLessThanOrEqualTo(Integer value) {
+        public Criteria andYinxuResultLessThanOrEqualTo(String value) {
             addCriterion("yinxu_result <=", value, "yinxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYinxuResultIn(List<Integer> values) {
+        public Criteria andYinxuResultLike(String value) {
+            addCriterion("yinxu_result like", value, "yinxuResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andYinxuResultNotLike(String value) {
+            addCriterion("yinxu_result not like", value, "yinxuResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andYinxuResultIn(List<String> values) {
             addCriterion("yinxu_result in", values, "yinxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYinxuResultNotIn(List<Integer> values) {
+        public Criteria andYinxuResultNotIn(List<String> values) {
             addCriterion("yinxu_result not in", values, "yinxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYinxuResultBetween(Integer value1, Integer value2) {
+        public Criteria andYinxuResultBetween(String value1, String value2) {
             addCriterion("yinxu_result between", value1, value2, "yinxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYinxuResultNotBetween(Integer value1, Integer value2) {
+        public Criteria andYinxuResultNotBetween(String value1, String value2) {
             addCriterion("yinxu_result not between", value1, value2, "yinxuResult");
             return (Criteria) this;
         }

@@ -715,52 +715,62 @@ public class UserTCMYangxuExample {
             return (Criteria) this;
         }
 
-        public Criteria andYangxuResultEqualTo(Integer value) {
+        public Criteria andYangxuResultEqualTo(String value) {
             addCriterion("yangxu_result =", value, "yangxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYangxuResultNotEqualTo(Integer value) {
+        public Criteria andYangxuResultNotEqualTo(String value) {
             addCriterion("yangxu_result <>", value, "yangxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYangxuResultGreaterThan(Integer value) {
+        public Criteria andYangxuResultGreaterThan(String value) {
             addCriterion("yangxu_result >", value, "yangxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYangxuResultGreaterThanOrEqualTo(Integer value) {
+        public Criteria andYangxuResultGreaterThanOrEqualTo(String value) {
             addCriterion("yangxu_result >=", value, "yangxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYangxuResultLessThan(Integer value) {
+        public Criteria andYangxuResultLessThan(String value) {
             addCriterion("yangxu_result <", value, "yangxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYangxuResultLessThanOrEqualTo(Integer value) {
+        public Criteria andYangxuResultLessThanOrEqualTo(String value) {
             addCriterion("yangxu_result <=", value, "yangxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYangxuResultIn(List<Integer> values) {
+        public Criteria andYangxuResultLike(String value) {
+            addCriterion("yangxu_result like", value, "yangxuResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andYangxuResultNotLike(String value) {
+            addCriterion("yangxu_result not like", value, "yangxuResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andYangxuResultIn(List<String> values) {
             addCriterion("yangxu_result in", values, "yangxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYangxuResultNotIn(List<Integer> values) {
+        public Criteria andYangxuResultNotIn(List<String> values) {
             addCriterion("yangxu_result not in", values, "yangxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYangxuResultBetween(Integer value1, Integer value2) {
+        public Criteria andYangxuResultBetween(String value1, String value2) {
             addCriterion("yangxu_result between", value1, value2, "yangxuResult");
             return (Criteria) this;
         }
 
-        public Criteria andYangxuResultNotBetween(Integer value1, Integer value2) {
+        public Criteria andYangxuResultNotBetween(String value1, String value2) {
             addCriterion("yangxu_result not between", value1, value2, "yangxuResult");
             return (Criteria) this;
         }

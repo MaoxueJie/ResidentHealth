@@ -12,7 +12,7 @@
     <result column="xueyu_q6" property="xueyuQ6" jdbcType="INTEGER" />
     <result column="xueyu_q7" property="xueyuQ7" jdbcType="INTEGER" />
     <result column="xueyu_score" property="xueyuScore" jdbcType="INTEGER" />
-    <result column="xueyu_result" property="xueyuResult" jdbcType="INTEGER" />
+    <result column="xueyu_result" property="xueyuResult" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -82,7 +82,7 @@
     values (#{tcmId,jdbcType=BIGINT}, #{xueyuQ1,jdbcType=INTEGER}, #{xueyuQ2,jdbcType=INTEGER}, 
       #{xueyuQ3,jdbcType=INTEGER}, #{xueyuQ4,jdbcType=INTEGER}, #{xueyuQ5,jdbcType=INTEGER}, 
       #{xueyuQ6,jdbcType=INTEGER}, #{xueyuQ7,jdbcType=INTEGER}, #{xueyuScore,jdbcType=INTEGER}, 
-      #{xueyuResult,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      #{xueyuResult,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserTCMXueyu" useGeneratedKeys="true" keyProperty="id" >
@@ -154,7 +154,7 @@
         #{xueyuScore,jdbcType=INTEGER},
       </if>
       <if test="xueyuResult != null" >
-        #{xueyuResult,jdbcType=INTEGER},
+        #{xueyuResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -201,7 +201,7 @@
         xueyu_score = #{xueyuScore,jdbcType=INTEGER},
       </if>
       <if test="xueyuResult != null" >
-        xueyu_result = #{xueyuResult,jdbcType=INTEGER},
+        xueyu_result = #{xueyuResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -223,7 +223,7 @@
       xueyu_q6 = #{xueyuQ6,jdbcType=INTEGER},
       xueyu_q7 = #{xueyuQ7,jdbcType=INTEGER},
       xueyu_score = #{xueyuScore,jdbcType=INTEGER},
-      xueyu_result = #{xueyuResult,jdbcType=INTEGER},
+      xueyu_result = #{xueyuResult,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}

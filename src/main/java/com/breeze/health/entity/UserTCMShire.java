@@ -23,7 +23,7 @@ public class UserTCMShire {
 
     private Integer shireScore;
 
-    private Integer shireResult;
+    private String shireResult;
 
     private Date createTime;
 
@@ -109,12 +109,12 @@ public class UserTCMShire {
         this.shireScore = shireScore;
     }
 
-    public Integer getShireResult() {
+    public String getShireResult() {
         return shireResult;
     }
 
-    public void setShireResult(Integer shireResult) {
-        this.shireResult = shireResult;
+    public void setShireResult(String shireResult) {
+        this.shireResult = shireResult == null ? null : shireResult.trim();
     }
 
     public Date getCreateTime() {

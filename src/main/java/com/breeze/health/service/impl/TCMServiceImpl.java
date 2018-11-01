@@ -101,33 +101,52 @@ public class TCMServiceImpl implements TCMService{
 			
 			final UserTCM tcm = new UserTCM();
 			BeanUtils.copyProperties(vo, tcm);
+			int orial = 0;
 			
 			final UserTCMPinghe pinghe = new UserTCMPinghe(); 
 			BeanUtils.copyProperties(vo, pinghe);
+			orial = pinghe.getPingheQ1() - pinghe.getPingheQ2() - pinghe.getPingheQ3() - pinghe.getPingheQ4()-pinghe.getPingheQ5()+ pinghe.getPingheQ6()-pinghe.getPingheQ7()-pinghe.getPingheQ8() + 36;
+			pinghe.setPingheScore(((orial-8)/32)*100);
 			
 			final UserTCMQixu qixu = new UserTCMQixu(); 
 			BeanUtils.copyProperties(vo, qixu);
+			orial = qixu.getQixuQ1()+qixu.getQixuQ2()+qixu.getQixuQ3()+qixu.getQixuQ4()+qixu.getQixuQ5()+qixu.getQixuQ6()+qixu.getQixuQ7()+qixu.getQixuQ8();
+			qixu.setQixuScore(((orial-8)/32)*100);
 			
 			final UserTCMQiyu qiyu = new UserTCMQiyu(); 
 			BeanUtils.copyProperties(vo, qiyu);
+			orial = qiyu.getQiyuQ1() + qiyu.getQiyuQ2() + qiyu.getQiyuQ3() + qiyu.getQiyuQ4() + qiyu.getQiyuQ5() + qiyu.getQiyuQ6() + qiyu.getQiyuQ7();
+			qiyu.setQiyuScore(((orial-7)/28)*100);
 			
 			final UserTCMShire shire = new UserTCMShire(); 
 			BeanUtils.copyProperties(vo, shire);
+			orial = shire.getShireQ1() + shire.getShireQ2()+ shire.getShireQ3()+ shire.getShireQ4()+ shire.getShireQ5()+ shire.getShireQ6()+ shire.getShireQ7();
+			shire.setShireScore(((orial-7)/28)*100);
 			
 			final UserTCMTanshi tanshi = new UserTCMTanshi(); 
 			BeanUtils.copyProperties(vo, tanshi);
+			orial =tanshi.getTanshiQ1() + tanshi.getTanshiQ2() + tanshi.getTanshiQ3() + tanshi.getTanshiQ4() + tanshi.getTanshiQ5() + tanshi.getTanshiQ6() + tanshi.getTanshiQ7() + tanshi.getTanshiQ8();
+			tanshi.setTanshiScore(((orial-8)/32)*100);
 			
 			final UserTCMTebing tebing = new UserTCMTebing(); 
 			BeanUtils.copyProperties(vo, tebing);
+			orial =tebing.getTebingQ1() + tebing.getTebingQ2() + tebing.getTebingQ3() + tebing.getTebingQ4() + tebing.getTebingQ5() + tebing.getTebingQ6() + tebing.getTebingQ7();
+			tebing.setTebingScore(((orial-7)/28)*100);
 			
 			final UserTCMXueyu xueyu = new UserTCMXueyu(); 
 			BeanUtils.copyProperties(vo, xueyu);
+			orial = xueyu.getXueyuQ1() + xueyu.getXueyuQ2() + xueyu.getXueyuQ3() + xueyu.getXueyuQ4() + xueyu.getXueyuQ5() + xueyu.getXueyuQ6() + xueyu.getXueyuQ7();
+			xueyu.setXueyuScore(((orial-7)/28)*100);
 			
 			final UserTCMYangxu yangxu = new UserTCMYangxu(); 
 			BeanUtils.copyProperties(vo, yangxu);
+			orial =yangxu.getYangxuQ1() + yangxu.getYangxuQ2() + yangxu.getYangxuQ3()+ yangxu.getYangxuQ4()+ yangxu.getYangxuQ5()+ yangxu.getYangxuQ6()+ yangxu.getYangxuQ7();
+			yangxu.setYangxuScore(((orial-7)/28)*100);
 			
 			final UserTCMYinxu yinxu = new UserTCMYinxu(); 
 			BeanUtils.copyProperties(vo, yinxu);
+			orial =yinxu.getYinxuQ1() + yinxu.getYinxuQ2() + yinxu.getYinxuQ3() + yinxu.getYinxuQ4() + yinxu.getYinxuQ5() + yinxu.getYinxuQ6() + yinxu.getYinxuQ7() + yinxu.getYinxuQ8();
+			yinxu.setYinxuScore(((orial-8)/32)*100);
 			
 			ret = transactionTemplate.execute(new TransactionCallback<Result<Void>>() {
 				@Override
@@ -440,7 +459,72 @@ public class TCMServiceImpl implements TCMService{
 				}
 				
 				BeanUtils.copyProperties(tcms.get(0), vo);
+				
+				String resultMsg = "您的中医体质得分：平和质"+vo.getPingheScore()+"分，气虚质"+vo.getQixuScore()+"分，阳虚质"+vo.getYangxuScore()+"分，阴虚质"+vo.getYinxuScore()+"分，痰湿质"+vo.getTanshiScore()+"分，湿热质"+vo.getShireScore()+"分，血瘀质"+vo.getXueyuScore()+"分，气郁质"+vo.getQiyuScore()+"分，特禀质"+vo.getTebingScore()+"分。";
+				String tcmResult = "\n判定结果为：您的中医体质";
+				if (vo.getPingheScore()>=60 && vo.getQixuScore() < 30 && vo.getQiyuScore() < 30 
+						&& vo.getShireScore() < 30 && vo.getTanshiScore() < 30 && vo.getTebingScore() < 30 
+							&& vo.getYangxuScore() < 30 && vo.getYinxuScore() < 30 && vo.getXueyuScore() < 30)
+				{
+					tcmResult += "是平和质,";
+				}else if (vo.getPingheScore()>=60 && vo.getQixuScore() < 40 && vo.getQiyuScore() < 40 
+						&& vo.getShireScore() < 40 && vo.getTanshiScore() < 40 && vo.getTebingScore() < 40 
+						&& vo.getYangxuScore() < 40 && vo.getYinxuScore() < 40 && vo.getXueyuScore() < 40){
+					tcmResult += "基本是平和质,";
+				}
+				
+				if (vo.getQixuScore()>=40){
+					tcmResult += "是气虚质,";
+				}else if(vo.getQixuScore()>=30 && vo.getQixuScore()<40){
+					tcmResult += "倾向是气虚质,";
+				}
+				 
+				if (vo.getYangxuScore()>=40){
+					tcmResult += "是阳虚质,";
+				}else if(vo.getYangxuScore()>=30 && vo.getYangxuScore()<40){
+					tcmResult += "倾向是阳虚质,";
+				}
+				
+				if (vo.getYinxuScore()>=40){
+					tcmResult += "是阴虚质,";
+				}else if(vo.getYinxuScore()>=30 && vo.getYinxuScore()<40){
+					tcmResult += "倾向是阴虚质,";
+				}
+				
+				if (vo.getTanshiScore()>=40){
+					tcmResult += "是痰湿质,";
+				}else if(vo.getTanshiScore()>=30 && vo.getTanshiScore()<40){
+					tcmResult += "倾向是痰湿质,";
+				}
+				
+				if (vo.getShireScore()>=40){
+					tcmResult += "是湿热质,";
+				}else if(vo.getShireScore()>=30 && vo.getShireScore()<40){
+					tcmResult += "倾向是湿热质,";
+				}
+				
+				if (vo.getXueyuScore()>=40){
+					tcmResult += "是血瘀质,";
+				}else if(vo.getXueyuScore()>=30 && vo.getXueyuScore()<40){
+					tcmResult += "倾向是血瘀质,";
+				}
+				
+				if (vo.getQiyuScore()>=40){
+					tcmResult += "是气郁质,";
+				}else if(vo.getQiyuScore()>=30 && vo.getQiyuScore()<40){
+					tcmResult += "倾向是气郁质,";
+				}
 
+				if (vo.getTebingScore()>=40){
+					tcmResult += "是特禀质,";
+				}else if(vo.getTebingScore()>=30 && vo.getTebingScore()<40){
+					tcmResult += "倾向是特禀质,";
+				}
+				if (tcmResult.endsWith(","))
+					tcmResult = tcmResult.substring(0,tcmResult.length()-1);
+				vo.setResultTitle("中医体制测评结果");
+				vo.setResultMsg(resultMsg + tcmResult);
+				
 				ret.setSuccess(true);
 				ret.setData(vo);
 			}else

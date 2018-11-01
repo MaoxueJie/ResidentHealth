@@ -13,7 +13,7 @@
     <result column="pinghe_q7" property="pingheQ7" jdbcType="INTEGER" />
     <result column="pinghe_q8" property="pingheQ8" jdbcType="INTEGER" />
     <result column="pinghe_score" property="pingheScore" jdbcType="INTEGER" />
-    <result column="pinghe_result" property="pingheResult" jdbcType="INTEGER" />
+    <result column="pinghe_result" property="pingheResult" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -83,7 +83,7 @@
     values (#{tcmId,jdbcType=BIGINT}, #{pingheQ1,jdbcType=INTEGER}, #{pingheQ2,jdbcType=INTEGER}, 
       #{pingheQ3,jdbcType=INTEGER}, #{pingheQ4,jdbcType=INTEGER}, #{pingheQ5,jdbcType=INTEGER}, 
       #{pingheQ6,jdbcType=INTEGER}, #{pingheQ7,jdbcType=INTEGER}, #{pingheQ8,jdbcType=INTEGER}, 
-      #{pingheScore,jdbcType=INTEGER}, #{pingheResult,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{pingheScore,jdbcType=INTEGER}, #{pingheResult,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserTCMPinghe" useGeneratedKeys="true" keyProperty="id" >
@@ -161,7 +161,7 @@
         #{pingheScore,jdbcType=INTEGER},
       </if>
       <if test="pingheResult != null" >
-        #{pingheResult,jdbcType=INTEGER},
+        #{pingheResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -211,7 +211,7 @@
         pinghe_score = #{pingheScore,jdbcType=INTEGER},
       </if>
       <if test="pingheResult != null" >
-        pinghe_result = #{pingheResult,jdbcType=INTEGER},
+        pinghe_result = #{pingheResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -234,7 +234,7 @@
       pinghe_q7 = #{pingheQ7,jdbcType=INTEGER},
       pinghe_q8 = #{pingheQ8,jdbcType=INTEGER},
       pinghe_score = #{pingheScore,jdbcType=INTEGER},
-      pinghe_result = #{pingheResult,jdbcType=INTEGER},
+      pinghe_result = #{pingheResult,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}

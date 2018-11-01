@@ -23,7 +23,7 @@ public class UserTCMXueyu {
 
     private Integer xueyuScore;
 
-    private Integer xueyuResult;
+    private String xueyuResult;
 
     private Date createTime;
 
@@ -109,12 +109,12 @@ public class UserTCMXueyu {
         this.xueyuScore = xueyuScore;
     }
 
-    public Integer getXueyuResult() {
+    public String getXueyuResult() {
         return xueyuResult;
     }
 
-    public void setXueyuResult(Integer xueyuResult) {
-        this.xueyuResult = xueyuResult;
+    public void setXueyuResult(String xueyuResult) {
+        this.xueyuResult = xueyuResult == null ? null : xueyuResult.trim();
     }
 
     public Date getCreateTime() {

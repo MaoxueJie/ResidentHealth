@@ -715,52 +715,62 @@ public class UserTCMTebingExample {
             return (Criteria) this;
         }
 
-        public Criteria andTebingResultEqualTo(Integer value) {
+        public Criteria andTebingResultEqualTo(String value) {
             addCriterion("tebing_result =", value, "tebingResult");
             return (Criteria) this;
         }
 
-        public Criteria andTebingResultNotEqualTo(Integer value) {
+        public Criteria andTebingResultNotEqualTo(String value) {
             addCriterion("tebing_result <>", value, "tebingResult");
             return (Criteria) this;
         }
 
-        public Criteria andTebingResultGreaterThan(Integer value) {
+        public Criteria andTebingResultGreaterThan(String value) {
             addCriterion("tebing_result >", value, "tebingResult");
             return (Criteria) this;
         }
 
-        public Criteria andTebingResultGreaterThanOrEqualTo(Integer value) {
+        public Criteria andTebingResultGreaterThanOrEqualTo(String value) {
             addCriterion("tebing_result >=", value, "tebingResult");
             return (Criteria) this;
         }
 
-        public Criteria andTebingResultLessThan(Integer value) {
+        public Criteria andTebingResultLessThan(String value) {
             addCriterion("tebing_result <", value, "tebingResult");
             return (Criteria) this;
         }
 
-        public Criteria andTebingResultLessThanOrEqualTo(Integer value) {
+        public Criteria andTebingResultLessThanOrEqualTo(String value) {
             addCriterion("tebing_result <=", value, "tebingResult");
             return (Criteria) this;
         }
 
-        public Criteria andTebingResultIn(List<Integer> values) {
+        public Criteria andTebingResultLike(String value) {
+            addCriterion("tebing_result like", value, "tebingResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andTebingResultNotLike(String value) {
+            addCriterion("tebing_result not like", value, "tebingResult");
+            return (Criteria) this;
+        }
+
+        public Criteria andTebingResultIn(List<String> values) {
             addCriterion("tebing_result in", values, "tebingResult");
             return (Criteria) this;
         }
 
-        public Criteria andTebingResultNotIn(List<Integer> values) {
+        public Criteria andTebingResultNotIn(List<String> values) {
             addCriterion("tebing_result not in", values, "tebingResult");
             return (Criteria) this;
         }
 
-        public Criteria andTebingResultBetween(Integer value1, Integer value2) {
+        public Criteria andTebingResultBetween(String value1, String value2) {
             addCriterion("tebing_result between", value1, value2, "tebingResult");
             return (Criteria) this;
         }
 
-        public Criteria andTebingResultNotBetween(Integer value1, Integer value2) {
+        public Criteria andTebingResultNotBetween(String value1, String value2) {
             addCriterion("tebing_result not between", value1, value2, "tebingResult");
             return (Criteria) this;
         }

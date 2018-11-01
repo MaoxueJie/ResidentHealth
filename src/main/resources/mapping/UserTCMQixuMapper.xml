@@ -12,8 +12,8 @@
     <result column="qixu_q6" property="qixuQ6" jdbcType="INTEGER" />
     <result column="qixu_q7" property="qixuQ7" jdbcType="INTEGER" />
     <result column="qixu_q8" property="qixuQ8" jdbcType="INTEGER" />
-    <result column="qixu_score" property="qixuScore" jdbcType="VARCHAR" />
-    <result column="qixu_result" property="qixuResult" jdbcType="INTEGER" />
+    <result column="qixu_score" property="qixuScore" jdbcType="INTEGER" />
+    <result column="qixu_result" property="qixuResult" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -83,7 +83,7 @@
     values (#{tcmId,jdbcType=BIGINT}, #{qixuQ1,jdbcType=INTEGER}, #{qixuQ2,jdbcType=INTEGER}, 
       #{qixuQ3,jdbcType=INTEGER}, #{qixuQ4,jdbcType=INTEGER}, #{qixuQ5,jdbcType=INTEGER}, 
       #{qixuQ6,jdbcType=INTEGER}, #{qixuQ7,jdbcType=INTEGER}, #{qixuQ8,jdbcType=INTEGER}, 
-      #{qixuScore,jdbcType=VARCHAR}, #{qixuResult,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{qixuScore,jdbcType=INTEGER}, #{qixuResult,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserTCMQixu" useGeneratedKeys="true" keyProperty="id" >
@@ -158,10 +158,10 @@
         #{qixuQ8,jdbcType=INTEGER},
       </if>
       <if test="qixuScore != null" >
-        #{qixuScore,jdbcType=VARCHAR},
+        #{qixuScore,jdbcType=INTEGER},
       </if>
       <if test="qixuResult != null" >
-        #{qixuResult,jdbcType=INTEGER},
+        #{qixuResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -208,10 +208,10 @@
         qixu_q8 = #{qixuQ8,jdbcType=INTEGER},
       </if>
       <if test="qixuScore != null" >
-        qixu_score = #{qixuScore,jdbcType=VARCHAR},
+        qixu_score = #{qixuScore,jdbcType=INTEGER},
       </if>
       <if test="qixuResult != null" >
-        qixu_result = #{qixuResult,jdbcType=INTEGER},
+        qixu_result = #{qixuResult,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -233,8 +233,8 @@
       qixu_q6 = #{qixuQ6,jdbcType=INTEGER},
       qixu_q7 = #{qixuQ7,jdbcType=INTEGER},
       qixu_q8 = #{qixuQ8,jdbcType=INTEGER},
-      qixu_score = #{qixuScore,jdbcType=VARCHAR},
-      qixu_result = #{qixuResult,jdbcType=INTEGER},
+      qixu_score = #{qixuScore,jdbcType=INTEGER},
+      qixu_result = #{qixuResult,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
