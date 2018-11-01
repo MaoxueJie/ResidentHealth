@@ -80,13 +80,15 @@ $(function(){
 
 	//var title = ['','','','','','','GAD-7焦虑症筛查量表','AD8认知障碍自评表','PHQ-9抑郁症筛查量表',]
 	showResult();
-	function showResult( isResult ){
+	function showResult( isResult,type ){
 		isResult = typeof isResult == 'undefined' ? false : true; 
 
 		if( !isResult ){
 			return false;
 		}
-		var getUrl = '/cfd/'+ getQueryString("type") +'/get';
+
+		var type = getQueryString("type") || type;
+		var getUrl = '/cfd/'+ type +'/get';
 		$.ajax({
 			url: getUrl,
 			type: 'post',
