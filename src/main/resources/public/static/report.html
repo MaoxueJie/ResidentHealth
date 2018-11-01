@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-	<title>测评结果</title>
+	<title>报告</title>
 	<!-- 引入 WeUI -->
 	<link rel="stylesheet" href="./css/weui.css"/>
 	<link rel="stylesheet" href="./css/style.css"/>
@@ -11,28 +11,29 @@
 	<!-- <script src="./js/jweixin-1.0.0.js"></script> -->
 	<script src="./js/weui.js"></script>
 	<script src="./js/questionnaire.js"></script>
+	<style type="text/css">
+		.report_list{
+			padding: 0 20px;
+		}
+		.report_title{
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+		}
+		.report_list .btn-primary{
+			margin-bottom: 30px;
+			display: block;
+		}
+	</style>
 </head>
 <body ontouchstart>
-	<div class="evaluation_result">
-		<div class="result_banner">
-			<!-- 认知障碍测评 -->
-		</div>
-		<article class="weui-article">
-			<h1>测评结果：<!-- 山东龙口就是 --></h1>
-			<section id="resultCont">
-				<!-- <p>离开的身份极乐世界法律是法律上看对方拉开距离电视剧分类肯定是减肥圆顶加进塑料袋附近了间谍欧伟伦伸了加压接我诶我就佛教的快乐来了为的是方式的非官方过热而防冻防守对方。</p>
-				<p>离开的身份极乐世界法律是法律上看对方拉开距离电视剧分类肯定是减肥圆顶加进塑料袋附近了间谍欧伟伦伸了加压接我诶我就佛教的快乐来了为的是方式的非官方过热而防冻防守对方。</p>
-				<p>离开的身份极乐世界法律是法律上看对方拉开距离电视剧分类肯定是减肥圆顶加进塑料袋附近了间谍欧伟伦伸了加压接我诶我就佛教的快乐来了为的是方式的非官方过热而防冻防守对方。</p> -->
-			</section>
-		</article>
-		<!-- <div class="align_center">
-			<a class="weui-btn btn-primary" href="javascript:;">保存结果</a>
-		</div> -->
+	<h2 class="report_title">查看报告</h2>
+	<div class="report_list">
+		<a class="weui-btn btn-primary btn-round" href="/cfd/static/report_result.html?type=living">生活习惯报告</a>
+		<a class="weui-btn btn-primary btn-round" href="/cfd/static/report_result.html?type=sick">健康状况报告</a>
+		<a class="weui-btn btn-primary btn-round" href="/cfd/static/report_result.html?type=psy">心理测评报告</a>
+		<a class="weui-btn btn-primary btn-round" href="/cfd/static/report_result.html?type=tcm">中医体质报告</a>
 	</div>
-
-<script type="text/javascript">
-	showResult( true );
-</script>
-
 </body>
 </html>
+

@@ -82,6 +82,9 @@ $(function(){
 	function showResult( isResult ){
 		isResult = typeof isResult == 'undefined' ? false : true; 
 
+		if( !isResult ){
+			return false;
+		}
 		var getUrl = '/cfd/'+ getQueryString("type") +'/get';
 		$.ajax({
 			url: getUrl,
@@ -95,7 +98,10 @@ $(function(){
 					//$('body').append( reportHtml );
 					//window.scrollTo(0,0);
 					if( isResult ){	//结果页
-						$('#resultCont').html( json.data.resultMsg )
+						$('#resultTitle').html( json.data.resultTitle )
+						var resultMsg = json.data.resultMsg.replace('/\n','</br>');
+						console.log( resultMsg );
+						$('#resultCont').html( resultMsg )
 					}else{
 						setDataHandle( json.data );
 					}
