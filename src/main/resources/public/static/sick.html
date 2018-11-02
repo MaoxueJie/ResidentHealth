@@ -20,7 +20,223 @@
 				<h2 class="page__title">健康状况调查</h2>
 			</div>
 			
-			<div class="weui-cells__title">是否患有高血压病？</div>
+			<div id="hasSick">
+				<div class="weui-cells__title">您是否患有以下疾病？【多选题】</div>
+				<div class="weui-cells weui-cells_checkbox" id="yaowu">
+					<label class="weui-cell weui-check__label" for="hassick1">
+						<div class="weui-cell__hd">
+							<input type="checkbox" class="weui-check" name="highBloodPressure" id="hassick1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>1.高血压</p>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input">
+						<div class="weui-cell__hd"><label class="weui-label">病程：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="highBloodPressureYears" type="text">
+						</div>年
+					</div>
+
+					<label class="weui-cell weui-check__label" for="hassick2">
+						<div class="weui-cell__hd">
+							<input type="checkbox" name="coronaryHeartDisease" class="weui-check" id="hassick2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>2.冠心病</p>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input">
+						<div class="weui-cell__hd"><label class="weui-label">病程：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="coronaryHeartDiseaseYears" type="text">
+						</div>年
+					</div>
+
+					<label class="weui-cell weui-check__label" for="hassick3">
+						<div class="weui-cell__hd">
+							<input type="checkbox" class="weui-check" name="hyperlipidemia" id="hassick3" value="3">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>3.高脂血症</p>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input">
+						<div class="weui-cell__hd"><label class="weui-label">病程：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="hyperlipidemiaYears" type="text">
+						</div>年
+					</div>
+					
+					<label class="weui-cell weui-check__label" for="hassick4">
+						<div class="weui-cell__hd">
+							<input type="checkbox" class="weui-check" name="diabetes" id="hassick4" value="4">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>4.糖尿病</p>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input">
+						<div class="weui-cell__hd"><label class="weui-label">病程：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="diabetesYears" type="text">
+						</div>年
+					</div>
+
+					<label class="weui-cell weui-check__label" for="hassick5">
+						<div class="weui-cell__hd">
+							<input type="checkbox" class="weui-check" name="cerebrovascularDisease" id="hassick5" value="5">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>5.脑血管疾病</p>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input">
+						<div class="weui-cell__hd"><label class="weui-label">病程：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="cerebrovascularDiseaseYears" type="text">
+						</div>年
+					</div>
+
+					<label class="weui-cell weui-check__label" for="hassick6">
+						<div class="weui-cell__hd">
+							<input type="checkbox" class="weui-check" name="chronicGastritis" id="hassick6" value="6">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>6.慢性胃炎</p>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input">
+						<div class="weui-cell__hd"><label class="weui-label">病程：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="chronicGastritisYears" type="text">
+						</div>年
+					</div>
+
+					<label class="weui-cell weui-check__label" for="hassick7">
+						<div class="weui-cell__hd">
+							<input type="checkbox" class="weui-check" name="stomachUlcer" id="hassick7" value="7">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>7.胃溃疡</p>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input">
+						<div class="weui-cell__hd"><label class="weui-label">病程：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="stomachUlcerYears" type="text">
+						</div>年
+					</div>
+
+					<label class="weui-cell weui-check__label" for="hassick8">
+						<div class="weui-cell__hd">
+							<input type="checkbox" class="weui-check" name="bronchialAsthma" id="hassick8" value="8">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>8.支气管哮喘</p>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input">
+						<div class="weui-cell__hd"><label class="weui-label">病程：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="bronchialAsthmaYears" type="text">
+						</div>年
+					</div>
+
+					<label class="weui-cell weui-check__label" for="hassick9">
+						<div class="weui-cell__hd">
+							<input type="checkbox" class="weui-check" name="copd" id="hassick9" value="9">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>9.慢性阻塞性肺疾病（COPD）</p>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input">
+						<div class="weui-cell__hd"><label class="weui-label">病程：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="copdYears" type="text">
+						</div>年
+					</div>
+
+					<label class="weui-cell weui-check__label" for="hassick10">
+						<div class="weui-cell__hd">
+							<input type="checkbox" class="weui-check" name="osteoporosis" id="hassick10" value="10">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>10.骨质疏松症</p>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input">
+						<div class="weui-cell__hd"><label class="weui-label">病程：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="osteoporosisYears" type="text">
+						</div>年
+					</div>
+
+					<label class="weui-cell weui-check__label" for="hassick11">
+						<div class="weui-cell__hd">
+							<input type="checkbox" class="weui-check" name="glaucoma" id="hassick11" value="11">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>11.青光眼</p>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input">
+						<div class="weui-cell__hd"><label class="weui-label">病程：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="glaucomaYears" type="text">
+						</div>年
+					</div>
+
+					<label class="weui-cell weui-check__label" for="hassick12">
+						<div class="weui-cell__hd">
+							<input type="checkbox" class="weui-check" name="cataract" id="hassick12" value="12">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>12.白内障</p>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input">
+						<div class="weui-cell__hd"><label class="weui-label">病程：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="cataractYears" type="text">
+						</div>年
+					</div>
+
+
+					<label class="weui-cell weui-check__label" for="hassick13">
+						<div class="weui-cell__hd">
+							<input type="checkbox" class="weui-check" name="others" id="hassick13" value="13">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>13.其它</p>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input">
+						<div class="weui-cell__hd"><label class="weui-label">病程：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="othersYears" type="text">
+						</div>年
+					</div>
+					
+				</div>
+			</div>
+
+
+			<!-- <div class="weui-cells__title">是否患有高血压病？</div>
 			<div class="weui-cells weui-cells_radio">
 				<label class="weui-cell weui-check__label" for="highBloodPressure1">
 					<div class="weui-cell__bd">
@@ -385,17 +601,17 @@
 						<input class="weui-input" type="text" name="others[]" placeholder="描述病症及病程">
 					</div>
 				</div>
-			</div>
+			</div> -->
 
-			<div class="weui-cells__title">是否服用过药物？</div>
-			<div class="weui-cells weui-cells_radio" id="yaowu">
+			<div class="weui-cells__title">是否服用过药物？【多选题】</div>
+			<div class="weui-cells weui-cells_checkbox" id="yaowu">
 				<label class="weui-cell weui-check__label" for="preference1">
-					<div class="weui-cell__bd">
-						<p>抗高血压药</p>
-					</div>
-					<div class="weui-cell__ft">
+					<div class="weui-cell__hd">
 						<input type="checkbox" class="weui-check" name="preference" id="preference1" value="1">
 						<span class="weui-icon-checked"></span>
+					</div>
+					<div class="weui-cell__bd">
+						<p>抗高血压药</p>
 					</div>
 				</label>
 				<div class="weui-cell weui-cell-input">
@@ -406,12 +622,12 @@
 				</div>
 
 				<label class="weui-cell weui-check__label" for="preference2">
-					<div class="weui-cell__bd">
-						<p>降脂药</p>
-					</div>
-					<div class="weui-cell__ft">
+					<div class="weui-cell__hd">
 						<input type="checkbox" name="preference" class="weui-check" id="preference2" value="2">
 						<span class="weui-icon-checked"></span>
+					</div>
+					<div class="weui-cell__bd">
+						<p>降脂药</p>
 					</div>
 				</label>
 				<div class="weui-cell weui-cell-input">
@@ -422,12 +638,12 @@
 				</div>
 
 				<label class="weui-cell weui-check__label" for="preference3">
-					<div class="weui-cell__bd">
-						<p>降糖药</p>
-					</div>
-					<div class="weui-cell__ft">
+					<div class="weui-cell__hd">
 						<input type="checkbox" class="weui-check" name="preference" id="preference3" value="3">
 						<span class="weui-icon-checked"></span>
+					</div>
+					<div class="weui-cell__bd">
+						<p>降糖药</p>
 					</div>
 				</label>
 				<div class="weui-cell weui-cell-input">
@@ -438,12 +654,12 @@
 				</div>
 				
 				<label class="weui-cell weui-check__label" for="preference4">
-					<div class="weui-cell__bd">
-						<p>抗血小板药</p>
-					</div>
-					<div class="weui-cell__ft">
+					<div class="weui-cell__hd">
 						<input type="checkbox" class="weui-check" name="preference" id="preference4" value="4">
 						<span class="weui-icon-checked"></span>
+					</div>
+					<div class="weui-cell__bd">
+						<p>抗血小板药</p>
 					</div>
 				</label>
 				<div class="weui-cell weui-cell-input">
@@ -454,12 +670,12 @@
 				</div>
 				
 				<label class="weui-cell weui-check__label" for="preference5">
-					<div class="weui-cell__bd">
-						<p>其它</p>
-					</div>
-					<div class="weui-cell__ft">
+					<div class="weui-cell__hd">
 						<input type="checkbox" class="weui-check" name="preference" id="preference5" value="5">
 						<span class="weui-icon-checked"></span>
+					</div>
+					<div class="weui-cell__bd">
+						<p>其它</p>
 					</div>
 				</label>
 				<div class="weui-cell weui-cell-input">
@@ -707,6 +923,22 @@
 			</div>
 		</form>
 	</div>
+
+<script type="text/javascript">
+	$(function(){
+
+		$('#yaowu input[type=checkbox],#hasSick input[type=checkbox]').click(function(){
+			var $self = $(this),$curItem = $self.closest('.weui-cell'),$curItemInput = $curItem.next();
+			if( $self.is(':checked') ){
+				$curItemInput.css('display','flex');
+			}else{
+				$curItemInput.hide();
+				$curItemInput.find('input[type=text]').val('');
+			}
+		})
+
+	})
+</script>
 
 </body>
 </html>
