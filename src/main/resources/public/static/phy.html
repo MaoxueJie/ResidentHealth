@@ -309,6 +309,9 @@
 
 <script type="text/javascript">
 	$(function(){
+		
+		showResult(true,'phy');	//获取基本信息
+
 		$('input[name=weight],input[name=height]').blur(function(){
 			if( $('input[name=weight]').val() != '' && $('input[name=height]').val() != '' ){
 				caclBMI();
