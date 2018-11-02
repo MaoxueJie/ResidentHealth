@@ -121,117 +121,187 @@
 				</label>
 			</div>
 
-			<div class="weui-cells__title">婚育状况：</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="hyqk1">
-					<div class="weui-cell__bd">
-						<p>未婚</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="marriage" id="hyqk1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="hyqk2">
+			<div id="marriage">
+				<div class="weui-cells__title">婚育状况：</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="hyqk1">
+						<div class="weui-cell__bd">
+							<p>未婚</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" class="weui-check" name="marriage" id="hyqk1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="hyqk2">
 
-					<div class="weui-cell__bd">
-						<p>已婚</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="marriage" class="weui-check" id="hyqk2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="hyqk3">
-					<div class="weui-cell__bd">
-						<p>丧偶</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="marriage" id="hyqk3" value="3">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="hyqk4">
+						<div class="weui-cell__bd">
+							<p>已婚</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" name="marriage" class="weui-check" id="hyqk2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="hyqk3">
+						<div class="weui-cell__bd">
+							<p>丧偶</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" class="weui-check" name="marriage" id="hyqk3" value="3">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="hyqk4">
 
-					<div class="weui-cell__bd">
-						<p>离异</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="marriage" class="weui-check" id="hyqk4" value="4">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-			</div>
-
-			<div class="weui-cells__title">儿女人数</div>
-			<div class="weui-cells weui-cells_form">
-				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">儿子</label></div>
-					<div class="weui-cell__bd">
-						<input class="weui-input" type="number" name="sonCount" pattern="[0-9]*" placeholder="有几个儿子">
-					</div>
-				</div>
-				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">女儿</label></div>
-					<div class="weui-cell__bd">
-						<input class="weui-input" type="number" name="daughterCount" pattern="[0-9]*" placeholder="有几个女儿">
-					</div>
+						<div class="weui-cell__bd">
+							<p>离异</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" name="marriage" class="weui-check" id="hyqk4" value="4">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
 				</div>
 			</div>
 
-			<div class="weui-cells__title">家族类型</div>
-			<div class="weui-cells weui-cells_form">
-				
-				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">人数</label></div>
-					<div class="weui-cell__bd">
-						<input class="weui-input" type="number" pattern="[0-9]*" placeholder="平时与几个人居住在一起">
+			<div id="son_daughter_count">
+				<div class="weui-cells__title">儿女人数</div>
+				<div class="weui-cells">
+					<div class="weui-cell">
+						<div class="weui-cell__hd"><label class="weui-label">几个儿子：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" type="number" name="sonCount" pattern="[0-9]*" placeholder="有几个儿子">
+						</div>
+						<div class="weui-cell__ft">个</div>
+					</div>
+					<div class="weui-cell">
+						<div class="weui-cell__hd"><label class="weui-label">几个女儿：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" type="number" name="daughterCount" pattern="[0-9]*" placeholder="有几个女儿">
+						</div>
+						<div class="weui-cell__ft">个</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="weui-cells__title">居住关系：</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="jzgx1">
-					<div class="weui-cell__bd">
-						<p>独居</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="familyType" id="jzgx1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="jzgx2">
+			<div id="live_status">
+				<div class="weui-cells__title">家庭类型：</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="jzgx1">
+						<div class="weui-cell__bd">
+							<p>独居</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" class="weui-check" name="familyType" id="jzgx1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="jzgx2">
 
-					<div class="weui-cell__bd">
-						<p>与他人同住（配偶、子女、父母、伴侣父母、外祖父祖母/祖父祖母）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="familyType" class="weui-check" id="jzgx2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="jzgx3">
-					<div class="weui-cell__bd">
-						<p>其他</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="familyType" id="jzgx3" value="3">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">关系</label></div>
-					<div class="weui-cell__bd">
-						<input class="weui-input" type="text" name="familyDesc" placeholder="与同住人的亲属关系">
+						<div class="weui-cell__bd">
+							<p>与他人同住</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" name="familyType" class="weui-check" id="jzgx2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
+			</div>
+
+			<div id="live_relation">
+				<div class="weui-cells__title">若与他人同住，你们是什么关系？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="preference1">
+						<div class="weui-cell__bd">
+							<p>配偶</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="checkbox" class="weui-check" name="preference" id="preference1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="preference2">
+
+						<div class="weui-cell__bd">
+							<p>子女</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="checkbox" name="preference" class="weui-check" id="preference2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="preference3">
+						<div class="weui-cell__bd">
+							<p>父母</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="checkbox" class="weui-check" name="preference" id="preference3" value="3">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="preference4">
+						<div class="weui-cell__bd">
+							<p>伴侣父母</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="checkbox" class="weui-check" name="preference" id="preference4" value="4">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="preference5">
+						<div class="weui-cell__bd">
+							<p>外祖父祖母/祖父祖母</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="checkbox" class="weui-check" name="preference" id="preference5" value="5">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="preference6" id>
+						<div class="weui-cell__bd">
+							<p>其它</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="checkbox" class="weui-check" name="preference" id="preference6" value="6">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input" id="inputOtherRelation">
+						<div class="weui-cell__hd"><label class="weui-label">其它关系：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" name="familyDesc" type="text" placeholder="填写与同住者关系">
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- 地址位置坐标 -->
+			<div class="weui-cells smoking_item">
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">所在社区：</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="smokingYears">
+					</div>
+					<div class="weui-cell__bd">市县</div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="smokingYears">
+					</div>
+					<div class="weui-cell__bd">区</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label"></label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="smokingVal3">
+					</div>
+					<div class="weui-cell__bd">社区</div>
+				</div>
+			</div>
+
+			<!-- 地址位置坐标
 			<input type="hidden" name="community" value="0">
 			<input type="hidden" name="communityLon" value="0">
-			<input type="hidden" name="communityLat" value="0">
+			<input type="hidden" name="communityLat" value="0"> -->
 
 
 			<div class="weui-cells__title">工作类型：</div>
@@ -367,8 +437,44 @@
 
 		</form>
 	</div>
+	
 <script type="text/javascript">
-	showResult(true,'base');
+
+	$(function(){
+		showResult(true,'base');	//获取基本信息
+
+		$('#marriage input[type=radio]').click(function(){
+			if( $(this).val() == 1 ){
+				$('#son_daughter_count input[type=number]').val('');
+				$('#son_daughter_count').hide();
+			}else{
+				$('#son_daughter_count').show();
+			}
+		})
+
+		$('#live_status input[type=radio]').click(function(){
+			if( $(this).val() == 1 ){
+				$('#live_relation').hide();
+			}else{
+				$('#live_relation').show();
+
+			}
+		})
+
+		$('#live_relation input[type=checkbox]').click(function(){
+			if( $(this).val() == 6 ){
+				if( $(this).is(':checked') ){
+					$('#inputOtherRelation').css('display','flex');
+				}else{
+					$('#inputOtherRelation').hide();
+					$('#inputOtherRelation input').val('');
+				}
+			}
+		})
+
+	})
+
 </script>
+
 </body>
 </html>

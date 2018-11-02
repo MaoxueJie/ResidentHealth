@@ -82,7 +82,7 @@
 				
 			</div>
 
-			<div class="weui-cells__title">血压测量频率：</div>
+			<div class="weui-cells__title">血压测量频率:</div>
 			<div class="weui-cells weui-cells_radio">
 				<label class="weui-cell weui-check__label" for="measuringFrequency1">
 					<div class="weui-cell__bd">
@@ -95,7 +95,7 @@
 				</label>
 				<label class="weui-cell weui-check__label" for="measuringFrequency2">
 					<div class="weui-cell__bd">
-						<p>偶尔测（每年少于2次）</p>
+						<p>偶尔测(每年少于2次)</p>
 					</div>
 					<div class="weui-cell__ft">
 						<input type="radio" name="measuringFrequency" class="weui-check" id="measuringFrequency2" value="2">
@@ -131,7 +131,7 @@
 				</label>
 			</div>
 
-			<div class="weui-cells__title">血糖测试频率：</div>
+			<div class="weui-cells__title">血糖测试频率:</div>
 			<div class="weui-cells weui-cells_radio">
 				<label class="weui-cell weui-check__label" for="bloodSugar1">
 					<div class="weui-cell__bd">
@@ -144,7 +144,7 @@
 				</label>
 				<label class="weui-cell weui-check__label" for="bloodSugar2">
 					<div class="weui-cell__bd">
-						<p>体检测过（正常，过高、过低，不记得了）</p>
+						<p>体检测过(正常，过高、过低，不记得了)</p>
 					</div>
 					<div class="weui-cell__ft">
 						<input type="radio" name="bloodSugar" class="weui-check" id="bloodSugar2" value="2">
@@ -174,7 +174,7 @@
 				</div>
 			</div>
 
-			<div class="weui-cells__title">血脂测试频率：</div>
+			<div class="weui-cells__title">血脂测试频率:</div>
 			<div class="weui-cells weui-cells_radio">
 				<label class="weui-cell weui-check__label" for="bloodLipid1">
 					<div class="weui-cell__bd">
@@ -187,7 +187,7 @@
 				</label>
 				<label class="weui-cell weui-check__label" for="bloodLipid2">
 					<div class="weui-cell__bd">
-						<p>体检测过（正常，过高、过低，不记得了）</p>
+						<p>体检测过(正常，过高、过低，不记得了)</p>
 					</div>
 					<div class="weui-cell__ft">
 						<input type="radio" name="bloodLipid" class="weui-check" id="bloodLipid2" value="2">
@@ -205,24 +205,97 @@
 				</label>
 			</div>
 
+			<div class="page__bd_spacing">
+				<p class="page__desc" style="padding: 25px 0 10px;">请填写最近一次测量相关指标的情况(若某个指标未测量或不清楚具体数值，可不填写)</p>
+			</div>
+			<div class="weui-cells__title">1.血压</div>
 			<div class="weui-cells">
 				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">血脂值</label></div>
+					<div class="weui-cell__hd"><label class="weui-label">收缩压一般在</label></div>
 					<div class="weui-cell__bd">
-						<input class="weui-input" name="bloodLipidValue" type="number" placeholder="填写">
+						<input class="weui-input" name="bloodPressureVal1" type="number">
 					</div>
+					mmHg至
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodPressureVal2" type="number">
+					</div>
+					mmHg之间
 				</div>
 				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">尿酸</label></div>
+					<div class="weui-cell__hd"><label class="weui-label">舒张压一般在</label></div>
 					<div class="weui-cell__bd">
-						<input class="weui-input" name="uricAcid" type="number" placeholder="填写">
+						<input class="weui-input" name="bloodPressureVal3" type="number">
 					</div>
+					mmHg至
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodPressureVal4" type="number">
+					</div>
+					mmHg之间
 				</div>
 				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">血氧值</label></div>
+					<div class="weui-cell__hd"><label class="weui-label">最近一次血压为</label></div>
 					<div class="weui-cell__bd">
-						<input class="weui-input" name="bloodOxygen" type="number" placeholder="填写">
-					</div>
+						<input class="weui-input" name="bloodPressureVal5" type="number">
+					</div>/
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodPressureVal6" type="number">
+					</div>mmHg
+				</div>
+
+				<div class="weui-cells__title">2.血糖</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">空腹血糖:</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodSugarVal1" type="number">
+					</div>mmol/L
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">糖化血红蛋白:</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodSugarVal2" type="number">
+					</div>%
+				</div>
+
+				<div class="weui-cells__title">3.血脂</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">总胆固醇(TC):</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodLipidVal1" type="number">
+					</div>mmol/L
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">甘油三酯(TG):</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodLipidVal2" type="number">
+					</div>mmol/L
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">高密度脂蛋白胆固醇(HDL-C):</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodLipidVal3" type="number">
+					</div>mmol/L
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">低密度脂蛋白胆固醇(LDL-C):</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodLipidVal4" type="number">
+					</div>mmol/L
+				</div>
+
+				<div class="weui-cells__title">4.血尿酸</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">血尿酸:</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="uricAcidVal" type="number">
+					</div>μmol/L
+				</div>
+
+				<div class="weui-cells__title">5.血氧饱和度</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">血氧饱和度:</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodOxygen" type="number">
+					</div>%
 				</div>
 			</div>
 

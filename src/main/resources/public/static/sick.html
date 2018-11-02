@@ -387,96 +387,88 @@
 				</div>
 			</div>
 
-			<div class="weui-cells__title">是否服用过抗高血压药？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="antihypertensiveDrug1">
+			<div class="weui-cells__title">是否服用过药物？</div>
+			<div class="weui-cells weui-cells_radio" id="yaowu">
+				<label class="weui-cell weui-check__label" for="preference1">
 					<div class="weui-cell__bd">
-						<p>否</p>
+						<p>抗高血压药</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="antihypertensiveDrug" id="antihypertensiveDrug1" value="1">
+						<input type="checkbox" class="weui-check" name="preference" id="preference1" value="1">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
-				<label class="weui-cell weui-check__label" for="antihypertensiveDrug2">
+				<div class="weui-cell weui-cell-input">
+					<div class="weui-cell__hd"><label class="weui-label">药品名称：</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="yaowuname" type="text">
+					</div>
+				</div>
 
+				<label class="weui-cell weui-check__label" for="preference2">
 					<div class="weui-cell__bd">
-						<p>是</p>
+						<p>降脂药</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" name="antihypertensiveDrug" class="weui-check" id="antihypertensiveDrug2" value="2">
+						<input type="checkbox" name="preference" class="weui-check" id="preference2" value="2">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
-			</div>
+				<div class="weui-cell weui-cell-input">
+					<div class="weui-cell__hd"><label class="weui-label">药品名称：</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="yaowuname" type="text">
+					</div>
+				</div>
 
-			<div class="weui-cells__title">是否服用过降脂药？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="lipidLoweringDrug1">
+				<label class="weui-cell weui-check__label" for="preference3">
 					<div class="weui-cell__bd">
-						<p>否</p>
+						<p>降糖药</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="lipidLoweringDrug" id="lipidLoweringDrug1" value="1">
+						<input type="checkbox" class="weui-check" name="preference" id="preference3" value="3">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
-				<label class="weui-cell weui-check__label" for="lipidLoweringDrug2">
-
+				<div class="weui-cell weui-cell-input">
+					<div class="weui-cell__hd"><label class="weui-label">药品名称：</label></div>
 					<div class="weui-cell__bd">
-						<p>是</p>
+						<input class="weui-input" name="yaowuname" type="text">
+					</div>
+				</div>
+				
+				<label class="weui-cell weui-check__label" for="preference4">
+					<div class="weui-cell__bd">
+						<p>抗血小板药</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" name="lipidLoweringDrug" class="weui-check" id="lipidLoweringDrug2" value="2">
+						<input type="checkbox" class="weui-check" name="preference" id="preference4" value="4">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
-			</div>
-
-			<div class="weui-cells__title">是否服用过降糖药？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="hypoglycemicAgents1">
+				<div class="weui-cell weui-cell-input">
+					<div class="weui-cell__hd"><label class="weui-label">药品名称：</label></div>
 					<div class="weui-cell__bd">
-						<p>否</p>
+						<input class="weui-input" name="yaowuname" type="text">
+					</div>
+				</div>
+				
+				<label class="weui-cell weui-check__label" for="preference5">
+					<div class="weui-cell__bd">
+						<p>其它</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="hypoglycemicAgents" id="hypoglycemicAgents1" value="1">
+						<input type="checkbox" class="weui-check" name="preference" id="preference5" value="5">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
-				<label class="weui-cell weui-check__label" for="hypoglycemicAgents2">
-
+				<div class="weui-cell weui-cell-input">
+					<div class="weui-cell__hd"><label class="weui-label">药品名称：</label></div>
 					<div class="weui-cell__bd">
-						<p>是</p>
+						<input class="weui-input" name="yaowuname" type="text">
 					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="hypoglycemicAgents" class="weui-check" id="hypoglycemicAgents2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-			</div>
-
-			<div class="weui-cells__title">是否服用过抗血小板药？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="antiplateletDrug1">
-					<div class="weui-cell__bd">
-						<p>否</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="antiplateletDrug" id="antiplateletDrug1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="antiplateletDrug2">
-
-					<div class="weui-cell__bd">
-						<p>是</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="antiplateletDrug" class="weui-check" id="antiplateletDrug2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+				</div>
+				
 			</div>
 			
 			<div class="weui-cells__title">您的家人是否患有高血压?</div>
@@ -524,6 +516,15 @@
 					</div>
 					<div class="weui-cell__bd">
 						<p>兄弟/姐妹</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="gxy6">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaogxy" class="weui-check" id="gxy6" value="6">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>无</p>
 					</div>
 				</label>
 			</div>
@@ -575,6 +576,15 @@
 						<p>兄弟/姐妹</p>
 					</div>
 				</label>
+				<label class="weui-cell weui-check__label" for="tnb6">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaotnb" class="weui-check" id="tnb6" value="6">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>无</p>
+					</div>
+				</label>
 			</div>
 
 			<div class="weui-cells__title">您的家人是否患有冠心病?</div>
@@ -624,6 +634,15 @@
 						<p>兄弟/姐妹</p>
 					</div>
 				</label>
+				<label class="weui-cell weui-check__label" for="gxb6">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaogxb" class="weui-check" id="gxb6" value="6">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>无</p>
+					</div>
+				</label>
 			</div>
 
 			<div class="weui-cells__title">您的家人是否患有脑卒中?</div>
@@ -671,6 +690,15 @@
 					</div>
 					<div class="weui-cell__bd">
 						<p>兄弟/姐妹</p>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="ncz6">
+					<div class="weui-cell__hd">
+						<input type="checkbox" name="yaoncz" class="weui-check" id="ncz6" value="6">
+						<i class="weui-icon-checked"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>无</p>
 					</div>
 				</label>
 			</div>

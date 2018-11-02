@@ -94,12 +94,14 @@ html,body{
 	color: #555;
 }
 .weui-label{
-	width: 130px;
+	width: 120px;
 }
 .weui-cell__ft{
 	color: inherit;
 }
-
+.weui-input{
+	border-bottom: 1px solid #999;
+}
 .weui-cell-input,
 .smoking_item,
 .drinking_item{

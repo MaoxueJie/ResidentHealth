@@ -1,7 +1,4 @@
 //$(function(){
-	$(function(){
-
-	})
 
 	var toastHtml = '';
 	toastHtml += '<div id="toast" style="display:none;">';
@@ -145,4 +142,45 @@ $(function(){
 	}
 //})
 
+$(function(){
 
+	$('#marriage input[type=radio]').click(function(){
+		if( $(this).val() == 1 ){
+			$('#son_daughter_count input[type=number]').val('');
+			$('#son_daughter_count').hide();
+		}else{
+			$('#son_daughter_count').show();
+		}
+	})
+
+	$('#live_status input[type=radio]').click(function(){
+		if( $(this).val() == 1 ){
+			$('#live_relation').hide();
+		}else{
+			$('#live_relation').show();
+
+		}
+	})
+
+	$('#live_relation input[type=checkbox]').click(function(){
+		if( $(this).val() == 6 ){
+			if( $(this).is(':checked') ){
+				$('#inputOtherRelation').css('display','flex');
+			}else{
+				$('#inputOtherRelation').hide();
+				$('#inputOtherRelation input').val('');
+			}
+		}
+	})
+
+	$('#yaowu input[type=checkbox]').click(function(){
+		var $self = $(this),$curItem = $self.closest('.weui-cell'),$curItemInput = $curItem.next();
+		if( $self.is(':checked') ){
+			$curItemInput.css('display','flex');
+		}else{
+			$curItemInput.hide();
+			$curItemInput.find('input[type=text]').val('');
+		}
+	})
+
+})
