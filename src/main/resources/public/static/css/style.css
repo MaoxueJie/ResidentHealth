@@ -107,8 +107,12 @@ html,body{
 .drinking_item{
 	display: none;
 }
-
-
+.error{
+	color: rgba(255,0,0,.5);
+}
+form .align_center .submitbtn{
+	width: auto;
+}
 
 
 
