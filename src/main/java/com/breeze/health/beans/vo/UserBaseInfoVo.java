@@ -27,6 +27,10 @@ public class UserBaseInfoVo {
     private String[] familyDesc;
 
     private String familyOther;
+    
+    private String city;
+
+    private String zone;
 
     private String community;
 
@@ -214,6 +218,22 @@ public class UserBaseInfoVo {
 
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getZone() {
+		return zone;
+	}
+
+	public void setZone(String zone) {
+		this.zone = zone;
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.breeze.health.service.impl;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -44,6 +45,7 @@ import com.breeze.health.mapper.UserPsychologicalMapper;
 import com.breeze.health.mapper.UserPsychologicalPHQ9Mapper;
 import com.breeze.health.mapper.UserSickMapper;
 import com.breeze.health.service.ReportService;
+import com.breeze.health.service.SickService;
 import com.breeze.health.util.BeanUtils;
 import com.github.pagehelper.PageHelper;
 
@@ -252,75 +254,78 @@ public class ReportServiceImpl implements ReportService{
 				String sickReport = "";
 				int sickTop5Count = 0;
 				String sickName = "";
-				//高血压
-				if (sick.getHighBloodPressure() == 2)
-				{
-					sickName += "".equals(sickName)?"高血压":",高血压";
-					sickTop5Count += 1;
-				}
-				//冠心病
-				if (sick.getCoronaryHeartDisease()== 2)
-				{
-					sickName += "".equals(sickName)?"冠心病":",冠心病";
-					sickTop5Count += 1;
-				}
-				//高脂血症
-				if (sick.getHyperlipidemia()== 2)
-				{
-					sickName += "".equals(sickName)?"高脂血症":",高脂血症";
-					sickTop5Count += 1;
-				}
-				//糖尿病
-				if (sick.getDiabetes()== 2)
-				{
-					sickName += "".equals(sickName)?"糖尿病":",糖尿病";
-					sickTop5Count += 1;
-				}
-				//脑血管疾病
-				if (sick.getCerebrovascularDisease()== 2)
-				{
-					sickName += "".equals(sickName)?"脑血管疾病":",脑血管疾病";
-					sickTop5Count += 1;
-				}
-				
-				if (sickTop5Count>1)
-				{
-					sickReport += "您同时患有"+sickName+"等，这些疾病与饮食、运动等日常习惯存在密切关系，彼此互相影响，您若在疾病控制与康复过程中遇到疑惑、困难等，欢迎您及时与签约医生和社区护士沟通联系，他们将会耐心解答您的问题，并与您共同制定可行的治疗和护理措施，提高您的健康水平，降低各种并发症的发生风险。";
-				}else if(sickTop5Count==1)
-				{
-					sickReport += "您有"+sickName+"，应注意调整饮食与运动习惯，定期复查，并根据医生建议服用相关药物，以降低心脑血管疾病的发生风险。";
-				}
-				
-				
-				//慢性胃炎
-				if (sick.getChronicGastritis()== 2)
-				{
-					sickReport += ("".equals(sickReport)?"":"\n") + "您患有慢性胃炎，平时应注意饮食规律，少食多餐、细嚼慢咽。";
-				}
-				
-				//胃溃疡
-				if (sick.getStomachUlcer()== 2)
-				{
-					sickReport += ("".equals(sickReport)?"":"\n") + "您患有胃溃疡，平时应注意饮食规律，少食多餐、细嚼慢咽。";
-				}
-				
-				//支气管哮喘
-				if (sick.getBronchialAsthma()== 2)
-				{
-					sickReport += ("".equals(sickReport)?"":"\n") + "您长期患有支气管哮喘，注意寻找可能的过敏源，并避免与过敏源的接触。";
-				}
-				
-				//copd
-				if (sick.getCopd()== 2)
-				{
-					sickReport += ("".equals(sickReport)?"":"\n") + "您患有COPD，应注意天气变化，及时调整衣物，避免着凉感冒；适当进行体育锻炼，营养均衡，适当补充维生素C等；平时可规律进行呼吸操练习；请您务必戒烟（对于吸烟者）；出现喘息等不适症状及时就诊。长期家庭氧疗者，可关注公众号（长期家庭氧疗）的相关信息。";
-				}
-				
-				//骨质疏松症
-				if (sick.getOsteoporosis()== 2)
-				{
-					sickReport += ("".equals(sickReport)?"":"\n") + "您有骨质疏松症，除了遵医嘱用药外，还要注意适当运动、多晒太阳，但在活动过程中应注意安全，避免跌倒等情况的发生。您可关注骨质疏松症的日常护理。";
-				}
+				if (sick.getSicks()!=null){
+					List<String> sicksList = Arrays.asList(sick.getSicks());
+					//高血压
+					if (sicksList.contains(SickService.HIGHBLOODPRESSURE))
+					{
+						sickName += "".equals(sickName)?"高血压":",高血压";
+						sickTop5Count += 1;
+					}
+					//冠心病
+					if (sicksList.contains(SickService.CORONARYHEARTDISEASE))
+					{
+						sickName += "".equals(sickName)?"冠心病":",冠心病";
+						sickTop5Count += 1;
+					}
+					//高脂血症
+					if (sicksList.contains(SickService.HYPERLIPIDEMIA))
+					{
+						sickName += "".equals(sickName)?"高脂血症":",高脂血症";
+						sickTop5Count += 1;
+					}
+					//糖尿病
+					if (sicksList.contains(SickService.DIABETES))
+					{
+						sickName += "".equals(sickName)?"糖尿病":",糖尿病";
+						sickTop5Count += 1;
+					}
+					//脑血管疾病
+					if (sicksList.contains(SickService.CEREBROVASCULARDISEASE))
+					{
+						sickName += "".equals(sickName)?"脑血管疾病":",脑血管疾病";
+						sickTop5Count += 1;
+					}
+					
+					if (sickTop5Count>1)
+					{
+						sickReport += "您同时患有"+sickName+"等，这些疾病与饮食、运动等日常习惯存在密切关系，彼此互相影响，您若在疾病控制与康复过程中遇到疑惑、困难等，欢迎您及时与签约医生和社区护士沟通联系，他们将会耐心解答您的问题，并与您共同制定可行的治疗和护理措施，提高您的健康水平，降低各种并发症的发生风险。";
+					}else if(sickTop5Count==1)
+					{
+						sickReport += "您有"+sickName+"，应注意调整饮食与运动习惯，定期复查，并根据医生建议服用相关药物，以降低心脑血管疾病的发生风险。";
+					}
+					
+					
+					//慢性胃炎
+					if (sicksList.contains(SickService.CHRONICGASTRITIS))
+					{
+						sickReport += ("".equals(sickReport)?"":"\n") + "您患有慢性胃炎，平时应注意饮食规律，少食多餐、细嚼慢咽。";
+					}
+					
+					//胃溃疡
+					if (sicksList.contains(SickService.STOMACHULCER))
+					{
+						sickReport += ("".equals(sickReport)?"":"\n") + "您患有胃溃疡，平时应注意饮食规律，少食多餐、细嚼慢咽。";
+					}
+					
+					//支气管哮喘
+					if (sicksList.contains(SickService.BRONCHIALASTHMA))
+					{
+						sickReport += ("".equals(sickReport)?"":"\n") + "您长期患有支气管哮喘，注意寻找可能的过敏源，并避免与过敏源的接触。";
+					}
+					
+					//copd
+					if (sicksList.contains(SickService.COPD))
+					{
+						sickReport += ("".equals(sickReport)?"":"\n") + "您患有COPD，应注意天气变化，及时调整衣物，避免着凉感冒；适当进行体育锻炼，营养均衡，适当补充维生素C等；平时可规律进行呼吸操练习；请您务必戒烟（对于吸烟者）；出现喘息等不适症状及时就诊。长期家庭氧疗者，可关注公众号（长期家庭氧疗）的相关信息。";
+					}
+					
+					//骨质疏松症
+					if (sicksList.contains(SickService.OSTEOPOROSIS))
+					{
+						sickReport += ("".equals(sickReport)?"":"\n") + "您有骨质疏松症，除了遵医嘱用药外，还要注意适当运动、多晒太阳，但在活动过程中应注意安全，避免跌倒等情况的发生。您可关注骨质疏松症的日常护理。";
+					}
+			    }
 				
 				float bmi = phy.getWeight()/((phy.getHeight()/100f)*(phy.getHeight()/100f));
 				if (bmi>=28)

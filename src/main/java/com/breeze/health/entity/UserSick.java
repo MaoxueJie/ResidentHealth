@@ -7,69 +7,41 @@ public class UserSick {
 
     private Long userId;
 
-    private Integer highBloodPressure;
+    private String sicks;
 
     private Integer highBloodPressureYears;
 
-    private Integer coronaryHeartDisease;
-
     private Integer coronaryHeartDiseaseYears;
-
-    private Integer hyperlipidemia;
 
     private Integer hyperlipidemiaYears;
 
-    private Integer diabetes;
-
     private Integer diabetesYears;
-
-    private Integer cerebrovascularDisease;
 
     private Integer cerebrovascularDiseaseYears;
 
-    private Integer chronicGastritis;
-
     private Integer chronicGastritisYears;
-
-    private Integer stomachUlcer;
 
     private Integer stomachUlcerYears;
 
-    private Integer bronchialAsthma;
-
     private Integer bronchialAsthmaYears;
-
-    private Integer copd;
 
     private Integer copdYears;
 
-    private Integer osteoporosis;
-
     private Integer osteoporosisYears;
 
-    private Integer glaucoma;
-
     private Integer glaucomaYears;
-
-    private Integer cataract;
 
     private Integer cataractYears;
 
     private String others;
 
-    private Integer antihypertensiveDrug;
+    private String drugs;
 
     private String antihypertensiveDrugName;
 
-    private Integer lipidLoweringDrug;
-
     private String lipidLoweringDrugName;
 
-    private Integer hypoglycemicAgents;
-
     private String hypoglycemicAgentsName;
-
-    private Integer antiplateletDrug;
 
     private String antiplateletDrugName;
 
@@ -101,12 +73,12 @@ public class UserSick {
         this.userId = userId;
     }
 
-    public Integer getHighBloodPressure() {
-        return highBloodPressure;
+    public String getSicks() {
+        return sicks;
     }
 
-    public void setHighBloodPressure(Integer highBloodPressure) {
-        this.highBloodPressure = highBloodPressure;
+    public void setSicks(String sicks) {
+        this.sicks = sicks == null ? null : sicks.trim();
     }
 
     public Integer getHighBloodPressureYears() {
@@ -117,28 +89,12 @@ public class UserSick {
         this.highBloodPressureYears = highBloodPressureYears;
     }
 
-    public Integer getCoronaryHeartDisease() {
-        return coronaryHeartDisease;
-    }
-
-    public void setCoronaryHeartDisease(Integer coronaryHeartDisease) {
-        this.coronaryHeartDisease = coronaryHeartDisease;
-    }
-
     public Integer getCoronaryHeartDiseaseYears() {
         return coronaryHeartDiseaseYears;
     }
 
     public void setCoronaryHeartDiseaseYears(Integer coronaryHeartDiseaseYears) {
         this.coronaryHeartDiseaseYears = coronaryHeartDiseaseYears;
-    }
-
-    public Integer getHyperlipidemia() {
-        return hyperlipidemia;
-    }
-
-    public void setHyperlipidemia(Integer hyperlipidemia) {
-        this.hyperlipidemia = hyperlipidemia;
     }
 
     public Integer getHyperlipidemiaYears() {
@@ -149,28 +105,12 @@ public class UserSick {
         this.hyperlipidemiaYears = hyperlipidemiaYears;
     }
 
-    public Integer getDiabetes() {
-        return diabetes;
-    }
-
-    public void setDiabetes(Integer diabetes) {
-        this.diabetes = diabetes;
-    }
-
     public Integer getDiabetesYears() {
         return diabetesYears;
     }
 
     public void setDiabetesYears(Integer diabetesYears) {
         this.diabetesYears = diabetesYears;
-    }
-
-    public Integer getCerebrovascularDisease() {
-        return cerebrovascularDisease;
-    }
-
-    public void setCerebrovascularDisease(Integer cerebrovascularDisease) {
-        this.cerebrovascularDisease = cerebrovascularDisease;
     }
 
     public Integer getCerebrovascularDiseaseYears() {
@@ -181,28 +121,12 @@ public class UserSick {
         this.cerebrovascularDiseaseYears = cerebrovascularDiseaseYears;
     }
 
-    public Integer getChronicGastritis() {
-        return chronicGastritis;
-    }
-
-    public void setChronicGastritis(Integer chronicGastritis) {
-        this.chronicGastritis = chronicGastritis;
-    }
-
     public Integer getChronicGastritisYears() {
         return chronicGastritisYears;
     }
 
     public void setChronicGastritisYears(Integer chronicGastritisYears) {
         this.chronicGastritisYears = chronicGastritisYears;
-    }
-
-    public Integer getStomachUlcer() {
-        return stomachUlcer;
-    }
-
-    public void setStomachUlcer(Integer stomachUlcer) {
-        this.stomachUlcer = stomachUlcer;
     }
 
     public Integer getStomachUlcerYears() {
@@ -213,28 +137,12 @@ public class UserSick {
         this.stomachUlcerYears = stomachUlcerYears;
     }
 
-    public Integer getBronchialAsthma() {
-        return bronchialAsthma;
-    }
-
-    public void setBronchialAsthma(Integer bronchialAsthma) {
-        this.bronchialAsthma = bronchialAsthma;
-    }
-
     public Integer getBronchialAsthmaYears() {
         return bronchialAsthmaYears;
     }
 
     public void setBronchialAsthmaYears(Integer bronchialAsthmaYears) {
         this.bronchialAsthmaYears = bronchialAsthmaYears;
-    }
-
-    public Integer getCopd() {
-        return copd;
-    }
-
-    public void setCopd(Integer copd) {
-        this.copd = copd;
     }
 
     public Integer getCopdYears() {
@@ -245,14 +153,6 @@ public class UserSick {
         this.copdYears = copdYears;
     }
 
-    public Integer getOsteoporosis() {
-        return osteoporosis;
-    }
-
-    public void setOsteoporosis(Integer osteoporosis) {
-        this.osteoporosis = osteoporosis;
-    }
-
     public Integer getOsteoporosisYears() {
         return osteoporosisYears;
     }
@@ -261,28 +161,12 @@ public class UserSick {
         this.osteoporosisYears = osteoporosisYears;
     }
 
-    public Integer getGlaucoma() {
-        return glaucoma;
-    }
-
-    public void setGlaucoma(Integer glaucoma) {
-        this.glaucoma = glaucoma;
-    }
-
     public Integer getGlaucomaYears() {
         return glaucomaYears;
     }
 
     public void setGlaucomaYears(Integer glaucomaYears) {
         this.glaucomaYears = glaucomaYears;
-    }
-
-    public Integer getCataract() {
-        return cataract;
-    }
-
-    public void setCataract(Integer cataract) {
-        this.cataract = cataract;
     }
 
     public Integer getCataractYears() {
@@ -301,12 +185,12 @@ public class UserSick {
         this.others = others == null ? null : others.trim();
     }
 
-    public Integer getAntihypertensiveDrug() {
-        return antihypertensiveDrug;
+    public String getDrugs() {
+        return drugs;
     }
 
-    public void setAntihypertensiveDrug(Integer antihypertensiveDrug) {
-        this.antihypertensiveDrug = antihypertensiveDrug;
+    public void setDrugs(String drugs) {
+        this.drugs = drugs == null ? null : drugs.trim();
     }
 
     public String getAntihypertensiveDrugName() {
@@ -317,14 +201,6 @@ public class UserSick {
         this.antihypertensiveDrugName = antihypertensiveDrugName == null ? null : antihypertensiveDrugName.trim();
     }
 
-    public Integer getLipidLoweringDrug() {
-        return lipidLoweringDrug;
-    }
-
-    public void setLipidLoweringDrug(Integer lipidLoweringDrug) {
-        this.lipidLoweringDrug = lipidLoweringDrug;
-    }
-
     public String getLipidLoweringDrugName() {
         return lipidLoweringDrugName;
     }
@@ -333,28 +209,12 @@ public class UserSick {
         this.lipidLoweringDrugName = lipidLoweringDrugName == null ? null : lipidLoweringDrugName.trim();
     }
 
-    public Integer getHypoglycemicAgents() {
-        return hypoglycemicAgents;
-    }
-
-    public void setHypoglycemicAgents(Integer hypoglycemicAgents) {
-        this.hypoglycemicAgents = hypoglycemicAgents;
-    }
-
     public String getHypoglycemicAgentsName() {
         return hypoglycemicAgentsName;
     }
 
     public void setHypoglycemicAgentsName(String hypoglycemicAgentsName) {
         this.hypoglycemicAgentsName = hypoglycemicAgentsName == null ? null : hypoglycemicAgentsName.trim();
-    }
-
-    public Integer getAntiplateletDrug() {
-        return antiplateletDrug;
-    }
-
-    public void setAntiplateletDrug(Integer antiplateletDrug) {
-        this.antiplateletDrug = antiplateletDrug;
     }
 
     public String getAntiplateletDrugName() {

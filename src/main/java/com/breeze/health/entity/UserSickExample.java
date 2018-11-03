@@ -225,63 +225,73 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
-        public Criteria andHighBloodPressureIsNull() {
-            addCriterion("high_blood_pressure is null");
+        public Criteria andSicksIsNull() {
+            addCriterion("sicks is null");
             return (Criteria) this;
         }
 
-        public Criteria andHighBloodPressureIsNotNull() {
-            addCriterion("high_blood_pressure is not null");
+        public Criteria andSicksIsNotNull() {
+            addCriterion("sicks is not null");
             return (Criteria) this;
         }
 
-        public Criteria andHighBloodPressureEqualTo(Integer value) {
-            addCriterion("high_blood_pressure =", value, "highBloodPressure");
+        public Criteria andSicksEqualTo(String value) {
+            addCriterion("sicks =", value, "sicks");
             return (Criteria) this;
         }
 
-        public Criteria andHighBloodPressureNotEqualTo(Integer value) {
-            addCriterion("high_blood_pressure <>", value, "highBloodPressure");
+        public Criteria andSicksNotEqualTo(String value) {
+            addCriterion("sicks <>", value, "sicks");
             return (Criteria) this;
         }
 
-        public Criteria andHighBloodPressureGreaterThan(Integer value) {
-            addCriterion("high_blood_pressure >", value, "highBloodPressure");
+        public Criteria andSicksGreaterThan(String value) {
+            addCriterion("sicks >", value, "sicks");
             return (Criteria) this;
         }
 
-        public Criteria andHighBloodPressureGreaterThanOrEqualTo(Integer value) {
-            addCriterion("high_blood_pressure >=", value, "highBloodPressure");
+        public Criteria andSicksGreaterThanOrEqualTo(String value) {
+            addCriterion("sicks >=", value, "sicks");
             return (Criteria) this;
         }
 
-        public Criteria andHighBloodPressureLessThan(Integer value) {
-            addCriterion("high_blood_pressure <", value, "highBloodPressure");
+        public Criteria andSicksLessThan(String value) {
+            addCriterion("sicks <", value, "sicks");
             return (Criteria) this;
         }
 
-        public Criteria andHighBloodPressureLessThanOrEqualTo(Integer value) {
-            addCriterion("high_blood_pressure <=", value, "highBloodPressure");
+        public Criteria andSicksLessThanOrEqualTo(String value) {
+            addCriterion("sicks <=", value, "sicks");
             return (Criteria) this;
         }
 
-        public Criteria andHighBloodPressureIn(List<Integer> values) {
-            addCriterion("high_blood_pressure in", values, "highBloodPressure");
+        public Criteria andSicksLike(String value) {
+            addCriterion("sicks like", value, "sicks");
             return (Criteria) this;
         }
 
-        public Criteria andHighBloodPressureNotIn(List<Integer> values) {
-            addCriterion("high_blood_pressure not in", values, "highBloodPressure");
+        public Criteria andSicksNotLike(String value) {
+            addCriterion("sicks not like", value, "sicks");
             return (Criteria) this;
         }
 
-        public Criteria andHighBloodPressureBetween(Integer value1, Integer value2) {
-            addCriterion("high_blood_pressure between", value1, value2, "highBloodPressure");
+        public Criteria andSicksIn(List<String> values) {
+            addCriterion("sicks in", values, "sicks");
             return (Criteria) this;
         }
 
-        public Criteria andHighBloodPressureNotBetween(Integer value1, Integer value2) {
-            addCriterion("high_blood_pressure not between", value1, value2, "highBloodPressure");
+        public Criteria andSicksNotIn(List<String> values) {
+            addCriterion("sicks not in", values, "sicks");
+            return (Criteria) this;
+        }
+
+        public Criteria andSicksBetween(String value1, String value2) {
+            addCriterion("sicks between", value1, value2, "sicks");
+            return (Criteria) this;
+        }
+
+        public Criteria andSicksNotBetween(String value1, String value2) {
+            addCriterion("sicks not between", value1, value2, "sicks");
             return (Criteria) this;
         }
 
@@ -345,66 +355,6 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
-        public Criteria andCoronaryHeartDiseaseIsNull() {
-            addCriterion("coronary_heart_disease is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCoronaryHeartDiseaseIsNotNull() {
-            addCriterion("coronary_heart_disease is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCoronaryHeartDiseaseEqualTo(Integer value) {
-            addCriterion("coronary_heart_disease =", value, "coronaryHeartDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCoronaryHeartDiseaseNotEqualTo(Integer value) {
-            addCriterion("coronary_heart_disease <>", value, "coronaryHeartDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCoronaryHeartDiseaseGreaterThan(Integer value) {
-            addCriterion("coronary_heart_disease >", value, "coronaryHeartDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCoronaryHeartDiseaseGreaterThanOrEqualTo(Integer value) {
-            addCriterion("coronary_heart_disease >=", value, "coronaryHeartDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCoronaryHeartDiseaseLessThan(Integer value) {
-            addCriterion("coronary_heart_disease <", value, "coronaryHeartDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCoronaryHeartDiseaseLessThanOrEqualTo(Integer value) {
-            addCriterion("coronary_heart_disease <=", value, "coronaryHeartDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCoronaryHeartDiseaseIn(List<Integer> values) {
-            addCriterion("coronary_heart_disease in", values, "coronaryHeartDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCoronaryHeartDiseaseNotIn(List<Integer> values) {
-            addCriterion("coronary_heart_disease not in", values, "coronaryHeartDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCoronaryHeartDiseaseBetween(Integer value1, Integer value2) {
-            addCriterion("coronary_heart_disease between", value1, value2, "coronaryHeartDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCoronaryHeartDiseaseNotBetween(Integer value1, Integer value2) {
-            addCriterion("coronary_heart_disease not between", value1, value2, "coronaryHeartDisease");
-            return (Criteria) this;
-        }
-
         public Criteria andCoronaryHeartDiseaseYearsIsNull() {
             addCriterion("coronary_heart_disease_years is null");
             return (Criteria) this;
@@ -462,66 +412,6 @@ public class UserSickExample {
 
         public Criteria andCoronaryHeartDiseaseYearsNotBetween(Integer value1, Integer value2) {
             addCriterion("coronary_heart_disease_years not between", value1, value2, "coronaryHeartDiseaseYears");
-            return (Criteria) this;
-        }
-
-        public Criteria andHyperlipidemiaIsNull() {
-            addCriterion("hyperlipidemia is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andHyperlipidemiaIsNotNull() {
-            addCriterion("hyperlipidemia is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andHyperlipidemiaEqualTo(Integer value) {
-            addCriterion("hyperlipidemia =", value, "hyperlipidemia");
-            return (Criteria) this;
-        }
-
-        public Criteria andHyperlipidemiaNotEqualTo(Integer value) {
-            addCriterion("hyperlipidemia <>", value, "hyperlipidemia");
-            return (Criteria) this;
-        }
-
-        public Criteria andHyperlipidemiaGreaterThan(Integer value) {
-            addCriterion("hyperlipidemia >", value, "hyperlipidemia");
-            return (Criteria) this;
-        }
-
-        public Criteria andHyperlipidemiaGreaterThanOrEqualTo(Integer value) {
-            addCriterion("hyperlipidemia >=", value, "hyperlipidemia");
-            return (Criteria) this;
-        }
-
-        public Criteria andHyperlipidemiaLessThan(Integer value) {
-            addCriterion("hyperlipidemia <", value, "hyperlipidemia");
-            return (Criteria) this;
-        }
-
-        public Criteria andHyperlipidemiaLessThanOrEqualTo(Integer value) {
-            addCriterion("hyperlipidemia <=", value, "hyperlipidemia");
-            return (Criteria) this;
-        }
-
-        public Criteria andHyperlipidemiaIn(List<Integer> values) {
-            addCriterion("hyperlipidemia in", values, "hyperlipidemia");
-            return (Criteria) this;
-        }
-
-        public Criteria andHyperlipidemiaNotIn(List<Integer> values) {
-            addCriterion("hyperlipidemia not in", values, "hyperlipidemia");
-            return (Criteria) this;
-        }
-
-        public Criteria andHyperlipidemiaBetween(Integer value1, Integer value2) {
-            addCriterion("hyperlipidemia between", value1, value2, "hyperlipidemia");
-            return (Criteria) this;
-        }
-
-        public Criteria andHyperlipidemiaNotBetween(Integer value1, Integer value2) {
-            addCriterion("hyperlipidemia not between", value1, value2, "hyperlipidemia");
             return (Criteria) this;
         }
 
@@ -585,66 +475,6 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
-        public Criteria andDiabetesIsNull() {
-            addCriterion("diabetes is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andDiabetesIsNotNull() {
-            addCriterion("diabetes is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andDiabetesEqualTo(Integer value) {
-            addCriterion("diabetes =", value, "diabetes");
-            return (Criteria) this;
-        }
-
-        public Criteria andDiabetesNotEqualTo(Integer value) {
-            addCriterion("diabetes <>", value, "diabetes");
-            return (Criteria) this;
-        }
-
-        public Criteria andDiabetesGreaterThan(Integer value) {
-            addCriterion("diabetes >", value, "diabetes");
-            return (Criteria) this;
-        }
-
-        public Criteria andDiabetesGreaterThanOrEqualTo(Integer value) {
-            addCriterion("diabetes >=", value, "diabetes");
-            return (Criteria) this;
-        }
-
-        public Criteria andDiabetesLessThan(Integer value) {
-            addCriterion("diabetes <", value, "diabetes");
-            return (Criteria) this;
-        }
-
-        public Criteria andDiabetesLessThanOrEqualTo(Integer value) {
-            addCriterion("diabetes <=", value, "diabetes");
-            return (Criteria) this;
-        }
-
-        public Criteria andDiabetesIn(List<Integer> values) {
-            addCriterion("diabetes in", values, "diabetes");
-            return (Criteria) this;
-        }
-
-        public Criteria andDiabetesNotIn(List<Integer> values) {
-            addCriterion("diabetes not in", values, "diabetes");
-            return (Criteria) this;
-        }
-
-        public Criteria andDiabetesBetween(Integer value1, Integer value2) {
-            addCriterion("diabetes between", value1, value2, "diabetes");
-            return (Criteria) this;
-        }
-
-        public Criteria andDiabetesNotBetween(Integer value1, Integer value2) {
-            addCriterion("diabetes not between", value1, value2, "diabetes");
-            return (Criteria) this;
-        }
-
         public Criteria andDiabetesYearsIsNull() {
             addCriterion("diabetes_years is null");
             return (Criteria) this;
@@ -702,66 +532,6 @@ public class UserSickExample {
 
         public Criteria andDiabetesYearsNotBetween(Integer value1, Integer value2) {
             addCriterion("diabetes_years not between", value1, value2, "diabetesYears");
-            return (Criteria) this;
-        }
-
-        public Criteria andCerebrovascularDiseaseIsNull() {
-            addCriterion("cerebrovascular_disease is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCerebrovascularDiseaseIsNotNull() {
-            addCriterion("cerebrovascular_disease is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCerebrovascularDiseaseEqualTo(Integer value) {
-            addCriterion("cerebrovascular_disease =", value, "cerebrovascularDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCerebrovascularDiseaseNotEqualTo(Integer value) {
-            addCriterion("cerebrovascular_disease <>", value, "cerebrovascularDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCerebrovascularDiseaseGreaterThan(Integer value) {
-            addCriterion("cerebrovascular_disease >", value, "cerebrovascularDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCerebrovascularDiseaseGreaterThanOrEqualTo(Integer value) {
-            addCriterion("cerebrovascular_disease >=", value, "cerebrovascularDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCerebrovascularDiseaseLessThan(Integer value) {
-            addCriterion("cerebrovascular_disease <", value, "cerebrovascularDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCerebrovascularDiseaseLessThanOrEqualTo(Integer value) {
-            addCriterion("cerebrovascular_disease <=", value, "cerebrovascularDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCerebrovascularDiseaseIn(List<Integer> values) {
-            addCriterion("cerebrovascular_disease in", values, "cerebrovascularDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCerebrovascularDiseaseNotIn(List<Integer> values) {
-            addCriterion("cerebrovascular_disease not in", values, "cerebrovascularDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCerebrovascularDiseaseBetween(Integer value1, Integer value2) {
-            addCriterion("cerebrovascular_disease between", value1, value2, "cerebrovascularDisease");
-            return (Criteria) this;
-        }
-
-        public Criteria andCerebrovascularDiseaseNotBetween(Integer value1, Integer value2) {
-            addCriterion("cerebrovascular_disease not between", value1, value2, "cerebrovascularDisease");
             return (Criteria) this;
         }
 
@@ -825,66 +595,6 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
-        public Criteria andChronicGastritisIsNull() {
-            addCriterion("chronic_gastritis is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andChronicGastritisIsNotNull() {
-            addCriterion("chronic_gastritis is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andChronicGastritisEqualTo(Integer value) {
-            addCriterion("chronic_gastritis =", value, "chronicGastritis");
-            return (Criteria) this;
-        }
-
-        public Criteria andChronicGastritisNotEqualTo(Integer value) {
-            addCriterion("chronic_gastritis <>", value, "chronicGastritis");
-            return (Criteria) this;
-        }
-
-        public Criteria andChronicGastritisGreaterThan(Integer value) {
-            addCriterion("chronic_gastritis >", value, "chronicGastritis");
-            return (Criteria) this;
-        }
-
-        public Criteria andChronicGastritisGreaterThanOrEqualTo(Integer value) {
-            addCriterion("chronic_gastritis >=", value, "chronicGastritis");
-            return (Criteria) this;
-        }
-
-        public Criteria andChronicGastritisLessThan(Integer value) {
-            addCriterion("chronic_gastritis <", value, "chronicGastritis");
-            return (Criteria) this;
-        }
-
-        public Criteria andChronicGastritisLessThanOrEqualTo(Integer value) {
-            addCriterion("chronic_gastritis <=", value, "chronicGastritis");
-            return (Criteria) this;
-        }
-
-        public Criteria andChronicGastritisIn(List<Integer> values) {
-            addCriterion("chronic_gastritis in", values, "chronicGastritis");
-            return (Criteria) this;
-        }
-
-        public Criteria andChronicGastritisNotIn(List<Integer> values) {
-            addCriterion("chronic_gastritis not in", values, "chronicGastritis");
-            return (Criteria) this;
-        }
-
-        public Criteria andChronicGastritisBetween(Integer value1, Integer value2) {
-            addCriterion("chronic_gastritis between", value1, value2, "chronicGastritis");
-            return (Criteria) this;
-        }
-
-        public Criteria andChronicGastritisNotBetween(Integer value1, Integer value2) {
-            addCriterion("chronic_gastritis not between", value1, value2, "chronicGastritis");
-            return (Criteria) this;
-        }
-
         public Criteria andChronicGastritisYearsIsNull() {
             addCriterion("chronic_gastritis_years is null");
             return (Criteria) this;
@@ -942,66 +652,6 @@ public class UserSickExample {
 
         public Criteria andChronicGastritisYearsNotBetween(Integer value1, Integer value2) {
             addCriterion("chronic_gastritis_years not between", value1, value2, "chronicGastritisYears");
-            return (Criteria) this;
-        }
-
-        public Criteria andStomachUlcerIsNull() {
-            addCriterion("stomach_ulcer is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStomachUlcerIsNotNull() {
-            addCriterion("stomach_ulcer is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStomachUlcerEqualTo(Integer value) {
-            addCriterion("stomach_ulcer =", value, "stomachUlcer");
-            return (Criteria) this;
-        }
-
-        public Criteria andStomachUlcerNotEqualTo(Integer value) {
-            addCriterion("stomach_ulcer <>", value, "stomachUlcer");
-            return (Criteria) this;
-        }
-
-        public Criteria andStomachUlcerGreaterThan(Integer value) {
-            addCriterion("stomach_ulcer >", value, "stomachUlcer");
-            return (Criteria) this;
-        }
-
-        public Criteria andStomachUlcerGreaterThanOrEqualTo(Integer value) {
-            addCriterion("stomach_ulcer >=", value, "stomachUlcer");
-            return (Criteria) this;
-        }
-
-        public Criteria andStomachUlcerLessThan(Integer value) {
-            addCriterion("stomach_ulcer <", value, "stomachUlcer");
-            return (Criteria) this;
-        }
-
-        public Criteria andStomachUlcerLessThanOrEqualTo(Integer value) {
-            addCriterion("stomach_ulcer <=", value, "stomachUlcer");
-            return (Criteria) this;
-        }
-
-        public Criteria andStomachUlcerIn(List<Integer> values) {
-            addCriterion("stomach_ulcer in", values, "stomachUlcer");
-            return (Criteria) this;
-        }
-
-        public Criteria andStomachUlcerNotIn(List<Integer> values) {
-            addCriterion("stomach_ulcer not in", values, "stomachUlcer");
-            return (Criteria) this;
-        }
-
-        public Criteria andStomachUlcerBetween(Integer value1, Integer value2) {
-            addCriterion("stomach_ulcer between", value1, value2, "stomachUlcer");
-            return (Criteria) this;
-        }
-
-        public Criteria andStomachUlcerNotBetween(Integer value1, Integer value2) {
-            addCriterion("stomach_ulcer not between", value1, value2, "stomachUlcer");
             return (Criteria) this;
         }
 
@@ -1065,66 +715,6 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
-        public Criteria andBronchialAsthmaIsNull() {
-            addCriterion("bronchial_asthma is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andBronchialAsthmaIsNotNull() {
-            addCriterion("bronchial_asthma is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andBronchialAsthmaEqualTo(Integer value) {
-            addCriterion("bronchial_asthma =", value, "bronchialAsthma");
-            return (Criteria) this;
-        }
-
-        public Criteria andBronchialAsthmaNotEqualTo(Integer value) {
-            addCriterion("bronchial_asthma <>", value, "bronchialAsthma");
-            return (Criteria) this;
-        }
-
-        public Criteria andBronchialAsthmaGreaterThan(Integer value) {
-            addCriterion("bronchial_asthma >", value, "bronchialAsthma");
-            return (Criteria) this;
-        }
-
-        public Criteria andBronchialAsthmaGreaterThanOrEqualTo(Integer value) {
-            addCriterion("bronchial_asthma >=", value, "bronchialAsthma");
-            return (Criteria) this;
-        }
-
-        public Criteria andBronchialAsthmaLessThan(Integer value) {
-            addCriterion("bronchial_asthma <", value, "bronchialAsthma");
-            return (Criteria) this;
-        }
-
-        public Criteria andBronchialAsthmaLessThanOrEqualTo(Integer value) {
-            addCriterion("bronchial_asthma <=", value, "bronchialAsthma");
-            return (Criteria) this;
-        }
-
-        public Criteria andBronchialAsthmaIn(List<Integer> values) {
-            addCriterion("bronchial_asthma in", values, "bronchialAsthma");
-            return (Criteria) this;
-        }
-
-        public Criteria andBronchialAsthmaNotIn(List<Integer> values) {
-            addCriterion("bronchial_asthma not in", values, "bronchialAsthma");
-            return (Criteria) this;
-        }
-
-        public Criteria andBronchialAsthmaBetween(Integer value1, Integer value2) {
-            addCriterion("bronchial_asthma between", value1, value2, "bronchialAsthma");
-            return (Criteria) this;
-        }
-
-        public Criteria andBronchialAsthmaNotBetween(Integer value1, Integer value2) {
-            addCriterion("bronchial_asthma not between", value1, value2, "bronchialAsthma");
-            return (Criteria) this;
-        }
-
         public Criteria andBronchialAsthmaYearsIsNull() {
             addCriterion("bronchial_asthma_years is null");
             return (Criteria) this;
@@ -1182,66 +772,6 @@ public class UserSickExample {
 
         public Criteria andBronchialAsthmaYearsNotBetween(Integer value1, Integer value2) {
             addCriterion("bronchial_asthma_years not between", value1, value2, "bronchialAsthmaYears");
-            return (Criteria) this;
-        }
-
-        public Criteria andCopdIsNull() {
-            addCriterion("copd is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCopdIsNotNull() {
-            addCriterion("copd is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCopdEqualTo(Integer value) {
-            addCriterion("copd =", value, "copd");
-            return (Criteria) this;
-        }
-
-        public Criteria andCopdNotEqualTo(Integer value) {
-            addCriterion("copd <>", value, "copd");
-            return (Criteria) this;
-        }
-
-        public Criteria andCopdGreaterThan(Integer value) {
-            addCriterion("copd >", value, "copd");
-            return (Criteria) this;
-        }
-
-        public Criteria andCopdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("copd >=", value, "copd");
-            return (Criteria) this;
-        }
-
-        public Criteria andCopdLessThan(Integer value) {
-            addCriterion("copd <", value, "copd");
-            return (Criteria) this;
-        }
-
-        public Criteria andCopdLessThanOrEqualTo(Integer value) {
-            addCriterion("copd <=", value, "copd");
-            return (Criteria) this;
-        }
-
-        public Criteria andCopdIn(List<Integer> values) {
-            addCriterion("copd in", values, "copd");
-            return (Criteria) this;
-        }
-
-        public Criteria andCopdNotIn(List<Integer> values) {
-            addCriterion("copd not in", values, "copd");
-            return (Criteria) this;
-        }
-
-        public Criteria andCopdBetween(Integer value1, Integer value2) {
-            addCriterion("copd between", value1, value2, "copd");
-            return (Criteria) this;
-        }
-
-        public Criteria andCopdNotBetween(Integer value1, Integer value2) {
-            addCriterion("copd not between", value1, value2, "copd");
             return (Criteria) this;
         }
 
@@ -1305,66 +835,6 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
-        public Criteria andOsteoporosisIsNull() {
-            addCriterion("osteoporosis is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andOsteoporosisIsNotNull() {
-            addCriterion("osteoporosis is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andOsteoporosisEqualTo(Integer value) {
-            addCriterion("osteoporosis =", value, "osteoporosis");
-            return (Criteria) this;
-        }
-
-        public Criteria andOsteoporosisNotEqualTo(Integer value) {
-            addCriterion("osteoporosis <>", value, "osteoporosis");
-            return (Criteria) this;
-        }
-
-        public Criteria andOsteoporosisGreaterThan(Integer value) {
-            addCriterion("osteoporosis >", value, "osteoporosis");
-            return (Criteria) this;
-        }
-
-        public Criteria andOsteoporosisGreaterThanOrEqualTo(Integer value) {
-            addCriterion("osteoporosis >=", value, "osteoporosis");
-            return (Criteria) this;
-        }
-
-        public Criteria andOsteoporosisLessThan(Integer value) {
-            addCriterion("osteoporosis <", value, "osteoporosis");
-            return (Criteria) this;
-        }
-
-        public Criteria andOsteoporosisLessThanOrEqualTo(Integer value) {
-            addCriterion("osteoporosis <=", value, "osteoporosis");
-            return (Criteria) this;
-        }
-
-        public Criteria andOsteoporosisIn(List<Integer> values) {
-            addCriterion("osteoporosis in", values, "osteoporosis");
-            return (Criteria) this;
-        }
-
-        public Criteria andOsteoporosisNotIn(List<Integer> values) {
-            addCriterion("osteoporosis not in", values, "osteoporosis");
-            return (Criteria) this;
-        }
-
-        public Criteria andOsteoporosisBetween(Integer value1, Integer value2) {
-            addCriterion("osteoporosis between", value1, value2, "osteoporosis");
-            return (Criteria) this;
-        }
-
-        public Criteria andOsteoporosisNotBetween(Integer value1, Integer value2) {
-            addCriterion("osteoporosis not between", value1, value2, "osteoporosis");
-            return (Criteria) this;
-        }
-
         public Criteria andOsteoporosisYearsIsNull() {
             addCriterion("osteoporosis_years is null");
             return (Criteria) this;
@@ -1425,66 +895,6 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
-        public Criteria andGlaucomaIsNull() {
-            addCriterion("glaucoma is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andGlaucomaIsNotNull() {
-            addCriterion("glaucoma is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andGlaucomaEqualTo(Integer value) {
-            addCriterion("glaucoma =", value, "glaucoma");
-            return (Criteria) this;
-        }
-
-        public Criteria andGlaucomaNotEqualTo(Integer value) {
-            addCriterion("glaucoma <>", value, "glaucoma");
-            return (Criteria) this;
-        }
-
-        public Criteria andGlaucomaGreaterThan(Integer value) {
-            addCriterion("glaucoma >", value, "glaucoma");
-            return (Criteria) this;
-        }
-
-        public Criteria andGlaucomaGreaterThanOrEqualTo(Integer value) {
-            addCriterion("glaucoma >=", value, "glaucoma");
-            return (Criteria) this;
-        }
-
-        public Criteria andGlaucomaLessThan(Integer value) {
-            addCriterion("glaucoma <", value, "glaucoma");
-            return (Criteria) this;
-        }
-
-        public Criteria andGlaucomaLessThanOrEqualTo(Integer value) {
-            addCriterion("glaucoma <=", value, "glaucoma");
-            return (Criteria) this;
-        }
-
-        public Criteria andGlaucomaIn(List<Integer> values) {
-            addCriterion("glaucoma in", values, "glaucoma");
-            return (Criteria) this;
-        }
-
-        public Criteria andGlaucomaNotIn(List<Integer> values) {
-            addCriterion("glaucoma not in", values, "glaucoma");
-            return (Criteria) this;
-        }
-
-        public Criteria andGlaucomaBetween(Integer value1, Integer value2) {
-            addCriterion("glaucoma between", value1, value2, "glaucoma");
-            return (Criteria) this;
-        }
-
-        public Criteria andGlaucomaNotBetween(Integer value1, Integer value2) {
-            addCriterion("glaucoma not between", value1, value2, "glaucoma");
-            return (Criteria) this;
-        }
-
         public Criteria andGlaucomaYearsIsNull() {
             addCriterion("glaucoma_years is null");
             return (Criteria) this;
@@ -1542,66 +952,6 @@ public class UserSickExample {
 
         public Criteria andGlaucomaYearsNotBetween(Integer value1, Integer value2) {
             addCriterion("glaucoma_years not between", value1, value2, "glaucomaYears");
-            return (Criteria) this;
-        }
-
-        public Criteria andCataractIsNull() {
-            addCriterion("cataract is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCataractIsNotNull() {
-            addCriterion("cataract is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCataractEqualTo(Integer value) {
-            addCriterion("cataract =", value, "cataract");
-            return (Criteria) this;
-        }
-
-        public Criteria andCataractNotEqualTo(Integer value) {
-            addCriterion("cataract <>", value, "cataract");
-            return (Criteria) this;
-        }
-
-        public Criteria andCataractGreaterThan(Integer value) {
-            addCriterion("cataract >", value, "cataract");
-            return (Criteria) this;
-        }
-
-        public Criteria andCataractGreaterThanOrEqualTo(Integer value) {
-            addCriterion("cataract >=", value, "cataract");
-            return (Criteria) this;
-        }
-
-        public Criteria andCataractLessThan(Integer value) {
-            addCriterion("cataract <", value, "cataract");
-            return (Criteria) this;
-        }
-
-        public Criteria andCataractLessThanOrEqualTo(Integer value) {
-            addCriterion("cataract <=", value, "cataract");
-            return (Criteria) this;
-        }
-
-        public Criteria andCataractIn(List<Integer> values) {
-            addCriterion("cataract in", values, "cataract");
-            return (Criteria) this;
-        }
-
-        public Criteria andCataractNotIn(List<Integer> values) {
-            addCriterion("cataract not in", values, "cataract");
-            return (Criteria) this;
-        }
-
-        public Criteria andCataractBetween(Integer value1, Integer value2) {
-            addCriterion("cataract between", value1, value2, "cataract");
-            return (Criteria) this;
-        }
-
-        public Criteria andCataractNotBetween(Integer value1, Integer value2) {
-            addCriterion("cataract not between", value1, value2, "cataract");
             return (Criteria) this;
         }
 
@@ -1735,63 +1085,73 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
-        public Criteria andAntihypertensiveDrugIsNull() {
-            addCriterion("antihypertensive_drug is null");
+        public Criteria andDrugsIsNull() {
+            addCriterion("drugs is null");
             return (Criteria) this;
         }
 
-        public Criteria andAntihypertensiveDrugIsNotNull() {
-            addCriterion("antihypertensive_drug is not null");
+        public Criteria andDrugsIsNotNull() {
+            addCriterion("drugs is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAntihypertensiveDrugEqualTo(Integer value) {
-            addCriterion("antihypertensive_drug =", value, "antihypertensiveDrug");
+        public Criteria andDrugsEqualTo(String value) {
+            addCriterion("drugs =", value, "drugs");
             return (Criteria) this;
         }
 
-        public Criteria andAntihypertensiveDrugNotEqualTo(Integer value) {
-            addCriterion("antihypertensive_drug <>", value, "antihypertensiveDrug");
+        public Criteria andDrugsNotEqualTo(String value) {
+            addCriterion("drugs <>", value, "drugs");
             return (Criteria) this;
         }
 
-        public Criteria andAntihypertensiveDrugGreaterThan(Integer value) {
-            addCriterion("antihypertensive_drug >", value, "antihypertensiveDrug");
+        public Criteria andDrugsGreaterThan(String value) {
+            addCriterion("drugs >", value, "drugs");
             return (Criteria) this;
         }
 
-        public Criteria andAntihypertensiveDrugGreaterThanOrEqualTo(Integer value) {
-            addCriterion("antihypertensive_drug >=", value, "antihypertensiveDrug");
+        public Criteria andDrugsGreaterThanOrEqualTo(String value) {
+            addCriterion("drugs >=", value, "drugs");
             return (Criteria) this;
         }
 
-        public Criteria andAntihypertensiveDrugLessThan(Integer value) {
-            addCriterion("antihypertensive_drug <", value, "antihypertensiveDrug");
+        public Criteria andDrugsLessThan(String value) {
+            addCriterion("drugs <", value, "drugs");
             return (Criteria) this;
         }
 
-        public Criteria andAntihypertensiveDrugLessThanOrEqualTo(Integer value) {
-            addCriterion("antihypertensive_drug <=", value, "antihypertensiveDrug");
+        public Criteria andDrugsLessThanOrEqualTo(String value) {
+            addCriterion("drugs <=", value, "drugs");
             return (Criteria) this;
         }
 
-        public Criteria andAntihypertensiveDrugIn(List<Integer> values) {
-            addCriterion("antihypertensive_drug in", values, "antihypertensiveDrug");
+        public Criteria andDrugsLike(String value) {
+            addCriterion("drugs like", value, "drugs");
             return (Criteria) this;
         }
 
-        public Criteria andAntihypertensiveDrugNotIn(List<Integer> values) {
-            addCriterion("antihypertensive_drug not in", values, "antihypertensiveDrug");
+        public Criteria andDrugsNotLike(String value) {
+            addCriterion("drugs not like", value, "drugs");
             return (Criteria) this;
         }
 
-        public Criteria andAntihypertensiveDrugBetween(Integer value1, Integer value2) {
-            addCriterion("antihypertensive_drug between", value1, value2, "antihypertensiveDrug");
+        public Criteria andDrugsIn(List<String> values) {
+            addCriterion("drugs in", values, "drugs");
             return (Criteria) this;
         }
 
-        public Criteria andAntihypertensiveDrugNotBetween(Integer value1, Integer value2) {
-            addCriterion("antihypertensive_drug not between", value1, value2, "antihypertensiveDrug");
+        public Criteria andDrugsNotIn(List<String> values) {
+            addCriterion("drugs not in", values, "drugs");
+            return (Criteria) this;
+        }
+
+        public Criteria andDrugsBetween(String value1, String value2) {
+            addCriterion("drugs between", value1, value2, "drugs");
+            return (Criteria) this;
+        }
+
+        public Criteria andDrugsNotBetween(String value1, String value2) {
+            addCriterion("drugs not between", value1, value2, "drugs");
             return (Criteria) this;
         }
 
@@ -1865,66 +1225,6 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
-        public Criteria andLipidLoweringDrugIsNull() {
-            addCriterion("lipid_lowering_drug is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andLipidLoweringDrugIsNotNull() {
-            addCriterion("lipid_lowering_drug is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andLipidLoweringDrugEqualTo(Integer value) {
-            addCriterion("lipid_lowering_drug =", value, "lipidLoweringDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andLipidLoweringDrugNotEqualTo(Integer value) {
-            addCriterion("lipid_lowering_drug <>", value, "lipidLoweringDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andLipidLoweringDrugGreaterThan(Integer value) {
-            addCriterion("lipid_lowering_drug >", value, "lipidLoweringDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andLipidLoweringDrugGreaterThanOrEqualTo(Integer value) {
-            addCriterion("lipid_lowering_drug >=", value, "lipidLoweringDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andLipidLoweringDrugLessThan(Integer value) {
-            addCriterion("lipid_lowering_drug <", value, "lipidLoweringDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andLipidLoweringDrugLessThanOrEqualTo(Integer value) {
-            addCriterion("lipid_lowering_drug <=", value, "lipidLoweringDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andLipidLoweringDrugIn(List<Integer> values) {
-            addCriterion("lipid_lowering_drug in", values, "lipidLoweringDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andLipidLoweringDrugNotIn(List<Integer> values) {
-            addCriterion("lipid_lowering_drug not in", values, "lipidLoweringDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andLipidLoweringDrugBetween(Integer value1, Integer value2) {
-            addCriterion("lipid_lowering_drug between", value1, value2, "lipidLoweringDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andLipidLoweringDrugNotBetween(Integer value1, Integer value2) {
-            addCriterion("lipid_lowering_drug not between", value1, value2, "lipidLoweringDrug");
-            return (Criteria) this;
-        }
-
         public Criteria andLipidLoweringDrugNameIsNull() {
             addCriterion("lipid_lowering_drug_name is null");
             return (Criteria) this;
@@ -1995,66 +1295,6 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
-        public Criteria andHypoglycemicAgentsIsNull() {
-            addCriterion("hypoglycemic_agents is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andHypoglycemicAgentsIsNotNull() {
-            addCriterion("hypoglycemic_agents is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andHypoglycemicAgentsEqualTo(Integer value) {
-            addCriterion("hypoglycemic_agents =", value, "hypoglycemicAgents");
-            return (Criteria) this;
-        }
-
-        public Criteria andHypoglycemicAgentsNotEqualTo(Integer value) {
-            addCriterion("hypoglycemic_agents <>", value, "hypoglycemicAgents");
-            return (Criteria) this;
-        }
-
-        public Criteria andHypoglycemicAgentsGreaterThan(Integer value) {
-            addCriterion("hypoglycemic_agents >", value, "hypoglycemicAgents");
-            return (Criteria) this;
-        }
-
-        public Criteria andHypoglycemicAgentsGreaterThanOrEqualTo(Integer value) {
-            addCriterion("hypoglycemic_agents >=", value, "hypoglycemicAgents");
-            return (Criteria) this;
-        }
-
-        public Criteria andHypoglycemicAgentsLessThan(Integer value) {
-            addCriterion("hypoglycemic_agents <", value, "hypoglycemicAgents");
-            return (Criteria) this;
-        }
-
-        public Criteria andHypoglycemicAgentsLessThanOrEqualTo(Integer value) {
-            addCriterion("hypoglycemic_agents <=", value, "hypoglycemicAgents");
-            return (Criteria) this;
-        }
-
-        public Criteria andHypoglycemicAgentsIn(List<Integer> values) {
-            addCriterion("hypoglycemic_agents in", values, "hypoglycemicAgents");
-            return (Criteria) this;
-        }
-
-        public Criteria andHypoglycemicAgentsNotIn(List<Integer> values) {
-            addCriterion("hypoglycemic_agents not in", values, "hypoglycemicAgents");
-            return (Criteria) this;
-        }
-
-        public Criteria andHypoglycemicAgentsBetween(Integer value1, Integer value2) {
-            addCriterion("hypoglycemic_agents between", value1, value2, "hypoglycemicAgents");
-            return (Criteria) this;
-        }
-
-        public Criteria andHypoglycemicAgentsNotBetween(Integer value1, Integer value2) {
-            addCriterion("hypoglycemic_agents not between", value1, value2, "hypoglycemicAgents");
-            return (Criteria) this;
-        }
-
         public Criteria andHypoglycemicAgentsNameIsNull() {
             addCriterion("hypoglycemic_agents_name is null");
             return (Criteria) this;
@@ -2122,66 +1362,6 @@ public class UserSickExample {
 
         public Criteria andHypoglycemicAgentsNameNotBetween(String value1, String value2) {
             addCriterion("hypoglycemic_agents_name not between", value1, value2, "hypoglycemicAgentsName");
-            return (Criteria) this;
-        }
-
-        public Criteria andAntiplateletDrugIsNull() {
-            addCriterion("antiplatelet_drug is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andAntiplateletDrugIsNotNull() {
-            addCriterion("antiplatelet_drug is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andAntiplateletDrugEqualTo(Integer value) {
-            addCriterion("antiplatelet_drug =", value, "antiplateletDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andAntiplateletDrugNotEqualTo(Integer value) {
-            addCriterion("antiplatelet_drug <>", value, "antiplateletDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andAntiplateletDrugGreaterThan(Integer value) {
-            addCriterion("antiplatelet_drug >", value, "antiplateletDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andAntiplateletDrugGreaterThanOrEqualTo(Integer value) {
-            addCriterion("antiplatelet_drug >=", value, "antiplateletDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andAntiplateletDrugLessThan(Integer value) {
-            addCriterion("antiplatelet_drug <", value, "antiplateletDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andAntiplateletDrugLessThanOrEqualTo(Integer value) {
-            addCriterion("antiplatelet_drug <=", value, "antiplateletDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andAntiplateletDrugIn(List<Integer> values) {
-            addCriterion("antiplatelet_drug in", values, "antiplateletDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andAntiplateletDrugNotIn(List<Integer> values) {
-            addCriterion("antiplatelet_drug not in", values, "antiplateletDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andAntiplateletDrugBetween(Integer value1, Integer value2) {
-            addCriterion("antiplatelet_drug between", value1, value2, "antiplateletDrug");
-            return (Criteria) this;
-        }
-
-        public Criteria andAntiplateletDrugNotBetween(Integer value1, Integer value2) {
-            addCriterion("antiplatelet_drug not between", value1, value2, "antiplateletDrug");
             return (Criteria) this;
         }
 

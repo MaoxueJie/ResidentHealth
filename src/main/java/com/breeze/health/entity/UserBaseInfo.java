@@ -25,6 +25,10 @@ public class UserBaseInfo {
 
     private String familyOther;
 
+    private String city;
+
+    private String zone;
+
     private String community;
 
     private Double communityLon;
@@ -131,6 +135,22 @@ public class UserBaseInfo {
 
     public void setFamilyOther(String familyOther) {
         this.familyOther = familyOther == null ? null : familyOther.trim();
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city == null ? null : city.trim();
+    }
+
+    public String getZone() {
+        return zone;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone == null ? null : zone.trim();
     }
 
     public String getCommunity() {
