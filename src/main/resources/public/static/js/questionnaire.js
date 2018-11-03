@@ -1,4 +1,5 @@
-//$(function(){
+var $loadingToast ,$toast;
+$(function(){
 
 	var toastHtml = '';
 	toastHtml += '<div id="toast" style="display:none;">';
@@ -18,7 +19,9 @@
 	toastHtml += '</div>';
 	$('body').append( toastHtml );
 
-	var $loadingToast = $('#loadingToast'),$toast = $('#toast');
+	$loadingToast = $('#loadingToast');
+	$toast = $('#toast');
+})
 
 	function showToast(){
 		if ($toast.css('display') != 'none') return;
