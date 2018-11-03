@@ -57,23 +57,21 @@ public class UserSick {
 
     private String others;
 
-    private Integer antihypertensiveDrug;
+    private String antihypertensiveDrug;
 
-    private Integer lipidLoweringDrug;
+    private String lipidLoweringDrug;
 
-    private Integer hypoglycemicAgents;
+    private String hypoglycemicAgents;
 
-    private Integer antiplateletDrug;
+    private String antiplateletDrug;
 
-    private String grandfather;
+    private String highBloodPressureHistory;
 
-    private String grandmother;
+    private String diabetesHistory;
 
-    private String father;
+    private String coronaryHeartDiseaseHistory;
 
-    private String mother;
-
-    private String brothers;
+    private String cerebralApoplexyHistory;
 
     private Date createTime;
 
@@ -295,76 +293,68 @@ public class UserSick {
         this.others = others == null ? null : others.trim();
     }
 
-    public Integer getAntihypertensiveDrug() {
+    public String getAntihypertensiveDrug() {
         return antihypertensiveDrug;
     }
 
-    public void setAntihypertensiveDrug(Integer antihypertensiveDrug) {
-        this.antihypertensiveDrug = antihypertensiveDrug;
+    public void setAntihypertensiveDrug(String antihypertensiveDrug) {
+        this.antihypertensiveDrug = antihypertensiveDrug == null ? null : antihypertensiveDrug.trim();
     }
 
-    public Integer getLipidLoweringDrug() {
+    public String getLipidLoweringDrug() {
         return lipidLoweringDrug;
     }
 
-    public void setLipidLoweringDrug(Integer lipidLoweringDrug) {
-        this.lipidLoweringDrug = lipidLoweringDrug;
+    public void setLipidLoweringDrug(String lipidLoweringDrug) {
+        this.lipidLoweringDrug = lipidLoweringDrug == null ? null : lipidLoweringDrug.trim();
     }
 
-    public Integer getHypoglycemicAgents() {
+    public String getHypoglycemicAgents() {
         return hypoglycemicAgents;
     }
 
-    public void setHypoglycemicAgents(Integer hypoglycemicAgents) {
-        this.hypoglycemicAgents = hypoglycemicAgents;
+    public void setHypoglycemicAgents(String hypoglycemicAgents) {
+        this.hypoglycemicAgents = hypoglycemicAgents == null ? null : hypoglycemicAgents.trim();
     }
 
-    public Integer getAntiplateletDrug() {
+    public String getAntiplateletDrug() {
         return antiplateletDrug;
     }
 
-    public void setAntiplateletDrug(Integer antiplateletDrug) {
-        this.antiplateletDrug = antiplateletDrug;
+    public void setAntiplateletDrug(String antiplateletDrug) {
+        this.antiplateletDrug = antiplateletDrug == null ? null : antiplateletDrug.trim();
     }
 
-    public String getGrandfather() {
-        return grandfather;
+    public String getHighBloodPressureHistory() {
+        return highBloodPressureHistory;
     }
 
-    public void setGrandfather(String grandfather) {
-        this.grandfather = grandfather == null ? null : grandfather.trim();
+    public void setHighBloodPressureHistory(String highBloodPressureHistory) {
+        this.highBloodPressureHistory = highBloodPressureHistory == null ? null : highBloodPressureHistory.trim();
     }
 
-    public String getGrandmother() {
-        return grandmother;
+    public String getDiabetesHistory() {
+        return diabetesHistory;
     }
 
-    public void setGrandmother(String grandmother) {
-        this.grandmother = grandmother == null ? null : grandmother.trim();
+    public void setDiabetesHistory(String diabetesHistory) {
+        this.diabetesHistory = diabetesHistory == null ? null : diabetesHistory.trim();
     }
 
-    public String getFather() {
-        return father;
+    public String getCoronaryHeartDiseaseHistory() {
+        return coronaryHeartDiseaseHistory;
     }
 
-    public void setFather(String father) {
-        this.father = father == null ? null : father.trim();
+    public void setCoronaryHeartDiseaseHistory(String coronaryHeartDiseaseHistory) {
+        this.coronaryHeartDiseaseHistory = coronaryHeartDiseaseHistory == null ? null : coronaryHeartDiseaseHistory.trim();
     }
 
-    public String getMother() {
-        return mother;
+    public String getCerebralApoplexyHistory() {
+        return cerebralApoplexyHistory;
     }
 
-    public void setMother(String mother) {
-        this.mother = mother == null ? null : mother.trim();
-    }
-
-    public String getBrothers() {
-        return brothers;
-    }
-
-    public void setBrothers(String brothers) {
-        this.brothers = brothers == null ? null : brothers.trim();
+    public void setCerebralApoplexyHistory(String cerebralApoplexyHistory) {
+        this.cerebralApoplexyHistory = cerebralApoplexyHistory == null ? null : cerebralApoplexyHistory.trim();
     }
 
     public Date getCreateTime() {

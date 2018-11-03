@@ -22,9 +22,11 @@ public class UserBaseInfoVo {
 
     private Integer daughterCount;
 
-    private Integer familyType;
+    private String familyType;
 
     private String familyDesc;
+
+    private String familyOther;
 
     private String community;
 
@@ -110,12 +112,20 @@ public class UserBaseInfoVo {
 		this.daughterCount = daughterCount;
 	}
 
-	public Integer getFamilyType() {
+	public String getFamilyType() {
 		return familyType;
 	}
 
-	public void setFamilyType(Integer familyType) {
+	public void setFamilyType(String familyType) {
 		this.familyType = familyType;
+	}
+
+	public String getFamilyOther() {
+		return familyOther;
+	}
+
+	public void setFamilyOther(String familyOther) {
+		this.familyOther = familyOther;
 	}
 
 	public String getFamilyDesc() {
