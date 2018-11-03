@@ -57,13 +57,21 @@ public class UserSickVo {
 
     private String others;
 
-    private String antihypertensiveDrug;
+    private Integer antihypertensiveDrug;
 
-    private String lipidLoweringDrug;
+    private String antihypertensiveDrugName;
 
-    private String hypoglycemicAgents;
+    private Integer lipidLoweringDrug;
 
-    private String antiplateletDrug;
+    private String lipidLoweringDrugName;
+
+    private Integer hypoglycemicAgents;
+
+    private String hypoglycemicAgentsName;
+
+    private Integer antiplateletDrug;
+
+    private String antiplateletDrugName;
 
     private String highBloodPressureHistory;
 
@@ -297,36 +305,68 @@ public class UserSickVo {
 		this.others = others;
 	}
 
-	public String getAntihypertensiveDrug() {
+	public Integer getAntihypertensiveDrug() {
 		return antihypertensiveDrug;
 	}
 
-	public void setAntihypertensiveDrug(String antihypertensiveDrug) {
+	public void setAntihypertensiveDrug(Integer antihypertensiveDrug) {
 		this.antihypertensiveDrug = antihypertensiveDrug;
 	}
 
-	public String getLipidLoweringDrug() {
+	public String getAntihypertensiveDrugName() {
+		return antihypertensiveDrugName;
+	}
+
+	public void setAntihypertensiveDrugName(String antihypertensiveDrugName) {
+		this.antihypertensiveDrugName = antihypertensiveDrugName;
+	}
+
+	public Integer getLipidLoweringDrug() {
 		return lipidLoweringDrug;
 	}
 
-	public void setLipidLoweringDrug(String lipidLoweringDrug) {
+	public void setLipidLoweringDrug(Integer lipidLoweringDrug) {
 		this.lipidLoweringDrug = lipidLoweringDrug;
 	}
 
-	public String getHypoglycemicAgents() {
+	public String getLipidLoweringDrugName() {
+		return lipidLoweringDrugName;
+	}
+
+	public void setLipidLoweringDrugName(String lipidLoweringDrugName) {
+		this.lipidLoweringDrugName = lipidLoweringDrugName;
+	}
+
+	public Integer getHypoglycemicAgents() {
 		return hypoglycemicAgents;
 	}
 
-	public void setHypoglycemicAgents(String hypoglycemicAgents) {
+	public void setHypoglycemicAgents(Integer hypoglycemicAgents) {
 		this.hypoglycemicAgents = hypoglycemicAgents;
 	}
 
-	public String getAntiplateletDrug() {
+	public String getHypoglycemicAgentsName() {
+		return hypoglycemicAgentsName;
+	}
+
+	public void setHypoglycemicAgentsName(String hypoglycemicAgentsName) {
+		this.hypoglycemicAgentsName = hypoglycemicAgentsName;
+	}
+
+	public Integer getAntiplateletDrug() {
 		return antiplateletDrug;
 	}
 
-	public void setAntiplateletDrug(String antiplateletDrug) {
+	public void setAntiplateletDrug(Integer antiplateletDrug) {
 		this.antiplateletDrug = antiplateletDrug;
+	}
+
+	public String getAntiplateletDrugName() {
+		return antiplateletDrugName;
+	}
+
+	public void setAntiplateletDrugName(String antiplateletDrugName) {
+		this.antiplateletDrugName = antiplateletDrugName;
 	}
 
 	public String getHighBloodPressureHistory() {

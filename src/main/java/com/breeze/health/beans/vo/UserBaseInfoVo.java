@@ -24,7 +24,7 @@ public class UserBaseInfoVo {
 
     private String familyType;
 
-    private String familyDesc;
+    private String[] familyDesc;
 
     private String familyOther;
 
@@ -128,11 +128,11 @@ public class UserBaseInfoVo {
 		this.familyOther = familyOther;
 	}
 
-	public String getFamilyDesc() {
+	public String[] getFamilyDesc() {
 		return familyDesc;
 	}
 
-	public void setFamilyDesc(String familyDesc) {
+	public void setFamilyDesc(String[] familyDesc) {
 		this.familyDesc = familyDesc;
 	}
 

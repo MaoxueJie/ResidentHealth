@@ -57,13 +57,21 @@ public class UserSick {
 
     private String others;
 
-    private String antihypertensiveDrug;
+    private Integer antihypertensiveDrug;
 
-    private String lipidLoweringDrug;
+    private String antihypertensiveDrugName;
 
-    private String hypoglycemicAgents;
+    private Integer lipidLoweringDrug;
 
-    private String antiplateletDrug;
+    private String lipidLoweringDrugName;
+
+    private Integer hypoglycemicAgents;
+
+    private String hypoglycemicAgentsName;
+
+    private Integer antiplateletDrug;
+
+    private String antiplateletDrugName;
 
     private String highBloodPressureHistory;
 
@@ -293,36 +301,68 @@ public class UserSick {
         this.others = others == null ? null : others.trim();
     }
 
-    public String getAntihypertensiveDrug() {
+    public Integer getAntihypertensiveDrug() {
         return antihypertensiveDrug;
     }
 
-    public void setAntihypertensiveDrug(String antihypertensiveDrug) {
-        this.antihypertensiveDrug = antihypertensiveDrug == null ? null : antihypertensiveDrug.trim();
+    public void setAntihypertensiveDrug(Integer antihypertensiveDrug) {
+        this.antihypertensiveDrug = antihypertensiveDrug;
     }
 
-    public String getLipidLoweringDrug() {
+    public String getAntihypertensiveDrugName() {
+        return antihypertensiveDrugName;
+    }
+
+    public void setAntihypertensiveDrugName(String antihypertensiveDrugName) {
+        this.antihypertensiveDrugName = antihypertensiveDrugName == null ? null : antihypertensiveDrugName.trim();
+    }
+
+    public Integer getLipidLoweringDrug() {
         return lipidLoweringDrug;
     }
 
-    public void setLipidLoweringDrug(String lipidLoweringDrug) {
-        this.lipidLoweringDrug = lipidLoweringDrug == null ? null : lipidLoweringDrug.trim();
+    public void setLipidLoweringDrug(Integer lipidLoweringDrug) {
+        this.lipidLoweringDrug = lipidLoweringDrug;
     }
 
-    public String getHypoglycemicAgents() {
+    public String getLipidLoweringDrugName() {
+        return lipidLoweringDrugName;
+    }
+
+    public void setLipidLoweringDrugName(String lipidLoweringDrugName) {
+        this.lipidLoweringDrugName = lipidLoweringDrugName == null ? null : lipidLoweringDrugName.trim();
+    }
+
+    public Integer getHypoglycemicAgents() {
         return hypoglycemicAgents;
     }
 
-    public void setHypoglycemicAgents(String hypoglycemicAgents) {
-        this.hypoglycemicAgents = hypoglycemicAgents == null ? null : hypoglycemicAgents.trim();
+    public void setHypoglycemicAgents(Integer hypoglycemicAgents) {
+        this.hypoglycemicAgents = hypoglycemicAgents;
     }
 
-    public String getAntiplateletDrug() {
+    public String getHypoglycemicAgentsName() {
+        return hypoglycemicAgentsName;
+    }
+
+    public void setHypoglycemicAgentsName(String hypoglycemicAgentsName) {
+        this.hypoglycemicAgentsName = hypoglycemicAgentsName == null ? null : hypoglycemicAgentsName.trim();
+    }
+
+    public Integer getAntiplateletDrug() {
         return antiplateletDrug;
     }
 
-    public void setAntiplateletDrug(String antiplateletDrug) {
-        this.antiplateletDrug = antiplateletDrug == null ? null : antiplateletDrug.trim();
+    public void setAntiplateletDrug(Integer antiplateletDrug) {
+        this.antiplateletDrug = antiplateletDrug;
+    }
+
+    public String getAntiplateletDrugName() {
+        return antiplateletDrugName;
+    }
+
+    public void setAntiplateletDrugName(String antiplateletDrugName) {
+        this.antiplateletDrugName = antiplateletDrugName == null ? null : antiplateletDrugName.trim();
     }
 
     public String getHighBloodPressureHistory() {
