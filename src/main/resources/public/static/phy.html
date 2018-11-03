@@ -73,59 +73,74 @@
 						<input class="weui-input" name="temperature" type="number" placeholder="填写">
 					</div>
 				</div>
-				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">血压(mmHg)</label></div>
-					<div class="weui-cell__bd">
-						<input class="weui-input" name="bloodPressure" type="number" placeholder="填写">
-					</div>
-				</div>
 				
 			</div>
 
 			<div class="weui-cells__title">血压测量频率:</div>
 			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="measuringFrequency1">
+				<label class="weui-cell weui-check__label" for="bloodPressure1">
 					<div class="weui-cell__bd">
 						<p>从未测过</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="measuringFrequency" id="measuringFrequency1" value="1">
+						<input type="radio" class="weui-check" name="bloodPressure" id="bloodPressure1" value="1">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
-				<label class="weui-cell weui-check__label" for="measuringFrequency2">
+				<label class="weui-cell weui-check__label" for="bloodPressure2">
 					<div class="weui-cell__bd">
-						<p>偶尔测(每年少于2次)</p>
+						<p>体检测过</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" name="measuringFrequency" class="weui-check" id="measuringFrequency2" value="2">
+						<input type="radio" name="bloodPressure" class="weui-check" id="bloodPressure2" value="2">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
-				<label class="weui-cell weui-check__label" for="measuringFrequency3">
+				<label class="weui-cell weui-check__label" for="bloodPressure3">
 					<div class="weui-cell__bd">
-						<p>2-6个月1次</p>
+						<p>经常监测</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" name="measuringFrequency" class="weui-check" id="measuringFrequency3" value="3">
+						<input type="radio" name="bloodPressure" class="weui-check" id="bloodPressure3" value="3">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
-				<label class="weui-cell weui-check__label" for="measuringFrequency4">
+			</div>
+			<div class="weui-cells__title">“血压”最近一次测量指标是否正常？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="bloodPressureSituation1">
 					<div class="weui-cell__bd">
-						<p>每月1-4次</p>
+						<p>正常</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" name="measuringFrequency" class="weui-check" id="measuringFrequency4" value="4">
+						<input type="radio" class="weui-check" name="bloodPressureSituation" id="bloodPressureSituation1" value="1">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
-				<label class="weui-cell weui-check__label" for="measuringFrequency5">
+				<label class="weui-cell weui-check__label" for="bloodPressureSituation2">
 					<div class="weui-cell__bd">
-						<p>每周1次以上</p>
+						<p>过高</p>
 					</div>
 					<div class="weui-cell__ft">
-						<input type="radio" name="measuringFrequency" class="weui-check" id="measuringFrequency5" value="5">
+						<input type="radio" name="bloodPressureSituation" class="weui-check" id="bloodPressureSituation2" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bloodPressureSituation3">
+					<div class="weui-cell__bd">
+						<p>过低</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bloodPressureSituation" class="weui-check" id="bloodPressureSituation3" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bloodPressureSituation4">
+					<div class="weui-cell__bd">
+						<p>不清楚</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bloodPressureSituation" class="weui-check" id="bloodPressureSituation4" value="4">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
@@ -144,7 +159,7 @@
 				</label>
 				<label class="weui-cell weui-check__label" for="bloodSugar2">
 					<div class="weui-cell__bd">
-						<p>体检测过(正常，过高、过低，不记得了)</p>
+						<p>体检测过</p>
 					</div>
 					<div class="weui-cell__ft">
 						<input type="radio" name="bloodSugar" class="weui-check" id="bloodSugar2" value="2">
@@ -160,18 +175,45 @@
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
-				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">血糖低值</label></div>
+			</div>
+			<div class="weui-cells__title">“血糖”最近一次测量指标是否正常？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="bloodSugarSituation1">
 					<div class="weui-cell__bd">
-						<input class="weui-input" name="bloodSugarMinValue" type="number" placeholder="填写">
+						<p>正常</p>
 					</div>
-				</div>
-				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">血糖高值</label></div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="bloodSugarSituation" id="bloodSugarSituation1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bloodSugarSituation2">
 					<div class="weui-cell__bd">
-						<input class="weui-input" name="bloodSugarMaxValue" type="number" placeholder="填写">
+						<p>过高</p>
 					</div>
-				</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bloodSugarSituation" class="weui-check" id="bloodSugarSituation2" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bloodSugarSituation3">
+					<div class="weui-cell__bd">
+						<p>过低</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bloodSugarSituation" class="weui-check" id="bloodSugarSituation3" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bloodSugarSituation4">
+					<div class="weui-cell__bd">
+						<p>不清楚</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bloodSugarSituation" class="weui-check" id="bloodSugarSituation4" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
 			</div>
 
 			<div class="weui-cells__title">血脂测试频率:</div>
@@ -187,7 +229,7 @@
 				</label>
 				<label class="weui-cell weui-check__label" for="bloodLipid2">
 					<div class="weui-cell__bd">
-						<p>体检测过(正常，过高、过低，不记得了)</p>
+						<p>体检测过</p>
 					</div>
 					<div class="weui-cell__ft">
 						<input type="radio" name="bloodLipid" class="weui-check" id="bloodLipid2" value="2">
@@ -200,6 +242,185 @@
 					</div>
 					<div class="weui-cell__ft">
 						<input type="radio" name="bloodLipid" class="weui-check" id="bloodLipid3" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+			<div class="weui-cells__title">“血脂”最近一次测量指标是否正常？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="bloodLipidSituation1">
+					<div class="weui-cell__bd">
+						<p>正常</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="bloodLipidSituation" id="bloodLipidSituation1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bloodLipidSituation2">
+					<div class="weui-cell__bd">
+						<p>过高</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bloodLipidSituation" class="weui-check" id="bloodLipidSituation2" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bloodLipidSituation3">
+					<div class="weui-cell__bd">
+						<p>过低</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bloodLipidSituation" class="weui-check" id="bloodLipidSituation3" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bloodLipidSituation4">
+					<div class="weui-cell__bd">
+						<p>不清楚</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bloodLipidSituation" class="weui-check" id="bloodLipidSituation4" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">尿酸测试频率:</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="uricAcid1">
+					<div class="weui-cell__bd">
+						<p>从未测过</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="uricAcid" id="uricAcid1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="uricAcid2">
+					<div class="weui-cell__bd">
+						<p>体检测过</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="uricAcid" class="weui-check" id="uricAcid2" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="uricAcid3">
+					<div class="weui-cell__bd">
+						<p>经常监测</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="uricAcid" class="weui-check" id="uricAcid3" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+			<div class="weui-cells__title">“尿酸”最近一次测量指标是否正常？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="uricAcidSituation1">
+					<div class="weui-cell__bd">
+						<p>正常</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="uricAcidSituation" id="uricAcidSituation1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="uricAcidSituation2">
+					<div class="weui-cell__bd">
+						<p>过高</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="uricAcidSituation" class="weui-check" id="uricAcidSituation2" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="uricAcidSituation3">
+					<div class="weui-cell__bd">
+						<p>过低</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="uricAcidSituation" class="weui-check" id="uricAcidSituation3" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="uricAcidSituation4">
+					<div class="weui-cell__bd">
+						<p>不清楚</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="uricAcidSituation" class="weui-check" id="uricAcidSituation4" value="4">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+
+			<div class="weui-cells__title">血氧测试频率:</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="bloodOxygen1">
+					<div class="weui-cell__bd">
+						<p>从未测过</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="bloodOxygen" id="bloodOxygen1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bloodOxygen2">
+					<div class="weui-cell__bd">
+						<p>体检测过</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bloodOxygen" class="weui-check" id="bloodOxygen2" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bloodOxygen3">
+					<div class="weui-cell__bd">
+						<p>经常监测</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bloodOxygen" class="weui-check" id="bloodOxygen3" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+			</div>
+			<div class="weui-cells__title">“血氧”最近一次测量指标是否正常？</div>
+			<div class="weui-cells weui-cells_radio">
+				<label class="weui-cell weui-check__label" for="bloodOxygenSituation1">
+					<div class="weui-cell__bd">
+						<p>正常</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" class="weui-check" name="bloodOxygenSituation" id="bloodOxygenSituation1" value="1">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bloodOxygenSituation2">
+					<div class="weui-cell__bd">
+						<p>过高</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bloodOxygenSituation" class="weui-check" id="bloodOxygenSituation2" value="2">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bloodOxygenSituation3">
+					<div class="weui-cell__bd">
+						<p>过低</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bloodOxygenSituation" class="weui-check" id="bloodOxygenSituation3" value="3">
+						<span class="weui-icon-checked"></span>
+					</div>
+				</label>
+				<label class="weui-cell weui-check__label" for="bloodOxygenSituation4">
+					<div class="weui-cell__bd">
+						<p>不清楚</p>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="radio" name="bloodOxygenSituation" class="weui-check" id="bloodOxygenSituation4" value="4">
 						<span class="weui-icon-checked"></span>
 					</div>
 				</label>
@@ -309,7 +530,7 @@
 
 <script type="text/javascript">
 	$(function(){
-		
+
 		showResult(true,'phy');	//获取基本信息
 
 		$('input[name=weight],input[name=height]').blur(function(){

@@ -1,11 +1,12 @@
-//$(function(){
+var $loadingToast ,$toast;
+$(function(){
 
 	var toastHtml = '';
 	toastHtml += '<div id="toast" style="display:none;">';
 	toastHtml += '	<div class="weui-mask_transparent"></div>';
 	toastHtml += '	<div class="weui-toast">';
 	toastHtml += '		<i class="weui-icon-success-no-circle weui-icon_toast"></i>';
-	toastHtml += '		<p class="weui-toast__content">已完成</p>';
+	toastHtml += '		<p class="weui-toast__content" id="toastText">已完成</p>';
 	toastHtml += '	</div>';
 	toastHtml += '</div>';
 
@@ -18,11 +19,17 @@
 	toastHtml += '</div>';
 	$('body').append( toastHtml );
 
-	var $loadingToast = $('#loadingToast'),$toast = $('#toast');
+	$loadingToast = $('#loadingToast');
+	$toast = $('#toast');
+})
 
-	function showToast(){
+	function showToast( text ){
 		if ($toast.css('display') != 'none') return;
-
+		if( typeof text != 'undefined' ){
+			$('#toastText').text( text );
+		}else{
+			$('#toastText').text('已完成');
+		}
 		$toast.fadeIn(100);
 		setTimeout(function () {
 			$toast.fadeOut(100);
@@ -63,7 +70,6 @@ $(function(){
 					if( type == 'base' || type == 'phy' ){
 						hideLoading();
 						showToast();
-						return false;
 					}else{
 						window.location.href = '/cfd/static/report_result.html?type=' + type;
 						//showResult();
@@ -97,6 +103,9 @@ $(function(){
 					//$('.page').hide();
 					//$('body').append( reportHtml );
 					//window.scrollTo(0,0);
+					if( json.data == null ){
+						return false;
+					}
 					if( isResult && typeof json.data.resultMsg != 'undefined' ){	//结果页
 						$('#resultTitle').html( json.data.resultTitle )
 						var resultMsg = json.data.resultMsg.replace('/\n','</br>');
@@ -105,6 +114,7 @@ $(function(){
 					}else{
 						setDataHandle( json.data );
 					}
+
 				}else{
 					alert( json.message );
 				}
@@ -123,6 +133,10 @@ $(function(){
 
 			if( inputType == 'text' || inputType == 'number' ){
 				$curInput.val( val );
+
+				if( val != '' ){
+					$curInput.closest('.weui-cell').css('display','flex');
+				}
 			}else if( inputType == 'radio' ){
 				$form.find('[name='+ key +'][value='+ val +']').prop('checked','checked');
 			}else if( inputType == 'checkbox' ){
@@ -145,14 +159,6 @@ $(function(){
 $(function(){
 
 	
-	$('#yaowu input[type=checkbox],#hasSick input[type=checkbox]').click(function(){
-		var $self = $(this),$curItem = $self.closest('.weui-cell'),$curItemInput = $curItem.next();
-		if( $self.is(':checked') ){
-			$curItemInput.css('display','flex');
-		}else{
-			$curItemInput.hide();
-			$curItemInput.find('input[type=text]').val('');
-		}
-	})
+	
 
 })
