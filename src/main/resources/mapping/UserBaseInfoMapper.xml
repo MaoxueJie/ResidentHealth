@@ -10,8 +10,9 @@
     <result column="marriage" property="marriage" jdbcType="INTEGER" />
     <result column="son_count" property="sonCount" jdbcType="INTEGER" />
     <result column="daughter_count" property="daughterCount" jdbcType="INTEGER" />
-    <result column="family_type" property="familyType" jdbcType="INTEGER" />
+    <result column="family_type" property="familyType" jdbcType="VARCHAR" />
     <result column="family_desc" property="familyDesc" jdbcType="VARCHAR" />
+    <result column="family_other" property="familyOther" jdbcType="VARCHAR" />
     <result column="community" property="community" jdbcType="VARCHAR" />
     <result column="community_lon" property="communityLon" jdbcType="DOUBLE" />
     <result column="community_lat" property="communityLat" jdbcType="DOUBLE" />
@@ -54,8 +55,8 @@
   </sql>
   <sql id="Base_Column_List" >
     id, user_id, birthday, gender, education, marriage, son_count, daughter_count, family_type, 
-    family_desc, community, community_lon, community_lat, job, religion, habitat_income, 
-    medical_pay_way, medical_pay_desc, create_time, update_time
+    family_desc, family_other, community, community_lon, community_lat, job, religion, 
+    habitat_income, medical_pay_way, medical_pay_desc, create_time, update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserBaseInfoExample" >
     select
@@ -85,17 +86,17 @@
     insert into t_user_base_info (user_id, birthday, gender, 
       education, marriage, son_count, 
       daughter_count, family_type, family_desc, 
-      community, community_lon, community_lat, 
-      job, religion, habitat_income, 
-      medical_pay_way, medical_pay_desc, create_time, 
-      update_time)
+      family_other, community, community_lon, 
+      community_lat, job, religion, 
+      habitat_income, medical_pay_way, medical_pay_desc, 
+      create_time, update_time)
     values (#{userId,jdbcType=BIGINT}, #{birthday,jdbcType=DATE}, #{gender,jdbcType=INTEGER}, 
       #{education,jdbcType=INTEGER}, #{marriage,jdbcType=INTEGER}, #{sonCount,jdbcType=INTEGER}, 
-      #{daughterCount,jdbcType=INTEGER}, #{familyType,jdbcType=INTEGER}, #{familyDesc,jdbcType=VARCHAR}, 
-      #{community,jdbcType=VARCHAR}, #{communityLon,jdbcType=DOUBLE}, #{communityLat,jdbcType=DOUBLE}, 
-      #{job,jdbcType=INTEGER}, #{religion,jdbcType=VARCHAR}, #{habitatIncome,jdbcType=INTEGER}, 
-      #{medicalPayWay,jdbcType=INTEGER}, #{medicalPayDesc,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP})
+      #{daughterCount,jdbcType=INTEGER}, #{familyType,jdbcType=VARCHAR}, #{familyDesc,jdbcType=VARCHAR}, 
+      #{familyOther,jdbcType=VARCHAR}, #{community,jdbcType=VARCHAR}, #{communityLon,jdbcType=DOUBLE}, 
+      #{communityLat,jdbcType=DOUBLE}, #{job,jdbcType=INTEGER}, #{religion,jdbcType=VARCHAR}, 
+      #{habitatIncome,jdbcType=INTEGER}, #{medicalPayWay,jdbcType=INTEGER}, #{medicalPayDesc,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserBaseInfo" useGeneratedKeys="true" keyProperty="id" >
     insert into t_user_base_info
@@ -126,6 +127,9 @@
       </if>
       <if test="familyDesc != null" >
         family_desc,
+      </if>
+      <if test="familyOther != null" >
+        family_other,
       </if>
       <if test="community != null" >
         community,
@@ -181,10 +185,13 @@
         #{daughterCount,jdbcType=INTEGER},
       </if>
       <if test="familyType != null" >
-        #{familyType,jdbcType=INTEGER},
+        #{familyType,jdbcType=VARCHAR},
       </if>
       <if test="familyDesc != null" >
         #{familyDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="familyOther != null" >
+        #{familyOther,jdbcType=VARCHAR},
       </if>
       <if test="community != null" >
         #{community,jdbcType=VARCHAR},
@@ -249,10 +256,13 @@
         daughter_count = #{daughterCount,jdbcType=INTEGER},
       </if>
       <if test="familyType != null" >
-        family_type = #{familyType,jdbcType=INTEGER},
+        family_type = #{familyType,jdbcType=VARCHAR},
       </if>
       <if test="familyDesc != null" >
         family_desc = #{familyDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="familyOther != null" >
+        family_other = #{familyOther,jdbcType=VARCHAR},
       </if>
       <if test="community != null" >
         community = #{community,jdbcType=VARCHAR},
@@ -296,8 +306,9 @@
       marriage = #{marriage,jdbcType=INTEGER},
       son_count = #{sonCount,jdbcType=INTEGER},
       daughter_count = #{daughterCount,jdbcType=INTEGER},
-      family_type = #{familyType,jdbcType=INTEGER},
+      family_type = #{familyType,jdbcType=VARCHAR},
       family_desc = #{familyDesc,jdbcType=VARCHAR},
+      family_other = #{familyOther,jdbcType=VARCHAR},
       community = #{community,jdbcType=VARCHAR},
       community_lon = #{communityLon,jdbcType=DOUBLE},
       community_lat = #{communityLat,jdbcType=DOUBLE},

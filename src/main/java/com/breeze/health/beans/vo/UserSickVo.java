@@ -59,21 +59,27 @@ public class UserSickVo {
 
     private Integer antihypertensiveDrug;
 
+    private String antihypertensiveDrugName;
+
     private Integer lipidLoweringDrug;
+
+    private String lipidLoweringDrugName;
 
     private Integer hypoglycemicAgents;
 
+    private String hypoglycemicAgentsName;
+
     private Integer antiplateletDrug;
 
-    private String grandfather;
+    private String antiplateletDrugName;
 
-    private String grandmother;
+    private String highBloodPressureHistory;
 
-    private String father;
+    private String diabetesHistory;
 
-    private String mother;
+    private String coronaryHeartDiseaseHistory;
 
-    private String brothers;
+    private String cerebralApoplexyHistory;
     
     private String resultTitle;
     
@@ -307,12 +313,28 @@ public class UserSickVo {
 		this.antihypertensiveDrug = antihypertensiveDrug;
 	}
 
+	public String getAntihypertensiveDrugName() {
+		return antihypertensiveDrugName;
+	}
+
+	public void setAntihypertensiveDrugName(String antihypertensiveDrugName) {
+		this.antihypertensiveDrugName = antihypertensiveDrugName;
+	}
+
 	public Integer getLipidLoweringDrug() {
 		return lipidLoweringDrug;
 	}
 
 	public void setLipidLoweringDrug(Integer lipidLoweringDrug) {
 		this.lipidLoweringDrug = lipidLoweringDrug;
+	}
+
+	public String getLipidLoweringDrugName() {
+		return lipidLoweringDrugName;
+	}
+
+	public void setLipidLoweringDrugName(String lipidLoweringDrugName) {
+		this.lipidLoweringDrugName = lipidLoweringDrugName;
 	}
 
 	public Integer getHypoglycemicAgents() {
@@ -323,6 +345,14 @@ public class UserSickVo {
 		this.hypoglycemicAgents = hypoglycemicAgents;
 	}
 
+	public String getHypoglycemicAgentsName() {
+		return hypoglycemicAgentsName;
+	}
+
+	public void setHypoglycemicAgentsName(String hypoglycemicAgentsName) {
+		this.hypoglycemicAgentsName = hypoglycemicAgentsName;
+	}
+
 	public Integer getAntiplateletDrug() {
 		return antiplateletDrug;
 	}
@@ -331,44 +361,44 @@ public class UserSickVo {
 		this.antiplateletDrug = antiplateletDrug;
 	}
 
-	public String getGrandfather() {
-		return grandfather;
+	public String getAntiplateletDrugName() {
+		return antiplateletDrugName;
 	}
 
-	public void setGrandfather(String grandfather) {
-		this.grandfather = grandfather;
+	public void setAntiplateletDrugName(String antiplateletDrugName) {
+		this.antiplateletDrugName = antiplateletDrugName;
 	}
 
-	public String getGrandmother() {
-		return grandmother;
+	public String getHighBloodPressureHistory() {
+		return highBloodPressureHistory;
 	}
 
-	public void setGrandmother(String grandmother) {
-		this.grandmother = grandmother;
+	public void setHighBloodPressureHistory(String highBloodPressureHistory) {
+		this.highBloodPressureHistory = highBloodPressureHistory;
 	}
 
-	public String getFather() {
-		return father;
+	public String getDiabetesHistory() {
+		return diabetesHistory;
 	}
 
-	public void setFather(String father) {
-		this.father = father;
+	public void setDiabetesHistory(String diabetesHistory) {
+		this.diabetesHistory = diabetesHistory;
 	}
 
-	public String getMother() {
-		return mother;
+	public String getCoronaryHeartDiseaseHistory() {
+		return coronaryHeartDiseaseHistory;
 	}
 
-	public void setMother(String mother) {
-		this.mother = mother;
+	public void setCoronaryHeartDiseaseHistory(String coronaryHeartDiseaseHistory) {
+		this.coronaryHeartDiseaseHistory = coronaryHeartDiseaseHistory;
 	}
 
-	public String getBrothers() {
-		return brothers;
+	public String getCerebralApoplexyHistory() {
+		return cerebralApoplexyHistory;
 	}
 
-	public void setBrothers(String brothers) {
-		this.brothers = brothers;
+	public void setCerebralApoplexyHistory(String cerebralApoplexyHistory) {
+		this.cerebralApoplexyHistory = cerebralApoplexyHistory;
 	}
 
 	public Date getCreateTime() {

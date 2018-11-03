@@ -19,9 +19,11 @@ public class UserBaseInfo {
 
     private Integer daughterCount;
 
-    private Integer familyType;
+    private String familyType;
 
     private String familyDesc;
+
+    private String familyOther;
 
     private String community;
 
@@ -107,12 +109,12 @@ public class UserBaseInfo {
         this.daughterCount = daughterCount;
     }
 
-    public Integer getFamilyType() {
+    public String getFamilyType() {
         return familyType;
     }
 
-    public void setFamilyType(Integer familyType) {
-        this.familyType = familyType;
+    public void setFamilyType(String familyType) {
+        this.familyType = familyType == null ? null : familyType.trim();
     }
 
     public String getFamilyDesc() {
@@ -121,6 +123,14 @@ public class UserBaseInfo {
 
     public void setFamilyDesc(String familyDesc) {
         this.familyDesc = familyDesc == null ? null : familyDesc.trim();
+    }
+
+    public String getFamilyOther() {
+        return familyOther;
+    }
+
+    public void setFamilyOther(String familyOther) {
+        this.familyOther = familyOther == null ? null : familyOther.trim();
     }
 
     public String getCommunity() {

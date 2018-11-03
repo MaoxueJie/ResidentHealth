@@ -434,7 +434,7 @@ public class PsyServiceImpl implements PsyService{
 				ret.setData(vo);
 			}else
 			{
-				ret.setMessage("未获取到心理测试");
+				ret.setSuccess(true);
 			}
 		}catch(Exception e)
 		{

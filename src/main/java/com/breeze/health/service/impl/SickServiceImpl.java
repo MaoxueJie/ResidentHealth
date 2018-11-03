@@ -147,7 +147,7 @@ public class SickServiceImpl implements SickService{
 				ret.setData(vo);
 			}else
 			{
-				ret.setMessage("无健康状况");
+				ret.setSuccess(true);
 			}
 		}catch(Exception e)
 		{

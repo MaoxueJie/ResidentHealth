@@ -115,6 +115,8 @@ public class UserServiceImpl implements UserService{
 			Date now = new Date();
 			UserBaseInfo baseInfo = new UserBaseInfo();
 			BeanUtils.copyProperties(vo, baseInfo);
+			if (vo.getFamilyDesc()!=null)
+				baseInfo.setFamilyDesc(StringUtils.join(vo.getFamilyDesc(),","));
 			if (baseInfo.getId()!=null)
 			{
 				baseInfo.setUpdateTime(now);
@@ -148,11 +150,15 @@ public class UserServiceImpl implements UserService{
 			{
 				UserBaseInfoVo vo = new UserBaseInfoVo();
 				BeanUtils.copyProperties(bases.get(0), vo);
+				if (((UserBaseInfo)bases.get(0)).getFamilyDesc()!=null)
+				{
+					vo.setFamilyDesc(((UserBaseInfo)bases.get(0)).getFamilyDesc().split(","));
+				}
 				ret.setSuccess(true);
 				ret.setData(vo);
 			}else
 			{
-				ret.setMessage("无用户信息");
+				ret.setSuccess(true);
 			}
 		}catch(Exception e)
 		{

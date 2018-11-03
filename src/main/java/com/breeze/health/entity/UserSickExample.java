@@ -1795,6 +1795,76 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
+        public Criteria andAntihypertensiveDrugNameIsNull() {
+            addCriterion("antihypertensive_drug_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAntihypertensiveDrugNameIsNotNull() {
+            addCriterion("antihypertensive_drug_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAntihypertensiveDrugNameEqualTo(String value) {
+            addCriterion("antihypertensive_drug_name =", value, "antihypertensiveDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andAntihypertensiveDrugNameNotEqualTo(String value) {
+            addCriterion("antihypertensive_drug_name <>", value, "antihypertensiveDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andAntihypertensiveDrugNameGreaterThan(String value) {
+            addCriterion("antihypertensive_drug_name >", value, "antihypertensiveDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andAntihypertensiveDrugNameGreaterThanOrEqualTo(String value) {
+            addCriterion("antihypertensive_drug_name >=", value, "antihypertensiveDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andAntihypertensiveDrugNameLessThan(String value) {
+            addCriterion("antihypertensive_drug_name <", value, "antihypertensiveDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andAntihypertensiveDrugNameLessThanOrEqualTo(String value) {
+            addCriterion("antihypertensive_drug_name <=", value, "antihypertensiveDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andAntihypertensiveDrugNameLike(String value) {
+            addCriterion("antihypertensive_drug_name like", value, "antihypertensiveDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andAntihypertensiveDrugNameNotLike(String value) {
+            addCriterion("antihypertensive_drug_name not like", value, "antihypertensiveDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andAntihypertensiveDrugNameIn(List<String> values) {
+            addCriterion("antihypertensive_drug_name in", values, "antihypertensiveDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andAntihypertensiveDrugNameNotIn(List<String> values) {
+            addCriterion("antihypertensive_drug_name not in", values, "antihypertensiveDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andAntihypertensiveDrugNameBetween(String value1, String value2) {
+            addCriterion("antihypertensive_drug_name between", value1, value2, "antihypertensiveDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andAntihypertensiveDrugNameNotBetween(String value1, String value2) {
+            addCriterion("antihypertensive_drug_name not between", value1, value2, "antihypertensiveDrugName");
+            return (Criteria) this;
+        }
+
         public Criteria andLipidLoweringDrugIsNull() {
             addCriterion("lipid_lowering_drug is null");
             return (Criteria) this;
@@ -1852,6 +1922,76 @@ public class UserSickExample {
 
         public Criteria andLipidLoweringDrugNotBetween(Integer value1, Integer value2) {
             addCriterion("lipid_lowering_drug not between", value1, value2, "lipidLoweringDrug");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameIsNull() {
+            addCriterion("lipid_lowering_drug_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameIsNotNull() {
+            addCriterion("lipid_lowering_drug_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameEqualTo(String value) {
+            addCriterion("lipid_lowering_drug_name =", value, "lipidLoweringDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameNotEqualTo(String value) {
+            addCriterion("lipid_lowering_drug_name <>", value, "lipidLoweringDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameGreaterThan(String value) {
+            addCriterion("lipid_lowering_drug_name >", value, "lipidLoweringDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameGreaterThanOrEqualTo(String value) {
+            addCriterion("lipid_lowering_drug_name >=", value, "lipidLoweringDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameLessThan(String value) {
+            addCriterion("lipid_lowering_drug_name <", value, "lipidLoweringDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameLessThanOrEqualTo(String value) {
+            addCriterion("lipid_lowering_drug_name <=", value, "lipidLoweringDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameLike(String value) {
+            addCriterion("lipid_lowering_drug_name like", value, "lipidLoweringDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameNotLike(String value) {
+            addCriterion("lipid_lowering_drug_name not like", value, "lipidLoweringDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameIn(List<String> values) {
+            addCriterion("lipid_lowering_drug_name in", values, "lipidLoweringDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameNotIn(List<String> values) {
+            addCriterion("lipid_lowering_drug_name not in", values, "lipidLoweringDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameBetween(String value1, String value2) {
+            addCriterion("lipid_lowering_drug_name between", value1, value2, "lipidLoweringDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andLipidLoweringDrugNameNotBetween(String value1, String value2) {
+            addCriterion("lipid_lowering_drug_name not between", value1, value2, "lipidLoweringDrugName");
             return (Criteria) this;
         }
 
@@ -1915,6 +2055,76 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
+        public Criteria andHypoglycemicAgentsNameIsNull() {
+            addCriterion("hypoglycemic_agents_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHypoglycemicAgentsNameIsNotNull() {
+            addCriterion("hypoglycemic_agents_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHypoglycemicAgentsNameEqualTo(String value) {
+            addCriterion("hypoglycemic_agents_name =", value, "hypoglycemicAgentsName");
+            return (Criteria) this;
+        }
+
+        public Criteria andHypoglycemicAgentsNameNotEqualTo(String value) {
+            addCriterion("hypoglycemic_agents_name <>", value, "hypoglycemicAgentsName");
+            return (Criteria) this;
+        }
+
+        public Criteria andHypoglycemicAgentsNameGreaterThan(String value) {
+            addCriterion("hypoglycemic_agents_name >", value, "hypoglycemicAgentsName");
+            return (Criteria) this;
+        }
+
+        public Criteria andHypoglycemicAgentsNameGreaterThanOrEqualTo(String value) {
+            addCriterion("hypoglycemic_agents_name >=", value, "hypoglycemicAgentsName");
+            return (Criteria) this;
+        }
+
+        public Criteria andHypoglycemicAgentsNameLessThan(String value) {
+            addCriterion("hypoglycemic_agents_name <", value, "hypoglycemicAgentsName");
+            return (Criteria) this;
+        }
+
+        public Criteria andHypoglycemicAgentsNameLessThanOrEqualTo(String value) {
+            addCriterion("hypoglycemic_agents_name <=", value, "hypoglycemicAgentsName");
+            return (Criteria) this;
+        }
+
+        public Criteria andHypoglycemicAgentsNameLike(String value) {
+            addCriterion("hypoglycemic_agents_name like", value, "hypoglycemicAgentsName");
+            return (Criteria) this;
+        }
+
+        public Criteria andHypoglycemicAgentsNameNotLike(String value) {
+            addCriterion("hypoglycemic_agents_name not like", value, "hypoglycemicAgentsName");
+            return (Criteria) this;
+        }
+
+        public Criteria andHypoglycemicAgentsNameIn(List<String> values) {
+            addCriterion("hypoglycemic_agents_name in", values, "hypoglycemicAgentsName");
+            return (Criteria) this;
+        }
+
+        public Criteria andHypoglycemicAgentsNameNotIn(List<String> values) {
+            addCriterion("hypoglycemic_agents_name not in", values, "hypoglycemicAgentsName");
+            return (Criteria) this;
+        }
+
+        public Criteria andHypoglycemicAgentsNameBetween(String value1, String value2) {
+            addCriterion("hypoglycemic_agents_name between", value1, value2, "hypoglycemicAgentsName");
+            return (Criteria) this;
+        }
+
+        public Criteria andHypoglycemicAgentsNameNotBetween(String value1, String value2) {
+            addCriterion("hypoglycemic_agents_name not between", value1, value2, "hypoglycemicAgentsName");
+            return (Criteria) this;
+        }
+
         public Criteria andAntiplateletDrugIsNull() {
             addCriterion("antiplatelet_drug is null");
             return (Criteria) this;
@@ -1975,353 +2185,353 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherIsNull() {
-            addCriterion("grandfather is null");
+        public Criteria andAntiplateletDrugNameIsNull() {
+            addCriterion("antiplatelet_drug_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherIsNotNull() {
-            addCriterion("grandfather is not null");
+        public Criteria andAntiplateletDrugNameIsNotNull() {
+            addCriterion("antiplatelet_drug_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherEqualTo(String value) {
-            addCriterion("grandfather =", value, "grandfather");
+        public Criteria andAntiplateletDrugNameEqualTo(String value) {
+            addCriterion("antiplatelet_drug_name =", value, "antiplateletDrugName");
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherNotEqualTo(String value) {
-            addCriterion("grandfather <>", value, "grandfather");
+        public Criteria andAntiplateletDrugNameNotEqualTo(String value) {
+            addCriterion("antiplatelet_drug_name <>", value, "antiplateletDrugName");
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherGreaterThan(String value) {
-            addCriterion("grandfather >", value, "grandfather");
+        public Criteria andAntiplateletDrugNameGreaterThan(String value) {
+            addCriterion("antiplatelet_drug_name >", value, "antiplateletDrugName");
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherGreaterThanOrEqualTo(String value) {
-            addCriterion("grandfather >=", value, "grandfather");
+        public Criteria andAntiplateletDrugNameGreaterThanOrEqualTo(String value) {
+            addCriterion("antiplatelet_drug_name >=", value, "antiplateletDrugName");
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherLessThan(String value) {
-            addCriterion("grandfather <", value, "grandfather");
+        public Criteria andAntiplateletDrugNameLessThan(String value) {
+            addCriterion("antiplatelet_drug_name <", value, "antiplateletDrugName");
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherLessThanOrEqualTo(String value) {
-            addCriterion("grandfather <=", value, "grandfather");
+        public Criteria andAntiplateletDrugNameLessThanOrEqualTo(String value) {
+            addCriterion("antiplatelet_drug_name <=", value, "antiplateletDrugName");
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherLike(String value) {
-            addCriterion("grandfather like", value, "grandfather");
+        public Criteria andAntiplateletDrugNameLike(String value) {
+            addCriterion("antiplatelet_drug_name like", value, "antiplateletDrugName");
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherNotLike(String value) {
-            addCriterion("grandfather not like", value, "grandfather");
+        public Criteria andAntiplateletDrugNameNotLike(String value) {
+            addCriterion("antiplatelet_drug_name not like", value, "antiplateletDrugName");
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherIn(List<String> values) {
-            addCriterion("grandfather in", values, "grandfather");
+        public Criteria andAntiplateletDrugNameIn(List<String> values) {
+            addCriterion("antiplatelet_drug_name in", values, "antiplateletDrugName");
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherNotIn(List<String> values) {
-            addCriterion("grandfather not in", values, "grandfather");
+        public Criteria andAntiplateletDrugNameNotIn(List<String> values) {
+            addCriterion("antiplatelet_drug_name not in", values, "antiplateletDrugName");
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherBetween(String value1, String value2) {
-            addCriterion("grandfather between", value1, value2, "grandfather");
+        public Criteria andAntiplateletDrugNameBetween(String value1, String value2) {
+            addCriterion("antiplatelet_drug_name between", value1, value2, "antiplateletDrugName");
             return (Criteria) this;
         }
 
-        public Criteria andGrandfatherNotBetween(String value1, String value2) {
-            addCriterion("grandfather not between", value1, value2, "grandfather");
+        public Criteria andAntiplateletDrugNameNotBetween(String value1, String value2) {
+            addCriterion("antiplatelet_drug_name not between", value1, value2, "antiplateletDrugName");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherIsNull() {
-            addCriterion("grandmother is null");
+        public Criteria andHighBloodPressureHistoryIsNull() {
+            addCriterion("high_blood_pressure_history is null");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherIsNotNull() {
-            addCriterion("grandmother is not null");
+        public Criteria andHighBloodPressureHistoryIsNotNull() {
+            addCriterion("high_blood_pressure_history is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherEqualTo(String value) {
-            addCriterion("grandmother =", value, "grandmother");
+        public Criteria andHighBloodPressureHistoryEqualTo(String value) {
+            addCriterion("high_blood_pressure_history =", value, "highBloodPressureHistory");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherNotEqualTo(String value) {
-            addCriterion("grandmother <>", value, "grandmother");
+        public Criteria andHighBloodPressureHistoryNotEqualTo(String value) {
+            addCriterion("high_blood_pressure_history <>", value, "highBloodPressureHistory");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherGreaterThan(String value) {
-            addCriterion("grandmother >", value, "grandmother");
+        public Criteria andHighBloodPressureHistoryGreaterThan(String value) {
+            addCriterion("high_blood_pressure_history >", value, "highBloodPressureHistory");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherGreaterThanOrEqualTo(String value) {
-            addCriterion("grandmother >=", value, "grandmother");
+        public Criteria andHighBloodPressureHistoryGreaterThanOrEqualTo(String value) {
+            addCriterion("high_blood_pressure_history >=", value, "highBloodPressureHistory");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherLessThan(String value) {
-            addCriterion("grandmother <", value, "grandmother");
+        public Criteria andHighBloodPressureHistoryLessThan(String value) {
+            addCriterion("high_blood_pressure_history <", value, "highBloodPressureHistory");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherLessThanOrEqualTo(String value) {
-            addCriterion("grandmother <=", value, "grandmother");
+        public Criteria andHighBloodPressureHistoryLessThanOrEqualTo(String value) {
+            addCriterion("high_blood_pressure_history <=", value, "highBloodPressureHistory");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherLike(String value) {
-            addCriterion("grandmother like", value, "grandmother");
+        public Criteria andHighBloodPressureHistoryLike(String value) {
+            addCriterion("high_blood_pressure_history like", value, "highBloodPressureHistory");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherNotLike(String value) {
-            addCriterion("grandmother not like", value, "grandmother");
+        public Criteria andHighBloodPressureHistoryNotLike(String value) {
+            addCriterion("high_blood_pressure_history not like", value, "highBloodPressureHistory");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherIn(List<String> values) {
-            addCriterion("grandmother in", values, "grandmother");
+        public Criteria andHighBloodPressureHistoryIn(List<String> values) {
+            addCriterion("high_blood_pressure_history in", values, "highBloodPressureHistory");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherNotIn(List<String> values) {
-            addCriterion("grandmother not in", values, "grandmother");
+        public Criteria andHighBloodPressureHistoryNotIn(List<String> values) {
+            addCriterion("high_blood_pressure_history not in", values, "highBloodPressureHistory");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherBetween(String value1, String value2) {
-            addCriterion("grandmother between", value1, value2, "grandmother");
+        public Criteria andHighBloodPressureHistoryBetween(String value1, String value2) {
+            addCriterion("high_blood_pressure_history between", value1, value2, "highBloodPressureHistory");
             return (Criteria) this;
         }
 
-        public Criteria andGrandmotherNotBetween(String value1, String value2) {
-            addCriterion("grandmother not between", value1, value2, "grandmother");
+        public Criteria andHighBloodPressureHistoryNotBetween(String value1, String value2) {
+            addCriterion("high_blood_pressure_history not between", value1, value2, "highBloodPressureHistory");
             return (Criteria) this;
         }
 
-        public Criteria andFatherIsNull() {
-            addCriterion("father is null");
+        public Criteria andDiabetesHistoryIsNull() {
+            addCriterion("diabetes_history is null");
             return (Criteria) this;
         }
 
-        public Criteria andFatherIsNotNull() {
-            addCriterion("father is not null");
+        public Criteria andDiabetesHistoryIsNotNull() {
+            addCriterion("diabetes_history is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFatherEqualTo(String value) {
-            addCriterion("father =", value, "father");
+        public Criteria andDiabetesHistoryEqualTo(String value) {
+            addCriterion("diabetes_history =", value, "diabetesHistory");
             return (Criteria) this;
         }
 
-        public Criteria andFatherNotEqualTo(String value) {
-            addCriterion("father <>", value, "father");
+        public Criteria andDiabetesHistoryNotEqualTo(String value) {
+            addCriterion("diabetes_history <>", value, "diabetesHistory");
             return (Criteria) this;
         }
 
-        public Criteria andFatherGreaterThan(String value) {
-            addCriterion("father >", value, "father");
+        public Criteria andDiabetesHistoryGreaterThan(String value) {
+            addCriterion("diabetes_history >", value, "diabetesHistory");
             return (Criteria) this;
         }
 
-        public Criteria andFatherGreaterThanOrEqualTo(String value) {
-            addCriterion("father >=", value, "father");
+        public Criteria andDiabetesHistoryGreaterThanOrEqualTo(String value) {
+            addCriterion("diabetes_history >=", value, "diabetesHistory");
             return (Criteria) this;
         }
 
-        public Criteria andFatherLessThan(String value) {
-            addCriterion("father <", value, "father");
+        public Criteria andDiabetesHistoryLessThan(String value) {
+            addCriterion("diabetes_history <", value, "diabetesHistory");
             return (Criteria) this;
         }
 
-        public Criteria andFatherLessThanOrEqualTo(String value) {
-            addCriterion("father <=", value, "father");
+        public Criteria andDiabetesHistoryLessThanOrEqualTo(String value) {
+            addCriterion("diabetes_history <=", value, "diabetesHistory");
             return (Criteria) this;
         }
 
-        public Criteria andFatherLike(String value) {
-            addCriterion("father like", value, "father");
+        public Criteria andDiabetesHistoryLike(String value) {
+            addCriterion("diabetes_history like", value, "diabetesHistory");
             return (Criteria) this;
         }
 
-        public Criteria andFatherNotLike(String value) {
-            addCriterion("father not like", value, "father");
+        public Criteria andDiabetesHistoryNotLike(String value) {
+            addCriterion("diabetes_history not like", value, "diabetesHistory");
             return (Criteria) this;
         }
 
-        public Criteria andFatherIn(List<String> values) {
-            addCriterion("father in", values, "father");
+        public Criteria andDiabetesHistoryIn(List<String> values) {
+            addCriterion("diabetes_history in", values, "diabetesHistory");
             return (Criteria) this;
         }
 
-        public Criteria andFatherNotIn(List<String> values) {
-            addCriterion("father not in", values, "father");
+        public Criteria andDiabetesHistoryNotIn(List<String> values) {
+            addCriterion("diabetes_history not in", values, "diabetesHistory");
             return (Criteria) this;
         }
 
-        public Criteria andFatherBetween(String value1, String value2) {
-            addCriterion("father between", value1, value2, "father");
+        public Criteria andDiabetesHistoryBetween(String value1, String value2) {
+            addCriterion("diabetes_history between", value1, value2, "diabetesHistory");
             return (Criteria) this;
         }
 
-        public Criteria andFatherNotBetween(String value1, String value2) {
-            addCriterion("father not between", value1, value2, "father");
+        public Criteria andDiabetesHistoryNotBetween(String value1, String value2) {
+            addCriterion("diabetes_history not between", value1, value2, "diabetesHistory");
             return (Criteria) this;
         }
 
-        public Criteria andMotherIsNull() {
-            addCriterion("mother is null");
+        public Criteria andCoronaryHeartDiseaseHistoryIsNull() {
+            addCriterion("coronary_heart_disease_history is null");
             return (Criteria) this;
         }
 
-        public Criteria andMotherIsNotNull() {
-            addCriterion("mother is not null");
+        public Criteria andCoronaryHeartDiseaseHistoryIsNotNull() {
+            addCriterion("coronary_heart_disease_history is not null");
             return (Criteria) this;
         }
 
-        public Criteria andMotherEqualTo(String value) {
-            addCriterion("mother =", value, "mother");
+        public Criteria andCoronaryHeartDiseaseHistoryEqualTo(String value) {
+            addCriterion("coronary_heart_disease_history =", value, "coronaryHeartDiseaseHistory");
             return (Criteria) this;
         }
 
-        public Criteria andMotherNotEqualTo(String value) {
-            addCriterion("mother <>", value, "mother");
+        public Criteria andCoronaryHeartDiseaseHistoryNotEqualTo(String value) {
+            addCriterion("coronary_heart_disease_history <>", value, "coronaryHeartDiseaseHistory");
             return (Criteria) this;
         }
 
-        public Criteria andMotherGreaterThan(String value) {
-            addCriterion("mother >", value, "mother");
+        public Criteria andCoronaryHeartDiseaseHistoryGreaterThan(String value) {
+            addCriterion("coronary_heart_disease_history >", value, "coronaryHeartDiseaseHistory");
             return (Criteria) this;
         }
 
-        public Criteria andMotherGreaterThanOrEqualTo(String value) {
-            addCriterion("mother >=", value, "mother");
+        public Criteria andCoronaryHeartDiseaseHistoryGreaterThanOrEqualTo(String value) {
+            addCriterion("coronary_heart_disease_history >=", value, "coronaryHeartDiseaseHistory");
             return (Criteria) this;
         }
 
-        public Criteria andMotherLessThan(String value) {
-            addCriterion("mother <", value, "mother");
+        public Criteria andCoronaryHeartDiseaseHistoryLessThan(String value) {
+            addCriterion("coronary_heart_disease_history <", value, "coronaryHeartDiseaseHistory");
             return (Criteria) this;
         }
 
-        public Criteria andMotherLessThanOrEqualTo(String value) {
-            addCriterion("mother <=", value, "mother");
+        public Criteria andCoronaryHeartDiseaseHistoryLessThanOrEqualTo(String value) {
+            addCriterion("coronary_heart_disease_history <=", value, "coronaryHeartDiseaseHistory");
             return (Criteria) this;
         }
 
-        public Criteria andMotherLike(String value) {
-            addCriterion("mother like", value, "mother");
+        public Criteria andCoronaryHeartDiseaseHistoryLike(String value) {
+            addCriterion("coronary_heart_disease_history like", value, "coronaryHeartDiseaseHistory");
             return (Criteria) this;
         }
 
-        public Criteria andMotherNotLike(String value) {
-            addCriterion("mother not like", value, "mother");
+        public Criteria andCoronaryHeartDiseaseHistoryNotLike(String value) {
+            addCriterion("coronary_heart_disease_history not like", value, "coronaryHeartDiseaseHistory");
             return (Criteria) this;
         }
 
-        public Criteria andMotherIn(List<String> values) {
-            addCriterion("mother in", values, "mother");
+        public Criteria andCoronaryHeartDiseaseHistoryIn(List<String> values) {
+            addCriterion("coronary_heart_disease_history in", values, "coronaryHeartDiseaseHistory");
             return (Criteria) this;
         }
 
-        public Criteria andMotherNotIn(List<String> values) {
-            addCriterion("mother not in", values, "mother");
+        public Criteria andCoronaryHeartDiseaseHistoryNotIn(List<String> values) {
+            addCriterion("coronary_heart_disease_history not in", values, "coronaryHeartDiseaseHistory");
             return (Criteria) this;
         }
 
-        public Criteria andMotherBetween(String value1, String value2) {
-            addCriterion("mother between", value1, value2, "mother");
+        public Criteria andCoronaryHeartDiseaseHistoryBetween(String value1, String value2) {
+            addCriterion("coronary_heart_disease_history between", value1, value2, "coronaryHeartDiseaseHistory");
             return (Criteria) this;
         }
 
-        public Criteria andMotherNotBetween(String value1, String value2) {
-            addCriterion("mother not between", value1, value2, "mother");
+        public Criteria andCoronaryHeartDiseaseHistoryNotBetween(String value1, String value2) {
+            addCriterion("coronary_heart_disease_history not between", value1, value2, "coronaryHeartDiseaseHistory");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersIsNull() {
-            addCriterion("brothers is null");
+        public Criteria andCerebralApoplexyHistoryIsNull() {
+            addCriterion("cerebral_apoplexy_history is null");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersIsNotNull() {
-            addCriterion("brothers is not null");
+        public Criteria andCerebralApoplexyHistoryIsNotNull() {
+            addCriterion("cerebral_apoplexy_history is not null");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersEqualTo(String value) {
-            addCriterion("brothers =", value, "brothers");
+        public Criteria andCerebralApoplexyHistoryEqualTo(String value) {
+            addCriterion("cerebral_apoplexy_history =", value, "cerebralApoplexyHistory");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersNotEqualTo(String value) {
-            addCriterion("brothers <>", value, "brothers");
+        public Criteria andCerebralApoplexyHistoryNotEqualTo(String value) {
+            addCriterion("cerebral_apoplexy_history <>", value, "cerebralApoplexyHistory");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersGreaterThan(String value) {
-            addCriterion("brothers >", value, "brothers");
+        public Criteria andCerebralApoplexyHistoryGreaterThan(String value) {
+            addCriterion("cerebral_apoplexy_history >", value, "cerebralApoplexyHistory");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersGreaterThanOrEqualTo(String value) {
-            addCriterion("brothers >=", value, "brothers");
+        public Criteria andCerebralApoplexyHistoryGreaterThanOrEqualTo(String value) {
+            addCriterion("cerebral_apoplexy_history >=", value, "cerebralApoplexyHistory");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersLessThan(String value) {
-            addCriterion("brothers <", value, "brothers");
+        public Criteria andCerebralApoplexyHistoryLessThan(String value) {
+            addCriterion("cerebral_apoplexy_history <", value, "cerebralApoplexyHistory");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersLessThanOrEqualTo(String value) {
-            addCriterion("brothers <=", value, "brothers");
+        public Criteria andCerebralApoplexyHistoryLessThanOrEqualTo(String value) {
+            addCriterion("cerebral_apoplexy_history <=", value, "cerebralApoplexyHistory");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersLike(String value) {
-            addCriterion("brothers like", value, "brothers");
+        public Criteria andCerebralApoplexyHistoryLike(String value) {
+            addCriterion("cerebral_apoplexy_history like", value, "cerebralApoplexyHistory");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersNotLike(String value) {
-            addCriterion("brothers not like", value, "brothers");
+        public Criteria andCerebralApoplexyHistoryNotLike(String value) {
+            addCriterion("cerebral_apoplexy_history not like", value, "cerebralApoplexyHistory");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersIn(List<String> values) {
-            addCriterion("brothers in", values, "brothers");
+        public Criteria andCerebralApoplexyHistoryIn(List<String> values) {
+            addCriterion("cerebral_apoplexy_history in", values, "cerebralApoplexyHistory");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersNotIn(List<String> values) {
-            addCriterion("brothers not in", values, "brothers");
+        public Criteria andCerebralApoplexyHistoryNotIn(List<String> values) {
+            addCriterion("cerebral_apoplexy_history not in", values, "cerebralApoplexyHistory");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersBetween(String value1, String value2) {
-            addCriterion("brothers between", value1, value2, "brothers");
+        public Criteria andCerebralApoplexyHistoryBetween(String value1, String value2) {
+            addCriterion("cerebral_apoplexy_history between", value1, value2, "cerebralApoplexyHistory");
             return (Criteria) this;
         }
 
-        public Criteria andBrothersNotBetween(String value1, String value2) {
-            addCriterion("brothers not between", value1, value2, "brothers");
+        public Criteria andCerebralApoplexyHistoryNotBetween(String value1, String value2) {
+            addCriterion("cerebral_apoplexy_history not between", value1, value2, "cerebralApoplexyHistory");
             return (Criteria) this;
         }
 

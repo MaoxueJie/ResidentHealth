@@ -30,14 +30,17 @@
     <result column="cataract_years" property="cataractYears" jdbcType="INTEGER" />
     <result column="others" property="others" jdbcType="VARCHAR" />
     <result column="antihypertensive_drug" property="antihypertensiveDrug" jdbcType="INTEGER" />
+    <result column="antihypertensive_drug_name" property="antihypertensiveDrugName" jdbcType="VARCHAR" />
     <result column="lipid_lowering_drug" property="lipidLoweringDrug" jdbcType="INTEGER" />
+    <result column="lipid_lowering_drug_name" property="lipidLoweringDrugName" jdbcType="VARCHAR" />
     <result column="hypoglycemic_agents" property="hypoglycemicAgents" jdbcType="INTEGER" />
+    <result column="hypoglycemic_agents_name" property="hypoglycemicAgentsName" jdbcType="VARCHAR" />
     <result column="antiplatelet_drug" property="antiplateletDrug" jdbcType="INTEGER" />
-    <result column="grandfather" property="grandfather" jdbcType="VARCHAR" />
-    <result column="grandmother" property="grandmother" jdbcType="VARCHAR" />
-    <result column="father" property="father" jdbcType="VARCHAR" />
-    <result column="mother" property="mother" jdbcType="VARCHAR" />
-    <result column="brothers" property="brothers" jdbcType="VARCHAR" />
+    <result column="antiplatelet_drug_name" property="antiplateletDrugName" jdbcType="VARCHAR" />
+    <result column="high_blood_pressure_history" property="highBloodPressureHistory" jdbcType="VARCHAR" />
+    <result column="diabetes_history" property="diabetesHistory" jdbcType="VARCHAR" />
+    <result column="coronary_heart_disease_history" property="coronaryHeartDiseaseHistory" jdbcType="VARCHAR" />
+    <result column="cerebral_apoplexy_history" property="cerebralApoplexyHistory" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -76,9 +79,10 @@
     cerebrovascular_disease, cerebrovascular_disease_years, chronic_gastritis, chronic_gastritis_years, 
     stomach_ulcer, stomach_ulcer_years, bronchial_asthma, bronchial_asthma_years, copd, 
     copd_years, osteoporosis, osteoporosis_years, glaucoma, glaucoma_years, cataract, 
-    cataract_years, others, antihypertensive_drug, lipid_lowering_drug, hypoglycemic_agents, 
-    antiplatelet_drug, grandfather, grandmother, father, mother, brothers, create_time, 
-    update_time
+    cataract_years, others, antihypertensive_drug, antihypertensive_drug_name, lipid_lowering_drug, 
+    lipid_lowering_drug_name, hypoglycemic_agents, hypoglycemic_agents_name, antiplatelet_drug, 
+    antiplatelet_drug_name, high_blood_pressure_history, diabetes_history, coronary_heart_disease_history, 
+    cerebral_apoplexy_history, create_time, update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserSickExample" >
     select
@@ -115,11 +119,13 @@
       copd, copd_years, osteoporosis, 
       osteoporosis_years, glaucoma, glaucoma_years, 
       cataract, cataract_years, others, 
-      antihypertensive_drug, lipid_lowering_drug, 
-      hypoglycemic_agents, antiplatelet_drug, grandfather, 
-      grandmother, father, mother, 
-      brothers, create_time, update_time
-      )
+      antihypertensive_drug, antihypertensive_drug_name, 
+      lipid_lowering_drug, lipid_lowering_drug_name, 
+      hypoglycemic_agents, hypoglycemic_agents_name, 
+      antiplatelet_drug, antiplatelet_drug_name, 
+      high_blood_pressure_history, diabetes_history, 
+      coronary_heart_disease_history, cerebral_apoplexy_history, 
+      create_time, update_time)
     values (#{userId,jdbcType=BIGINT}, #{highBloodPressure,jdbcType=INTEGER}, #{highBloodPressureYears,jdbcType=INTEGER}, 
       #{coronaryHeartDisease,jdbcType=INTEGER}, #{coronaryHeartDiseaseYears,jdbcType=INTEGER}, 
       #{hyperlipidemia,jdbcType=INTEGER}, #{hyperlipidemiaYears,jdbcType=INTEGER}, #{diabetes,jdbcType=INTEGER}, 
@@ -130,11 +136,13 @@
       #{copd,jdbcType=INTEGER}, #{copdYears,jdbcType=INTEGER}, #{osteoporosis,jdbcType=INTEGER}, 
       #{osteoporosisYears,jdbcType=INTEGER}, #{glaucoma,jdbcType=INTEGER}, #{glaucomaYears,jdbcType=INTEGER}, 
       #{cataract,jdbcType=INTEGER}, #{cataractYears,jdbcType=INTEGER}, #{others,jdbcType=VARCHAR}, 
-      #{antihypertensiveDrug,jdbcType=INTEGER}, #{lipidLoweringDrug,jdbcType=INTEGER}, 
-      #{hypoglycemicAgents,jdbcType=INTEGER}, #{antiplateletDrug,jdbcType=INTEGER}, #{grandfather,jdbcType=VARCHAR}, 
-      #{grandmother,jdbcType=VARCHAR}, #{father,jdbcType=VARCHAR}, #{mother,jdbcType=VARCHAR}, 
-      #{brothers,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-      )
+      #{antihypertensiveDrug,jdbcType=INTEGER}, #{antihypertensiveDrugName,jdbcType=VARCHAR}, 
+      #{lipidLoweringDrug,jdbcType=INTEGER}, #{lipidLoweringDrugName,jdbcType=VARCHAR}, 
+      #{hypoglycemicAgents,jdbcType=INTEGER}, #{hypoglycemicAgentsName,jdbcType=VARCHAR}, 
+      #{antiplateletDrug,jdbcType=INTEGER}, #{antiplateletDrugName,jdbcType=VARCHAR}, 
+      #{highBloodPressureHistory,jdbcType=VARCHAR}, #{diabetesHistory,jdbcType=VARCHAR}, 
+      #{coronaryHeartDiseaseHistory,jdbcType=VARCHAR}, #{cerebralApoplexyHistory,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserSick" useGeneratedKeys="true" keyProperty="id" >
     insert into t_user_sick
@@ -220,29 +228,38 @@
       <if test="antihypertensiveDrug != null" >
         antihypertensive_drug,
       </if>
+      <if test="antihypertensiveDrugName != null" >
+        antihypertensive_drug_name,
+      </if>
       <if test="lipidLoweringDrug != null" >
         lipid_lowering_drug,
+      </if>
+      <if test="lipidLoweringDrugName != null" >
+        lipid_lowering_drug_name,
       </if>
       <if test="hypoglycemicAgents != null" >
         hypoglycemic_agents,
       </if>
+      <if test="hypoglycemicAgentsName != null" >
+        hypoglycemic_agents_name,
+      </if>
       <if test="antiplateletDrug != null" >
         antiplatelet_drug,
       </if>
-      <if test="grandfather != null" >
-        grandfather,
+      <if test="antiplateletDrugName != null" >
+        antiplatelet_drug_name,
       </if>
-      <if test="grandmother != null" >
-        grandmother,
+      <if test="highBloodPressureHistory != null" >
+        high_blood_pressure_history,
       </if>
-      <if test="father != null" >
-        father,
+      <if test="diabetesHistory != null" >
+        diabetes_history,
       </if>
-      <if test="mother != null" >
-        mother,
+      <if test="coronaryHeartDiseaseHistory != null" >
+        coronary_heart_disease_history,
       </if>
-      <if test="brothers != null" >
-        brothers,
+      <if test="cerebralApoplexyHistory != null" >
+        cerebral_apoplexy_history,
       </if>
       <if test="createTime != null" >
         create_time,
@@ -333,29 +350,38 @@
       <if test="antihypertensiveDrug != null" >
         #{antihypertensiveDrug,jdbcType=INTEGER},
       </if>
+      <if test="antihypertensiveDrugName != null" >
+        #{antihypertensiveDrugName,jdbcType=VARCHAR},
+      </if>
       <if test="lipidLoweringDrug != null" >
         #{lipidLoweringDrug,jdbcType=INTEGER},
+      </if>
+      <if test="lipidLoweringDrugName != null" >
+        #{lipidLoweringDrugName,jdbcType=VARCHAR},
       </if>
       <if test="hypoglycemicAgents != null" >
         #{hypoglycemicAgents,jdbcType=INTEGER},
       </if>
+      <if test="hypoglycemicAgentsName != null" >
+        #{hypoglycemicAgentsName,jdbcType=VARCHAR},
+      </if>
       <if test="antiplateletDrug != null" >
         #{antiplateletDrug,jdbcType=INTEGER},
       </if>
-      <if test="grandfather != null" >
-        #{grandfather,jdbcType=VARCHAR},
+      <if test="antiplateletDrugName != null" >
+        #{antiplateletDrugName,jdbcType=VARCHAR},
       </if>
-      <if test="grandmother != null" >
-        #{grandmother,jdbcType=VARCHAR},
+      <if test="highBloodPressureHistory != null" >
+        #{highBloodPressureHistory,jdbcType=VARCHAR},
       </if>
-      <if test="father != null" >
-        #{father,jdbcType=VARCHAR},
+      <if test="diabetesHistory != null" >
+        #{diabetesHistory,jdbcType=VARCHAR},
       </if>
-      <if test="mother != null" >
-        #{mother,jdbcType=VARCHAR},
+      <if test="coronaryHeartDiseaseHistory != null" >
+        #{coronaryHeartDiseaseHistory,jdbcType=VARCHAR},
       </if>
-      <if test="brothers != null" >
-        #{brothers,jdbcType=VARCHAR},
+      <if test="cerebralApoplexyHistory != null" >
+        #{cerebralApoplexyHistory,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -455,29 +481,38 @@
       <if test="antihypertensiveDrug != null" >
         antihypertensive_drug = #{antihypertensiveDrug,jdbcType=INTEGER},
       </if>
+      <if test="antihypertensiveDrugName != null" >
+        antihypertensive_drug_name = #{antihypertensiveDrugName,jdbcType=VARCHAR},
+      </if>
       <if test="lipidLoweringDrug != null" >
         lipid_lowering_drug = #{lipidLoweringDrug,jdbcType=INTEGER},
+      </if>
+      <if test="lipidLoweringDrugName != null" >
+        lipid_lowering_drug_name = #{lipidLoweringDrugName,jdbcType=VARCHAR},
       </if>
       <if test="hypoglycemicAgents != null" >
         hypoglycemic_agents = #{hypoglycemicAgents,jdbcType=INTEGER},
       </if>
+      <if test="hypoglycemicAgentsName != null" >
+        hypoglycemic_agents_name = #{hypoglycemicAgentsName,jdbcType=VARCHAR},
+      </if>
       <if test="antiplateletDrug != null" >
         antiplatelet_drug = #{antiplateletDrug,jdbcType=INTEGER},
       </if>
-      <if test="grandfather != null" >
-        grandfather = #{grandfather,jdbcType=VARCHAR},
+      <if test="antiplateletDrugName != null" >
+        antiplatelet_drug_name = #{antiplateletDrugName,jdbcType=VARCHAR},
       </if>
-      <if test="grandmother != null" >
-        grandmother = #{grandmother,jdbcType=VARCHAR},
+      <if test="highBloodPressureHistory != null" >
+        high_blood_pressure_history = #{highBloodPressureHistory,jdbcType=VARCHAR},
       </if>
-      <if test="father != null" >
-        father = #{father,jdbcType=VARCHAR},
+      <if test="diabetesHistory != null" >
+        diabetes_history = #{diabetesHistory,jdbcType=VARCHAR},
       </if>
-      <if test="mother != null" >
-        mother = #{mother,jdbcType=VARCHAR},
+      <if test="coronaryHeartDiseaseHistory != null" >
+        coronary_heart_disease_history = #{coronaryHeartDiseaseHistory,jdbcType=VARCHAR},
       </if>
-      <if test="brothers != null" >
-        brothers = #{brothers,jdbcType=VARCHAR},
+      <if test="cerebralApoplexyHistory != null" >
+        cerebral_apoplexy_history = #{cerebralApoplexyHistory,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -517,14 +552,17 @@
       cataract_years = #{cataractYears,jdbcType=INTEGER},
       others = #{others,jdbcType=VARCHAR},
       antihypertensive_drug = #{antihypertensiveDrug,jdbcType=INTEGER},
+      antihypertensive_drug_name = #{antihypertensiveDrugName,jdbcType=VARCHAR},
       lipid_lowering_drug = #{lipidLoweringDrug,jdbcType=INTEGER},
+      lipid_lowering_drug_name = #{lipidLoweringDrugName,jdbcType=VARCHAR},
       hypoglycemic_agents = #{hypoglycemicAgents,jdbcType=INTEGER},
+      hypoglycemic_agents_name = #{hypoglycemicAgentsName,jdbcType=VARCHAR},
       antiplatelet_drug = #{antiplateletDrug,jdbcType=INTEGER},
-      grandfather = #{grandfather,jdbcType=VARCHAR},
-      grandmother = #{grandmother,jdbcType=VARCHAR},
-      father = #{father,jdbcType=VARCHAR},
-      mother = #{mother,jdbcType=VARCHAR},
-      brothers = #{brothers,jdbcType=VARCHAR},
+      antiplatelet_drug_name = #{antiplateletDrugName,jdbcType=VARCHAR},
+      high_blood_pressure_history = #{highBloodPressureHistory,jdbcType=VARCHAR},
+      diabetes_history = #{diabetesHistory,jdbcType=VARCHAR},
+      coronary_heart_disease_history = #{coronaryHeartDiseaseHistory,jdbcType=VARCHAR},
+      cerebral_apoplexy_history = #{cerebralApoplexyHistory,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
