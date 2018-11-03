@@ -10,6 +10,7 @@
 	<script src="./js/zepto.min.js"></script>
 	<!-- <script src="./js/jweixin-1.0.0.js"></script> -->
 	<script src="./js/weui.js"></script>
+	<script src="./js/jquery.validate.min.js"></script>
 	<script src="./js/questionnaire.js"></script>
 </head>
 <body ontouchstart>
@@ -21,480 +22,503 @@
 			</div>
 
 			<h3 class="mid_title">1、饮食习惯</h3>
-			<div class="weui-cells__title">1.每日进餐情况是否规律？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="meal1">
-					<div class="weui-cell__bd">
-						<p>规律</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="meal" id="meal1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="meal2">
 
-					<div class="weui-cell__bd">
-						<p>不规律</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="meal" class="weui-check" id="meal2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+			<div class="cell-item">
+				<div class="weui-cells__title">1.每日进餐情况是否规律？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="meal1">
+						<div class="weui-cell__bd">
+							<p>规律</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="meal" id="meal1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="meal2">
+
+						<div class="weui-cell__bd">
+							<p>不规律</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="meal" class="weui-check" id="meal2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
 			</div>
 
-			<div class="weui-cells__title">2.早餐情况？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="breakfast1">
-					<div class="weui-cell__bd">
-						<p>每天都吃</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="breakfast" id="breakfast1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="breakfast2">
+			<div class="cell-item">
+				<div class="weui-cells__title">2.早餐情况？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="breakfast1">
+						<div class="weui-cell__bd">
+							<p>每天都吃</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="breakfast" id="breakfast1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="breakfast2">
 
-					<div class="weui-cell__bd">
-						<p>偶尔不吃（＜1次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="breakfast" class="weui-check" id="breakfast2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="breakfast3">
-					<div class="weui-cell__bd">
-						<p>有时不吃（2-3次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="breakfast" id="breakfast3" value="3">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="breakfast4">
+						<div class="weui-cell__bd">
+							<p>偶尔不吃（＜1次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="breakfast" class="weui-check" id="breakfast2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="breakfast3">
+						<div class="weui-cell__bd">
+							<p>有时不吃（2-3次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="breakfast" id="breakfast3" value="3">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="breakfast4">
 
-					<div class="weui-cell__bd">
-						<p>经常不吃（4-6次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="breakfast" class="weui-check" id="breakfast4" value="4">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="breakfast5">
-					<div class="weui-cell__bd">
-						<p>从来不吃</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="breakfast" id="breakfast5" value="5">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+						<div class="weui-cell__bd">
+							<p>经常不吃（4-6次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="breakfast" class="weui-check" id="breakfast4" value="4">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="breakfast5">
+						<div class="weui-cell__bd">
+							<p>从来不吃</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="breakfast" id="breakfast5" value="5">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
 			</div>
 
-			<div class="weui-cells__title">3.上午加餐情况？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="extraMeal11">
-					<div class="weui-cell__bd">
-						<p>每天都吃</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="extraMeal1" id="extraMeal11" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="extraMeal12">
+			<div class="cell-item">
+				<div class="weui-cells__title">3.上午加餐情况？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="extraMeal11">
+						<div class="weui-cell__bd">
+							<p>每天都吃</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="extraMeal1" id="extraMeal11" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="extraMeal12">
 
-					<div class="weui-cell__bd">
-						<p>偶尔不吃（＜1次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="extraMeal1" class="weui-check" id="extraMeal12" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="extraMeal13">
-					<div class="weui-cell__bd">
-						<p>有时不吃（2-3次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="extraMeal1" id="extraMeal13" value="3">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="extraMeal14">
+						<div class="weui-cell__bd">
+							<p>偶尔不吃（＜1次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="extraMeal1" class="weui-check" id="extraMeal12" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="extraMeal13">
+						<div class="weui-cell__bd">
+							<p>有时不吃（2-3次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="extraMeal1" id="extraMeal13" value="3">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="extraMeal14">
 
-					<div class="weui-cell__bd">
-						<p>经常不吃（4-6次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="extraMeal1" class="weui-check" id="extraMeal14" value="4">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="extraMeal15">
-					<div class="weui-cell__bd">
-						<p>从来不吃</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="extraMeal1" id="extraMeal15" value="5">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+						<div class="weui-cell__bd">
+							<p>经常不吃（4-6次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="extraMeal1" class="weui-check" id="extraMeal14" value="4">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="extraMeal15">
+						<div class="weui-cell__bd">
+							<p>从来不吃</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="extraMeal1" id="extraMeal15" value="5">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
 			</div>
 
-			<div class="weui-cells__title">4.午餐情况？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="lunch1">
-					<div class="weui-cell__bd">
-						<p>每天都吃</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="lunch" id="lunch1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="lunch2">
+			<div class="cell-item">
+				<div class="weui-cells__title">4.午餐情况？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="lunch1">
+						<div class="weui-cell__bd">
+							<p>每天都吃</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="lunch" id="lunch1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="lunch2">
 
-					<div class="weui-cell__bd">
-						<p>偶尔不吃（＜1次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="lunch" class="weui-check" id="lunch2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="lunch3">
-					<div class="weui-cell__bd">
-						<p>有时不吃（2-3次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="lunch" id="lunch3" value="3">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="lunch4">
+						<div class="weui-cell__bd">
+							<p>偶尔不吃（＜1次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="lunch" class="weui-check" id="lunch2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="lunch3">
+						<div class="weui-cell__bd">
+							<p>有时不吃（2-3次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="lunch" id="lunch3" value="3">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="lunch4">
 
-					<div class="weui-cell__bd">
-						<p>经常不吃（4-6次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="lunch" class="weui-check" id="lunch4" value="4">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="lunch5">
-					<div class="weui-cell__bd">
-						<p>从来不吃</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="lunch" id="lunch5" value="5">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+						<div class="weui-cell__bd">
+							<p>经常不吃（4-6次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="lunch" class="weui-check" id="lunch4" value="4">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="lunch5">
+						<div class="weui-cell__bd">
+							<p>从来不吃</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="lunch" id="lunch5" value="5">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
 			</div>
 
-			<div class="weui-cells__title">5.下午加餐情况？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="extraMeal21">
-					<div class="weui-cell__bd">
-						<p>每天都吃</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="extraMeal2" id="extraMeal21" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="extraMeal22">
+			<div class="cell-item">
+				<div class="weui-cells__title">5.下午加餐情况？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="extraMeal21">
+						<div class="weui-cell__bd">
+							<p>每天都吃</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="extraMeal2" id="extraMeal21" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="extraMeal22">
 
-					<div class="weui-cell__bd">
-						<p>偶尔不吃（＜1次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="extraMeal2" class="weui-check" id="extraMeal22" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="extraMeal23">
-					<div class="weui-cell__bd">
-						<p>有时不吃（2-3次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="extraMeal2" id="extraMeal23" value="3">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="extraMeal24">
+						<div class="weui-cell__bd">
+							<p>偶尔不吃（＜1次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="extraMeal2" class="weui-check" id="extraMeal22" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="extraMeal23">
+						<div class="weui-cell__bd">
+							<p>有时不吃（2-3次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="extraMeal2" id="extraMeal23" value="3">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="extraMeal24">
 
-					<div class="weui-cell__bd">
-						<p>经常不吃（4-6次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="extraMeal2" class="weui-check" id="extraMeal24" value="4">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="extraMeal25">
-					<div class="weui-cell__bd">
-						<p>从来不吃</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="extraMeal2" id="extraMeal25" value="5">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+						<div class="weui-cell__bd">
+							<p>经常不吃（4-6次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="extraMeal2" class="weui-check" id="extraMeal24" value="4">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="extraMeal25">
+						<div class="weui-cell__bd">
+							<p>从来不吃</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="extraMeal2" id="extraMeal25" value="5">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
 			</div>
 
-			<div class="weui-cells__title">6.晚餐情况？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="dinner1">
-					<div class="weui-cell__bd">
-						<p>每天都吃</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="dinner" id="dinner1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="dinner2">
+			<div class="cell-item">
+				<div class="weui-cells__title">6.晚餐情况？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="dinner1">
+						<div class="weui-cell__bd">
+							<p>每天都吃</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="dinner" id="dinner1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="dinner2">
 
-					<div class="weui-cell__bd">
-						<p>偶尔不吃（＜1次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="dinner" class="weui-check" id="dinner2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="dinner3">
-					<div class="weui-cell__bd">
-						<p>有时不吃（2-3次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="dinner" id="dinner3" value="3">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="dinner4">
+						<div class="weui-cell__bd">
+							<p>偶尔不吃（＜1次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="dinner" class="weui-check" id="dinner2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="dinner3">
+						<div class="weui-cell__bd">
+							<p>有时不吃（2-3次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="dinner" id="dinner3" value="3">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="dinner4">
 
-					<div class="weui-cell__bd">
-						<p>经常不吃（4-6次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="dinner" class="weui-check" id="dinner4" value="4">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="dinner5">
-					<div class="weui-cell__bd">
-						<p>从来不吃</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="dinner" id="dinner5" value="5">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<!-- <div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">其它</label></div>
-					<div class="weui-cell__bd">
-						<input class="weui-input" type="text" name="mealDesc" placeholder="其它餐食情况描述">
-					</div>
-				</div> -->
+						<div class="weui-cell__bd">
+							<p>经常不吃（4-6次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="dinner" class="weui-check" id="dinner4" value="4">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="dinner5">
+						<div class="weui-cell__bd">
+							<p>从来不吃</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="dinner" id="dinner5" value="5">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<!-- <div class="weui-cell">
+						<div class="weui-cell__hd"><label class="weui-label">其它</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" type="text" name="mealDesc" placeholder="其它餐食情况描述">
+						</div>
+					</div> -->
+				</div>
 			</div>
 
-			<div class="weui-cells__title">7.荤素搭配情况？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="alizarin1">
-					<div class="weui-cell__bd">
-						<p>荤素各半</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="alizarin" id="alizarin1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="alizarin2">
+			<div class="cell-item">
+				<div class="weui-cells__title">7.荤素搭配情况？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="alizarin1">
+						<div class="weui-cell__bd">
+							<p>荤素各半</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="alizarin" id="alizarin1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="alizarin2">
 
-					<div class="weui-cell__bd">
-						<p>以肉食为主</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="alizarin" class="weui-check" id="alizarin2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="alizarin3">
-					<div class="weui-cell__bd">
-						<p>以素食为主</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="alizarin" id="alizarin3" value="3">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+						<div class="weui-cell__bd">
+							<p>以肉食为主</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="alizarin" class="weui-check" id="alizarin2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="alizarin3">
+						<div class="weui-cell__bd">
+							<p>以素食为主</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="alizarin" id="alizarin3" value="3">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
 			</div>
 
-			<div class="weui-cells__title">8.饮食偏好？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="preference1">
-					<div class="weui-cell__bd">
-						<p>偏油腻</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="checkbox" class="weui-check" name="preference" id="preference1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="preference2">
+			<div class="cell-item">
+				<div class="weui-cells__title">8.饮食偏好？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="preference1">
+						<div class="weui-cell__bd">
+							<p>偏油腻</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="checkbox" required class="weui-check" name="preference" id="preference1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="preference2">
 
-					<div class="weui-cell__bd">
-						<p>偏咸</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="checkbox" name="preference" class="weui-check" id="preference2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="preference3">
-					<div class="weui-cell__bd">
-						<p>适中</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="checkbox" class="weui-check" name="preference" id="preference3" value="3">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="preference4">
-					<div class="weui-cell__bd">
-						<p>糖尿病饮食</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="checkbox" class="weui-check" name="preference" id="preference4" value="4">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="preference5">
-					<div class="weui-cell__bd">
-						<p>低盐饮食</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="checkbox" class="weui-check" name="preference" id="preference5" value="5">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="preference6">
-					<div class="weui-cell__bd">
-						<p>低脂饮食</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="preference" id="preference6" value="6">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+						<div class="weui-cell__bd">
+							<p>偏咸</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="checkbox" required name="preference" class="weui-check" id="preference2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="preference3">
+						<div class="weui-cell__bd">
+							<p>适中</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="checkbox" required class="weui-check" name="preference" id="preference3" value="3">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="preference4">
+						<div class="weui-cell__bd">
+							<p>糖尿病饮食</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="checkbox" required class="weui-check" name="preference" id="preference4" value="4">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="preference5">
+						<div class="weui-cell__bd">
+							<p>低盐饮食</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="checkbox" required class="weui-check" name="preference" id="preference5" value="5">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="preference6">
+						<div class="weui-cell__bd">
+							<p>低脂饮食</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="preference" id="preference6" value="6">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
 			</div>
 
-			<div class="weui-cells__title">9.你经常吃甜食吗？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="sweets1">
-					<div class="weui-cell__bd">
-						<p>很少</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="sweets" id="sweets1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="sweets2">
+			<div class="cell-item">
+				<div class="weui-cells__title">9.你经常吃甜食吗？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="sweets1">
+						<div class="weui-cell__bd">
+							<p>很少</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="sweets" id="sweets1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="sweets2">
 
-					<div class="weui-cell__bd">
-						<p>有时</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="sweets" class="weui-check" id="sweets2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="sweets3">
-					<div class="weui-cell__bd">
-						<p>经常</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="sweets" id="sweets3" value="3">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+						<div class="weui-cell__bd">
+							<p>有时</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="sweets" class="weui-check" id="sweets2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="sweets3">
+						<div class="weui-cell__bd">
+							<p>经常</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="sweets" id="sweets3" value="3">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
 			</div>
 
-			<div class="weui-cells__title">10.你经常吃水果吗？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="fruit1">
-					<div class="weui-cell__bd">
-						<p>很少</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="fruit" id="fruit1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="fruit2">
+			<div class="cell-item">
+				<div class="weui-cells__title">10.你经常吃水果吗？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="fruit1">
+						<div class="weui-cell__bd">
+							<p>很少</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="fruit" id="fruit1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="fruit2">
 
-					<div class="weui-cell__bd">
-						<p>有时</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="fruit" class="weui-check" id="fruit2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="fruit3">
-					<div class="weui-cell__bd">
-						<p>经常</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="fruit" id="fruit3" value="3">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+						<div class="weui-cell__bd">
+							<p>有时</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="fruit" class="weui-check" id="fruit2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="fruit3">
+						<div class="weui-cell__bd">
+							<p>经常</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="fruit" id="fruit3" value="3">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
 			</div>
 
-			<div class="weui-cells__title">11.你经常喝含糖饮料吗？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="sugaryDrink1">
-					<div class="weui-cell__bd">
-						<p>很少</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="sugaryDrink" id="sugaryDrink1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="sugaryDrink2">
+			<div class="cell-item">
+				<div class="weui-cells__title">11.你经常喝含糖饮料吗？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="sugaryDrink1">
+						<div class="weui-cell__bd">
+							<p>很少</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="sugaryDrink" id="sugaryDrink1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="sugaryDrink2">
 
-					<div class="weui-cell__bd">
-						<p>有时</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="sugaryDrink" class="weui-check" id="sugaryDrink2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="sugaryDrink3">
-					<div class="weui-cell__bd">
-						<p>经常</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="sugaryDrink" id="sugaryDrink3" value="3">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+						<div class="weui-cell__bd">
+							<p>有时</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="sugaryDrink" class="weui-check" id="sugaryDrink2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="sugaryDrink3">
+						<div class="weui-cell__bd">
+							<p>经常</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="sugaryDrink" id="sugaryDrink3" value="3">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
 			</div>
 
 			<h3 class="mid_title">2、运动习惯</h3>
 
-			<div class="sport_item">
+			<div class="sport_item cell-item">
 				<div class="weui-cells__title">1.最近7天内，您是否做了剧烈的体育活动？（提重物、挖掘、有氧运动或是快速骑车）</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="violentMovement1">
@@ -502,7 +526,7 @@
 							<p>有</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" class="weui-check" name="violentMovement" id="violentMovement1" value="1">
+							<input type="radio" required class="weui-check" name="violentMovement" id="violentMovement1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -511,7 +535,7 @@
 							<p>无相关体育活动</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" name="violentMovement" class="weui-check" id="violentMovement2" value="2">
+							<input type="radio" required name="violentMovement" class="weui-check" id="violentMovement2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -525,7 +549,7 @@
 				</div>
 			</div>
 
-			<div class="sport_item">
+			<div class="sport_item cell-item">
 				<div class="weui-cells__title">2.在这其中一天您通常会花多少时间在剧烈的体育活动上？</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="violentMovementPerDay1">
@@ -533,7 +557,7 @@
 							<p>有</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" class="weui-check" name="violentMovementPerDay" id="violentMovementPerDay1" value="1">
+							<input type="radio" required class="weui-check" name="violentMovementPerDay" id="violentMovementPerDay1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -543,7 +567,7 @@
 							<p>不知道或不确定</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" name="violentMovementPerDay" class="weui-check" id="violentMovementPerDay2" value="2">
+							<input type="radio" required name="violentMovementPerDay" class="weui-check" id="violentMovementPerDay2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -557,7 +581,7 @@
 				</div>
 			</div>
 
-			<div class="sport_item">
+			<div class="sport_item cell-item">
 				<div class="weui-cells__title">3.最近7天内，您有几天做了适度的体育活动，（提轻的物品、以平常的速度骑车或打双人网球等，不包括走路)</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="moderateMovement1">
@@ -565,7 +589,7 @@
 							<p>有</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" class="weui-check" name="moderateMovement" id="moderateMovement1" value="1">
+							<input type="radio" required class="weui-check" name="moderateMovement" id="moderateMovement1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -575,7 +599,7 @@
 							<p>无适度体育活动</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" name="moderateMovement" class="weui-check" id="moderateMovement2" value="2">
+							<input type="radio" required name="moderateMovement" class="weui-check" id="moderateMovement2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -590,7 +614,7 @@
 				</div>
 			</div>
 
-			<div class="sport_item">
+			<div class="sport_item cell-item">
 				<div class="weui-cells__title">4.在这其中一天您通常会花多少时间在适度的体育活动上?</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="moderateMinute1">
@@ -598,7 +622,7 @@
 							<p>有</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" class="weui-check" name="moderateMinute" id="moderateMinute1" value="1">
+							<input type="radio" required class="weui-check" name="moderateMinute" id="moderateMinute1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -608,7 +632,7 @@
 							<p>不知道或不确定</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" name="moderateMinute" class="weui-check" id="moderateMinute2" value="2">
+							<input type="radio" required name="moderateMinute" class="weui-check" id="moderateMinute2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -623,7 +647,7 @@
 				</div>
 			</div>
 
-			<div class="sport_item">
+			<div class="sport_item cell-item">
 				<div class="weui-cells__title">5.最近7天内,您有几天是步行，且一次步行至少10分钟?</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="walkMovement1">
@@ -631,7 +655,7 @@
 							<p>有</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" class="weui-check" name="walkMovement" id="walkMovement1" value="1">
+							<input type="radio" required class="weui-check" name="walkMovement" id="walkMovement1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -640,7 +664,7 @@
 							<p>无适度体育活动</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" name="walkMovement" class="weui-check" id="walkMovement2" value="2">
+							<input type="radio" required name="walkMovement" class="weui-check" id="walkMovement2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -654,7 +678,7 @@
 				</div>
 			</div>
 
-			<div class="sport_item">
+			<div class="sport_item cell-item">
 				<div class="weui-cells__title">6.在这其中一天您通常花多少时间在步行上？</div>
 				<div class="weui-cells weui-cells_radio"">
 					<label class="weui-cell weui-check__label" for="walkMovementPerDay1">
@@ -662,7 +686,7 @@
 							<p>有</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" class="weui-check" name="walkMovementPerDay" id="walkMovementPerDay1" value="1">
+							<input type="radio" required class="weui-check" name="walkMovementPerDay" id="walkMovementPerDay1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -671,7 +695,7 @@
 							<p>无适度体育活动</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" name="walkMovementPerDay" class="weui-check" id="walkMovementPerDay2" value="2">
+							<input type="radio" required name="walkMovementPerDay" class="weui-check" id="walkMovementPerDay2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -685,7 +709,7 @@
 				</div>
 			</div>
 
-			<div class="sport_item">
+			<div class="sport_item cell-item">
 				<div class="weui-cells__title">7.最近七天内，工作日您有多久时间是坐着的？</div>
 				<div class="weui-cells weui-cells_radio"">
 					<label class="weui-cell weui-check__label" for="sittingMinutePerDay1">
@@ -693,7 +717,7 @@
 							<p>有</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" class="weui-check" name="sittingMinutePerDay2" id="sittingMinutePerDay1" value="1">
+							<input type="radio" required class="weui-check" name="sittingMinutePerDay2" id="sittingMinutePerDay1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -702,7 +726,7 @@
 							<p>不知道或不确定</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" name="sittingMinutePerDay2" class="weui-check" id="sittingMinutePerDay2" value="2">
+							<input type="radio" required name="sittingMinutePerDay2" class="weui-check" id="sittingMinutePerDay2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -719,7 +743,7 @@
 
 			<h3 class="mid_title">3、嗜好</h3>
 
-			<div id="smokingWrap">
+			<div id="smokingWrap" class="cell-item">
 				<div class="weui-cells__title">1.您是否吸烟？</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="smoking1">
@@ -727,7 +751,7 @@
 							<p>从不吸烟</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" class="weui-check" name="smoking" id="smoking1" value="1">
+							<input type="radio" required class="weui-check" name="smoking" id="smoking1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -737,7 +761,7 @@
 							<p>每天吸烟</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" name="smoking" class="weui-check" id="smoking2" value="2">
+							<input type="radio" required name="smoking" class="weui-check" id="smoking2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -746,7 +770,7 @@
 							<p>有时吸烟</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" class="weui-check" name="smoking" id="smoking3" value="3">
+							<input type="radio" required class="weui-check" name="smoking" id="smoking3" value="3">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -755,7 +779,7 @@
 							<p>曾经吸烟</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" class="weui-check" name="smoking" id="smoking4" value="4">
+							<input type="radio" required class="weui-check" name="smoking" id="smoking4" value="4">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -831,131 +855,137 @@
 			</div>
 
 
-			<div class="weui-cells__title">和你一起生活或工作的人中有人吸烟吗？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="partneSmoking1">
-					<div class="weui-cell__bd">
-						<p>否</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="partneSmoking" id="partneSmoking1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="partneSmoking2">
+			<div class="cell-item">
+				<div class="weui-cells__title">和你一起生活或工作的人中有人吸烟吗？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="partneSmoking1">
+						<div class="weui-cell__bd">
+							<p>否</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="partneSmoking" id="partneSmoking1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="partneSmoking2">
 
-					<div class="weui-cell__bd">
-						<p>是</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="partneSmoking" class="weui-check" id="partneSmoking2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+						<div class="weui-cell__bd">
+							<p>是</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="partneSmoking" class="weui-check" id="partneSmoking2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
 			</div>
 
-			<div class="weui-cells__title">平均每周被动吸烟超过15分钟的天数？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="passiveSmoking1">
-					<div class="weui-cell__bd">
-						<p>0天</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="passiveSmoking" id="passiveSmoking1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="passiveSmoking2">
+			<div class="cell-item">
+				<div class="weui-cells__title">平均每周被动吸烟超过15分钟的天数？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="passiveSmoking1">
+						<div class="weui-cell__bd">
+							<p>0天</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="passiveSmoking" id="passiveSmoking1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="passiveSmoking2">
 
-					<div class="weui-cell__bd">
-						<p>平均每周1-2天</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="passiveSmoking" class="weui-check" id="passiveSmoking2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="passiveSmoking3">
+						<div class="weui-cell__bd">
+							<p>平均每周1-2天</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="passiveSmoking" class="weui-check" id="passiveSmoking2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="passiveSmoking3">
 
-					<div class="weui-cell__bd">
-						<p>平均每周3-5天</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="passiveSmoking" class="weui-check" id="passiveSmoking3" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="passiveSmoking4">
+						<div class="weui-cell__bd">
+							<p>平均每周3-5天</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="passiveSmoking" class="weui-check" id="passiveSmoking3" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="passiveSmoking4">
 
-					<div class="weui-cell__bd">
-						<p>几乎每天</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="passiveSmoking" class="weui-check" id="passiveSmoking4" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="passiveSmoking5">
+						<div class="weui-cell__bd">
+							<p>几乎每天</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="passiveSmoking" class="weui-check" id="passiveSmoking4" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="passiveSmoking5">
 
-					<div class="weui-cell__bd">
-						<p>不清楚</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="passiveSmoking" class="weui-check" id="passiveSmoking5" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+						<div class="weui-cell__bd">
+							<p>不清楚</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="passiveSmoking" class="weui-check" id="passiveSmoking5" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
 			</div>
 
-			<div class="weui-cells__title">是否饮酒？</div>
-			<div class="weui-cells weui-cells_radio">
-				<label class="weui-cell weui-check__label" for="drinking1">
-					<div class="weui-cell__bd">
-						<p>从不饮酒</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" class="weui-check" name="drinking" id="drinking1" value="1">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="drinking2">
+			<div class="cell-item">
+				<div class="weui-cells__title">是否饮酒？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="drinking1">
+						<div class="weui-cell__bd">
+							<p>从不饮酒</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="drinking" id="drinking1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="drinking2">
 
-					<div class="weui-cell__bd">
-						<p>偶尔饮酒（＜1次/月）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="drinking" class="weui-check" id="drinking2" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="drinking3">
+						<div class="weui-cell__bd">
+							<p>偶尔饮酒（＜1次/月）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="drinking" class="weui-check" id="drinking2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="drinking3">
 
-					<div class="weui-cell__bd">
-						<p>有时饮酒（2-4次/月）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="drinking" class="weui-check" id="drinking3" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
-				<label class="weui-cell weui-check__label" for="drinking4">
+						<div class="weui-cell__bd">
+							<p>有时饮酒（2-4次/月）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="drinking" class="weui-check" id="drinking3" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="drinking4">
 
-					<div class="weui-cell__bd">
-						<p>经常饮酒（＞1次/周）</p>
-					</div>
-					<div class="weui-cell__ft">
-						<input type="radio" name="drinking" class="weui-check" id="drinking4" value="2">
-						<span class="weui-icon-checked"></span>
-					</div>
-				</label>
+						<div class="weui-cell__bd">
+							<p>经常饮酒（＞1次/周）</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required name="drinking" class="weui-check" id="drinking4" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+				</div>
 			</div>
 			
-			<div class="drinking_item">
+			<div class="drinking_item cell-item">
 				<div class="weui-cells__title">近期（１个月以来）饮酒的种类有哪些？</div>
 				<div class="weui-cells weui-cells_checkbox">
 					<label class="weui-cell weui-check__label" for="drinkingTypes1">
 						<div class="weui-cell__hd">
-							<input type="checkbox" class="weui-check" name="drinkingTypes" id="drinkingTypes1">
+							<input type="checkbox" required class="weui-check" name="drinkingTypes" id="drinkingTypes1">
 							<i class="weui-icon-checked"></i>
 						</div>
 						<div class="weui-cell__bd">
@@ -964,7 +994,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="drinkingTypes2">
 						<div class="weui-cell__hd">
-							<input type="checkbox" class="weui-check" name="drinkingTypes" id="drinkingTypes2">
+							<input type="checkbox" required class="weui-check" name="drinkingTypes" id="drinkingTypes2">
 							<i class="weui-icon-checked"></i>
 						</div>
 						<div class="weui-cell__bd">
@@ -973,7 +1003,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="drinkingTypes3">
 						<div class="weui-cell__hd">
-							<input type="checkbox" class="weui-check" name="drinkingTypes" id="drinkingTypes3">
+							<input type="checkbox" required class="weui-check" name="drinkingTypes" id="drinkingTypes3">
 							<i class="weui-icon-checked"></i>
 						</div>
 						<div class="weui-cell__bd">
@@ -982,7 +1012,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="drinkingTypes4">
 						<div class="weui-cell__hd">
-							<input type="checkbox" class="weui-check" name="drinkingTypes" id="drinkingTypes4">
+							<input type="checkbox" required class="weui-check" name="drinkingTypes" id="drinkingTypes4">
 							<i class="weui-icon-checked"></i>
 						</div>
 						<div class="weui-cell__bd">
@@ -991,7 +1021,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="drinkingTypes5">
 						<div class="weui-cell__hd">
-							<input type="checkbox" class="weui-check" name="drinkingTypes" id="drinkingTypes5">
+							<input type="checkbox" required class="weui-check" name="drinkingTypes" id="drinkingTypes5">
 							<i class="weui-icon-checked"></i>
 						</div>
 						<div class="weui-cell__bd">
@@ -1000,7 +1030,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="drinkingTypes6">
 						<div class="weui-cell__hd">
-							<input type="checkbox" class="weui-check" name="drinkingTypes" id="drinkingTypes6">
+							<input type="checkbox" required class="weui-check" name="drinkingTypes" id="drinkingTypes6">
 							<i class="weui-icon-checked"></i>
 						</div>
 						<div class="weui-cell__bd">
@@ -1018,7 +1048,7 @@
 			</div>
 
 			<div class="align_center mt30">
-				<a class="weui-btn btn-primary" id="submitBtn" href="javascript:;">提交</a>
+				<input class="weui-btn btn-primary submitbtn" type="submit" value="提交"/>
 			</div>
 		</form>
 	</div>

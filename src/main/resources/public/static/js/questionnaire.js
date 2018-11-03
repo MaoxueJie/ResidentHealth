@@ -1,3 +1,4 @@
+
 var $loadingToast ,$toast;
 $(function(){
 
@@ -50,13 +51,32 @@ $(function(){
 	var ajaxUrl, data;
 
 $(function(){
-	$('#submitBtn').click(function(){
+
+	var form = $('form');
+	if( form.length > 0  ){
+		form.validate({
+			submitHandler: function(form){
+				var data = $(form).serialize();
+				var ajaxUrl = $(form).attr('action');
+				postDataFun( ajaxUrl,data );
+				showLoading();
+			},
+			errorPlacement: function errorPlacement(error, element) {
+				if( element.closest('.cell-item').length > 0 ){
+					element = element.closest('.cell-item').find('.weui-cells__title');
+				}
+				element.append(error);
+			}
+		})
+	}
+
+	/*$('#submitBtn').click(function(){
 		var $form = $(this).closest('form');
 		ajaxUrl = $form.attr('action');
 		data = $form.serialize();
 		postDataFun( ajaxUrl,data );
 		showLoading();
-	})
+	})*/
 })
 	function postDataFun( ajaxUrl,data ){
 		var type = ajaxUrl.split('/')[2];
@@ -84,6 +104,7 @@ $(function(){
 	//var title = ['','','','','','','GAD-7焦虑症筛查量表','AD8认知障碍自评表','PHQ-9抑郁症筛查量表',]
 	showResult();
 	function showResult( isResult,type ){
+
 		isResult = typeof isResult == 'undefined' ? false : true; 
 
 		if( !isResult ){
@@ -111,6 +132,9 @@ $(function(){
 						var resultMsg = json.data.resultMsg.replace('/\n','</br>');
 						console.log( resultMsg );
 						$('#resultCont').html( resultMsg )
+						if(  type == 'psy' ){	//心理测评结果页增加自杀评测入口
+							$('#toSuicide').show();
+						}
 					}else{
 						setDataHandle( json.data );
 					}
