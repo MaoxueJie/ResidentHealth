@@ -126,6 +126,7 @@ public class UserServiceImpl implements UserService{
 				userBaseInfoMapper.insert(baseInfo);
 			}
 			ret.setSuccess(true);
+			ret.setMessage("提交成功");
 		}catch(Exception e)
 		{
 			logger.error("添加或更新基本信息异常", e);
