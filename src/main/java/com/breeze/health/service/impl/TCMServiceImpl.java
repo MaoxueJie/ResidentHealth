@@ -368,8 +368,8 @@ public class TCMServiceImpl implements TCMService{
 			});
 		}catch(Exception e)
 		{
-			logger.error("添加或更AD8异常", e);
-			ret.setMessage("更新AD8失败");
+			logger.error("添加或更异常", e);
+			ret.setMessage("更新失败");
 		}
 		return ret;
 	}
