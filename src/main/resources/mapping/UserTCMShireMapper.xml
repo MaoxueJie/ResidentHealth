@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.breeze.health.mapper.UserTCMShireMapper" >
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserTCMShire" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="tcm_id" property="tcmId" jdbcType="BIGINT" />
+    <result column="shire_q1" property="shireQ1" jdbcType="INTEGER" />
+    <result column="shire_q2" property="shireQ2" jdbcType="INTEGER" />
+    <result column="shire_q3" property="shireQ3" jdbcType="INTEGER" />
+    <result column="shire_q4" property="shireQ4" jdbcType="INTEGER" />
+    <result column="shire_q5" property="shireQ5" jdbcType="INTEGER" />
+    <result column="shire_q6" property="shireQ6" jdbcType="INTEGER" />
+    <result column="shire_q7" property="shireQ7" jdbcType="INTEGER" />
+    <result column="shire_score" property="shireScore" jdbcType="INTEGER" />
+    <result column="shire_result" property="shireResult" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, tcm_id, shire_q1, shire_q2, shire_q3, shire_q4, shire_q5, shire_q6, shire_q7, 
+    shire_score, shire_result, create_time, update_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserTCMShireExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_shire
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_shire
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_user_tcm_constitution_shire
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.breeze.health.entity.UserTCMShire" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_tcm_constitution_shire (tcm_id, shire_q1, shire_q2, 
+      shire_q3, shire_q4, shire_q5, 
+      shire_q6, shire_q7, shire_score, 
+      shire_result, create_time, update_time
+      )
+    values (#{tcmId,jdbcType=BIGINT}, #{shireQ1,jdbcType=INTEGER}, #{shireQ2,jdbcType=INTEGER}, 
+      #{shireQ3,jdbcType=INTEGER}, #{shireQ4,jdbcType=INTEGER}, #{shireQ5,jdbcType=INTEGER}, 
+      #{shireQ6,jdbcType=INTEGER}, #{shireQ7,jdbcType=INTEGER}, #{shireScore,jdbcType=INTEGER}, 
+      #{shireResult,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.breeze.health.entity.UserTCMShire" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_tcm_constitution_shire
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tcmId != null" >
+        tcm_id,
+      </if>
+      <if test="shireQ1 != null" >
+        shire_q1,
+      </if>
+      <if test="shireQ2 != null" >
+        shire_q2,
+      </if>
+      <if test="shireQ3 != null" >
+        shire_q3,
+      </if>
+      <if test="shireQ4 != null" >
+        shire_q4,
+      </if>
+      <if test="shireQ5 != null" >
+        shire_q5,
+      </if>
+      <if test="shireQ6 != null" >
+        shire_q6,
+      </if>
+      <if test="shireQ7 != null" >
+        shire_q7,
+      </if>
+      <if test="shireScore != null" >
+        shire_score,
+      </if>
+      <if test="shireResult != null" >
+        shire_result,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tcmId != null" >
+        #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="shireQ1 != null" >
+        #{shireQ1,jdbcType=INTEGER},
+      </if>
+      <if test="shireQ2 != null" >
+        #{shireQ2,jdbcType=INTEGER},
+      </if>
+      <if test="shireQ3 != null" >
+        #{shireQ3,jdbcType=INTEGER},
+      </if>
+      <if test="shireQ4 != null" >
+        #{shireQ4,jdbcType=INTEGER},
+      </if>
+      <if test="shireQ5 != null" >
+        #{shireQ5,jdbcType=INTEGER},
+      </if>
+      <if test="shireQ6 != null" >
+        #{shireQ6,jdbcType=INTEGER},
+      </if>
+      <if test="shireQ7 != null" >
+        #{shireQ7,jdbcType=INTEGER},
+      </if>
+      <if test="shireScore != null" >
+        #{shireScore,jdbcType=INTEGER},
+      </if>
+      <if test="shireResult != null" >
+        #{shireResult,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserTCMShireExample" resultType="java.lang.Integer" >
+    select count(*) from t_user_tcm_constitution_shire
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserTCMShire" >
+    update t_user_tcm_constitution_shire
+    <set >
+      <if test="tcmId != null" >
+        tcm_id = #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="shireQ1 != null" >
+        shire_q1 = #{shireQ1,jdbcType=INTEGER},
+      </if>
+      <if test="shireQ2 != null" >
+        shire_q2 = #{shireQ2,jdbcType=INTEGER},
+      </if>
+      <if test="shireQ3 != null" >
+        shire_q3 = #{shireQ3,jdbcType=INTEGER},
+      </if>
+      <if test="shireQ4 != null" >
+        shire_q4 = #{shireQ4,jdbcType=INTEGER},
+      </if>
+      <if test="shireQ5 != null" >
+        shire_q5 = #{shireQ5,jdbcType=INTEGER},
+      </if>
+      <if test="shireQ6 != null" >
+        shire_q6 = #{shireQ6,jdbcType=INTEGER},
+      </if>
+      <if test="shireQ7 != null" >
+        shire_q7 = #{shireQ7,jdbcType=INTEGER},
+      </if>
+      <if test="shireScore != null" >
+        shire_score = #{shireScore,jdbcType=INTEGER},
+      </if>
+      <if test="shireResult != null" >
+        shire_result = #{shireResult,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserTCMShire" >
+    update t_user_tcm_constitution_shire
+    set tcm_id = #{tcmId,jdbcType=BIGINT},
+      shire_q1 = #{shireQ1,jdbcType=INTEGER},
+      shire_q2 = #{shireQ2,jdbcType=INTEGER},
+      shire_q3 = #{shireQ3,jdbcType=INTEGER},
+      shire_q4 = #{shireQ4,jdbcType=INTEGER},
+      shire_q5 = #{shireQ5,jdbcType=INTEGER},
+      shire_q6 = #{shireQ6,jdbcType=INTEGER},
+      shire_q7 = #{shireQ7,jdbcType=INTEGER},
+      shire_score = #{shireScore,jdbcType=INTEGER},
+      shire_result = #{shireResult,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

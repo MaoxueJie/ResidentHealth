@@ -82,7 +82,7 @@ public class PhyServiceImpl implements PhyService{
 				ret.setData(vo);
 			}else
 			{
-				ret.setMessage("无生理指标");
+				ret.setSuccess(true);
 			}
 		}catch(Exception e)
 		{

@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.breeze.health.mapper.UserPsychologicalSuicideMapper" >
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPsychologicalSuicide" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="q1" property="q1" jdbcType="INTEGER" />
+    <result column="q2" property="q2" jdbcType="INTEGER" />
+    <result column="q3" property="q3" jdbcType="INTEGER" />
+    <result column="q4" property="q4" jdbcType="INTEGER" />
+    <result column="q5" property="q5" jdbcType="INTEGER" />
+    <result column="q6" property="q6" jdbcType="INTEGER" />
+    <result column="q7" property="q7" jdbcType="INTEGER" />
+    <result column="q8" property="q8" jdbcType="INTEGER" />
+    <result column="q9" property="q9" jdbcType="INTEGER" />
+    <result column="q10" property="q10" jdbcType="INTEGER" />
+    <result column="q11" property="q11" jdbcType="INTEGER" />
+    <result column="q12" property="q12" jdbcType="INTEGER" />
+    <result column="q13" property="q13" jdbcType="INTEGER" />
+    <result column="q14" property="q14" jdbcType="INTEGER" />
+    <result column="q15" property="q15" jdbcType="INTEGER" />
+    <result column="q16" property="q16" jdbcType="INTEGER" />
+    <result column="q17" property="q17" jdbcType="INTEGER" />
+    <result column="q18" property="q18" jdbcType="INTEGER" />
+    <result column="q19" property="q19" jdbcType="INTEGER" />
+    <result column="q20" property="q20" jdbcType="INTEGER" />
+    <result column="q21" property="q21" jdbcType="INTEGER" />
+    <result column="q22" property="q22" jdbcType="INTEGER" />
+    <result column="q23" property="q23" jdbcType="INTEGER" />
+    <result column="q24" property="q24" jdbcType="INTEGER" />
+    <result column="q25" property="q25" jdbcType="INTEGER" />
+    <result column="q26" property="q26" jdbcType="INTEGER" />
+    <result column="q27" property="q27" jdbcType="INTEGER" />
+    <result column="q28" property="q28" jdbcType="INTEGER" />
+    <result column="q29" property="q29" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, user_id, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, 
+    q17, q18, q19, q20, q21, q22, q23, q24, q25, q26, q27, q28, q29, create_time, update_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserPsychologicalSuicideExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_psychological_suicide
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_psychological_suicide
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_user_psychological_suicide
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.breeze.health.entity.UserPsychologicalSuicide" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_psychological_suicide (user_id, q1, q2, 
+      q3, q4, q5, q6, 
+      q7, q8, q9, q10, 
+      q11, q12, q13, q14, 
+      q15, q16, q17, q18, 
+      q19, q20, q21, q22, 
+      q23, q24, q25, q26, 
+      q27, q28, q29, create_time, 
+      update_time)
+    values (#{userId,jdbcType=BIGINT}, #{q1,jdbcType=INTEGER}, #{q2,jdbcType=INTEGER}, 
+      #{q3,jdbcType=INTEGER}, #{q4,jdbcType=INTEGER}, #{q5,jdbcType=INTEGER}, #{q6,jdbcType=INTEGER}, 
+      #{q7,jdbcType=INTEGER}, #{q8,jdbcType=INTEGER}, #{q9,jdbcType=INTEGER}, #{q10,jdbcType=INTEGER}, 
+      #{q11,jdbcType=INTEGER}, #{q12,jdbcType=INTEGER}, #{q13,jdbcType=INTEGER}, #{q14,jdbcType=INTEGER}, 
+      #{q15,jdbcType=INTEGER}, #{q16,jdbcType=INTEGER}, #{q17,jdbcType=INTEGER}, #{q18,jdbcType=INTEGER}, 
+      #{q19,jdbcType=INTEGER}, #{q20,jdbcType=INTEGER}, #{q21,jdbcType=INTEGER}, #{q22,jdbcType=INTEGER}, 
+      #{q23,jdbcType=INTEGER}, #{q24,jdbcType=INTEGER}, #{q25,jdbcType=INTEGER}, #{q26,jdbcType=INTEGER}, 
+      #{q27,jdbcType=INTEGER}, #{q28,jdbcType=INTEGER}, #{q29,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.breeze.health.entity.UserPsychologicalSuicide" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_psychological_suicide
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="q1 != null" >
+        q1,
+      </if>
+      <if test="q2 != null" >
+        q2,
+      </if>
+      <if test="q3 != null" >
+        q3,
+      </if>
+      <if test="q4 != null" >
+        q4,
+      </if>
+      <if test="q5 != null" >
+        q5,
+      </if>
+      <if test="q6 != null" >
+        q6,
+      </if>
+      <if test="q7 != null" >
+        q7,
+      </if>
+      <if test="q8 != null" >
+        q8,
+      </if>
+      <if test="q9 != null" >
+        q9,
+      </if>
+      <if test="q10 != null" >
+        q10,
+      </if>
+      <if test="q11 != null" >
+        q11,
+      </if>
+      <if test="q12 != null" >
+        q12,
+      </if>
+      <if test="q13 != null" >
+        q13,
+      </if>
+      <if test="q14 != null" >
+        q14,
+      </if>
+      <if test="q15 != null" >
+        q15,
+      </if>
+      <if test="q16 != null" >
+        q16,
+      </if>
+      <if test="q17 != null" >
+        q17,
+      </if>
+      <if test="q18 != null" >
+        q18,
+      </if>
+      <if test="q19 != null" >
+        q19,
+      </if>
+      <if test="q20 != null" >
+        q20,
+      </if>
+      <if test="q21 != null" >
+        q21,
+      </if>
+      <if test="q22 != null" >
+        q22,
+      </if>
+      <if test="q23 != null" >
+        q23,
+      </if>
+      <if test="q24 != null" >
+        q24,
+      </if>
+      <if test="q25 != null" >
+        q25,
+      </if>
+      <if test="q26 != null" >
+        q26,
+      </if>
+      <if test="q27 != null" >
+        q27,
+      </if>
+      <if test="q28 != null" >
+        q28,
+      </if>
+      <if test="q29 != null" >
+        q29,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="q1 != null" >
+        #{q1,jdbcType=INTEGER},
+      </if>
+      <if test="q2 != null" >
+        #{q2,jdbcType=INTEGER},
+      </if>
+      <if test="q3 != null" >
+        #{q3,jdbcType=INTEGER},
+      </if>
+      <if test="q4 != null" >
+        #{q4,jdbcType=INTEGER},
+      </if>
+      <if test="q5 != null" >
+        #{q5,jdbcType=INTEGER},
+      </if>
+      <if test="q6 != null" >
+        #{q6,jdbcType=INTEGER},
+      </if>
+      <if test="q7 != null" >
+        #{q7,jdbcType=INTEGER},
+      </if>
+      <if test="q8 != null" >
+        #{q8,jdbcType=INTEGER},
+      </if>
+      <if test="q9 != null" >
+        #{q9,jdbcType=INTEGER},
+      </if>
+      <if test="q10 != null" >
+        #{q10,jdbcType=INTEGER},
+      </if>
+      <if test="q11 != null" >
+        #{q11,jdbcType=INTEGER},
+      </if>
+      <if test="q12 != null" >
+        #{q12,jdbcType=INTEGER},
+      </if>
+      <if test="q13 != null" >
+        #{q13,jdbcType=INTEGER},
+      </if>
+      <if test="q14 != null" >
+        #{q14,jdbcType=INTEGER},
+      </if>
+      <if test="q15 != null" >
+        #{q15,jdbcType=INTEGER},
+      </if>
+      <if test="q16 != null" >
+        #{q16,jdbcType=INTEGER},
+      </if>
+      <if test="q17 != null" >
+        #{q17,jdbcType=INTEGER},
+      </if>
+      <if test="q18 != null" >
+        #{q18,jdbcType=INTEGER},
+      </if>
+      <if test="q19 != null" >
+        #{q19,jdbcType=INTEGER},
+      </if>
+      <if test="q20 != null" >
+        #{q20,jdbcType=INTEGER},
+      </if>
+      <if test="q21 != null" >
+        #{q21,jdbcType=INTEGER},
+      </if>
+      <if test="q22 != null" >
+        #{q22,jdbcType=INTEGER},
+      </if>
+      <if test="q23 != null" >
+        #{q23,jdbcType=INTEGER},
+      </if>
+      <if test="q24 != null" >
+        #{q24,jdbcType=INTEGER},
+      </if>
+      <if test="q25 != null" >
+        #{q25,jdbcType=INTEGER},
+      </if>
+      <if test="q26 != null" >
+        #{q26,jdbcType=INTEGER},
+      </if>
+      <if test="q27 != null" >
+        #{q27,jdbcType=INTEGER},
+      </if>
+      <if test="q28 != null" >
+        #{q28,jdbcType=INTEGER},
+      </if>
+      <if test="q29 != null" >
+        #{q29,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserPsychologicalSuicideExample" resultType="java.lang.Integer" >
+    select count(*) from t_user_psychological_suicide
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPsychologicalSuicide" >
+    update t_user_psychological_suicide
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="q1 != null" >
+        q1 = #{q1,jdbcType=INTEGER},
+      </if>
+      <if test="q2 != null" >
+        q2 = #{q2,jdbcType=INTEGER},
+      </if>
+      <if test="q3 != null" >
+        q3 = #{q3,jdbcType=INTEGER},
+      </if>
+      <if test="q4 != null" >
+        q4 = #{q4,jdbcType=INTEGER},
+      </if>
+      <if test="q5 != null" >
+        q5 = #{q5,jdbcType=INTEGER},
+      </if>
+      <if test="q6 != null" >
+        q6 = #{q6,jdbcType=INTEGER},
+      </if>
+      <if test="q7 != null" >
+        q7 = #{q7,jdbcType=INTEGER},
+      </if>
+      <if test="q8 != null" >
+        q8 = #{q8,jdbcType=INTEGER},
+      </if>
+      <if test="q9 != null" >
+        q9 = #{q9,jdbcType=INTEGER},
+      </if>
+      <if test="q10 != null" >
+        q10 = #{q10,jdbcType=INTEGER},
+      </if>
+      <if test="q11 != null" >
+        q11 = #{q11,jdbcType=INTEGER},
+      </if>
+      <if test="q12 != null" >
+        q12 = #{q12,jdbcType=INTEGER},
+      </if>
+      <if test="q13 != null" >
+        q13 = #{q13,jdbcType=INTEGER},
+      </if>
+      <if test="q14 != null" >
+        q14 = #{q14,jdbcType=INTEGER},
+      </if>
+      <if test="q15 != null" >
+        q15 = #{q15,jdbcType=INTEGER},
+      </if>
+      <if test="q16 != null" >
+        q16 = #{q16,jdbcType=INTEGER},
+      </if>
+      <if test="q17 != null" >
+        q17 = #{q17,jdbcType=INTEGER},
+      </if>
+      <if test="q18 != null" >
+        q18 = #{q18,jdbcType=INTEGER},
+      </if>
+      <if test="q19 != null" >
+        q19 = #{q19,jdbcType=INTEGER},
+      </if>
+      <if test="q20 != null" >
+        q20 = #{q20,jdbcType=INTEGER},
+      </if>
+      <if test="q21 != null" >
+        q21 = #{q21,jdbcType=INTEGER},
+      </if>
+      <if test="q22 != null" >
+        q22 = #{q22,jdbcType=INTEGER},
+      </if>
+      <if test="q23 != null" >
+        q23 = #{q23,jdbcType=INTEGER},
+      </if>
+      <if test="q24 != null" >
+        q24 = #{q24,jdbcType=INTEGER},
+      </if>
+      <if test="q25 != null" >
+        q25 = #{q25,jdbcType=INTEGER},
+      </if>
+      <if test="q26 != null" >
+        q26 = #{q26,jdbcType=INTEGER},
+      </if>
+      <if test="q27 != null" >
+        q27 = #{q27,jdbcType=INTEGER},
+      </if>
+      <if test="q28 != null" >
+        q28 = #{q28,jdbcType=INTEGER},
+      </if>
+      <if test="q29 != null" >
+        q29 = #{q29,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPsychologicalSuicide" >
+    update t_user_psychological_suicide
+    set user_id = #{userId,jdbcType=BIGINT},
+      q1 = #{q1,jdbcType=INTEGER},
+      q2 = #{q2,jdbcType=INTEGER},
+      q3 = #{q3,jdbcType=INTEGER},
+      q4 = #{q4,jdbcType=INTEGER},
+      q5 = #{q5,jdbcType=INTEGER},
+      q6 = #{q6,jdbcType=INTEGER},
+      q7 = #{q7,jdbcType=INTEGER},
+      q8 = #{q8,jdbcType=INTEGER},
+      q9 = #{q9,jdbcType=INTEGER},
+      q10 = #{q10,jdbcType=INTEGER},
+      q11 = #{q11,jdbcType=INTEGER},
+      q12 = #{q12,jdbcType=INTEGER},
+      q13 = #{q13,jdbcType=INTEGER},
+      q14 = #{q14,jdbcType=INTEGER},
+      q15 = #{q15,jdbcType=INTEGER},
+      q16 = #{q16,jdbcType=INTEGER},
+      q17 = #{q17,jdbcType=INTEGER},
+      q18 = #{q18,jdbcType=INTEGER},
+      q19 = #{q19,jdbcType=INTEGER},
+      q20 = #{q20,jdbcType=INTEGER},
+      q21 = #{q21,jdbcType=INTEGER},
+      q22 = #{q22,jdbcType=INTEGER},
+      q23 = #{q23,jdbcType=INTEGER},
+      q24 = #{q24,jdbcType=INTEGER},
+      q25 = #{q25,jdbcType=INTEGER},
+      q26 = #{q26,jdbcType=INTEGER},
+      q27 = #{q27,jdbcType=INTEGER},
+      q28 = #{q28,jdbcType=INTEGER},
+      q29 = #{q29,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

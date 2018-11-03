@@ -158,7 +158,7 @@ public class UserServiceImpl implements UserService{
 				ret.setData(vo);
 			}else
 			{
-				ret.setMessage("无用户信息");
+				ret.setSuccess(true);
 			}
 		}catch(Exception e)
 		{

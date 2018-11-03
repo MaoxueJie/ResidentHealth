@@ -242,7 +242,7 @@ public class LivingServiceImpl implements LivingService {
 				ret.setData(vo);
 			}else
 			{
-				ret.setMessage("未获取到生活习惯");
+				ret.setSuccess(true);
 			}
 		}catch(Exception e)
 		{

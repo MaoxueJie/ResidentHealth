@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.breeze.health.mapper.UserPsychologicalGAD7Mapper" >
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserPsychologicalGAD7" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="psy_id" property="psyId" jdbcType="BIGINT" />
+    <result column="gad7_q1" property="gad7Q1" jdbcType="INTEGER" />
+    <result column="gad7_q2" property="gad7Q2" jdbcType="INTEGER" />
+    <result column="gad7_q3" property="gad7Q3" jdbcType="INTEGER" />
+    <result column="gad7_q4" property="gad7Q4" jdbcType="INTEGER" />
+    <result column="gad7_q5" property="gad7Q5" jdbcType="INTEGER" />
+    <result column="gad7_q6" property="gad7Q6" jdbcType="INTEGER" />
+    <result column="gad7_q7" property="gad7Q7" jdbcType="INTEGER" />
+    <result column="gad7_affect" property="gad7Affect" jdbcType="INTEGER" />
+    <result column="gad7_score" property="gad7Score" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, psy_id, gad7_q1, gad7_q2, gad7_q3, gad7_q4, gad7_q5, gad7_q6, gad7_q7, gad7_affect, 
+    gad7_score, create_time, update_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserPsychologicalGAD7Example" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_psychological_gad7
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_psychological_gad7
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_user_psychological_gad7
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.breeze.health.entity.UserPsychologicalGAD7" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_psychological_gad7 (psy_id, gad7_q1, gad7_q2, 
+      gad7_q3, gad7_q4, gad7_q5, 
+      gad7_q6, gad7_q7, gad7_affect, 
+      gad7_score, create_time, update_time
+      )
+    values (#{psyId,jdbcType=BIGINT}, #{gad7Q1,jdbcType=INTEGER}, #{gad7Q2,jdbcType=INTEGER}, 
+      #{gad7Q3,jdbcType=INTEGER}, #{gad7Q4,jdbcType=INTEGER}, #{gad7Q5,jdbcType=INTEGER}, 
+      #{gad7Q6,jdbcType=INTEGER}, #{gad7Q7,jdbcType=INTEGER}, #{gad7Affect,jdbcType=INTEGER}, 
+      #{gad7Score,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.breeze.health.entity.UserPsychologicalGAD7" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_psychological_gad7
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="psyId != null" >
+        psy_id,
+      </if>
+      <if test="gad7Q1 != null" >
+        gad7_q1,
+      </if>
+      <if test="gad7Q2 != null" >
+        gad7_q2,
+      </if>
+      <if test="gad7Q3 != null" >
+        gad7_q3,
+      </if>
+      <if test="gad7Q4 != null" >
+        gad7_q4,
+      </if>
+      <if test="gad7Q5 != null" >
+        gad7_q5,
+      </if>
+      <if test="gad7Q6 != null" >
+        gad7_q6,
+      </if>
+      <if test="gad7Q7 != null" >
+        gad7_q7,
+      </if>
+      <if test="gad7Affect != null" >
+        gad7_affect,
+      </if>
+      <if test="gad7Score != null" >
+        gad7_score,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="psyId != null" >
+        #{psyId,jdbcType=BIGINT},
+      </if>
+      <if test="gad7Q1 != null" >
+        #{gad7Q1,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Q2 != null" >
+        #{gad7Q2,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Q3 != null" >
+        #{gad7Q3,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Q4 != null" >
+        #{gad7Q4,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Q5 != null" >
+        #{gad7Q5,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Q6 != null" >
+        #{gad7Q6,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Q7 != null" >
+        #{gad7Q7,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Affect != null" >
+        #{gad7Affect,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Score != null" >
+        #{gad7Score,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserPsychologicalGAD7Example" resultType="java.lang.Integer" >
+    select count(*) from t_user_psychological_gad7
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserPsychologicalGAD7" >
+    update t_user_psychological_gad7
+    <set >
+      <if test="psyId != null" >
+        psy_id = #{psyId,jdbcType=BIGINT},
+      </if>
+      <if test="gad7Q1 != null" >
+        gad7_q1 = #{gad7Q1,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Q2 != null" >
+        gad7_q2 = #{gad7Q2,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Q3 != null" >
+        gad7_q3 = #{gad7Q3,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Q4 != null" >
+        gad7_q4 = #{gad7Q4,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Q5 != null" >
+        gad7_q5 = #{gad7Q5,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Q6 != null" >
+        gad7_q6 = #{gad7Q6,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Q7 != null" >
+        gad7_q7 = #{gad7Q7,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Affect != null" >
+        gad7_affect = #{gad7Affect,jdbcType=INTEGER},
+      </if>
+      <if test="gad7Score != null" >
+        gad7_score = #{gad7Score,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserPsychologicalGAD7" >
+    update t_user_psychological_gad7
+    set psy_id = #{psyId,jdbcType=BIGINT},
+      gad7_q1 = #{gad7Q1,jdbcType=INTEGER},
+      gad7_q2 = #{gad7Q2,jdbcType=INTEGER},
+      gad7_q3 = #{gad7Q3,jdbcType=INTEGER},
+      gad7_q4 = #{gad7Q4,jdbcType=INTEGER},
+      gad7_q5 = #{gad7Q5,jdbcType=INTEGER},
+      gad7_q6 = #{gad7Q6,jdbcType=INTEGER},
+      gad7_q7 = #{gad7Q7,jdbcType=INTEGER},
+      gad7_affect = #{gad7Affect,jdbcType=INTEGER},
+      gad7_score = #{gad7Score,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

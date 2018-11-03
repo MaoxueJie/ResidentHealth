@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.breeze.health.mapper.UserTCMYinxuMapper" >
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserTCMYinxu" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="tcm_id" property="tcmId" jdbcType="BIGINT" />
+    <result column="yinxu_q1" property="yinxuQ1" jdbcType="INTEGER" />
+    <result column="yinxu_q2" property="yinxuQ2" jdbcType="INTEGER" />
+    <result column="yinxu_q3" property="yinxuQ3" jdbcType="INTEGER" />
+    <result column="yinxu_q4" property="yinxuQ4" jdbcType="INTEGER" />
+    <result column="yinxu_q5" property="yinxuQ5" jdbcType="INTEGER" />
+    <result column="yinxu_q6" property="yinxuQ6" jdbcType="INTEGER" />
+    <result column="yinxu_q7" property="yinxuQ7" jdbcType="INTEGER" />
+    <result column="yinxu_q8" property="yinxuQ8" jdbcType="INTEGER" />
+    <result column="yinxu_score" property="yinxuScore" jdbcType="INTEGER" />
+    <result column="yinxu_result" property="yinxuResult" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, tcm_id, yinxu_q1, yinxu_q2, yinxu_q3, yinxu_q4, yinxu_q5, yinxu_q6, yinxu_q7, 
+    yinxu_q8, yinxu_score, yinxu_result, create_time, update_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserTCMYinxuExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_yinxu
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_yinxu
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_user_tcm_constitution_yinxu
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.breeze.health.entity.UserTCMYinxu" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_tcm_constitution_yinxu (tcm_id, yinxu_q1, yinxu_q2, 
+      yinxu_q3, yinxu_q4, yinxu_q5, 
+      yinxu_q6, yinxu_q7, yinxu_q8, 
+      yinxu_score, yinxu_result, create_time, 
+      update_time)
+    values (#{tcmId,jdbcType=BIGINT}, #{yinxuQ1,jdbcType=INTEGER}, #{yinxuQ2,jdbcType=INTEGER}, 
+      #{yinxuQ3,jdbcType=INTEGER}, #{yinxuQ4,jdbcType=INTEGER}, #{yinxuQ5,jdbcType=INTEGER}, 
+      #{yinxuQ6,jdbcType=INTEGER}, #{yinxuQ7,jdbcType=INTEGER}, #{yinxuQ8,jdbcType=INTEGER}, 
+      #{yinxuScore,jdbcType=INTEGER}, #{yinxuResult,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.breeze.health.entity.UserTCMYinxu" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_tcm_constitution_yinxu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tcmId != null" >
+        tcm_id,
+      </if>
+      <if test="yinxuQ1 != null" >
+        yinxu_q1,
+      </if>
+      <if test="yinxuQ2 != null" >
+        yinxu_q2,
+      </if>
+      <if test="yinxuQ3 != null" >
+        yinxu_q3,
+      </if>
+      <if test="yinxuQ4 != null" >
+        yinxu_q4,
+      </if>
+      <if test="yinxuQ5 != null" >
+        yinxu_q5,
+      </if>
+      <if test="yinxuQ6 != null" >
+        yinxu_q6,
+      </if>
+      <if test="yinxuQ7 != null" >
+        yinxu_q7,
+      </if>
+      <if test="yinxuQ8 != null" >
+        yinxu_q8,
+      </if>
+      <if test="yinxuScore != null" >
+        yinxu_score,
+      </if>
+      <if test="yinxuResult != null" >
+        yinxu_result,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tcmId != null" >
+        #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="yinxuQ1 != null" >
+        #{yinxuQ1,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ2 != null" >
+        #{yinxuQ2,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ3 != null" >
+        #{yinxuQ3,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ4 != null" >
+        #{yinxuQ4,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ5 != null" >
+        #{yinxuQ5,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ6 != null" >
+        #{yinxuQ6,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ7 != null" >
+        #{yinxuQ7,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ8 != null" >
+        #{yinxuQ8,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuScore != null" >
+        #{yinxuScore,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuResult != null" >
+        #{yinxuResult,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserTCMYinxuExample" resultType="java.lang.Integer" >
+    select count(*) from t_user_tcm_constitution_yinxu
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserTCMYinxu" >
+    update t_user_tcm_constitution_yinxu
+    <set >
+      <if test="tcmId != null" >
+        tcm_id = #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="yinxuQ1 != null" >
+        yinxu_q1 = #{yinxuQ1,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ2 != null" >
+        yinxu_q2 = #{yinxuQ2,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ3 != null" >
+        yinxu_q3 = #{yinxuQ3,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ4 != null" >
+        yinxu_q4 = #{yinxuQ4,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ5 != null" >
+        yinxu_q5 = #{yinxuQ5,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ6 != null" >
+        yinxu_q6 = #{yinxuQ6,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ7 != null" >
+        yinxu_q7 = #{yinxuQ7,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuQ8 != null" >
+        yinxu_q8 = #{yinxuQ8,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuScore != null" >
+        yinxu_score = #{yinxuScore,jdbcType=INTEGER},
+      </if>
+      <if test="yinxuResult != null" >
+        yinxu_result = #{yinxuResult,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserTCMYinxu" >
+    update t_user_tcm_constitution_yinxu
+    set tcm_id = #{tcmId,jdbcType=BIGINT},
+      yinxu_q1 = #{yinxuQ1,jdbcType=INTEGER},
+      yinxu_q2 = #{yinxuQ2,jdbcType=INTEGER},
+      yinxu_q3 = #{yinxuQ3,jdbcType=INTEGER},
+      yinxu_q4 = #{yinxuQ4,jdbcType=INTEGER},
+      yinxu_q5 = #{yinxuQ5,jdbcType=INTEGER},
+      yinxu_q6 = #{yinxuQ6,jdbcType=INTEGER},
+      yinxu_q7 = #{yinxuQ7,jdbcType=INTEGER},
+      yinxu_q8 = #{yinxuQ8,jdbcType=INTEGER},
+      yinxu_score = #{yinxuScore,jdbcType=INTEGER},
+      yinxu_result = #{yinxuResult,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

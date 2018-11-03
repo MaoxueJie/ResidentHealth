@@ -530,7 +530,7 @@ public class TCMServiceImpl implements TCMService{
 				ret.setData(vo);
 			}else
 			{
-				ret.setMessage("未获取到中医体质");
+				ret.setSuccess(true);
 			}
 		}catch(Exception e)
 		{

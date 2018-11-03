@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.breeze.health.mapper.UserTCMTanshiMapper" >
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.UserTCMTanshi" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="tcm_id" property="tcmId" jdbcType="BIGINT" />
+    <result column="tanshi_q1" property="tanshiQ1" jdbcType="INTEGER" />
+    <result column="tanshi_q2" property="tanshiQ2" jdbcType="INTEGER" />
+    <result column="tanshi_q3" property="tanshiQ3" jdbcType="INTEGER" />
+    <result column="tanshi_q4" property="tanshiQ4" jdbcType="INTEGER" />
+    <result column="tanshi_q5" property="tanshiQ5" jdbcType="INTEGER" />
+    <result column="tanshi_q6" property="tanshiQ6" jdbcType="INTEGER" />
+    <result column="tanshi_q7" property="tanshiQ7" jdbcType="INTEGER" />
+    <result column="tanshi_q8" property="tanshiQ8" jdbcType="INTEGER" />
+    <result column="tanshi_score" property="tanshiScore" jdbcType="INTEGER" />
+    <result column="tanshi_result" property="tanshiResult" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, tcm_id, tanshi_q1, tanshi_q2, tanshi_q3, tanshi_q4, tanshi_q5, tanshi_q6, tanshi_q7, 
+    tanshi_q8, tanshi_score, tanshi_result, create_time, update_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserTCMTanshiExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_tanshi
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_tcm_constitution_tanshi
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_user_tcm_constitution_tanshi
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.breeze.health.entity.UserTCMTanshi" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_tcm_constitution_tanshi (tcm_id, tanshi_q1, tanshi_q2, 
+      tanshi_q3, tanshi_q4, tanshi_q5, 
+      tanshi_q6, tanshi_q7, tanshi_q8, 
+      tanshi_score, tanshi_result, create_time, 
+      update_time)
+    values (#{tcmId,jdbcType=BIGINT}, #{tanshiQ1,jdbcType=INTEGER}, #{tanshiQ2,jdbcType=INTEGER}, 
+      #{tanshiQ3,jdbcType=INTEGER}, #{tanshiQ4,jdbcType=INTEGER}, #{tanshiQ5,jdbcType=INTEGER}, 
+      #{tanshiQ6,jdbcType=INTEGER}, #{tanshiQ7,jdbcType=INTEGER}, #{tanshiQ8,jdbcType=INTEGER}, 
+      #{tanshiScore,jdbcType=INTEGER}, #{tanshiResult,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.breeze.health.entity.UserTCMTanshi" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_user_tcm_constitution_tanshi
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tcmId != null" >
+        tcm_id,
+      </if>
+      <if test="tanshiQ1 != null" >
+        tanshi_q1,
+      </if>
+      <if test="tanshiQ2 != null" >
+        tanshi_q2,
+      </if>
+      <if test="tanshiQ3 != null" >
+        tanshi_q3,
+      </if>
+      <if test="tanshiQ4 != null" >
+        tanshi_q4,
+      </if>
+      <if test="tanshiQ5 != null" >
+        tanshi_q5,
+      </if>
+      <if test="tanshiQ6 != null" >
+        tanshi_q6,
+      </if>
+      <if test="tanshiQ7 != null" >
+        tanshi_q7,
+      </if>
+      <if test="tanshiQ8 != null" >
+        tanshi_q8,
+      </if>
+      <if test="tanshiScore != null" >
+        tanshi_score,
+      </if>
+      <if test="tanshiResult != null" >
+        tanshi_result,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tcmId != null" >
+        #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="tanshiQ1 != null" >
+        #{tanshiQ1,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ2 != null" >
+        #{tanshiQ2,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ3 != null" >
+        #{tanshiQ3,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ4 != null" >
+        #{tanshiQ4,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ5 != null" >
+        #{tanshiQ5,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ6 != null" >
+        #{tanshiQ6,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ7 != null" >
+        #{tanshiQ7,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ8 != null" >
+        #{tanshiQ8,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiScore != null" >
+        #{tanshiScore,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiResult != null" >
+        #{tanshiResult,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.breeze.health.entity.UserTCMTanshiExample" resultType="java.lang.Integer" >
+    select count(*) from t_user_tcm_constitution_tanshi
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.UserTCMTanshi" >
+    update t_user_tcm_constitution_tanshi
+    <set >
+      <if test="tcmId != null" >
+        tcm_id = #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="tanshiQ1 != null" >
+        tanshi_q1 = #{tanshiQ1,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ2 != null" >
+        tanshi_q2 = #{tanshiQ2,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ3 != null" >
+        tanshi_q3 = #{tanshiQ3,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ4 != null" >
+        tanshi_q4 = #{tanshiQ4,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ5 != null" >
+        tanshi_q5 = #{tanshiQ5,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ6 != null" >
+        tanshi_q6 = #{tanshiQ6,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ7 != null" >
+        tanshi_q7 = #{tanshiQ7,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiQ8 != null" >
+        tanshi_q8 = #{tanshiQ8,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiScore != null" >
+        tanshi_score = #{tanshiScore,jdbcType=INTEGER},
+      </if>
+      <if test="tanshiResult != null" >
+        tanshi_result = #{tanshiResult,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.UserTCMTanshi" >
+    update t_user_tcm_constitution_tanshi
+    set tcm_id = #{tcmId,jdbcType=BIGINT},
+      tanshi_q1 = #{tanshiQ1,jdbcType=INTEGER},
+      tanshi_q2 = #{tanshiQ2,jdbcType=INTEGER},
+      tanshi_q3 = #{tanshiQ3,jdbcType=INTEGER},
+      tanshi_q4 = #{tanshiQ4,jdbcType=INTEGER},
+      tanshi_q5 = #{tanshiQ5,jdbcType=INTEGER},
+      tanshi_q6 = #{tanshiQ6,jdbcType=INTEGER},
+      tanshi_q7 = #{tanshiQ7,jdbcType=INTEGER},
+      tanshi_q8 = #{tanshiQ8,jdbcType=INTEGER},
+      tanshi_score = #{tanshiScore,jdbcType=INTEGER},
+      tanshi_result = #{tanshiResult,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
