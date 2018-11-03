@@ -213,55 +213,55 @@
 			<div id="live_relation">
 				<div class="weui-cells__title">若与他人同住，你们是什么关系？</div>
 				<div class="weui-cells weui-cells_checkbox">
-					<label class="weui-cell weui-check__label" for="preference1">
+					<label class="weui-cell weui-check__label" for="familyDesc1">
 						<div class="weui-cell__hd">
-							<input type="checkbox" class="weui-check" name="preference" id="preference1" value="1">
+							<input type="checkbox" class="weui-check" name="familyDesc" id="familyDesc1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
 							<p>配偶</p>
 						</div>
 					</label>
-					<label class="weui-cell weui-check__label" for="preference2">
+					<label class="weui-cell weui-check__label" for="familyDesc2">
 
 						<div class="weui-cell__hd">
-							<input type="checkbox" name="preference" class="weui-check" id="preference2" value="2">
+							<input type="checkbox" name="familyDesc" class="weui-check" id="familyDesc2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
 							<p>子女</p>
 						</div>
 					</label>
-					<label class="weui-cell weui-check__label" for="preference3">
+					<label class="weui-cell weui-check__label" for="familyDesc3">
 						<div class="weui-cell__hd">
-							<input type="checkbox" class="weui-check" name="preference" id="preference3" value="3">
+							<input type="checkbox" class="weui-check" name="familyDesc" id="familyDesc3" value="3">
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
 							<p>父母</p>
 						</div>
 					</label>
-					<label class="weui-cell weui-check__label" for="preference4">
+					<label class="weui-cell weui-check__label" for="familyDesc4">
 						<div class="weui-cell__hd">
-							<input type="checkbox" class="weui-check" name="preference" id="preference4" value="4">
+							<input type="checkbox" class="weui-check" name="familyDesc" id="familyDesc4" value="4">
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
 							<p>伴侣父母</p>
 						</div>
 					</label>
-					<label class="weui-cell weui-check__label" for="preference5">
+					<label class="weui-cell weui-check__label" for="familyDesc5">
 						<div class="weui-cell__hd">
-							<input type="checkbox" class="weui-check" name="preference" id="preference5" value="5">
+							<input type="checkbox" class="weui-check" name="familyDesc" id="familyDesc5" value="5">
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
 							<p>外祖父祖母/祖父祖母</p>
 						</div>
 					</label>
-					<label class="weui-cell weui-check__label" for="preference6" id>
+					<label class="weui-cell weui-check__label" for="familyDesc6">
 						<div class="weui-cell__hd">
-							<input type="checkbox" class="weui-check" name="preference" id="preference6" value="6">
+							<input type="checkbox" class="weui-check" name="familyDesc" id="familyDesc6" value="6">
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
@@ -271,7 +271,7 @@
 					<div class="weui-cell weui-cell-input" id="inputOtherRelation">
 						<div class="weui-cell__hd"><label class="weui-label">其它关系：</label></div>
 						<div class="weui-cell__bd">
-							<input class="weui-input" name="familyDesc" type="text" placeholder="填写与同住者关系">
+							<input class="weui-input" name="family_other" type="text" placeholder="填写与同住者关系">
 						</div>
 					</div>
 				</div>
@@ -455,6 +455,7 @@
 		$('#live_status input[type=radio]').click(function(){
 			if( $(this).val() == 1 ){
 				$('#live_relation').hide();
+				$('#live_relation input[type=checkbox]').prop('checked',false);
 			}else{
 				$('#live_relation').show();
 
