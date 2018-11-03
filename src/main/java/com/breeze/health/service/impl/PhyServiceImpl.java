@@ -40,6 +40,7 @@ public class PhyServiceImpl implements PhyService{
 				phy.setUpdateTime(now);
 				userPhysiologicalMapper.insert(phy);
 			}
+			ret.setMessage("提交成功");
 			ret.setSuccess(true);
 		}catch(Exception e)
 		{

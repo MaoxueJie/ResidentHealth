@@ -144,6 +144,7 @@ public class LivingServiceImpl implements LivingService {
 						habit.setUpdateTime(now);
 						userLivingHabitMapper.insertSelective(habit);
 					}
+					result.setMessage("提交成功");
 					result.setSuccess(true);
 					return result;
 				}

@@ -361,6 +361,7 @@ public class TCMServiceImpl implements TCMService{
 						userTCMYinxuMapper.insertSelective(yinxu);
 						
 					}
+					result.setMessage("提交成功");
 					result.setSuccess(true);
 					return result;
 				}

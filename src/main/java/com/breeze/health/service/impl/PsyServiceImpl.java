@@ -265,6 +265,7 @@ public class PsyServiceImpl implements PsyService{
 						phq9.setUpdateTime(now);
 						userPsychologicalPHQ9Mapper.insert(phq9);
 					}
+					result.setMessage("提交成功");
 					result.setSuccess(true);
 					return result;
 				}
@@ -407,6 +408,7 @@ public class PsyServiceImpl implements PsyService{
 				suicide.setUpdateTime(now);
 				userPsychologicalSuicideMapper.insert(suicide);
 			}
+			ret.setMessage("提交成功");
 			ret.setSuccess(true);
 		}catch(Exception e)
 		{
