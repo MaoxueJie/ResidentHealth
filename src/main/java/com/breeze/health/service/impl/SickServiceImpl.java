@@ -90,7 +90,7 @@ public class SickServiceImpl implements SickService{
 				int sickTop5Count = 0;
 				String sickName = "";
 				if (sick.getSicks()!=null){
-					List<String> sicksList = Arrays.asList(sick.getSicks());
+					List<String> sicksList = Arrays.asList(sick.getSicks().split(","));
 					//高血压
 					if (sicksList.contains(HIGHBLOODPRESSURE))
 					{
