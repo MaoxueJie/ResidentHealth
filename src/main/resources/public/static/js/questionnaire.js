@@ -102,7 +102,7 @@ $(function(){
 	}
 
 	//var title = ['','','','','','','GAD-7焦虑症筛查量表','AD8认知障碍自评表','PHQ-9抑郁症筛查量表',]
-	showResult();
+	//showResult();
 	function showResult( isResult,type ){
 
 		isResult = typeof isResult == 'undefined' ? false : true; 

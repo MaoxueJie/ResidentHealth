@@ -1872,7 +1872,7 @@
 				</div>
 			</div>
 
-			<div class="cell-item">
+			<div class="cell-item hide" id="womanReply">
 				<div class="weui-cells__title">6.您带下色黄（白带颜色发黄）吗？（限女性回答）</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="shireQ61">
@@ -1923,7 +1923,7 @@
 				</div>
 			</div>
 
-			<div class="cell-item">
+			<div class="cell-item hide" id="manReply">
 				<div class="weui-cells__title">7.您的阴囊部位潮湿吗？（限男性回答）</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="shireQ71">
@@ -3054,7 +3054,7 @@
 				</div>
 			</div>
 
-						<!-- 平和质 -->
+			<!-- 平和质 -->
 			<h3 class="mid_title">平和质</h3>
 
 			<div class="cell-item">
@@ -3472,6 +3472,39 @@
 
 		</form>
 	</div>
+
+<script type="text/javascript">
+	$(function(){
+
+		var sex;	//根据性别判断“中医体质量表”-“湿热质”最后一题限性别填的信息(1男2女)
+
+		$.ajax({
+			url: '/cfd/base/get',
+			type: 'post',
+			data: {},
+			dataType: 'json',
+			success: function(json){
+				if( json.success ){
+					sex = json.data.gender;
+					var $hideEle;
+					if( sex == 1 ){
+						$('#manReply').show();
+						$hideEle = $('#womanReply');
+					}else{
+						$('#womanReply').show();
+						$hideEle = $('#manReply');
+					}
+
+					$hideEle.find('input[type=radio]').each(function(i,el){
+						$(el).prop('required',false);
+					})
+				}else{
+					alert( json.message );
+				}
+			}
+		})
+	})
+</script>
 
 </body>
 </html>
