@@ -112,6 +112,7 @@ $(function(){
 		}
 
 		var type = getQueryString("type") || type;
+		type = type == 'suicide' ? 'psy/suicide' : type;
 		var getUrl = '/cfd/'+ type +'/get';
 		$.ajax({
 			url: getUrl,
