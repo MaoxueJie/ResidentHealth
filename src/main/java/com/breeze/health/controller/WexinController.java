@@ -244,21 +244,27 @@ public class WexinController {
 			String url="";
 			if (user!=null)
 			{
-				String parm="timestamp="+System.currentTimeMillis();//鍙傛暟
-				if ("base".equals(state)) {
-					url=path+"static/base.html?"+parm;
-				}else if ("report".equals(state)) {
-					url=path+"static/report.html?"+parm;
-				}else if ("living".equals(state)) {
-					url=path+"static/living.html?"+parm;
-				}else if ("sick".equals(state)) {
-					url=path+"static/sick.html?"+parm;
-				}else if ("phy".equals(state)) {
-					url=path+"static/phy.html?"+parm;
-				}else if ("psy".equals(state)) {
-					url=path+"static/psy.html?"+parm;
-				}else if ("tcm".equals(state)) {
-					url=path+"static/tcm.html?"+parm;
+				if (userService.getBaseInfo(user.getId()).getData()!=null){
+				
+					String parm="timestamp="+System.currentTimeMillis();//鍙傛暟
+					if ("base".equals(state)) {
+						url=path+"static/base.html?"+parm;
+					}else if ("report".equals(state)) {
+						url=path+"static/report.html?"+parm;
+					}else if ("living".equals(state)) {
+						url=path+"static/living.html?"+parm;
+					}else if ("sick".equals(state)) {
+						url=path+"static/sick.html?"+parm;
+					}else if ("phy".equals(state)) {
+						url=path+"static/phy.html?"+parm;
+					}else if ("psy".equals(state)) {
+						url=path+"static/psy.html?"+parm;
+					}else if ("tcm".equals(state)) {
+						url=path+"static/tcm.html?"+parm;
+					}
+				}else
+				{
+					url=path+"static/skip.html?state="+state;
 				}
 			}else
 			{
