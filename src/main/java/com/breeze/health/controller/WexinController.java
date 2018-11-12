@@ -244,9 +244,8 @@ public class WexinController {
 			String url="";
 			if (user!=null)
 			{
+				String parm="timestamp="+System.currentTimeMillis();//鍙傛暟
 				if (userService.getBaseInfo(user.getId()).getData()!=null){
-				
-					String parm="timestamp="+System.currentTimeMillis();//鍙傛暟
 					if ("base".equals(state)) {
 						url=path+"static/base.html?"+parm;
 					}else if ("report".equals(state)) {
@@ -262,9 +261,12 @@ public class WexinController {
 					}else if ("tcm".equals(state)) {
 						url=path+"static/tcm.html?"+parm;
 					}
-				}else
+				}else if(!"base".equals(state))
 				{
 					url=path+"static/skip.html?state="+state;
+				}else if("base".equals(state))
+				{
+					url=path+"static/base.html?"+parm;
 				}
 			}else
 			{
