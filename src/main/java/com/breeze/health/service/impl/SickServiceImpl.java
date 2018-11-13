@@ -124,41 +124,41 @@ public class SickServiceImpl implements SickService{
 					
 					if (sickTop5Count>1)
 					{
-						sickReport += "您同时患有"+sickName+"等，这些疾病与饮食、运动等日常习惯存在密切关系，彼此互相影响，您若在疾病控制与康复过程中遇到疑惑、困难等，欢迎您及时与签约医生和社区护士沟通联系，他们将会耐心解答您的问题，并与您共同制定可行的治疗和护理措施，提高您的健康水平，降低各种并发症的发生风险。";
+						sickReport += "<p>您同时患有"+sickName+"等，这些疾病与饮食、运动等日常习惯存在密切关系，彼此互相影响，您若在疾病控制与康复过程中遇到疑惑、困难等，欢迎您及时与签约医生和社区护士沟通联系，他们将会耐心解答您的问题，并与您共同制定可行的治疗和护理措施，提高您的健康水平，降低各种并发症的发生风险。</p>";
 					}else if(sickTop5Count==1)
 					{
-						sickReport += "您有"+sickName+"，应注意调整饮食与运动习惯，定期复查，并根据医生建议服用相关药物，以降低心脑血管疾病的发生风险。";
+						sickReport += "<p>您有"+sickName+"，应注意调整饮食与运动习惯，定期复查，并根据医生建议服用相关药物，以降低心脑血管疾病的发生风险。</p>";
 					}
 					
 					
 					//慢性胃炎
 					if (sicksList.contains(CHRONICGASTRITIS))
 					{
-						sickReport += ("".equals(sickReport)?"":"\n") + "您患有慢性胃炎，平时应注意饮食规律，少食多餐、细嚼慢咽。";
+						sickReport += "<p>您患有慢性胃炎，平时应注意饮食规律，少食多餐、细嚼慢咽。</p>";
 					}
 					
 					//胃溃疡
 					if (sicksList.contains(STOMACHULCER))
 					{
-						sickReport += ("".equals(sickReport)?"":"\n") + "您患有胃溃疡，平时应注意饮食规律，少食多餐、细嚼慢咽。";
+						sickReport += "<p>您患有胃溃疡，平时应注意饮食规律，少食多餐、细嚼慢咽。</p>";
 					}
 					
 					//支气管哮喘
 					if (sicksList.contains(BRONCHIALASTHMA))
 					{
-						sickReport += ("".equals(sickReport)?"":"\n") + "您长期患有支气管哮喘，注意寻找可能的过敏源，并避免与过敏源的接触。";
+						sickReport += "<p>您长期患有支气管哮喘，注意寻找可能的过敏源，并避免与过敏源的接触。</p>";
 					}
 					
 					//copd
 					if (sicksList.contains(COPD))
 					{
-						sickReport += ("".equals(sickReport)?"":"\n") + "您患有COPD，应注意天气变化，及时调整衣物，避免着凉感冒；适当进行体育锻炼，营养均衡，适当补充维生素C等；平时可规律进行呼吸操练习；请您务必戒烟（对于吸烟者）；出现喘息等不适症状及时就诊。长期家庭氧疗者，可关注公众号（长期家庭氧疗）的相关信息。";
+						sickReport += "<p>您患有COPD，应注意天气变化，及时调整衣物，避免着凉感冒；适当进行体育锻炼，营养均衡，适当补充维生素C等；平时可规律进行呼吸操练习；请您务必戒烟（对于吸烟者）；出现喘息等不适症状及时就诊。长期家庭氧疗者，可关注公众号（长期家庭氧疗）的相关信息。</p>";
 					}
 					
 					//骨质疏松症
 					if (sicksList.contains(OSTEOPOROSIS))
 					{
-						sickReport += ("".equals(sickReport)?"":"\n") + "您有骨质疏松症，除了遵医嘱用药外，还要注意适当运动、多晒太阳，但在活动过程中应注意安全，避免跌倒等情况的发生。您可关注骨质疏松症的日常护理。";
+						sickReport += "<p>您有骨质疏松症，除了遵医嘱用药外，还要注意适当运动、多晒太阳，但在活动过程中应注意安全，避免跌倒等情况的发生。您可关注骨质疏松症的日常护理。</p>";
 					}
 			    }
 				vo.setResultTitle("健康状况测评结果");

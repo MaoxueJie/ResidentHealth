@@ -105,47 +105,47 @@ public class TCMServiceImpl implements TCMService{
 			
 			final UserTCMPinghe pinghe = new UserTCMPinghe(); 
 			BeanUtils.copyProperties(vo, pinghe);
-			orial = pinghe.getPingheQ1() - pinghe.getPingheQ2() - pinghe.getPingheQ3() - pinghe.getPingheQ4()-pinghe.getPingheQ5()+ pinghe.getPingheQ6()-pinghe.getPingheQ7()-pinghe.getPingheQ8() + 36;
+			orial = null2zero(pinghe.getPingheQ1()) - null2zero(pinghe.getPingheQ2()) - null2zero(pinghe.getPingheQ3()) - null2zero(pinghe.getPingheQ4())-null2zero(pinghe.getPingheQ5())+ null2zero(pinghe.getPingheQ6())-null2zero(pinghe.getPingheQ7())-null2zero(pinghe.getPingheQ8()) + 36;
 			pinghe.setPingheScore(((orial-8)*100)/32);
 			
 			final UserTCMQixu qixu = new UserTCMQixu(); 
 			BeanUtils.copyProperties(vo, qixu);
-			orial = qixu.getQixuQ1()+qixu.getQixuQ2()+qixu.getQixuQ3()+qixu.getQixuQ4()+qixu.getQixuQ5()+qixu.getQixuQ6()+qixu.getQixuQ7()+qixu.getQixuQ8();
+			orial = null2zero(qixu.getQixuQ1())+null2zero(qixu.getQixuQ2())+null2zero(qixu.getQixuQ3())+null2zero(qixu.getQixuQ4())+null2zero(qixu.getQixuQ5())+null2zero(qixu.getQixuQ6())+null2zero(qixu.getQixuQ7())+null2zero(qixu.getQixuQ8());
 			qixu.setQixuScore(((orial-8)*100)/32);
 			
 			final UserTCMQiyu qiyu = new UserTCMQiyu(); 
 			BeanUtils.copyProperties(vo, qiyu);
-			orial = qiyu.getQiyuQ1() + qiyu.getQiyuQ2() + qiyu.getQiyuQ3() + qiyu.getQiyuQ4() + qiyu.getQiyuQ5() + qiyu.getQiyuQ6() + qiyu.getQiyuQ7();
+			orial = null2zero(qiyu.getQiyuQ1()) + null2zero(qiyu.getQiyuQ2()) + null2zero(qiyu.getQiyuQ3()) + null2zero(qiyu.getQiyuQ4()) + null2zero(qiyu.getQiyuQ5()) + null2zero(qiyu.getQiyuQ6()) + null2zero(qiyu.getQiyuQ7());
 			qiyu.setQiyuScore(((orial-7)*100)/28);
 			
 			final UserTCMShire shire = new UserTCMShire(); 
 			BeanUtils.copyProperties(vo, shire);
-			orial = shire.getShireQ1() + shire.getShireQ2()+ shire.getShireQ3()+ shire.getShireQ4()+ shire.getShireQ5()+ shire.getShireQ6()+ shire.getShireQ7();
+			orial = null2zero(shire.getShireQ1()) + null2zero(shire.getShireQ2())+ null2zero(shire.getShireQ3())+ null2zero(shire.getShireQ4())+ null2zero(shire.getShireQ5())+ null2zero(shire.getShireQ6())+ null2zero(shire.getShireQ7());
 			shire.setShireScore(((orial-7)*100)/28);
 			
 			final UserTCMTanshi tanshi = new UserTCMTanshi(); 
 			BeanUtils.copyProperties(vo, tanshi);
-			orial =tanshi.getTanshiQ1() + tanshi.getTanshiQ2() + tanshi.getTanshiQ3() + tanshi.getTanshiQ4() + tanshi.getTanshiQ5() + tanshi.getTanshiQ6() + tanshi.getTanshiQ7() + tanshi.getTanshiQ8();
+			orial =null2zero(tanshi.getTanshiQ1()) + null2zero(tanshi.getTanshiQ2()) + null2zero(tanshi.getTanshiQ3()) + null2zero(tanshi.getTanshiQ4()) + null2zero(tanshi.getTanshiQ5()) + null2zero(tanshi.getTanshiQ6()) + null2zero(tanshi.getTanshiQ7()) + null2zero(tanshi.getTanshiQ8());
 			tanshi.setTanshiScore(((orial-8)*100)/32);
 			
 			final UserTCMTebing tebing = new UserTCMTebing(); 
 			BeanUtils.copyProperties(vo, tebing);
-			orial =tebing.getTebingQ1() + tebing.getTebingQ2() + tebing.getTebingQ3() + tebing.getTebingQ4() + tebing.getTebingQ5() + tebing.getTebingQ6() + tebing.getTebingQ7();
+			orial =null2zero(tebing.getTebingQ1()) + null2zero(tebing.getTebingQ2()) + null2zero(tebing.getTebingQ3()) + null2zero(tebing.getTebingQ4()) + null2zero(tebing.getTebingQ5()) + null2zero(tebing.getTebingQ6()) + null2zero(tebing.getTebingQ7());
 			tebing.setTebingScore(((orial-7)*100)/28);
 			
 			final UserTCMXueyu xueyu = new UserTCMXueyu(); 
 			BeanUtils.copyProperties(vo, xueyu);
-			orial = xueyu.getXueyuQ1() + xueyu.getXueyuQ2() + xueyu.getXueyuQ3() + xueyu.getXueyuQ4() + xueyu.getXueyuQ5() + xueyu.getXueyuQ6() + xueyu.getXueyuQ7();
+			orial = null2zero(xueyu.getXueyuQ1()) + null2zero(xueyu.getXueyuQ2()) + null2zero(xueyu.getXueyuQ3()) + null2zero(xueyu.getXueyuQ4()) + null2zero(xueyu.getXueyuQ5()) + null2zero(xueyu.getXueyuQ6()) + null2zero(xueyu.getXueyuQ7());
 			xueyu.setXueyuScore(((orial-7)*100)/28);
 			
 			final UserTCMYangxu yangxu = new UserTCMYangxu(); 
 			BeanUtils.copyProperties(vo, yangxu);
-			orial =yangxu.getYangxuQ1() + yangxu.getYangxuQ2() + yangxu.getYangxuQ3()+ yangxu.getYangxuQ4()+ yangxu.getYangxuQ5()+ yangxu.getYangxuQ6()+ yangxu.getYangxuQ7();
+			orial =null2zero(yangxu.getYangxuQ1()) + null2zero(yangxu.getYangxuQ2()) + null2zero(yangxu.getYangxuQ3())+ null2zero(yangxu.getYangxuQ4())+ null2zero(yangxu.getYangxuQ5())+ null2zero(yangxu.getYangxuQ6())+ null2zero(yangxu.getYangxuQ7());
 			yangxu.setYangxuScore(((orial-7)*100)/28);
 			
 			final UserTCMYinxu yinxu = new UserTCMYinxu(); 
 			BeanUtils.copyProperties(vo, yinxu);
-			orial =yinxu.getYinxuQ1() + yinxu.getYinxuQ2() + yinxu.getYinxuQ3() + yinxu.getYinxuQ4() + yinxu.getYinxuQ5() + yinxu.getYinxuQ6() + yinxu.getYinxuQ7() + yinxu.getYinxuQ8();
+			orial =null2zero(yinxu.getYinxuQ1()) + null2zero(yinxu.getYinxuQ2()) + null2zero(yinxu.getYinxuQ3()) + null2zero(yinxu.getYinxuQ4()) + null2zero(yinxu.getYinxuQ5()) + null2zero(yinxu.getYinxuQ6()) + null2zero(yinxu.getYinxuQ7()) + null2zero(yinxu.getYinxuQ8());
 			yinxu.setYinxuScore(((orial-8)*100)/32);
 			
 			ret = transactionTemplate.execute(new TransactionCallback<Result<Void>>() {
@@ -461,8 +461,8 @@ public class TCMServiceImpl implements TCMService{
 				
 				BeanUtils.copyProperties(tcms.get(0), vo);
 				
-				String resultMsg = "您的中医体质得分：平和质"+vo.getPingheScore()+"分，气虚质"+vo.getQixuScore()+"分，阳虚质"+vo.getYangxuScore()+"分，阴虚质"+vo.getYinxuScore()+"分，痰湿质"+vo.getTanshiScore()+"分，湿热质"+vo.getShireScore()+"分，血瘀质"+vo.getXueyuScore()+"分，气郁质"+vo.getQiyuScore()+"分，特禀质"+vo.getTebingScore()+"分。";
-				String tcmResult = "\n判定结果为：您的中医体质";
+				String resultMsg = "<p>您的中医体质得分：平和质"+vo.getPingheScore()+"分，气虚质"+vo.getQixuScore()+"分，阳虚质"+vo.getYangxuScore()+"分，阴虚质"+vo.getYinxuScore()+"分，痰湿质"+vo.getTanshiScore()+"分，湿热质"+vo.getShireScore()+"分，血瘀质"+vo.getXueyuScore()+"分，气郁质"+vo.getQiyuScore()+"分，特禀质"+vo.getTebingScore()+"分。</p>";
+				String tcmResult = "<p>判定结果为：您的中医体质";
 				if (vo.getPingheScore()>=60 && vo.getQixuScore() < 30 && vo.getQiyuScore() < 30 
 						&& vo.getShireScore() < 30 && vo.getTanshiScore() < 30 && vo.getTebingScore() < 30 
 							&& vo.getYangxuScore() < 30 && vo.getYinxuScore() < 30 && vo.getXueyuScore() < 30)
@@ -523,6 +523,7 @@ public class TCMServiceImpl implements TCMService{
 				}
 				if (tcmResult.endsWith(","))
 					tcmResult = tcmResult.substring(0,tcmResult.length()-1);
+				tcmResult += "</p>";
 				vo.setResultTitle("中医体质测评结果");
 				vo.setResultMsg(resultMsg + tcmResult);
 				
@@ -539,5 +540,11 @@ public class TCMServiceImpl implements TCMService{
 		}
 		return ret;
 	}
-
+	private int null2zero(Integer val)
+	{
+		if (val == null)
+			return 0;
+		else
+			return val;
+	}
 }

@@ -208,7 +208,7 @@ public class LivingServiceImpl implements LivingService {
 				{
 					if (meal.getMeal()!=null && meal.getMeal()==2)
 					{
-						report += (report.length()==0?"":"\n")+"您的饮食习惯有待调整，相关知识请参见饮食指导。";
+						report += "<p>您的饮食习惯有待调整，相关知识请参见饮食指导。</p>";
 					}
 				}
 				
@@ -222,7 +222,7 @@ public class LivingServiceImpl implements LivingService {
 					
 					if (moderate<2)
 					{
-						report += (report.length()==0?"":"\n")+"您的运动量不足，运动形式和时间需要进行适当的调整 [运动指导]。";
+						report += "<p>您的运动量不足，运动形式和时间需要进行适当的调整，相关知识请参见。</p>";
 					}
 				}
 
@@ -230,10 +230,10 @@ public class LivingServiceImpl implements LivingService {
 				{
 					if (habit.getSmoking()!=null &&  (habit.getSmoking()==2 || habit.getSmoking()==3))
 					{
-						report += (report.length()==0?"":"\n")+"吸烟有害健康！您有吸烟的习惯，建议您向签约医生或社区护士咨询戒烟的指导，他们将会为您提供个性化的戒烟帮助。";
+						report += "<p>吸烟有害健康！您有吸烟的习惯，建议您向签约医生或社区护士咨询戒烟的指导，他们将会为您提供个性化的戒烟帮助。</p>";
 					}else if(habit.getSmoking()!=null && habit.getSmoking()==4)
 					{
-						report += (report.length()==0?"":"\n")+"您已成功戒烟，是其他人的榜样，欢迎您在论坛中分享您成功戒烟的经验和感受，以帮助更多的吸烟者戒烟。";
+						report += "<p>您已成功戒烟，是其他人的榜样，欢迎您在论坛中分享您成功戒烟的经验和感受，以帮助更多的吸烟者戒烟。</p>";
 					}
 				}
 				vo.setResultTitle("生活习惯测评结果");
