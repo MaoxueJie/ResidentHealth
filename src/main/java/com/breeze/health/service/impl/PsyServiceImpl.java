@@ -327,18 +327,7 @@ public class PsyServiceImpl implements PsyService{
 				
 				String psychologicalReport = "";
 				
-				psychologicalReport = "<p>随着年龄的增长，人们的记忆力会逐渐下降，进而可能出现其他认知功能的下降。</p>";
-				if (ad8!=null)
-				{
-					if (ad8.getAd8Score()>=2)
-					{
-						//认知功能受损
-						psychologicalReport += "<p>经初步测试，结果提示您可能存在认知功能受损，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。</p>";
-					}else
-					{
-						psychologicalReport += "<p>经初步测试，您认知功能正常。</p>";
-					}
-				}
+				
 				psychologicalReport += "<p>很多人都会有过焦虑或抑郁的情绪状态，若这种状态持续存在同样会影响我们的身体健康，降低我们的生活质量，</p>";
 				if (gad7!=null)
 				{
@@ -358,6 +347,9 @@ public class PsyServiceImpl implements PsyService{
 					{
 						//可能有重度焦虑症
 						psychologicalReport += "<p>经初步测试，结果提示您可能存在重度焦虑症，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。</p>";
+					}else
+					{
+						psychologicalReport += "<p>经初步测试，结果提示您情绪状态良好，没有焦虑情绪。</p>";
 					}
 				}
 				if (phq9!=null)
@@ -377,6 +369,22 @@ public class PsyServiceImpl implements PsyService{
 					}else if(phq9.getPhq9Score()>=20){
 						//重度抑郁
 						psychologicalReport += "<p>经初步测试，结果提示您可能存在重度抑郁，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。</p>";
+					}else 
+					{
+						psychologicalReport += "<p>经初步测试，结果提示您情绪状态良好，没有抑郁情绪。";
+					}
+				}
+				
+				psychologicalReport += "<p>随着年龄的增长，人们的记忆力会逐渐下降，进而可能出现其他认知功能的下降。</p>";
+				if (ad8!=null)
+				{
+					if (ad8.getAd8Score()>=2)
+					{
+						//认知功能受损
+						psychologicalReport += "<p>经初步测试，结果提示您可能存在认知功能受损，您可以通过相关链接了解更多的相关信息，并进行适当的自我调节，若有疑问或需要更进一步的帮助，请与您的签约医生或社区护士联系。</p>";
+					}else
+					{
+						psychologicalReport += "<p>经初步测试，您认知功能正常。</p>";
 					}
 				}
 				vo.setResultTitle("情绪认知测评结果");
