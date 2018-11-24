@@ -24,7 +24,7 @@ public class DesUtil {
 	 */
 	public static String encrypt(String data) {  //对string进行BASE64Encoder转换
 	    byte[] bt = encryptByKey(data.getBytes(), password);
-	    sun.misc.BASE64Encoder base64en = new sun.misc.BASE64Encoder();
+	    java.util.Base64.Encoder base64en = java.util.Base64.getEncoder();
 	    String strs = new String(base64en.encode(bt));
 	    return strs;
 	}
@@ -38,8 +38,8 @@ public class DesUtil {
 	 * @date 2016年7月26日
 	 */
 	public static String decryptor(String data) throws Exception {  //对string进行BASE64Encoder转换
-	    sun.misc.BASE64Decoder base64en = new sun.misc.BASE64Decoder();
-	    byte[] bt = decrypt(base64en.decodeBuffer(data), password);
+		java.util.Base64.Decoder base64en = java.util.Base64.getDecoder();
+	    byte[] bt = decrypt(base64en.decode(data), password);
 	    String strs = new String(bt);
 	    return strs;
 	}
