@@ -21,11 +21,11 @@
 				<h2 class="page__title">基本信息资料</h2>
 			</div>
 
-			<div class="weui-cells" style="display: none;">
+			<div class="weui-cells">
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label for="birthday" class="weui-label">出生日期：</label></div>
 					<div class="weui-cell__bd">
-						<input class="weui-input" id="birthday" name="birthday" disabled type="date" value=""/>
+						<input class="weui-input" id="birthday" name="birthday" type="date" value=""/>
 					</div>
 				</div>
 			</div>
@@ -291,13 +291,17 @@
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label class="weui-label">所在社区：</label></div>
 					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" name="provice">
+					</div>
+					<div class="weui-cell__bd">省</div>
+					<div class="weui-cell__bd">
 						<input class="weui-input" type="text" name="city">
 					</div>
-					<div class="weui-cell__bd">市县</div>
+					<div class="weui-cell__bd">市</div>
 					<div class="weui-cell__bd">
 						<input class="weui-input" type="text" name="zone">
 					</div>
-					<div class="weui-cell__bd">区</div>
+					<div class="weui-cell__bd">县（区）</div>
 				</div>
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label class="weui-label"></label></div>
@@ -314,7 +318,7 @@
 			<input type="hidden" name="communityLat" value="0"> -->
 
 			<div class="cell-item">
-				<div class="weui-cells__title">工作类型：</div>
+				<div class="weui-cells__title">工作状态：</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="job1">
 						<div class="weui-cell__bd">
@@ -364,7 +368,7 @@
 			</div>
 
 			<div class="cell-item">
-				<div class="weui-cells__title">经济状况：</div>
+				<div class="weui-cells__title">家庭人均月收入（单位：元/人/月）：</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="jjzk1">
 						<div class="weui-cell__bd">

@@ -45,13 +45,13 @@
 					<div class="weui-cell__ft">kg/㎡</div>
 				</div>
 				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">腹围(cm)</label></div>
+					<div class="weui-cell__hd"><label class="weui-label">腹围(cm)（单位换算：1尺=33.33cm）</label></div>
 					<div class="weui-cell__bd">
 						<input class="weui-input" name="abdominalCircumference" type="number" placeholder="填写">
 					</div>
 				</div>
 				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">臀围(cm)</label></div>
+					<div class="weui-cell__hd"><label class="weui-label">臀围(cm)（单位换算：1尺=33.33cm）</label></div>
 					<div class="weui-cell__bd">
 						<input class="weui-input" name="hipCircumference" type="number" placeholder="填写">
 					</div>
@@ -91,7 +91,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="bloodPressure2">
 						<div class="weui-cell__bd">
-							<p>体检测过</p>
+							<p>曾经测过</p>
 						</div>
 						<div class="weui-cell__ft">
 							<input type="radio" required name="bloodPressure" class="weui-check" id="bloodPressure2" value="2">
@@ -165,7 +165,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="bloodSugar2">
 						<div class="weui-cell__bd">
-							<p>体检测过</p>
+							<p>曾经测过</p>
 						</div>
 						<div class="weui-cell__ft">
 							<input type="radio" required name="bloodSugar" class="weui-check" id="bloodSugar2" value="2">
@@ -239,7 +239,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="bloodLipid2">
 						<div class="weui-cell__bd">
-							<p>体检测过</p>
+							<p>曾经测过</p>
 						</div>
 						<div class="weui-cell__ft">
 							<input type="radio" required name="bloodLipid" class="weui-check" id="bloodLipid2" value="2">
@@ -313,7 +313,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="uricAcid2">
 						<div class="weui-cell__bd">
-							<p>体检测过</p>
+							<p>曾经测过</p>
 						</div>
 						<div class="weui-cell__ft">
 							<input type="radio" required name="uricAcid" class="weui-check" id="uricAcid2" value="2">
@@ -374,7 +374,7 @@
 			</div>
 
 			<div class="cell-item">
-				<div class="weui-cells__title">血氧测试频率:</div>
+				<div class="weui-cells__title">血氧饱和度测试频率:</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="bloodOxygen1">
 						<div class="weui-cell__bd">
@@ -387,7 +387,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="bloodOxygen2">
 						<div class="weui-cell__bd">
-							<p>体检测过</p>
+							<p>曾经测过</p>
 						</div>
 						<div class="weui-cell__ft">
 							<input type="radio" required name="bloodOxygen" class="weui-check" id="bloodOxygen2" value="2">
@@ -406,7 +406,7 @@
 				</div>
 			</div>
 			<div class="cell-item">
-				<div class="weui-cells__title">“血氧”最近一次测量指标是否正常？</div>
+				<div class="weui-cells__title">“血氧饱和度”最近一次测量指标是否正常？</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="bloodOxygenSituation1">
 						<div class="weui-cell__bd">
@@ -563,7 +563,7 @@
 		function caclBMI(){
 			var weight = $('input[name=weight]').val();
 			var height = $('input[name=height]').val();
-			var bmi = parseInt((weight/height)*1000)/1000;
+			var bmi = parseInt(weight)/((parseInt(height)/100)*(parseInt(height)/100));
 			$('#bmi').val( bmi );
 		}
 	})

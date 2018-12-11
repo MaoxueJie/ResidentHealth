@@ -156,7 +156,7 @@ $(function(){
 			var $curInput = $form.find('[name='+ key +']');
 			var inputType = $curInput.attr('type');
 
-			if( inputType == 'text' || inputType == 'number' ){
+			if( inputType == 'text' || inputType == 'number' || inputType == 'date'){
 				$curInput.val( val );
 
 				if( val != '' ){

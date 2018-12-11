@@ -2,13 +2,16 @@ package com.breeze.health.beans.vo;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class UserBaseInfoVo {
 	private Long id;
 
     private Long userId;
-
+    
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
     private Date birthday;
 
