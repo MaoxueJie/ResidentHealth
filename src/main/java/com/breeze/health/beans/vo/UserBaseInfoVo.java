@@ -11,8 +11,8 @@ public class UserBaseInfoVo {
 
     private Long userId;
     
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
+    @DateTimeFormat(pattern="yyyy/MM/dd")
+    @JsonFormat(pattern = "yyyy/MM/dd", locale = "zh" , timezone="GMT+8")
     private Date birthday;
 
     private Integer gender;

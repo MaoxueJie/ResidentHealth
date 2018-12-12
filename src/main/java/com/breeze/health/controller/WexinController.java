@@ -236,11 +236,14 @@ public class WexinController {
 				String openid = jsonObj.get("openid").toString();
 				userService.bindWexin(openid);
 				request.getSession().setAttribute("openid", openid);
+
 				if (user==null){
 					user = userService.getUserByOpenId(openid).getData();
+
 					request.getSession().setAttribute("user",user);
 				}
 			}
+
 			String url="";
 			if (user!=null)
 			{

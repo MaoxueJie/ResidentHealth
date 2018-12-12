@@ -1,51 +1,19 @@
 
-var $loadingToast ,$toast;
-$(function(){
 
-	var toastHtml = '';
-	toastHtml += '<div id="toast" style="display:none;">';
-	toastHtml += '	<div class="weui-mask_transparent"></div>';
-	toastHtml += '	<div class="weui-toast">';
-	toastHtml += '		<i class="weui-icon-success-no-circle weui-icon_toast"></i>';
-	toastHtml += '		<p class="weui-toast__content" id="toastText">已完成</p>';
-	toastHtml += '	</div>';
-	toastHtml += '</div>';
-
-	toastHtml += '<div id="loadingToast" style="display:none;">';
-	toastHtml += '	<div class="weui-mask_transparent"></div>';
-	toastHtml += '	<div class="weui-toast">';
-	toastHtml += '		<i class="weui-loading weui-icon_toast"></i>';
-	toastHtml += '		<p class="weui-toast__content">数据加载中</p>';
-	toastHtml += '	</div>';
-	toastHtml += '</div>';
-	$('body').append( toastHtml );
-
-	$loadingToast = $('#loadingToast');
-	$toast = $('#toast');
-})
 
 	function showToast( text ){
-		if ($toast.css('display') != 'none') return;
 		if( typeof text != 'undefined' ){
-			$('#toastText').text( text );
+			jq.toast(text);
 		}else{
-			$('#toastText').text('已完成');
+			jq.toast('已完成');
 		}
-		$toast.fadeIn(100);
-		setTimeout(function () {
-			$toast.fadeOut(100);
-		}, 2000);
+		
 	}
 	function showLoading(){
-		if ($loadingToast.css('display') != 'none') return;
-
-		$loadingToast.fadeIn(100);
+		jq.showLoading();
 	};
 	function hideLoading(){
-		if ($loadingToast.css('display') == 'none') return;
-		setTimeout(function () {
-			$loadingToast.fadeOut(100);
-		}, 300);
+		jq.hideLoading();
 	};
 
 	var ajaxUrl, data;
@@ -103,7 +71,7 @@ $(function(){
 
 	//var title = ['','','','','','','GAD-7焦虑症筛查量表','AD8认知障碍自评表','PHQ-9抑郁症筛查量表',]
 	//showResult();
-	function showResult( isResult,type ){
+	function showResult( isResult,type,fun ){
 
 		isResult = typeof isResult == 'undefined' ? false : true; 
 
@@ -143,6 +111,11 @@ $(function(){
 				}else{
 					alert( json.message );
 				}
+				
+			},
+			complete:function(){
+				if (fun)
+					fun();
 			}
 		})
 	}
