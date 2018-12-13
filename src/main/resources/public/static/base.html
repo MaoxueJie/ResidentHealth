@@ -284,27 +284,18 @@
 			</div>
 
 			<div class="weui-cells">
+				<div class="weui-cells__title">居住地址：</div>
 				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">所在社区：</label></div>
+					<div class="weui-cell__hd"><label class="weui-label">省市区（县）：</label></div>
 					<div class="weui-cell__bd">
-						<input class="weui-input" type="text" name="provice">
+						<input class="weui-input" type="text" id="city" name="city">
 					</div>
-					<div class="weui-cell__bd">省</div>
-					<div class="weui-cell__bd">
-						<input class="weui-input" type="text" name="city">
-					</div>
-					<div class="weui-cell__bd">市</div>
-					<div class="weui-cell__bd">
-						<input class="weui-input" type="text" name="zone">
-					</div>
-					<div class="weui-cell__bd">县（区）</div>
 				</div>
 				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label"></label></div>
+					<div class="weui-cell__hd"><label class="weui-label">街道（社区）：</label></div>
 					<div class="weui-cell__bd">
 						<input class="weui-input" type="text" name="community">
 					</div>
-					<div class="weui-cell__bd">社区</div>
 				</div>
 			</div>
 
@@ -352,13 +343,60 @@
 					</div> -->
 				</div>
 			</div>
-
-			<div class="weui-cells__title">宗教信仰：</div>
-			<div class="weui-cells">
-				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">宗教</label></div>
-					<div class="weui-cell__bd">
-						<input class="weui-input" type="text" name="religion" placeholder="填写宗教信仰">
+			<div id="religion" class="cell-item">
+				<div class="weui-cells__title">宗教信仰：</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="religion0">
+						<div class="weui-cell__bd">
+							<p>无</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required  name="religion" class="weui-check" id="religion0" value="无">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="religion1">
+						<div class="weui-cell__bd">
+							<p>佛教</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required  name="religion" class="weui-check" id="religion1" value="佛教">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="religion2">
+	
+						<div class="weui-cell__bd">
+							<p>伊斯兰教</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="religion" id="religion2" value="伊斯兰教">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="religion3">
+						<div class="weui-cell__bd">
+							<p>基督教</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="religion" id="religion3" value="基督教">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="religion4">
+						<div class="weui-cell__bd">
+							<p>其他</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required  class="weui-check" name="religion" id="religion4" value="其他">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input" id="inputOtherReligion">
+							<div class="weui-cell__hd"><label class="weui-label">其它宗教：</label></div>
+							<div class="weui-cell__bd">
+								<input class="weui-input" name="religionOther" type="text" placeholder="填写其它宗教">
+							</div>
 					</div>
 				</div>
 			</div>
@@ -475,8 +513,15 @@
 				jq("#birthday").calendar({value:[birthday]});
 			else
 				jq("#birthday").calendar();
+			
+			jq("#city").cityPicker({
+			    title: "请选择所在城市"
+			});
+			
+			
 				
 		});	//获取基本信息
+		
 		
 
 		$('#marriage input[type=radio]').click(function(){
@@ -507,6 +552,24 @@
 				}else{
 					$('#inputOtherRelation').hide();
 					$('#inputOtherRelation input').val('');
+				}
+			}
+		})
+		
+		$('#religion input[type=radio]').click(function(){
+			console.log($(this).val());
+			if( $(this).val() == "其他" ){
+				if( $(this).is(':checked') ){
+					$('#inputOtherReligion').css('display','flex');
+				}else{
+					$('#inputOtherReligion').hide();
+					$('#inputOtherReligion input').val('');
+				}
+			}else
+			{
+				if( $(this).is(':checked') ){
+					$('#inputOtherReligion').hide();
+					$('#inputOtherReligion input').val('');
 				}
 			}
 		})
