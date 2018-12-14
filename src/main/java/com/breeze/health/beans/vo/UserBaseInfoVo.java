@@ -44,6 +44,8 @@ public class UserBaseInfoVo {
     private Integer job;
 
     private String religion;
+    
+    private String religionOther;
 
     private Integer habitatIncome;
 
@@ -239,4 +241,13 @@ public class UserBaseInfoVo {
 		this.zone = zone;
 	}
 
+	public String getReligionOther() {
+		return religionOther;
+	}
+
+	public void setReligionOther(String religionOther) {
+		this.religionOther = religionOther;
+	}
+
+	
 }

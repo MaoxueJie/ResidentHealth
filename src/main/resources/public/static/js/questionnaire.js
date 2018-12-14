@@ -109,11 +109,13 @@ $(function(){
 					}
 
 				}else{
-					alert( json.message );
+					alert(json.message);
 				}
 				
+				if (fun)
+					fun(json.data);
 			},
-			complete:function(){
+			error:function(){
 				if (fun)
 					fun();
 			}
@@ -131,15 +133,17 @@ $(function(){
 
 			if( inputType == 'text' || inputType == 'number' || inputType == 'date'){
 				$curInput.val( val );
-
 				if( val != '' ){
 					$curInput.closest('.weui-cell').css('display','flex');
 				}
 			}else if( inputType == 'radio' ){
-				$form.find('[name='+ key +'][value='+ val +']').prop('checked','checked');
+				$form.find('[name='+ key +'][value="'+ val +'"]').prop('checked','checked');
 			}else if( inputType == 'checkbox' ){
-				for (var i = 0; i < val.length; i++) {
-					$form.find('[name='+ key +'][value='+ val[i] +']').prop('checked','checked');
+				if (val instanceof Array)
+				{
+					for (var i = 0; i < val.length; i++) {
+						$form.find('[name='+ key +'][value="'+ val[i] +'"]').prop('checked','checked');
+					}
 				}
 			}
 		})

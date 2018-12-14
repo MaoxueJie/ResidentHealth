@@ -20,6 +20,7 @@
     <result column="community_lat" property="communityLat" jdbcType="DOUBLE" />
     <result column="job" property="job" jdbcType="INTEGER" />
     <result column="religion" property="religion" jdbcType="VARCHAR" />
+    <result column="religion_other" property="religionOther" jdbcType="VARCHAR" />
     <result column="habitat_income" property="habitatIncome" jdbcType="INTEGER" />
     <result column="medical_pay_way" property="medicalPayWay" jdbcType="INTEGER" />
     <result column="medical_pay_desc" property="medicalPayDesc" jdbcType="VARCHAR" />
@@ -58,7 +59,8 @@
   <sql id="Base_Column_List" >
     id, user_id, birthday, gender, education, marriage, son_count, daughter_count, family_type, 
     family_desc, family_other, city, zone, community, community_lon, community_lat, job, 
-    religion, habitat_income, medical_pay_way, medical_pay_desc, create_time, update_time
+    religion, religion_other, habitat_income, medical_pay_way, medical_pay_desc, create_time, 
+    update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserBaseInfoExample" >
     select
@@ -90,17 +92,17 @@
       daughter_count, family_type, family_desc, 
       family_other, city, zone, 
       community, community_lon, community_lat, 
-      job, religion, habitat_income, 
-      medical_pay_way, medical_pay_desc, create_time, 
-      update_time)
+      job, religion, religion_other, 
+      habitat_income, medical_pay_way, medical_pay_desc, 
+      create_time, update_time)
     values (#{userId,jdbcType=BIGINT}, #{birthday,jdbcType=DATE}, #{gender,jdbcType=INTEGER}, 
       #{education,jdbcType=INTEGER}, #{marriage,jdbcType=INTEGER}, #{sonCount,jdbcType=INTEGER}, 
       #{daughterCount,jdbcType=INTEGER}, #{familyType,jdbcType=VARCHAR}, #{familyDesc,jdbcType=VARCHAR}, 
       #{familyOther,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{zone,jdbcType=VARCHAR}, 
       #{community,jdbcType=VARCHAR}, #{communityLon,jdbcType=DOUBLE}, #{communityLat,jdbcType=DOUBLE}, 
-      #{job,jdbcType=INTEGER}, #{religion,jdbcType=VARCHAR}, #{habitatIncome,jdbcType=INTEGER}, 
-      #{medicalPayWay,jdbcType=INTEGER}, #{medicalPayDesc,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP})
+      #{job,jdbcType=INTEGER}, #{religion,jdbcType=VARCHAR}, #{religionOther,jdbcType=VARCHAR}, 
+      #{habitatIncome,jdbcType=INTEGER}, #{medicalPayWay,jdbcType=INTEGER}, #{medicalPayDesc,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserBaseInfo" useGeneratedKeys="true" keyProperty="id" >
     insert into t_user_base_info
@@ -155,6 +157,9 @@
       </if>
       <if test="religion != null" >
         religion,
+      </if>
+      <if test="religionOther != null" >
+        religion_other,
       </if>
       <if test="habitatIncome != null" >
         habitat_income,
@@ -223,6 +228,9 @@
       </if>
       <if test="religion != null" >
         #{religion,jdbcType=VARCHAR},
+      </if>
+      <if test="religionOther != null" >
+        #{religionOther,jdbcType=VARCHAR},
       </if>
       <if test="habitatIncome != null" >
         #{habitatIncome,jdbcType=INTEGER},
@@ -301,6 +309,9 @@
       <if test="religion != null" >
         religion = #{religion,jdbcType=VARCHAR},
       </if>
+      <if test="religionOther != null" >
+        religion_other = #{religionOther,jdbcType=VARCHAR},
+      </if>
       <if test="habitatIncome != null" >
         habitat_income = #{habitatIncome,jdbcType=INTEGER},
       </if>
@@ -338,6 +349,7 @@
       community_lat = #{communityLat,jdbcType=DOUBLE},
       job = #{job,jdbcType=INTEGER},
       religion = #{religion,jdbcType=VARCHAR},
+      religion_other = #{religionOther,jdbcType=VARCHAR},
       habitat_income = #{habitatIncome,jdbcType=INTEGER},
       medical_pay_way = #{medicalPayWay,jdbcType=INTEGER},
       medical_pay_desc = #{medicalPayDesc,jdbcType=VARCHAR},

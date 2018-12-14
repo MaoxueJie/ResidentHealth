@@ -1282,6 +1282,76 @@ public class UserBaseInfoExample {
             return (Criteria) this;
         }
 
+        public Criteria andReligionOtherIsNull() {
+            addCriterion("religion_other is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReligionOtherIsNotNull() {
+            addCriterion("religion_other is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReligionOtherEqualTo(String value) {
+            addCriterion("religion_other =", value, "religionOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andReligionOtherNotEqualTo(String value) {
+            addCriterion("religion_other <>", value, "religionOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andReligionOtherGreaterThan(String value) {
+            addCriterion("religion_other >", value, "religionOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andReligionOtherGreaterThanOrEqualTo(String value) {
+            addCriterion("religion_other >=", value, "religionOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andReligionOtherLessThan(String value) {
+            addCriterion("religion_other <", value, "religionOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andReligionOtherLessThanOrEqualTo(String value) {
+            addCriterion("religion_other <=", value, "religionOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andReligionOtherLike(String value) {
+            addCriterion("religion_other like", value, "religionOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andReligionOtherNotLike(String value) {
+            addCriterion("religion_other not like", value, "religionOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andReligionOtherIn(List<String> values) {
+            addCriterion("religion_other in", values, "religionOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andReligionOtherNotIn(List<String> values) {
+            addCriterion("religion_other not in", values, "religionOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andReligionOtherBetween(String value1, String value2) {
+            addCriterion("religion_other between", value1, value2, "religionOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andReligionOtherNotBetween(String value1, String value2) {
+            addCriterion("religion_other not between", value1, value2, "religionOther");
+            return (Criteria) this;
+        }
+
         public Criteria andHabitatIncomeIsNull() {
             addCriterion("habitat_income is null");
             return (Criteria) this;

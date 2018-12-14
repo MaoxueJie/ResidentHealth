@@ -221,7 +221,7 @@
 				<div class="weui-cells weui-cells_checkbox">
 					<label class="weui-cell weui-check__label" for="familyDesc1">
 						<div class="weui-cell__hd">
-							<input type="checkbox" required class="weui-check" name="familyDesc" id="familyDesc1" value="1">
+							<input type="checkbox" required class="weui-check" name="familyDesc" id="familyDesc1" value="配偶">
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
@@ -231,7 +231,7 @@
 					<label class="weui-cell weui-check__label" for="familyDesc2">
 
 						<div class="weui-cell__hd">
-							<input type="checkbox" required name="familyDesc" class="weui-check" id="familyDesc2" value="2">
+							<input type="checkbox" required name="familyDesc" class="weui-check" id="familyDesc2" value="子女">
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
@@ -240,7 +240,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="familyDesc3">
 						<div class="weui-cell__hd">
-							<input type="checkbox" required class="weui-check" name="familyDesc" id="familyDesc3" value="3">
+							<input type="checkbox" required class="weui-check" name="familyDesc" id="familyDesc3" value="父母">
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
@@ -249,7 +249,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="familyDesc4">
 						<div class="weui-cell__hd">
-							<input type="checkbox" required class="weui-check" name="familyDesc" id="familyDesc4" value="4">
+							<input type="checkbox" required class="weui-check" name="familyDesc" id="familyDesc4" value="伴侣父母">
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
@@ -258,7 +258,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="familyDesc5">
 						<div class="weui-cell__hd">
-							<input type="checkbox" required class="weui-check" name="familyDesc" id="familyDesc5" value="5">
+							<input type="checkbox" required class="weui-check" name="familyDesc" id="familyDesc5" value="外祖父祖母/祖父祖母">
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
@@ -267,7 +267,7 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="familyDesc6">
 						<div class="weui-cell__hd">
-							<input type="checkbox" required class="weui-check" name="familyDesc" id="familyDesc6" value="6">
+							<input type="checkbox" required class="weui-check" name="familyDesc" id="familyDesc6" value="其它">
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
@@ -277,7 +277,7 @@
 					<div class="weui-cell weui-cell-input" id="inputOtherRelation">
 						<div class="weui-cell__hd"><label class="weui-label">其它关系：</label></div>
 						<div class="weui-cell__bd">
-							<input class="weui-input" name="family_other" type="text" placeholder="填写与同住者关系">
+							<input class="weui-input" name="familyOther" type="text" placeholder="填写与同住者关系">
 						</div>
 					</div>
 				</div>
@@ -385,10 +385,10 @@
 					</label>
 					<label class="weui-cell weui-check__label" for="religion4">
 						<div class="weui-cell__bd">
-							<p>其他</p>
+							<p>其它</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" required  class="weui-check" name="religion" id="religion4" value="其他">
+							<input type="radio" required  class="weui-check" name="religion" id="religion4" value="其它">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -507,10 +507,9 @@
 
 	$(function(){	
 		
-		showResult(true,'base',function(){
-			var birthday = jq("#birthday").val();
-			if (birthday)
-				jq("#birthday").calendar({value:[birthday]});
+		showResult(true,'base',function(data){
+			if (data && data.birthday)
+				jq("#birthday").calendar({value:[data.birthday]});
 			else
 				jq("#birthday").calendar();
 			
@@ -518,6 +517,29 @@
 			    title: "请选择所在城市"
 			});
 			
+			if (data && data.familyType == 2)
+			{
+				$('#live_relation').show();
+			} else
+			{
+				$('#live_relation').hide();
+			}
+			
+			if (data && data.familyDesc && data.familyDesc.indexOf("其它")>-1)
+			{
+				$('#inputOtherRelation').show();
+			}else
+			{
+				$('#inputOtherRelation').hide();
+			}
+			
+			if (data && data.religion == "其它")
+			{
+				$('#inputOtherReligion').show();
+			}else
+			{
+				$('#inputOtherReligion').hide();
+			}
 			
 				
 		});	//获取基本信息
@@ -546,7 +568,7 @@
 		})
 
 		$('#live_relation input[type=checkbox]').click(function(){
-			if( $(this).val() == 6 ){
+			if( $(this).val() ==  "其它" ){
 				if( $(this).is(':checked') ){
 					$('#inputOtherRelation').css('display','flex');
 				}else{
@@ -558,7 +580,7 @@
 		
 		$('#religion input[type=radio]').click(function(){
 			console.log($(this).val());
-			if( $(this).val() == "其他" ){
+			if( $(this).val() == "其它" ){
 				if( $(this).is(':checked') ){
 					$('#inputOtherReligion').css('display','flex');
 				}else{

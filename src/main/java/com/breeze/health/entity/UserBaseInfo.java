@@ -39,6 +39,8 @@ public class UserBaseInfo {
 
     private String religion;
 
+    private String religionOther;
+
     private Integer habitatIncome;
 
     private Integer medicalPayWay;
@@ -191,6 +193,14 @@ public class UserBaseInfo {
 
     public void setReligion(String religion) {
         this.religion = religion == null ? null : religion.trim();
+    }
+
+    public String getReligionOther() {
+        return religionOther;
+    }
+
+    public void setReligionOther(String religionOther) {
+        this.religionOther = religionOther == null ? null : religionOther.trim();
     }
 
     public Integer getHabitatIncome() {
