@@ -1161,7 +1161,10 @@
 			var index = $self.index();
 			console.log(index);
 			$('.smoking_item').hide();
-			$('.smoking_item').eq(index-1).show().find('input[type=number]').val('');
+			if (index>0)
+			{
+				$('.smoking_item').eq(index-1).show().find('input[type=number]').val('');
+			}
 			if( index == 3 ){
 				$('.smoking_item:last').show();
 			}
