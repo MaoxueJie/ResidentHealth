@@ -26,6 +26,10 @@ public class UserLivingVo {
     private Integer alizarin;
 
     private Integer preference;
+    
+    private Integer special;
+
+    private String specialOther;
 
     private Integer sweets;
 
@@ -404,6 +408,22 @@ public class UserLivingVo {
 
 	public void setNightingale(Integer nightingale) {
 		this.nightingale = nightingale;
+	}
+
+	public Integer getSpecial() {
+		return special;
+	}
+
+	public void setSpecial(Integer special) {
+		this.special = special;
+	}
+
+	public String getSpecialOther() {
+		return specialOther;
+	}
+
+	public void setSpecialOther(String specialOther) {
+		this.specialOther = specialOther;
 	}
     
 	
