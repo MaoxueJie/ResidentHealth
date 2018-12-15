@@ -1141,7 +1141,7 @@
 			var name = $(this).attr("name");
 			if( $(this).val() == "1" ){
 				if( $(this).is(':checked') ){
-					$('#'+name+'Val').attr('disabled','false');
+					$('#'+name+'Val').removeAttr('disabled');
 				}else{
 					$('#'+name+'Val').attr('disabled','true');
 					$('#'+name+'Val').val('');
