@@ -895,6 +895,126 @@ public class UserLivingHabitExample {
             return (Criteria) this;
         }
 
+        public Criteria andDrinkingYearsIsNull() {
+            addCriterion("drinking_years is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDrinkingYearsIsNotNull() {
+            addCriterion("drinking_years is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDrinkingYearsEqualTo(Integer value) {
+            addCriterion("drinking_years =", value, "drinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andDrinkingYearsNotEqualTo(Integer value) {
+            addCriterion("drinking_years <>", value, "drinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andDrinkingYearsGreaterThan(Integer value) {
+            addCriterion("drinking_years >", value, "drinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andDrinkingYearsGreaterThanOrEqualTo(Integer value) {
+            addCriterion("drinking_years >=", value, "drinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andDrinkingYearsLessThan(Integer value) {
+            addCriterion("drinking_years <", value, "drinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andDrinkingYearsLessThanOrEqualTo(Integer value) {
+            addCriterion("drinking_years <=", value, "drinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andDrinkingYearsIn(List<Integer> values) {
+            addCriterion("drinking_years in", values, "drinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andDrinkingYearsNotIn(List<Integer> values) {
+            addCriterion("drinking_years not in", values, "drinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andDrinkingYearsBetween(Integer value1, Integer value2) {
+            addCriterion("drinking_years between", value1, value2, "drinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andDrinkingYearsNotBetween(Integer value1, Integer value2) {
+            addCriterion("drinking_years not between", value1, value2, "drinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andNoDrinkingYearsIsNull() {
+            addCriterion("no_drinking_years is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andNoDrinkingYearsIsNotNull() {
+            addCriterion("no_drinking_years is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andNoDrinkingYearsEqualTo(Integer value) {
+            addCriterion("no_drinking_years =", value, "noDrinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andNoDrinkingYearsNotEqualTo(Integer value) {
+            addCriterion("no_drinking_years <>", value, "noDrinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andNoDrinkingYearsGreaterThan(Integer value) {
+            addCriterion("no_drinking_years >", value, "noDrinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andNoDrinkingYearsGreaterThanOrEqualTo(Integer value) {
+            addCriterion("no_drinking_years >=", value, "noDrinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andNoDrinkingYearsLessThan(Integer value) {
+            addCriterion("no_drinking_years <", value, "noDrinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andNoDrinkingYearsLessThanOrEqualTo(Integer value) {
+            addCriterion("no_drinking_years <=", value, "noDrinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andNoDrinkingYearsIn(List<Integer> values) {
+            addCriterion("no_drinking_years in", values, "noDrinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andNoDrinkingYearsNotIn(List<Integer> values) {
+            addCriterion("no_drinking_years not in", values, "noDrinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andNoDrinkingYearsBetween(Integer value1, Integer value2) {
+            addCriterion("no_drinking_years between", value1, value2, "noDrinkingYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andNoDrinkingYearsNotBetween(Integer value1, Integer value2) {
+            addCriterion("no_drinking_years not between", value1, value2, "noDrinkingYears");
+            return (Criteria) this;
+        }
+
         public Criteria andCreateTimeIsNull() {
             addCriterion("create_time is null");
             return (Criteria) this;

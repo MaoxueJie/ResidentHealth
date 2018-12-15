@@ -29,6 +29,10 @@ public class UserLivingHabit {
 
     private Integer drinkingVal;
 
+    private Integer drinkingYears;
+
+    private Integer noDrinkingYears;
+
     private Date createTime;
 
     private Date updateTime;
@@ -135,6 +139,22 @@ public class UserLivingHabit {
 
     public void setDrinkingVal(Integer drinkingVal) {
         this.drinkingVal = drinkingVal;
+    }
+
+    public Integer getDrinkingYears() {
+        return drinkingYears;
+    }
+
+    public void setDrinkingYears(Integer drinkingYears) {
+        this.drinkingYears = drinkingYears;
+    }
+
+    public Integer getNoDrinkingYears() {
+        return noDrinkingYears;
+    }
+
+    public void setNoDrinkingYears(Integer noDrinkingYears) {
+        this.noDrinkingYears = noDrinkingYears;
     }
 
     public Date getCreateTime() {

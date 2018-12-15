@@ -87,6 +87,10 @@ public class UserLivingVo {
 
     private Integer drinkingVal;
     
+    private Integer drinkingYears;
+
+    private Integer noDrinkingYears;
+    
     private String resultTitle;
     
     private String resultMsg;
@@ -458,6 +462,22 @@ public class UserLivingVo {
 
 	public void setSpecial(String[] special) {
 		this.special = special;
+	}
+
+	public Integer getDrinkingYears() {
+		return drinkingYears;
+	}
+
+	public void setDrinkingYears(Integer drinkingYears) {
+		this.drinkingYears = drinkingYears;
+	}
+
+	public Integer getNoDrinkingYears() {
+		return noDrinkingYears;
+	}
+
+	public void setNoDrinkingYears(Integer noDrinkingYears) {
+		this.noDrinkingYears = noDrinkingYears;
 	}
     
 	
