@@ -435,7 +435,7 @@
 				</div>
 			</div>
 
-			<div class="cell-item">
+			<div id="payWay" class="cell-item">
 				<div class="weui-cells__title">医疗费用报销类型：</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="yblx1">
@@ -443,7 +443,7 @@
 							<p>完全自费</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" required class="weui-check" name="medicalPayWay" id="yblx1" value="1">
+							<input type="checkbox" required class="weui-check" name="medicalPayWay" id="yblx1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -453,32 +453,44 @@
 							<p>公费医疗</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" required name="medicalPayWay" class="weui-check" id="yblx2" value="2">
+							<input type="checkbox" required name="medicalPayWay" class="weui-check" id="yblx2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
+					<div class="weui-cell" id="medicalPayDesc2">
+						<div class="weui-cell__hd"><label class="weui-label">公费医疗费用报销描述</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" type="text" name="medicalPayDesc2" placeholder="可填写报销比例">
+						</div>
+					</div>
 					<label class="weui-cell weui-check__label" for="yblx3">
 						<div class="weui-cell__bd">
 							<p>医保</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" required class="weui-check" name="medicalPayWay" id="yblx3" value="3">
+							<input type="checkbox" required class="weui-check" name="medicalPayWay" id="yblx3" value="3">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
+					<div class="weui-cell" id="medicalPayDesc3">
+						<div class="weui-cell__hd"><label class="weui-label">医保费用报销描述</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" type="text" name="medicalPayDesc3" placeholder="可填写报销比例">
+						</div>
+					</div>
 					<label class="weui-cell weui-check__label" for="yblx4">
 						<div class="weui-cell__bd">
 							<p>商业保险</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" required class="weui-check" name="medicalPayWay" id="yblx4" value="4">
+							<input type="checkbox" required class="weui-check" name="medicalPayWay" id="yblx4" value="4">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
-					<div class="weui-cell">
-						<div class="weui-cell__hd"><label class="weui-label">费用报销描述</label></div>
+					<div class="weui-cell" id="medicalPayDesc4">
+						<div class="weui-cell__hd"><label class="weui-label">商业保险报销描述</label></div>
 						<div class="weui-cell__bd">
-							<input class="weui-input" type="text" name="medicalPayDesc" placeholder="可填写报销比例">
+							<input class="weui-input" type="text" name="medicalPayDesc4" placeholder="可填写报销比例">
 						</div>
 					</div>
 				</div>
@@ -541,6 +553,30 @@
 				$('#inputOtherReligion').hide();
 			}
 			
+			if (data && data.medicalPayWay && data.medicalPayWay.indexOf("2")>-1)
+			{
+				$('#medicalPayDesc2').show();
+			}else
+			{
+				$('#medicalPayDesc2').hide();
+			}
+			
+			if (data && data.medicalPayWay && data.medicalPayWay.indexOf("3")>-1)
+			{
+				$('#medicalPayDesc3').show();
+			}else
+			{
+				$('#medicalPayDesc3').hide();
+			}
+			
+			if (data && data.medicalPayWay && data.medicalPayWay.indexOf("4")>-1)
+			{
+				$('#medicalPayDesc4').show();
+			}else
+			{
+				$('#medicalPayDesc4').hide();
+			}
+			
 				
 		});	//获取基本信息
 		
@@ -592,6 +628,30 @@
 				if( $(this).is(':checked') ){
 					$('#inputOtherReligion').hide();
 					$('#inputOtherReligion input').val('');
+				}
+			}
+		})
+		$('#payWay input[type=checkbox]').click(function(){
+			if( $(this).val() ==  "2" ){
+				if( $(this).is(':checked') ){
+					$('#medicalPayDesc2').css('display','flex');
+				}else{
+					$('#medicalPayDesc2').hide();
+					$('#medicalPayDesc2 input').val('');
+				}
+			}else if( $(this).val() ==  "3" ){
+				if( $(this).is(':checked') ){
+					$('#medicalPayDesc3').css('display','flex');
+				}else{
+					$('#medicalPayDesc3').hide();
+					$('#medicalPayDesc3 input').val('');
+				}
+			}else if( $(this).val() ==  "4" ){
+				if( $(this).is(':checked') ){
+					$('#medicalPayDesc4').css('display','flex');
+				}else{
+					$('#medicalPayDesc4').hide();
+					$('#medicalPayDesc4 input').val('');
 				}
 			}
 		})

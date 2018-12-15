@@ -22,8 +22,10 @@
     <result column="religion" property="religion" jdbcType="VARCHAR" />
     <result column="religion_other" property="religionOther" jdbcType="VARCHAR" />
     <result column="habitat_income" property="habitatIncome" jdbcType="INTEGER" />
-    <result column="medical_pay_way" property="medicalPayWay" jdbcType="INTEGER" />
-    <result column="medical_pay_desc" property="medicalPayDesc" jdbcType="VARCHAR" />
+    <result column="medical_pay_way" property="medicalPayWay" jdbcType="VARCHAR" />
+    <result column="medical_pay_desc2" property="medicalPayDesc2" jdbcType="VARCHAR" />
+    <result column="medical_pay_desc3" property="medicalPayDesc3" jdbcType="VARCHAR" />
+    <result column="medical_pay_desc4" property="medicalPayDesc4" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -59,8 +61,8 @@
   <sql id="Base_Column_List" >
     id, user_id, birthday, gender, education, marriage, son_count, daughter_count, family_type, 
     family_desc, family_other, city, zone, community, community_lon, community_lat, job, 
-    religion, religion_other, habitat_income, medical_pay_way, medical_pay_desc, create_time, 
-    update_time
+    religion, religion_other, habitat_income, medical_pay_way, medical_pay_desc2, medical_pay_desc3, 
+    medical_pay_desc4, create_time, update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserBaseInfoExample" >
     select
@@ -93,16 +95,18 @@
       family_other, city, zone, 
       community, community_lon, community_lat, 
       job, religion, religion_other, 
-      habitat_income, medical_pay_way, medical_pay_desc, 
-      create_time, update_time)
+      habitat_income, medical_pay_way, medical_pay_desc2, 
+      medical_pay_desc3, medical_pay_desc4, create_time, 
+      update_time)
     values (#{userId,jdbcType=BIGINT}, #{birthday,jdbcType=DATE}, #{gender,jdbcType=INTEGER}, 
       #{education,jdbcType=INTEGER}, #{marriage,jdbcType=INTEGER}, #{sonCount,jdbcType=INTEGER}, 
       #{daughterCount,jdbcType=INTEGER}, #{familyType,jdbcType=VARCHAR}, #{familyDesc,jdbcType=VARCHAR}, 
       #{familyOther,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{zone,jdbcType=VARCHAR}, 
       #{community,jdbcType=VARCHAR}, #{communityLon,jdbcType=DOUBLE}, #{communityLat,jdbcType=DOUBLE}, 
       #{job,jdbcType=INTEGER}, #{religion,jdbcType=VARCHAR}, #{religionOther,jdbcType=VARCHAR}, 
-      #{habitatIncome,jdbcType=INTEGER}, #{medicalPayWay,jdbcType=INTEGER}, #{medicalPayDesc,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+      #{habitatIncome,jdbcType=INTEGER}, #{medicalPayWay,jdbcType=VARCHAR}, #{medicalPayDesc2,jdbcType=VARCHAR}, 
+      #{medicalPayDesc3,jdbcType=VARCHAR}, #{medicalPayDesc4,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserBaseInfo" useGeneratedKeys="true" keyProperty="id" >
     insert into t_user_base_info
@@ -167,8 +171,14 @@
       <if test="medicalPayWay != null" >
         medical_pay_way,
       </if>
-      <if test="medicalPayDesc != null" >
-        medical_pay_desc,
+      <if test="medicalPayDesc2 != null" >
+        medical_pay_desc2,
+      </if>
+      <if test="medicalPayDesc3 != null" >
+        medical_pay_desc3,
+      </if>
+      <if test="medicalPayDesc4 != null" >
+        medical_pay_desc4,
       </if>
       <if test="createTime != null" >
         create_time,
@@ -236,10 +246,16 @@
         #{habitatIncome,jdbcType=INTEGER},
       </if>
       <if test="medicalPayWay != null" >
-        #{medicalPayWay,jdbcType=INTEGER},
+        #{medicalPayWay,jdbcType=VARCHAR},
       </if>
-      <if test="medicalPayDesc != null" >
-        #{medicalPayDesc,jdbcType=VARCHAR},
+      <if test="medicalPayDesc2 != null" >
+        #{medicalPayDesc2,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalPayDesc3 != null" >
+        #{medicalPayDesc3,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalPayDesc4 != null" >
+        #{medicalPayDesc4,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -316,10 +332,16 @@
         habitat_income = #{habitatIncome,jdbcType=INTEGER},
       </if>
       <if test="medicalPayWay != null" >
-        medical_pay_way = #{medicalPayWay,jdbcType=INTEGER},
+        medical_pay_way = #{medicalPayWay,jdbcType=VARCHAR},
       </if>
-      <if test="medicalPayDesc != null" >
-        medical_pay_desc = #{medicalPayDesc,jdbcType=VARCHAR},
+      <if test="medicalPayDesc2 != null" >
+        medical_pay_desc2 = #{medicalPayDesc2,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalPayDesc3 != null" >
+        medical_pay_desc3 = #{medicalPayDesc3,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalPayDesc4 != null" >
+        medical_pay_desc4 = #{medicalPayDesc4,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -351,8 +373,10 @@
       religion = #{religion,jdbcType=VARCHAR},
       religion_other = #{religionOther,jdbcType=VARCHAR},
       habitat_income = #{habitatIncome,jdbcType=INTEGER},
-      medical_pay_way = #{medicalPayWay,jdbcType=INTEGER},
-      medical_pay_desc = #{medicalPayDesc,jdbcType=VARCHAR},
+      medical_pay_way = #{medicalPayWay,jdbcType=VARCHAR},
+      medical_pay_desc2 = #{medicalPayDesc2,jdbcType=VARCHAR},
+      medical_pay_desc3 = #{medicalPayDesc3,jdbcType=VARCHAR},
+      medical_pay_desc4 = #{medicalPayDesc4,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}

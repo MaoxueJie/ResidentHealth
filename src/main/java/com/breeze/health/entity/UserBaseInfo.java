@@ -43,9 +43,13 @@ public class UserBaseInfo {
 
     private Integer habitatIncome;
 
-    private Integer medicalPayWay;
+    private String medicalPayWay;
 
-    private String medicalPayDesc;
+    private String medicalPayDesc2;
+
+    private String medicalPayDesc3;
+
+    private String medicalPayDesc4;
 
     private Date createTime;
 
@@ -211,20 +215,36 @@ public class UserBaseInfo {
         this.habitatIncome = habitatIncome;
     }
 
-    public Integer getMedicalPayWay() {
+    public String getMedicalPayWay() {
         return medicalPayWay;
     }
 
-    public void setMedicalPayWay(Integer medicalPayWay) {
-        this.medicalPayWay = medicalPayWay;
+    public void setMedicalPayWay(String medicalPayWay) {
+        this.medicalPayWay = medicalPayWay == null ? null : medicalPayWay.trim();
     }
 
-    public String getMedicalPayDesc() {
-        return medicalPayDesc;
+    public String getMedicalPayDesc2() {
+        return medicalPayDesc2;
     }
 
-    public void setMedicalPayDesc(String medicalPayDesc) {
-        this.medicalPayDesc = medicalPayDesc == null ? null : medicalPayDesc.trim();
+    public void setMedicalPayDesc2(String medicalPayDesc2) {
+        this.medicalPayDesc2 = medicalPayDesc2 == null ? null : medicalPayDesc2.trim();
+    }
+
+    public String getMedicalPayDesc3() {
+        return medicalPayDesc3;
+    }
+
+    public void setMedicalPayDesc3(String medicalPayDesc3) {
+        this.medicalPayDesc3 = medicalPayDesc3 == null ? null : medicalPayDesc3.trim();
+    }
+
+    public String getMedicalPayDesc4() {
+        return medicalPayDesc4;
+    }
+
+    public void setMedicalPayDesc4(String medicalPayDesc4) {
+        this.medicalPayDesc4 = medicalPayDesc4 == null ? null : medicalPayDesc4.trim();
     }
 
     public Date getCreateTime() {

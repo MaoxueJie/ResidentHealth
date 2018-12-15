@@ -117,6 +117,8 @@ public class UserServiceImpl implements UserService{
 			BeanUtils.copyProperties(vo, baseInfo);
 			if (vo.getFamilyDesc()!=null)
 				baseInfo.setFamilyDesc(StringUtils.join(vo.getFamilyDesc(),","));
+			if (vo.getMedicalPayWay()!=null)
+				baseInfo.setMedicalPayWay(StringUtils.join(vo.getMedicalPayWay(),","));
 			if (baseInfo.getId()!=null)
 			{
 				baseInfo.setUpdateTime(now);
@@ -153,6 +155,10 @@ public class UserServiceImpl implements UserService{
 				if (((UserBaseInfo)bases.get(0)).getFamilyDesc()!=null)
 				{
 					vo.setFamilyDesc(((UserBaseInfo)bases.get(0)).getFamilyDesc().split(","));
+				}
+				if (((UserBaseInfo)bases.get(0)).getMedicalPayWay()!=null)
+				{
+					vo.setMedicalPayWay(((UserBaseInfo)bases.get(0)).getMedicalPayWay().split(","));
 				}
 				ret.setSuccess(true);
 				ret.setData(vo);

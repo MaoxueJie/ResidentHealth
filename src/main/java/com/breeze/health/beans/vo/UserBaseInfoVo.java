@@ -49,9 +49,13 @@ public class UserBaseInfoVo {
 
     private Integer habitatIncome;
 
-    private Integer medicalPayWay;
+    private String[] medicalPayWay;
 
-    private String medicalPayDesc;
+    private String medicalPayDesc2;
+
+    private String medicalPayDesc3;
+
+    private String medicalPayDesc4;
 
     private Date createTime;
 
@@ -193,20 +197,36 @@ public class UserBaseInfoVo {
 		this.habitatIncome = habitatIncome;
 	}
 
-	public Integer getMedicalPayWay() {
+	public String[] getMedicalPayWay() {
 		return medicalPayWay;
 	}
 
-	public void setMedicalPayWay(Integer medicalPayWay) {
+	public void setMedicalPayWay(String[] medicalPayWay) {
 		this.medicalPayWay = medicalPayWay;
 	}
 
-	public String getMedicalPayDesc() {
-		return medicalPayDesc;
+	public String getMedicalPayDesc2() {
+		return medicalPayDesc2;
 	}
 
-	public void setMedicalPayDesc(String medicalPayDesc) {
-		this.medicalPayDesc = medicalPayDesc;
+	public void setMedicalPayDesc2(String medicalPayDesc2) {
+		this.medicalPayDesc2 = medicalPayDesc2;
+	}
+
+	public String getMedicalPayDesc3() {
+		return medicalPayDesc3;
+	}
+
+	public void setMedicalPayDesc3(String medicalPayDesc3) {
+		this.medicalPayDesc3 = medicalPayDesc3;
+	}
+
+	public String getMedicalPayDesc4() {
+		return medicalPayDesc4;
+	}
+
+	public void setMedicalPayDesc4(String medicalPayDesc4) {
+		this.medicalPayDesc4 = medicalPayDesc4;
 	}
 
 	public Date getCreateTime() {
