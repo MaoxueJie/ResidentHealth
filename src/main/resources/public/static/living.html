@@ -616,90 +616,249 @@
 			<div class="sport_item cell-item">
 				<div class="weui-cells__title">1.最近7天内，您是否做了剧烈的体育活动？（提重物、挖掘、有氧运动或是快速骑车）</div>
 				<div class="weui-cells weui-cells_radio">
-					<div class="weui-cell">
-						<div class="weui-cell__hd"><label class="weui-label">每周运动天数:</label></div>
-						<div class="weui-cell__bd">
-							<input class="weui-input" name="violentDaysPerWeek" type="number" placeholder="几天">
+					<label class="weui-cell weui-check__label" for="violentMovement1">
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="violentMovement" id="violentMovement1" value="1">
+							<span class="weui-icon-checked"></span>
 						</div>
-						<div class="weui-cell__ft">天</div>
-					</div>
+						<div class="weui-cell__bd">
+							<div class="weui-cell">
+								<div class="weui-cell__hd"><label class="weui-label">每周运动天数:</label></div>
+								<div class="weui-cell__bd">
+									<input class="weui-input" name="violentDaysPerWeek" type="number" placeholder="几天">
+								</div>
+								<div class="weui-cell__ft">天</div>
+							</div>
+						</div>	
+					</label>
+					<label class="weui-cell weui-check__label" for="violentMovement2">
+						<div class="weui-cell__ft">
+							<input type="radio" required name="violentMovement" class="weui-check" id="violentMovement2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>无相关体育活动</p>
+						</div>
+					</label>
+					
 				</div>
 			</div>
 
 			<div class="sport_item cell-item">
 				<div class="weui-cells__title">2.在这其中一天您通常会花多少时间在剧烈的体育活动上？</div>
 				<div class="weui-cells weui-cells_radio">
-					<div class="weui-cell">
-						<div class="weui-cell__hd"><label class="weui-label">每天运动多久:</label></div>
-						<div class="weui-cell__bd">
-							<input class="weui-input" name="violentMinutePerDay" type="number" placeholder="多少分钟">
+					<label class="weui-cell weui-check__label" for="violentMovementPerDay1">
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="violentMovementPerDay" id="violentMovementPerDay1" value="1">
+							<span class="weui-icon-checked"></span>
 						</div>
-						<div class="weui-cell__ft">分钟</div>
-					</div>
+						<div class="weui-cell__bd">
+							<div class="weui-cell">
+								<div class="weui-cell__hd"><label class="weui-label">每天运动多久:</label></div>
+								<div class="weui-cell__bd">
+									<input class="weui-input" name="violentMinutePerDay" type="number" placeholder="多少分钟">
+								</div>
+								<div class="weui-cell__ft">分钟</div>
+							</div>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="violentMovementPerDay2">
+						<div class="weui-cell__ft">
+							<input type="radio" required name="violentMovementPerDay" class="weui-check" id="violentMovementPerDay2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>不知道或不确定</p>
+						</div>
+					</label>
+					
 				</div>
 			</div>
 
 			<div class="sport_item cell-item">
 				<div class="weui-cells__title">3.最近7天内，您有几天做了适度的体育活动，（提轻的物品、以平常的速度骑车或打双人网球等，不包括走路)</div>
 				<div class="weui-cells weui-cells_radio">
-					<div class="weui-cell">
-						<div class="weui-cell__hd"><label class="weui-label">每周运动天数:</label></div>
-						<div class="weui-cell__bd">
-							<input class="weui-input" name="moderateDaysPerWeek" type="number" placeholder="几天">
+					<label class="weui-cell weui-check__label" for="moderateMovement1">
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="moderateMovement" id="moderateMovement1" value="1">
+							<span class="weui-icon-checked"></span>
 						</div>
-						<div class="weui-cell__ft">天</div>
-					</div>
+						<div class="weui-cell__bd">
+							<div class="weui-cell">
+								<div class="weui-cell__hd"><label class="weui-label">每周运动天数:</label></div>
+								<div class="weui-cell__bd">
+									<input class="weui-input" name="moderateDaysPerWeek" type="number" placeholder="几天">
+								</div>
+								<div class="weui-cell__ft">天</div>
+							</div>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="moderateMovement2">
+						<div class="weui-cell__ft">
+							<input type="radio" required name="moderateMovement" class="weui-check" id="moderateMovement2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>无适度体育活动</p>
+						</div>
+					</label>
 				</div>
 			</div>
 
 			<div class="sport_item cell-item">
 				<div class="weui-cells__title">4.在这其中一天您通常会花多少时间在适度的体育活动上?</div>
-					<div class="weui-cell">
-						<div class="weui-cell__hd"><label class="weui-label">每天运动多久:</label></div>
-						<div class="weui-cell__bd">
-							<input class="weui-input" name="moderateMinutePerDay" type="number" placeholder="多少分钟">
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="moderateMinute1">
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="moderateMinute" id="moderateMinute1" value="1">
+							<span class="weui-icon-checked"></span>
 						</div>
-						<div class="weui-cell__ft">分钟</div>
-					</div>
+						<div class="weui-cell__bd">
+							<div class="weui-cell">
+								<div class="weui-cell__hd"><label class="weui-label">每天运动多久:</label></div>
+								<div class="weui-cell__bd">
+									<input class="weui-input" name="moderateMinutePerDay" type="number" placeholder="多少分钟">
+								</div>
+								<div class="weui-cell__ft">分钟</div>
+							</div>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="moderateMinute2">
+						<div class="weui-cell__ft">
+							<input type="radio" required name="moderateMinute" class="weui-check" id="moderateMinute2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>不知道或不确定</p>
+						</div>
+					</label>
+
+					
 				</div>
 			</div>
 
 			<div class="sport_item cell-item">
 				<div class="weui-cells__title">5.最近7天内,您有几天是步行，且一次步行至少10分钟?</div>
 				<div class="weui-cells weui-cells_radio">
-					<div class="weui-cell">
-						<div class="weui-cell__hd"><label class="weui-label">每周运动天数:</label></div>
-						<div class="weui-cell__bd">
-							<input class="weui-input" name="walkDaysPerWeek" type="number" placeholder="几天">
+					<label class="weui-cell weui-check__label" for="walkMovement1">
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="walkMovement" id="walkMovement1" value="1">
+							<span class="weui-icon-checked"></span>
 						</div>
-						<div class="weui-cell__ft">天</div>
-					</div>
+						<div class="weui-cell__bd">
+							<div class="weui-cell">
+								<div class="weui-cell__hd"><label class="weui-label">每周运动天数:</label></div>
+								<div class="weui-cell__bd">
+									<input class="weui-input" name="walkDaysPerWeek" type="number" placeholder="几天">
+								</div>
+								<div class="weui-cell__ft">天</div>
+							</div>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="walkMovement2">
+						<div class="weui-cell__ft">
+							<input type="radio" required name="walkMovement" class="weui-check" id="walkMovement2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>无适度体育活动</p>
+						</div>
+					</label>
+					
 				</div>
 			</div>
 
 			<div class="sport_item cell-item">
 				<div class="weui-cells__title">6.在这其中一天您通常花多少时间在步行上？</div>
 				<div class="weui-cells weui-cells_radio"">
-					<div class="weui-cell">
-						<div class="weui-cell__hd"><label class="weui-label">每天运动多久:</label></div>
-						<div class="weui-cell__bd">
-							<input class="weui-input" name="walkMinutePerDay" type="number" placeholder="多少分钟">
+					<label class="weui-cell weui-check__label" for="walkMovementPerDay1">
+						
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="walkMovementPerDay" id="walkMovementPerDay1" value="1">
+							<span class="weui-icon-checked"></span>
 						</div>
-						<div class="weui-cell__ft">分钟</div>
-					</div>
+						<div class="weui-cell__bd">
+							<div class="weui-cell">
+								<div class="weui-cell__hd"><label class="weui-label">每天运动多久:</label></div>
+								<div class="weui-cell__bd">
+									<input class="weui-input" name="walkMinutePerDay" type="number" placeholder="多少分钟">
+								</div>
+								<div class="weui-cell__ft">分钟</div>
+							</div>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="walkMovementPerDay2">			
+						<div class="weui-cell__ft">
+							<input type="radio" required name="walkMovementPerDay" class="weui-check" id="walkMovementPerDay2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>无适度体育活动</p>
+						</div>
+					</label>
+					
 				</div>
 			</div>
 
 			<div class="sport_item cell-item">
-				<div class="weui-cells__title">7.最近七天内，工作日您有多久时间是坐着的？</div>
+				<div class="weui-cells__title">7.最近七天内，工作日您有几天是坐着的？</div>
 				<div class="weui-cells weui-cells_radio"">
-					<div class="weui-cell">
-						<div class="weui-cell__hd"><label class="weui-label">每天静坐多久:</label></div>
-						<div class="weui-cell__bd">
-							<input class="weui-input" name="sittingMinutePerDay" type="number" placeholder="多少分钟">
+					<label class="weui-cell weui-check__label" for="sittingMinutePerDay1">
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="sittingPerDay" id="sittingPerDay1" value="1">
+							<span class="weui-icon-checked"></span>
 						</div>
-						<div class="weui-cell__ft">分钟</div>
-					</div>
+						<div class="weui-cell__bd">
+							<div class="weui-cell">
+								<div class="weui-cell__hd"><label class="weui-label">有几天坐着:</label></div>
+								<div class="weui-cell__bd">
+									<input class="weui-input" name="sittingDaysRecent7Days" type="number" placeholder="天数">
+								</div>
+								<div class="weui-cell__ft">天</div>
+							</div>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="sittingMinutePerDay2">
+						
+						<div class="weui-cell__ft">
+							<input type="radio" required name="sittingPerDay" class="weui-check" id="sittingPerDay2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>不知道或不确定</p>
+						</div>
+					</label>
+				</div>
+			</div>
+			
+			<div class="sport_item cell-item">
+				<div class="weui-cells__title">8.在这其中一天您通常花多少时间坐着？</div>
+				<div class="weui-cells weui-cells_radio"">
+					<label class="weui-cell weui-check__label" for="sittingMinutePerDay1">
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="sittingHours" id="sittingHours1" value="1">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<div class="weui-cell">
+								<div class="weui-cell__hd"><label class="weui-label">每天静坐时间:</label></div>
+								<div class="weui-cell__bd">
+									<input class="weui-input" name="sittingHoursPerDay" type="number" placeholder="多少小时">
+								</div>
+								<div class="weui-cell__ft">小时</div>
+							</div>
+						</div>
+					</label>
+					<label class="weui-cell weui-check__label" for="sittingMinutePerDay2">
+						
+						<div class="weui-cell__ft">
+							<input type="radio" required name="sittingHours" class="weui-check" id="sittingHours2" value="2">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>不知道或不确定</p>
+						</div>
+					</label>
 				</div>
 			</div>
 
