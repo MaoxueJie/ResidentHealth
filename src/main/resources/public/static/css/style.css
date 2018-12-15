@@ -31,7 +31,7 @@ html,body{
 	border-radius: 30px;
 	-webkit-border-radius: 30px;
 }
-/* 档案 */
+
 .archives_page{
 	height: calc(100% - 100px);
 	display: flex;
@@ -48,7 +48,7 @@ html,body{
 }
 .archives_page_cont p{
 	margin: 0 auto 30px;
-	color: #666；
+	color: #666;
 }
 
 .page{
@@ -114,7 +114,9 @@ html,body{
 form .align_center .submitbtn{
 	width: auto;
 }
-
+.weui-cell__hide{
+	display: none;
+}
 
 
 

@@ -103,8 +103,14 @@
 							<input class="weui-input" name="cerebrovascularDiseaseYears" type="text">
 						</div>年
 					</div>
+					
+					<label class="weui-cell" id="more">
+						<div class="weui-cell__bd">
+							<p>更多...</p>
+						</div>
+					</label>
 
-					<label class="weui-cell weui-check__label" for="hassick6">
+					<label class="weui-cell weui-check__label weui-cell__hide" for="hassick6">
 						<div class="weui-cell__hd">
 							<input type="checkbox" required class="weui-check" name="sicks" id="hassick6" value="6">
 							<span class="weui-icon-checked"></span>
@@ -120,7 +126,7 @@
 						</div>年
 					</div>
 
-					<label class="weui-cell weui-check__label" for="hassick7">
+					<label class="weui-cell weui-check__label weui-cell__hide" for="hassick7">
 						<div class="weui-cell__hd">
 							<input type="checkbox" required class="weui-check" name="sicks" id="hassick7" value="7">
 							<span class="weui-icon-checked"></span>
@@ -136,7 +142,7 @@
 						</div>年
 					</div>
 
-					<label class="weui-cell weui-check__label" for="hassick8">
+					<label class="weui-cell weui-check__label weui-cell__hide" for="hassick8">
 						<div class="weui-cell__hd">
 							<input type="checkbox" required class="weui-check" name="sicks" id="hassick8" value="8">
 							<span class="weui-icon-checked"></span>
@@ -152,7 +158,7 @@
 						</div>年
 					</div>
 
-					<label class="weui-cell weui-check__label" for="hassick9">
+					<label class="weui-cell weui-check__label weui-cell__hide" for="hassick9">
 						<div class="weui-cell__hd">
 							<input type="checkbox" required class="weui-check" name="sicks" id="hassick9" value="9">
 							<span class="weui-icon-checked"></span>
@@ -168,7 +174,7 @@
 						</div>年
 					</div>
 
-					<label class="weui-cell weui-check__label" for="hassick10">
+					<label class="weui-cell weui-check__label weui-cell__hide" for="hassick10">
 						<div class="weui-cell__hd">
 							<input type="checkbox" required class="weui-check" name="sicks" id="hassick10" value="10">
 							<span class="weui-icon-checked"></span>
@@ -184,7 +190,7 @@
 						</div>年
 					</div>
 
-					<label class="weui-cell weui-check__label" for="hassick11">
+					<label class="weui-cell weui-check__label weui-cell__hide" for="hassick11">
 						<div class="weui-cell__hd">
 							<input type="checkbox" required class="weui-check" name="sicks" id="hassick11" value="11">
 							<span class="weui-icon-checked"></span>
@@ -200,7 +206,7 @@
 						</div>年
 					</div>
 
-					<label class="weui-cell weui-check__label" for="hassick12">
+					<label class="weui-cell weui-check__label weui-cell__hide" for="hassick12">
 						<div class="weui-cell__hd">
 							<input type="checkbox" required class="weui-check" name="sicks" id="hassick12" value="12">
 							<span class="weui-icon-checked"></span>
@@ -217,7 +223,7 @@
 					</div>
 
 
-					<label class="weui-cell weui-check__label" for="hassick13">
+					<label class="weui-cell weui-check__label weui-cell__hide" for="hassick13">
 						<div class="weui-cell__hd">
 							<input type="checkbox" required class="weui-check" name="sicks" id="hassick13" value="13">
 							<span class="weui-icon-checked"></span>
@@ -658,6 +664,11 @@
 				$curItemInput.find('input[type=text]').val('');
 			}
 		})
+		
+		$('#more').click(function(){
+			$(this).remove();
+			$('.weui-cell__hide').css("display","block");
+		});
 
 	})
 </script>
