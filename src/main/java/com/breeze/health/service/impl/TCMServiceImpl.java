@@ -106,47 +106,47 @@ public class TCMServiceImpl implements TCMService{
 			final UserTCMPinghe pinghe = new UserTCMPinghe(); 
 			BeanUtils.copyProperties(vo, pinghe);
 			orial = null2zero(pinghe.getPingheQ1()) - null2zero(pinghe.getPingheQ2()) - null2zero(pinghe.getPingheQ3()) - null2zero(pinghe.getPingheQ4())-null2zero(pinghe.getPingheQ5())+ null2zero(pinghe.getPingheQ6())-null2zero(pinghe.getPingheQ7())-null2zero(pinghe.getPingheQ8()) + 36;
-			pinghe.setPingheScore(((orial-8)*100)/32);
+			pinghe.setPingheScore(Math.round(((orial-8)*100)/32f));
 			
 			final UserTCMQixu qixu = new UserTCMQixu(); 
 			BeanUtils.copyProperties(vo, qixu);
 			orial = null2zero(qixu.getQixuQ1())+null2zero(qixu.getQixuQ2())+null2zero(qixu.getQixuQ3())+null2zero(qixu.getQixuQ4())+null2zero(qixu.getQixuQ5())+null2zero(qixu.getQixuQ6())+null2zero(qixu.getQixuQ7())+null2zero(qixu.getQixuQ8());
-			qixu.setQixuScore(((orial-8)*100)/32);
+			qixu.setQixuScore(Math.round(((orial-8)*100)/32f));
 			
 			final UserTCMQiyu qiyu = new UserTCMQiyu(); 
 			BeanUtils.copyProperties(vo, qiyu);
 			orial = null2zero(qiyu.getQiyuQ1()) + null2zero(qiyu.getQiyuQ2()) + null2zero(qiyu.getQiyuQ3()) + null2zero(qiyu.getQiyuQ4()) + null2zero(qiyu.getQiyuQ5()) + null2zero(qiyu.getQiyuQ6()) + null2zero(qiyu.getQiyuQ7());
-			qiyu.setQiyuScore(((orial-7)*100)/28);
+			qiyu.setQiyuScore(Math.round(((orial-7)*100)/28f));
 			
 			final UserTCMShire shire = new UserTCMShire(); 
 			BeanUtils.copyProperties(vo, shire);
 			orial = null2zero(shire.getShireQ1()) + null2zero(shire.getShireQ2())+ null2zero(shire.getShireQ3())+ null2zero(shire.getShireQ4())+ null2zero(shire.getShireQ5())+ null2zero(shire.getShireQ6())+ null2zero(shire.getShireQ7());
-			shire.setShireScore(((orial-7)*100)/28);
+			shire.setShireScore(Math.round(((orial-6)*100)/24f));
 			
 			final UserTCMTanshi tanshi = new UserTCMTanshi(); 
 			BeanUtils.copyProperties(vo, tanshi);
 			orial =null2zero(tanshi.getTanshiQ1()) + null2zero(tanshi.getTanshiQ2()) + null2zero(tanshi.getTanshiQ3()) + null2zero(tanshi.getTanshiQ4()) + null2zero(tanshi.getTanshiQ5()) + null2zero(tanshi.getTanshiQ6()) + null2zero(tanshi.getTanshiQ7()) + null2zero(tanshi.getTanshiQ8());
-			tanshi.setTanshiScore(((orial-8)*100)/32);
+			tanshi.setTanshiScore(Math.round(((orial-8)*100)/32f));
 			
 			final UserTCMTebing tebing = new UserTCMTebing(); 
 			BeanUtils.copyProperties(vo, tebing);
 			orial =null2zero(tebing.getTebingQ1()) + null2zero(tebing.getTebingQ2()) + null2zero(tebing.getTebingQ3()) + null2zero(tebing.getTebingQ4()) + null2zero(tebing.getTebingQ5()) + null2zero(tebing.getTebingQ6()) + null2zero(tebing.getTebingQ7());
-			tebing.setTebingScore(((orial-7)*100)/28);
+			tebing.setTebingScore(Math.round(((orial-7)*100)/28f));
 			
 			final UserTCMXueyu xueyu = new UserTCMXueyu(); 
 			BeanUtils.copyProperties(vo, xueyu);
 			orial = null2zero(xueyu.getXueyuQ1()) + null2zero(xueyu.getXueyuQ2()) + null2zero(xueyu.getXueyuQ3()) + null2zero(xueyu.getXueyuQ4()) + null2zero(xueyu.getXueyuQ5()) + null2zero(xueyu.getXueyuQ6()) + null2zero(xueyu.getXueyuQ7());
-			xueyu.setXueyuScore(((orial-7)*100)/28);
+			xueyu.setXueyuScore(Math.round(((orial-7)*100)/28f));
 			
 			final UserTCMYangxu yangxu = new UserTCMYangxu(); 
 			BeanUtils.copyProperties(vo, yangxu);
 			orial =null2zero(yangxu.getYangxuQ1()) + null2zero(yangxu.getYangxuQ2()) + null2zero(yangxu.getYangxuQ3())+ null2zero(yangxu.getYangxuQ4())+ null2zero(yangxu.getYangxuQ5())+ null2zero(yangxu.getYangxuQ6())+ null2zero(yangxu.getYangxuQ7());
-			yangxu.setYangxuScore(((orial-7)*100)/28);
+			yangxu.setYangxuScore(Math.round(((orial-7)*100)/28f));
 			
 			final UserTCMYinxu yinxu = new UserTCMYinxu(); 
 			BeanUtils.copyProperties(vo, yinxu);
 			orial =null2zero(yinxu.getYinxuQ1()) + null2zero(yinxu.getYinxuQ2()) + null2zero(yinxu.getYinxuQ3()) + null2zero(yinxu.getYinxuQ4()) + null2zero(yinxu.getYinxuQ5()) + null2zero(yinxu.getYinxuQ6()) + null2zero(yinxu.getYinxuQ7()) + null2zero(yinxu.getYinxuQ8());
-			yinxu.setYinxuScore(((orial-8)*100)/32);
+			yinxu.setYinxuScore(Math.round(((orial-8)*100)/32f));
 			
 			ret = transactionTemplate.execute(new TransactionCallback<Result<Void>>() {
 				@Override
