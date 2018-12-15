@@ -27,6 +27,10 @@ public class UserLivingMeal {
 
     private Integer preference;
 
+    private Integer special;
+
+    private String specialOther;
+
     private Integer sweets;
 
     private Integer fruit;
@@ -131,6 +135,22 @@ public class UserLivingMeal {
 
     public void setPreference(Integer preference) {
         this.preference = preference;
+    }
+
+    public Integer getSpecial() {
+        return special;
+    }
+
+    public void setSpecial(Integer special) {
+        this.special = special;
+    }
+
+    public String getSpecialOther() {
+        return specialOther;
+    }
+
+    public void setSpecialOther(String specialOther) {
+        this.specialOther = specialOther == null ? null : specialOther.trim();
     }
 
     public Integer getSweets() {

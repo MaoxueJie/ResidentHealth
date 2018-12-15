@@ -432,38 +432,58 @@
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
-					<label class="weui-cell weui-check__label" for="preference4">
+				</div>
+			</div>
+			<div class="cell-item" id="special">
+				<div class="weui-cells__title">10.特殊饮食？</div>
+				<div class="weui-cells weui-cells_radio">
+					<label class="weui-cell weui-check__label" for="special1">
 						<div class="weui-cell__bd">
 							<p>糖尿病饮食</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="checkbox" required class="weui-check" name="preference" id="preference4" value="4">
+							<input type="checkbox" required class="weui-check" name="special" id="special1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
-					<label class="weui-cell weui-check__label" for="preference5">
+					<label class="weui-cell weui-check__label" for="special2">
 						<div class="weui-cell__bd">
 							<p>低盐饮食</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="checkbox" required class="weui-check" name="preference" id="preference5" value="5">
+							<input type="checkbox" required class="weui-check" name="special" id="special2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
-					<label class="weui-cell weui-check__label" for="preference6">
+					<label class="weui-cell weui-check__label" for="special3">
 						<div class="weui-cell__bd">
 							<p>低脂饮食</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" required class="weui-check" name="preference" id="preference6" value="6">
+							<input type="radio" required class="weui-check" name="special" id="special3" value="3">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
+					<label class="weui-cell weui-check__label" for="special4">
+						<div class="weui-cell__bd">
+							<p>低脂饮食</p>
+						</div>
+						<div class="weui-cell__ft">
+							<input type="radio" required class="weui-check" name="special" id="special4" value="4">
+							<span class="weui-icon-checked"></span>
+						</div>
+					</label>
+					<div class="weui-cell weui-cell-input" id="inputOtherSpecial" style="display:none">
+							<div class="weui-cell__hd"><label class="weui-label">其他特殊饮食：</label></div>
+							<div class="weui-cell__bd">
+								<input class="weui-input" name="specialOther" type="text" placeholder="填写其他特殊饮食">
+							</div>
+					</div>
 				</div>
 			</div>
 
 			<div class="cell-item">
-				<div class="weui-cells__title">10.你经常吃甜食吗（如蛋糕、点心等）？</div>
+				<div class="weui-cells__title">11.你经常吃甜食吗（如蛋糕、点心等）？</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="sweets1">
 						<div class="weui-cell__bd">
@@ -506,7 +526,7 @@
 			</div>
 
 			<div class="cell-item">
-				<div class="weui-cells__title">11.你经常吃水果吗？</div>
+				<div class="weui-cells__title">12.你经常吃水果吗？</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="fruit1">
 						<div class="weui-cell__bd">
@@ -549,7 +569,7 @@
 			</div>
 
 			<div class="cell-item">
-				<div class="weui-cells__title">12.你经常喝含糖饮料吗（瓶装类）？</div>
+				<div class="weui-cells__title">13.你经常喝含糖饮料吗（瓶装类）？</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="sugaryDrink1">
 						<div class="weui-cell__bd">
@@ -1191,6 +1211,17 @@
 			$('.drinking_item').hide();
 			if( index != 0 ){
 				$('.drinking_item').show();
+			}
+		})
+		
+		$('#special input[type=checkbox]').click(function(){
+			if( $(this).val() ==  "4" ){
+				if( $(this).is(':checked') ){
+					$('#inputOtherSpecial').css('display','flex');
+				}else{
+					$('#inputOtherSpecial').hide();
+					$('#inputOtherSpecial input').val('');
+				}
 			}
 		})
 

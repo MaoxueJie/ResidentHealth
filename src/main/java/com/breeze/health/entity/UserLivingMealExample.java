@@ -835,6 +835,136 @@ public class UserLivingMealExample {
             return (Criteria) this;
         }
 
+        public Criteria andSpecialIsNull() {
+            addCriterion("special is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialIsNotNull() {
+            addCriterion("special is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialEqualTo(Integer value) {
+            addCriterion("special =", value, "special");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialNotEqualTo(Integer value) {
+            addCriterion("special <>", value, "special");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialGreaterThan(Integer value) {
+            addCriterion("special >", value, "special");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialGreaterThanOrEqualTo(Integer value) {
+            addCriterion("special >=", value, "special");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialLessThan(Integer value) {
+            addCriterion("special <", value, "special");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialLessThanOrEqualTo(Integer value) {
+            addCriterion("special <=", value, "special");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialIn(List<Integer> values) {
+            addCriterion("special in", values, "special");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialNotIn(List<Integer> values) {
+            addCriterion("special not in", values, "special");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialBetween(Integer value1, Integer value2) {
+            addCriterion("special between", value1, value2, "special");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialNotBetween(Integer value1, Integer value2) {
+            addCriterion("special not between", value1, value2, "special");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherIsNull() {
+            addCriterion("special_other is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherIsNotNull() {
+            addCriterion("special_other is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherEqualTo(String value) {
+            addCriterion("special_other =", value, "specialOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherNotEqualTo(String value) {
+            addCriterion("special_other <>", value, "specialOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherGreaterThan(String value) {
+            addCriterion("special_other >", value, "specialOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherGreaterThanOrEqualTo(String value) {
+            addCriterion("special_other >=", value, "specialOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherLessThan(String value) {
+            addCriterion("special_other <", value, "specialOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherLessThanOrEqualTo(String value) {
+            addCriterion("special_other <=", value, "specialOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherLike(String value) {
+            addCriterion("special_other like", value, "specialOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherNotLike(String value) {
+            addCriterion("special_other not like", value, "specialOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherIn(List<String> values) {
+            addCriterion("special_other in", values, "specialOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherNotIn(List<String> values) {
+            addCriterion("special_other not in", values, "specialOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherBetween(String value1, String value2) {
+            addCriterion("special_other between", value1, value2, "specialOther");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialOtherNotBetween(String value1, String value2) {
+            addCriterion("special_other not between", value1, value2, "specialOther");
+            return (Criteria) this;
+        }
+
         public Criteria andSweetsIsNull() {
             addCriterion("sweets is null");
             return (Criteria) this;
