@@ -10,6 +10,7 @@
     <result column="lunch" property="lunch" jdbcType="INTEGER" />
     <result column="extra_meal2" property="extraMeal2" jdbcType="INTEGER" />
     <result column="dinner" property="dinner" jdbcType="INTEGER" />
+    <result column="nightingale" property="nightingale" jdbcType="INTEGER" />
     <result column="meal_desc" property="mealDesc" jdbcType="VARCHAR" />
     <result column="alizarin" property="alizarin" jdbcType="INTEGER" />
     <result column="preference" property="preference" jdbcType="INTEGER" />
@@ -49,8 +50,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, living_id, meal, breakfast, extra_meal1, lunch, extra_meal2, dinner, meal_desc, 
-    alizarin, preference, sweets, fruit, sugary_drink, create_time, update_time
+    id, living_id, meal, breakfast, extra_meal1, lunch, extra_meal2, dinner, nightingale, 
+    meal_desc, alizarin, preference, sweets, fruit, sugary_drink, create_time, update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserLivingMealExample" >
     select
@@ -79,16 +80,16 @@
   <insert id="insert" parameterType="com.breeze.health.entity.UserLivingMeal" useGeneratedKeys="true" keyProperty="id" >
     insert into t_user_living_meal (living_id, meal, breakfast, 
       extra_meal1, lunch, extra_meal2, 
-      dinner, meal_desc, alizarin, 
-      preference, sweets, fruit, 
-      sugary_drink, create_time, update_time
-      )
+      dinner, nightingale, meal_desc, 
+      alizarin, preference, sweets, 
+      fruit, sugary_drink, create_time, 
+      update_time)
     values (#{livingId,jdbcType=BIGINT}, #{meal,jdbcType=INTEGER}, #{breakfast,jdbcType=INTEGER}, 
       #{extraMeal1,jdbcType=INTEGER}, #{lunch,jdbcType=INTEGER}, #{extraMeal2,jdbcType=INTEGER}, 
-      #{dinner,jdbcType=INTEGER}, #{mealDesc,jdbcType=VARCHAR}, #{alizarin,jdbcType=INTEGER}, 
-      #{preference,jdbcType=INTEGER}, #{sweets,jdbcType=INTEGER}, #{fruit,jdbcType=INTEGER}, 
-      #{sugaryDrink,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-      )
+      #{dinner,jdbcType=INTEGER}, #{nightingale,jdbcType=INTEGER}, #{mealDesc,jdbcType=VARCHAR}, 
+      #{alizarin,jdbcType=INTEGER}, #{preference,jdbcType=INTEGER}, #{sweets,jdbcType=INTEGER}, 
+      #{fruit,jdbcType=INTEGER}, #{sugaryDrink,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserLivingMeal" useGeneratedKeys="true" keyProperty="id" >
     insert into t_user_living_meal
@@ -113,6 +114,9 @@
       </if>
       <if test="dinner != null" >
         dinner,
+      </if>
+      <if test="nightingale != null" >
+        nightingale,
       </if>
       <if test="mealDesc != null" >
         meal_desc,
@@ -160,6 +164,9 @@
       </if>
       <if test="dinner != null" >
         #{dinner,jdbcType=INTEGER},
+      </if>
+      <if test="nightingale != null" >
+        #{nightingale,jdbcType=INTEGER},
       </if>
       <if test="mealDesc != null" >
         #{mealDesc,jdbcType=VARCHAR},
@@ -217,6 +224,9 @@
       <if test="dinner != null" >
         dinner = #{dinner,jdbcType=INTEGER},
       </if>
+      <if test="nightingale != null" >
+        nightingale = #{nightingale,jdbcType=INTEGER},
+      </if>
       <if test="mealDesc != null" >
         meal_desc = #{mealDesc,jdbcType=VARCHAR},
       </if>
@@ -253,6 +263,7 @@
       lunch = #{lunch,jdbcType=INTEGER},
       extra_meal2 = #{extraMeal2,jdbcType=INTEGER},
       dinner = #{dinner,jdbcType=INTEGER},
+      nightingale = #{nightingale,jdbcType=INTEGER},
       meal_desc = #{mealDesc,jdbcType=VARCHAR},
       alizarin = #{alizarin,jdbcType=INTEGER},
       preference = #{preference,jdbcType=INTEGER},

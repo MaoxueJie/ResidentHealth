@@ -18,6 +18,8 @@ public class UserLivingVo {
     private Integer extraMeal2;
 
     private Integer dinner;
+    
+    private Integer nightingale;
 
     private String mealDesc;
 
@@ -394,6 +396,14 @@ public class UserLivingVo {
 
 	public void setResultMsg(String resultMsg) {
 		this.resultMsg = resultMsg;
+	}
+
+	public Integer getNightingale() {
+		return nightingale;
+	}
+
+	public void setNightingale(Integer nightingale) {
+		this.nightingale = nightingale;
 	}
     
 	

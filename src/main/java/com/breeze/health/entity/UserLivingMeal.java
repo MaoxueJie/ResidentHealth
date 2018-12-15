@@ -19,6 +19,8 @@ public class UserLivingMeal {
 
     private Integer dinner;
 
+    private Integer nightingale;
+
     private String mealDesc;
 
     private Integer alizarin;
@@ -97,6 +99,14 @@ public class UserLivingMeal {
 
     public void setDinner(Integer dinner) {
         this.dinner = dinner;
+    }
+
+    public Integer getNightingale() {
+        return nightingale;
+    }
+
+    public void setNightingale(Integer nightingale) {
+        this.nightingale = nightingale;
     }
 
     public String getMealDesc() {

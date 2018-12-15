@@ -585,6 +585,66 @@ public class UserLivingMealExample {
             return (Criteria) this;
         }
 
+        public Criteria andNightingaleIsNull() {
+            addCriterion("nightingale is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andNightingaleIsNotNull() {
+            addCriterion("nightingale is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andNightingaleEqualTo(Integer value) {
+            addCriterion("nightingale =", value, "nightingale");
+            return (Criteria) this;
+        }
+
+        public Criteria andNightingaleNotEqualTo(Integer value) {
+            addCriterion("nightingale <>", value, "nightingale");
+            return (Criteria) this;
+        }
+
+        public Criteria andNightingaleGreaterThan(Integer value) {
+            addCriterion("nightingale >", value, "nightingale");
+            return (Criteria) this;
+        }
+
+        public Criteria andNightingaleGreaterThanOrEqualTo(Integer value) {
+            addCriterion("nightingale >=", value, "nightingale");
+            return (Criteria) this;
+        }
+
+        public Criteria andNightingaleLessThan(Integer value) {
+            addCriterion("nightingale <", value, "nightingale");
+            return (Criteria) this;
+        }
+
+        public Criteria andNightingaleLessThanOrEqualTo(Integer value) {
+            addCriterion("nightingale <=", value, "nightingale");
+            return (Criteria) this;
+        }
+
+        public Criteria andNightingaleIn(List<Integer> values) {
+            addCriterion("nightingale in", values, "nightingale");
+            return (Criteria) this;
+        }
+
+        public Criteria andNightingaleNotIn(List<Integer> values) {
+            addCriterion("nightingale not in", values, "nightingale");
+            return (Criteria) this;
+        }
+
+        public Criteria andNightingaleBetween(Integer value1, Integer value2) {
+            addCriterion("nightingale between", value1, value2, "nightingale");
+            return (Criteria) this;
+        }
+
+        public Criteria andNightingaleNotBetween(Integer value1, Integer value2) {
+            addCriterion("nightingale not between", value1, value2, "nightingale");
+            return (Criteria) this;
+        }
+
         public Criteria andMealDescIsNull() {
             addCriterion("meal_desc is null");
             return (Criteria) this;
