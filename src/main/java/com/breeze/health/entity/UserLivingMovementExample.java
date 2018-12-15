@@ -705,6 +705,66 @@ public class UserLivingMovementExample {
             return (Criteria) this;
         }
 
+        public Criteria andWalkMovementPerDayIsNull() {
+            addCriterion("walk_movement_per_day is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andWalkMovementPerDayIsNotNull() {
+            addCriterion("walk_movement_per_day is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andWalkMovementPerDayEqualTo(Integer value) {
+            addCriterion("walk_movement_per_day =", value, "walkMovementPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andWalkMovementPerDayNotEqualTo(Integer value) {
+            addCriterion("walk_movement_per_day <>", value, "walkMovementPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andWalkMovementPerDayGreaterThan(Integer value) {
+            addCriterion("walk_movement_per_day >", value, "walkMovementPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andWalkMovementPerDayGreaterThanOrEqualTo(Integer value) {
+            addCriterion("walk_movement_per_day >=", value, "walkMovementPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andWalkMovementPerDayLessThan(Integer value) {
+            addCriterion("walk_movement_per_day <", value, "walkMovementPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andWalkMovementPerDayLessThanOrEqualTo(Integer value) {
+            addCriterion("walk_movement_per_day <=", value, "walkMovementPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andWalkMovementPerDayIn(List<Integer> values) {
+            addCriterion("walk_movement_per_day in", values, "walkMovementPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andWalkMovementPerDayNotIn(List<Integer> values) {
+            addCriterion("walk_movement_per_day not in", values, "walkMovementPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andWalkMovementPerDayBetween(Integer value1, Integer value2) {
+            addCriterion("walk_movement_per_day between", value1, value2, "walkMovementPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andWalkMovementPerDayNotBetween(Integer value1, Integer value2) {
+            addCriterion("walk_movement_per_day not between", value1, value2, "walkMovementPerDay");
+            return (Criteria) this;
+        }
+
         public Criteria andWalkMinutePerDayIsNull() {
             addCriterion("walk_minute_per_day is null");
             return (Criteria) this;
@@ -765,63 +825,243 @@ public class UserLivingMovementExample {
             return (Criteria) this;
         }
 
-        public Criteria andSittingMinutePerDayIsNull() {
-            addCriterion("sitting_minute_per_day is null");
+        public Criteria andSittingRecent7DaysIsNull() {
+            addCriterion("sitting_recent7_days is null");
             return (Criteria) this;
         }
 
-        public Criteria andSittingMinutePerDayIsNotNull() {
-            addCriterion("sitting_minute_per_day is not null");
+        public Criteria andSittingRecent7DaysIsNotNull() {
+            addCriterion("sitting_recent7_days is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSittingMinutePerDayEqualTo(Integer value) {
-            addCriterion("sitting_minute_per_day =", value, "sittingMinutePerDay");
+        public Criteria andSittingRecent7DaysEqualTo(Integer value) {
+            addCriterion("sitting_recent7_days =", value, "sittingRecent7Days");
             return (Criteria) this;
         }
 
-        public Criteria andSittingMinutePerDayNotEqualTo(Integer value) {
-            addCriterion("sitting_minute_per_day <>", value, "sittingMinutePerDay");
+        public Criteria andSittingRecent7DaysNotEqualTo(Integer value) {
+            addCriterion("sitting_recent7_days <>", value, "sittingRecent7Days");
             return (Criteria) this;
         }
 
-        public Criteria andSittingMinutePerDayGreaterThan(Integer value) {
-            addCriterion("sitting_minute_per_day >", value, "sittingMinutePerDay");
+        public Criteria andSittingRecent7DaysGreaterThan(Integer value) {
+            addCriterion("sitting_recent7_days >", value, "sittingRecent7Days");
             return (Criteria) this;
         }
 
-        public Criteria andSittingMinutePerDayGreaterThanOrEqualTo(Integer value) {
-            addCriterion("sitting_minute_per_day >=", value, "sittingMinutePerDay");
+        public Criteria andSittingRecent7DaysGreaterThanOrEqualTo(Integer value) {
+            addCriterion("sitting_recent7_days >=", value, "sittingRecent7Days");
             return (Criteria) this;
         }
 
-        public Criteria andSittingMinutePerDayLessThan(Integer value) {
-            addCriterion("sitting_minute_per_day <", value, "sittingMinutePerDay");
+        public Criteria andSittingRecent7DaysLessThan(Integer value) {
+            addCriterion("sitting_recent7_days <", value, "sittingRecent7Days");
             return (Criteria) this;
         }
 
-        public Criteria andSittingMinutePerDayLessThanOrEqualTo(Integer value) {
-            addCriterion("sitting_minute_per_day <=", value, "sittingMinutePerDay");
+        public Criteria andSittingRecent7DaysLessThanOrEqualTo(Integer value) {
+            addCriterion("sitting_recent7_days <=", value, "sittingRecent7Days");
             return (Criteria) this;
         }
 
-        public Criteria andSittingMinutePerDayIn(List<Integer> values) {
-            addCriterion("sitting_minute_per_day in", values, "sittingMinutePerDay");
+        public Criteria andSittingRecent7DaysIn(List<Integer> values) {
+            addCriterion("sitting_recent7_days in", values, "sittingRecent7Days");
             return (Criteria) this;
         }
 
-        public Criteria andSittingMinutePerDayNotIn(List<Integer> values) {
-            addCriterion("sitting_minute_per_day not in", values, "sittingMinutePerDay");
+        public Criteria andSittingRecent7DaysNotIn(List<Integer> values) {
+            addCriterion("sitting_recent7_days not in", values, "sittingRecent7Days");
             return (Criteria) this;
         }
 
-        public Criteria andSittingMinutePerDayBetween(Integer value1, Integer value2) {
-            addCriterion("sitting_minute_per_day between", value1, value2, "sittingMinutePerDay");
+        public Criteria andSittingRecent7DaysBetween(Integer value1, Integer value2) {
+            addCriterion("sitting_recent7_days between", value1, value2, "sittingRecent7Days");
             return (Criteria) this;
         }
 
-        public Criteria andSittingMinutePerDayNotBetween(Integer value1, Integer value2) {
-            addCriterion("sitting_minute_per_day not between", value1, value2, "sittingMinutePerDay");
+        public Criteria andSittingRecent7DaysNotBetween(Integer value1, Integer value2) {
+            addCriterion("sitting_recent7_days not between", value1, value2, "sittingRecent7Days");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingDaysRecent7DaysIsNull() {
+            addCriterion("sitting_days_recent7_days is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingDaysRecent7DaysIsNotNull() {
+            addCriterion("sitting_days_recent7_days is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingDaysRecent7DaysEqualTo(Integer value) {
+            addCriterion("sitting_days_recent7_days =", value, "sittingDaysRecent7Days");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingDaysRecent7DaysNotEqualTo(Integer value) {
+            addCriterion("sitting_days_recent7_days <>", value, "sittingDaysRecent7Days");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingDaysRecent7DaysGreaterThan(Integer value) {
+            addCriterion("sitting_days_recent7_days >", value, "sittingDaysRecent7Days");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingDaysRecent7DaysGreaterThanOrEqualTo(Integer value) {
+            addCriterion("sitting_days_recent7_days >=", value, "sittingDaysRecent7Days");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingDaysRecent7DaysLessThan(Integer value) {
+            addCriterion("sitting_days_recent7_days <", value, "sittingDaysRecent7Days");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingDaysRecent7DaysLessThanOrEqualTo(Integer value) {
+            addCriterion("sitting_days_recent7_days <=", value, "sittingDaysRecent7Days");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingDaysRecent7DaysIn(List<Integer> values) {
+            addCriterion("sitting_days_recent7_days in", values, "sittingDaysRecent7Days");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingDaysRecent7DaysNotIn(List<Integer> values) {
+            addCriterion("sitting_days_recent7_days not in", values, "sittingDaysRecent7Days");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingDaysRecent7DaysBetween(Integer value1, Integer value2) {
+            addCriterion("sitting_days_recent7_days between", value1, value2, "sittingDaysRecent7Days");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingDaysRecent7DaysNotBetween(Integer value1, Integer value2) {
+            addCriterion("sitting_days_recent7_days not between", value1, value2, "sittingDaysRecent7Days");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursIsNull() {
+            addCriterion("sitting_hours is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursIsNotNull() {
+            addCriterion("sitting_hours is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursEqualTo(Integer value) {
+            addCriterion("sitting_hours =", value, "sittingHours");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursNotEqualTo(Integer value) {
+            addCriterion("sitting_hours <>", value, "sittingHours");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursGreaterThan(Integer value) {
+            addCriterion("sitting_hours >", value, "sittingHours");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursGreaterThanOrEqualTo(Integer value) {
+            addCriterion("sitting_hours >=", value, "sittingHours");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursLessThan(Integer value) {
+            addCriterion("sitting_hours <", value, "sittingHours");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursLessThanOrEqualTo(Integer value) {
+            addCriterion("sitting_hours <=", value, "sittingHours");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursIn(List<Integer> values) {
+            addCriterion("sitting_hours in", values, "sittingHours");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursNotIn(List<Integer> values) {
+            addCriterion("sitting_hours not in", values, "sittingHours");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursBetween(Integer value1, Integer value2) {
+            addCriterion("sitting_hours between", value1, value2, "sittingHours");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursNotBetween(Integer value1, Integer value2) {
+            addCriterion("sitting_hours not between", value1, value2, "sittingHours");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursPerDayIsNull() {
+            addCriterion("sitting_hours_per_day is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursPerDayIsNotNull() {
+            addCriterion("sitting_hours_per_day is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursPerDayEqualTo(Integer value) {
+            addCriterion("sitting_hours_per_day =", value, "sittingHoursPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursPerDayNotEqualTo(Integer value) {
+            addCriterion("sitting_hours_per_day <>", value, "sittingHoursPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursPerDayGreaterThan(Integer value) {
+            addCriterion("sitting_hours_per_day >", value, "sittingHoursPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursPerDayGreaterThanOrEqualTo(Integer value) {
+            addCriterion("sitting_hours_per_day >=", value, "sittingHoursPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursPerDayLessThan(Integer value) {
+            addCriterion("sitting_hours_per_day <", value, "sittingHoursPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursPerDayLessThanOrEqualTo(Integer value) {
+            addCriterion("sitting_hours_per_day <=", value, "sittingHoursPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursPerDayIn(List<Integer> values) {
+            addCriterion("sitting_hours_per_day in", values, "sittingHoursPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursPerDayNotIn(List<Integer> values) {
+            addCriterion("sitting_hours_per_day not in", values, "sittingHoursPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursPerDayBetween(Integer value1, Integer value2) {
+            addCriterion("sitting_hours_per_day between", value1, value2, "sittingHoursPerDay");
+            return (Criteria) this;
+        }
+
+        public Criteria andSittingHoursPerDayNotBetween(Integer value1, Integer value2) {
+            addCriterion("sitting_hours_per_day not between", value1, value2, "sittingHoursPerDay");
             return (Criteria) this;
         }
 

@@ -23,9 +23,17 @@ public class UserLivingMovement {
 
     private Integer walkDaysPerWeek;
 
+    private Integer walkMovementPerDay;
+
     private Integer walkMinutePerDay;
 
-    private Integer sittingMinutePerDay;
+    private Integer sittingRecent7Days;
+
+    private Integer sittingDaysRecent7Days;
+
+    private Integer sittingHours;
+
+    private Integer sittingHoursPerDay;
 
     private Date createTime;
 
@@ -111,6 +119,14 @@ public class UserLivingMovement {
         this.walkDaysPerWeek = walkDaysPerWeek;
     }
 
+    public Integer getWalkMovementPerDay() {
+        return walkMovementPerDay;
+    }
+
+    public void setWalkMovementPerDay(Integer walkMovementPerDay) {
+        this.walkMovementPerDay = walkMovementPerDay;
+    }
+
     public Integer getWalkMinutePerDay() {
         return walkMinutePerDay;
     }
@@ -119,12 +135,36 @@ public class UserLivingMovement {
         this.walkMinutePerDay = walkMinutePerDay;
     }
 
-    public Integer getSittingMinutePerDay() {
-        return sittingMinutePerDay;
+    public Integer getSittingRecent7Days() {
+        return sittingRecent7Days;
     }
 
-    public void setSittingMinutePerDay(Integer sittingMinutePerDay) {
-        this.sittingMinutePerDay = sittingMinutePerDay;
+    public void setSittingRecent7Days(Integer sittingRecent7Days) {
+        this.sittingRecent7Days = sittingRecent7Days;
+    }
+
+    public Integer getSittingDaysRecent7Days() {
+        return sittingDaysRecent7Days;
+    }
+
+    public void setSittingDaysRecent7Days(Integer sittingDaysRecent7Days) {
+        this.sittingDaysRecent7Days = sittingDaysRecent7Days;
+    }
+
+    public Integer getSittingHours() {
+        return sittingHours;
+    }
+
+    public void setSittingHours(Integer sittingHours) {
+        this.sittingHours = sittingHours;
+    }
+
+    public Integer getSittingHoursPerDay() {
+        return sittingHoursPerDay;
+    }
+
+    public void setSittingHoursPerDay(Integer sittingHoursPerDay) {
+        this.sittingHoursPerDay = sittingHoursPerDay;
     }
 
     public Date getCreateTime() {
