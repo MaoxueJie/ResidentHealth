@@ -25,9 +25,9 @@ public class UserLivingMeal {
 
     private Integer alizarin;
 
-    private Integer preference;
+    private String preference;
 
-    private Integer special;
+    private String special;
 
     private String specialOther;
 
@@ -129,20 +129,20 @@ public class UserLivingMeal {
         this.alizarin = alizarin;
     }
 
-    public Integer getPreference() {
+    public String getPreference() {
         return preference;
     }
 
-    public void setPreference(Integer preference) {
-        this.preference = preference;
+    public void setPreference(String preference) {
+        this.preference = preference == null ? null : preference.trim();
     }
 
-    public Integer getSpecial() {
+    public String getSpecial() {
         return special;
     }
 
-    public void setSpecial(Integer special) {
-        this.special = special;
+    public void setSpecial(String special) {
+        this.special = special == null ? null : special.trim();
     }
 
     public String getSpecialOther() {

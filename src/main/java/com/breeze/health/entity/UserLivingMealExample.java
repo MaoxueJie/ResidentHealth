@@ -785,52 +785,62 @@ public class UserLivingMealExample {
             return (Criteria) this;
         }
 
-        public Criteria andPreferenceEqualTo(Integer value) {
+        public Criteria andPreferenceEqualTo(String value) {
             addCriterion("preference =", value, "preference");
             return (Criteria) this;
         }
 
-        public Criteria andPreferenceNotEqualTo(Integer value) {
+        public Criteria andPreferenceNotEqualTo(String value) {
             addCriterion("preference <>", value, "preference");
             return (Criteria) this;
         }
 
-        public Criteria andPreferenceGreaterThan(Integer value) {
+        public Criteria andPreferenceGreaterThan(String value) {
             addCriterion("preference >", value, "preference");
             return (Criteria) this;
         }
 
-        public Criteria andPreferenceGreaterThanOrEqualTo(Integer value) {
+        public Criteria andPreferenceGreaterThanOrEqualTo(String value) {
             addCriterion("preference >=", value, "preference");
             return (Criteria) this;
         }
 
-        public Criteria andPreferenceLessThan(Integer value) {
+        public Criteria andPreferenceLessThan(String value) {
             addCriterion("preference <", value, "preference");
             return (Criteria) this;
         }
 
-        public Criteria andPreferenceLessThanOrEqualTo(Integer value) {
+        public Criteria andPreferenceLessThanOrEqualTo(String value) {
             addCriterion("preference <=", value, "preference");
             return (Criteria) this;
         }
 
-        public Criteria andPreferenceIn(List<Integer> values) {
+        public Criteria andPreferenceLike(String value) {
+            addCriterion("preference like", value, "preference");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreferenceNotLike(String value) {
+            addCriterion("preference not like", value, "preference");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreferenceIn(List<String> values) {
             addCriterion("preference in", values, "preference");
             return (Criteria) this;
         }
 
-        public Criteria andPreferenceNotIn(List<Integer> values) {
+        public Criteria andPreferenceNotIn(List<String> values) {
             addCriterion("preference not in", values, "preference");
             return (Criteria) this;
         }
 
-        public Criteria andPreferenceBetween(Integer value1, Integer value2) {
+        public Criteria andPreferenceBetween(String value1, String value2) {
             addCriterion("preference between", value1, value2, "preference");
             return (Criteria) this;
         }
 
-        public Criteria andPreferenceNotBetween(Integer value1, Integer value2) {
+        public Criteria andPreferenceNotBetween(String value1, String value2) {
             addCriterion("preference not between", value1, value2, "preference");
             return (Criteria) this;
         }
@@ -845,52 +855,62 @@ public class UserLivingMealExample {
             return (Criteria) this;
         }
 
-        public Criteria andSpecialEqualTo(Integer value) {
+        public Criteria andSpecialEqualTo(String value) {
             addCriterion("special =", value, "special");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialNotEqualTo(Integer value) {
+        public Criteria andSpecialNotEqualTo(String value) {
             addCriterion("special <>", value, "special");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialGreaterThan(Integer value) {
+        public Criteria andSpecialGreaterThan(String value) {
             addCriterion("special >", value, "special");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialGreaterThanOrEqualTo(Integer value) {
+        public Criteria andSpecialGreaterThanOrEqualTo(String value) {
             addCriterion("special >=", value, "special");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialLessThan(Integer value) {
+        public Criteria andSpecialLessThan(String value) {
             addCriterion("special <", value, "special");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialLessThanOrEqualTo(Integer value) {
+        public Criteria andSpecialLessThanOrEqualTo(String value) {
             addCriterion("special <=", value, "special");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialIn(List<Integer> values) {
+        public Criteria andSpecialLike(String value) {
+            addCriterion("special like", value, "special");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialNotLike(String value) {
+            addCriterion("special not like", value, "special");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecialIn(List<String> values) {
             addCriterion("special in", values, "special");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialNotIn(List<Integer> values) {
+        public Criteria andSpecialNotIn(List<String> values) {
             addCriterion("special not in", values, "special");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialBetween(Integer value1, Integer value2) {
+        public Criteria andSpecialBetween(String value1, String value2) {
             addCriterion("special between", value1, value2, "special");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialNotBetween(Integer value1, Integer value2) {
+        public Criteria andSpecialNotBetween(String value1, String value2) {
             addCriterion("special not between", value1, value2, "special");
             return (Criteria) this;
         }

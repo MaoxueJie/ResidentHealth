@@ -13,8 +13,8 @@
     <result column="nightingale" property="nightingale" jdbcType="INTEGER" />
     <result column="meal_desc" property="mealDesc" jdbcType="VARCHAR" />
     <result column="alizarin" property="alizarin" jdbcType="INTEGER" />
-    <result column="preference" property="preference" jdbcType="INTEGER" />
-    <result column="special" property="special" jdbcType="INTEGER" />
+    <result column="preference" property="preference" jdbcType="VARCHAR" />
+    <result column="special" property="special" jdbcType="VARCHAR" />
     <result column="special_other" property="specialOther" jdbcType="VARCHAR" />
     <result column="sweets" property="sweets" jdbcType="INTEGER" />
     <result column="fruit" property="fruit" jdbcType="INTEGER" />
@@ -91,7 +91,7 @@
     values (#{livingId,jdbcType=BIGINT}, #{meal,jdbcType=INTEGER}, #{breakfast,jdbcType=INTEGER}, 
       #{extraMeal1,jdbcType=INTEGER}, #{lunch,jdbcType=INTEGER}, #{extraMeal2,jdbcType=INTEGER}, 
       #{dinner,jdbcType=INTEGER}, #{nightingale,jdbcType=INTEGER}, #{mealDesc,jdbcType=VARCHAR}, 
-      #{alizarin,jdbcType=INTEGER}, #{preference,jdbcType=INTEGER}, #{special,jdbcType=INTEGER}, 
+      #{alizarin,jdbcType=INTEGER}, #{preference,jdbcType=VARCHAR}, #{special,jdbcType=VARCHAR}, 
       #{specialOther,jdbcType=VARCHAR}, #{sweets,jdbcType=INTEGER}, #{fruit,jdbcType=INTEGER}, 
       #{sugaryDrink,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
@@ -186,10 +186,10 @@
         #{alizarin,jdbcType=INTEGER},
       </if>
       <if test="preference != null" >
-        #{preference,jdbcType=INTEGER},
+        #{preference,jdbcType=VARCHAR},
       </if>
       <if test="special != null" >
-        #{special,jdbcType=INTEGER},
+        #{special,jdbcType=VARCHAR},
       </if>
       <if test="specialOther != null" >
         #{specialOther,jdbcType=VARCHAR},
@@ -251,10 +251,10 @@
         alizarin = #{alizarin,jdbcType=INTEGER},
       </if>
       <if test="preference != null" >
-        preference = #{preference,jdbcType=INTEGER},
+        preference = #{preference,jdbcType=VARCHAR},
       </if>
       <if test="special != null" >
-        special = #{special,jdbcType=INTEGER},
+        special = #{special,jdbcType=VARCHAR},
       </if>
       <if test="specialOther != null" >
         special_other = #{specialOther,jdbcType=VARCHAR},
@@ -289,8 +289,8 @@
       nightingale = #{nightingale,jdbcType=INTEGER},
       meal_desc = #{mealDesc,jdbcType=VARCHAR},
       alizarin = #{alizarin,jdbcType=INTEGER},
-      preference = #{preference,jdbcType=INTEGER},
-      special = #{special,jdbcType=INTEGER},
+      preference = #{preference,jdbcType=VARCHAR},
+      special = #{special,jdbcType=VARCHAR},
       special_other = #{specialOther,jdbcType=VARCHAR},
       sweets = #{sweets,jdbcType=INTEGER},
       fruit = #{fruit,jdbcType=INTEGER},

@@ -13,6 +13,7 @@ import com.breeze.health.service.LivingService;
 import com.breeze.health.util.BeanUtils;
 import com.github.pagehelper.PageHelper;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,10 @@ public class LivingServiceImpl implements LivingService {
         	
         	final UserLivingMeal meal = new UserLivingMeal();
         	BeanUtils.copyProperties(vo, meal);
+        	if (vo.getPreference()!=null)
+        		meal.setPreference(StringUtils.join(vo.getPreference(),","));
+        	if (vo.getSpecial()!=null)
+        		meal.setSpecial(StringUtils.join(vo.getSpecial(),","));
         	
         	final UserLivingMovement movement = new UserLivingMovement();
         	BeanUtils.copyProperties(vo, movement);
@@ -181,6 +186,14 @@ public class LivingServiceImpl implements LivingService {
 				{
 					meal = meals.get(0);
 					BeanUtils.copyProperties(meal, vo);
+					if (meal.getPreference()!=null)
+					{
+						vo.setPreference(meal.getPreference().split(","));
+					}
+					if (meal.getSpecial()!=null)
+					{
+						vo.setSpecial(meal.getSpecial().split(","));
+					}
 				}
 				
 				UserLivingMovementExample movementExample = new UserLivingMovementExample();

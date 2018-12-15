@@ -25,9 +25,9 @@ public class UserLivingVo {
 
     private Integer alizarin;
 
-    private Integer preference;
+    private String[] preference;
     
-    private Integer special;
+    private String[] special;
 
     private String specialOther;
 
@@ -170,13 +170,6 @@ public class UserLivingVo {
 		this.alizarin = alizarin;
 	}
 
-	public Integer getPreference() {
-		return preference;
-	}
-
-	public void setPreference(Integer preference) {
-		this.preference = preference;
-	}
 
 	public Integer getSweets() {
 		return sweets;
@@ -410,13 +403,6 @@ public class UserLivingVo {
 		this.nightingale = nightingale;
 	}
 
-	public Integer getSpecial() {
-		return special;
-	}
-
-	public void setSpecial(Integer special) {
-		this.special = special;
-	}
 
 	public String getSpecialOther() {
 		return specialOther;
@@ -424,6 +410,22 @@ public class UserLivingVo {
 
 	public void setSpecialOther(String specialOther) {
 		this.specialOther = specialOther;
+	}
+
+	public String[] getPreference() {
+		return preference;
+	}
+
+	public void setPreference(String[] preference) {
+		this.preference = preference;
+	}
+
+	public String[] getSpecial() {
+		return special;
+	}
+
+	public void setSpecial(String[] special) {
+		this.special = special;
 	}
     
 	
