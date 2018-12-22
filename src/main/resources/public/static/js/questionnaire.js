@@ -20,12 +20,12 @@
 
 $(function(){
 
-	var form = $('form');
+	var form = jq('form');
 	if( form.length > 0  ){
 		form.validate({
 			submitHandler: function(form){
-				var data = $(form).serialize();
-				var ajaxUrl = $(form).attr('action');
+				var data = jq(form).serialize();
+				var ajaxUrl = jq(form).attr('action');
 				postDataFun( ajaxUrl,data );
 				showLoading();
 			},
