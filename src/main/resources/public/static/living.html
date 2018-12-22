@@ -1191,8 +1191,10 @@
 			var $self = $(this).closest('.weui-cell');
 			var index = $self.index();
 			$('.drinking_item').hide();
+			$('.drinking_item input').removeAttr("required");
 			if( index != 0 ){
 				$('.drinking_item').show();
+				$('.drinking_item input').attr("required",true);
 			}
 		})
 		
