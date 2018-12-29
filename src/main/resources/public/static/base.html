@@ -521,9 +521,26 @@
 		
 		showResult(true,'base',function(data){
 			if (data && data.birthday)
-				jq("#birthday").calendar({value:[data.birthday]});
+				jq("#birthday").datetimePicker({
+			        times: function () {
+			            return [
+			              {
+			                values: []
+			              }
+			            ];
+			          },
+			          value:data.birthday
+			     });
 			else
-				jq("#birthday").calendar();
+				jq("#birthday").datetimePicker({
+			        times: function () {
+			            return [
+			              {
+			                values: []
+			              }
+			            ];
+			          }
+			     });
 			
 			jq("#city").cityPicker({
 			    title: "请选择所在城市"
