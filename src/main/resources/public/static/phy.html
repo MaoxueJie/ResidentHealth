@@ -73,7 +73,7 @@
 				
 			</div>
 
-			<div class="cell-item">
+			<div class="bloodPressure cell-item">
 				<div class="weui-cells__title">血压测量频率:</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="bloodPressure1">
@@ -105,7 +105,7 @@
 					</label>
 				</div>
 			</div>
-			<div class="cell-item">
+			<div class="bloodPressure-item cell-item">
 				<div class="weui-cells__title">“血压”最近一次测量指标是否正常？</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="bloodPressureSituation1">
@@ -563,6 +563,26 @@
 		$('input[name=weight],input[name=height]').blur(function(){
 			if( $('input[name=weight]').val() != '' && $('input[name=height]').val() != '' ){
 				caclBMI();
+			}
+		})
+		
+		$('.bloodPressure input[type=radio]').click(function(){
+			var name = $(this).attr("name");
+			if( $(this).val() == "1" ){
+				if( $(this).is(':checked') ){
+					$('.bloodPressure-item input[type=radio]').prop('checked',false);
+					$('.bloodPressure-item input[type=radio]').removeAttr("required");
+					$('.bloodPressure-item').hide();
+				}else{
+					$('.bloodPressure-item input[type=radio]').attr("required",true);
+					$('.bloodPressure-item').show();
+				}
+			}else
+			{
+				if( $(this).is(':checked') ){
+					$('.bloodPressure-item input[type=radio]').attr("required",true);
+					$('.bloodPressure-item').show();
+				}
 			}
 		})
 
