@@ -132,6 +132,7 @@ $(function(){
 			var inputType = $curInput.attr('type');
 
 			if( inputType == 'text' || inputType == 'number' || inputType == 'date'){
+				console.log($curInput.data('datetime'));
 				if (!($curInput.data('datetime')=='true'))
 					$curInput.val( val );
 				if( val != '' ){
