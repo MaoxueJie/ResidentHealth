@@ -521,16 +521,19 @@
 		
 		showResult(true,'base',function(data){
 			if (data && data.birthday)
-				jq("#birthday").datetimePicker({
+				jq("#birthday")..datetimePicker({
 			        times: function () {
 			            return [
 			              {
-			                values:['上午', '下午']
+			                values: ['上午', '下午']
 			              }
 			            ];
 			          },
-			          value:data.birthday
-			     });
+			          value: '2012-12-12 上午',
+			          onChange: function (picker, values, displayValues) {
+			            console.log(values);
+			          }
+			        });
 			else
 				jq("#birthday").datetimePicker({
 			        times: function () {
