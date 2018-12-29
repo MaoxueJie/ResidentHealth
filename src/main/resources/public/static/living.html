@@ -618,7 +618,7 @@
 						</div>
 						<div class="weui-cell__bd" style="white-space: nowrap;">
 							每周运动天数:
-							<input class="weui-input" style="width:100px" name="violentDaysPerWeek" type="number" id="violentMovementVal" placeholder="几天" disabled>天
+							<input class="weui-input" style="width:100px" name="violentDaysPerWeek" type="number" min="0" max="7" id="violentMovementVal" placeholder="几天" disabled>天
 						</div>	
 					</label>
 					<label class="weui-cell weui-check__label" for="violentMovement2">
@@ -670,7 +670,7 @@
 						</div>
 						<div class="weui-cell__bd" style="white-space: nowrap;">
 							每周运动天数:
-							<input class="weui-input" style="width:100px" name="moderateDaysPerWeek" type="number" id="moderateMovementVal" placeholder="几天" disabled>天
+							<input class="weui-input" style="width:100px" name="moderateDaysPerWeek" type="number" min="0" max="7" id="moderateMovementVal" placeholder="几天" disabled>天
 						</div>
 					</label>
 					<label class="weui-cell weui-check__label" for="moderateMovement2">
@@ -722,7 +722,7 @@
 						</div>
 						<div class="weui-cell__bd" style="white-space: nowrap;">
 							每周运动天数:
-							<input class="weui-input" style="width:100px" name="walkDaysPerWeek" type="number" id="walkMovementVal" placeholder="几天" disabled>天
+							<input class="weui-input" style="width:100px" name="walkDaysPerWeek" type="number" min="0" max="7" id="walkMovementVal" placeholder="几天" disabled>天
 						</div>
 					</label>
 					<label class="weui-cell weui-check__label" for="walkMovement2">
@@ -775,7 +775,7 @@
 						</div>
 						<div class="weui-cell__bd" style="white-space: nowrap;">
 							有几天坐着:
-							<input class="weui-input" style="width:100px" name="sittingDaysRecent7Days" id="sittingRecent7DaysVal" type="number" placeholder="天数" disabled>天
+							<input class="weui-input" style="width:100px" name="sittingDaysRecent7Days" id="sittingRecent7DaysVal" type="number" min="0" max="7" placeholder="天数" disabled>天
 						</div>
 					</label>
 					<label class="weui-cell weui-check__label" for="sittingPerDay2">
@@ -801,7 +801,7 @@
 						</div>
 						<div class="weui-cell__bd" style="white-space: nowrap;">
 							每天静坐时间:
-							<input class="weui-input" style="width:100px" name="sittingHoursPerDay" id="sittingHoursVal" type="number" placeholder="多少小时" disabled>小时
+							<input class="weui-input" style="width:100px" name="sittingHoursPerDay" id="sittingHoursVal" type="number" min="0" max="24" placeholder="多少小时" disabled>小时
 						</div>
 					</label>
 					<label class="weui-cell weui-check__label" for="sittingHours2">
@@ -1058,7 +1058,7 @@
 					</label>
 				</div>
 			</div>
-			<div class="cell-item">
+			<div class="drinking_time cell-item">
 				<div class="weui-cells__title">饮酒(戒酒)年限？</div>
 				<div class="weui-cell" style="white-space: nowrap;">
 						饮酒<input class="weui-input" type="number" name="drinkingYears"  placeholder="">年，
@@ -1190,9 +1190,12 @@
 		$('[name="drinking"]').click(function(){
 			var $self = $(this).closest('.weui-cell');
 			var index = $self.index();
+			$('.drinking_time').hide();
 			$('.drinking_item').hide();
 			$('.drinking_item input').removeAttr("required");
 			if( index != 0 ){
+				$('.drinking_time').show();
+				$('.drinking_time input').val('');
 				$('.drinking_item').show();
 				$('.drinking_item input').attr("required",true);
 			}
