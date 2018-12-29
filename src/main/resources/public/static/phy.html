@@ -147,7 +147,7 @@
 				</div>
 			</div>
 
-			<div class="cell-item">
+			<div class="bloodSugar cell-item">
 				<div class="weui-cells__title">血糖测试频率:</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="bloodSugar1">
@@ -179,7 +179,7 @@
 					</label>
 				</div>
 			</div>
-			<div class="cell-item">
+			<div class="bloodSugar-item cell-item">
 				<div class="weui-cells__title">“血糖”最近一次测量指标是否正常？</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="bloodSugarSituation1">
@@ -221,7 +221,7 @@
 				</div>
 			</div>
 
-			<div class="cell-item">
+			<div class="bloodLipid cell-item">
 				<div class="weui-cells__title">血脂测试频率:</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="bloodLipid1">
@@ -253,7 +253,7 @@
 					</label>
 				</div>
 			</div>
-			<div class="cell-item">
+			<div class="bloodLipid-item cell-item">
 				<div class="weui-cells__title">“血脂”最近一次测量指标是否正常？</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="bloodLipidSituation1">
@@ -295,7 +295,7 @@
 				</div>
 			</div>
 
-			<div class="cell-item">
+			<div class="uricAcid cell-item">
 				<div class="weui-cells__title">尿酸测试频率:</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="uricAcid1">
@@ -327,7 +327,7 @@
 					</label>
 				</div>
 			</div>
-			<div class="cell-item">
+			<div class="uricAcid-item cell-item">
 				<div class="weui-cells__title">“尿酸”最近一次测量指标是否正常？</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="uricAcidSituation1">
@@ -369,7 +369,7 @@
 				</div>
 			</div>
 
-			<div class="cell-item">
+			<div class="bloodOxygen cell-item">
 				<div class="weui-cells__title">血氧饱和度测试频率:</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="bloodOxygen1">
@@ -401,7 +401,7 @@
 					</label>
 				</div>
 			</div>
-			<div class="cell-item">
+			<div class="bloodOxygen-item cell-item">
 				<div class="weui-cells__title">“血氧饱和度”最近一次测量指标是否正常？</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="bloodOxygenSituation1">
@@ -558,7 +558,44 @@
 <script type="text/javascript">
 	$(function(){
 
-		showResult(true,'phy');	//获取基本信息
+		showResult(true,'phy',function(data){
+			if (data && data.bloodPressure == 1)
+			{
+				$('.bloodPressure-item input[type=radio]').prop('checked',false);
+				$('.bloodPressure-item input[type=radio]').removeAttr("required");
+				$('.bloodPressure-item').hide();
+			}
+			
+			if (data && data.bloodSugar == 1)
+			{
+				$('.bloodSugar-item input[type=radio]').prop('checked',false);
+				$('.bloodSugar-item input[type=radio]').removeAttr("required");
+				$('.bloodSugar-item').hide();
+			}
+			
+			if (data && data.bloodLipid == 1)
+			{
+				$('.bloodLipid-item input[type=radio]').prop('checked',false);
+				$('.bloodLipid-item input[type=radio]').removeAttr("required");
+				$('.bloodLipid-item').hide();
+			}
+			
+			if (data && data.uricAcid == 1)
+			{
+				$('.uricAcid-item input[type=radio]').prop('checked',false);
+				$('.uricAcid-item input[type=radio]').removeAttr("required");
+				$('.uricAcid-item').hide();
+			}
+			
+			if (data && data.bloodOxygen == 1)
+			{
+				$('.bloodOxygen-item input[type=radio]').prop('checked',false);
+				$('.bloodOxygen-item input[type=radio]').removeAttr("required");
+				$('.bloodOxygen-item').hide();
+			}
+			
+			
+		});	//获取基本信息
 
 		$('input[name=weight],input[name=height]').blur(function(){
 			if( $('input[name=weight]').val() != '' && $('input[name=height]').val() != '' ){
@@ -585,7 +622,87 @@
 				}
 			}
 		})
-
+		
+		$('.bloodSugar input[type=radio]').click(function(){
+			var name = $(this).attr("name");
+			if( $(this).val() == "1" ){
+				if( $(this).is(':checked') ){
+					$('.bloodSugar-item input[type=radio]').prop('checked',false);
+					$('.bloodSugar-item input[type=radio]').removeAttr("required");
+					$('.bloodSugar-item').hide();
+				}else{
+					$('.bloodSugar-item input[type=radio]').attr("required",true);
+					$('.bloodSugar-item').show();
+				}
+			}else
+			{
+				if( $(this).is(':checked') ){
+					$('.bloodSugar-item input[type=radio]').attr("required",true);
+					$('.bloodSugar-item').show();
+				}
+			}
+		})
+		
+		$('.bloodLipid input[type=radio]').click(function(){
+			var name = $(this).attr("name");
+			if( $(this).val() == "1" ){
+				if( $(this).is(':checked') ){
+					$('.bloodLipid-item input[type=radio]').prop('checked',false);
+					$('.bloodLipid-item input[type=radio]').removeAttr("required");
+					$('.bloodLipid-item').hide();
+				}else{
+					$('.bloodLipid-item input[type=radio]').attr("required",true);
+					$('.bloodLipid-item').show();
+				}
+			}else
+			{
+				if( $(this).is(':checked') ){
+					$('.bloodLipid-item input[type=radio]').attr("required",true);
+					$('.bloodLipid-item').show();
+				}
+			}
+		})
+		
+		$('.uricAcid input[type=radio]').click(function(){
+			var name = $(this).attr("name");
+			if( $(this).val() == "1" ){
+				if( $(this).is(':checked') ){
+					$('.uricAcid-item input[type=radio]').prop('checked',false);
+					$('.uricAcid-item input[type=radio]').removeAttr("required");
+					$('.uricAcid-item').hide();
+				}else{
+					$('.uricAcid-item input[type=radio]').attr("required",true);
+					$('.uricAcid-item').show();
+				}
+			}else
+			{
+				if( $(this).is(':checked') ){
+					$('.uricAcid-item input[type=radio]').attr("required",true);
+					$('.uricAcid-item').show();
+				}
+			}
+		})
+		
+		$('.bloodOxygen input[type=radio]').click(function(){
+			var name = $(this).attr("name");
+			if( $(this).val() == "1" ){
+				if( $(this).is(':checked') ){
+					$('.bloodOxygen-item input[type=radio]').prop('checked',false);
+					$('.bloodOxygen-item input[type=radio]').removeAttr("required");
+					$('.bloodOxygen-item').hide();
+				}else{
+					$('.bloodOxygen-item input[type=radio]').attr("required",true);
+					$('.bloodOxygen-item').show();
+				}
+			}else
+			{
+				if( $(this).is(':checked') ){
+					$('.bloodOxygen-item input[type=radio]').attr("required",true);
+					$('.bloodOxygen-item').show();
+				}
+			}
+		})
+	
 		function caclBMI(){
 			var weight = $('input[name=weight]').val();
 			var height = $('input[name=height]').val();
