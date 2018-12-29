@@ -520,7 +520,7 @@
 	$(function(){	
 		
 		showResult(true,'base',function(data){
-			if (data && data.birthday)
+			if (data && data.birthday){
 				jq("#birthday").datetimePicker({
 					yearSplit:'/',
 					monthSplit:'/',
@@ -538,6 +538,9 @@
 			            console.log(values);
 			          }
 			        });
+				var dates = data.birthday.split('/');
+				jq("#birthday").datetimePicker("setValue",[dates[0],dates[1],dates[2],' '])
+			}
 			else
 				jq("#birthday").datetimePicker({
 					yearSplit:'/',
