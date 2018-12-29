@@ -21,7 +21,7 @@
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label for="birthday" class="weui-label">出生日期：</label></div>
 					<div class="weui-cell__bd">
-						<input class="weui-input" id="birthday" name="birthday" type="text" data-datatime="1968-01-01 上午"/>
+						<input class="weui-input" id="birthday" name="birthday" type="text" data-datatime="1968-01-01 "/>
 					</div>
 				</div>
 			</div>
@@ -522,36 +522,35 @@
 		showResult(true,'base',function(data){
 			if (data && data.birthday)
 				jq("#birthday").datetimePicker({
-					yearSplit:'-',
-					monthSplit:'-',
+					yearSplit:'/',
+					monthSplit:'/',
 					dateSplit:'',
-					datetimeSplit:' ',
+					datetimeSplit:'',
 			        times: function () {
 			            return [
 			              {
-			                values: ['上午', '下午']
+			                values: ['&nbsp;']
 			              }
 			            ];
 			          },
-			          value: '2012-12-12 上午',
+			          value: data.birthday+' ',
 			          onChange: function (picker, values, displayValues) {
 			            console.log(values);
 			          }
 			        });
 			else
 				jq("#birthday").datetimePicker({
-					yearSplit:'-',
-					monthSplit:'-',
+					yearSplit:'/',
+					monthSplit:'/',
 					dateSplit:'',
-					datetimeSplit:' ',
+					datetimeSplit:'',
 			        times: function () {
 			            return [
 			              {
-			                values: ['上午', '下午']
+			            	 values: ['&nbsp;']
 			              }
 			            ];
 			          },
-			          value: '2012-12-12 上午',
 			          onChange: function (picker, values, displayValues) {
 			            console.log(values);
 			          }
