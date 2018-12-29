@@ -525,15 +525,15 @@
 					yearSplit:'/',
 					monthSplit:'/',
 					dateSplit:'',
-					datetimeSplit:'',
+					datetimeSplit:' ',
 			        times: function () {
 			            return [
 			              {
-			                values: ['']
+			                values: ['&nbsp;']
 			              }
 			            ];
 			          },
-			          value:data.birthday,
+			          value:data.birthday+' &nbsp;',
 			          onChange: function (picker, values, displayValues) {
 			            console.log(values);
 			          }
@@ -544,11 +544,11 @@
 					yearSplit:'/',
 					monthSplit:'/',
 					dateSplit:'',
-					datetimeSplit:'',
+					datetimeSplit:' ',
 			        times: function () {
 			            return [
 			              {
-			            	 values: ['']
+			            	 values: ['&nbsp;']
 			              }
 			            ];
 			          },
