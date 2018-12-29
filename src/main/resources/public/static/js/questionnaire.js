@@ -93,21 +93,19 @@ $(function(){
 					//$('.page').hide();
 					//$('body').append( reportHtml );
 					//window.scrollTo(0,0);
-					if( json.data == null ){
-						return false;
-					}
-					if( isResult && typeof json.data.resultMsg != 'undefined' ){	//结果页
-						$('#resultTitle').html( json.data.resultTitle )
-						var resultMsg = json.data.resultMsg.replace('/\n','</br>');
-						console.log( resultMsg );
-						$('#resultCont').html( resultMsg )
-						if(  type == 'psy' ){	//心理测评结果页增加自杀评测入口
-							$('#toSuicide').show();
+					if( json.data != null ){
+						if( isResult && typeof json.data.resultMsg != 'undefined' ){	//结果页
+							$('#resultTitle').html( json.data.resultTitle )
+							var resultMsg = json.data.resultMsg.replace('/\n','</br>');
+							console.log( resultMsg );
+							$('#resultCont').html( resultMsg )
+							if(  type == 'psy' ){	//心理测评结果页增加自杀评测入口
+								$('#toSuicide').show();
+							}
+						}else{
+							setDataHandle( json.data );
 						}
-					}else{
-						setDataHandle( json.data );
 					}
-
 				}else{
 					alert(json.message);
 				}
