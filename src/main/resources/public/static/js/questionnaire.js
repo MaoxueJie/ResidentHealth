@@ -133,7 +133,7 @@ $(function(){
 
 			if( inputType == 'text' || inputType == 'number' || inputType == 'date'){
 				console.log($curInput.data('datetime'));
-				if (!($curInput.data('datetime')=='true'))
+				if (!($curInput.data('datetime'))
 					$curInput.val( val );
 				if( val != '' ){
 					$curInput.closest('.weui-cell').css('display','flex');
