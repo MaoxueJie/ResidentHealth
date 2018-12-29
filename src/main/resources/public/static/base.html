@@ -21,7 +21,7 @@
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label for="birthday" class="weui-label">出生日期：</label></div>
 					<div class="weui-cell__bd">
-						<input class="weui-input" id="birthday" name="birthday" type="text" data-datatime="1968-01-01&nbsp;"/>
+						<input class="weui-input" id="birthday" name="birthday" type="text" data-datatime="1968-01-01"/>
 					</div>
 				</div>
 			</div>
@@ -529,11 +529,10 @@
 			        times: function () {
 			            return [
 			              {
-			                values: ['&nbsp;']
+			                values: [' ']
 			              }
 			            ];
 			          },
-			          value: data.birthday,
 			          onChange: function (picker, values, displayValues) {
 			            console.log(values);
 			          }
@@ -550,7 +549,7 @@
 			        times: function () {
 			            return [
 			              {
-			            	 values: ['&nbsp;']
+			            	 values: [' ']
 			              }
 			            ];
 			          },
