@@ -558,7 +558,9 @@
 <script type="text/javascript">
 	$(function(){
 
-		showResult(true,'phy',function(data){
+		showResult(true,'phy');	//获取基本信息
+		
+		/*function(data){
 			if (data && data.bloodPressure == 1)
 			{
 				$('.bloodPressure-item input[type=radio]').prop('checked',false);
@@ -594,8 +596,7 @@
 				$('.bloodOxygen-item').hide();
 			}
 			
-			
-		});	//获取基本信息
+		}*/
 
 		$('input[name=weight],input[name=height]').blur(function(){
 			if( $('input[name=weight]').val() != '' && $('input[name=height]').val() != '' ){
