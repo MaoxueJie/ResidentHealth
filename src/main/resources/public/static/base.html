@@ -523,15 +523,7 @@
 			if (data && data.birthday)
 				jq("#birthday").datetimePicker();
 			else
-				jq("#birthday").datetimePicker({
-			        times: function () {
-			            return [
-			              {
-			                values: ['上午', '下午']
-			              }
-			            ];
-			          }
-			     });
+				jq("#birthday").datetimePicker();
 			
 			jq("#city").cityPicker({
 			    title: "请选择所在城市"
