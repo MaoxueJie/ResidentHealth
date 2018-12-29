@@ -634,6 +634,7 @@
 		$('#payWay input[type=checkbox]').click(function(){
 			if( $(this).val() ==  "2" ){
 				if( $(this).is(':checked') ){
+					$('#yblx1').prop('checked',false);
 					$('#medicalPayDesc2').css('display','flex');
 				}else{
 					$('#medicalPayDesc2').hide();
@@ -641,6 +642,7 @@
 				}
 			}else if( $(this).val() ==  "3" ){
 				if( $(this).is(':checked') ){
+					$('#yblx1').prop('checked',false);
 					$('#medicalPayDesc3').css('display','flex');
 				}else{
 					$('#medicalPayDesc3').hide();
@@ -648,10 +650,22 @@
 				}
 			}else if( $(this).val() ==  "4" ){
 				if( $(this).is(':checked') ){
+					$('#yblx1').prop('checked',false);
 					$('#medicalPayDesc4').css('display','flex');
 				}else{
 					$('#medicalPayDesc4').hide();
 					$('#medicalPayDesc4 input').val('');
+				}
+			}else if($(this).val() ==  "1"){
+				if( $(this).is(':checked') ){
+					$('#payWay input[type=checkbox]').prop('checked',false);
+					$(this).prop('checked',true);
+					$('#medicalPayDesc2').hide();
+					$('#medicalPayDesc2 input').val('');
+					$('#medicalPayDesc3').hide();
+					$('#medicalPayDesc3 input').val('');
+					$('#medicalPayDesc3').hide();
+					$('#medicalPayDesc3 input').val('');
 				}
 			}
 		})
