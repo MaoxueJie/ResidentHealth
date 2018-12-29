@@ -522,34 +522,33 @@
 		showResult(true,'base',function(data){
 			if (data && data.birthday){
 				jq("#birthday").datetimePicker({
-					yearSplit:'年',
-					monthSplit:'月',
+					yearSplit:'/',
+					monthSplit:'/',
 					dateSplit:'',
 					datetimeSplit:'',
 			        times: function () {
 			            return [
 			              {
-			                values: ['日']
+			                values: ['']
 			              }
 			            ];
 			          },
+			          value:data.birthday,
 			          onChange: function (picker, values, displayValues) {
 			            console.log(values);
 			          }
 			        });
-				var dates = data.birthday.split('/');
-				jq("#birthday").picker("setValue",[dates[0],dates[1],dates[2],'日'])
 			}
 			else
 				jq("#birthday").datetimePicker({
-					yearSplit:'年',
-					monthSplit:'月',
+					yearSplit:'/',
+					monthSplit:'/',
 					dateSplit:'',
 					datetimeSplit:'',
 			        times: function () {
 			            return [
 			              {
-			            	 values: ['日']
+			            	 values: ['']
 			              }
 			            ];
 			          },
