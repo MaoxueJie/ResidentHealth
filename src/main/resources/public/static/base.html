@@ -522,6 +522,10 @@
 		showResult(true,'base',function(data){
 			if (data && data.birthday)
 				jq("#birthday").datetimePicker({
+					yearSplit:'-',
+					monthSplit:'-',
+					dateSplit:'',
+					datetimeSplit:' ',
 			        times: function () {
 			            return [
 			              {
@@ -529,13 +533,17 @@
 			              }
 			            ];
 			          },
-			          value: '2012/12/12 上午',
+			          value: '2012-12-12 上午',
 			          onChange: function (picker, values, displayValues) {
 			            console.log(values);
 			          }
 			        });
 			else
 				jq("#birthday").datetimePicker({
+					yearSplit:'-',
+					monthSplit:'-',
+					dateSplit:'',
+					datetimeSplit:' ',
 			        times: function () {
 			            return [
 			              {
@@ -543,7 +551,7 @@
 			              }
 			            ];
 			          },
-			          value: '2012/12/12 上午',
+			          value: '2012-12-12 上午',
 			          onChange: function (picker, values, displayValues) {
 			            console.log(values);
 			          }
