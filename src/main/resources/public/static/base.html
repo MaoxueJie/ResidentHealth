@@ -522,14 +522,14 @@
 		showResult(true,'base',function(data){
 			if (data && data.birthday){
 				jq("#birthday").datetimePicker({
-					yearSplit:'/',
-					monthSplit:'/',
+					yearSplit:'年',
+					monthSplit:'月',
 					dateSplit:'',
 					datetimeSplit:'',
 			        times: function () {
 			            return [
 			              {
-			                values: []
+			                values: ['日']
 			              }
 			            ];
 			          },
@@ -538,18 +538,18 @@
 			          }
 			        });
 				var dates = data.birthday.split('/');
-				jq("#birthday").datetimePicker("setValue",[dates[0],dates[1],dates[2]])
+				jq("#birthday").datetimePicker("setValue",[dates[0],dates[1],dates[2],'日'])
 			}
 			else
 				jq("#birthday").datetimePicker({
-					yearSplit:'/',
-					monthSplit:'/',
+					yearSplit:'年',
+					monthSplit:'月',
 					dateSplit:'',
 					datetimeSplit:'',
 			        times: function () {
 			            return [
 			              {
-			            	 values: []
+			            	 values: ['日']
 			              }
 			            ];
 			          },
