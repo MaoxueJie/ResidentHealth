@@ -66,7 +66,13 @@ public class PhyServiceImpl implements PhyService{
 				BeanUtils.copyProperties(phy, vo);
 				
 				String report="";
-				float bmi = phy.getWeight()/((phy.getHeight()/100f)*(phy.getHeight()/100f));
+				float bmi = 0;
+				try {
+					bmi = phy.getWeight()/((phy.getHeight()/100f)*(phy.getHeight()/100f));
+				}catch(Exception e)
+				{
+					logger.error("bmi计算异常", e);
+				}
 				if (bmi>=28)
 				{
 					report += "<p>您的体重属于肥胖，建议您适当控制饮食、增加运动量，您可以采取饮食日记的形式记录3天的饮食情况，同时上传您的运动记录（或每天运动的步数），我们将根据您的饮食与运动习惯，给出更有针对性的建议。</p>";
