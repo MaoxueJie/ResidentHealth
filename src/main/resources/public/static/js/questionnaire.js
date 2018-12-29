@@ -132,7 +132,7 @@ $(function(){
 			var inputType = $curInput.attr('type');
 
 			if( inputType == 'text' || inputType == 'number' || inputType == 'date'){
-				//$curInput.val( val );
+				$curInput.val( val );
 				if( val != '' ){
 					$curInput.closest('.weui-cell').css('display','flex');
 				}
