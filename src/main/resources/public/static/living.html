@@ -473,25 +473,25 @@
 							<p>低脂饮食</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" required class="weui-check" name="special" id="special3" value="3">
+							<input type="checkbox" required class="weui-check" name="special" id="special3" value="3">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
 					<label class="weui-cell weui-check__label" for="special4">
 						<div class="weui-cell__bd">
-							<p>低脂饮食</p>
+							<p>无</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" required class="weui-check" name="special" id="special4" value="4">
+							<input type="checkbox" required class="weui-check" name="special" id="special4" value="4">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
 					<label class="weui-cell weui-check__label" for="special5">
 						<div class="weui-cell__bd">
-							<p>无</p>
+							<p>其他特殊饮食</p>
 						</div>
 						<div class="weui-cell__ft">
-							<input type="radio" required class="weui-check" name="special" id="special5" value="5">
+							<input type="checkbox" required class="weui-check" name="special" id="special5" value="5">
 							<span class="weui-icon-checked"></span>
 						</div>
 					</label>
@@ -1229,7 +1229,7 @@
 		})
 		
 		$('#special input[type=checkbox]').click(function(){
-			if( $(this).val() ==  "4" ){
+			if( $(this).val() ==  "5" ){
 				if( $(this).is(':checked') ){
 					$('#inputOtherSpecial').css('display','flex');
 				}else{
