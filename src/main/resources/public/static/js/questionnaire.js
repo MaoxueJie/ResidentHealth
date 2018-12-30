@@ -47,7 +47,12 @@ $(function(){
 	})*/
 })
 	function postDataFun( ajaxUrl,data ){
-		var type = ajaxUrl.split('/')[2];
+		var urls = ajaxUrl.split('/');
+		var type = urls[2];
+		if (type=="psy" && urls.length == 5)
+		{
+			type = urls[3];
+		}
 		$.ajax({
 			url: ajaxUrl,
 			type: 'post',
