@@ -57,7 +57,7 @@ $(function(){
 				if( json.success ){
 					if( type == 'base' ){
 						window.location.href = '/cfd/static/base_result.html';
-					}else if( type == 'phy' )
+					}else if( type == 'phy' ){
 						hideLoading();
 						showToast();
 					}else{
