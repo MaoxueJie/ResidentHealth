@@ -55,7 +55,9 @@ $(function(){
 			dataType: 'json',
 			success: function(json){
 				if( json.success ){
-					if( type == 'base' || type == 'phy' ){
+					if( type == 'base' ){
+						window.location.href = '/cfd/static/base_result.html';
+					}else if( type == 'phy' )
 						hideLoading();
 						showToast();
 					}else{
@@ -65,6 +67,10 @@ $(function(){
 				}else{
 					alert( json.message );
 				}
+			},
+			error:function(){
+				hideLoading();
+				alert("系统正忙，请稍后重试！");
 			}
 		})
 	}
