@@ -179,7 +179,7 @@ public class UserServiceImpl implements UserService{
 		Result<UserVo> ret = new Result<UserVo>();
 		try{
 			WexinAccountExample example = new WexinAccountExample();
-			example.createCriteria().andOpenIdEqualTo(openId);
+			example.createCriteria().andOpenIdEqualTo(openId).andStatusEqualTo(1);
 			List<WexinAccount> accounts = wexinAccountMapper.selectByExample(example);
 			if (accounts!=null && accounts.size()>0)
 			{
