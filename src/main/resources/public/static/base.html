@@ -516,6 +516,7 @@
 			<div class="align_center mt30">
 				<!-- <a class="weui-btn btn-primary" id="submitBtn" href="javascript:;">提交</a> -->
 				<input class="weui-btn btn-primary submitbtn" type="submit" value="提交"/>
+				<input class="weui-btn btn-primary quitebtn" type="button" value="退出"/>
 			</div>
 
 		</form>
@@ -719,6 +720,10 @@
 				}
 			}
 		})
+		
+		$('.quitebtn').click(function(){
+			alert("已退出")
+		});
 
 	})
 
