@@ -51,7 +51,7 @@ public class UserController {
 	@ResponseBody
 	public Result<Void> userLogout(HttpServletRequest request,  HttpServletResponse response,String mobile,String verificationCode){
 		Result<Void> ret = new Result<Void>();
-		userService.unbindWexin((String)request.getAttribute("openid"));
+		userService.unbindWexin((String)request.getSession().getAttribute("openid"));
 		request.getSession().setAttribute("user", null);
 		RequestUtils.deleteCookie(request, response, "Authentication");
 		ret.setSuccess(true);
