@@ -728,8 +728,8 @@
 				dataType: 'json',
 				success: function(json){
 					if( json.success ){
-						alert("已退出");
-						window.location.reload();
+						alert("已退出!");
+						window.location.href="/cfd/wechatMenu/base";
 					}else{
 						that.showError( '',json.msg );
 					}
