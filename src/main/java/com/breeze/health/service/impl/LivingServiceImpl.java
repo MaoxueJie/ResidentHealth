@@ -222,6 +222,8 @@ public class LivingServiceImpl implements LivingService {
 					if (meal.getMeal()!=null && meal.getMeal()==2)
 					{
 						report += "<p>您的饮食习惯有待调整，相关知识请参见饮食指导。</p>";
+					}else if(meal.getMeal()!=null && meal.getMeal()==1) {
+						report += "<p>您的饮食习惯非常好，继续加油！</p>";
 					}
 				}
 				
@@ -236,6 +238,9 @@ public class LivingServiceImpl implements LivingService {
 					if (moderate<2)
 					{
 						report += "<p>您的运动量不足，运动形式和时间需要进行适当的调整，相关知识请参见。</p>";
+					}else
+					{
+						report += "<p>您的运动习惯非常好，继续加油！</p>";
 					}
 				}
 
