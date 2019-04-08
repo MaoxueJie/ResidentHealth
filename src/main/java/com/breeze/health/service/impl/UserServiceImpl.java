@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService{
 	
 	
 	@Override
-	public Result<Void> bindWexin(String openId) {
+	public Result<Void> bindWexin(String openId,Long userId) {
 		Result<Void> ret = new Result<Void>();
 		try{
 			Date now = new Date();
@@ -56,6 +56,7 @@ public class UserServiceImpl implements UserService{
 				if (account.getStatus()==0)
 				{
 					account.setStatus(1);
+					account.setUserId(userId);
 					account.setUpdateTime(now);
 					wexinAccountMapper.updateByPrimaryKeySelective(account);
 				}
@@ -68,6 +69,7 @@ public class UserServiceImpl implements UserService{
 				WexinAccount account = new WexinAccount();
 				//account.setUserId(user.getId());
 				account.setStatus(1);
+				account.setUserId(userId);
 				account.setOpenId(openId);
 				account.setCreateTime(now);
 				account.setUpdateTime(now);

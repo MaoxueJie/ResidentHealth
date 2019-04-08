@@ -5,7 +5,7 @@ import com.breeze.health.beans.vo.UserBaseInfoVo;
 import com.breeze.health.beans.vo.UserVo;
 
 public interface UserService {
-	public Result<Void> bindWexin(String openId);
+	public Result<Void> bindWexin(String openId,Long userId);
 	
 	public Result<Void> unbindWexin(String openId);
 	

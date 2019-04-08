@@ -146,7 +146,7 @@ public class WexinController {
 					} else {
 						respContent = "谢谢您的关注！";
 					}
-					userService.bindWexin(fromUserName);
+					userService.bindWexin(fromUserName,null);
 				}
 				// 取消关注
 				else if (eventType
@@ -234,13 +234,14 @@ public class WexinController {
 			if (jsonObj.has("openid"))
 			{
 				String openid = jsonObj.get("openid").toString();
-				userService.bindWexin(openid);
 				request.getSession().setAttribute("openid", openid);
 
 				if (user==null){
 					user = userService.getUserByOpenId(openid).getData();
 					request.getSession().setAttribute("user",user);
 				}
+				if (user!=null)
+					userService.bindWexin(openid,user.getId());
 			}
 
 			String url="";
