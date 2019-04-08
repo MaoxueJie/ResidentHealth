@@ -14,6 +14,8 @@ public class UserBaseInfoVo {
     @DateTimeFormat(pattern="yyyy/MM/dd")
     @JsonFormat(pattern = "yyyy/MM/dd", locale = "zh" , timezone="GMT+8")
     private Date birthday;
+    
+    private String idCardNo;
 
     private Integer gender;
 
@@ -267,6 +269,14 @@ public class UserBaseInfoVo {
 
 	public void setReligionOther(String religionOther) {
 		this.religionOther = religionOther;
+	}
+
+	public String getIdCardNo() {
+		return idCardNo;
+	}
+
+	public void setIdCardNo(String idCardNo) {
+		this.idCardNo = idCardNo;
 	}
 
 	

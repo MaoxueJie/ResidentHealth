@@ -9,6 +9,8 @@ public class UserBaseInfo {
 
     private Date birthday;
 
+    private String idCardNo;
+
     private Integer gender;
 
     private Integer education;
@@ -77,6 +79,14 @@ public class UserBaseInfo {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
+    }
+
+    public String getIdCardNo() {
+        return idCardNo;
+    }
+
+    public void setIdCardNo(String idCardNo) {
+        this.idCardNo = idCardNo == null ? null : idCardNo.trim();
     }
 
     public Integer getGender() {

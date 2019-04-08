@@ -312,6 +312,76 @@ public class UserBaseInfoExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdCardNoIsNull() {
+            addCriterion("id_card_no is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNoIsNotNull() {
+            addCriterion("id_card_no is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNoEqualTo(String value) {
+            addCriterion("id_card_no =", value, "idCardNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNoNotEqualTo(String value) {
+            addCriterion("id_card_no <>", value, "idCardNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNoGreaterThan(String value) {
+            addCriterion("id_card_no >", value, "idCardNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNoGreaterThanOrEqualTo(String value) {
+            addCriterion("id_card_no >=", value, "idCardNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNoLessThan(String value) {
+            addCriterion("id_card_no <", value, "idCardNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNoLessThanOrEqualTo(String value) {
+            addCriterion("id_card_no <=", value, "idCardNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNoLike(String value) {
+            addCriterion("id_card_no like", value, "idCardNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNoNotLike(String value) {
+            addCriterion("id_card_no not like", value, "idCardNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNoIn(List<String> values) {
+            addCriterion("id_card_no in", values, "idCardNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNoNotIn(List<String> values) {
+            addCriterion("id_card_no not in", values, "idCardNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNoBetween(String value1, String value2) {
+            addCriterion("id_card_no between", value1, value2, "idCardNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNoNotBetween(String value1, String value2) {
+            addCriterion("id_card_no not between", value1, value2, "idCardNo");
+            return (Criteria) this;
+        }
+
         public Criteria andGenderIsNull() {
             addCriterion("gender is null");
             return (Criteria) this;
