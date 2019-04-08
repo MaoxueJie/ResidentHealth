@@ -722,7 +722,20 @@
 		})
 		
 		$('.quitebtn').click(function(){
-			alert("已退出")
+			$.ajax({
+				url: '/cfd/logout',
+				type: 'get',
+				dataType: 'json',
+				success: function(json){
+					if( json.success ){
+						alert("已退出");
+						window.location.reload();
+					}else{
+						that.showError( '',json.msg );
+					}
+				}
+			})
+			
 		});
 
 	})

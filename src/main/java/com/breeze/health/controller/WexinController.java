@@ -239,7 +239,6 @@ public class WexinController {
 
 				if (user==null){
 					user = userService.getUserByOpenId(openid).getData();
-
 					request.getSession().setAttribute("user",user);
 				}
 			}

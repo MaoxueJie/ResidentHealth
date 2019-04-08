@@ -114,6 +114,9 @@ html,body{
 form .align_center .submitbtn{
 	width: auto;
 }
+form .align_center .quitebtn{
+	width: auto;
+}
 .weui-cell__hide{
 	display: none;
 }
