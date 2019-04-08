@@ -152,7 +152,7 @@ public class RequestUtils {
 				String serverName = request.getServerName();
 				domain = getDomainOfServerName(serverName);
 				if (domain != null && domain.indexOf('.') != -1) {
-					cookie.setDomain('.' + domain);
+					cookie.setDomain(domain);
 				}
 			}
 			cookie.setPath("/");
