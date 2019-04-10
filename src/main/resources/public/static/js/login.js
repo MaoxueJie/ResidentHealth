@@ -11,6 +11,12 @@ $(document).ready(function(){
 			$('#mobile').blur(function(event) {
 				that.checkTel(null,$(this));
 			});
+			$('#agree').click(function() {
+				if ($(this).prop("checked")) {
+					var telInput = $(this).closest('.row').prev().find('[name="mobile"]')
+					that.checkTel(null,telInput);
+				}
+			});
 			$('.btn_vcode').click(function(){
 				if( $(this).hasClass('enable') ){
 					var telInput = $(this).closest('.row').prev().find('[name="mobile"]')
@@ -76,7 +82,7 @@ $(document).ready(function(){
 		login: function(){
 			
 			var that = this,tel = $.trim( $('#mobile').val() ),vcode = $('#vcodeForget').val();
-			if (!$('#agree').attr("checked"))
+			if (!$('#agree').prop("checked"))
 			{
 				that.showError('','请先阅读并同意《调查知情同意书》');
 				return false;
