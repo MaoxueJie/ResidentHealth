@@ -13,14 +13,12 @@ $(document).ready(function(){
 			});
 			$('#agree').click(function() {
 				if ($(this).prop("checked")) {
-					var telInput = $(this).closest('.row').prev().find('[name="mobile"]')
-					that.checkTel(null,telInput);
+					that.checkTel(null,$('#mobile'));
 				}
 			});
 			$('.btn_vcode').click(function(){
 				if( $(this).hasClass('enable') ){
-					var telInput = $(this).closest('.row').prev().find('[name="mobile"]')
-					that.checkTel(that.getVcode,telInput);
+					that.checkTel(that.getVcode,$('#mobile'));
 				}
 			})
 			$('#loginBtn').click(function(event) {
