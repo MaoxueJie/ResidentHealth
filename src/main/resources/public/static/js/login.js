@@ -74,6 +74,11 @@ $(document).ready(function(){
 			$('.btn_vcode').addClass('enable');
 		},
 		login: function(){
+			if (!$('#agree').attr("checked"))
+			{
+				that.showError('','请先阅读并同意《调查知情同意书》');
+				return false;
+			}
 			var that = this,tel = $.trim( $('#mobile').val() ),vcode = $('#vcodeForget').val();
 			$.ajax({
 				url: '/cfd/login',
