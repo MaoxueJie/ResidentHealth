@@ -13,7 +13,9 @@ $(document).ready(function(){
 			});
 			$('#agree').click(function() {
 				if ($(this).prop("checked")) {
-					that.checkTel(null,$('#mobile'));
+					if(that.checkTel(null,$('#mobile'))){
+						that.showError('','');
+					};
 				}
 			});
 			$('.btn_vcode').click(function(){
@@ -76,6 +78,7 @@ $(document).ready(function(){
 				callback( tel.closest('.panel_content').find('.btn_vcode') );
 			}
 			$('.btn_vcode').addClass('enable');
+			return true;
 		},
 		login: function(){
 			
@@ -94,7 +97,7 @@ $(document).ready(function(){
 					if( json.success ){
 						window.location.href = '/cfd/static/' + that.getQueryString('state') + '.html';
 					}else{
-						that.showError( '',json.msg );
+						that.showError( '',json.message );
 					}
 				}
 			})
