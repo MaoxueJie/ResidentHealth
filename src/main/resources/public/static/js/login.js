@@ -74,6 +74,7 @@ $(document).ready(function(){
 				that.showError(tel,'手机号码格式不正确');
 				return false;
 			}
+			that.showError('','');
 			if( typeof callback == 'function' ){
 				callback( tel.closest('.panel_content').find('.btn_vcode') );
 			}
