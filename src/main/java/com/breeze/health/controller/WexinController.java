@@ -43,6 +43,8 @@ import com.breeze.health.beans.weixin.resp.NewsMessage;
 import com.breeze.health.beans.weixin.resp.TextMessage;
 import com.breeze.health.mapper.UserMapper;
 import com.breeze.health.service.UserService;
+import com.breeze.health.util.DesUtil;
+import com.breeze.health.util.RequestUtils;
 import com.breeze.health.util.SignUtil;
 import com.breeze.health.util.wexin.WechatMessageUtil;
 
@@ -231,6 +233,7 @@ public class WexinController {
 			jsonObj = new JSONObject(responseBady);
 			logger.info(jsonObj.toString());
 			UserVo user = (UserVo)request.getSession().getAttribute("user");
+			String parm="timestamp="+System.currentTimeMillis();
 			if (jsonObj.has("openid"))
 			{
 				String openid = jsonObj.get("openid").toString();
@@ -240,14 +243,18 @@ public class WexinController {
 					user = userService.getUserByOpenId(openid).getData();
 					request.getSession().setAttribute("user",user);
 				}
-				if (user!=null)
+				if (user!=null) {
 					userService.bindWexin(openid,user.getId());
+					String token = DesUtil.encrypt(user.getId()+"");
+					RequestUtils.setCookie(request, response, "Authentication",token, 1800);
+					parm += "&token="+token;
+				}
 			}
 
 			String url="";
 			if (user!=null)
 			{
-				String parm="timestamp="+System.currentTimeMillis();//鍙傛暟
+				
 				if (userService.getBaseInfo(user.getId()).getData()!=null){
 					if ("base".equals(state)) {
 						url=path+"static/base.html?"+parm;
@@ -266,14 +273,14 @@ public class WexinController {
 					}
 				}else if(!"base".equals(state))
 				{
-					url=path+"static/skip.html?state="+state;
+					url=path+"static/skip.html?"+parm+"&state="+state;
 				}else if("base".equals(state))
 				{
 					url=path+"static/base.html?"+parm;
 				}
 			}else
 			{
-				url=path+"static/login.html?state="+state;
+				url=path+"static/login.html?"+parm+"&state="+state;
 			}
 			logger.info("redirect="+url);
 			return new ModelAndView(new RedirectView(url));

@@ -43,6 +43,12 @@ public class AuthenticationFilter implements Filter{
 		if (StringUtils.isNotBlank(token))
 		{
 			RequestUtils.setCookie(httpRequest, httpResponse, "Authentication",token, 1800);
+		}else
+		{
+			token = request.getParameter("token");
+			if (StringUtils.isNotBlank(token)) {
+				RequestUtils.setCookie(httpRequest, httpResponse, "Authentication",token, 1800);
+			}
 		}
 		try{
 			if (httpRequest.getSession().getAttribute("user")==null)

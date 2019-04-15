@@ -56,7 +56,7 @@ $(function(){
 		$.ajax({
 			url: ajaxUrl,
 			type: 'post',
-			data: data,
+			data: data + "&token="+getQueryString("token"),
 			dataType: 'json',
 			success: function(json){
 				if( json.success ){
