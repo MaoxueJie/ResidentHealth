@@ -661,7 +661,7 @@
 				</div>
 			</div>
 
-			<div class="sport_item cell-item" id="violentMovementNext">
+			<div class="sport_item cell-item" id="violentMovementNext" style="display:none">
 				<div class="weui-cells__title">1-1.在这其中一天您通常会花多少时间在剧烈的体育活动上？</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="violentMovementPerDay1">
@@ -712,7 +712,7 @@
 				</div>
 			</div>
 
-			<div class="sport_item cell-item" id="moderateMovementNext">
+			<div class="sport_item cell-item" id="moderateMovementNext" style="display:none">
 				<div class="weui-cells__title">2-1.在这其中一天您通常会花多少时间在适度的体育活动上?</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="moderateMinute1">
@@ -765,7 +765,7 @@
 				</div>
 			</div>
 
-			<div class="sport_item cell-item" id="walkMovementNext">
+			<div class="sport_item cell-item" id="walkMovementNext" style="display:none">
 				<div class="weui-cells__title">3-1.在这其中一天您通常花多少时间在步行上？</div>
 				<div class="weui-cells weui-cells_radio"">
 					<label class="weui-cell weui-check__label" for="walkMovementPerDay1">
@@ -818,7 +818,7 @@
 				</div>
 			</div>
 			
-			<div class="sport_item cell-item" id="sittingRecent7DaysNext">
+			<div class="sport_item cell-item" id="sittingRecent7DaysNext" style="display:none">
 				<div class="weui-cells__title">4-1.在这其中一天您通常花多少时间坐着？</div>
 				<div class="weui-cells weui-cells_radio"">
 					<label class="weui-cell weui-check__label" for="sittingHours1">
@@ -1196,6 +1196,7 @@
 				if( $(this).is(':checked') ){
 					$('#'+name+'Val').attr('disabled','true');
 					$('#'+name+'Val').val('');
+					$('#'+name+'Next').hide();
 				}
 			}
 		})
