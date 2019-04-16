@@ -9,31 +9,35 @@ public class UserLivingMovement {
 
     private Integer violentMovement;
 
-    private Integer violentDaysPerWeek;
+    private Float violentDaysPerWeek;
 
-    private Integer violentMinutePerDay;
+    private Integer violentMovementPerDay;
+
+    private Float violentMinutePerDay;
 
     private Integer moderateMovement;
 
-    private Integer moderateDaysPerWeek;
+    private Float moderateDaysPerWeek;
 
-    private Integer moderateMinutePerDay;
+    private Integer moderateMinute;
+
+    private Float moderateMinutePerDay;
 
     private Integer walkMovement;
 
-    private Integer walkDaysPerWeek;
+    private Float walkDaysPerWeek;
 
     private Integer walkMovementPerDay;
 
-    private Integer walkMinutePerDay;
+    private Float walkMinutePerDay;
 
     private Integer sittingRecent7Days;
 
-    private Integer sittingDaysRecent7Days;
+    private Float sittingDaysRecent7Days;
 
     private Integer sittingHours;
 
-    private Integer sittingHoursPerDay;
+    private Float sittingHoursPerDay;
 
     private Date createTime;
 
@@ -63,19 +67,27 @@ public class UserLivingMovement {
         this.violentMovement = violentMovement;
     }
 
-    public Integer getViolentDaysPerWeek() {
+    public Float getViolentDaysPerWeek() {
         return violentDaysPerWeek;
     }
 
-    public void setViolentDaysPerWeek(Integer violentDaysPerWeek) {
+    public void setViolentDaysPerWeek(Float violentDaysPerWeek) {
         this.violentDaysPerWeek = violentDaysPerWeek;
     }
 
-    public Integer getViolentMinutePerDay() {
+    public Integer getViolentMovementPerDay() {
+        return violentMovementPerDay;
+    }
+
+    public void setViolentMovementPerDay(Integer violentMovementPerDay) {
+        this.violentMovementPerDay = violentMovementPerDay;
+    }
+
+    public Float getViolentMinutePerDay() {
         return violentMinutePerDay;
     }
 
-    public void setViolentMinutePerDay(Integer violentMinutePerDay) {
+    public void setViolentMinutePerDay(Float violentMinutePerDay) {
         this.violentMinutePerDay = violentMinutePerDay;
     }
 
@@ -87,19 +99,27 @@ public class UserLivingMovement {
         this.moderateMovement = moderateMovement;
     }
 
-    public Integer getModerateDaysPerWeek() {
+    public Float getModerateDaysPerWeek() {
         return moderateDaysPerWeek;
     }
 
-    public void setModerateDaysPerWeek(Integer moderateDaysPerWeek) {
+    public void setModerateDaysPerWeek(Float moderateDaysPerWeek) {
         this.moderateDaysPerWeek = moderateDaysPerWeek;
     }
 
-    public Integer getModerateMinutePerDay() {
+    public Integer getModerateMinute() {
+        return moderateMinute;
+    }
+
+    public void setModerateMinute(Integer moderateMinute) {
+        this.moderateMinute = moderateMinute;
+    }
+
+    public Float getModerateMinutePerDay() {
         return moderateMinutePerDay;
     }
 
-    public void setModerateMinutePerDay(Integer moderateMinutePerDay) {
+    public void setModerateMinutePerDay(Float moderateMinutePerDay) {
         this.moderateMinutePerDay = moderateMinutePerDay;
     }
 
@@ -111,11 +131,11 @@ public class UserLivingMovement {
         this.walkMovement = walkMovement;
     }
 
-    public Integer getWalkDaysPerWeek() {
+    public Float getWalkDaysPerWeek() {
         return walkDaysPerWeek;
     }
 
-    public void setWalkDaysPerWeek(Integer walkDaysPerWeek) {
+    public void setWalkDaysPerWeek(Float walkDaysPerWeek) {
         this.walkDaysPerWeek = walkDaysPerWeek;
     }
 
@@ -127,11 +147,11 @@ public class UserLivingMovement {
         this.walkMovementPerDay = walkMovementPerDay;
     }
 
-    public Integer getWalkMinutePerDay() {
+    public Float getWalkMinutePerDay() {
         return walkMinutePerDay;
     }
 
-    public void setWalkMinutePerDay(Integer walkMinutePerDay) {
+    public void setWalkMinutePerDay(Float walkMinutePerDay) {
         this.walkMinutePerDay = walkMinutePerDay;
     }
 
@@ -143,11 +163,11 @@ public class UserLivingMovement {
         this.sittingRecent7Days = sittingRecent7Days;
     }
 
-    public Integer getSittingDaysRecent7Days() {
+    public Float getSittingDaysRecent7Days() {
         return sittingDaysRecent7Days;
     }
 
-    public void setSittingDaysRecent7Days(Integer sittingDaysRecent7Days) {
+    public void setSittingDaysRecent7Days(Float sittingDaysRecent7Days) {
         this.sittingDaysRecent7Days = sittingDaysRecent7Days;
     }
 
@@ -159,11 +179,11 @@ public class UserLivingMovement {
         this.sittingHours = sittingHours;
     }
 
-    public Integer getSittingHoursPerDay() {
+    public Float getSittingHoursPerDay() {
         return sittingHoursPerDay;
     }
 
-    public void setSittingHoursPerDay(Integer sittingHoursPerDay) {
+    public void setSittingHoursPerDay(Float sittingHoursPerDay) {
         this.sittingHoursPerDay = sittingHoursPerDay;
     }
 

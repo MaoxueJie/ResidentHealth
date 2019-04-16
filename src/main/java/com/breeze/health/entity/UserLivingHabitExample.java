@@ -295,52 +295,52 @@ public class UserLivingHabitExample {
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal1EqualTo(Integer value) {
+        public Criteria andSmokingVal1EqualTo(Float value) {
             addCriterion("smoking_val1 =", value, "smokingVal1");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal1NotEqualTo(Integer value) {
+        public Criteria andSmokingVal1NotEqualTo(Float value) {
             addCriterion("smoking_val1 <>", value, "smokingVal1");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal1GreaterThan(Integer value) {
+        public Criteria andSmokingVal1GreaterThan(Float value) {
             addCriterion("smoking_val1 >", value, "smokingVal1");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal1GreaterThanOrEqualTo(Integer value) {
+        public Criteria andSmokingVal1GreaterThanOrEqualTo(Float value) {
             addCriterion("smoking_val1 >=", value, "smokingVal1");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal1LessThan(Integer value) {
+        public Criteria andSmokingVal1LessThan(Float value) {
             addCriterion("smoking_val1 <", value, "smokingVal1");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal1LessThanOrEqualTo(Integer value) {
+        public Criteria andSmokingVal1LessThanOrEqualTo(Float value) {
             addCriterion("smoking_val1 <=", value, "smokingVal1");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal1In(List<Integer> values) {
+        public Criteria andSmokingVal1In(List<Float> values) {
             addCriterion("smoking_val1 in", values, "smokingVal1");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal1NotIn(List<Integer> values) {
+        public Criteria andSmokingVal1NotIn(List<Float> values) {
             addCriterion("smoking_val1 not in", values, "smokingVal1");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal1Between(Integer value1, Integer value2) {
+        public Criteria andSmokingVal1Between(Float value1, Float value2) {
             addCriterion("smoking_val1 between", value1, value2, "smokingVal1");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal1NotBetween(Integer value1, Integer value2) {
+        public Criteria andSmokingVal1NotBetween(Float value1, Float value2) {
             addCriterion("smoking_val1 not between", value1, value2, "smokingVal1");
             return (Criteria) this;
         }
@@ -355,52 +355,52 @@ public class UserLivingHabitExample {
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal2EqualTo(Integer value) {
+        public Criteria andSmokingVal2EqualTo(Float value) {
             addCriterion("smoking_val2 =", value, "smokingVal2");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal2NotEqualTo(Integer value) {
+        public Criteria andSmokingVal2NotEqualTo(Float value) {
             addCriterion("smoking_val2 <>", value, "smokingVal2");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal2GreaterThan(Integer value) {
+        public Criteria andSmokingVal2GreaterThan(Float value) {
             addCriterion("smoking_val2 >", value, "smokingVal2");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal2GreaterThanOrEqualTo(Integer value) {
+        public Criteria andSmokingVal2GreaterThanOrEqualTo(Float value) {
             addCriterion("smoking_val2 >=", value, "smokingVal2");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal2LessThan(Integer value) {
+        public Criteria andSmokingVal2LessThan(Float value) {
             addCriterion("smoking_val2 <", value, "smokingVal2");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal2LessThanOrEqualTo(Integer value) {
+        public Criteria andSmokingVal2LessThanOrEqualTo(Float value) {
             addCriterion("smoking_val2 <=", value, "smokingVal2");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal2In(List<Integer> values) {
+        public Criteria andSmokingVal2In(List<Float> values) {
             addCriterion("smoking_val2 in", values, "smokingVal2");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal2NotIn(List<Integer> values) {
+        public Criteria andSmokingVal2NotIn(List<Float> values) {
             addCriterion("smoking_val2 not in", values, "smokingVal2");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal2Between(Integer value1, Integer value2) {
+        public Criteria andSmokingVal2Between(Float value1, Float value2) {
             addCriterion("smoking_val2 between", value1, value2, "smokingVal2");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal2NotBetween(Integer value1, Integer value2) {
+        public Criteria andSmokingVal2NotBetween(Float value1, Float value2) {
             addCriterion("smoking_val2 not between", value1, value2, "smokingVal2");
             return (Criteria) this;
         }
@@ -415,52 +415,52 @@ public class UserLivingHabitExample {
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal3EqualTo(Integer value) {
+        public Criteria andSmokingVal3EqualTo(Float value) {
             addCriterion("smoking_val3 =", value, "smokingVal3");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal3NotEqualTo(Integer value) {
+        public Criteria andSmokingVal3NotEqualTo(Float value) {
             addCriterion("smoking_val3 <>", value, "smokingVal3");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal3GreaterThan(Integer value) {
+        public Criteria andSmokingVal3GreaterThan(Float value) {
             addCriterion("smoking_val3 >", value, "smokingVal3");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal3GreaterThanOrEqualTo(Integer value) {
+        public Criteria andSmokingVal3GreaterThanOrEqualTo(Float value) {
             addCriterion("smoking_val3 >=", value, "smokingVal3");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal3LessThan(Integer value) {
+        public Criteria andSmokingVal3LessThan(Float value) {
             addCriterion("smoking_val3 <", value, "smokingVal3");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal3LessThanOrEqualTo(Integer value) {
+        public Criteria andSmokingVal3LessThanOrEqualTo(Float value) {
             addCriterion("smoking_val3 <=", value, "smokingVal3");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal3In(List<Integer> values) {
+        public Criteria andSmokingVal3In(List<Float> values) {
             addCriterion("smoking_val3 in", values, "smokingVal3");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal3NotIn(List<Integer> values) {
+        public Criteria andSmokingVal3NotIn(List<Float> values) {
             addCriterion("smoking_val3 not in", values, "smokingVal3");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal3Between(Integer value1, Integer value2) {
+        public Criteria andSmokingVal3Between(Float value1, Float value2) {
             addCriterion("smoking_val3 between", value1, value2, "smokingVal3");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal3NotBetween(Integer value1, Integer value2) {
+        public Criteria andSmokingVal3NotBetween(Float value1, Float value2) {
             addCriterion("smoking_val3 not between", value1, value2, "smokingVal3");
             return (Criteria) this;
         }
@@ -475,52 +475,52 @@ public class UserLivingHabitExample {
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal4EqualTo(Integer value) {
+        public Criteria andSmokingVal4EqualTo(Float value) {
             addCriterion("smoking_val4 =", value, "smokingVal4");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal4NotEqualTo(Integer value) {
+        public Criteria andSmokingVal4NotEqualTo(Float value) {
             addCriterion("smoking_val4 <>", value, "smokingVal4");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal4GreaterThan(Integer value) {
+        public Criteria andSmokingVal4GreaterThan(Float value) {
             addCriterion("smoking_val4 >", value, "smokingVal4");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal4GreaterThanOrEqualTo(Integer value) {
+        public Criteria andSmokingVal4GreaterThanOrEqualTo(Float value) {
             addCriterion("smoking_val4 >=", value, "smokingVal4");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal4LessThan(Integer value) {
+        public Criteria andSmokingVal4LessThan(Float value) {
             addCriterion("smoking_val4 <", value, "smokingVal4");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal4LessThanOrEqualTo(Integer value) {
+        public Criteria andSmokingVal4LessThanOrEqualTo(Float value) {
             addCriterion("smoking_val4 <=", value, "smokingVal4");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal4In(List<Integer> values) {
+        public Criteria andSmokingVal4In(List<Float> values) {
             addCriterion("smoking_val4 in", values, "smokingVal4");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal4NotIn(List<Integer> values) {
+        public Criteria andSmokingVal4NotIn(List<Float> values) {
             addCriterion("smoking_val4 not in", values, "smokingVal4");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal4Between(Integer value1, Integer value2) {
+        public Criteria andSmokingVal4Between(Float value1, Float value2) {
             addCriterion("smoking_val4 between", value1, value2, "smokingVal4");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingVal4NotBetween(Integer value1, Integer value2) {
+        public Criteria andSmokingVal4NotBetween(Float value1, Float value2) {
             addCriterion("smoking_val4 not between", value1, value2, "smokingVal4");
             return (Criteria) this;
         }
@@ -535,52 +535,52 @@ public class UserLivingHabitExample {
             return (Criteria) this;
         }
 
-        public Criteria andSmokingAgeEqualTo(Integer value) {
+        public Criteria andSmokingAgeEqualTo(Float value) {
             addCriterion("smoking_age =", value, "smokingAge");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingAgeNotEqualTo(Integer value) {
+        public Criteria andSmokingAgeNotEqualTo(Float value) {
             addCriterion("smoking_age <>", value, "smokingAge");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingAgeGreaterThan(Integer value) {
+        public Criteria andSmokingAgeGreaterThan(Float value) {
             addCriterion("smoking_age >", value, "smokingAge");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingAgeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andSmokingAgeGreaterThanOrEqualTo(Float value) {
             addCriterion("smoking_age >=", value, "smokingAge");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingAgeLessThan(Integer value) {
+        public Criteria andSmokingAgeLessThan(Float value) {
             addCriterion("smoking_age <", value, "smokingAge");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingAgeLessThanOrEqualTo(Integer value) {
+        public Criteria andSmokingAgeLessThanOrEqualTo(Float value) {
             addCriterion("smoking_age <=", value, "smokingAge");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingAgeIn(List<Integer> values) {
+        public Criteria andSmokingAgeIn(List<Float> values) {
             addCriterion("smoking_age in", values, "smokingAge");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingAgeNotIn(List<Integer> values) {
+        public Criteria andSmokingAgeNotIn(List<Float> values) {
             addCriterion("smoking_age not in", values, "smokingAge");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingAgeBetween(Integer value1, Integer value2) {
+        public Criteria andSmokingAgeBetween(Float value1, Float value2) {
             addCriterion("smoking_age between", value1, value2, "smokingAge");
             return (Criteria) this;
         }
 
-        public Criteria andSmokingAgeNotBetween(Integer value1, Integer value2) {
+        public Criteria andSmokingAgeNotBetween(Float value1, Float value2) {
             addCriterion("smoking_age not between", value1, value2, "smokingAge");
             return (Criteria) this;
         }
@@ -845,52 +845,52 @@ public class UserLivingHabitExample {
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingValEqualTo(Integer value) {
+        public Criteria andDrinkingValEqualTo(Float value) {
             addCriterion("drinking_val =", value, "drinkingVal");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingValNotEqualTo(Integer value) {
+        public Criteria andDrinkingValNotEqualTo(Float value) {
             addCriterion("drinking_val <>", value, "drinkingVal");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingValGreaterThan(Integer value) {
+        public Criteria andDrinkingValGreaterThan(Float value) {
             addCriterion("drinking_val >", value, "drinkingVal");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingValGreaterThanOrEqualTo(Integer value) {
+        public Criteria andDrinkingValGreaterThanOrEqualTo(Float value) {
             addCriterion("drinking_val >=", value, "drinkingVal");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingValLessThan(Integer value) {
+        public Criteria andDrinkingValLessThan(Float value) {
             addCriterion("drinking_val <", value, "drinkingVal");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingValLessThanOrEqualTo(Integer value) {
+        public Criteria andDrinkingValLessThanOrEqualTo(Float value) {
             addCriterion("drinking_val <=", value, "drinkingVal");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingValIn(List<Integer> values) {
+        public Criteria andDrinkingValIn(List<Float> values) {
             addCriterion("drinking_val in", values, "drinkingVal");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingValNotIn(List<Integer> values) {
+        public Criteria andDrinkingValNotIn(List<Float> values) {
             addCriterion("drinking_val not in", values, "drinkingVal");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingValBetween(Integer value1, Integer value2) {
+        public Criteria andDrinkingValBetween(Float value1, Float value2) {
             addCriterion("drinking_val between", value1, value2, "drinkingVal");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingValNotBetween(Integer value1, Integer value2) {
+        public Criteria andDrinkingValNotBetween(Float value1, Float value2) {
             addCriterion("drinking_val not between", value1, value2, "drinkingVal");
             return (Criteria) this;
         }
@@ -905,52 +905,52 @@ public class UserLivingHabitExample {
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingYearsEqualTo(Integer value) {
+        public Criteria andDrinkingYearsEqualTo(Float value) {
             addCriterion("drinking_years =", value, "drinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingYearsNotEqualTo(Integer value) {
+        public Criteria andDrinkingYearsNotEqualTo(Float value) {
             addCriterion("drinking_years <>", value, "drinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingYearsGreaterThan(Integer value) {
+        public Criteria andDrinkingYearsGreaterThan(Float value) {
             addCriterion("drinking_years >", value, "drinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingYearsGreaterThanOrEqualTo(Integer value) {
+        public Criteria andDrinkingYearsGreaterThanOrEqualTo(Float value) {
             addCriterion("drinking_years >=", value, "drinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingYearsLessThan(Integer value) {
+        public Criteria andDrinkingYearsLessThan(Float value) {
             addCriterion("drinking_years <", value, "drinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingYearsLessThanOrEqualTo(Integer value) {
+        public Criteria andDrinkingYearsLessThanOrEqualTo(Float value) {
             addCriterion("drinking_years <=", value, "drinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingYearsIn(List<Integer> values) {
+        public Criteria andDrinkingYearsIn(List<Float> values) {
             addCriterion("drinking_years in", values, "drinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingYearsNotIn(List<Integer> values) {
+        public Criteria andDrinkingYearsNotIn(List<Float> values) {
             addCriterion("drinking_years not in", values, "drinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingYearsBetween(Integer value1, Integer value2) {
+        public Criteria andDrinkingYearsBetween(Float value1, Float value2) {
             addCriterion("drinking_years between", value1, value2, "drinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andDrinkingYearsNotBetween(Integer value1, Integer value2) {
+        public Criteria andDrinkingYearsNotBetween(Float value1, Float value2) {
             addCriterion("drinking_years not between", value1, value2, "drinkingYears");
             return (Criteria) this;
         }
@@ -965,52 +965,52 @@ public class UserLivingHabitExample {
             return (Criteria) this;
         }
 
-        public Criteria andNoDrinkingYearsEqualTo(Integer value) {
+        public Criteria andNoDrinkingYearsEqualTo(Float value) {
             addCriterion("no_drinking_years =", value, "noDrinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andNoDrinkingYearsNotEqualTo(Integer value) {
+        public Criteria andNoDrinkingYearsNotEqualTo(Float value) {
             addCriterion("no_drinking_years <>", value, "noDrinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andNoDrinkingYearsGreaterThan(Integer value) {
+        public Criteria andNoDrinkingYearsGreaterThan(Float value) {
             addCriterion("no_drinking_years >", value, "noDrinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andNoDrinkingYearsGreaterThanOrEqualTo(Integer value) {
+        public Criteria andNoDrinkingYearsGreaterThanOrEqualTo(Float value) {
             addCriterion("no_drinking_years >=", value, "noDrinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andNoDrinkingYearsLessThan(Integer value) {
+        public Criteria andNoDrinkingYearsLessThan(Float value) {
             addCriterion("no_drinking_years <", value, "noDrinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andNoDrinkingYearsLessThanOrEqualTo(Integer value) {
+        public Criteria andNoDrinkingYearsLessThanOrEqualTo(Float value) {
             addCriterion("no_drinking_years <=", value, "noDrinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andNoDrinkingYearsIn(List<Integer> values) {
+        public Criteria andNoDrinkingYearsIn(List<Float> values) {
             addCriterion("no_drinking_years in", values, "noDrinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andNoDrinkingYearsNotIn(List<Integer> values) {
+        public Criteria andNoDrinkingYearsNotIn(List<Float> values) {
             addCriterion("no_drinking_years not in", values, "noDrinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andNoDrinkingYearsBetween(Integer value1, Integer value2) {
+        public Criteria andNoDrinkingYearsBetween(Float value1, Float value2) {
             addCriterion("no_drinking_years between", value1, value2, "noDrinkingYears");
             return (Criteria) this;
         }
 
-        public Criteria andNoDrinkingYearsNotBetween(Integer value1, Integer value2) {
+        public Criteria andNoDrinkingYearsNotBetween(Float value1, Float value2) {
             addCriterion("no_drinking_years not between", value1, value2, "noDrinkingYears");
             return (Criteria) this;
         }

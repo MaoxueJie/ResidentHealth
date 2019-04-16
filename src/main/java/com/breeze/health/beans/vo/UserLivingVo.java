@@ -40,42 +40,48 @@ public class UserLivingVo {
     
     private Integer violentMovement;
 
-    private Integer violentDaysPerWeek;
+    private Float violentDaysPerWeek;
 
-    private Integer violentMinutePerDay;
+    private Integer violentMovementPerDay;
+
+    private Float violentMinutePerDay;
 
     private Integer moderateMovement;
 
-    private Integer moderateDaysPerWeek;
+    private Float moderateDaysPerWeek;
 
-    private Integer moderateMinutePerDay;
+    private Integer moderateMinute;
+
+    private Float moderateMinutePerDay;
 
     private Integer walkMovement;
 
-    private Integer walkDaysPerWeek;
+    private Float walkDaysPerWeek;
 
-    private Integer walkMinutePerDay;
+    private Integer walkMovementPerDay;
+
+    private Float walkMinutePerDay;
 
     private Integer sittingRecent7Days;
 
-    private Integer sittingDaysRecent7Days;
+    private Float sittingDaysRecent7Days;
 
     private Integer sittingHours;
 
-    private Integer sittingHoursPerDay;
+    private Float sittingHoursPerDay;
     
     
     private Integer smoking;
 
-    private Integer smokingVal1;
+    private Float smokingVal1;
 
-    private Integer smokingVal2;
+    private Float smokingVal2;
 
-    private Integer smokingVal3;
+    private Float smokingVal3;
 
-    private Integer smokingVal4;
+    private Float smokingVal4;
 
-    private Integer smokingAge;
+    private Float smokingAge;
 
     private Integer partnerSmoking;
 
@@ -85,11 +91,12 @@ public class UserLivingVo {
 
     private String drinkingTypes;
 
-    private Integer drinkingVal;
-    
-    private Integer drinkingYears;
+    private Float drinkingVal;
 
-    private Integer noDrinkingYears;
+    private Float drinkingYears;
+
+    private Float noDrinkingYears;
+    
     
     private String resultTitle;
     
@@ -213,21 +220,6 @@ public class UserLivingVo {
 		this.violentMovement = violentMovement;
 	}
 
-	public Integer getViolentDaysPerWeek() {
-		return violentDaysPerWeek;
-	}
-
-	public void setViolentDaysPerWeek(Integer violentDaysPerWeek) {
-		this.violentDaysPerWeek = violentDaysPerWeek;
-	}
-
-	public Integer getViolentMinutePerDay() {
-		return violentMinutePerDay;
-	}
-
-	public void setViolentMinutePerDay(Integer violentMinutePerDay) {
-		this.violentMinutePerDay = violentMinutePerDay;
-	}
 
 	public Integer getModerateMovement() {
 		return moderateMovement;
@@ -237,21 +229,6 @@ public class UserLivingVo {
 		this.moderateMovement = moderateMovement;
 	}
 
-	public Integer getModerateDaysPerWeek() {
-		return moderateDaysPerWeek;
-	}
-
-	public void setModerateDaysPerWeek(Integer moderateDaysPerWeek) {
-		this.moderateDaysPerWeek = moderateDaysPerWeek;
-	}
-
-	public Integer getModerateMinutePerDay() {
-		return moderateMinutePerDay;
-	}
-
-	public void setModerateMinutePerDay(Integer moderateMinutePerDay) {
-		this.moderateMinutePerDay = moderateMinutePerDay;
-	}
 
 	public Integer getWalkMovement() {
 		return walkMovement;
@@ -261,23 +238,6 @@ public class UserLivingVo {
 		this.walkMovement = walkMovement;
 	}
 
-	public Integer getWalkDaysPerWeek() {
-		return walkDaysPerWeek;
-	}
-
-	public void setWalkDaysPerWeek(Integer walkDaysPerWeek) {
-		this.walkDaysPerWeek = walkDaysPerWeek;
-	}
-
-	public Integer getWalkMinutePerDay() {
-		return walkMinutePerDay;
-	}
-
-	public void setWalkMinutePerDay(Integer walkMinutePerDay) {
-		this.walkMinutePerDay = walkMinutePerDay;
-	}
-
-	
 
 	public Integer getSittingRecent7Days() {
 		return sittingRecent7Days;
@@ -287,13 +247,6 @@ public class UserLivingVo {
 		this.sittingRecent7Days = sittingRecent7Days;
 	}
 
-	public Integer getSittingDaysRecent7Days() {
-		return sittingDaysRecent7Days;
-	}
-
-	public void setSittingDaysRecent7Days(Integer sittingDaysRecent7Days) {
-		this.sittingDaysRecent7Days = sittingDaysRecent7Days;
-	}
 
 	public Integer getSittingHours() {
 		return sittingHours;
@@ -301,14 +254,6 @@ public class UserLivingVo {
 
 	public void setSittingHours(Integer sittingHours) {
 		this.sittingHours = sittingHours;
-	}
-
-	public Integer getSittingHoursPerDay() {
-		return sittingHoursPerDay;
-	}
-
-	public void setSittingHoursPerDay(Integer sittingHoursPerDay) {
-		this.sittingHoursPerDay = sittingHoursPerDay;
 	}
 
 	public Integer getSmoking() {
@@ -319,45 +264,6 @@ public class UserLivingVo {
 		this.smoking = smoking;
 	}
 
-	public Integer getSmokingVal1() {
-		return smokingVal1;
-	}
-
-	public void setSmokingVal1(Integer smokingVal1) {
-		this.smokingVal1 = smokingVal1;
-	}
-
-	public Integer getSmokingVal2() {
-		return smokingVal2;
-	}
-
-	public void setSmokingVal2(Integer smokingVal2) {
-		this.smokingVal2 = smokingVal2;
-	}
-
-	public Integer getSmokingVal3() {
-		return smokingVal3;
-	}
-
-	public void setSmokingVal3(Integer smokingVal3) {
-		this.smokingVal3 = smokingVal3;
-	}
-
-	public Integer getSmokingVal4() {
-		return smokingVal4;
-	}
-
-	public void setSmokingVal4(Integer smokingVal4) {
-		this.smokingVal4 = smokingVal4;
-	}
-
-	public Integer getSmokingAge() {
-		return smokingAge;
-	}
-
-	public void setSmokingAge(Integer smokingAge) {
-		this.smokingAge = smokingAge;
-	}
 
 	public Integer getPartnerSmoking() {
 		return partnerSmoking;
@@ -389,14 +295,6 @@ public class UserLivingVo {
 
 	public void setDrinkingTypes(String drinkingTypes) {
 		this.drinkingTypes = drinkingTypes;
-	}
-
-	public Integer getDrinkingVal() {
-		return drinkingVal;
-	}
-
-	public void setDrinkingVal(Integer drinkingVal) {
-		this.drinkingVal = drinkingVal;
 	}
 
 	public Date getCreateTime() {
@@ -464,21 +362,155 @@ public class UserLivingVo {
 		this.special = special;
 	}
 
-	public Integer getDrinkingYears() {
+	public Float getViolentDaysPerWeek() {
+		return violentDaysPerWeek;
+	}
+
+	public void setViolentDaysPerWeek(Float violentDaysPerWeek) {
+		this.violentDaysPerWeek = violentDaysPerWeek;
+	}
+
+	public Integer getViolentMovementPerDay() {
+		return violentMovementPerDay;
+	}
+
+	public void setViolentMovementPerDay(Integer violentMovementPerDay) {
+		this.violentMovementPerDay = violentMovementPerDay;
+	}
+
+	public Float getViolentMinutePerDay() {
+		return violentMinutePerDay;
+	}
+
+	public void setViolentMinutePerDay(Float violentMinutePerDay) {
+		this.violentMinutePerDay = violentMinutePerDay;
+	}
+
+	public Float getModerateDaysPerWeek() {
+		return moderateDaysPerWeek;
+	}
+
+	public void setModerateDaysPerWeek(Float moderateDaysPerWeek) {
+		this.moderateDaysPerWeek = moderateDaysPerWeek;
+	}
+
+	public Integer getModerateMinute() {
+		return moderateMinute;
+	}
+
+	public void setModerateMinute(Integer moderateMinute) {
+		this.moderateMinute = moderateMinute;
+	}
+
+	public Float getModerateMinutePerDay() {
+		return moderateMinutePerDay;
+	}
+
+	public void setModerateMinutePerDay(Float moderateMinutePerDay) {
+		this.moderateMinutePerDay = moderateMinutePerDay;
+	}
+
+	public Float getWalkDaysPerWeek() {
+		return walkDaysPerWeek;
+	}
+
+	public void setWalkDaysPerWeek(Float walkDaysPerWeek) {
+		this.walkDaysPerWeek = walkDaysPerWeek;
+	}
+
+	public Integer getWalkMovementPerDay() {
+		return walkMovementPerDay;
+	}
+
+	public void setWalkMovementPerDay(Integer walkMovementPerDay) {
+		this.walkMovementPerDay = walkMovementPerDay;
+	}
+
+	public Float getWalkMinutePerDay() {
+		return walkMinutePerDay;
+	}
+
+	public void setWalkMinutePerDay(Float walkMinutePerDay) {
+		this.walkMinutePerDay = walkMinutePerDay;
+	}
+
+	public Float getSittingDaysRecent7Days() {
+		return sittingDaysRecent7Days;
+	}
+
+	public void setSittingDaysRecent7Days(Float sittingDaysRecent7Days) {
+		this.sittingDaysRecent7Days = sittingDaysRecent7Days;
+	}
+
+	public Float getSittingHoursPerDay() {
+		return sittingHoursPerDay;
+	}
+
+	public void setSittingHoursPerDay(Float sittingHoursPerDay) {
+		this.sittingHoursPerDay = sittingHoursPerDay;
+	}
+
+	public Float getSmokingVal1() {
+		return smokingVal1;
+	}
+
+	public void setSmokingVal1(Float smokingVal1) {
+		this.smokingVal1 = smokingVal1;
+	}
+
+	public Float getSmokingVal2() {
+		return smokingVal2;
+	}
+
+	public void setSmokingVal2(Float smokingVal2) {
+		this.smokingVal2 = smokingVal2;
+	}
+
+	public Float getSmokingVal3() {
+		return smokingVal3;
+	}
+
+	public void setSmokingVal3(Float smokingVal3) {
+		this.smokingVal3 = smokingVal3;
+	}
+
+	public Float getSmokingVal4() {
+		return smokingVal4;
+	}
+
+	public void setSmokingVal4(Float smokingVal4) {
+		this.smokingVal4 = smokingVal4;
+	}
+
+	public Float getSmokingAge() {
+		return smokingAge;
+	}
+
+	public void setSmokingAge(Float smokingAge) {
+		this.smokingAge = smokingAge;
+	}
+
+	public Float getDrinkingVal() {
+		return drinkingVal;
+	}
+
+	public void setDrinkingVal(Float drinkingVal) {
+		this.drinkingVal = drinkingVal;
+	}
+
+	public Float getDrinkingYears() {
 		return drinkingYears;
 	}
 
-	public void setDrinkingYears(Integer drinkingYears) {
+	public void setDrinkingYears(Float drinkingYears) {
 		this.drinkingYears = drinkingYears;
 	}
 
-	public Integer getNoDrinkingYears() {
+	public Float getNoDrinkingYears() {
 		return noDrinkingYears;
 	}
 
-	public void setNoDrinkingYears(Integer noDrinkingYears) {
+	public void setNoDrinkingYears(Float noDrinkingYears) {
 		this.noDrinkingYears = noDrinkingYears;
 	}
-    
-	
 }

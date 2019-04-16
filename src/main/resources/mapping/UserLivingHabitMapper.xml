@@ -5,18 +5,18 @@
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="living_id" property="livingId" jdbcType="BIGINT" />
     <result column="smoking" property="smoking" jdbcType="INTEGER" />
-    <result column="smoking_val1" property="smokingVal1" jdbcType="INTEGER" />
-    <result column="smoking_val2" property="smokingVal2" jdbcType="INTEGER" />
-    <result column="smoking_val3" property="smokingVal3" jdbcType="INTEGER" />
-    <result column="smoking_val4" property="smokingVal4" jdbcType="INTEGER" />
-    <result column="smoking_age" property="smokingAge" jdbcType="INTEGER" />
+    <result column="smoking_val1" property="smokingVal1" jdbcType="REAL" />
+    <result column="smoking_val2" property="smokingVal2" jdbcType="REAL" />
+    <result column="smoking_val3" property="smokingVal3" jdbcType="REAL" />
+    <result column="smoking_val4" property="smokingVal4" jdbcType="REAL" />
+    <result column="smoking_age" property="smokingAge" jdbcType="REAL" />
     <result column="partner_smoking" property="partnerSmoking" jdbcType="INTEGER" />
     <result column="passive_smoking" property="passiveSmoking" jdbcType="INTEGER" />
     <result column="drinking" property="drinking" jdbcType="INTEGER" />
     <result column="drinking_types" property="drinkingTypes" jdbcType="VARCHAR" />
-    <result column="drinking_val" property="drinkingVal" jdbcType="INTEGER" />
-    <result column="drinking_years" property="drinkingYears" jdbcType="INTEGER" />
-    <result column="no_drinking_years" property="noDrinkingYears" jdbcType="INTEGER" />
+    <result column="drinking_val" property="drinkingVal" jdbcType="REAL" />
+    <result column="drinking_years" property="drinkingYears" jdbcType="REAL" />
+    <result column="no_drinking_years" property="noDrinkingYears" jdbcType="REAL" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -85,11 +85,11 @@
       drinking, drinking_types, drinking_val, 
       drinking_years, no_drinking_years, create_time, 
       update_time)
-    values (#{livingId,jdbcType=BIGINT}, #{smoking,jdbcType=INTEGER}, #{smokingVal1,jdbcType=INTEGER}, 
-      #{smokingVal2,jdbcType=INTEGER}, #{smokingVal3,jdbcType=INTEGER}, #{smokingVal4,jdbcType=INTEGER}, 
-      #{smokingAge,jdbcType=INTEGER}, #{partnerSmoking,jdbcType=INTEGER}, #{passiveSmoking,jdbcType=INTEGER}, 
-      #{drinking,jdbcType=INTEGER}, #{drinkingTypes,jdbcType=VARCHAR}, #{drinkingVal,jdbcType=INTEGER}, 
-      #{drinkingYears,jdbcType=INTEGER}, #{noDrinkingYears,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{livingId,jdbcType=BIGINT}, #{smoking,jdbcType=INTEGER}, #{smokingVal1,jdbcType=REAL}, 
+      #{smokingVal2,jdbcType=REAL}, #{smokingVal3,jdbcType=REAL}, #{smokingVal4,jdbcType=REAL}, 
+      #{smokingAge,jdbcType=REAL}, #{partnerSmoking,jdbcType=INTEGER}, #{passiveSmoking,jdbcType=INTEGER}, 
+      #{drinking,jdbcType=INTEGER}, #{drinkingTypes,jdbcType=VARCHAR}, #{drinkingVal,jdbcType=REAL}, 
+      #{drinkingYears,jdbcType=REAL}, #{noDrinkingYears,jdbcType=REAL}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserLivingHabit" useGeneratedKeys="true" keyProperty="id" >
@@ -152,19 +152,19 @@
         #{smoking,jdbcType=INTEGER},
       </if>
       <if test="smokingVal1 != null" >
-        #{smokingVal1,jdbcType=INTEGER},
+        #{smokingVal1,jdbcType=REAL},
       </if>
       <if test="smokingVal2 != null" >
-        #{smokingVal2,jdbcType=INTEGER},
+        #{smokingVal2,jdbcType=REAL},
       </if>
       <if test="smokingVal3 != null" >
-        #{smokingVal3,jdbcType=INTEGER},
+        #{smokingVal3,jdbcType=REAL},
       </if>
       <if test="smokingVal4 != null" >
-        #{smokingVal4,jdbcType=INTEGER},
+        #{smokingVal4,jdbcType=REAL},
       </if>
       <if test="smokingAge != null" >
-        #{smokingAge,jdbcType=INTEGER},
+        #{smokingAge,jdbcType=REAL},
       </if>
       <if test="partnerSmoking != null" >
         #{partnerSmoking,jdbcType=INTEGER},
@@ -179,13 +179,13 @@
         #{drinkingTypes,jdbcType=VARCHAR},
       </if>
       <if test="drinkingVal != null" >
-        #{drinkingVal,jdbcType=INTEGER},
+        #{drinkingVal,jdbcType=REAL},
       </if>
       <if test="drinkingYears != null" >
-        #{drinkingYears,jdbcType=INTEGER},
+        #{drinkingYears,jdbcType=REAL},
       </if>
       <if test="noDrinkingYears != null" >
-        #{noDrinkingYears,jdbcType=INTEGER},
+        #{noDrinkingYears,jdbcType=REAL},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -211,19 +211,19 @@
         smoking = #{smoking,jdbcType=INTEGER},
       </if>
       <if test="smokingVal1 != null" >
-        smoking_val1 = #{smokingVal1,jdbcType=INTEGER},
+        smoking_val1 = #{smokingVal1,jdbcType=REAL},
       </if>
       <if test="smokingVal2 != null" >
-        smoking_val2 = #{smokingVal2,jdbcType=INTEGER},
+        smoking_val2 = #{smokingVal2,jdbcType=REAL},
       </if>
       <if test="smokingVal3 != null" >
-        smoking_val3 = #{smokingVal3,jdbcType=INTEGER},
+        smoking_val3 = #{smokingVal3,jdbcType=REAL},
       </if>
       <if test="smokingVal4 != null" >
-        smoking_val4 = #{smokingVal4,jdbcType=INTEGER},
+        smoking_val4 = #{smokingVal4,jdbcType=REAL},
       </if>
       <if test="smokingAge != null" >
-        smoking_age = #{smokingAge,jdbcType=INTEGER},
+        smoking_age = #{smokingAge,jdbcType=REAL},
       </if>
       <if test="partnerSmoking != null" >
         partner_smoking = #{partnerSmoking,jdbcType=INTEGER},
@@ -238,13 +238,13 @@
         drinking_types = #{drinkingTypes,jdbcType=VARCHAR},
       </if>
       <if test="drinkingVal != null" >
-        drinking_val = #{drinkingVal,jdbcType=INTEGER},
+        drinking_val = #{drinkingVal,jdbcType=REAL},
       </if>
       <if test="drinkingYears != null" >
-        drinking_years = #{drinkingYears,jdbcType=INTEGER},
+        drinking_years = #{drinkingYears,jdbcType=REAL},
       </if>
       <if test="noDrinkingYears != null" >
-        no_drinking_years = #{noDrinkingYears,jdbcType=INTEGER},
+        no_drinking_years = #{noDrinkingYears,jdbcType=REAL},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -259,18 +259,18 @@
     update t_user_living_habit
     set living_id = #{livingId,jdbcType=BIGINT},
       smoking = #{smoking,jdbcType=INTEGER},
-      smoking_val1 = #{smokingVal1,jdbcType=INTEGER},
-      smoking_val2 = #{smokingVal2,jdbcType=INTEGER},
-      smoking_val3 = #{smokingVal3,jdbcType=INTEGER},
-      smoking_val4 = #{smokingVal4,jdbcType=INTEGER},
-      smoking_age = #{smokingAge,jdbcType=INTEGER},
+      smoking_val1 = #{smokingVal1,jdbcType=REAL},
+      smoking_val2 = #{smokingVal2,jdbcType=REAL},
+      smoking_val3 = #{smokingVal3,jdbcType=REAL},
+      smoking_val4 = #{smokingVal4,jdbcType=REAL},
+      smoking_age = #{smokingAge,jdbcType=REAL},
       partner_smoking = #{partnerSmoking,jdbcType=INTEGER},
       passive_smoking = #{passiveSmoking,jdbcType=INTEGER},
       drinking = #{drinking,jdbcType=INTEGER},
       drinking_types = #{drinkingTypes,jdbcType=VARCHAR},
-      drinking_val = #{drinkingVal,jdbcType=INTEGER},
-      drinking_years = #{drinkingYears,jdbcType=INTEGER},
-      no_drinking_years = #{noDrinkingYears,jdbcType=INTEGER},
+      drinking_val = #{drinkingVal,jdbcType=REAL},
+      drinking_years = #{drinkingYears,jdbcType=REAL},
+      no_drinking_years = #{noDrinkingYears,jdbcType=REAL},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}

@@ -9,15 +9,15 @@ public class UserLivingHabit {
 
     private Integer smoking;
 
-    private Integer smokingVal1;
+    private Float smokingVal1;
 
-    private Integer smokingVal2;
+    private Float smokingVal2;
 
-    private Integer smokingVal3;
+    private Float smokingVal3;
 
-    private Integer smokingVal4;
+    private Float smokingVal4;
 
-    private Integer smokingAge;
+    private Float smokingAge;
 
     private Integer partnerSmoking;
 
@@ -27,11 +27,11 @@ public class UserLivingHabit {
 
     private String drinkingTypes;
 
-    private Integer drinkingVal;
+    private Float drinkingVal;
 
-    private Integer drinkingYears;
+    private Float drinkingYears;
 
-    private Integer noDrinkingYears;
+    private Float noDrinkingYears;
 
     private Date createTime;
 
@@ -61,43 +61,43 @@ public class UserLivingHabit {
         this.smoking = smoking;
     }
 
-    public Integer getSmokingVal1() {
+    public Float getSmokingVal1() {
         return smokingVal1;
     }
 
-    public void setSmokingVal1(Integer smokingVal1) {
+    public void setSmokingVal1(Float smokingVal1) {
         this.smokingVal1 = smokingVal1;
     }
 
-    public Integer getSmokingVal2() {
+    public Float getSmokingVal2() {
         return smokingVal2;
     }
 
-    public void setSmokingVal2(Integer smokingVal2) {
+    public void setSmokingVal2(Float smokingVal2) {
         this.smokingVal2 = smokingVal2;
     }
 
-    public Integer getSmokingVal3() {
+    public Float getSmokingVal3() {
         return smokingVal3;
     }
 
-    public void setSmokingVal3(Integer smokingVal3) {
+    public void setSmokingVal3(Float smokingVal3) {
         this.smokingVal3 = smokingVal3;
     }
 
-    public Integer getSmokingVal4() {
+    public Float getSmokingVal4() {
         return smokingVal4;
     }
 
-    public void setSmokingVal4(Integer smokingVal4) {
+    public void setSmokingVal4(Float smokingVal4) {
         this.smokingVal4 = smokingVal4;
     }
 
-    public Integer getSmokingAge() {
+    public Float getSmokingAge() {
         return smokingAge;
     }
 
-    public void setSmokingAge(Integer smokingAge) {
+    public void setSmokingAge(Float smokingAge) {
         this.smokingAge = smokingAge;
     }
 
@@ -133,27 +133,27 @@ public class UserLivingHabit {
         this.drinkingTypes = drinkingTypes == null ? null : drinkingTypes.trim();
     }
 
-    public Integer getDrinkingVal() {
+    public Float getDrinkingVal() {
         return drinkingVal;
     }
 
-    public void setDrinkingVal(Integer drinkingVal) {
+    public void setDrinkingVal(Float drinkingVal) {
         this.drinkingVal = drinkingVal;
     }
 
-    public Integer getDrinkingYears() {
+    public Float getDrinkingYears() {
         return drinkingYears;
     }
 
-    public void setDrinkingYears(Integer drinkingYears) {
+    public void setDrinkingYears(Float drinkingYears) {
         this.drinkingYears = drinkingYears;
     }
 
-    public Integer getNoDrinkingYears() {
+    public Float getNoDrinkingYears() {
         return noDrinkingYears;
     }
 
-    public void setNoDrinkingYears(Integer noDrinkingYears) {
+    public void setNoDrinkingYears(Float noDrinkingYears) {
         this.noDrinkingYears = noDrinkingYears;
     }
 

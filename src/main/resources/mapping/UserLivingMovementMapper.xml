@@ -5,19 +5,21 @@
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="living_id" property="livingId" jdbcType="BIGINT" />
     <result column="violent_movement" property="violentMovement" jdbcType="INTEGER" />
-    <result column="violent_days_per_week" property="violentDaysPerWeek" jdbcType="INTEGER" />
-    <result column="violent_minute_per_day" property="violentMinutePerDay" jdbcType="INTEGER" />
+    <result column="violent_days_per_week" property="violentDaysPerWeek" jdbcType="REAL" />
+    <result column="violent_movement_per_day" property="violentMovementPerDay" jdbcType="INTEGER" />
+    <result column="violent_minute_per_day" property="violentMinutePerDay" jdbcType="REAL" />
     <result column="moderate_movement" property="moderateMovement" jdbcType="INTEGER" />
-    <result column="moderate_days_per_week" property="moderateDaysPerWeek" jdbcType="INTEGER" />
-    <result column="moderate_minute_per_day" property="moderateMinutePerDay" jdbcType="INTEGER" />
+    <result column="moderate_days_per_week" property="moderateDaysPerWeek" jdbcType="REAL" />
+    <result column="moderate_minute" property="moderateMinute" jdbcType="INTEGER" />
+    <result column="moderate_minute_per_day" property="moderateMinutePerDay" jdbcType="REAL" />
     <result column="walk_movement" property="walkMovement" jdbcType="INTEGER" />
-    <result column="walk_days_per_week" property="walkDaysPerWeek" jdbcType="INTEGER" />
+    <result column="walk_days_per_week" property="walkDaysPerWeek" jdbcType="REAL" />
     <result column="walk_movement_per_day" property="walkMovementPerDay" jdbcType="INTEGER" />
-    <result column="walk_minute_per_day" property="walkMinutePerDay" jdbcType="INTEGER" />
+    <result column="walk_minute_per_day" property="walkMinutePerDay" jdbcType="REAL" />
     <result column="sitting_recent7_days" property="sittingRecent7Days" jdbcType="INTEGER" />
-    <result column="sitting_days_recent7_days" property="sittingDaysRecent7Days" jdbcType="INTEGER" />
+    <result column="sitting_days_recent7_days" property="sittingDaysRecent7Days" jdbcType="REAL" />
     <result column="sitting_hours" property="sittingHours" jdbcType="INTEGER" />
-    <result column="sitting_hours_per_day" property="sittingHoursPerDay" jdbcType="INTEGER" />
+    <result column="sitting_hours_per_day" property="sittingHoursPerDay" jdbcType="REAL" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -51,10 +53,11 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, living_id, violent_movement, violent_days_per_week, violent_minute_per_day, moderate_movement, 
-    moderate_days_per_week, moderate_minute_per_day, walk_movement, walk_days_per_week, 
-    walk_movement_per_day, walk_minute_per_day, sitting_recent7_days, sitting_days_recent7_days, 
-    sitting_hours, sitting_hours_per_day, create_time, update_time
+    id, living_id, violent_movement, violent_days_per_week, violent_movement_per_day, 
+    violent_minute_per_day, moderate_movement, moderate_days_per_week, moderate_minute, 
+    moderate_minute_per_day, walk_movement, walk_days_per_week, walk_movement_per_day, 
+    walk_minute_per_day, sitting_recent7_days, sitting_days_recent7_days, sitting_hours, 
+    sitting_hours_per_day, create_time, update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserLivingMovementExample" >
     select
@@ -82,19 +85,19 @@
   </delete>
   <insert id="insert" parameterType="com.breeze.health.entity.UserLivingMovement" useGeneratedKeys="true" keyProperty="id" >
     insert into t_user_living_movement (living_id, violent_movement, violent_days_per_week, 
-      violent_minute_per_day, moderate_movement, 
-      moderate_days_per_week, moderate_minute_per_day, 
-      walk_movement, walk_days_per_week, walk_movement_per_day, 
-      walk_minute_per_day, sitting_recent7_days, sitting_days_recent7_days, 
-      sitting_hours, sitting_hours_per_day, create_time, 
-      update_time)
-    values (#{livingId,jdbcType=BIGINT}, #{violentMovement,jdbcType=INTEGER}, #{violentDaysPerWeek,jdbcType=INTEGER}, 
-      #{violentMinutePerDay,jdbcType=INTEGER}, #{moderateMovement,jdbcType=INTEGER}, 
-      #{moderateDaysPerWeek,jdbcType=INTEGER}, #{moderateMinutePerDay,jdbcType=INTEGER}, 
-      #{walkMovement,jdbcType=INTEGER}, #{walkDaysPerWeek,jdbcType=INTEGER}, #{walkMovementPerDay,jdbcType=INTEGER}, 
-      #{walkMinutePerDay,jdbcType=INTEGER}, #{sittingRecent7Days,jdbcType=INTEGER}, #{sittingDaysRecent7Days,jdbcType=INTEGER}, 
-      #{sittingHours,jdbcType=INTEGER}, #{sittingHoursPerDay,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP})
+      violent_movement_per_day, violent_minute_per_day, 
+      moderate_movement, moderate_days_per_week, moderate_minute, 
+      moderate_minute_per_day, walk_movement, walk_days_per_week, 
+      walk_movement_per_day, walk_minute_per_day, sitting_recent7_days, 
+      sitting_days_recent7_days, sitting_hours, sitting_hours_per_day, 
+      create_time, update_time)
+    values (#{livingId,jdbcType=BIGINT}, #{violentMovement,jdbcType=INTEGER}, #{violentDaysPerWeek,jdbcType=REAL}, 
+      #{violentMovementPerDay,jdbcType=INTEGER}, #{violentMinutePerDay,jdbcType=REAL}, 
+      #{moderateMovement,jdbcType=INTEGER}, #{moderateDaysPerWeek,jdbcType=REAL}, #{moderateMinute,jdbcType=INTEGER}, 
+      #{moderateMinutePerDay,jdbcType=REAL}, #{walkMovement,jdbcType=INTEGER}, #{walkDaysPerWeek,jdbcType=REAL}, 
+      #{walkMovementPerDay,jdbcType=INTEGER}, #{walkMinutePerDay,jdbcType=REAL}, #{sittingRecent7Days,jdbcType=INTEGER}, 
+      #{sittingDaysRecent7Days,jdbcType=REAL}, #{sittingHours,jdbcType=INTEGER}, #{sittingHoursPerDay,jdbcType=REAL}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.UserLivingMovement" useGeneratedKeys="true" keyProperty="id" >
     insert into t_user_living_movement
@@ -108,6 +111,9 @@
       <if test="violentDaysPerWeek != null" >
         violent_days_per_week,
       </if>
+      <if test="violentMovementPerDay != null" >
+        violent_movement_per_day,
+      </if>
       <if test="violentMinutePerDay != null" >
         violent_minute_per_day,
       </if>
@@ -116,6 +122,9 @@
       </if>
       <if test="moderateDaysPerWeek != null" >
         moderate_days_per_week,
+      </if>
+      <if test="moderateMinute != null" >
+        moderate_minute,
       </if>
       <if test="moderateMinutePerDay != null" >
         moderate_minute_per_day,
@@ -159,43 +168,49 @@
         #{violentMovement,jdbcType=INTEGER},
       </if>
       <if test="violentDaysPerWeek != null" >
-        #{violentDaysPerWeek,jdbcType=INTEGER},
+        #{violentDaysPerWeek,jdbcType=REAL},
+      </if>
+      <if test="violentMovementPerDay != null" >
+        #{violentMovementPerDay,jdbcType=INTEGER},
       </if>
       <if test="violentMinutePerDay != null" >
-        #{violentMinutePerDay,jdbcType=INTEGER},
+        #{violentMinutePerDay,jdbcType=REAL},
       </if>
       <if test="moderateMovement != null" >
         #{moderateMovement,jdbcType=INTEGER},
       </if>
       <if test="moderateDaysPerWeek != null" >
-        #{moderateDaysPerWeek,jdbcType=INTEGER},
+        #{moderateDaysPerWeek,jdbcType=REAL},
+      </if>
+      <if test="moderateMinute != null" >
+        #{moderateMinute,jdbcType=INTEGER},
       </if>
       <if test="moderateMinutePerDay != null" >
-        #{moderateMinutePerDay,jdbcType=INTEGER},
+        #{moderateMinutePerDay,jdbcType=REAL},
       </if>
       <if test="walkMovement != null" >
         #{walkMovement,jdbcType=INTEGER},
       </if>
       <if test="walkDaysPerWeek != null" >
-        #{walkDaysPerWeek,jdbcType=INTEGER},
+        #{walkDaysPerWeek,jdbcType=REAL},
       </if>
       <if test="walkMovementPerDay != null" >
         #{walkMovementPerDay,jdbcType=INTEGER},
       </if>
       <if test="walkMinutePerDay != null" >
-        #{walkMinutePerDay,jdbcType=INTEGER},
+        #{walkMinutePerDay,jdbcType=REAL},
       </if>
       <if test="sittingRecent7Days != null" >
         #{sittingRecent7Days,jdbcType=INTEGER},
       </if>
       <if test="sittingDaysRecent7Days != null" >
-        #{sittingDaysRecent7Days,jdbcType=INTEGER},
+        #{sittingDaysRecent7Days,jdbcType=REAL},
       </if>
       <if test="sittingHours != null" >
         #{sittingHours,jdbcType=INTEGER},
       </if>
       <if test="sittingHoursPerDay != null" >
-        #{sittingHoursPerDay,jdbcType=INTEGER},
+        #{sittingHoursPerDay,jdbcType=REAL},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -221,43 +236,49 @@
         violent_movement = #{violentMovement,jdbcType=INTEGER},
       </if>
       <if test="violentDaysPerWeek != null" >
-        violent_days_per_week = #{violentDaysPerWeek,jdbcType=INTEGER},
+        violent_days_per_week = #{violentDaysPerWeek,jdbcType=REAL},
+      </if>
+      <if test="violentMovementPerDay != null" >
+        violent_movement_per_day = #{violentMovementPerDay,jdbcType=INTEGER},
       </if>
       <if test="violentMinutePerDay != null" >
-        violent_minute_per_day = #{violentMinutePerDay,jdbcType=INTEGER},
+        violent_minute_per_day = #{violentMinutePerDay,jdbcType=REAL},
       </if>
       <if test="moderateMovement != null" >
         moderate_movement = #{moderateMovement,jdbcType=INTEGER},
       </if>
       <if test="moderateDaysPerWeek != null" >
-        moderate_days_per_week = #{moderateDaysPerWeek,jdbcType=INTEGER},
+        moderate_days_per_week = #{moderateDaysPerWeek,jdbcType=REAL},
+      </if>
+      <if test="moderateMinute != null" >
+        moderate_minute = #{moderateMinute,jdbcType=INTEGER},
       </if>
       <if test="moderateMinutePerDay != null" >
-        moderate_minute_per_day = #{moderateMinutePerDay,jdbcType=INTEGER},
+        moderate_minute_per_day = #{moderateMinutePerDay,jdbcType=REAL},
       </if>
       <if test="walkMovement != null" >
         walk_movement = #{walkMovement,jdbcType=INTEGER},
       </if>
       <if test="walkDaysPerWeek != null" >
-        walk_days_per_week = #{walkDaysPerWeek,jdbcType=INTEGER},
+        walk_days_per_week = #{walkDaysPerWeek,jdbcType=REAL},
       </if>
       <if test="walkMovementPerDay != null" >
         walk_movement_per_day = #{walkMovementPerDay,jdbcType=INTEGER},
       </if>
       <if test="walkMinutePerDay != null" >
-        walk_minute_per_day = #{walkMinutePerDay,jdbcType=INTEGER},
+        walk_minute_per_day = #{walkMinutePerDay,jdbcType=REAL},
       </if>
       <if test="sittingRecent7Days != null" >
         sitting_recent7_days = #{sittingRecent7Days,jdbcType=INTEGER},
       </if>
       <if test="sittingDaysRecent7Days != null" >
-        sitting_days_recent7_days = #{sittingDaysRecent7Days,jdbcType=INTEGER},
+        sitting_days_recent7_days = #{sittingDaysRecent7Days,jdbcType=REAL},
       </if>
       <if test="sittingHours != null" >
         sitting_hours = #{sittingHours,jdbcType=INTEGER},
       </if>
       <if test="sittingHoursPerDay != null" >
-        sitting_hours_per_day = #{sittingHoursPerDay,jdbcType=INTEGER},
+        sitting_hours_per_day = #{sittingHoursPerDay,jdbcType=REAL},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -272,19 +293,21 @@
     update t_user_living_movement
     set living_id = #{livingId,jdbcType=BIGINT},
       violent_movement = #{violentMovement,jdbcType=INTEGER},
-      violent_days_per_week = #{violentDaysPerWeek,jdbcType=INTEGER},
-      violent_minute_per_day = #{violentMinutePerDay,jdbcType=INTEGER},
+      violent_days_per_week = #{violentDaysPerWeek,jdbcType=REAL},
+      violent_movement_per_day = #{violentMovementPerDay,jdbcType=INTEGER},
+      violent_minute_per_day = #{violentMinutePerDay,jdbcType=REAL},
       moderate_movement = #{moderateMovement,jdbcType=INTEGER},
-      moderate_days_per_week = #{moderateDaysPerWeek,jdbcType=INTEGER},
-      moderate_minute_per_day = #{moderateMinutePerDay,jdbcType=INTEGER},
+      moderate_days_per_week = #{moderateDaysPerWeek,jdbcType=REAL},
+      moderate_minute = #{moderateMinute,jdbcType=INTEGER},
+      moderate_minute_per_day = #{moderateMinutePerDay,jdbcType=REAL},
       walk_movement = #{walkMovement,jdbcType=INTEGER},
-      walk_days_per_week = #{walkDaysPerWeek,jdbcType=INTEGER},
+      walk_days_per_week = #{walkDaysPerWeek,jdbcType=REAL},
       walk_movement_per_day = #{walkMovementPerDay,jdbcType=INTEGER},
-      walk_minute_per_day = #{walkMinutePerDay,jdbcType=INTEGER},
+      walk_minute_per_day = #{walkMinutePerDay,jdbcType=REAL},
       sitting_recent7_days = #{sittingRecent7Days,jdbcType=INTEGER},
-      sitting_days_recent7_days = #{sittingDaysRecent7Days,jdbcType=INTEGER},
+      sitting_days_recent7_days = #{sittingDaysRecent7Days,jdbcType=REAL},
       sitting_hours = #{sittingHours,jdbcType=INTEGER},
-      sitting_hours_per_day = #{sittingHoursPerDay,jdbcType=INTEGER},
+      sitting_hours_per_day = #{sittingHoursPerDay,jdbcType=REAL},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
