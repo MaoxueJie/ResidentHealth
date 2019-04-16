@@ -70,6 +70,31 @@ public class LivingServiceImpl implements LivingService {
         	final UserLivingMovement movement = new UserLivingMovement();
         	BeanUtils.copyProperties(vo, movement);
         	
+        	if (!Integer.valueOf(1).equals(movement.getModerateMovement()))
+        	{
+        		movement.setModerateDaysPerWeek(null);
+        		movement.setModerateMinutePerDay(null);
+        		movement.setModerateMinute(null);
+        	}
+        	if (!Integer.valueOf(1).equals(movement.getViolentMovement()))
+        	{
+        		movement.setViolentDaysPerWeek(null);
+        		movement.setViolentMinutePerDay(null);
+        		movement.setViolentMovementPerDay(null);
+        	}
+        	if (!Integer.valueOf(1).equals(movement.getWalkMovement()))
+        	{
+        		movement.setWalkDaysPerWeek(null);
+        		movement.setWalkMovementPerDay(null);
+        		movement.setWalkMinutePerDay(null);
+        	}
+        	if (!Integer.valueOf(1).equals(movement.getSittingRecent7Days()))
+        	{
+        		movement.setSittingDaysRecent7Days(null);
+        		movement.setSittingHours(null);
+        		movement.setSittingHoursPerDay(null);
+        	}
+        	
         	ret = transactionTemplate.execute(new TransactionCallback<Result<Void>>() {
 				@Override
 				public Result<Void> doInTransaction(TransactionStatus arg0) {
