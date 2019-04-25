@@ -105,7 +105,7 @@ $(function(){
 					//$('body').append( reportHtml );
 					//window.scrollTo(0,0);
 					if( json.data != null ){
-						if( isResult && typeof json.data.resultMsg != 'undefined' ){	//结果页
+						if( isResult && typeof json.data.resultMsg != 'undefined' && !fun){	//结果页
 							$('#resultTitle').html( json.data.resultTitle )
 							var resultMsg = json.data.resultMsg.replace('/\n','</br>');
 							console.log( resultMsg );
