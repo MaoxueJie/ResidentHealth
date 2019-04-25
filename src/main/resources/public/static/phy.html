@@ -716,7 +716,8 @@
 			var weight = $('input[name=weight]').val();
 			var height = $('input[name=height]').val();
 			var bmi = parseInt(weight)/((parseInt(height)/100)*(parseInt(height)/100));
-			$('#bmi').val( bmi );
+			if (bmi)
+				$('#bmi').val( bmi );
 		}
 	})
 </script>
