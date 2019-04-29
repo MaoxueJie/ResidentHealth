@@ -34,6 +34,8 @@ public class UserSickVo {
     private Integer cataractYears;
 
     private String others;
+    
+    private Integer othersYears;
 
     private String[] drugs;
 
@@ -44,6 +46,8 @@ public class UserSickVo {
     private String hypoglycemicAgentsName;
 
     private String antiplateletDrugName;
+    
+    private String othersDrugName;
 
     private String highBloodPressureHistory;
 
@@ -293,5 +297,22 @@ public class UserSickVo {
 	public void setResultMsg(String resultMsg) {
 		this.resultMsg = resultMsg;
 	}
+
+	public Integer getOthersYears() {
+		return othersYears;
+	}
+
+	public void setOthersYears(Integer othersYears) {
+		this.othersYears = othersYears;
+	}
+
+	public String getOthersDrugName() {
+		return othersDrugName;
+	}
+
+	public void setOthersDrugName(String othersDrugName) {
+		this.othersDrugName = othersDrugName;
+	}
+	
 	
 }

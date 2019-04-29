@@ -35,6 +35,8 @@ public class UserSick {
 
     private String others;
 
+    private Integer othersYears;
+
     private String drugs;
 
     private String antihypertensiveDrugName;
@@ -44,6 +46,8 @@ public class UserSick {
     private String hypoglycemicAgentsName;
 
     private String antiplateletDrugName;
+
+    private String othersDrugName;
 
     private String highBloodPressureHistory;
 
@@ -185,6 +189,14 @@ public class UserSick {
         this.others = others == null ? null : others.trim();
     }
 
+    public Integer getOthersYears() {
+        return othersYears;
+    }
+
+    public void setOthersYears(Integer othersYears) {
+        this.othersYears = othersYears;
+    }
+
     public String getDrugs() {
         return drugs;
     }
@@ -223,6 +235,14 @@ public class UserSick {
 
     public void setAntiplateletDrugName(String antiplateletDrugName) {
         this.antiplateletDrugName = antiplateletDrugName == null ? null : antiplateletDrugName.trim();
+    }
+
+    public String getOthersDrugName() {
+        return othersDrugName;
+    }
+
+    public void setOthersDrugName(String othersDrugName) {
+        this.othersDrugName = othersDrugName == null ? null : othersDrugName.trim();
     }
 
     public String getHighBloodPressureHistory() {

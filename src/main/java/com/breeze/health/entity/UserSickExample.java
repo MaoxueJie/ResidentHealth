@@ -1085,6 +1085,66 @@ public class UserSickExample {
             return (Criteria) this;
         }
 
+        public Criteria andOthersYearsIsNull() {
+            addCriterion("others_years is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersYearsIsNotNull() {
+            addCriterion("others_years is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersYearsEqualTo(Integer value) {
+            addCriterion("others_years =", value, "othersYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersYearsNotEqualTo(Integer value) {
+            addCriterion("others_years <>", value, "othersYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersYearsGreaterThan(Integer value) {
+            addCriterion("others_years >", value, "othersYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersYearsGreaterThanOrEqualTo(Integer value) {
+            addCriterion("others_years >=", value, "othersYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersYearsLessThan(Integer value) {
+            addCriterion("others_years <", value, "othersYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersYearsLessThanOrEqualTo(Integer value) {
+            addCriterion("others_years <=", value, "othersYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersYearsIn(List<Integer> values) {
+            addCriterion("others_years in", values, "othersYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersYearsNotIn(List<Integer> values) {
+            addCriterion("others_years not in", values, "othersYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersYearsBetween(Integer value1, Integer value2) {
+            addCriterion("others_years between", value1, value2, "othersYears");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersYearsNotBetween(Integer value1, Integer value2) {
+            addCriterion("others_years not between", value1, value2, "othersYears");
+            return (Criteria) this;
+        }
+
         public Criteria andDrugsIsNull() {
             addCriterion("drugs is null");
             return (Criteria) this;
@@ -1432,6 +1492,76 @@ public class UserSickExample {
 
         public Criteria andAntiplateletDrugNameNotBetween(String value1, String value2) {
             addCriterion("antiplatelet_drug_name not between", value1, value2, "antiplateletDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameIsNull() {
+            addCriterion("others_drug_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameIsNotNull() {
+            addCriterion("others_drug_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameEqualTo(String value) {
+            addCriterion("others_drug_name =", value, "othersDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameNotEqualTo(String value) {
+            addCriterion("others_drug_name <>", value, "othersDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameGreaterThan(String value) {
+            addCriterion("others_drug_name >", value, "othersDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameGreaterThanOrEqualTo(String value) {
+            addCriterion("others_drug_name >=", value, "othersDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameLessThan(String value) {
+            addCriterion("others_drug_name <", value, "othersDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameLessThanOrEqualTo(String value) {
+            addCriterion("others_drug_name <=", value, "othersDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameLike(String value) {
+            addCriterion("others_drug_name like", value, "othersDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameNotLike(String value) {
+            addCriterion("others_drug_name not like", value, "othersDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameIn(List<String> values) {
+            addCriterion("others_drug_name in", values, "othersDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameNotIn(List<String> values) {
+            addCriterion("others_drug_name not in", values, "othersDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameBetween(String value1, String value2) {
+            addCriterion("others_drug_name between", value1, value2, "othersDrugName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOthersDrugNameNotBetween(String value1, String value2) {
+            addCriterion("others_drug_name not between", value1, value2, "othersDrugName");
             return (Criteria) this;
         }
 
