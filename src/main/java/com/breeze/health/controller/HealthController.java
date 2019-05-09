@@ -71,6 +71,12 @@ public class HealthController {
 		return new ModelAndView(new RedirectView(path+"static/home.html"));
 	}
 	
+    @RequestMapping(value = "/base", method = {RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView base(HttpServletRequest request, HttpServletResponse response){
+		String path = Config.getBasepath();
+		return new ModelAndView(new RedirectView(path+"static/base.html"));
+	}
+	
 	@RequestMapping(value = "/base/get", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	public Result<UserBaseInfoVo> getUserInfo(HttpServletRequest request, HttpServletResponse response){
