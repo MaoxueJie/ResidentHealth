@@ -39,7 +39,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
+import com.breeze.health.config.Config;
 import com.breeze.health.config.WexinConfig;
 import com.breeze.health.mapper.UserMapper;
 
@@ -62,6 +64,12 @@ public class HealthController {
 	@Resource
 	private TCMService tcmService;
 	
+	@RequestMapping(value = "/home", method = {RequestMethod.GET,RequestMethod.POST})
+	
+	public ModelAndView home(HttpServletRequest request, HttpServletResponse response){
+		String path = Config.getBasepath();
+		return new ModelAndView(new RedirectView(path+"static/home.html"));
+	}
 	
 	@RequestMapping(value = "/base/get", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody

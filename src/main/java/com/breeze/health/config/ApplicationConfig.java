@@ -19,6 +19,7 @@ public class ApplicationConfig {
 		authFilter.setUserService(userService);
 		registrationBean.setFilter(authFilter);
 		List<String> urlPatterns = new ArrayList<String>();
+		urlPatterns.add("/home");
 	    urlPatterns.add("/base/add");
 	    urlPatterns.add("/base/get");
 	    urlPatterns.add("/living/add");
