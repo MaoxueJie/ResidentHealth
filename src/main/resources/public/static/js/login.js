@@ -96,7 +96,14 @@ $(document).ready(function(){
 				dataType: 'json',
 				success: function(json){
 					if( json.success ){
-						window.location.href = '/cfd/static/' + that.getQueryString('state') + '.html';
+						var page = that.getQueryString('state');
+						if (page && page!="null")
+						{
+							window.location.href = '/cfd/static/' + page + '.html';
+						}else
+						{
+							window.location.href = '/cfd/static/home.html';
+						}
 					}else{
 						that.showError( '',json.message );
 					}
