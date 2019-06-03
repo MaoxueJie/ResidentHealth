@@ -526,27 +526,33 @@ input.weui-btn_plain-default{
 .weui-cells_radio .weui-cell__ft{
   padding-left:0.35em;
 }
-.weui-cells_radio .weui-check + .weui-icon-checked{
-  min-width:16px;
+.weui-cells_radio .weui-cell__hd{
+  padding-right:0.35em;
 }
 .weui-cells_radio .weui-check:checked + .weui-icon-checked:before{
-  display:block;
-  content:'\EA08';
+  content:'\EA06';
   color:#09BB07;
+}
+.weui-cells_radio .weui-icon-checked:before{
+  display:block;
+  content:'\EA01';
+  color:#C9C9C9;
   font-size:16px;
 }
 .weui-cells_checkbox .weui-cell__hd{
   padding-right:0.35em;
 }
 .weui-cells_checkbox .weui-icon-checked:before{
-  content:'\EA01';
-  color:#C9C9C9;
-  font-size:23px;
   display:block;
+  content:'\2610';
+  color:#C9C9C9;
+  font-size:16px;
+  margin-top:-6px;
 }
 .weui-cells_checkbox .weui-check:checked + .weui-icon-checked:before{
-  content:'\EA06';
+  content:'\2611';
   color:#09BB07;
+  margin-top:-6px;
 }
 .weui-label{
   display:block;

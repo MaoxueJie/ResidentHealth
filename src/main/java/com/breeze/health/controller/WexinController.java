@@ -146,7 +146,7 @@ public class WexinController {
 					if (!"".equals(eventKey)) {
 						qrCodeId = eventKey.split("qrscene_")[1];
 					} else {
-						respContent = "谢谢您的关注！";
+						respContent = "您好！感谢您关注“居民e健康”。“居民e健康”公众号是北京大学护理学院孙宏玉教授团队与多所高校和医疗机构的专家学者合作搭建的居民健康监测与管理平台，为广大居民提供健康管理服务，帮助居民更好地管理自己的健康。为了能更准确地进行健康监测和做出全面的健康报告，需要您填写或上传相关的健康信息。您的所有信息都可以得到安全保障，不会泄露给本团队以外的任何个人和第三方机构。";
 					}
 					userService.bindWexin(fromUserName,null);
 				}

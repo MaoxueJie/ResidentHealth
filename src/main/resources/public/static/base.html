@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0"/>
 	<title>基本信息</title>
 	<!-- 引入 WeUI -->
-	<link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
+	<link rel="stylesheet" href="css/weui.css">
 	<link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
 	<link rel="stylesheet" href="./css/style.css"/>
 </head>
@@ -39,23 +39,24 @@
 				<div class="weui-cells__title">性别：</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="sex1">
-						<div class="weui-cell__bd">
-							<p>男</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="radio" required class="weui-check" name="gender" id="sex1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>男</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="sex2">
-
-						<div class="weui-cell__bd">
-							<p>女</p>
-						</div>
-						<div class="weui-cell__ft">
+                        <div class="weui-cell__hd">
 							<input type="radio" required name="gender" class="weui-check" id="sex2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>女</p>
+						</div>
+						
 					</label>
 				</div>
 			</div>
@@ -64,69 +65,74 @@
 				<div class="weui-cells__title">文化程度：</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="whcd1">
-						<div class="weui-cell__bd">
-							<p>小学及以下</p>
-						</div>
-						<div class="weui-cell__ft">
+					     <div class="weui-cell__hd">
 							<input type="radio" required class="weui-check" name="education" id="whcd1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>小学及以下</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="whcd2">
-
-						<div class="weui-cell__bd">
-							<p>初中</p>
-						</div>
-						<div class="weui-cell__ft">
+                        <div class="weui-cell__hd">
 							<input type="radio" required name="education" class="weui-check" id="whcd2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>初中</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="whcd3">
-						<div class="weui-cell__bd">
-							<p>中专</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="radio" required class="weui-check" name="education" id="whcd3" value="3">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>中专</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="whcd4">
-
-						<div class="weui-cell__bd">
-							<p>高中</p>
-						</div>
-						<div class="weui-cell__ft">
+                        <div class="weui-cell__hd">
 							<input type="radio" required name="education" class="weui-check" id="whcd4" value="4">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>高中</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="whcd5">
-						<div class="weui-cell__bd">
-							<p>大专</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="radio" required class="weui-check" name="education" id="whcd5" value="5">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>大专</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="whcd6">
-						<div class="weui-cell__bd">
-							<p>大学本科</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="radio" required class="weui-check" name="education" id="whcd6" value="6">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>大学本科</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="whcd7">
-						<div class="weui-cell__bd">
-							<p>研究生及以上</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="radio" required class="weui-check" name="education" id="whcd7" value="7">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>研究生及以上</p>
+						</div>
+						
 					</label>
 				</div>
 			</div>
@@ -136,42 +142,44 @@
 					<div class="weui-cells__title">婚育状况：</div>
 					<div class="weui-cells weui-cells_radio">
 						<label class="weui-cell weui-check__label" for="hyqk1">
-							<div class="weui-cell__bd">
-								<p>未婚</p>
-							</div>
-							<div class="weui-cell__ft">
+						    <div class="weui-cell__hd">
 								<input type="radio" required class="weui-check" name="marriage" id="hyqk1" value="1">
 								<span class="weui-icon-checked"></span>
 							</div>
+							<div class="weui-cell__bd">
+								<p>未婚</p>
+							</div>
+							
 						</label>
 						<label class="weui-cell weui-check__label" for="hyqk2">
-
-							<div class="weui-cell__bd">
-								<p>已婚</p>
-							</div>
-							<div class="weui-cell__ft">
+                            <div class="weui-cell__hd">
 								<input type="radio" required name="marriage" class="weui-check" id="hyqk2" value="2">
 								<span class="weui-icon-checked"></span>
 							</div>
+							<div class="weui-cell__bd">
+								<p>已婚</p>
+							</div>
+							
 						</label>
 						<label class="weui-cell weui-check__label" for="hyqk3">
-							<div class="weui-cell__bd">
-								<p>丧偶</p>
-							</div>
-							<div class="weui-cell__ft">
+							<div class="weui-cell__hd">
 								<input type="radio" required class="weui-check" name="marriage" id="hyqk3" value="3">
 								<span class="weui-icon-checked"></span>
 							</div>
+							<div class="weui-cell__bd">
+								<p>丧偶</p>
+							</div>
+							
 						</label>
 						<label class="weui-cell weui-check__label" for="hyqk4">
-
-							<div class="weui-cell__bd">
-								<p>离异</p>
-							</div>
-							<div class="weui-cell__ft">
+                            <div class="weui-cell__hd">
 								<input type="radio" required name="marriage" class="weui-check" id="hyqk4" value="4">
 								<span class="weui-icon-checked"></span>
 							</div>
+							<div class="weui-cell__bd">
+								<p>离异</p>
+							</div>
+							
 						</label>
 					</div>
 				</div>
@@ -202,30 +210,31 @@
 					<div class="weui-cells__title">家庭类型：</div>
 					<div class="weui-cells weui-cells_radio">
 						<label class="weui-cell weui-check__label" for="jzgx1">
-							<div class="weui-cell__bd">
-								<p>独居</p>
-							</div>
-							<div class="weui-cell__ft">
+							<div class="weui-cell__hd">
 								<input type="radio" required class="weui-check" name="familyType" id="jzgx1" value="1">
 								<span class="weui-icon-checked"></span>
 							</div>
+							<div class="weui-cell__bd">
+								<p>独居</p>
+							</div>
+							
 						</label>
 						<label class="weui-cell weui-check__label" for="jzgx2">
-
-							<div class="weui-cell__bd">
-								<p>与他人同住</p>
-							</div>
-							<div class="weui-cell__ft">
+                            <div class="weui-cell__hd">
 								<input type="radio" required name="familyType" class="weui-check" id="jzgx2" value="2">
 								<span class="weui-icon-checked"></span>
 							</div>
+							<div class="weui-cell__bd">
+								<p>与他人同住</p>
+							</div>
+							
 						</label>
 					</div>
 				</div>
 			</div>
 
 			<div id="live_relation" class="cell-item">
-				<div class="weui-cells__title">若与他人同住，你们是什么关系？</div>
+				<div class="weui-cells__title">若与他人同住，你们是什么关系？(多选)</div>
 				<div class="weui-cells weui-cells_checkbox">
 					<label class="weui-cell weui-check__label" for="familyDesc1">
 						<div class="weui-cell__hd">
@@ -316,41 +325,44 @@
 				<div class="weui-cells__title">工作状态：</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="job1">
-						<div class="weui-cell__bd">
-							<p>无业</p>
-						</div>
-						<div class="weui-cell__ft">
+						<div class="weui-cell__hd">
 							<input type="radio" required class="weui-check" name="job" id="job1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>无业</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="job2">
-
-						<div class="weui-cell__bd">
-							<p>在职</p>
-						</div>
-						<div class="weui-cell__ft">
+                        <div class="weui-cell__hd">
 							<input type="radio" required name="job" class="weui-check" id="job2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>在职</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="job3">
-						<div class="weui-cell__bd">
-							<p>离休/退休</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="radio" required class="weui-check" name="job" id="job3" value="3">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>离休/退休</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="job4">
-						<div class="weui-cell__bd">
-							<p>学生</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="radio" required class="weui-check" name="job" id="job4" value="4">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>学生</p>
+						</div>
+						
 					</label>
 					<!-- <div class="weui-cell">
 						<div class="weui-cell__hd"><label class="weui-label">其它行业</label></div>
@@ -364,50 +376,54 @@
 				<div class="weui-cells__title">宗教信仰：</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="religion0">
-						<div class="weui-cell__bd">
-							<p>无</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="radio" required  name="religion" class="weui-check" id="religion0" value="无">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>无</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="religion1">
-						<div class="weui-cell__bd">
-							<p>佛教</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="radio" required  name="religion" class="weui-check" id="religion1" value="佛教">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>佛教</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="religion2">
-	
-						<div class="weui-cell__bd">
-							<p>伊斯兰教</p>
-						</div>
-						<div class="weui-cell__ft">
+	                    <div class="weui-cell__hd">
 							<input type="radio" required class="weui-check" name="religion" id="religion2" value="伊斯兰教">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>伊斯兰教</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="religion3">
-						<div class="weui-cell__bd">
-							<p>基督教</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="radio" required class="weui-check" name="religion" id="religion3" value="基督教">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>基督教</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="religion4">
-						<div class="weui-cell__bd">
-							<p>其它</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="radio" required  class="weui-check" name="religion" id="religion4" value="其它">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>其它</p>
+						</div>
+						
 					</label>
 					<div class="weui-cell weui-cell-input" id="inputOtherReligion">
 							<div class="weui-cell__hd"><label class="weui-label">其它宗教：</label></div>
@@ -422,32 +438,34 @@
 				<div class="weui-cells__title">家庭人均月收入（单位：元/人/月）：</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="jjzk1">
-						<div class="weui-cell__bd">
-							<p>2000以下</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="radio" required class="weui-check" name="habitatIncome" id="jjzk1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>2000以下</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="jjzk2">
-
-						<div class="weui-cell__bd">
-							<p>2000-5000</p>
-						</div>
-						<div class="weui-cell__ft">
+                        <div class="weui-cell__hd">
 							<input type="radio" required name="habitatIncome" class="weui-check" id="jjzk2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>2000-5000</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="jjzk3">
-						<div class="weui-cell__bd">
-							<p>5000以上</p>
-						</div>
-						<div class="weui-cell__ft">
+						<div class="weui-cell__hd">
 							<input type="radio" required class="weui-check" name="habitatIncome" id="jjzk3" value="3">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>5000以上</p>
+						</div>
+						
 					</label>
 				</div>
 			</div>
@@ -456,23 +474,24 @@
 				<div class="weui-cells__title">医疗费用报销类型：</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="yblx1">
-						<div class="weui-cell__bd">
-							<p>完全自费</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="checkbox" required class="weui-check" name="medicalPayWay" id="yblx1" value="1">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>完全自费</p>
+						</div>
+						
 					</label>
 					<label class="weui-cell weui-check__label" for="yblx2">
-
-						<div class="weui-cell__bd">
-							<p>公费医疗</p>
-						</div>
-						<div class="weui-cell__ft">
+                        <div class="weui-cell__hd">
 							<input type="checkbox" required name="medicalPayWay" class="weui-check" id="yblx2" value="2">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>公费医疗</p>
+						</div>
+						
 					</label>
 					<div class="weui-cell" id="medicalPayDesc2">
 						<div class="weui-cell__hd"><label class="weui-label">报销比例</label></div>
@@ -481,13 +500,14 @@
 						</div>
 					</div>
 					<label class="weui-cell weui-check__label" for="yblx3">
-						<div class="weui-cell__bd">
-							<p>医保</p>
-						</div>
-						<div class="weui-cell__ft">
+					    <div class="weui-cell__hd">
 							<input type="checkbox" required class="weui-check" name="medicalPayWay" id="yblx3" value="3">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>医保</p>
+						</div>
+						
 					</label>
 					<div class="weui-cell" id="medicalPayDesc3">
 						<div class="weui-cell__hd"><label class="weui-label">报销比例</label></div>
@@ -496,13 +516,14 @@
 						</div>
 					</div>
 					<label class="weui-cell weui-check__label" for="yblx4">
-						<div class="weui-cell__bd">
-							<p>商业保险</p>
-						</div>
-						<div class="weui-cell__ft">
+						<div class="weui-cell__hd">
 							<input type="checkbox" required class="weui-check" name="medicalPayWay" id="yblx4" value="4">
 							<span class="weui-icon-checked"></span>
 						</div>
+						<div class="weui-cell__bd">
+							<p>商业保险</p>
+						</div>
+						
 					</label>
 					<div class="weui-cell" id="medicalPayDesc4">
 						<div class="weui-cell__hd"><label class="weui-label">报销比例</label></div>
