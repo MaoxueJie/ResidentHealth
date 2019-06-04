@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0"/>
 	<title>基本信息</title>
 	<!-- 引入 WeUI -->
-	<link rel="stylesheet" href="css/weui.css">
+	<link rel="stylesheet" href="./css/weui.css">
 	<link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
 	<link rel="stylesheet" href="./css/style.css"/>
 </head>
@@ -234,7 +234,7 @@
 			</div>
 
 			<div id="live_relation" class="cell-item">
-				<div class="weui-cells__title">若与他人同住，你们是什么关系？(多选)</div>
+				<div class="weui-cells__title">若与他人同住，你们是什么关系？【多选题】</div>
 				<div class="weui-cells weui-cells_checkbox">
 					<label class="weui-cell weui-check__label" for="familyDesc1">
 						<div class="weui-cell__hd">
@@ -471,7 +471,7 @@
 			</div>
 
 			<div id="payWay" class="cell-item">
-				<div class="weui-cells__title">医疗费用报销类型：</div>
+				<div class="weui-cells__title">医疗费用负担方式：</div>
 				<div class="weui-cells weui-cells_radio">
 					<label class="weui-cell weui-check__label" for="yblx1">
 					    <div class="weui-cell__hd">
@@ -537,9 +537,10 @@
 			<div class="align_center mt30">
 				<!-- <a class="weui-btn btn-primary" id="submitBtn" href="javascript:;">提交</a> -->
 				<input class="weui-btn btn-primary submitbtn" type="submit" value="提交"/>
-				<input class="weui-btn btn-primary quitebtn" type="button" value="退出"/>
 			</div>
-
+			<div class="align_center mt15">
+				<input class="weui-btn weui-btn_warn quitebtn" type="button" value="退出"/>
+			</div>
 		</form>
 	</div>
 
@@ -743,19 +744,26 @@
 		})
 		
 		$('.quitebtn').click(function(){
-			$.ajax({
-				url: '/cfd/logout',
-				type: 'get',
-				dataType: 'json',
-				success: function(json){
-					if( json.success ){
-						alert("已退出!");
-						window.location.href="/cfd/wechatMenu/base";
-					}else{
-						that.showError( '',json.msg );
-					}
-				}
-			})
+			jq.confirm({
+				  title: '退出确认',
+				  text: '您确定要退出吗？',
+				  onOK: function () {
+					  $.ajax({
+							url: '/cfd/logout',
+							type: 'get',
+							dataType: 'json',
+							success: function(json){
+								if( json.success ){
+									window.location.href="/cfd/wechatMenu/base";
+								}else{
+									that.showError( '',json.msg );
+								}
+							}
+						})
+				  },
+				  onCancel: function () {
+				  }
+			});
 			
 		});
 

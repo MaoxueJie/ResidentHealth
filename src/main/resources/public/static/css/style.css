@@ -112,10 +112,10 @@ html,body{
 	color: rgba(255,0,0,.5);
 }
 form .align_center .submitbtn{
-	width: auto;
+	width: 90%;
 }
 form .align_center .quitebtn{
-	width: auto;
+	width: 25%;
 }
 .weui-cell__hide{
 	display: none;
