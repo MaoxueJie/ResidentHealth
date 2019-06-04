@@ -1422,6 +1422,66 @@ public class UserBaseInfoExample {
             return (Criteria) this;
         }
 
+        public Criteria andPersonCountIsNull() {
+            addCriterion("person_count is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonCountIsNotNull() {
+            addCriterion("person_count is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonCountEqualTo(Integer value) {
+            addCriterion("person_count =", value, "personCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonCountNotEqualTo(Integer value) {
+            addCriterion("person_count <>", value, "personCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonCountGreaterThan(Integer value) {
+            addCriterion("person_count >", value, "personCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonCountGreaterThanOrEqualTo(Integer value) {
+            addCriterion("person_count >=", value, "personCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonCountLessThan(Integer value) {
+            addCriterion("person_count <", value, "personCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonCountLessThanOrEqualTo(Integer value) {
+            addCriterion("person_count <=", value, "personCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonCountIn(List<Integer> values) {
+            addCriterion("person_count in", values, "personCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonCountNotIn(List<Integer> values) {
+            addCriterion("person_count not in", values, "personCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonCountBetween(Integer value1, Integer value2) {
+            addCriterion("person_count between", value1, value2, "personCount");
+            return (Criteria) this;
+        }
+
+        public Criteria andPersonCountNotBetween(Integer value1, Integer value2) {
+            addCriterion("person_count not between", value1, value2, "personCount");
+            return (Criteria) this;
+        }
+
         public Criteria andHabitatIncomeIsNull() {
             addCriterion("habitat_income is null");
             return (Criteria) this;
@@ -1759,6 +1819,146 @@ public class UserBaseInfoExample {
 
         public Criteria andMedicalPayDesc4NotBetween(String value1, String value2) {
             addCriterion("medical_pay_desc4 not between", value1, value2, "medicalPayDesc4");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5IsNull() {
+            addCriterion("medical_pay_desc5 is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5IsNotNull() {
+            addCriterion("medical_pay_desc5 is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5EqualTo(String value) {
+            addCriterion("medical_pay_desc5 =", value, "medicalPayDesc5");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5NotEqualTo(String value) {
+            addCriterion("medical_pay_desc5 <>", value, "medicalPayDesc5");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5GreaterThan(String value) {
+            addCriterion("medical_pay_desc5 >", value, "medicalPayDesc5");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5GreaterThanOrEqualTo(String value) {
+            addCriterion("medical_pay_desc5 >=", value, "medicalPayDesc5");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5LessThan(String value) {
+            addCriterion("medical_pay_desc5 <", value, "medicalPayDesc5");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5LessThanOrEqualTo(String value) {
+            addCriterion("medical_pay_desc5 <=", value, "medicalPayDesc5");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5Like(String value) {
+            addCriterion("medical_pay_desc5 like", value, "medicalPayDesc5");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5NotLike(String value) {
+            addCriterion("medical_pay_desc5 not like", value, "medicalPayDesc5");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5In(List<String> values) {
+            addCriterion("medical_pay_desc5 in", values, "medicalPayDesc5");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5NotIn(List<String> values) {
+            addCriterion("medical_pay_desc5 not in", values, "medicalPayDesc5");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5Between(String value1, String value2) {
+            addCriterion("medical_pay_desc5 between", value1, value2, "medicalPayDesc5");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc5NotBetween(String value1, String value2) {
+            addCriterion("medical_pay_desc5 not between", value1, value2, "medicalPayDesc5");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6IsNull() {
+            addCriterion("medical_pay_desc6 is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6IsNotNull() {
+            addCriterion("medical_pay_desc6 is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6EqualTo(String value) {
+            addCriterion("medical_pay_desc6 =", value, "medicalPayDesc6");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6NotEqualTo(String value) {
+            addCriterion("medical_pay_desc6 <>", value, "medicalPayDesc6");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6GreaterThan(String value) {
+            addCriterion("medical_pay_desc6 >", value, "medicalPayDesc6");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6GreaterThanOrEqualTo(String value) {
+            addCriterion("medical_pay_desc6 >=", value, "medicalPayDesc6");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6LessThan(String value) {
+            addCriterion("medical_pay_desc6 <", value, "medicalPayDesc6");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6LessThanOrEqualTo(String value) {
+            addCriterion("medical_pay_desc6 <=", value, "medicalPayDesc6");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6Like(String value) {
+            addCriterion("medical_pay_desc6 like", value, "medicalPayDesc6");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6NotLike(String value) {
+            addCriterion("medical_pay_desc6 not like", value, "medicalPayDesc6");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6In(List<String> values) {
+            addCriterion("medical_pay_desc6 in", values, "medicalPayDesc6");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6NotIn(List<String> values) {
+            addCriterion("medical_pay_desc6 not in", values, "medicalPayDesc6");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6Between(String value1, String value2) {
+            addCriterion("medical_pay_desc6 between", value1, value2, "medicalPayDesc6");
+            return (Criteria) this;
+        }
+
+        public Criteria andMedicalPayDesc6NotBetween(String value1, String value2) {
+            addCriterion("medical_pay_desc6 not between", value1, value2, "medicalPayDesc6");
             return (Criteria) this;
         }
 

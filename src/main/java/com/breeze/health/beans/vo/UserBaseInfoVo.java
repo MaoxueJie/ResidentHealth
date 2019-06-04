@@ -48,6 +48,8 @@ public class UserBaseInfoVo {
     private String religion;
     
     private String religionOther;
+    
+    private Integer personCount;
 
     private Integer habitatIncome;
 
@@ -58,6 +60,10 @@ public class UserBaseInfoVo {
     private String medicalPayDesc3;
 
     private String medicalPayDesc4;
+    
+    private String medicalPayDesc5;
+
+    private String medicalPayDesc6;
 
     private Date createTime;
 
@@ -279,5 +285,28 @@ public class UserBaseInfoVo {
 		this.idCardNo = idCardNo;
 	}
 
-	
+	public Integer getPersonCount() {
+		return personCount;
+	}
+
+	public void setPersonCount(Integer personCount) {
+		this.personCount = personCount;
+	}
+
+	public String getMedicalPayDesc5() {
+		return medicalPayDesc5;
+	}
+
+	public void setMedicalPayDesc5(String medicalPayDesc5) {
+		this.medicalPayDesc5 = medicalPayDesc5;
+	}
+
+	public String getMedicalPayDesc6() {
+		return medicalPayDesc6;
+	}
+
+	public void setMedicalPayDesc6(String medicalPayDesc6) {
+		this.medicalPayDesc6 = medicalPayDesc6;
+	}
+
 }

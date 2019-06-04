@@ -43,6 +43,8 @@ public class UserBaseInfo {
 
     private String religionOther;
 
+    private Integer personCount;
+
     private Integer habitatIncome;
 
     private String medicalPayWay;
@@ -52,6 +54,10 @@ public class UserBaseInfo {
     private String medicalPayDesc3;
 
     private String medicalPayDesc4;
+
+    private String medicalPayDesc5;
+
+    private String medicalPayDesc6;
 
     private Date createTime;
 
@@ -217,6 +223,14 @@ public class UserBaseInfo {
         this.religionOther = religionOther == null ? null : religionOther.trim();
     }
 
+    public Integer getPersonCount() {
+        return personCount;
+    }
+
+    public void setPersonCount(Integer personCount) {
+        this.personCount = personCount;
+    }
+
     public Integer getHabitatIncome() {
         return habitatIncome;
     }
@@ -255,6 +269,22 @@ public class UserBaseInfo {
 
     public void setMedicalPayDesc4(String medicalPayDesc4) {
         this.medicalPayDesc4 = medicalPayDesc4 == null ? null : medicalPayDesc4.trim();
+    }
+
+    public String getMedicalPayDesc5() {
+        return medicalPayDesc5;
+    }
+
+    public void setMedicalPayDesc5(String medicalPayDesc5) {
+        this.medicalPayDesc5 = medicalPayDesc5 == null ? null : medicalPayDesc5.trim();
+    }
+
+    public String getMedicalPayDesc6() {
+        return medicalPayDesc6;
+    }
+
+    public void setMedicalPayDesc6(String medicalPayDesc6) {
+        this.medicalPayDesc6 = medicalPayDesc6 == null ? null : medicalPayDesc6.trim();
     }
 
     public Date getCreateTime() {

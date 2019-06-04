@@ -70,29 +70,29 @@ public class LivingServiceImpl implements LivingService {
         	final UserLivingMovement movement = new UserLivingMovement();
         	BeanUtils.copyProperties(vo, movement);
         	
-        	if (!Integer.valueOf(1).equals(movement.getModerateMovement()))
+        	if (Integer.valueOf(2).equals(movement.getModerateMovement()))
         	{
-        		movement.setModerateDaysPerWeek(null);
-        		movement.setModerateMinutePerDay(null);
+        		movement.setModerateDaysPerWeek(0f);
+        		movement.setModerateMinutePerDay(0f);
         		movement.setModerateMinute(null);
         	}
-        	if (!Integer.valueOf(1).equals(movement.getViolentMovement()))
+        	if (Integer.valueOf(2).equals(movement.getViolentMovement()))
         	{
-        		movement.setViolentDaysPerWeek(null);
-        		movement.setViolentMinutePerDay(null);
+        		movement.setViolentDaysPerWeek(0f);
+        		movement.setViolentMinutePerDay(0f);
         		movement.setViolentMovementPerDay(null);
         	}
-        	if (!Integer.valueOf(1).equals(movement.getWalkMovement()))
+        	if (Integer.valueOf(2).equals(movement.getWalkMovement()))
         	{
-        		movement.setWalkDaysPerWeek(null);
+        		movement.setWalkDaysPerWeek(0f);
         		movement.setWalkMovementPerDay(null);
-        		movement.setWalkMinutePerDay(null);
+        		movement.setWalkMinutePerDay(0f);
         	}
-        	if (!Integer.valueOf(1).equals(movement.getSittingRecent7Days()))
+        	if (Integer.valueOf(2).equals(movement.getSittingRecent7Days()))
         	{
-        		movement.setSittingDaysRecent7Days(null);
+        		movement.setSittingDaysRecent7Days(0f);
         		movement.setSittingHours(null);
-        		movement.setSittingHoursPerDay(null);
+        		movement.setSittingHoursPerDay(0f);
         	}
         	
         	ret = transactionTemplate.execute(new TransactionCallback<Result<Void>>() {

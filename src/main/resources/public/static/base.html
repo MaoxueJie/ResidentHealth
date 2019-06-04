@@ -364,6 +364,16 @@
 						</div>
 						
 					</label>
+					<label class="weui-cell weui-check__label" for="job5">
+					    <div class="weui-cell__hd">
+							<input type="radio" required class="weui-check" name="job" id="job5" value="5">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>农民</p>
+						</div>
+						
+					</label>
 					<!-- <div class="weui-cell">
 						<div class="weui-cell__hd"><label class="weui-label">其它行业</label></div>
 						<div class="weui-cell__bd">
@@ -433,7 +443,18 @@
 					</div>
 				</div>
 			</div>
-
+			<div>
+				<div class="weui-cells__title">家庭人口数：</div>
+				<div class="weui-cells">
+					<div class="weui-cell">
+						<div class="weui-cell__hd"><label class="weui-label">家庭人口总数：</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" type="number" name="personCount" pattern="[0-9]*" placeholder="人口数">
+						</div>
+						<div class="weui-cell__ft">人</div>
+					</div>
+				</div>
+			</div>
 			<div class="cell-item">
 				<div class="weui-cells__title">家庭人均月收入（单位：元/人/月）：</div>
 				<div class="weui-cells weui-cells_radio">
@@ -471,8 +492,8 @@
 			</div>
 
 			<div id="payWay" class="cell-item">
-				<div class="weui-cells__title">医疗费用负担方式：</div>
-				<div class="weui-cells weui-cells_radio">
+				<div class="weui-cells__title">医疗费用负担方式：【多选题】</div>
+				<div class="weui-cells weui-cells_checkbox">
 					<label class="weui-cell weui-check__label" for="yblx1">
 					    <div class="weui-cell__hd">
 							<input type="checkbox" required class="weui-check" name="medicalPayWay" id="yblx1" value="1">
@@ -505,19 +526,54 @@
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
-							<p>医保</p>
+							<p>新农合</p>
 						</div>
 						
 					</label>
 					<div class="weui-cell" id="medicalPayDesc3">
 						<div class="weui-cell__hd"><label class="weui-label">报销比例</label></div>
 						<div class="weui-cell__bd">
-							<input class="weui-input" style="width:150px" type="number" name="medicalPayDesc3" placeholder="医保报销比例">%
+							<input class="weui-input" style="width:150px" type="number" name="medicalPayDesc3" placeholder="新农合报销比例">%
 						</div>
 					</div>
+					
 					<label class="weui-cell weui-check__label" for="yblx4">
-						<div class="weui-cell__hd">
+					    <div class="weui-cell__hd">
 							<input type="checkbox" required class="weui-check" name="medicalPayWay" id="yblx4" value="4">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>城镇职工医疗保险</p>
+						</div>
+						
+					</label>
+					<div class="weui-cell" id="medicalPayDesc4">
+						<div class="weui-cell__hd"><label class="weui-label">报销比例</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" style="width:150px" type="number" name="medicalPayDesc4" placeholder="城镇职工医疗保险报销比例">%
+						</div>
+					</div>
+					
+					<label class="weui-cell weui-check__label" for="yblx5">
+					    <div class="weui-cell__hd">
+							<input type="checkbox" required class="weui-check" name="medicalPayWay" id="yblx5" value="5">
+							<span class="weui-icon-checked"></span>
+						</div>
+						<div class="weui-cell__bd">
+							<p>城镇居民医疗保险</p>
+						</div>
+						
+					</label>
+					<div class="weui-cell" id="medicalPayDesc5">
+						<div class="weui-cell__hd"><label class="weui-label">报销比例</label></div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" style="width:150px" type="number" name="medicalPayDesc5" placeholder="城镇居民医疗保险报销比例">%
+						</div>
+					</div>
+					
+					<label class="weui-cell weui-check__label" for="yblx6">
+						<div class="weui-cell__hd">
+							<input type="checkbox" required class="weui-check" name="medicalPayWay" id="yblx6" value="6">
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
@@ -525,10 +581,10 @@
 						</div>
 						
 					</label>
-					<div class="weui-cell" id="medicalPayDesc4">
+					<div class="weui-cell" id="medicalPayDesc6">
 						<div class="weui-cell__hd"><label class="weui-label">报销比例</label></div>
 						<div class="weui-cell__bd">
-							<input class="weui-input" style="width:150px" type="number" name="medicalPayDesc4" placeholder="商业保险报销比例">%
+							<input class="weui-input" style="width:150px" type="number" name="medicalPayDesc6" placeholder="商业保险报销比例">%
 						</div>
 					</div>
 				</div>
@@ -650,6 +706,21 @@
 				$('#medicalPayDesc4').hide();
 			}
 			
+			if (data && data.medicalPayWay && data.medicalPayWay.indexOf("5")>-1)
+			{
+				$('#medicalPayDesc5').show();
+			}else
+			{
+				$('#medicalPayDesc5').hide();
+			}
+			
+			if (data && data.medicalPayWay && data.medicalPayWay.indexOf("6")>-1)
+			{
+				$('#medicalPayDesc6').show();
+			}else
+			{
+				$('#medicalPayDesc6').hide();
+			}
 				
 		});	//获取基本信息
 		
@@ -729,6 +800,22 @@
 					$('#medicalPayDesc4').hide();
 					$('#medicalPayDesc4 input').val('');
 				}
+			}else if( $(this).val() ==  "5" ){
+				if( $(this).is(':checked') ){
+					$('#yblx1').prop('checked',false);
+					$('#medicalPayDesc5').css('display','flex');
+				}else{
+					$('#medicalPayDesc5').hide();
+					$('#medicalPayDesc5 input').val('');
+				}
+			}else if( $(this).val() ==  "6" ){
+				if( $(this).is(':checked') ){
+					$('#yblx1').prop('checked',false);
+					$('#medicalPayDesc6').css('display','flex');
+				}else{
+					$('#medicalPayDesc6').hide();
+					$('#medicalPayDesc6 input').val('');
+				}
 			}else if($(this).val() ==  "1"){
 				if( $(this).is(':checked') ){
 					$('#payWay input[type=checkbox]').prop('checked',false);
@@ -739,6 +826,10 @@
 					$('#medicalPayDesc3 input').val('');
 					$('#medicalPayDesc4').hide();
 					$('#medicalPayDesc4 input').val('');
+					$('#medicalPayDesc5').hide();
+					$('#medicalPayDesc5 input').val('');
+					$('#medicalPayDesc6').hide();
+					$('#medicalPayDesc6 input').val('');
 				}
 			}
 		})
