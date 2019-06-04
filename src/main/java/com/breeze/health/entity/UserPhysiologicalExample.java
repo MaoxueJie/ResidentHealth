@@ -1365,6 +1365,126 @@ public class UserPhysiologicalExample {
             return (Criteria) this;
         }
 
+        public Criteria andBloodSugarVal3IsNull() {
+            addCriterion("blood_sugar_val3 is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal3IsNotNull() {
+            addCriterion("blood_sugar_val3 is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal3EqualTo(Float value) {
+            addCriterion("blood_sugar_val3 =", value, "bloodSugarVal3");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal3NotEqualTo(Float value) {
+            addCriterion("blood_sugar_val3 <>", value, "bloodSugarVal3");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal3GreaterThan(Float value) {
+            addCriterion("blood_sugar_val3 >", value, "bloodSugarVal3");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal3GreaterThanOrEqualTo(Float value) {
+            addCriterion("blood_sugar_val3 >=", value, "bloodSugarVal3");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal3LessThan(Float value) {
+            addCriterion("blood_sugar_val3 <", value, "bloodSugarVal3");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal3LessThanOrEqualTo(Float value) {
+            addCriterion("blood_sugar_val3 <=", value, "bloodSugarVal3");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal3In(List<Float> values) {
+            addCriterion("blood_sugar_val3 in", values, "bloodSugarVal3");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal3NotIn(List<Float> values) {
+            addCriterion("blood_sugar_val3 not in", values, "bloodSugarVal3");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal3Between(Float value1, Float value2) {
+            addCriterion("blood_sugar_val3 between", value1, value2, "bloodSugarVal3");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal3NotBetween(Float value1, Float value2) {
+            addCriterion("blood_sugar_val3 not between", value1, value2, "bloodSugarVal3");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal4IsNull() {
+            addCriterion("blood_sugar_val4 is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal4IsNotNull() {
+            addCriterion("blood_sugar_val4 is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal4EqualTo(Float value) {
+            addCriterion("blood_sugar_val4 =", value, "bloodSugarVal4");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal4NotEqualTo(Float value) {
+            addCriterion("blood_sugar_val4 <>", value, "bloodSugarVal4");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal4GreaterThan(Float value) {
+            addCriterion("blood_sugar_val4 >", value, "bloodSugarVal4");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal4GreaterThanOrEqualTo(Float value) {
+            addCriterion("blood_sugar_val4 >=", value, "bloodSugarVal4");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal4LessThan(Float value) {
+            addCriterion("blood_sugar_val4 <", value, "bloodSugarVal4");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal4LessThanOrEqualTo(Float value) {
+            addCriterion("blood_sugar_val4 <=", value, "bloodSugarVal4");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal4In(List<Float> values) {
+            addCriterion("blood_sugar_val4 in", values, "bloodSugarVal4");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal4NotIn(List<Float> values) {
+            addCriterion("blood_sugar_val4 not in", values, "bloodSugarVal4");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal4Between(Float value1, Float value2) {
+            addCriterion("blood_sugar_val4 between", value1, value2, "bloodSugarVal4");
+            return (Criteria) this;
+        }
+
+        public Criteria andBloodSugarVal4NotBetween(Float value1, Float value2) {
+            addCriterion("blood_sugar_val4 not between", value1, value2, "bloodSugarVal4");
+            return (Criteria) this;
+        }
+
         public Criteria andBloodLipidIsNull() {
             addCriterion("blood_lipid is null");
             return (Criteria) this;

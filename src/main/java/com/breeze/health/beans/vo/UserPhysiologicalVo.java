@@ -44,6 +44,10 @@ public class UserPhysiologicalVo {
     private Float bloodSugarVal1;
 
     private Float bloodSugarVal2;
+    
+    private Float bloodSugarVal3;
+
+    private Float bloodSugarVal4;
 
     private Integer bloodLipid;
 
@@ -371,6 +375,22 @@ public class UserPhysiologicalVo {
 
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
+	}
+
+	public Float getBloodSugarVal3() {
+		return bloodSugarVal3;
+	}
+
+	public void setBloodSugarVal3(Float bloodSugarVal3) {
+		this.bloodSugarVal3 = bloodSugarVal3;
+	}
+
+	public Float getBloodSugarVal4() {
+		return bloodSugarVal4;
+	}
+
+	public void setBloodSugarVal4(Float bloodSugarVal4) {
+		this.bloodSugarVal4 = bloodSugarVal4;
 	}
 
 	

@@ -41,11 +41,14 @@
 					<div class="weui-cell__ft">kg/㎡</div>
 				</div>
 				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">腹围</label></div>
+					<div class="weui-cell__hd"><label class="weui-label">腰围</label></div>
 					<div class="weui-cell__bd">
 						<input class="weui-input" name="abdominalCircumference" type="number" placeholder="填写">
 					</div>
 					<div class="weui-cell__ft">cm</div>
+				</div>
+				<div class="weui-cell">
+				(腰围:经肚脐点的腰部水平围长，世界卫生组织推荐的测量方法是：被测者站立，双脚分开25至30厘米，用软尺经过肚脐，水平绕腰部测量所得的长度即腰围。)
 				</div>
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label class="weui-label">臀围</label></div>
@@ -55,8 +58,16 @@
 					<div class="weui-cell__ft">cm</div>
 				</div>
 				<div class="weui-cell">
-					<div class="weui-cell__hd"><label class="weui-label">&nbsp;&nbsp;&nbsp;&nbsp;</label></div>
-					<div class="weui-cell__ft">（单位换算：1尺=33.33cm）</div>
+				(臀围:臀部向后最突出部位的水平围长，用软尺测量。)
+				</div>
+				<div class="weui-cell">
+					(单位换算：1尺=33.33cm)
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">WHR（腰臀比）</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" id="whr" disabled value="">
+					</div>
 				</div>
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label class="weui-label">心率(次/分)</label></div>
@@ -470,12 +481,12 @@
 							<span class="weui-icon-checked"></span>
 						</div>
 						<div class="weui-cell__bd">
-							<p>正常</p>
+							<p>正常()95%-100%)</p>
 						</div>
 						
 					</label>
+					<!--  
 					<label class="weui-cell weui-check__label" for="bloodOxygenSituation2">
-					
 					    <div class="weui-cell__hd">
 							<input type="radio" required name="bloodOxygenSituation" class="weui-check" id="bloodOxygenSituation2" value="2">
 							<span class="weui-icon-checked"></span>
@@ -483,8 +494,8 @@
 						<div class="weui-cell__bd">
 							<p>过高</p>
 						</div>
-						
 					</label>
+					-->
 					<label class="weui-cell weui-check__label" for="bloodOxygenSituation3">
 					    
 					    <div class="weui-cell__hd">
@@ -554,6 +565,18 @@
 					<div class="weui-cell__hd"><label class="weui-label">空腹血糖:</label></div>
 					<div class="weui-cell__bd">
 						<input class="weui-input" name="bloodSugarVal1" type="number">
+					</div>mmol/L
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">餐后2小时血糖:</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodSugarVal3" type="number">
+					</div>mmol/L
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">随机血糖:</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" name="bloodSugarVal4" type="number">
 					</div>mmol/L
 				</div>
 				<div class="weui-cell">
@@ -664,6 +687,7 @@
 			}
 			
 			caclBMI();
+			caclWHR();
 			
 		});	//获取基本信息
 		
@@ -672,6 +696,12 @@
 		$('input[name=weight],input[name=height]').blur(function(){
 			if( $('input[name=weight]').val() != '' && $('input[name=height]').val() != '' ){
 				caclBMI();
+			}
+		})
+		
+		$('input[name=abdominalCircumference],input[name=hipCircumference]').blur(function(){
+			if( $('input[name=abdominalCircumference]').val() != '' && $('input[name=hipCircumference]').val() != '' ){
+				caclWHR();
 			}
 		})
 		
@@ -781,6 +811,14 @@
 			var bmi = parseInt(weight)/((parseInt(height)/100)*(parseInt(height)/100));
 			if (bmi)
 				$('#bmi').val( bmi );
+		}
+		
+		function caclWHR(){
+			var yao = $('input[name=abdominalCircumference]').val();
+			var tui = $('input[name=hipCircumference]').val();
+			var whr = parseInt(yao)/parseInt(tui);
+			if (whr)
+				$('#whr').val( whr );
 		}
 	})
 </script>

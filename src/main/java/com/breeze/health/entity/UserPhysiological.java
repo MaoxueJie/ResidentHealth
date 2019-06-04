@@ -45,6 +45,10 @@ public class UserPhysiological {
 
     private Float bloodSugarVal2;
 
+    private Float bloodSugarVal3;
+
+    private Float bloodSugarVal4;
+
     private Integer bloodLipid;
 
     private Integer bloodLipidSituation;
@@ -239,6 +243,22 @@ public class UserPhysiological {
 
     public void setBloodSugarVal2(Float bloodSugarVal2) {
         this.bloodSugarVal2 = bloodSugarVal2;
+    }
+
+    public Float getBloodSugarVal3() {
+        return bloodSugarVal3;
+    }
+
+    public void setBloodSugarVal3(Float bloodSugarVal3) {
+        this.bloodSugarVal3 = bloodSugarVal3;
+    }
+
+    public Float getBloodSugarVal4() {
+        return bloodSugarVal4;
+    }
+
+    public void setBloodSugarVal4(Float bloodSugarVal4) {
+        this.bloodSugarVal4 = bloodSugarVal4;
     }
 
     public Integer getBloodLipid() {
