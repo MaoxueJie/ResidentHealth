@@ -7,13 +7,14 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.breeze.health.filter.AppAuthenticationFilter;
 import com.breeze.health.filter.AuthenticationFilter;
 import com.breeze.health.service.UserService;
 
 @Configuration
 public class ApplicationConfig {
 	@Bean
-    public FilterRegistrationBean  filterRegistrationBean(UserService userService) {
+    public FilterRegistrationBean  authFilter(UserService userService) {
 		FilterRegistrationBean registrationBean = new FilterRegistrationBean();
 		AuthenticationFilter authFilter = new AuthenticationFilter();
 		authFilter.setUserService(userService);
@@ -35,6 +36,17 @@ public class ApplicationConfig {
 	    urlPatterns.add("/psy/suicide/add");
 	    urlPatterns.add("/psy/suicide/get");
 	    urlPatterns.add("/report/get");
+	    registrationBean.setUrlPatterns(urlPatterns);
+	    return registrationBean;
+    }
+	
+	@Bean
+    public FilterRegistrationBean  appAuthFilter() {
+		FilterRegistrationBean registrationBean = new FilterRegistrationBean();
+		AppAuthenticationFilter authFilter = new AppAuthenticationFilter();
+		registrationBean.setFilter(authFilter);
+		List<String> urlPatterns = new ArrayList<String>();
+	    urlPatterns.add("/app/**");
 	    registrationBean.setUrlPatterns(urlPatterns);
 	    return registrationBean;
     }
