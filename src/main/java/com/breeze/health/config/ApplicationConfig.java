@@ -46,7 +46,7 @@ public class ApplicationConfig {
 		AppAuthenticationFilter authFilter = new AppAuthenticationFilter();
 		registrationBean.setFilter(authFilter);
 		List<String> urlPatterns = new ArrayList<String>();
-	    urlPatterns.add("/app/**");
+	    urlPatterns.add("/app/*");
 	    registrationBean.setUrlPatterns(urlPatterns);
 	    return registrationBean;
     }
