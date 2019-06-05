@@ -533,6 +533,7 @@ input.weui-btn_plain-default{
 .weui-cells_radio .weui-check:checked + .weui-icon-checked:before{
   content:'\EA06';
   color:#09BB07;
+  margin-top:-6px;
 }
 .weui-cells_radio .weui-icon-checked:before{
   display:block;
