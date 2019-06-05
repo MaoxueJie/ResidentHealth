@@ -24,7 +24,7 @@ public class AppAuthenticationFilter implements Filter{
 			throws IOException, ServletException {
 		HttpServletRequest httpRequest = (HttpServletRequest)request;
 		HttpServletResponse httpResponse = (HttpServletResponse)response;
-		httpResponse.sendRedirect("www.baidu.com");
+		httpResponse.sendRedirect("https://www.baidu.com");
 	}
 
 	@Override
