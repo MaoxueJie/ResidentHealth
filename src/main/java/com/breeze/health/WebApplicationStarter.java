@@ -12,6 +12,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import com.breeze.health.filter.AuthenticationFilter;
 
@@ -23,16 +25,18 @@ import com.breeze.health.filter.AuthenticationFilter;
 		"com.breeze.health.config",
 		"com.breeze.health.service"})
 @MapperScan(basePackages = {"com.breeze.health.mapper"})
-public class WebApplicationStarter extends SpringBootServletInitializer {
+public class WebApplicationStarter extends WebMvcConfigurerAdapter {
 
-	@Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(WebApplicationStarter.class);
-    }
-
-	
     public static void main(String[] args) {
         new SpringApplication(WebApplicationStarter.class).run(args);
     }
-
+    
+    @Override
+	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/**")
+				.allowCredentials(true)
+				.allowedHeaders("*")
+				.allowedOrigins("*")
+				.allowedMethods("*");
+    }
 }

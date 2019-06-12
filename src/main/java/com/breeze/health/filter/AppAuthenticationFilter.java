@@ -23,6 +23,7 @@ public class AppAuthenticationFilter implements Filter{
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		HttpServletRequest httpRequest = (HttpServletRequest)request;
+		httpRequest.getHeader("");
 		HttpServletResponse httpResponse = (HttpServletResponse)response;
 		httpResponse.sendRedirect("https://www.baidu.com");
 	}
