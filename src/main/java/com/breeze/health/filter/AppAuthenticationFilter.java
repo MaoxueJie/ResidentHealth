@@ -37,18 +37,20 @@ public class AppAuthenticationFilter implements Filter{
 		HttpServletResponse httpResponse = (HttpServletResponse)response;
 		boolean loginFlag = false;
 		String token = httpRequest.getHeader("Authorization");
-		if (StringUtils.isNotBlank(token))
-		try {
-			String dockerId = DesUtil.decryptor(token);
-			Result<DoctorVo> ret = doctorService.getById(Integer.parseInt(dockerId));
-			if (ret.isSuccess() && ret.getData()!=null)
-			{
-				httpRequest.setAttribute("user",ret.getData());
-				loginFlag = true;
+		System.out.println("token-----------------------------------"+token);
+		if (StringUtils.isNotBlank(token)) {
+			try {
+				String dockerId = DesUtil.decryptor(token);
+				Result<DoctorVo> ret = doctorService.getById(Integer.parseInt(dockerId));
+				if (ret.isSuccess() && ret.getData()!=null)
+				{
+					httpRequest.setAttribute("user",ret.getData());
+					loginFlag = true;
+				}
+				
+			}catch(Exception e) {
+				
 			}
-			
-		}catch(Exception e) {
-			
 		}
 		if (loginFlag)
 			chain.doFilter(httpRequest, httpResponse);
