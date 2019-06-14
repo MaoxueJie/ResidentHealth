@@ -33,7 +33,7 @@ public class WebApplicationStarter extends WebMvcConfigurerAdapter {
     
     @Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/app/**")
+		registry.addMapping("/app/*")
 				.allowCredentials(true)
 				.allowedHeaders("*")
 				.allowedOrigins("*")
