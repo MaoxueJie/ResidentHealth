@@ -36,6 +36,10 @@ public class AppAuthenticationFilter implements Filter{
 		HttpServletRequest httpRequest = (HttpServletRequest)request;
 		HttpServletResponse httpResponse = (HttpServletResponse)response;
 		boolean loginFlag = false;
+		if (httpRequest.getMethod().equalsIgnoreCase("OPTIONS"))
+		{
+			loginFlag = true;
+		}
 		String token = httpRequest.getHeader("Authorization");
 		System.out.println("token-----------------------------------"+token);
 		if (StringUtils.isNotBlank(token)) {
@@ -47,7 +51,6 @@ public class AppAuthenticationFilter implements Filter{
 					httpRequest.setAttribute("user",ret.getData());
 					loginFlag = true;
 				}
-				
 			}catch(Exception e) {
 				
 			}
@@ -57,11 +60,7 @@ public class AppAuthenticationFilter implements Filter{
 		else {
 			httpResponse.addHeader("Access-Control-Allow-Credentials", Boolean.TRUE.toString());
 			httpResponse.addHeader("Access-Control-Allow-Origin","*");
-			httpResponse.addHeader("Access-Control-Allow-Headers","Authorization");
-			if (httpRequest.getMethod().equalsIgnoreCase("OPTIONS"))
-				httpResponse.sendError(httpResponse.SC_OK);
-			else
-				httpResponse.sendError(httpResponse.SC_UNAUTHORIZED);
+			httpResponse.sendError(httpResponse.SC_UNAUTHORIZED);
 		}
 	}
 
