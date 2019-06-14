@@ -38,4 +38,11 @@ public class AppController {
 		return ret; 
 	}
 	
+	@RequestMapping(value="/test")
+	@ResponseBody
+	public Result<Void> test(HttpServletRequest request){
+		System.out.println(request.getAttribute("user"));
+		return null; 
+	}
+	
 }
