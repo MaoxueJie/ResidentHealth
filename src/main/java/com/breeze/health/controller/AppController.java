@@ -11,10 +11,11 @@ import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserLivingVo;
 import com.breeze.health.beans.vo.UserVo;
 
+
 @Controller
-@SuppressWarnings("all")
+@CrossOrigin(origins="*")
 @RequestMapping("/app")
-//@CrossOrigin(origins="*")
+@SuppressWarnings("all")
 public class AppController {
 	
 	@RequestMapping(value="/login")
