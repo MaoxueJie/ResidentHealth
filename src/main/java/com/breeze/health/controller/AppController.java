@@ -14,7 +14,7 @@ import com.breeze.health.beans.vo.UserVo;
 @Controller
 @SuppressWarnings("all")
 @RequestMapping("/app")
-@CrossOrigin(origins="*")
+//@CrossOrigin(origins="*")
 public class AppController {
 	
 	@RequestMapping(value="/login")

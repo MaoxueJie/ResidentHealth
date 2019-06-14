@@ -30,13 +30,13 @@ public class WebApplicationStarter extends WebMvcConfigurerAdapter {
     public static void main(String[] args) {
         new SpringApplication(WebApplicationStarter.class).run(args);
     }
-    /*
+    
     @Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**")
+		registry.addMapping("/app/**")
 				.allowCredentials(true)
 				.allowedHeaders("*")
 				.allowedOrigins("*")
 				.allowedMethods("*");
-    }*/
+    }
 }
