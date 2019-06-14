@@ -57,7 +57,10 @@ public class AppAuthenticationFilter implements Filter{
 		else {
 			httpResponse.addHeader("Access-Control-Allow-Credentials", Boolean.TRUE.toString());
 			httpResponse.addHeader("Access-Control-Allow-Origin","*");
-			httpResponse.sendError(httpResponse.SC_UNAUTHORIZED);
+			if (httpRequest.getMethod().equalsIgnoreCase("OPTIONS"))
+				httpResponse.sendError(httpResponse.SC_OK);
+			else
+				httpResponse.sendError(httpResponse.SC_UNAUTHORIZED);
 		}
 	}
 
