@@ -20,8 +20,7 @@ import com.breeze.health.service.DoctorService;
 import com.breeze.health.util.DesUtil;
 
 public class AppAuthenticationFilter implements Filter{
-
-	@Autowired
+	
 	DoctorService doctorService;
 	
 	@Override
@@ -53,7 +52,7 @@ public class AppAuthenticationFilter implements Filter{
 					loginFlag = true;
 				}
 			}catch(Exception e) {
-				
+				e.printStackTrace();
 			}
 		}
 		if (loginFlag)
@@ -71,4 +70,9 @@ public class AppAuthenticationFilter implements Filter{
 		
 	}
 
+	public void setDoctorService(DoctorService doctorService) {
+		this.doctorService = doctorService;
+	}
+
+	
 }

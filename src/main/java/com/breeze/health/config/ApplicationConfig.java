@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.breeze.health.filter.AppAuthenticationFilter;
 import com.breeze.health.filter.AuthenticationFilter;
+import com.breeze.health.service.DoctorService;
 import com.breeze.health.service.UserService;
 
 @Configuration
@@ -41,9 +42,10 @@ public class ApplicationConfig {
     }
 	
 	@Bean
-    public FilterRegistrationBean  appAuthFilter() {
+    public FilterRegistrationBean  appAuthFilter(DoctorService doctorService) {
 		FilterRegistrationBean registrationBean = new FilterRegistrationBean();
 		AppAuthenticationFilter authFilter = new AppAuthenticationFilter();
+		authFilter.setDoctorService(doctorService);
 		registrationBean.setFilter(authFilter);
 		List<String> urlPatterns = new ArrayList<String>();
 	    urlPatterns.add("/app/test");
