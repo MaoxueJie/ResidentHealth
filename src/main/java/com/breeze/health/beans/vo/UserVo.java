@@ -6,8 +6,6 @@ public class UserVo {
 	private Long id;
 
     private String mobile;
-
-    private String pwd;
     
     private String token;
 
@@ -29,14 +27,6 @@ public class UserVo {
 
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
-	}
-
-	public String getPwd() {
-		return pwd;
-	}
-
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
 	}
 
 	public Date getCreateTime() {

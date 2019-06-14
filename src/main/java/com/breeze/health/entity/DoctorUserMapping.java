@@ -2,39 +2,39 @@ package com.breeze.health.entity;
 
 import java.util.Date;
 
-public class User {
-    private Long id;
+public class DoctorUserMapping {
+    private Integer id;
 
-    private String mobile;
+    private Integer doctorId;
 
-    private String password;
+    private Integer userId;
 
     private Date createTime;
 
     private Date updateTime;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getMobile() {
-        return mobile;
+    public Integer getDoctorId() {
+        return doctorId;
     }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile == null ? null : mobile.trim();
+    public void setDoctorId(Integer doctorId) {
+        this.doctorId = doctorId;
     }
 
-    public String getPassword() {
-        return password;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Date getCreateTime() {
