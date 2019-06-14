@@ -41,8 +41,9 @@ public class AppController {
 	@RequestMapping(value="/test")
 	@ResponseBody
 	public Result<Void> test(HttpServletRequest request){
+		Result<Void> ret = new Result<Void>();
 		System.out.println(request.getAttribute("user"));
-		return null; 
+		return ret; 
 	}
 	
 }
