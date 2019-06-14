@@ -53,6 +53,7 @@ public class DoctorServiceImpl implements DoctorService{
 		Result<DoctorVo> ret = new Result<DoctorVo>();
 		try {
 		    Doctor doctor = doctorMapper.selectByPrimaryKey(id);
+		    System.out.println("docker----------------"+doctor);
 			if (doctor!=null) {
 				DoctorVo data = new DoctorVo();
 				BeanUtils.copyProperties(doctor, data);
