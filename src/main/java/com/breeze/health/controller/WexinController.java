@@ -249,7 +249,7 @@ public class WexinController {
 					String from = state.substring(7);
 					Long userId = user!=null?user.getId():null;
 					userService.bindWexin(openid,userId,from);
-					return new ModelAndView(new RedirectView("https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg3MTAyMjEwMQ==&#wechat_redirect"));
+					return new ModelAndView(new RedirectView("https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg3MTAyMjEwMQ==&mid=100000242&idx=1&sn=9053ecc6f5eda584710dc27b5806d568&chksm=4e85aa8879f2239ec5ba5ab16a95627532eb23c7369ef74b341c84bac5e599e4d0892bd773f8&mpshare=1&scene=1&srcid=#rd"));
 				}
 				
 				if (user!=null) {
