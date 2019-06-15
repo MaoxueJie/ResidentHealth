@@ -243,12 +243,6 @@ public class WexinController {
 					user = userService.getUserByOpenId(openid).getData();
 					request.getSession().setAttribute("user",user);
 				}
-				if (user!=null) {
-					userService.bindWexin(openid,user.getId(),null);
-					String token = DesUtil.encrypt(user.getId()+"");
-					RequestUtils.setCookie(request, response, "Authentication",token, 1800);
-					parm += "&token="+token;
-				}
 				
 				if (state!=null && state.startsWith("doctor-"))
 				{	
@@ -257,6 +251,15 @@ public class WexinController {
 					userService.bindWexin(openid,userId,from);
 					return new ModelAndView(new RedirectView("https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg3MTAyMjEwMQ==&scene=123&from=singlemessage#wechat_redirect"));
 				}
+				
+				if (user!=null) {
+					userService.bindWexin(openid,user.getId(),null);
+					String token = DesUtil.encrypt(user.getId()+"");
+					RequestUtils.setCookie(request, response, "Authentication",token, 1800);
+					parm += "&token="+token;
+				}
+				
+				
 			}
 
 			String url="";
