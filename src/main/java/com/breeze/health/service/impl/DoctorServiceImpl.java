@@ -49,7 +49,7 @@ public class DoctorServiceImpl implements DoctorService{
 	}
 
 	@Override
-	public Result<DoctorVo> getById(Integer id) {
+	public Result<DoctorVo> getById(Long id) {
 		Result<DoctorVo> ret = new Result<DoctorVo>();
 		try {
 		    Doctor doctor = doctorMapper.selectByPrimaryKey(id);

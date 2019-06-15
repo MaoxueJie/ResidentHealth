@@ -14,12 +14,15 @@ import com.breeze.health.beans.vo.UserBaseInfoVo;
 import com.breeze.health.beans.vo.UserVo;
 import com.breeze.health.cache.SmsCache;
 import com.breeze.health.config.SMSConfig;
+import com.breeze.health.entity.DoctorUserMapping;
+import com.breeze.health.entity.DoctorUserMappingExample;
 import com.breeze.health.entity.User;
 import com.breeze.health.entity.UserBaseInfo;
 import com.breeze.health.entity.UserBaseInfoExample;
 import com.breeze.health.entity.UserExample;
 import com.breeze.health.entity.WexinAccount;
 import com.breeze.health.entity.WexinAccountExample;
+import com.breeze.health.mapper.DoctorUserMappingMapper;
 import com.breeze.health.mapper.UserBaseInfoMapper;
 import com.breeze.health.mapper.UserMapper;
 import com.breeze.health.mapper.WexinAccountMapper;
@@ -41,9 +44,12 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	WexinAccountMapper wexinAccountMapper;
 	
+	@Autowired
+	DoctorUserMappingMapper doctorUserMappingMapper;
+	
 	
 	@Override
-	public Result<Void> bindWexin(String openId,Long userId) {
+	public Result<Void> bindWexin(String openId,Long userId,String from) {
 		Result<Void> ret = new Result<Void>();
 		try{
 			Date now = new Date();
@@ -56,6 +62,7 @@ public class UserServiceImpl implements UserService{
 				if (account.getStatus()==0)
 				{
 					account.setStatus(1);
+					account.setFrom(from);
 					account.setUserId(userId);
 					account.setUpdateTime(now);
 					wexinAccountMapper.updateByPrimaryKeySelective(account);
@@ -69,11 +76,26 @@ public class UserServiceImpl implements UserService{
 				WexinAccount account = new WexinAccount();
 				//account.setUserId(user.getId());
 				account.setStatus(1);
+				account.setFrom(from);
 				account.setUserId(userId);
 				account.setOpenId(openId);
 				account.setCreateTime(now);
 				account.setUpdateTime(now);
 				wexinAccountMapper.insert(account);
+			}
+			if (StringUtils.isNotBlank(from) && userId!=null) {
+				DoctorUserMappingExample duexample = new DoctorUserMappingExample();
+				duexample.createCriteria().andDoctorIdEqualTo(Long.parseLong(from)).andUserIdEqualTo(userId);
+				List<DoctorUserMapping> mappings = doctorUserMappingMapper.selectByExample(duexample);
+				if (mappings==null || mappings.size()==0)
+				{
+					DoctorUserMapping mapping = new DoctorUserMapping();
+					mapping.setDoctorId(Long.parseLong(from));
+					mapping.setUserId(userId);
+					mapping.setCreateTime(now);
+					mapping.setUpdateTime(now);
+					doctorUserMappingMapper.insert(mapping);
+				}
 			}
 			ret.setSuccess(true);
 		}catch(Exception e)
@@ -268,6 +290,23 @@ public class UserServiceImpl implements UserService{
 							account.setUpdateTime(now);
 							account.setUserId(ret.getData().getId());
 							wexinAccountMapper.updateByPrimaryKeySelective(account);
+							
+							String from = account.getFrom();
+							Long userId = ret.getData().getId();
+							if (StringUtils.isNotBlank(from) && userId!=null) {
+								DoctorUserMappingExample duexample = new DoctorUserMappingExample();
+								duexample.createCriteria().andDoctorIdEqualTo(Long.parseLong(from)).andUserIdEqualTo(userId);
+								List<DoctorUserMapping> mappings = doctorUserMappingMapper.selectByExample(duexample);
+								if (mappings==null || mappings.size()==0)
+								{
+									DoctorUserMapping mapping = new DoctorUserMapping();
+									mapping.setDoctorId(Long.parseLong(from));
+									mapping.setUserId(userId);
+									mapping.setCreateTime(now);
+									mapping.setUpdateTime(now);
+									doctorUserMappingMapper.insert(mapping);
+								}
+							}
 						}
 					}
 				}catch(Exception e)

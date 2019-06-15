@@ -7,7 +7,7 @@ import java.util.List;
 public interface DoctorUserMappingMapper {
     int countByExample(DoctorUserMappingExample example);
 
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(DoctorUserMapping record);
 
@@ -15,7 +15,7 @@ public interface DoctorUserMappingMapper {
 
     List<DoctorUserMapping> selectByExample(DoctorUserMappingExample example);
 
-    DoctorUserMapping selectByPrimaryKey(Integer id);
+    DoctorUserMapping selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(DoctorUserMapping record);
 

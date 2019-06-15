@@ -45,7 +45,7 @@ public class AppAuthenticationFilter implements Filter{
 			try {
 				String dockerId = DesUtil.decryptor(token);
 				System.out.println("dockerId-----------------------------------"+dockerId);
-				Result<DoctorVo> ret = doctorService.getById(Integer.parseInt(dockerId));
+				Result<DoctorVo> ret = doctorService.getById(Long.parseLong(dockerId));
 				if (ret.isSuccess() && ret.getData()!=null)
 				{
 					httpRequest.setAttribute("user",ret.getData());

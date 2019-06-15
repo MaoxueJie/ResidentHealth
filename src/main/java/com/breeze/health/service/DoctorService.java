@@ -5,5 +5,5 @@ import com.breeze.health.beans.vo.Result;
 
 public interface DoctorService {
 	public Result<DoctorVo> login(String mobile,String password);
-	public Result<DoctorVo> getById(Integer id);
+	public Result<DoctorVo> getById(Long id);
 }

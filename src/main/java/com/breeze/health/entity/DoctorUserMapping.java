@@ -3,37 +3,37 @@ package com.breeze.health.entity;
 import java.util.Date;
 
 public class DoctorUserMapping {
-    private Integer id;
+    private Long id;
 
-    private Integer doctorId;
+    private Long doctorId;
 
-    private Integer userId;
+    private Long userId;
 
     private Date createTime;
 
     private Date updateTime;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Integer getDoctorId() {
+    public Long getDoctorId() {
         return doctorId;
     }
 
-    public void setDoctorId(Integer doctorId) {
+    public void setDoctorId(Long doctorId) {
         this.doctorId = doctorId;
     }
 
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 

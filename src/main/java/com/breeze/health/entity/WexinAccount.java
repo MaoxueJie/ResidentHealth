@@ -11,6 +11,8 @@ public class WexinAccount {
 
     private Integer status;
 
+    private String from;
+
     private Date createTime;
 
     private Date updateTime;
@@ -45,6 +47,14 @@ public class WexinAccount {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from == null ? null : from.trim();
     }
 
     public Date getCreateTime() {

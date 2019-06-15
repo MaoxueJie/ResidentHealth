@@ -6,6 +6,7 @@
     <result column="user_id" property="userId" jdbcType="BIGINT" />
     <result column="open_id" property="openId" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="from" property="from" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -39,7 +40,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, user_id, open_id, status, create_time, update_time
+    id, user_id, open_id, status, from, create_time, update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.WexinAccountExample" >
     select
@@ -67,9 +68,11 @@
   </delete>
   <insert id="insert" parameterType="com.breeze.health.entity.WexinAccount" useGeneratedKeys="true" keyProperty="id" >
     insert into t_wexin_account (user_id, open_id, status, 
-      create_time, update_time)
+      from, create_time, update_time
+      )
     values (#{userId,jdbcType=BIGINT}, #{openId,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+      #{from,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.WexinAccount" useGeneratedKeys="true" keyProperty="id" >
     insert into t_wexin_account
@@ -82,6 +85,9 @@
       </if>
       <if test="status != null" >
         status,
+      </if>
+      <if test="from != null" >
+        from,
       </if>
       <if test="createTime != null" >
         create_time,
@@ -99,6 +105,9 @@
       </if>
       <if test="status != null" >
         #{status,jdbcType=INTEGER},
+      </if>
+      <if test="from != null" >
+        #{from,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -126,6 +135,9 @@
       <if test="status != null" >
         status = #{status,jdbcType=INTEGER},
       </if>
+      <if test="from != null" >
+        from = #{from,jdbcType=VARCHAR},
+      </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -140,6 +152,7 @@
     set user_id = #{userId,jdbcType=BIGINT},
       open_id = #{openId,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
+      from = #{from,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
