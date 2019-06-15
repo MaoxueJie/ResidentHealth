@@ -18,6 +18,8 @@ public class DoctorVo {
     private Date updateTime;
     
     private String token;
+    
+    private String qr;
 
 	public Long getId() {
 		return id;
@@ -81,6 +83,14 @@ public class DoctorVo {
 
 	public void setToken(String token) {
 		this.token = token;
+	}
+
+	public String getQr() {
+		return qr;
+	}
+
+	public void setQr(String qr) {
+		this.qr = qr;
 	}
 
 }

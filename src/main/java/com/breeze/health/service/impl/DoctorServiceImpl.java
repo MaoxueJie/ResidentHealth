@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.breeze.health.beans.vo.DoctorVo;
 import com.breeze.health.beans.vo.Result;
+import com.breeze.health.config.Config;
 import com.breeze.health.entity.Doctor;
 import com.breeze.health.entity.DoctorExample;
 import com.breeze.health.mapper.DoctorMapper;
@@ -57,6 +58,7 @@ public class DoctorServiceImpl implements DoctorService{
 			if (doctor!=null) {
 				DoctorVo data = new DoctorVo();
 				BeanUtils.copyProperties(doctor, data);
+				data.setQr(Config.getBasepath()+"static/image/qr/"+data.getId()+".png");
 				ret.setSuccess(true);
 				ret.setData(data);
 			}else
