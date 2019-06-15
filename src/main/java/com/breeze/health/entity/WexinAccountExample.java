@@ -355,73 +355,73 @@ public class WexinAccountExample {
             return (Criteria) this;
         }
 
-        public Criteria andFromIsNull() {
-            addCriterion("from is null");
+        public Criteria andChannelIsNull() {
+            addCriterion("channel is null");
             return (Criteria) this;
         }
 
-        public Criteria andFromIsNotNull() {
-            addCriterion("from is not null");
+        public Criteria andChannelIsNotNull() {
+            addCriterion("channel is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFromEqualTo(String value) {
-            addCriterion("from =", value, "from");
+        public Criteria andChannelEqualTo(String value) {
+            addCriterion("channel =", value, "channel");
             return (Criteria) this;
         }
 
-        public Criteria andFromNotEqualTo(String value) {
-            addCriterion("from <>", value, "from");
+        public Criteria andChannelNotEqualTo(String value) {
+            addCriterion("channel <>", value, "channel");
             return (Criteria) this;
         }
 
-        public Criteria andFromGreaterThan(String value) {
-            addCriterion("from >", value, "from");
+        public Criteria andChannelGreaterThan(String value) {
+            addCriterion("channel >", value, "channel");
             return (Criteria) this;
         }
 
-        public Criteria andFromGreaterThanOrEqualTo(String value) {
-            addCriterion("from >=", value, "from");
+        public Criteria andChannelGreaterThanOrEqualTo(String value) {
+            addCriterion("channel >=", value, "channel");
             return (Criteria) this;
         }
 
-        public Criteria andFromLessThan(String value) {
-            addCriterion("from <", value, "from");
+        public Criteria andChannelLessThan(String value) {
+            addCriterion("channel <", value, "channel");
             return (Criteria) this;
         }
 
-        public Criteria andFromLessThanOrEqualTo(String value) {
-            addCriterion("from <=", value, "from");
+        public Criteria andChannelLessThanOrEqualTo(String value) {
+            addCriterion("channel <=", value, "channel");
             return (Criteria) this;
         }
 
-        public Criteria andFromLike(String value) {
-            addCriterion("from like", value, "from");
+        public Criteria andChannelLike(String value) {
+            addCriterion("channel like", value, "channel");
             return (Criteria) this;
         }
 
-        public Criteria andFromNotLike(String value) {
-            addCriterion("from not like", value, "from");
+        public Criteria andChannelNotLike(String value) {
+            addCriterion("channel not like", value, "channel");
             return (Criteria) this;
         }
 
-        public Criteria andFromIn(List<String> values) {
-            addCriterion("from in", values, "from");
+        public Criteria andChannelIn(List<String> values) {
+            addCriterion("channel in", values, "channel");
             return (Criteria) this;
         }
 
-        public Criteria andFromNotIn(List<String> values) {
-            addCriterion("from not in", values, "from");
+        public Criteria andChannelNotIn(List<String> values) {
+            addCriterion("channel not in", values, "channel");
             return (Criteria) this;
         }
 
-        public Criteria andFromBetween(String value1, String value2) {
-            addCriterion("from between", value1, value2, "from");
+        public Criteria andChannelBetween(String value1, String value2) {
+            addCriterion("channel between", value1, value2, "channel");
             return (Criteria) this;
         }
 
-        public Criteria andFromNotBetween(String value1, String value2) {
-            addCriterion("from not between", value1, value2, "from");
+        public Criteria andChannelNotBetween(String value1, String value2) {
+            addCriterion("channel not between", value1, value2, "channel");
             return (Criteria) this;
         }
 

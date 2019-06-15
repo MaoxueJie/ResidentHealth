@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService{
 				if (account.getStatus()==0)
 				{
 					account.setStatus(1);
-					account.setFrom(from);
+					account.setChannel(from);
 					account.setUserId(userId);
 					account.setUpdateTime(now);
 					wexinAccountMapper.updateByPrimaryKeySelective(account);
@@ -76,7 +76,7 @@ public class UserServiceImpl implements UserService{
 				WexinAccount account = new WexinAccount();
 				//account.setUserId(user.getId());
 				account.setStatus(1);
-				account.setFrom(from);
+				account.setChannel(from);
 				account.setUserId(userId);
 				account.setOpenId(openId);
 				account.setCreateTime(now);
@@ -291,7 +291,7 @@ public class UserServiceImpl implements UserService{
 							account.setUserId(ret.getData().getId());
 							wexinAccountMapper.updateByPrimaryKeySelective(account);
 							
-							String from = account.getFrom();
+							String from = account.getChannel();
 							Long userId = ret.getData().getId();
 							if (StringUtils.isNotBlank(from) && userId!=null) {
 								DoctorUserMappingExample duexample = new DoctorUserMappingExample();

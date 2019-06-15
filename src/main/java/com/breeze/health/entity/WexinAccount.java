@@ -11,7 +11,7 @@ public class WexinAccount {
 
     private Integer status;
 
-    private String from;
+    private String channel;
 
     private Date createTime;
 
@@ -49,12 +49,12 @@ public class WexinAccount {
         this.status = status;
     }
 
-    public String getFrom() {
-        return from;
+    public String getChannel() {
+        return channel;
     }
 
-    public void setFrom(String from) {
-        this.from = from == null ? null : from.trim();
+    public void setChannel(String channel) {
+        this.channel = channel == null ? null : channel.trim();
     }
 
     public Date getCreateTime() {
