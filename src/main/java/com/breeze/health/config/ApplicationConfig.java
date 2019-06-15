@@ -49,6 +49,7 @@ public class ApplicationConfig {
 		registrationBean.setFilter(authFilter);
 		List<String> urlPatterns = new ArrayList<String>();
 	    urlPatterns.add("/app/test");
+	    urlPatterns.add("/app/getUser");
 	    registrationBean.setUrlPatterns(urlPatterns);
 	    return registrationBean;
     }

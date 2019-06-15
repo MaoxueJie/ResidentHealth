@@ -46,4 +46,13 @@ public class AppController {
 		return ret; 
 	}
 	
+	@RequestMapping(value="/getUser")
+	@ResponseBody
+	public Result<DoctorVo> getUser(HttpServletRequest request){
+		Result<DoctorVo> ret = new Result<DoctorVo>();
+		ret.setSuccess(true);
+		ret.setData((DoctorVo)request.getAttribute("user"));
+		return ret; 
+	}
+	
 }
