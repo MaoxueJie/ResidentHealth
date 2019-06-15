@@ -83,7 +83,9 @@ public class UserServiceImpl implements UserService{
 				account.setUpdateTime(now);
 				wexinAccountMapper.insert(account);
 			}
+			System.out.println("insert-mapping--------------------------------1");
 			if (StringUtils.isNotBlank(from) && userId!=null) {
+				System.out.println("insert-mapping--------------------------------2");
 				DoctorUserMappingExample duexample = new DoctorUserMappingExample();
 				duexample.createCriteria().andDoctorIdEqualTo(Long.parseLong(from)).andUserIdEqualTo(userId);
 				List<DoctorUserMapping> mappings = doctorUserMappingMapper.selectByExample(duexample);
@@ -95,6 +97,7 @@ public class UserServiceImpl implements UserService{
 					mapping.setCreateTime(now);
 					mapping.setUpdateTime(now);
 					doctorUserMappingMapper.insert(mapping);
+					System.out.println("insert-mapping--------------------------------3");
 				}
 			}
 			ret.setSuccess(true);
