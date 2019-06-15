@@ -76,7 +76,11 @@ public class UserServiceImpl implements UserService{
 				//userMapper.insert(user);
 				WexinAccount account = new WexinAccount();
 				//account.setUserId(user.getId());
-				account.setStatus(1);
+				if (userId!=null)
+				{
+					account.setStatus(1);
+				}else
+					account.setStatus(0);
 				account.setChannel(from);
 				account.setUserId(userId);
 				account.setOpenId(openId);
