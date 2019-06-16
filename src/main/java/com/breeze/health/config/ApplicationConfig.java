@@ -51,6 +51,7 @@ public class ApplicationConfig {
 	    urlPatterns.add("/app/test");
 	    urlPatterns.add("/app/getUser");
 	    urlPatterns.add("/app/changePwd");
+	    urlPatterns.add("/app/getSicks");
 	    registrationBean.setUrlPatterns(urlPatterns);
 	    return registrationBean;
     }
