@@ -13,7 +13,7 @@
   <select id="select" resultMap="BaseResultMap">
     select d.mobile,d.user_id,d.doctor_id,i.birthday,i.gender,d.last_time from (
 	  select * from (select  DISTINCT doctor_id,user_id from t_doctor_user where doctor_id = #{doctorId}) tu LEFT join t_user u on u.id = tu.user_id 
-	  <if test="mobile != null"> 
+	  <if test="mobile != null and mobile !=''"> 
 	  	where u.mobile like '%${mobile}%'
 	  </if>
 	  
