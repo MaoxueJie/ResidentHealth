@@ -55,4 +55,11 @@ public class AppController {
 		return ret; 
 	}
 	
+	@RequestMapping(value="/changePwd")
+	@ResponseBody
+	public Result<Void> changePwd(HttpServletRequest request,String oldPassword,String newPassword){
+		Result<Void> ret = doctorService.changePwd(((DoctorVo)request.getAttribute("user")).getId(), oldPassword, newPassword);
+		return ret; 
+	}
+	
 }

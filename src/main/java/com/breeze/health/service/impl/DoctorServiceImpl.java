@@ -1,5 +1,6 @@
 package com.breeze.health.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -68,6 +69,37 @@ public class DoctorServiceImpl implements DoctorService{
 		}catch(Exception e) {
 			ret.setSuccess(false);
 			logger.error("getById exception", e);
+		}
+		return ret;
+	}
+
+	@Override
+	public Result<Void> changePwd(Long doctorId, String oldPassword, String newPassword) {
+		Result<Void> ret = new Result<Void>();
+		try {
+		    Doctor doctor = doctorMapper.selectByPrimaryKey(doctorId);
+		    System.out.println("docker----------------"+doctor);
+			if (doctor!=null) {
+				if (doctor.getPassword().equals(MD5Util.hash(oldPassword)))
+				{
+					doctor.setPassword(newPassword);
+					doctor.setUpdateTime(new Date());
+					doctorMapper.updateByPrimaryKeySelective(doctor);
+					ret.setSuccess(true);
+				}else
+				{
+					ret.setSuccess(false);
+					ret.setMessage("原密码不正确！");
+				}
+			}else
+			{
+				ret.setSuccess(false);
+				ret.setMessage("修改密码失败！");
+			}
+		}catch(Exception e) {
+			ret.setSuccess(false);
+			ret.setMessage("系统正忙，请联系管理员！");
+			logger.error("changePwd exception", e);
 		}
 		return ret;
 	}
