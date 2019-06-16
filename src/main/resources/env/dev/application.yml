@@ -30,7 +30,7 @@ spring:
         static-locations: classpath:/public/
             
 mybatis:
-    mapper-locations: classpath:mapping/*.xml
+    mapper-locations: classpath:mapping/*.xml,classpath*:mapping/custom/*.xml
     type-aliases-package: com.breeze.health.entity
 
 pagehelper:

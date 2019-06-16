@@ -161,6 +161,11 @@ public class UserServiceImpl implements UserService{
 				baseInfo.setUpdateTime(now);
 				userBaseInfoMapper.insert(baseInfo);
 			}
+			
+			User user = userMapper.selectByPrimaryKey(vo.getUserId());
+			user.setLastTime(now);
+			userMapper.updateByPrimaryKeySelective(user);
+			
 			ret.setSuccess(true);
 			ret.setMessage("提交成功");
 		}catch(Exception e)

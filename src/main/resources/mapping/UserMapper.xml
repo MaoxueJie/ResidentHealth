@@ -7,6 +7,7 @@
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="last_time" property="lastTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -38,7 +39,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, mobile, password, create_time, update_time
+    id, mobile, password, create_time, update_time, last_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.UserExample" >
     select
@@ -66,9 +67,9 @@
   </delete>
   <insert id="insert" parameterType="com.breeze.health.entity.User" useGeneratedKeys="true" keyProperty="id" >
     insert into t_user (mobile, password, create_time, 
-      update_time)
+      update_time, last_time)
     values (#{mobile,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP})
+      #{updateTime,jdbcType=TIMESTAMP}, #{lastTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.breeze.health.entity.User" useGeneratedKeys="true" keyProperty="id" >
     insert into t_user
@@ -85,6 +86,9 @@
       <if test="updateTime != null" >
         update_time,
       </if>
+      <if test="lastTime != null" >
+        last_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="mobile != null" >
@@ -98,6 +102,9 @@
       </if>
       <if test="updateTime != null" >
         #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastTime != null" >
+        #{lastTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -122,6 +129,9 @@
       <if test="updateTime != null" >
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="lastTime != null" >
+        last_time = #{lastTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -130,7 +140,8 @@
     set mobile = #{mobile,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      last_time = #{lastTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

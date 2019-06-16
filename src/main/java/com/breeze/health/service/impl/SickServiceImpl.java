@@ -13,10 +13,12 @@ import org.springframework.stereotype.Service;
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserPhysiologicalVo;
 import com.breeze.health.beans.vo.UserSickVo;
+import com.breeze.health.entity.User;
 import com.breeze.health.entity.UserPhysiological;
 import com.breeze.health.entity.UserPhysiologicalExample;
 import com.breeze.health.entity.UserSick;
 import com.breeze.health.entity.UserSickExample;
+import com.breeze.health.mapper.UserMapper;
 import com.breeze.health.mapper.UserSickMapper;
 import com.breeze.health.service.SickService;
 import com.breeze.health.util.BeanUtils;
@@ -27,6 +29,9 @@ public class SickServiceImpl implements SickService{
 	private static Logger logger = LoggerFactory.getLogger(SickServiceImpl.class);
 	@Autowired
 	UserSickMapper userSickMapper;
+	
+	@Autowired
+	UserMapper userMapper;
 	
 	@Override
 	public Result<Void> addOrUpdateSick(UserSickVo vo) {
@@ -53,6 +58,9 @@ public class SickServiceImpl implements SickService{
 				sick.setUpdateTime(now);
 				userSickMapper.insert(sick);
 			}
+			User user = userMapper.selectByPrimaryKey(vo.getUserId());
+			user.setLastTime(now);
+			userMapper.updateByPrimaryKeySelective(user);
 			ret.setMessage("提交成功");
 			ret.setSuccess(true);
 		}catch(Exception e)

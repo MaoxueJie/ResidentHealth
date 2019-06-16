@@ -1,5 +1,9 @@
 package com.breeze.health.service;
 
-public interface AppService {
+import java.util.List;
 
+import com.breeze.health.beans.vo.Result;
+
+public interface AppService {
+	Result<List> getUsersPage(Long doctorId,Integer page,Integer size);
 }

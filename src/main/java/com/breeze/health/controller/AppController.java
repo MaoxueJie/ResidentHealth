@@ -1,5 +1,7 @@
 package com.breeze.health.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import com.breeze.health.beans.vo.DoctorVo;
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserLivingVo;
 import com.breeze.health.beans.vo.UserVo;
+import com.breeze.health.service.AppService;
 import com.breeze.health.service.DoctorService;
 import com.breeze.health.util.DesUtil;
 import com.breeze.health.util.RequestUtils;
@@ -22,6 +25,9 @@ import com.breeze.health.util.RequestUtils;
 @RequestMapping("/app")
 @SuppressWarnings("all")
 public class AppController {
+	
+	@Autowired
+	AppService appService;
 	
 	@Autowired
 	DoctorService doctorService;
@@ -59,6 +65,15 @@ public class AppController {
 	@ResponseBody
 	public Result<Void> changePwd(HttpServletRequest request,String oldPassword,String newPassword){
 		Result<Void> ret = doctorService.changePwd(((DoctorVo)request.getAttribute("user")).getId(), oldPassword, newPassword);
+		return ret; 
+	}
+	
+	
+	
+	@RequestMapping(value="/getSicks")
+	@ResponseBody
+	public Result<List> getSicks(HttpServletRequest request,Long doctorId,Integer page,Integer size){
+		Result<List> ret = appService.getUsersPage(doctorId, page, size);
 		return ret; 
 	}
 	

@@ -8,6 +8,7 @@ import com.breeze.health.mapper.UserLivingHabitMapper;
 import com.breeze.health.mapper.UserLivingMapper;
 import com.breeze.health.mapper.UserLivingMealMapper;
 import com.breeze.health.mapper.UserLivingMovementMapper;
+import com.breeze.health.mapper.UserMapper;
 import com.breeze.health.mapper.UserPhysiologicalMapper;
 import com.breeze.health.service.LivingService;
 import com.breeze.health.util.BeanUtils;
@@ -34,6 +35,10 @@ import java.util.List;
 @Service
 public class LivingServiceImpl implements LivingService {
     private Logger logger = LoggerFactory.getLogger(LivingServiceImpl.class);
+    
+    
+    @Resource
+    UserMapper userMapper;
     
     @Resource
     private UserLivingMapper userLivingMapper;
@@ -174,6 +179,12 @@ public class LivingServiceImpl implements LivingService {
 						habit.setUpdateTime(now);
 						userLivingHabitMapper.insertSelective(habit);
 					}
+					
+					
+					User user = userMapper.selectByPrimaryKey(living.getUserId());
+					user.setLastTime(now);
+					userMapper.updateByPrimaryKeySelective(user);
+					
 					result.setMessage("提交成功");
 					result.setSuccess(true);
 					return result;

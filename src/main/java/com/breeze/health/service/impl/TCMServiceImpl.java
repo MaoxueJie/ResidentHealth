@@ -14,6 +14,7 @@ import org.springframework.transaction.support.TransactionTemplate;
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserPsychologicalVo;
 import com.breeze.health.beans.vo.UserTCMVo;
+import com.breeze.health.entity.User;
 import com.breeze.health.entity.UserPsychological;
 import com.breeze.health.entity.UserPsychologicalAD8;
 import com.breeze.health.entity.UserPsychologicalAD8Example;
@@ -42,6 +43,7 @@ import com.breeze.health.entity.UserTCMYangxu;
 import com.breeze.health.entity.UserTCMYangxuExample;
 import com.breeze.health.entity.UserTCMYinxu;
 import com.breeze.health.entity.UserTCMYinxuExample;
+import com.breeze.health.mapper.UserMapper;
 import com.breeze.health.mapper.UserTCMMapper;
 import com.breeze.health.mapper.UserTCMPingheMapper;
 import com.breeze.health.mapper.UserTCMQixuMapper;
@@ -89,6 +91,8 @@ public class TCMServiceImpl implements TCMService{
 	@Autowired
 	UserTCMYinxuMapper userTCMYinxuMapper;
 	
+	@Autowired
+	UserMapper userMapper;
 	
 	@Autowired
 	TransactionTemplate transactionTemplate;
@@ -361,6 +365,11 @@ public class TCMServiceImpl implements TCMService{
 						userTCMYinxuMapper.insertSelective(yinxu);
 						
 					}
+					
+					User user = userMapper.selectByPrimaryKey(vo.getUserId());
+					user.setLastTime(now);
+					userMapper.updateByPrimaryKeySelective(user);
+					
 					result.setMessage("提交成功");
 					result.setSuccess(true);
 					return result;

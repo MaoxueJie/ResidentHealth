@@ -16,7 +16,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan(basePackages = {"com.breeze.health.controller",
 		"com.breeze.health.config",
 		"com.breeze.health.service"})
-@MapperScan(basePackages = {"com.breeze.health.mapper"})
+@MapperScan(basePackages = {"com.breeze.health.mapper","com.breeze.health.mapper.custom"})
 public class WebApplicationStarter extends WebMvcConfigurerAdapter {
 
     public static void main(String[] args) {

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.breeze.health.mapper.custom.UserCustomMapper" >
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.custom.SickUser" >
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="doctor_id" property="doctorId" jdbcType="BIGINT" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+    <result column="gender" property="gender" jdbcType="INTEGER" />
+    <result column="last_time" property="lastTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  <select id="select" resultMap="BaseResultMap" parameterType="java.lang.Long">
+    select d.mobile,d.user_id,d.doctor_id,i.birthday,i.gender,d.last_time from (
+	  select * from (select  DISTINCT doctor_id,user_id from t_doctor_user where doctor_id = ${doctorId}) tu LEFT join t_user u on u.id = tu.user_id
+	) d LEFT JOIN ( select * from t_user_base_info where id in(select max(id) from t_user_base_info group by user_id)) i on d.user_id = i.user_id
+	
+	order by d.last_time desc
+  </select>
+  
+</mapper>

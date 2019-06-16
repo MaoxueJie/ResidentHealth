@@ -13,6 +13,8 @@ public class User {
 
     private Date updateTime;
 
+    private Date lastTime;
+
     public Long getId() {
         return id;
     }
@@ -51,5 +53,13 @@ public class User {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Date getLastTime() {
+        return lastTime;
+    }
+
+    public void setLastTime(Date lastTime) {
+        this.lastTime = lastTime;
     }
 }

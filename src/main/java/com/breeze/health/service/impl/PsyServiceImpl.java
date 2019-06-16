@@ -15,6 +15,7 @@ import org.springframework.transaction.support.TransactionTemplate;
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserPsySuicideVo;
 import com.breeze.health.beans.vo.UserPsychologicalVo;
+import com.breeze.health.entity.User;
 import com.breeze.health.entity.UserPsychological;
 import com.breeze.health.entity.UserPsychologicalAD8;
 import com.breeze.health.entity.UserPsychologicalAD8Example;
@@ -25,6 +26,7 @@ import com.breeze.health.entity.UserPsychologicalPHQ9;
 import com.breeze.health.entity.UserPsychologicalPHQ9Example;
 import com.breeze.health.entity.UserPsychologicalSuicide;
 import com.breeze.health.entity.UserPsychologicalSuicideExample;
+import com.breeze.health.mapper.UserMapper;
 import com.breeze.health.mapper.UserPsychologicalAD8Mapper;
 import com.breeze.health.mapper.UserPsychologicalGAD7Mapper;
 import com.breeze.health.mapper.UserPsychologicalMapper;
@@ -52,6 +54,9 @@ public class PsyServiceImpl implements PsyService{
 	
 	@Autowired
 	UserPsychologicalSuicideMapper userPsychologicalSuicideMapper;
+	
+	@Autowired
+	UserMapper userMapper;
 	
 	@Autowired
 	TransactionTemplate transactionTemplate;
@@ -261,6 +266,11 @@ public class PsyServiceImpl implements PsyService{
 						phq9.setUpdateTime(now);
 						userPsychologicalPHQ9Mapper.insert(phq9);
 					}
+					
+					User user = userMapper.selectByPrimaryKey(vo.getUserId());
+					user.setLastTime(now);
+					userMapper.updateByPrimaryKeySelective(user);
+					
 					result.setMessage("提交成功");
 					result.setSuccess(true);
 					return result;
@@ -549,6 +559,11 @@ public class PsyServiceImpl implements PsyService{
 				suicide.setUpdateTime(now);
 				userPsychologicalSuicideMapper.insert(suicide);
 			}
+			
+			User user = userMapper.selectByPrimaryKey(vo.getUserId());
+			user.setLastTime(now);
+			userMapper.updateByPrimaryKeySelective(user);
+			
 			ret.setMessage("提交成功");
 			ret.setSuccess(true);
 		}catch(Exception e)

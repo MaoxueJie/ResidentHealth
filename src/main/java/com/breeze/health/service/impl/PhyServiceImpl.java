@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
 
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserPhysiologicalVo;
+import com.breeze.health.entity.User;
 import com.breeze.health.entity.UserPhysiological;
 import com.breeze.health.entity.UserPhysiologicalExample;
+import com.breeze.health.mapper.UserMapper;
 import com.breeze.health.mapper.UserPhysiologicalMapper;
 import com.breeze.health.service.PhyService;
 import com.breeze.health.util.BeanUtils;
@@ -22,6 +24,9 @@ public class PhyServiceImpl implements PhyService{
 	private static Logger logger = LoggerFactory.getLogger(PhyServiceImpl.class);
 	@Autowired
 	UserPhysiologicalMapper userPhysiologicalMapper;
+	
+	@Autowired
+	UserMapper userMapper;
 	
 	@Override
 	public Result<Void> addOrUpdatePhy(UserPhysiologicalVo vo) {
@@ -40,6 +45,9 @@ public class PhyServiceImpl implements PhyService{
 				phy.setUpdateTime(now);
 				userPhysiologicalMapper.insert(phy);
 			}
+			User user = userMapper.selectByPrimaryKey(vo.getUserId());
+			user.setLastTime(now);
+			userMapper.updateByPrimaryKeySelective(user);
 			ret.setMessage("提交成功");
 			ret.setSuccess(true);
 		}catch(Exception e)
