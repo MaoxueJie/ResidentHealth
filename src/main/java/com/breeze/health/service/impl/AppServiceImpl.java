@@ -2,6 +2,8 @@ package com.breeze.health.service.impl;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,7 @@ import com.github.pagehelper.PageHelper;
 
 @Service
 public class AppServiceImpl implements AppService{
+	private static Logger logger = LoggerFactory.getLogger(AppServiceImpl.class);
 	@Autowired
 	UserCustomMapper userCustomMapper;
 
@@ -29,6 +32,7 @@ public class AppServiceImpl implements AppService{
 			ret.setSuccess(true);
 			ret.setData(sickUsers);
 		}catch(Exception e) {
+			logger.error("getUsersPage exception",e);
 			ret.setSuccess(false);
 		}
 		return ret;
