@@ -82,7 +82,7 @@ public class DoctorServiceImpl implements DoctorService{
 			if (doctor!=null) {
 				if (doctor.getPassword().equals(MD5Util.hash(oldPassword)))
 				{
-					doctor.setPassword(newPassword);
+					doctor.setPassword(MD5Util.hash(newPassword));
 					doctor.setUpdateTime(new Date());
 					doctorMapper.updateByPrimaryKeySelective(doctor);
 					ret.setSuccess(true);
