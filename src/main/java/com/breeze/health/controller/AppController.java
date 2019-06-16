@@ -72,8 +72,8 @@ public class AppController {
 	
 	@RequestMapping(value="/getSicks")
 	@ResponseBody
-	public Result<List> getSicks(HttpServletRequest request,Integer page,Integer size){
-		Result<List> ret = appService.getUsersPage(((DoctorVo)request.getAttribute("user")).getId(), page, size);
+	public Result<List> getSicks(HttpServletRequest request,String mobile,Integer page,Integer size){
+		Result<List> ret = appService.getUsersPage(((DoctorVo)request.getAttribute("user")).getId(),mobile, page, size);
 		return ret; 
 	}
 	

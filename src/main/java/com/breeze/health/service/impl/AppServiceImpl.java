@@ -20,7 +20,7 @@ public class AppServiceImpl implements AppService{
 	UserCustomMapper userCustomMapper;
 
 	@Override
-	public Result<List> getUsersPage(Long doctorId,Integer page, Integer size) {
+	public Result<List> getUsersPage(Long doctorId,String mobile,Integer page, Integer size) {
 		Result<List> ret = new Result<List>();
 		try {
 			if (page==null || page <1)
@@ -28,7 +28,7 @@ public class AppServiceImpl implements AppService{
 			if (size==null || size <0)
 				size = 20;
 			PageHelper.startPage(page,size);
-			List<SickUser> sickUsers = userCustomMapper.select(doctorId);
+			List<SickUser> sickUsers = userCustomMapper.select(doctorId,mobile);
 			ret.setSuccess(true);
 			ret.setData(sickUsers);
 		}catch(Exception e) {
