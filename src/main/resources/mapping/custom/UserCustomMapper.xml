@@ -12,7 +12,7 @@
   
   <select id="select" resultMap="BaseResultMap" parameterType="long">
     select d.mobile,d.user_id,d.doctor_id,i.birthday,i.gender,d.last_time from (
-	  select * from (select  DISTINCT doctor_id,user_id from t_doctor_user where doctor_id = ${doctorId}) tu LEFT join t_user u on u.id = tu.user_id
+	  select * from (select  DISTINCT doctor_id,user_id from t_doctor_user where doctor_id = #{_parameter}) tu LEFT join t_user u on u.id = tu.user_id
 	) d LEFT JOIN ( select * from t_user_base_info where id in(select max(id) from t_user_base_info group by user_id)) i on d.user_id = i.user_id
 	
 	order by d.last_time desc
