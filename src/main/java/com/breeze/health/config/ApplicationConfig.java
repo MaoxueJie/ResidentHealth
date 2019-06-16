@@ -52,6 +52,13 @@ public class ApplicationConfig {
 	    urlPatterns.add("/app/getUser");
 	    urlPatterns.add("/app/changePwd");
 	    urlPatterns.add("/app/getSicks");
+	    urlPatterns.add("/app/base/get");
+	    urlPatterns.add("/app/living/get");
+	    urlPatterns.add("/app/sick/get");
+	    urlPatterns.add("/app/phy/get");
+	    urlPatterns.add("/app/psy/get");
+	    urlPatterns.add("/app/tcm/get");
+	    urlPatterns.add("/app/psy/suicide/get");
 	    registrationBean.setUrlPatterns(urlPatterns);
 	    return registrationBean;
     }
