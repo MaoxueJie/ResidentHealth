@@ -96,6 +96,16 @@ public class UserBaseInfoVo {
 	public Integer getGender() {
 		return gender;
 	}
+	
+	public String getGenderStr() {
+		if (gender==null)
+			return "未填写";
+		if (gender==1)
+			return "男";	
+		if (gender==2)
+			return "女";
+		return "未知";
+	}
 
 	public void setGender(Integer gender) {
 		this.gender = gender;

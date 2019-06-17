@@ -50,8 +50,6 @@ public class AppController {
 	@Resource
 	private UserService userService;
 	@Resource
-	private ReportService reportService;
-	@Resource
 	private SickService sickService;
 	@Resource
 	private PsyService psyService;
