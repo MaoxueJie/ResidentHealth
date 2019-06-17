@@ -55,7 +55,6 @@ public class DoctorServiceImpl implements DoctorService{
 		Result<DoctorVo> ret = new Result<DoctorVo>();
 		try {
 		    Doctor doctor = doctorMapper.selectByPrimaryKey(id);
-		    System.out.println("docker----------------"+doctor);
 			if (doctor!=null) {
 				DoctorVo data = new DoctorVo();
 				BeanUtils.copyProperties(doctor, data);
@@ -78,7 +77,6 @@ public class DoctorServiceImpl implements DoctorService{
 		Result<Void> ret = new Result<Void>();
 		try {
 		    Doctor doctor = doctorMapper.selectByPrimaryKey(doctorId);
-		    System.out.println("docker----------------"+doctor);
 			if (doctor!=null) {
 				if (doctor.getPassword().equals(MD5Util.hash(oldPassword)))
 				{

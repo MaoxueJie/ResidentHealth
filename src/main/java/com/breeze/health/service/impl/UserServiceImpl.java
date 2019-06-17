@@ -50,7 +50,6 @@ public class UserServiceImpl implements UserService{
 	
 	@Override
 	public Result<Void> bindWexin(String openId,Long userId,String from) {
-		System.out.println("insert-mapping--------------------------------0 from=" + from + " userId="+userId);
 		Result<Void> ret = new Result<Void>();
 		try{
 			Date now = new Date();
@@ -88,9 +87,7 @@ public class UserServiceImpl implements UserService{
 				account.setUpdateTime(now);
 				wexinAccountMapper.insertSelective(account);
 			}
-			System.out.println("insert-mapping--------------------------------1");
 			if (StringUtils.isNotBlank(from) && userId!=null) {
-				System.out.println("insert-mapping--------------------------------2");
 				DoctorUserMappingExample duexample = new DoctorUserMappingExample();
 				duexample.createCriteria().andDoctorIdEqualTo(Long.parseLong(from)).andUserIdEqualTo(userId);
 				List<DoctorUserMapping> mappings = doctorUserMappingMapper.selectByExample(duexample);
@@ -102,7 +99,6 @@ public class UserServiceImpl implements UserService{
 					mapping.setCreateTime(now);
 					mapping.setUpdateTime(now);
 					doctorUserMappingMapper.insertSelective(mapping);
-					System.out.println("insert-mapping--------------------------------3");
 				}
 			}
 			ret.setSuccess(true);
