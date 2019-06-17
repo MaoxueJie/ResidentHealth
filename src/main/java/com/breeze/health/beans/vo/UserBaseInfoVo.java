@@ -2,6 +2,7 @@ package com.breeze.health.beans.vo;
 
 import java.util.Date;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -226,6 +227,12 @@ public class UserBaseInfoVo {
 	public String[] getFamilyDesc() {
 		return familyDesc;
 	}
+	
+	public String getFamilyDescStr() {
+		if (familyDesc==null ||familyDesc.length==0)
+			return "未填写";
+		return String.join(",", familyDesc);
+	}
 
 	public void setFamilyDesc(String[] familyDesc) {
 		this.familyDesc = familyDesc;
@@ -285,8 +292,8 @@ public class UserBaseInfoVo {
 	
 	public String getReligionStr() {
 		if (religion!=null)
-			return religion + religionOther==null?"":(","+religionOther);
-		else if (religionOther!=null)
+			return religion + (StringUtils.isBlank(religionOther)?"":(","+religionOther));
+		else if (StringUtils.isBlank(religionOther))
 			return religionOther;
 		else 
 			return "未填写";
