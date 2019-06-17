@@ -377,17 +377,17 @@ public class UserPhysiologicalVo {
 		}
 		if (bloodSugarVal3!=null) {
 			if (!"".equals(bloodSugarValStr))
-				bloodSugarValStr+=",";
+				bloodSugarValStr+=",<br>";
 			bloodSugarValStr += "餐后2小时血糖:" + formatFloat(bloodSugarVal3) + "mmol/L";
 		}
 		if (bloodSugarVal4!=null) {
 			if (!"".equals(bloodSugarValStr))
-				bloodSugarValStr+=",";
+				bloodSugarValStr+=",<br>";
 			bloodSugarValStr += "随机血糖:" + formatFloat(bloodSugarVal4) + "mmol/L";
 		}
 		if (bloodSugarVal2!=null) {
 			if (!"".equals(bloodSugarValStr))
-				bloodSugarValStr+=",";
+				bloodSugarValStr+=",<br>";
 			bloodSugarValStr += "糖化血红蛋白:" + formatFloat(bloodSugarVal2) + "%";
 		}
 		return bloodSugarValStr;
@@ -457,17 +457,17 @@ public class UserPhysiologicalVo {
 		}
 		if (bloodLipidVal2!=null) {
 			if (!"".equals(bloodLipidValStr))
-				bloodLipidValStr+=",";
+				bloodLipidValStr+=",<br>";
 			bloodLipidValStr += "甘油三酯(TG):" + formatFloat(bloodLipidVal2) + "mmol/L";
 		}
 		if (bloodLipidVal3!=null) {
 			if (!"".equals(bloodLipidValStr))
-				bloodLipidValStr+=",";
+				bloodLipidValStr+=",<br>";
 			bloodLipidValStr += "高密度脂蛋白胆固醇(HDL-C):" + formatFloat(bloodLipidVal3) + "mmol/L";
 		}
 		if (bloodLipidVal4!=null) {
 			if (!"".equals(bloodLipidValStr))
-				bloodLipidValStr+=",";
+				bloodLipidValStr+=",<br>";
 			bloodLipidValStr += "低密度脂蛋白胆固醇(LDL-C):" + formatFloat(bloodLipidVal4) + "mmol/L";
 		}
 		return bloodLipidValStr;
