@@ -321,9 +321,9 @@ public class UserPsychologicalVo {
 	public String getAd8Q1Str() {
 		if (ad8Q1==null)
 			return "未填写";
-		if (ad8Q1==0)
-			return "否";
 		if (ad8Q1==1)
+			return "否";
+		if (ad8Q1==2)
 			return "是";
 		return "未知";
 	}
@@ -331,9 +331,9 @@ public class UserPsychologicalVo {
 	public String getAd8Q2Str() {
 		if (ad8Q2==null)
 			return "未填写";
-		if (ad8Q2==0)
-			return "否";
 		if (ad8Q2==1)
+			return "否";
+		if (ad8Q2==2)
 			return "是";
 		return "未知";
 	}
@@ -341,54 +341,54 @@ public class UserPsychologicalVo {
 	public String getAd8Q3Str() {
 		if (ad8Q3==null)
 			return "未填写";
-		if (ad8Q3==0)
-			return "否";
 		if (ad8Q3==1)
+			return "否";
+		if (ad8Q3==2)
 			return "是";
 		return "未知";
 	}
 	public String getAd8Q4Str() {
 		if (ad8Q4==null)
 			return "未填写";
-		if (ad8Q4==0)
-			return "否";
 		if (ad8Q4==1)
+			return "否";
+		if (ad8Q4==2)
 			return "是";
 		return "未知";
 	}
 	public String getAd8Q5Str() {
 		if (ad8Q5==null)
 			return "未填写";
-		if (ad8Q5==0)
-			return "否";
 		if (ad8Q5==1)
+			return "否";
+		if (ad8Q5==2)
 			return "是";
 		return "未知";
 	}
 	public String getAd8Q6Str() {
 		if (ad8Q6==null)
 			return "未填写";
-		if (ad8Q6==0)
-			return "否";
 		if (ad8Q6==1)
+			return "否";
+		if (ad8Q6==2)
 			return "是";
 		return "未知";
 	}
 	public String getAd8Q7Str() {
 		if (ad8Q7==null)
 			return "未填写";
-		if (ad8Q7==0)
-			return "否";
 		if (ad8Q7==1)
+			return "否";
+		if (ad8Q7==2)
 			return "是";
 		return "未知";
 	}
 	public String getAd8Q8Str() {
 		if (ad8Q8==null)
 			return "未填写";
-		if (ad8Q8==0)
-			return "否";
 		if (ad8Q8==1)
+			return "否";
+		if (ad8Q8==2)
 			return "是";
 		return "未知";
 	}
