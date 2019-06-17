@@ -82,6 +82,316 @@ public class UserPsychologicalVo {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	public String getGad7Q1Str() {
+		if (gad7Q1==null)
+			return "未填写";
+		if (gad7Q1==0)
+			return "完全没有";
+		if (gad7Q1==1)
+			return "有几天";
+		if (gad7Q1==2)
+			return "一半以上天数";
+		if (gad7Q1==3)
+			return "几乎每天";
+		return "未知";
+	}
+	
+	public String getGad7Q2Str() {
+		if (gad7Q2==null)
+			return "未填写";
+		if (gad7Q2==0)
+			return "完全没有";
+		if (gad7Q2==1)
+			return "有几天";
+		if (gad7Q2==2)
+			return "一半以上天数";
+		if (gad7Q2==3)
+			return "几乎每天";
+		return "未知";
+	}
+	
+	public String getGad7Q3Str() {
+		if (gad7Q3==null)
+			return "未填写";
+		if (gad7Q3==0)
+			return "完全没有";
+		if (gad7Q3==1)
+			return "有几天";
+		if (gad7Q3==2)
+			return "一半以上天数";
+		if (gad7Q3==3)
+			return "几乎每天";
+		return "未知";
+	}
+	
+	public String getGad7Q4Str() {
+		if (gad7Q4==null)
+			return "未填写";
+		if (gad7Q4==0)
+			return "完全没有";
+		if (gad7Q4==1)
+			return "有几天";
+		if (gad7Q4==2)
+			return "一半以上天数";
+		if (gad7Q4==3)
+			return "几乎每天";
+		return "未知";
+	}
+	
+	public String getGad7Q5Str() {
+		if (gad7Q5==null)
+			return "未填写";
+		if (gad7Q5==0)
+			return "完全没有";
+		if (gad7Q5==1)
+			return "有几天";
+		if (gad7Q5==2)
+			return "一半以上天数";
+		if (gad7Q5==3)
+			return "几乎每天";
+		return "未知";
+	}
+	
+	public String getGad7Q6Str() {
+		if (gad7Q6==null)
+			return "未填写";
+		if (gad7Q6==0)
+			return "完全没有";
+		if (gad7Q6==1)
+			return "有几天";
+		if (gad7Q6==2)
+			return "一半以上天数";
+		if (gad7Q6==3)
+			return "几乎每天";
+		return "未知";
+	}
+	
+	public String getGad7Q7Str() {
+		if (gad7Q7==null)
+			return "未填写";
+		if (gad7Q7==0)
+			return "完全没有";
+		if (gad7Q7==1)
+			return "有几天";
+		if (gad7Q7==2)
+			return "一半以上天数";
+		if (gad7Q7==3)
+			return "几乎每天";
+		return "未知";
+	}
+	
+	public String getPhq9Q1Str() {
+		if (phq9Q1==null)
+			return "未填写";
+		if (phq9Q1==0)
+			return "完全没有";
+		if (phq9Q1==1)
+			return "有几天";
+		if (phq9Q1==2)
+			return "一半以上天数";
+		if (phq9Q1==3)
+			return "几乎每天";
+		return "未知";
+	}
+	
+	public String getPhq9Q2Str() {
+		if (phq9Q2==null)
+			return "未填写";
+		if (phq9Q2==0)
+			return "完全没有";
+		if (phq9Q2==1)
+			return "有几天";
+		if (phq9Q2==2)
+			return "一半以上天数";
+		if (phq9Q2==3)
+			return "几乎每天";
+		return "未知";
+	}
+	
+	public String getPhq9Q3Str() {
+		if (phq9Q3==null)
+			return "未填写";
+		if (phq9Q3==0)
+			return "完全没有";
+		if (phq9Q3==1)
+			return "有几天";
+		if (phq9Q3==2)
+			return "一半以上天数";
+		if (phq9Q3==3)
+			return "几乎每天";
+		return "未知";
+	}
+	
+	public String getPhq9Q4Str() {
+		if (phq9Q4==null)
+			return "未填写";
+		if (phq9Q4==0)
+			return "完全没有";
+		if (phq9Q4==1)
+			return "有几天";
+		if (phq9Q4==2)
+			return "一半以上天数";
+		if (phq9Q4==3)
+			return "几乎每天";
+		return "未知";
+	}
+	public String getPhq9Q5Str() {
+		if (phq9Q5==null)
+			return "未填写";
+		if (phq9Q5==0)
+			return "完全没有";
+		if (phq9Q5==1)
+			return "有几天";
+		if (phq9Q5==2)
+			return "一半以上天数";
+		if (phq9Q5==3)
+			return "几乎每天";
+		return "未知";
+	}
+	public String getPhq9Q6Str() {
+		if (phq9Q6==null)
+			return "未填写";
+		if (phq9Q6==0)
+			return "完全没有";
+		if (phq9Q6==1)
+			return "有几天";
+		if (phq9Q6==2)
+			return "一半以上天数";
+		if (phq9Q6==3)
+			return "几乎每天";
+		return "未知";
+	}
+	public String getPhq9Q7Str() {
+		if (phq9Q7==null)
+			return "未填写";
+		if (phq9Q7==0)
+			return "完全没有";
+		if (phq9Q7==1)
+			return "有几天";
+		if (phq9Q7==2)
+			return "一半以上天数";
+		if (phq9Q7==3)
+			return "几乎每天";
+		return "未知";
+	}
+	public String getPhq9Q8Str() {
+		if (phq9Q8==null)
+			return "未填写";
+		if (phq9Q8==0)
+			return "完全没有";
+		if (phq9Q8==1)
+			return "有几天";
+		if (phq9Q8==2)
+			return "一半以上天数";
+		if (phq9Q8==3)
+			return "几乎每天";
+		return "未知";
+	}
+	public String getPhq9Q9Str() {
+		if (phq9Q9==null)
+			return "未填写";
+		if (phq9Q9==0)
+			return "完全没有";
+		if (phq9Q9==1)
+			return "有几天";
+		if (phq9Q9==2)
+			return "一半以上天数";
+		if (phq9Q9==3)
+			return "几乎每天";
+		return "未知";
+	}
+	
+	public String getPhq9AffectStr() {
+		if (phq9Affect==null)
+			return "未填写";
+		if (phq9Affect==1)
+			return "沒有困难";
+		if (phq9Affect==2)
+			return "有一些困难";
+		if (phq9Affect==3)
+			return "很多困难";
+		if (phq9Affect==4)
+			return "非常困难";
+		return "未知";
+	}
+	
+	
+	
+	public String getAd8Q1Str() {
+		if (ad8Q1==null)
+			return "未填写";
+		if (ad8Q1==0)
+			return "否";
+		if (ad8Q1==1)
+			return "是";
+		return "未知";
+	}
+	
+	public String getAd8Q2Str() {
+		if (ad8Q2==null)
+			return "未填写";
+		if (ad8Q2==0)
+			return "否";
+		if (ad8Q2==1)
+			return "是";
+		return "未知";
+	}
+	
+	public String getAd8Q3Str() {
+		if (ad8Q3==null)
+			return "未填写";
+		if (ad8Q3==0)
+			return "否";
+		if (ad8Q3==1)
+			return "是";
+		return "未知";
+	}
+	public String getAd8Q4Str() {
+		if (ad8Q4==null)
+			return "未填写";
+		if (ad8Q4==0)
+			return "否";
+		if (ad8Q4==1)
+			return "是";
+		return "未知";
+	}
+	public String getAd8Q5Str() {
+		if (ad8Q5==null)
+			return "未填写";
+		if (ad8Q5==0)
+			return "否";
+		if (ad8Q5==1)
+			return "是";
+		return "未知";
+	}
+	public String getAd8Q6Str() {
+		if (ad8Q6==null)
+			return "未填写";
+		if (ad8Q6==0)
+			return "否";
+		if (ad8Q6==1)
+			return "是";
+		return "未知";
+	}
+	public String getAd8Q7Str() {
+		if (ad8Q7==null)
+			return "未填写";
+		if (ad8Q7==0)
+			return "否";
+		if (ad8Q7==1)
+			return "是";
+		return "未知";
+	}
+	public String getAd8Q8Str() {
+		if (ad8Q8==null)
+			return "未填写";
+		if (ad8Q8==0)
+			return "否";
+		if (ad8Q8==1)
+			return "是";
+		return "未知";
+	}
 
 	public Integer getAd8Q1() {
 		return ad8Q1;

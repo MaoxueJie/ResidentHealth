@@ -3,6 +3,8 @@ package com.breeze.health.beans.vo;
 import java.text.DecimalFormat;
 import java.util.Date;
 
+import org.apache.commons.lang.StringUtils;
+
 public class UserSickVo {
 	private Long id;
 
@@ -244,15 +246,15 @@ public class UserSickVo {
 			if (!"".equals(drugsStr))
 				drugsStr += ",";
 			if ("1".equals(durg))
-				drugsStr+="抗高血压药" + (antihypertensiveDrugName==null?"":("("+antihypertensiveDrugName+")"));
+				drugsStr+="抗高血压药" + (StringUtils.isBlank(antihypertensiveDrugName)?"":("("+antihypertensiveDrugName+")"));
 			if ("2".equals(durg))
-				drugsStr+="降脂药" + (lipidLoweringDrugName==null?"":("("+lipidLoweringDrugName+")"));
+				drugsStr+="降脂药" + (StringUtils.isBlank(lipidLoweringDrugName)?"":("("+lipidLoweringDrugName+")"));
 			if ("3".equals(durg))
-				drugsStr+="降糖药" + (hypoglycemicAgentsName==null?"":("("+hypoglycemicAgentsName+")"));
+				drugsStr+="降糖药" + (StringUtils.isBlank(hypoglycemicAgentsName)?"":("("+hypoglycemicAgentsName+")"));
 			if ("4".equals(durg))
-				drugsStr+="抗血小板药" + (antiplateletDrugName==null?"":("("+antiplateletDrugName+")"));
+				drugsStr+="抗血小板药" + (StringUtils.isBlank(antiplateletDrugName)?"":("("+antiplateletDrugName+")"));
 			if ("5".equals(durg))
-				drugsStr+="其它" + (othersDrugName==null?"":("("+othersDrugName+")"));
+				drugsStr+="其它" + (StringUtils.isBlank(othersDrugName)?"":("("+othersDrugName+")"));
 			if ("6".equals(durg))
 				drugsStr+="无";
 		}
