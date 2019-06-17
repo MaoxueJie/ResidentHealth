@@ -169,7 +169,7 @@ public class UserPhysiologicalVo {
 			if (hipCircumference!=0f)
 			{
 				Float whr = abdominalCircumference/(hipCircumference);
-				return formatFloat(whr)+"kg/㎡";
+				return formatFloat(whr);
 			}else
 			{
 				return "无法计算";

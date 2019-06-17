@@ -1,5 +1,6 @@
 package com.breeze.health.beans.vo;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 
 public class UserSickVo {
@@ -80,6 +81,46 @@ public class UserSickVo {
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
+	}
+	
+	public String getSicksStr() {
+		if (sicks==null || sicks.length==0) {
+			return "未填写";
+		}
+		String sicksStr = "";
+		for(String sick:sicks) {
+			if (!"".equals(sicksStr))
+				sicksStr += ",";
+			if ("1".equals(sick))
+				sicksStr+="高血压" + (highBloodPressureYears==null?"":("("+highBloodPressureYears+"年)"));
+			if ("2".equals(sick))
+				sicksStr+="冠心病" + (coronaryHeartDiseaseYears==null?"":("("+coronaryHeartDiseaseYears+"年)"));
+			if ("3".equals(sick))
+				sicksStr+="高脂血症" + (hyperlipidemiaYears==null?"":("("+hyperlipidemiaYears+"年)"));
+			if ("4".equals(sick))
+				sicksStr+="糖尿病" + (diabetesYears==null?"":("("+diabetesYears+"年)"));
+			if ("5".equals(sick))
+				sicksStr+="脑血管疾病" + (cerebrovascularDiseaseYears==null?"":("("+cerebrovascularDiseaseYears+"年)"));
+			if ("6".equals(sick))
+				sicksStr+="慢性胃炎" + (chronicGastritisYears==null?"":("("+chronicGastritisYears+"年)"));
+			if ("7".equals(sick))
+				sicksStr+="胃溃疡" + (stomachUlcerYears==null?"":("("+stomachUlcerYears+"年)"));
+			if ("8".equals(sick))
+				sicksStr+="支气管哮喘" + (bronchialAsthmaYears==null?"":("("+bronchialAsthmaYears+"年)"));
+			if ("9".equals(sick))
+				sicksStr+="慢性阻塞性肺疾病（COPD）"+ (copdYears==null?"":("("+copdYears+"年)"));
+			if ("10".equals(sick))
+				sicksStr+="骨质疏松症"+ (osteoporosisYears==null?"":("("+osteoporosisYears+"年)"));
+			if ("11".equals(sick))
+				sicksStr+="青光眼" + (glaucomaYears==null?"":("("+glaucomaYears+"年)"));
+			if ("12".equals(sick))
+				sicksStr+="白内障"+ (cataractYears==null?"":("("+cataractYears+"年)"));
+			if ("13".equals(sick))
+				sicksStr+="其他:" + (others==null?"":others) + (othersYears==null?"":("("+othersYears+"年)"));
+			if ("14".equals(sick))
+				sicksStr+="无";
+		}
+		return sicksStr;
 	}
 
 	public String[] getSicks() {
@@ -194,6 +235,29 @@ public class UserSickVo {
 		this.others = others;
 	}
 
+	public String getDrugsStr() {
+		if (drugs==null || drugs.length==0) {
+			return "未填写";
+		}
+		String drugsStr = "";
+		for(String durg:drugs) {
+			if (!"".equals(drugsStr))
+				drugsStr += ",";
+			if ("1".equals(durg))
+				drugsStr+="抗高血压药" + (antihypertensiveDrugName==null?"":("("+antihypertensiveDrugName+")"));
+			if ("2".equals(durg))
+				drugsStr+="降脂药" + (lipidLoweringDrugName==null?"":("("+lipidLoweringDrugName+")"));
+			if ("3".equals(durg))
+				drugsStr+="降糖药" + (hypoglycemicAgentsName==null?"":("("+hypoglycemicAgentsName+")"));
+			if ("4".equals(durg))
+				drugsStr+="抗血小板药" + (antiplateletDrugName==null?"":("("+antiplateletDrugName+")"));
+			if ("5".equals(durg))
+				drugsStr+="其它" + (othersDrugName==null?"":("("+othersDrugName+")"));
+			if ("6".equals(durg))
+				drugsStr+="无";
+		}
+		return drugsStr;
+	}
 	public String[] getDrugs() {
 		return drugs;
 	}
@@ -233,6 +297,37 @@ public class UserSickVo {
 	public void setAntiplateletDrugName(String antiplateletDrugName) {
 		this.antiplateletDrugName = antiplateletDrugName;
 	}
+	
+	public String getHighBloodPressureHistoryStr() {
+		if (highBloodPressureHistory==null) {
+			return "未填写";
+		}
+		String[] tempStr = highBloodPressureHistory.split(",");
+		String ret = "";
+		for(String str:tempStr) {
+			if (!"".equals(ret))
+			{
+				ret += ",";
+			}
+			if ("1".equals(str))
+				ret += "祖父";
+			if ("2".equals(str))
+				ret += "祖母";
+			if ("3".equals(str))
+				ret += "外祖父";
+			if ("4".equals(str))
+				ret += "外祖母";
+			if ("5".equals(str))
+				ret += "父亲";
+			if ("6".equals(str))
+				ret += "母亲";
+			if ("7".equals(str))
+				ret += "兄弟/姐妹";
+			if ("8".equals(str))
+				ret += "无";
+		}
+		return ret;
+	}
 
 	public String getHighBloodPressureHistory() {
 		return highBloodPressureHistory;
@@ -240,6 +335,37 @@ public class UserSickVo {
 
 	public void setHighBloodPressureHistory(String highBloodPressureHistory) {
 		this.highBloodPressureHistory = highBloodPressureHistory;
+	}
+	
+	public String getDiabetesHistoryStr() {
+		if (diabetesHistory==null) {
+			return "未填写";
+		}
+		String[] tempStr = diabetesHistory.split(",");
+		String ret = "";
+		for(String str:tempStr) {
+			if (!"".equals(ret))
+			{
+				ret += ",";
+			}
+			if ("1".equals(str))
+				ret += "祖父";
+			if ("2".equals(str))
+				ret += "祖母";
+			if ("3".equals(str))
+				ret += "外祖父";
+			if ("4".equals(str))
+				ret += "外祖母";
+			if ("5".equals(str))
+				ret += "父亲";
+			if ("6".equals(str))
+				ret += "母亲";
+			if ("7".equals(str))
+				ret += "兄弟/姐妹";
+			if ("8".equals(str))
+				ret += "无";
+		}
+		return ret;
 	}
 
 	public String getDiabetesHistory() {
@@ -250,12 +376,74 @@ public class UserSickVo {
 		this.diabetesHistory = diabetesHistory;
 	}
 
+	public String getCoronaryHeartDiseaseHistoryStr() {
+		if (coronaryHeartDiseaseHistory==null) {
+			return "未填写";
+		}
+		String[] tempStr = coronaryHeartDiseaseHistory.split(",");
+		String ret = "";
+		for(String str:tempStr) {
+			if (!"".equals(ret))
+			{
+				ret += ",";
+			}
+			if ("1".equals(str))
+				ret += "祖父";
+			if ("2".equals(str))
+				ret += "祖母";
+			if ("3".equals(str))
+				ret += "外祖父";
+			if ("4".equals(str))
+				ret += "外祖母";
+			if ("5".equals(str))
+				ret += "父亲";
+			if ("6".equals(str))
+				ret += "母亲";
+			if ("7".equals(str))
+				ret += "兄弟/姐妹";
+			if ("8".equals(str))
+				ret += "无";
+		}
+		return ret;
+	}
+	
 	public String getCoronaryHeartDiseaseHistory() {
 		return coronaryHeartDiseaseHistory;
 	}
 
 	public void setCoronaryHeartDiseaseHistory(String coronaryHeartDiseaseHistory) {
 		this.coronaryHeartDiseaseHistory = coronaryHeartDiseaseHistory;
+	}
+	
+	public String getCerebralApoplexyHistoryStr() {
+		if (cerebralApoplexyHistory==null) {
+			return "未填写";
+		}
+		String[] tempStr = cerebralApoplexyHistory.split(",");
+		String ret = "";
+		for(String str:tempStr) {
+			if (!"".equals(ret))
+			{
+				ret += ",";
+			}
+			if ("1".equals(str))
+				ret += "祖父";
+			if ("2".equals(str))
+				ret += "祖母";
+			if ("3".equals(str))
+				ret += "外祖父";
+			if ("4".equals(str))
+				ret += "外祖母";
+			if ("5".equals(str))
+				ret += "父亲";
+			if ("6".equals(str))
+				ret += "母亲";
+			if ("7".equals(str))
+				ret += "兄弟/姐妹";
+			if ("8".equals(str))
+				ret += "无";
+		}
+		return ret;
 	}
 
 	public String getCerebralApoplexyHistory() {
@@ -314,5 +502,16 @@ public class UserSickVo {
 		this.othersDrugName = othersDrugName;
 	}
 	
-	
+	private static DecimalFormat float_formatter = new DecimalFormat("###.#");
+	private static String formatFloat(Float year) {
+		if (year == null)
+			return "";
+		return float_formatter.format(year);
+	}
+	private static DecimalFormat integer_formatter = new DecimalFormat("####");
+	private static String formatInteger(Float zhi) {
+		if (zhi == null)
+			return "";
+		return integer_formatter.format(zhi);
+	}
 }
