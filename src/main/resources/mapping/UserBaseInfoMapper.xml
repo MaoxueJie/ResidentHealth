@@ -11,7 +11,7 @@
     <result column="marriage" property="marriage" jdbcType="INTEGER" />
     <result column="son_count" property="sonCount" jdbcType="INTEGER" />
     <result column="daughter_count" property="daughterCount" jdbcType="INTEGER" />
-    <result column="family_type" property="familyType" jdbcType="VARCHAR" />
+    <result column="family_type" property="familyType" jdbcType="INTEGER" />
     <result column="family_desc" property="familyDesc" jdbcType="VARCHAR" />
     <result column="family_other" property="familyOther" jdbcType="VARCHAR" />
     <result column="city" property="city" jdbcType="VARCHAR" />
@@ -106,7 +106,7 @@
       create_time, update_time)
     values (#{userId,jdbcType=BIGINT}, #{birthday,jdbcType=DATE}, #{idCardNo,jdbcType=VARCHAR}, 
       #{gender,jdbcType=INTEGER}, #{education,jdbcType=INTEGER}, #{marriage,jdbcType=INTEGER}, 
-      #{sonCount,jdbcType=INTEGER}, #{daughterCount,jdbcType=INTEGER}, #{familyType,jdbcType=VARCHAR}, 
+      #{sonCount,jdbcType=INTEGER}, #{daughterCount,jdbcType=INTEGER}, #{familyType,jdbcType=INTEGER}, 
       #{familyDesc,jdbcType=VARCHAR}, #{familyOther,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
       #{zone,jdbcType=VARCHAR}, #{community,jdbcType=VARCHAR}, #{communityLon,jdbcType=DOUBLE}, 
       #{communityLat,jdbcType=DOUBLE}, #{job,jdbcType=INTEGER}, #{religion,jdbcType=VARCHAR}, 
@@ -232,7 +232,7 @@
         #{daughterCount,jdbcType=INTEGER},
       </if>
       <if test="familyType != null" >
-        #{familyType,jdbcType=VARCHAR},
+        #{familyType,jdbcType=INTEGER},
       </if>
       <if test="familyDesc != null" >
         #{familyDesc,jdbcType=VARCHAR},
@@ -330,7 +330,7 @@
         daughter_count = #{daughterCount,jdbcType=INTEGER},
       </if>
       <if test="familyType != null" >
-        family_type = #{familyType,jdbcType=VARCHAR},
+        family_type = #{familyType,jdbcType=INTEGER},
       </if>
       <if test="familyDesc != null" >
         family_desc = #{familyDesc,jdbcType=VARCHAR},
@@ -405,7 +405,7 @@
       marriage = #{marriage,jdbcType=INTEGER},
       son_count = #{sonCount,jdbcType=INTEGER},
       daughter_count = #{daughterCount,jdbcType=INTEGER},
-      family_type = #{familyType,jdbcType=VARCHAR},
+      family_type = #{familyType,jdbcType=INTEGER},
       family_desc = #{familyDesc,jdbcType=VARCHAR},
       family_other = #{familyOther,jdbcType=VARCHAR},
       city = #{city,jdbcType=VARCHAR},

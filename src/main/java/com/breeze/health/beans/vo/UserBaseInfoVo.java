@@ -27,7 +27,7 @@ public class UserBaseInfoVo {
 
     private Integer daughterCount;
 
-    private String familyType;
+    private Integer familyType;
 
     private String[] familyDesc;
 
@@ -114,6 +114,26 @@ public class UserBaseInfoVo {
 	public Integer getEducation() {
 		return education;
 	}
+	
+	public String getEducationStr() {
+		if (education==null)
+			return "未填写";
+		if (education==1)
+			return "小学及以下";
+		if (education==2)
+			return "初中";
+		if (education==3)
+			return "中专";
+		if (education==4)
+			return "高中";
+		if (education==5)
+			return "大专";
+		if (education==6)
+			return "大学本科";
+		if (education==7)
+			return "研究生及以上";
+		return "未知";
+	}
 
 	public void setEducation(Integer education) {
 		this.education = education;
@@ -122,10 +142,44 @@ public class UserBaseInfoVo {
 	public Integer getMarriage() {
 		return marriage;
 	}
+	
+	public String getMarriageStr() {
+		if (marriage==null)
+			return "未填写";
+		if (marriage==1)
+			return "未婚";
+		if (marriage==2)
+			return "已婚";
+		if (marriage==3)
+			return "丧偶";
+		if (marriage==4)
+			return "离异";
+		return "未知";
+	}
 
 	public void setMarriage(Integer marriage) {
 		this.marriage = marriage;
 	}
+	
+    public String getSonAndDaughterCountStr() {
+    	String sonAndDaughterCountStr = "";
+    	if (sonCount!=null)
+    	{
+    		sonAndDaughterCountStr = "儿子："+ sonCount+"个";
+    	}
+    	if (daughterCount!=null) {
+    		if (!"".equals(sonAndDaughterCountStr))
+    			sonAndDaughterCountStr += ",";
+    		sonAndDaughterCountStr += "女儿："+ daughterCount+"个";
+    	}
+    	
+    	if (sonCount==null && daughterCount==null)
+    	{
+    		sonAndDaughterCountStr = "未填写";
+    	}
+    	
+    	return sonAndDaughterCountStr;
+    }
 
 	public Integer getSonCount() {
 		return sonCount;
@@ -143,11 +197,21 @@ public class UserBaseInfoVo {
 		this.daughterCount = daughterCount;
 	}
 
-	public String getFamilyType() {
+	public Integer getFamilyType() {
 		return familyType;
 	}
 
-	public void setFamilyType(String familyType) {
+	public String getFamilyTypeStr() {
+		if (familyType==null)
+			return "未填写";
+		if (familyType==1)
+			return "独居";	
+		if (familyType==2)
+			return "与他人同住";
+		return "未知";
+	}
+	
+	public void setFamilyType(Integer familyType) {
 		this.familyType = familyType;
 	}
 
@@ -194,6 +258,22 @@ public class UserBaseInfoVo {
 	public Integer getJob() {
 		return job;
 	}
+	
+	public String getJobStr() {
+		if (job==null)
+			return "未填写";
+		if (job==1)
+			return "无业";	
+		if (job==2)
+			return "在职";
+		if (job==3)
+			return "离休/退休";
+		if (job==4)
+			return "学生";
+		if (job==5)
+			return "农民";
+		return "未知";
+	}
 
 	public void setJob(Integer job) {
 		this.job = job;
@@ -201,6 +281,15 @@ public class UserBaseInfoVo {
 
 	public String getReligion() {
 		return religion;
+	}
+	
+	public String getReligionStr() {
+		if (religion!=null)
+			return religion + religionOther==null?"":(","+religionOther);
+		else if (religionOther!=null)
+			return religionOther;
+		else 
+			return "未填写";
 	}
 
 	public void setReligion(String religion) {
@@ -210,6 +299,18 @@ public class UserBaseInfoVo {
 	public Integer getHabitatIncome() {
 		return habitatIncome;
 	}
+	
+	public String getHabitatIncomeStr() {
+		if (habitatIncome==null)
+			return "未填写";
+		if (habitatIncome==1)
+			return "2000以下";	
+		if (habitatIncome==2)
+			return "2000-5000";
+		if (habitatIncome==3)
+			return "5000以上";
+		return "未知";
+	}
 
 	public void setHabitatIncome(Integer habitatIncome) {
 		this.habitatIncome = habitatIncome;
@@ -217,6 +318,43 @@ public class UserBaseInfoVo {
 
 	public String[] getMedicalPayWay() {
 		return medicalPayWay;
+	}
+	
+	public String getMedicalPayWayStr() {
+		if (medicalPayWay==null ||medicalPayWay.length==0)
+			return "未填写";
+		String medicalPayWayStr = "";
+		for(String type:medicalPayWay) {
+			if (!"".equals(medicalPayWayStr))
+			{
+				medicalPayWayStr += ",";
+			}
+			if ("1".equals(type))
+			{
+				medicalPayWayStr += "完全自费";
+			}
+			if ("2".equals(type))
+			{
+				medicalPayWayStr += "公费医疗" + (medicalPayDesc2==null?"":medicalPayDesc2 + "%");
+			}
+			if ("3".equals(type))
+			{
+				medicalPayWayStr += "新农合" + (medicalPayDesc3==null?"":medicalPayDesc3 + "%");
+			}
+			if ("4".equals(type))
+			{
+				medicalPayWayStr += "城镇职工医疗保险" + (medicalPayDesc4==null?"":medicalPayDesc4 + "%");
+			}
+			if ("5".equals(type))
+			{
+				medicalPayWayStr += "城镇居民医疗保险" + (medicalPayDesc5==null?"":medicalPayDesc5 + "%");
+			}
+			if ("6".equals(type))
+			{
+				medicalPayWayStr += "商业保险" + (medicalPayDesc6==null?"":medicalPayDesc6 + "%");
+			}
+		}
+		return medicalPayWayStr;
 	}
 
 	public void setMedicalPayWay(String[] medicalPayWay) {
@@ -297,6 +435,13 @@ public class UserBaseInfoVo {
 
 	public Integer getPersonCount() {
 		return personCount;
+	}
+	
+	public String getPersonCountStr() {
+		if (personCount==null)
+			return "未填写";
+		else
+			return personCount+"人";
 	}
 
 	public void setPersonCount(Integer personCount) {

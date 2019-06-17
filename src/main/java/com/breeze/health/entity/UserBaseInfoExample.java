@@ -692,62 +692,52 @@ public class UserBaseInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andFamilyTypeEqualTo(String value) {
+        public Criteria andFamilyTypeEqualTo(Integer value) {
             addCriterion("family_type =", value, "familyType");
             return (Criteria) this;
         }
 
-        public Criteria andFamilyTypeNotEqualTo(String value) {
+        public Criteria andFamilyTypeNotEqualTo(Integer value) {
             addCriterion("family_type <>", value, "familyType");
             return (Criteria) this;
         }
 
-        public Criteria andFamilyTypeGreaterThan(String value) {
+        public Criteria andFamilyTypeGreaterThan(Integer value) {
             addCriterion("family_type >", value, "familyType");
             return (Criteria) this;
         }
 
-        public Criteria andFamilyTypeGreaterThanOrEqualTo(String value) {
+        public Criteria andFamilyTypeGreaterThanOrEqualTo(Integer value) {
             addCriterion("family_type >=", value, "familyType");
             return (Criteria) this;
         }
 
-        public Criteria andFamilyTypeLessThan(String value) {
+        public Criteria andFamilyTypeLessThan(Integer value) {
             addCriterion("family_type <", value, "familyType");
             return (Criteria) this;
         }
 
-        public Criteria andFamilyTypeLessThanOrEqualTo(String value) {
+        public Criteria andFamilyTypeLessThanOrEqualTo(Integer value) {
             addCriterion("family_type <=", value, "familyType");
             return (Criteria) this;
         }
 
-        public Criteria andFamilyTypeLike(String value) {
-            addCriterion("family_type like", value, "familyType");
-            return (Criteria) this;
-        }
-
-        public Criteria andFamilyTypeNotLike(String value) {
-            addCriterion("family_type not like", value, "familyType");
-            return (Criteria) this;
-        }
-
-        public Criteria andFamilyTypeIn(List<String> values) {
+        public Criteria andFamilyTypeIn(List<Integer> values) {
             addCriterion("family_type in", values, "familyType");
             return (Criteria) this;
         }
 
-        public Criteria andFamilyTypeNotIn(List<String> values) {
+        public Criteria andFamilyTypeNotIn(List<Integer> values) {
             addCriterion("family_type not in", values, "familyType");
             return (Criteria) this;
         }
 
-        public Criteria andFamilyTypeBetween(String value1, String value2) {
+        public Criteria andFamilyTypeBetween(Integer value1, Integer value2) {
             addCriterion("family_type between", value1, value2, "familyType");
             return (Criteria) this;
         }
 
-        public Criteria andFamilyTypeNotBetween(String value1, String value2) {
+        public Criteria andFamilyTypeNotBetween(Integer value1, Integer value2) {
             addCriterion("family_type not between", value1, value2, "familyType");
             return (Criteria) this;
         }

@@ -21,7 +21,7 @@ public class UserBaseInfo {
 
     private Integer daughterCount;
 
-    private String familyType;
+    private Integer familyType;
 
     private String familyDesc;
 
@@ -135,12 +135,12 @@ public class UserBaseInfo {
         this.daughterCount = daughterCount;
     }
 
-    public String getFamilyType() {
+    public Integer getFamilyType() {
         return familyType;
     }
 
-    public void setFamilyType(String familyType) {
-        this.familyType = familyType == null ? null : familyType.trim();
+    public void setFamilyType(Integer familyType) {
+        this.familyType = familyType;
     }
 
     public String getFamilyDesc() {
