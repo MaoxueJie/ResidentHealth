@@ -366,7 +366,7 @@ public class UserLivingVo {
 		if (violentMovement==null)
 			return "未填写";
 		if (violentMovement==1)
-			return "每周运动" + (violentDaysPerWeek==null?"":violentDaysPerWeek)+"天";
+			return "每周运动" + (violentDaysPerWeek==null?"":formatFloat(violentDaysPerWeek))+"天";
 		if (violentMovement==2)
 			return "无相关活动";
 		return "未知";
@@ -384,7 +384,7 @@ public class UserLivingVo {
 		if (moderateMovement==null)
 			return "未填写";
 		if (moderateMovement==1)
-			return "每周运动" + (moderateDaysPerWeek==null?"":moderateDaysPerWeek)+"天";
+			return "每周运动" + (moderateDaysPerWeek==null?"":formatFloat(moderateDaysPerWeek))+"天";
 		if (moderateMovement==2)
 			return "无相关活动";
 		return "未知";
@@ -403,7 +403,7 @@ public class UserLivingVo {
 		if (walkMovement==null)
 			return "未填写";
 		if (walkMovement==1)
-			return "每周运动" + (walkDaysPerWeek==null?"":walkDaysPerWeek)+"天";
+			return "每周运动" + (walkDaysPerWeek==null?"":formatFloat(walkDaysPerWeek))+"天";
 		if (walkMovement==2)
 			return "无相关活动";
 		return "未知";
@@ -422,7 +422,7 @@ public class UserLivingVo {
 		if (sittingRecent7Days==null)
 			return "未填写";
 		if (sittingRecent7Days==1)
-			return "有" + (sittingDaysRecent7Days==null?"":sittingDaysRecent7Days)+"天坐着";
+			return "有" + (sittingDaysRecent7Days==null?"":formatFloat(sittingDaysRecent7Days))+"天坐着";
 		if (sittingRecent7Days==2)
 			return "无相关活动";
 		return "未知";
@@ -460,11 +460,11 @@ public class UserLivingVo {
 		if (smoking==1)
 			return "从不吸烟";
 		if (smoking==2)
-			return "曾经吸烟" + (smokingVal1==null?"":formatYear(smokingVal1)+"年") + ",已经戒烟" + (smokingVal2==null?"":formatYear(smokingVal2)+"年") + (smokingVal3==null?"":",戒烟前每天吸烟"+formatZhi(smokingVal3) +"支");
+			return "曾经吸烟" + (smokingVal1==null?"":formatFloat(smokingVal1)+"年") + ",已经戒烟" + (smokingVal2==null?"":formatFloat(smokingVal2)+"年") + (smokingVal3==null?"":",戒烟前每天吸烟"+formatInteger(smokingVal3) +"支");
 		if (smoking==3)
-			return "有时吸烟" + (smokingVal1==null?"":("，吸烟"+formatYear(smokingVal1)+"年")) + (smokingVal3==null?"":",每周吸烟"+formatZhi(smokingVal3) +"支");
+			return "有时吸烟" + (smokingVal1==null?"":("，吸烟"+formatFloat(smokingVal1)+"年")) + (smokingVal3==null?"":",每周吸烟"+formatInteger(smokingVal3) +"支");
 		if (smoking==4)
-			return "每天吸烟" + (smokingVal1==null?"":("，吸烟"+formatYear(smokingVal1)+"年")) + (smokingVal3==null?"":",每天吸烟"+formatZhi(smokingVal3) +"支") + (smokingAge==null?"":(","+formatZhi(smokingAge)+"岁开始吸烟"));
+			return "每天吸烟" + (smokingVal1==null?"":("，吸烟"+formatFloat(smokingVal1)+"年")) + (smokingVal3==null?"":",每天吸烟"+formatInteger(smokingVal3) +"支") + (smokingAge==null?"":(","+formatInteger(smokingAge)+"岁开始吸烟"));
 		return "未知";
 	}
 	
@@ -524,11 +524,11 @@ public class UserLivingVo {
 		if (drinking==1)
 			return "从不饮酒";
 		if (drinking==2)
-			return "偶尔饮酒（不超过1次/月）" + (drinkingYears==null?"":(",饮酒"+formatYear(drinkingYears)+"年")) + (noDrinkingYears==null?"":(",戒酒"+formatYear(noDrinkingYears)+"年"));
+			return "偶尔饮酒（不超过1次/月）" + (drinkingYears==null?"":(",饮酒"+formatFloat(drinkingYears)+"年")) + (noDrinkingYears==null?"":(",戒酒"+formatFloat(noDrinkingYears)+"年"));
 		if (drinking==3)
-			return "有时饮酒（2-4次/月）" + (drinkingYears==null?"":(",饮酒"+formatYear(drinkingYears)+"年")) + (noDrinkingYears==null?"":(",戒酒"+formatYear(noDrinkingYears)+"年"));
+			return "有时饮酒（2-4次/月）" + (drinkingYears==null?"":(",饮酒"+formatFloat(drinkingYears)+"年")) + (noDrinkingYears==null?"":(",戒酒"+formatFloat(noDrinkingYears)+"年"));
 		if (drinking==4)
-			return "经常饮酒（超过1次/周）" + (drinkingYears==null?"":(",饮酒"+formatYear(drinkingYears)+"年")) + (noDrinkingYears==null?"":(",戒酒"+formatYear(noDrinkingYears)+"年"));
+			return "经常饮酒（超过1次/周）" + (drinkingYears==null?"":(",饮酒"+formatFloat(drinkingYears)+"年")) + (noDrinkingYears==null?"":(",戒酒"+formatFloat(noDrinkingYears)+"年"));
 		return "未知";
 	}
 
@@ -711,7 +711,7 @@ public class UserLivingVo {
 		if (violentMovementPerDay==null)
 			return "未填写";
 		if (violentMovementPerDay==1)
-			return "每天运动" + (violentMinutePerDay==null?"":violentMinutePerDay)+"分钟";
+			return "每天运动" + (violentMinutePerDay==null?"":formatFloat(violentMinutePerDay))+"分钟";
 		if (violentMovementPerDay==2)
 			return "不知道或不确定";
 		return "未知";
@@ -745,7 +745,7 @@ public class UserLivingVo {
 		if (moderateMinute==null)
 			return "未填写";
 		if (moderateMinute==1)
-			return "每天运动" + (moderateMinutePerDay==null?"":moderateMinutePerDay)+"分钟";
+			return "每天运动" + (moderateMinutePerDay==null?"":formatFloat(moderateMinutePerDay))+"分钟";
 		if (moderateMinute==2)
 			return "不知道或不确定";
 		return "未知";
@@ -880,16 +880,17 @@ public class UserLivingVo {
 	public void setNoDrinkingYears(Float noDrinkingYears) {
 		this.noDrinkingYears = noDrinkingYears;
 	}
-	private static DecimalFormat year_formatter = new DecimalFormat("##.#");
-	private static String formatYear(Float year) {
+	private static DecimalFormat float_formatter = new DecimalFormat("###.#");
+	private static String formatFloat(Float year) {
 		if (year == null)
 			return "";
-		return year_formatter.format(year);
+		return float_formatter.format(year);
 	}
-	private static DecimalFormat zhi_formatter = new DecimalFormat("###");
-	private static String formatZhi(Float zhi) {
+	private static DecimalFormat integer_formatter = new DecimalFormat("####");
+	private static String formatInteger(Float zhi) {
 		if (zhi == null)
 			return "";
-		return zhi_formatter.format(zhi);
+		return integer_formatter.format(zhi);
 	}
+	
 }
