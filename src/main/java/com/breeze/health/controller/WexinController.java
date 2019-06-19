@@ -249,7 +249,7 @@ public class WexinController {
 					String from = state.substring(7);
 					Long userId = user!=null?user.getId():null;
 					userService.bindWexin(openid,userId,from);
-					return new ModelAndView(new RedirectView("https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg3MTAyMjEwMQ=="));
+					return new ModelAndView(new RedirectView("https://mp.weixin.qq.com/s/xHKnCYRHXbNQKPPtbMEsaw"));
 				}
 				
 				if (user!=null) {
@@ -258,8 +258,6 @@ public class WexinController {
 					RequestUtils.setCookie(request, response, "Authentication",token, 1800);
 					parm += "&token="+token;
 				}
-				
-				
 			}
 
 			String url="";

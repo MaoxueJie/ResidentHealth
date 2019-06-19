@@ -58,7 +58,7 @@ public class DoctorServiceImpl implements DoctorService{
 			if (doctor!=null) {
 				DoctorVo data = new DoctorVo();
 				BeanUtils.copyProperties(doctor, data);
-				data.setQr(Config.getBasepath()+"static/image/qr/"+data.getId()+".png");
+				data.setQr(java.net.URLEncoder.encode(Config.getBasepath()+"wechatMenu/doctor-"+data.getId()));
 				ret.setSuccess(true);
 				ret.setData(data);
 			}else
