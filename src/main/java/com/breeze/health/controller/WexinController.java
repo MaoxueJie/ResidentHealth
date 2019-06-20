@@ -257,6 +257,9 @@ public class WexinController {
 					String token = DesUtil.encrypt(user.getId()+"");
 					RequestUtils.setCookie(request, response, "Authentication",token, 1800);
 					parm += "&token="+token;
+				}else
+				{
+					userService.bindWexin(openid,null,null);
 				}
 			}
 
