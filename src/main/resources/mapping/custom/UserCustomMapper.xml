@@ -19,6 +19,24 @@
 	  
 	) d LEFT JOIN ( select * from t_user_base_info where id in(select max(id) from t_user_base_info group by user_id)) i on d.user_id = i.user_id
 	
+	LEFT JOIN ( select * from t_user_sick where id in(select max(id) from t_user_sick group by user_id)) s on d.user_id = s.user_id
+	
+	where 1=1
+	<if test="ageStartDate != null and ageEndDate != null"> 
+		<![CDATA[ and i.birthday > #{ageStartDate} and i.birthday < #{ageEndDate} ]]>
+	</if>
+	
+	<if test="sex != null"> 
+		<![CDATA[ and i.gender = #{sex} ]]>
+	</if>
+	
+	<if test="sicks != null"> 
+		<foreach collection="sicks" index="index" item="item"
+            open="and (" separator=" or " close=")">        
+            s.sicks like '%,${item},%' or s.sicks like '${item},%' or s.sicks like '%,${item}'
+        </foreach>
+	</if>
+	
 	order by d.last_time desc
   </select>
   

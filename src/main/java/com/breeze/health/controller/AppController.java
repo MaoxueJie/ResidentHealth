@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,6 +24,7 @@ import com.breeze.health.beans.vo.UserPsychologicalVo;
 import com.breeze.health.beans.vo.UserSickVo;
 import com.breeze.health.beans.vo.UserTCMVo;
 import com.breeze.health.beans.vo.UserVo;
+import com.breeze.health.beans.vo.req.SicksQuery;
 import com.breeze.health.service.AppService;
 import com.breeze.health.service.DoctorService;
 import com.breeze.health.service.LivingService;
@@ -100,8 +102,8 @@ public class AppController {
 	
 	@RequestMapping(value="/getSicks")
 	@ResponseBody
-	public Result<List> getSicks(HttpServletRequest request,String mobile,Integer page,Integer size){
-		Result<List> ret = appService.getUsersPage(((DoctorVo)request.getAttribute("user")).getId(),mobile, page, size);
+	public Result<List> getSicks(HttpServletRequest request,@RequestBody SicksQuery query){
+		Result<List> ret = appService.getUsersPage(((DoctorVo)request.getAttribute("user")).getId(),query);
 		return ret; 
 	}
 	
