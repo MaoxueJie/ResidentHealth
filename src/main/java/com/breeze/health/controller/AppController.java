@@ -111,7 +111,7 @@ public class AppController {
 	
 	@RequestMapping(value="/getSicks_new")
 	@ResponseBody
-	public Result<List> getSicks(HttpServletRequest request,@RequestBody SicksQuery query){
+	public Result<List> getSicksNew(HttpServletRequest request,@RequestBody SicksQuery query){
 		Result<List> ret = appService.getUsersPage(((DoctorVo)request.getAttribute("user")).getId(),query);
 		return ret; 
 	}
