@@ -32,8 +32,8 @@
 	
 	<if test="sicks != null"> 
 		<foreach collection="sicks" index="index" item="item"
-            open="and (" separator=" or " close=")">        
-            s.sicks like '%,${item},%' or s.sicks like '${item},%' or s.sicks like '%,${item}'
+            open="and (" separator=" and " close=")">        
+            (s.sicks like '%,${item},%' or s.sicks like '${item},%' or s.sicks like '%,${item}')
         </foreach>
 	</if>
 	
