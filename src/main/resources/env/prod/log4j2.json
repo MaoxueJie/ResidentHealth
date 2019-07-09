@@ -1,0 +1,39 @@
+{
+   "configuration": {
+      "name": "Default",
+      "appenders": {
+         "RollingFile": {
+            "name":"File",
+            "fileName":"/opt/soft/logs/health.log",
+            "filePattern":"/opt/soft/logs/health-backup-%d{MM-dd-yy-HH-mm-ss}-%i.log.gz",
+            "PatternLayout": {
+               "pattern":"%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"
+            },
+            "Policies": {
+               "SizeBasedTriggeringPolicy": {
+                  "size":"10 MB"
+               }
+            },
+            "DefaultRolloverStrategy": {
+               "max":"10"
+            }
+         },
+         "Console": {
+                "name": "STDOUT",
+                "PatternLayout": {
+                    "pattern": "%d [%t] %-5p %c - %m%n"
+                }
+         }
+      },
+      "loggers": {
+         "root": {
+            "level":"debug",
+            "appender-ref": [{
+              "ref":"STDOUT"
+            },{
+              "ref":"File"
+            }]
+         }
+      }
+   }
+}
