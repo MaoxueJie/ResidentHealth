@@ -52,6 +52,7 @@ public class ApplicationConfig {
 	    urlPatterns.add("/app/getUser");
 	    urlPatterns.add("/app/changePwd");
 	    urlPatterns.add("/app/getSicks");
+	    urlPatterns.add("/app/getSicks_new");
 	    urlPatterns.add("/app/base/get");
 	    urlPatterns.add("/app/living/get");
 	    urlPatterns.add("/app/sick/get");
