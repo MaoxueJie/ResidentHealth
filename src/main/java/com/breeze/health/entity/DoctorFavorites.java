@@ -2,18 +2,18 @@ package com.breeze.health.entity;
 
 import java.util.Date;
 
-public class User {
+public class DoctorFavorites {
     private Long id;
 
-    private String mobile;
+    private Long doctorId;
 
-    private String password;
+    private Long userId;
+
+    private Integer remove;
 
     private Date createTime;
 
     private Date updateTime;
-
-    private Date lastTime;
 
     public Long getId() {
         return id;
@@ -23,20 +23,28 @@ public class User {
         this.id = id;
     }
 
-    public String getMobile() {
-        return mobile;
+    public Long getDoctorId() {
+        return doctorId;
     }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile == null ? null : mobile.trim();
+    public void setDoctorId(Long doctorId) {
+        this.doctorId = doctorId;
     }
 
-    public String getPassword() {
-        return password;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Integer getRemove() {
+        return remove;
+    }
+
+    public void setRemove(Integer remove) {
+        this.remove = remove;
     }
 
     public Date getCreateTime() {
@@ -53,13 +61,5 @@ public class User {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
-    }
-
-    public Date getLastTime() {
-        return lastTime;
-    }
-
-    public void setLastTime(Date lastTime) {
-        this.lastTime = lastTime;
     }
 }

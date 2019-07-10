@@ -60,6 +60,9 @@ public class ApplicationConfig {
 	    urlPatterns.add("/app/psy/get");
 	    urlPatterns.add("/app/tcm/get");
 	    urlPatterns.add("/app/psy/suicide/get");
+	    urlPatterns.add("/app/favorites/getSicks");
+	    urlPatterns.add("/app/favorites/add");
+	    urlPatterns.add("/app/favorites/remove");
 	    registrationBean.setUrlPatterns(urlPatterns);
 	    return registrationBean;
     }

@@ -9,6 +9,7 @@ public class SickUser {
 	private String gender;
 	private Date birthday;
 	private Date lastTime;
+	private boolean inFavotires;
 	public Long getUserId() {
 		return userId;
 	}
@@ -45,5 +46,10 @@ public class SickUser {
 	public void setDoctorId(Long doctorId) {
 		this.doctorId = doctorId;
 	}
-	
+	public boolean isInFavotires() {
+		return inFavotires;
+	}
+	public void setInFavotires(boolean inFavotires) {
+		this.inFavotires = inFavotires;
+	}
 }

@@ -2,7 +2,10 @@ package com.breeze.health.service.impl;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +14,10 @@ import org.springframework.stereotype.Service;
 
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.req.SicksQuery;
+import com.breeze.health.entity.DoctorFavorites;
+import com.breeze.health.entity.DoctorFavoritesExample;
 import com.breeze.health.entity.custom.SickUser;
+import com.breeze.health.mapper.DoctorFavoritesMapper;
 import com.breeze.health.mapper.custom.UserCustomMapper;
 import com.breeze.health.service.AppService;
 import com.github.pagehelper.PageHelper;
@@ -21,6 +27,9 @@ public class AppServiceImpl implements AppService{
 	private static Logger logger = LoggerFactory.getLogger(AppServiceImpl.class);
 	@Autowired
 	UserCustomMapper userCustomMapper;
+	
+	@Autowired
+	DoctorFavoritesMapper doctorFavoritesMapper;
 
 	@Override
 	public Result<List> getUsersPage(Long doctorId,SicksQuery query) {
@@ -45,11 +54,90 @@ public class AppServiceImpl implements AppService{
 				end = cal.getTime();
 			} 
 			
-			List<SickUser> sickUsers = userCustomMapper.select(doctorId,query.getMobile(),query.getSex(),start,end,query.getSicks());
+			List<SickUser> sickUsers = userCustomMapper.selectDoctorSicks(doctorId,query.getMobile(),query.getSex(),start,end,query.getSicks());
+			
+			List<Long> userIds = sickUsers.stream().map(sick->sick.getUserId()).collect(Collectors.toList());
+			
+			Map<Long,DoctorFavorites> favoritesMap = new HashMap<Long,DoctorFavorites>();
+			DoctorFavoritesExample example = new DoctorFavoritesExample();
+			example.createCriteria().andUserIdIn(userIds).andRemoveNotEqualTo(1);
+			List<DoctorFavorites> favorites = doctorFavoritesMapper.selectByExample(example);
+			if (favorites!=null)
+			{
+				for(DoctorFavorites favorite:favorites) {
+					favoritesMap.put(favorite.getUserId(), favorite);
+				}
+			}
+			if (sickUsers!=null)
+			{
+				for(SickUser user:sickUsers) {
+					user.setInFavotires(favoritesMap.get(user.getUserId())!=null);
+				}
+			}
 			ret.setSuccess(true);
 			ret.setData(sickUsers);
 		}catch(Exception e) {
 			logger.error("getUsersPage exception",e);
+			ret.setSuccess(false);
+		}
+		return ret;
+	}
+
+	@Override
+	public Result<Void> addFavorites(Long doctorId, Long userId) {
+		Date now = new Date();
+		DoctorFavorites record = new DoctorFavorites();
+		record.setDoctorId(doctorId);
+		record.setUserId(userId);
+		record.setRemove(0);
+		record.setCreateTime(now);
+		record.setUpdateTime(now);
+		doctorFavoritesMapper.insert(record);
+		
+		Result<Void> ret = new Result<Void>();
+		ret.setSuccess(true);
+		return ret;
+	}
+
+	@Override
+	public Result<Void> removeFavorites(Long doctorId, Long userId) {
+		Date now = new Date();
+		DoctorFavoritesExample example = new DoctorFavoritesExample();
+		example.createCriteria().andUserIdEqualTo(userId).andDoctorIdEqualTo(doctorId);
+		List<DoctorFavorites> favorites= doctorFavoritesMapper.selectByExample(example);
+		if (favorites!=null)
+		{
+			for(DoctorFavorites favorite:favorites) {
+				favorite.setUpdateTime(now);
+				favorite.setRemove(1);
+				doctorFavoritesMapper.updateByPrimaryKey(favorite);
+			}
+		}
+		Result<Void> ret = new Result<Void>();
+		ret.setSuccess(true);
+		return ret;
+	}
+
+	@Override
+	public Result<List> getFavorites(Long doctorId,Integer page,Integer size) {
+		Result<List> ret = new Result<List>();
+		try {
+			if (page==null || page <1)
+				page = 1;
+			if (size==null || size <0)
+				size = 20;
+			PageHelper.startPage(page,size);
+			List<SickUser> sickUsers = userCustomMapper.selectFavoriteSicks(doctorId);
+			if (sickUsers!=null)
+			{
+				for(SickUser user:sickUsers) {
+					user.setInFavotires(true);
+				}
+			}
+			ret.setSuccess(true);
+			ret.setData(sickUsers);
+		}catch(Exception e) {
+			logger.error("getFavorites exception",e);
 			ret.setSuccess(false);
 		}
 		return ret;

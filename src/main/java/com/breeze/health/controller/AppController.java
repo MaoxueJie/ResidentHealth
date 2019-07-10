@@ -42,7 +42,7 @@ import com.breeze.health.util.RequestUtils;
 @CrossOrigin(origins="*")
 @RequestMapping("/app")
 @SuppressWarnings("all")
-public class AppController {
+public class AppController{
 	
 	@Autowired
 	AppService appService;
@@ -102,9 +102,11 @@ public class AppController {
 	
 	@RequestMapping(value="/getSicks")
 	@ResponseBody
-	public Result<List> getSicks(HttpServletRequest request,String mobile){
+	public Result<List> getSicks(HttpServletRequest request,String mobile,Integer page,Integer size){
 		SicksQuery query = new SicksQuery();
 		query.setMobile(mobile);
+		query.setPage(page);
+		query.setSize(size);
 		Result<List> ret = appService.getUsersPage(((DoctorVo)request.getAttribute("user")).getId(),query);
 		return ret; 
 	}
@@ -159,4 +161,21 @@ public class AppController {
 		return psyService.getPsySuicide(userId);
 	}
 	
+	@RequestMapping(value="/favorites/getSicks")
+	@ResponseBody
+	public Result<List> getFavoritesSicks(HttpServletRequest request,Integer page,Integer size){
+		return appService.getFavorites(((DoctorVo)request.getAttribute("user")).getId(), page, size);
+	}
+	
+	@RequestMapping(value="/favorites/add")
+	@ResponseBody
+	public Result<Void> addFavoritesSicks(HttpServletRequest request,Long userId){
+		return appService.addFavorites(((DoctorVo)request.getAttribute("user")).getId(), userId);
+	}
+	
+	@RequestMapping(value="/favorites/remove")
+	@ResponseBody
+	public Result<Void> removeFavoritesSicks(HttpServletRequest request,Long userId){
+		return appService.removeFavorites(((DoctorVo)request.getAttribute("user")).getId(), userId);
+	}
 }
