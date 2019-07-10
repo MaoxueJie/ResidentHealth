@@ -178,4 +178,10 @@ public class AppController{
 	public Result<Void> removeFavoritesSicks(HttpServletRequest request,Long userId){
 		return appService.removeFavorites(((DoctorVo)request.getAttribute("user")).getId(), userId);
 	}
+	
+	@RequestMapping(value="/favorites/check")
+	@ResponseBody
+	public Result<Void> checkInFavorites(HttpServletRequest request,Long userId){
+		return appService.checkFavorites(((DoctorVo)request.getAttribute("user")).getId(), userId);
+	}
 }

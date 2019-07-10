@@ -63,6 +63,7 @@ public class ApplicationConfig {
 	    urlPatterns.add("/app/favorites/getSicks");
 	    urlPatterns.add("/app/favorites/add");
 	    urlPatterns.add("/app/favorites/remove");
+	    urlPatterns.add("/app/favorites/check");
 	    registrationBean.setUrlPatterns(urlPatterns);
 	    return registrationBean;
     }

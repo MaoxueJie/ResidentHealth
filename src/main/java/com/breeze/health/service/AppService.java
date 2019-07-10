@@ -10,4 +10,5 @@ public interface AppService {
 	Result<Void> addFavorites(Long doctorId,Long userId);
 	Result<Void> removeFavorites(Long doctorId,Long userId);
 	Result<List> getFavorites(Long doctorId,Integer page,Integer size);
+	Result<Void> checkFavorites(Long doctorId,Long userId);
 }

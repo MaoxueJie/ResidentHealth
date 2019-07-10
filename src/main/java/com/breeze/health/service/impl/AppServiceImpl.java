@@ -103,7 +103,7 @@ public class AppServiceImpl implements AppService{
 	public Result<Void> removeFavorites(Long doctorId, Long userId) {
 		Date now = new Date();
 		DoctorFavoritesExample example = new DoctorFavoritesExample();
-		example.createCriteria().andUserIdEqualTo(userId).andDoctorIdEqualTo(doctorId);
+		example.createCriteria().andUserIdEqualTo(userId).andDoctorIdEqualTo(doctorId).andRemoveNotEqualTo(1);
 		List<DoctorFavorites> favorites= doctorFavoritesMapper.selectByExample(example);
 		if (favorites!=null)
 		{
@@ -140,6 +140,16 @@ public class AppServiceImpl implements AppService{
 			logger.error("getFavorites exception",e);
 			ret.setSuccess(false);
 		}
+		return ret;
+	}
+
+	@Override
+	public Result<Void> checkFavorites(Long doctorId, Long userId) {
+		DoctorFavoritesExample example = new DoctorFavoritesExample();
+		example.createCriteria().andUserIdEqualTo(userId).andDoctorIdEqualTo(doctorId).andRemoveNotEqualTo(1);
+		List<DoctorFavorites> favorites= doctorFavoritesMapper.selectByExample(example);
+		Result<Void> ret = new Result<Void>();
+		ret.setSuccess(favorites==null?false:favorites.size()>0);
 		return ret;
 	}
 }
