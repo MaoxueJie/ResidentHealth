@@ -55,6 +55,8 @@ public class ApplicationConfig {
 	    urlPatterns.add("/app/getSicks_new");
 	    urlPatterns.add("/app/base/get");
 	    urlPatterns.add("/app/living/get");
+	    urlPatterns.add("/app/living/date");
+	    urlPatterns.add("/app/living/id");
 	    urlPatterns.add("/app/sick/get");
 	    urlPatterns.add("/app/phy/get");
 	    urlPatterns.add("/app/psy/get");

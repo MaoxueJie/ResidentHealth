@@ -25,6 +25,8 @@ import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -305,4 +307,152 @@ public class LivingServiceImpl implements LivingService {
 		}
 		return ret;
     }
+
+	@Override
+	public Result<UserLivingVo> getLivingById(Long id) {
+		Result<UserLivingVo> ret = new Result<UserLivingVo>();
+		try{
+			UserLiving living = userLivingMapper.selectByPrimaryKey(id);
+			if (living!= null)
+			{
+				UserLivingMeal meal= null;
+				UserLivingHabit habit = null;
+				UserLivingMovement movement = null;
+				
+				UserLivingVo vo = new UserLivingVo();
+
+				UserLivingMealExample mealExample = new UserLivingMealExample();
+				mealExample.createCriteria().andLivingIdEqualTo(living.getId());
+				List<UserLivingMeal> meals = userLivingMealMapper.selectByExample(mealExample);
+				if (meals!= null && meals.size()>0)
+				{
+					meal = meals.get(0);
+					BeanUtils.copyProperties(meal, vo);
+					if (meal.getPreference()!=null)
+					{
+						vo.setPreference(meal.getPreference().split(","));
+					}
+					if (meal.getSpecial()!=null)
+					{
+						vo.setSpecial(meal.getSpecial().split(","));
+					}
+				}
+				
+				UserLivingMovementExample movementExample = new UserLivingMovementExample();
+				movementExample.createCriteria().andLivingIdEqualTo(living.getId());
+				List<UserLivingMovement> movements = userLivingMovementMapper.selectByExample(movementExample);
+				if (movements!= null && movements.size()>0)
+				{
+					movement = movements.get(0);
+					BeanUtils.copyProperties(movement, vo);
+				}
+				
+				UserLivingHabitExample habitExample = new UserLivingHabitExample();
+				habitExample.createCriteria().andLivingIdEqualTo(living.getId());
+				List<UserLivingHabit> habits = userLivingHabitMapper.selectByExample(habitExample);
+				if (habits!= null && habits.size()>0)
+				{
+					habit = habits.get(0);
+					BeanUtils.copyProperties(habit, vo);
+				}
+				
+				BeanUtils.copyProperties(living, vo);
+				
+				String report = "";
+				if (meal!=null)
+				{
+					if (meal.getMeal()!=null && meal.getMeal()==2)
+					{
+						report += "<p>您的饮食习惯有待调整，相关知识请参见饮食指导。</p>";
+					}else if(meal.getMeal()!=null && meal.getMeal()==1) {
+						report += "<p>您的饮食习惯非常好，继续加油！</p>";
+					}
+				}
+				
+				if (movement!=null)
+				{
+					float violent = ((movement.getViolentMinutePerDay()==null?0:movement.getViolentMinutePerDay())*(movement.getViolentDaysPerWeek()==null?0:movement.getViolentDaysPerWeek()))/60f;
+					float moderate = ((movement.getModerateMinutePerDay()==null?0:movement.getModerateMinutePerDay())*(movement.getModerateDaysPerWeek()==null?0:movement.getModerateDaysPerWeek()))/60f;
+					float walk =  ((movement.getWalkMinutePerDay()==null?0:movement.getWalkMinutePerDay())*(movement.getWalkDaysPerWeek()==null?0:movement.getWalkDaysPerWeek()))/60f;
+					
+					moderate += 2*violent + walk/2;
+					
+					if (moderate<2)
+					{
+						report += "<p>您的运动量不足，运动形式和时间需要进行适当的调整，相关知识请参见。</p>";
+					}else
+					{
+						report += "<p>您的运动习惯非常好，继续加油！</p>";
+					}
+				}
+
+				if (habit!=null)
+				{
+					if (habit.getSmoking()!=null &&  (habit.getSmoking()==2 || habit.getSmoking()==3))
+					{
+						report += "<p>吸烟有害健康！您有吸烟的习惯，建议您向签约医生或社区护士咨询戒烟的指导，他们将会为您提供个性化的戒烟帮助。</p>";
+					}else if(habit.getSmoking()!=null && habit.getSmoking()==4)
+					{
+						report += "<p>您已成功戒烟，是其他人的榜样，欢迎您在论坛中分享您成功戒烟的经验和感受，以帮助更多的吸烟者戒烟。</p>";
+					}
+				}
+				vo.setResultTitle("生活习惯测评结果");
+				vo.setResultMsg(report);
+				ret.setSuccess(true);
+				ret.setData(vo);
+			}else
+			{
+				ret.setSuccess(true);
+			}
+		}catch(Exception e)
+		{
+			logger.error("获取生活习惯异常", e);
+			ret.setMessage("获取生活习惯异常");
+		}
+		return ret;
+	}
+	
+	private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+	@Override
+	public Result<List<UserLivingVo>> getLivingDate(Long userId) {
+		Result<List<UserLivingVo>> ret = new Result<List<UserLivingVo>>();
+		try{
+			UserLivingExample example = new UserLivingExample();
+			example.createCriteria().andUserIdEqualTo(userId);
+			example.setOrderByClause(" id desc");
+			List<UserLiving> livings = userLivingMapper.selectByExample(example);
+			if (livings!= null && livings.size()>0)
+			{
+				List<UserLivingVo> data = new ArrayList<UserLivingVo>();
+				for(UserLiving living:livings) {
+					if (data.size()>0)
+					{
+						UserLivingVo last = data.get(data.size()-1);
+					    if (last.getCreateTime().getTime() - living.getCreateTime().getTime() > 1000*60*60*24*7) {
+					    	UserLivingVo vo = new UserLivingVo();
+							vo.setId(living.getId());
+							vo.setDateStr(format.format(living.getCreateTime()));
+							vo.setCreateTime(living.getCreateTime());
+							data.add(vo);
+					    }
+					}else
+					{
+						UserLivingVo vo = new UserLivingVo();
+						vo.setId(living.getId());
+						vo.setDateStr(format.format(living.getCreateTime()));
+						vo.setCreateTime(living.getCreateTime());
+						data.add(vo);
+					}
+				}
+				ret.setData(data);
+			}
+			ret.setSuccess(true);
+		}catch(Exception e)
+		{
+			logger.error("获取生活习惯异常", e);
+			ret.setMessage("获取生活习惯异常");
+		}
+		return ret;
+	}
 }

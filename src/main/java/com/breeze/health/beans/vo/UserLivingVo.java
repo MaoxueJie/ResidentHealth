@@ -107,6 +107,9 @@ public class UserLivingVo {
     private Date createTime;
 
     private Date updateTime;
+    
+    private String dateStr;
+    
 
 	public Long getId() {
 		return id;
@@ -891,6 +894,14 @@ public class UserLivingVo {
 		if (zhi == null)
 			return "";
 		return integer_formatter.format(zhi);
+	}
+
+	public String getDateStr() {
+		return dateStr;
+	}
+
+	public void setDateStr(String dateStr) {
+		this.dateStr = dateStr;
 	}
 	
 }

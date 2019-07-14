@@ -130,6 +130,18 @@ public class AppController{
 	public Result<UserLivingVo> getUserLiving(HttpServletRequest request,Long userId){
 		return livingService.getLiving(userId);
 	}
+	
+	@RequestMapping(value="/living/date")
+	@ResponseBody
+	public Result<List<UserLivingVo>> getUserLivingDate(HttpServletRequest request,Long userId){
+		return livingService.getLivingDate(userId);
+	}
+	
+	@RequestMapping(value="/living/id")
+	@ResponseBody
+	public Result<UserLivingVo> getUserLivingById(HttpServletRequest request,Long id){
+		return livingService.getLivingById(id);
+	}
 		
 	@ResponseBody
 	@RequestMapping(value = "/sick/get")
