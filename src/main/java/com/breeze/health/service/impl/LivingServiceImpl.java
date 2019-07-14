@@ -412,7 +412,7 @@ public class LivingServiceImpl implements LivingService {
 		return ret;
 	}
 	
-	private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+	private static SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 
 	@Override
 	public Result<List<UserLivingVo>> getLivingDate(Long userId) {
