@@ -81,6 +81,8 @@ public class UserPhysiologicalVo {
     private Date createTime;
 
     private Date updateTime;
+    
+    private String dateStr;
 
 	public Long getId() {
 		return id;
@@ -676,6 +678,14 @@ public class UserPhysiologicalVo {
 		if (zhi == null)
 			return "";
 		return integer_formatter.format(zhi);
+	}
+
+	public String getDateStr() {
+		return dateStr;
+	}
+
+	public void setDateStr(String dateStr) {
+		this.dateStr = dateStr;
 	}
 	
 }

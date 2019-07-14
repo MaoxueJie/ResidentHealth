@@ -74,6 +74,8 @@ public class UserPsychologicalVo {
 
     private Date updateTime;
     
+    private String dateStr;
+    
 
 	public Long getId() {
 		return id;
@@ -655,6 +657,14 @@ public class UserPsychologicalVo {
 
 	public void setResultMsg(String resultMsg) {
 		this.resultMsg = resultMsg;
+	}
+
+	public String getDateStr() {
+		return dateStr;
+	}
+
+	public void setDateStr(String dateStr) {
+		this.dateStr = dateStr;
 	}
 
 	

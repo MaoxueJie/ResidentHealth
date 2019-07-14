@@ -429,7 +429,7 @@ public class LivingServiceImpl implements LivingService {
 					if (data.size()>0)
 					{
 						UserLivingVo last = data.get(data.size()-1);
-					    if (last.getCreateTime().getTime() - living.getCreateTime().getTime() > 1000*60*60*24*7) {
+					    if (last.getCreateTime().getTime() - living.getCreateTime().getTime() > 1000*60*60*24) {
 					    	UserLivingVo vo = new UserLivingVo();
 							vo.setId(living.getId());
 							vo.setDateStr(format.format(living.getCreateTime()));

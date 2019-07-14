@@ -59,7 +59,11 @@ public class ApplicationConfig {
 	    urlPatterns.add("/app/living/id");
 	    urlPatterns.add("/app/sick/get");
 	    urlPatterns.add("/app/phy/get");
+	    urlPatterns.add("/app/phy/date");
+	    urlPatterns.add("/app/phy/id");
 	    urlPatterns.add("/app/psy/get");
+	    urlPatterns.add("/app/psy/date");
+	    urlPatterns.add("/app/psy/id");
 	    urlPatterns.add("/app/tcm/get");
 	    urlPatterns.add("/app/psy/suicide/get");
 	    urlPatterns.add("/app/favorites/getSicks");

@@ -154,6 +154,18 @@ public class AppController{
 	public Result<UserPhysiologicalVo> getPhy(HttpServletRequest request,Long userId){
 		return phyService.getPhy(userId);
 	}
+	
+	@RequestMapping(value="/phy/date")
+	@ResponseBody
+	public Result<List<UserPhysiologicalVo>> getPhyDate(HttpServletRequest request,Long userId){
+		return phyService.getPhyDate(userId);
+	}
+	
+	@RequestMapping(value="/phy/id")
+	@ResponseBody
+	public Result<UserPhysiologicalVo> getPhyById(HttpServletRequest request,Long id){
+		return phyService.getPhyById(id);
+	}
 		
 	@RequestMapping(value = "/tcm/get")
 	@ResponseBody
@@ -165,6 +177,16 @@ public class AppController{
 	@ResponseBody
 	public Result<UserPsychologicalVo> getPsychological(HttpServletRequest request,Long userId){
 		return psyService.getPsy(userId);
+	}
+	@RequestMapping(value = "/psy/date")
+	@ResponseBody
+	public Result<List<UserPsychologicalVo>> getPsychologicalDate(HttpServletRequest request,Long userId){
+		return psyService.getPsyDate(userId);
+	}
+	@RequestMapping(value = "/psy/id")
+	@ResponseBody
+	public Result<UserPsychologicalVo> getPsychologicalById(HttpServletRequest request,Long id){
+		return psyService.getPsyById(id);
 	}
 		
 	@RequestMapping(value = "/psy/suicide/get")
