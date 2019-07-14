@@ -3,6 +3,7 @@ package com.breeze.health.service.impl;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -700,7 +701,11 @@ public class PsyServiceImpl implements PsyService{
 					if (data.size()>0)
 					{
 						UserPsychologicalVo last = data.get(data.size()-1);
-					    if (last.getCreateTime().getTime() - psy.getCreateTime().getTime() > 1000*60*60*24) {
+						Calendar ca1 = Calendar.getInstance();
+						Calendar ca2 = Calendar.getInstance();
+						ca1.setTime(last.getCreateTime());
+						ca2.setTime(psy.getCreateTime());
+					    if (ca1.get(Calendar.MONTH)!=ca2.get(Calendar.MONTH)) {
 					    	UserPsychologicalVo vo = new UserPsychologicalVo();
 							vo.setId(psy.getId());
 							vo.setDateStr(format.format(psy.getCreateTime()));

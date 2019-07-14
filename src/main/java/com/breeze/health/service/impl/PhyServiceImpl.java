@@ -2,6 +2,7 @@ package com.breeze.health.service.impl;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserLivingVo;
 import com.breeze.health.beans.vo.UserPhysiologicalVo;
+import com.breeze.health.beans.vo.UserPsychologicalVo;
 import com.breeze.health.entity.User;
 import com.breeze.health.entity.UserLiving;
 import com.breeze.health.entity.UserLivingExample;
@@ -128,7 +130,11 @@ public class PhyServiceImpl implements PhyService{
 					if (data.size()>0)
 					{
 						UserPhysiologicalVo last = data.get(data.size()-1);
-					    if (last.getCreateTime().getTime() - phy.getCreateTime().getTime() > 1000*60*60*24*7) {
+						Calendar ca1 = Calendar.getInstance();
+						Calendar ca2 = Calendar.getInstance();
+						ca1.setTime(last.getCreateTime());
+						ca2.setTime(phy.getCreateTime());
+					    if (ca1.get(Calendar.DAY_OF_WEEK)!=ca2.get(Calendar.DAY_OF_WEEK)) {
 					    	UserPhysiologicalVo vo = new UserPhysiologicalVo();
 							vo.setId(phy.getId());
 							vo.setDateStr(format.format(phy.getCreateTime()));

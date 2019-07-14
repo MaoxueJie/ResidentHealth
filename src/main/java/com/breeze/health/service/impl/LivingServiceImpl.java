@@ -2,6 +2,7 @@ package com.breeze.health.service.impl;
 
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserLivingVo;
+import com.breeze.health.beans.vo.UserPhysiologicalVo;
 import com.breeze.health.beans.vo.UserPsychologicalVo;
 import com.breeze.health.entity.*;
 import com.breeze.health.mapper.UserLivingHabitMapper;
@@ -27,6 +28,7 @@ import javax.annotation.Resource;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -429,7 +431,11 @@ public class LivingServiceImpl implements LivingService {
 					if (data.size()>0)
 					{
 						UserLivingVo last = data.get(data.size()-1);
-					    if (last.getCreateTime().getTime() - living.getCreateTime().getTime() > 1000*60*60*24) {
+						Calendar ca1 = Calendar.getInstance();
+						Calendar ca2 = Calendar.getInstance();
+						ca1.setTime(last.getCreateTime());
+						ca2.setTime(living.getCreateTime());
+					    if (ca1.get(Calendar.DATE)!=ca2.get(Calendar.DATE)) {
 					    	UserLivingVo vo = new UserLivingVo();
 							vo.setId(living.getId());
 							vo.setDateStr(format.format(living.getCreateTime()));
