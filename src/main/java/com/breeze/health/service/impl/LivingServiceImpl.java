@@ -428,6 +428,10 @@ public class LivingServiceImpl implements LivingService {
 			{
 				List<UserLivingVo> data = new ArrayList<UserLivingVo>();
 				for(UserLiving living:livings) {
+					
+					UserLivingMeal meal= null;
+					UserLivingHabit habit = null;
+					UserLivingMovement movement = null;
 					if (data.size()>0)
 					{
 						UserLivingVo last = data.get(data.size()-1);
@@ -437,6 +441,32 @@ public class LivingServiceImpl implements LivingService {
 						ca2.setTime(living.getCreateTime());
 					    if (ca1.get(Calendar.DATE)!=ca2.get(Calendar.DATE)) {
 					    	UserLivingVo vo = new UserLivingVo();
+					    	UserLivingMealExample mealExample = new UserLivingMealExample();
+							mealExample.createCriteria().andLivingIdEqualTo(living.getId());
+							List<UserLivingMeal> meals = userLivingMealMapper.selectByExample(mealExample);
+							if (meals!= null && meals.size()>0)
+							{
+								meal = meals.get(0);
+								BeanUtils.copyProperties(meal, vo);
+								if (meal.getPreference()!=null)
+								{
+									vo.setPreference(meal.getPreference().split(","));
+								}
+								if (meal.getSpecial()!=null)
+								{
+									vo.setSpecial(meal.getSpecial().split(","));
+								}
+							}
+							
+							UserLivingMovementExample movementExample = new UserLivingMovementExample();
+							movementExample.createCriteria().andLivingIdEqualTo(living.getId());
+							List<UserLivingMovement> movements = userLivingMovementMapper.selectByExample(movementExample);
+							if (movements!= null && movements.size()>0)
+							{
+								movement = movements.get(0);
+								BeanUtils.copyProperties(movement, vo);
+							}
+							
 							vo.setId(living.getId());
 							vo.setDateStr(format.format(living.getCreateTime()));
 							vo.setCreateTime(living.getCreateTime());
@@ -445,6 +475,33 @@ public class LivingServiceImpl implements LivingService {
 					}else
 					{
 						UserLivingVo vo = new UserLivingVo();
+						
+						UserLivingMealExample mealExample = new UserLivingMealExample();
+						mealExample.createCriteria().andLivingIdEqualTo(living.getId());
+						List<UserLivingMeal> meals = userLivingMealMapper.selectByExample(mealExample);
+						if (meals!= null && meals.size()>0)
+						{
+							meal = meals.get(0);
+							BeanUtils.copyProperties(meal, vo);
+							if (meal.getPreference()!=null)
+							{
+								vo.setPreference(meal.getPreference().split(","));
+							}
+							if (meal.getSpecial()!=null)
+							{
+								vo.setSpecial(meal.getSpecial().split(","));
+							}
+						}
+						
+						UserLivingMovementExample movementExample = new UserLivingMovementExample();
+						movementExample.createCriteria().andLivingIdEqualTo(living.getId());
+						List<UserLivingMovement> movements = userLivingMovementMapper.selectByExample(movementExample);
+						if (movements!= null && movements.size()>0)
+						{
+							movement = movements.get(0);
+							BeanUtils.copyProperties(movement, vo);
+						}
+						
 						vo.setId(living.getId());
 						vo.setDateStr(format.format(living.getCreateTime()));
 						vo.setCreateTime(living.getCreateTime());

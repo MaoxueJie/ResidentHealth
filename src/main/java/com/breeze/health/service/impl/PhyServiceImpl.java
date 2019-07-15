@@ -136,7 +136,7 @@ public class PhyServiceImpl implements PhyService{
 						ca2.setTime(phy.getCreateTime());
 					    if (ca1.get(Calendar.DAY_OF_WEEK)!=ca2.get(Calendar.DAY_OF_WEEK)) {
 					    	UserPhysiologicalVo vo = new UserPhysiologicalVo();
-							vo.setId(phy.getId());
+					    	BeanUtils.copyProperties(phy, vo);
 							vo.setDateStr(format.format(phy.getCreateTime()));
 							vo.setCreateTime(phy.getCreateTime());
 							data.add(vo);
@@ -144,7 +144,7 @@ public class PhyServiceImpl implements PhyService{
 					}else
 					{
 						UserPhysiologicalVo vo = new UserPhysiologicalVo();
-						vo.setId(phy.getId());
+						BeanUtils.copyProperties(phy, vo);
 						vo.setDateStr(format.format(phy.getCreateTime()));
 						vo.setCreateTime(phy.getCreateTime());
 						data.add(vo);
