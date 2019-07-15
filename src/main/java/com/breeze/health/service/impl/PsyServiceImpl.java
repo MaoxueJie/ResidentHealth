@@ -707,7 +707,7 @@ public class PsyServiceImpl implements PsyService{
 						ca2.setTime(psy.getCreateTime());
 					    if (ca1.get(Calendar.MONTH)!=ca2.get(Calendar.MONTH)) {
 					    	UserPsychologicalVo vo = new UserPsychologicalVo();
-							vo.setId(psy.getId());
+					    	BeanUtils.copyProperties(psy, vo);
 							vo.setDateStr(format.format(psy.getCreateTime()));
 							vo.setCreateTime(psy.getCreateTime());
 							data.add(vo);
@@ -715,7 +715,7 @@ public class PsyServiceImpl implements PsyService{
 					}else
 					{
 						UserPsychologicalVo vo = new UserPsychologicalVo();
-						vo.setId(psy.getId());
+						BeanUtils.copyProperties(psy, vo);
 						vo.setDateStr(format.format(psy.getCreateTime()));
 						vo.setCreateTime(psy.getCreateTime());
 						data.add(vo);
