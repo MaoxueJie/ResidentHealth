@@ -707,7 +707,40 @@ public class PsyServiceImpl implements PsyService{
 						ca2.setTime(psy.getCreateTime());
 					    if (ca1.get(Calendar.MONTH)!=ca2.get(Calendar.MONTH)) {
 					    	UserPsychologicalVo vo = new UserPsychologicalVo();
-					    	BeanUtils.copyProperties(psy, vo);
+							UserPsychologicalAD8 ad8 = null;
+							UserPsychologicalGAD7 gad7 = null;
+							UserPsychologicalPHQ9 phq9 = null;
+
+							UserPsychologicalAD8Example ad8Example = new UserPsychologicalAD8Example();
+							ad8Example.createCriteria().andPsyIdEqualTo(psy.getId());
+							List<UserPsychologicalAD8> ad8s = userPsychologicalAD8Mapper.selectByExample(ad8Example);
+							if (ad8s!= null && ad8s.size()>0)
+							{
+								ad8 = ad8s.get(0);
+								BeanUtils.copyProperties(ad8, vo);
+							}
+							
+							UserPsychologicalGAD7Example gad7Example = new UserPsychologicalGAD7Example();
+							gad7Example.createCriteria().andPsyIdEqualTo(psy.getId());
+							List<UserPsychologicalGAD7> gad7s = userPsychologicalGAD7Mapper.selectByExample(gad7Example);
+							if (gad7s!= null && gad7s.size()>0)
+							{
+								gad7 = gad7s.get(0) ;
+								BeanUtils.copyProperties(gad7, vo);
+							}
+							
+							UserPsychologicalPHQ9Example phq9Example = new UserPsychologicalPHQ9Example();
+							phq9Example.createCriteria().andPsyIdEqualTo(psy.getId());
+							List<UserPsychologicalPHQ9> phq9s = userPsychologicalPHQ9Mapper.selectByExample(phq9Example);
+							if (phq9s!= null && phq9s.size()>0)
+							{
+								phq9 = phq9s.get(0);
+								BeanUtils.copyProperties(phq9, vo);
+							}
+							
+							BeanUtils.copyProperties(psy, vo);
+							
+							vo.setId(psy.getId());
 							vo.setDateStr(format.format(psy.getCreateTime()));
 							vo.setCreateTime(psy.getCreateTime());
 							data.add(vo);
@@ -715,7 +748,40 @@ public class PsyServiceImpl implements PsyService{
 					}else
 					{
 						UserPsychologicalVo vo = new UserPsychologicalVo();
+						UserPsychologicalAD8 ad8 = null;
+						UserPsychologicalGAD7 gad7 = null;
+						UserPsychologicalPHQ9 phq9 = null;
+
+						UserPsychologicalAD8Example ad8Example = new UserPsychologicalAD8Example();
+						ad8Example.createCriteria().andPsyIdEqualTo(psy.getId());
+						List<UserPsychologicalAD8> ad8s = userPsychologicalAD8Mapper.selectByExample(ad8Example);
+						if (ad8s!= null && ad8s.size()>0)
+						{
+							ad8 = ad8s.get(0);
+							BeanUtils.copyProperties(ad8, vo);
+						}
+						
+						UserPsychologicalGAD7Example gad7Example = new UserPsychologicalGAD7Example();
+						gad7Example.createCriteria().andPsyIdEqualTo(psy.getId());
+						List<UserPsychologicalGAD7> gad7s = userPsychologicalGAD7Mapper.selectByExample(gad7Example);
+						if (gad7s!= null && gad7s.size()>0)
+						{
+							gad7 = gad7s.get(0) ;
+							BeanUtils.copyProperties(gad7, vo);
+						}
+						
+						UserPsychologicalPHQ9Example phq9Example = new UserPsychologicalPHQ9Example();
+						phq9Example.createCriteria().andPsyIdEqualTo(psy.getId());
+						List<UserPsychologicalPHQ9> phq9s = userPsychologicalPHQ9Mapper.selectByExample(phq9Example);
+						if (phq9s!= null && phq9s.size()>0)
+						{
+							phq9 = phq9s.get(0);
+							BeanUtils.copyProperties(phq9, vo);
+						}
+						
 						BeanUtils.copyProperties(psy, vo);
+						
+						vo.setId(psy.getId());
 						vo.setDateStr(format.format(psy.getCreateTime()));
 						vo.setCreateTime(psy.getCreateTime());
 						data.add(vo);
