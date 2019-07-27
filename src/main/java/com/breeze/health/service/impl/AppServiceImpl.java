@@ -202,6 +202,7 @@ public class AppServiceImpl implements AppService{
 				page = 1;
 			if (size==null || size <0)
 				size = 10;
+			logger.info("---------------------------getDocMsgs"+page);
 			PageHelper.startPage(page,size);
 			DoctorMsgExample example = new DoctorMsgExample();
 			example.createCriteria().andDoctorIdEqualTo(doctorId);
