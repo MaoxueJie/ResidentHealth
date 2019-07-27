@@ -16,8 +16,11 @@ import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.req.SicksQuery;
 import com.breeze.health.entity.DoctorFavorites;
 import com.breeze.health.entity.DoctorFavoritesExample;
+import com.breeze.health.entity.DoctorMsg;
+import com.breeze.health.entity.DoctorMsgExample;
 import com.breeze.health.entity.custom.SickUser;
 import com.breeze.health.mapper.DoctorFavoritesMapper;
+import com.breeze.health.mapper.DoctorMsgMapper;
 import com.breeze.health.mapper.custom.UserCustomMapper;
 import com.breeze.health.service.AppService;
 import com.github.pagehelper.PageHelper;
@@ -30,6 +33,9 @@ public class AppServiceImpl implements AppService{
 	
 	@Autowired
 	DoctorFavoritesMapper doctorFavoritesMapper;
+	
+	@Autowired
+	DoctorMsgMapper doctorMsgMapper;
 
 	@Override
 	public Result<List> getUsersPage(Long doctorId,SicksQuery query) {
@@ -187,4 +193,47 @@ public class AppServiceImpl implements AppService{
          }
          return age;
      }
+
+	@Override
+	public Result<List> getDocMsgs(long doctorId,Integer page,Integer size) {
+		Result<List> ret = new Result<List>();
+		try {
+			if (page==null || page <1)
+				page = 1;
+			if (size==null || size <0)
+				size = 20;
+			PageHelper.startPage(page,size);
+			DoctorMsgExample example = new DoctorMsgExample();
+			example.createCriteria().andDoctorIdEqualTo(doctorId);
+			example.setOrderByClause(" create_time desc ");
+			List<DoctorMsg> msgs = doctorMsgMapper.selectByExample(example);
+			ret.setSuccess(true);
+			ret.setData(msgs);
+		}catch(Exception e) {
+			logger.error("getDocMsgs exception",e);
+			ret.setSuccess(false);
+		}
+		return ret;
+		
+	}
+
+	@Override
+	public Result<DoctorMsg> getDocMsgById(long msgId) {
+		Result<DoctorMsg> ret = new Result<DoctorMsg>();
+		try {
+			DoctorMsg msg = doctorMsgMapper.selectByPrimaryKey(msgId);
+			if (msg!=null && msg.getStatus()==0)
+			{
+				msg.setStatus(1);
+				msg.setUpdateTime(new Date());
+				doctorMsgMapper.updateByPrimaryKeySelective(msg);
+			}
+			ret.setSuccess(true);
+			ret.setData(msg);
+		}catch(Exception e) {
+			logger.error("getDocMsgById exception",e);
+			ret.setSuccess(false);
+		}
+		return ret;
+	}
 }

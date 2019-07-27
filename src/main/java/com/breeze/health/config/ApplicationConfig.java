@@ -70,6 +70,8 @@ public class ApplicationConfig {
 	    urlPatterns.add("/app/favorites/add");
 	    urlPatterns.add("/app/favorites/remove");
 	    urlPatterns.add("/app/favorites/check");
+	    urlPatterns.add("/app/msgs");
+	    urlPatterns.add("/app/msg/get");
 	    registrationBean.setUrlPatterns(urlPatterns);
 	    return registrationBean;
     }

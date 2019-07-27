@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.req.SicksQuery;
+import com.breeze.health.entity.DoctorMsg;
 
 public interface AppService {
 	Result<List> getUsersPage(Long doctorId,SicksQuery query);
@@ -11,4 +12,6 @@ public interface AppService {
 	Result<Void> removeFavorites(Long doctorId,Long userId);
 	Result<List> getFavorites(Long doctorId,Integer page,Integer size);
 	Result<Void> checkFavorites(Long doctorId,Long userId);
+    Result<List> getDocMsgs(long doctorId,Integer page,Integer size);
+    Result<DoctorMsg> getDocMsgById(long msgId);
 }

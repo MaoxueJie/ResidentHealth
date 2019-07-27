@@ -25,6 +25,7 @@ import com.breeze.health.beans.vo.UserSickVo;
 import com.breeze.health.beans.vo.UserTCMVo;
 import com.breeze.health.beans.vo.UserVo;
 import com.breeze.health.beans.vo.req.SicksQuery;
+import com.breeze.health.entity.DoctorMsg;
 import com.breeze.health.service.AppService;
 import com.breeze.health.service.DoctorService;
 import com.breeze.health.service.LivingService;
@@ -217,5 +218,17 @@ public class AppController{
 	@ResponseBody
 	public Result<Void> checkInFavorites(HttpServletRequest request,Long userId){
 		return appService.checkFavorites(((DoctorVo)request.getAttribute("user")).getId(), userId);
+	}
+	
+	@RequestMapping(value="/msgs")
+	@ResponseBody
+	public Result<List> getMessages(HttpServletRequest request,Integer page,Integer size){
+		return appService.getDocMsgs(((DoctorVo)request.getAttribute("user")).getId(), page, size);
+	}
+	
+	@RequestMapping(value="/msg/get")
+	@ResponseBody
+	public Result<DoctorMsg> getMessage(HttpServletRequest request,Long msgId){
+		return appService.getDocMsgById(msgId);
 	}
 }

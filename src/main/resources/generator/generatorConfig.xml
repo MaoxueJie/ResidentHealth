@@ -209,6 +209,12 @@
             enableUpdateByExample="false">
 			<generatedKey column="id" sqlStatement="JDBC"/>
         </table>
+        <table schema="health" tableName="t_doctor_msg"  
+            domainObjectName="DoctorMsg" enableCountByExample="true"  
+			enableDeleteByExample="false" enableSelectByExample="true"  
+            enableUpdateByExample="false">
+			<generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
         
     </context>  
 </generatorConfiguration>  
