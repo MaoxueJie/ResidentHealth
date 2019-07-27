@@ -223,7 +223,7 @@ public class AppController{
 	@RequestMapping(value="/msgs")
 	@ResponseBody
 	public Result<List> getMessages(HttpServletRequest request,Long max,Long min,Integer page,Integer size){
-		return appService.getDocMsgs(((DoctorVo)request.getAttribute("user")).getId(),max, page, size);
+		return appService.getDocMsgs(((DoctorVo)request.getAttribute("user")).getId(),max,min, page, size);
 	}
 	
 	@RequestMapping(value="/msg/get")
