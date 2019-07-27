@@ -202,21 +202,23 @@ public class AppServiceImpl implements AppService{
 				page = 1;
 			if (size==null || size <0)
 				size = 10;
-			logger.info("---------------------------getDocMsgs"+page);
+
 			DoctorMsgExample example = new DoctorMsgExample();
 			example.createCriteria().andDoctorIdEqualTo(doctorId);
 			if (min!=null)
 			{
 				example.getOredCriteria().get(0).andIdGreaterThan(min);
+				example.setOrderByClause(" id asc ");
 			}else
 			{
 				PageHelper.startPage(page,size);
-				if (max!=null)
+				if (max!=null && max !=0)
 				{
 					example.getOredCriteria().get(0).andIdLessThanOrEqualTo(max);
 				}
+				example.setOrderByClause(" id desc ");
 			}
-			example.setOrderByClause(" id desc ");
+			
 			List<DoctorMsg> msgs = doctorMsgMapper.selectByExample(example);
 			ret.setSuccess(true);
 			ret.setData(msgs);
