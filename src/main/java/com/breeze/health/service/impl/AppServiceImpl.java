@@ -195,7 +195,7 @@ public class AppServiceImpl implements AppService{
      }
 
 	@Override
-	public Result<List> getDocMsgs(long doctorId,Long max,Integer page,Integer size) {
+	public Result<List> getDocMsgs(long doctorId,Long max,Long min,Integer page,Integer size) {
 		Result<List> ret = new Result<List>();
 		try {
 			if (page==null || page <1)
@@ -203,12 +203,18 @@ public class AppServiceImpl implements AppService{
 			if (size==null || size <0)
 				size = 10;
 			logger.info("---------------------------getDocMsgs"+page);
-			PageHelper.startPage(page,size);
 			DoctorMsgExample example = new DoctorMsgExample();
 			example.createCriteria().andDoctorIdEqualTo(doctorId);
-			if (max!=null)
+			if (min!=null)
 			{
-				example.getOredCriteria().get(0).andIdLessThanOrEqualTo(max);
+				example.getOredCriteria().get(0).andIdGreaterThan(min);
+			}else
+			{
+				PageHelper.startPage(page,size);
+				if (max!=null)
+				{
+					example.getOredCriteria().get(0).andIdLessThanOrEqualTo(max);
+				}
 			}
 			example.setOrderByClause(" id desc ");
 			List<DoctorMsg> msgs = doctorMsgMapper.selectByExample(example);

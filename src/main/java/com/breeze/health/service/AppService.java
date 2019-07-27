@@ -12,6 +12,6 @@ public interface AppService {
 	Result<Void> removeFavorites(Long doctorId,Long userId);
 	Result<List> getFavorites(Long doctorId,Integer page,Integer size);
 	Result<Void> checkFavorites(Long doctorId,Long userId);
-    Result<List> getDocMsgs(long doctorId,Long max,Integer page,Integer size);
+    Result<List> getDocMsgs(long doctorId,Long max,Long min,Integer page,Integer size);
     Result<DoctorMsg> getDocMsgById(long msgId);
 }
