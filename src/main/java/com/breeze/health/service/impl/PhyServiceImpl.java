@@ -15,15 +15,23 @@ import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.UserLivingVo;
 import com.breeze.health.beans.vo.UserPhysiologicalVo;
 import com.breeze.health.beans.vo.UserPsychologicalVo;
+import com.breeze.health.entity.Doctor;
+import com.breeze.health.entity.DoctorMsg;
+import com.breeze.health.entity.DoctorUserMapping;
+import com.breeze.health.entity.DoctorUserMappingExample;
 import com.breeze.health.entity.User;
 import com.breeze.health.entity.UserLiving;
 import com.breeze.health.entity.UserLivingExample;
 import com.breeze.health.entity.UserPhysiological;
 import com.breeze.health.entity.UserPhysiologicalExample;
+import com.breeze.health.mapper.DoctorMapper;
+import com.breeze.health.mapper.DoctorMsgMapper;
+import com.breeze.health.mapper.DoctorUserMappingMapper;
 import com.breeze.health.mapper.UserMapper;
 import com.breeze.health.mapper.UserPhysiologicalMapper;
 import com.breeze.health.service.PhyService;
 import com.breeze.health.util.BeanUtils;
+import com.breeze.health.util.JPushUtil;
 import com.github.pagehelper.PageHelper;
 
 @Service("phyService")
@@ -34,6 +42,15 @@ public class PhyServiceImpl implements PhyService{
 	
 	@Autowired
 	UserMapper userMapper;
+	
+	@Autowired
+	DoctorMsgMapper doctorMsgMapper;
+	
+	@Autowired
+	DoctorUserMappingMapper doctorUserMappingMapper;
+	
+	@Autowired
+	DoctorMapper doctorMapper;
 	
 	@Override
 	public Result<Void> addOrUpdatePhy(UserPhysiologicalVo vo) {
@@ -52,9 +69,102 @@ public class PhyServiceImpl implements PhyService{
 				phy.setUpdateTime(now);
 				userPhysiologicalMapper.insert(phy);
 			}
+			
 			User user = userMapper.selectByPrimaryKey(vo.getUserId());
 			user.setLastTime(now);
 			userMapper.updateByPrimaryKeySelective(user);
+			
+			try {
+			
+				Float bmi = null;
+				try {
+					bmi = phy.getWeight()/((phy.getHeight()/100f)*(phy.getHeight()/100f));
+				}catch(Exception e)
+				{
+					logger.error("bmi计算异常", e);
+				}
+				Float yaowei = phy.getAbdominalCircumference();//腰围
+				Float whr = null;
+				try {
+					whr = phy.getAbdominalCircumference()/phy.getHipCircumference();
+				}catch(Exception e)
+				{
+					logger.error("whr计算异常", e);
+				}
+				
+				Integer heartRate = phy.getHeartRate();//心率
+				
+				Integer breathRate = phy.getBreatheRate();//呼吸
+				
+				Float temperature = phy.getTemperature();//体温
+				
+				Float gaoya = phy.getBloodPressureVal5();//高压
+				
+				Float diya = phy.getBloodPressureVal6();//低压
+				
+				Float kongfu = phy.getBloodSugarVal1();//空腹血糖
+				
+				Float canhou = phy.getBloodSugarVal3();//餐后2小时血糖
+				
+				Float suiji = phy.getBloodSugarVal4();//随机血糖
+				
+				Float tanghua = phy.getBloodSugarVal2();//糖化血红蛋白
+				
+				Float tc = phy.getBloodLipidVal1();//总胆固醇(TC)
+				
+				Float tg = phy.getBloodLipidVal2();//甘油三酯(TG)
+				
+				Float hdl_c = phy.getBloodLipidVal3();//高密度脂蛋白胆固醇(HDL-C)
+				
+				Float ldl_c = phy.getBloodLipidVal4();//低密度脂蛋白胆固醇(LDL-C)
+				
+				Float uricacid = phy.getUricAcidVal();//血尿酸
+				
+				Float oxygen = phy.getBloodOxygenVal();//血氧饱和度
+				String xueya = "";
+				if (gaoya!=null || diya!=null)
+				{
+					if (gaoya!=null && diya!=null && (gaoya>=180 || diya>=110))
+						xueya = "重度高血压";
+					else if(gaoya!=null && gaoya>=180) {
+						xueya = "重度高血压";
+					}else if(diya!=null && diya>=110) {
+						xueya = "重度高血压";
+					}
+				}
+				
+				if (!"".equals(xueya))
+				{
+					DoctorUserMappingExample example =  new DoctorUserMappingExample();
+					example.createCriteria().andUserIdEqualTo(user.getId());
+					List<DoctorUserMapping> mappings = doctorUserMappingMapper.selectByExample(example);
+					
+					if (mappings!=null && mappings.size()>0)
+					{
+					  for(DoctorUserMapping mapping:mappings) {
+						String msgContent = "居民" + user.getMobile()+"指标异常:" +xueya;
+						DoctorMsg msg = new DoctorMsg();
+						msg.setTitle("生理指标异常");
+						msg.setMsg(msgContent);
+						msg.setCreateTime(new Date());
+						msg.setDoctorId(mapping.getDoctorId());
+						msg.setStatus(0);
+						msg.setParam("{\"userId\":"+user.getId()+",\"mobile\":\""+user.getMobile()+"\"}");
+						doctorMsgMapper.insert(msg);
+						try {
+							Doctor doctor = doctorMapper.selectByPrimaryKey(mapping.getDoctorId());
+							if (doctor!=null)
+								JPushUtil.jPushSendAsy(msg.getTitle(), msg.getMsg(), doctor.getMobile(), msg.getId());
+						}catch(Exception e) {
+							logger.error("推送异常",e);
+						}
+					  }
+					}
+				}
+			}catch(Exception e) {
+				logger.error("异常监测异常",e);
+			}
+			
 			ret.setMessage("提交成功");
 			ret.setSuccess(true);
 		}catch(Exception e)

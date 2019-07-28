@@ -59,6 +59,12 @@
 		</dependency> 
 		
 		<dependency>
+		    <groupId>cn.jpush.api</groupId>
+		    <artifactId>jpush-client</artifactId>
+		    <version>3.3.12</version>
+		</dependency>
+		
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
@@ -120,6 +126,7 @@
 		  <artifactId>qcloudsms</artifactId>
 		  <version>1.0.6</version>
 		</dependency>
+		
 	</dependencies>
 	
 	<profiles>
