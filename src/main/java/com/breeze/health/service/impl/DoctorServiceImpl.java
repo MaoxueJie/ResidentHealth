@@ -125,7 +125,7 @@ public class DoctorServiceImpl implements DoctorService{
 				ret.setSuccess(true);
 			}else {
 				ret.setSuccess(false);
-				ret.setMessage("添加失败");
+				ret.setMessage("用户已存在");
 			}
 		}catch(Exception e) {
 			ret.setSuccess(false);
