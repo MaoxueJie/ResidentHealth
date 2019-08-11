@@ -87,6 +87,7 @@ public class AppController{
 		}else {
 			ret = new Result<Void>();
 			ret.setSuccess(false);
+			ret.setMessage("没有权限");
 		}
 		return ret;
 	}

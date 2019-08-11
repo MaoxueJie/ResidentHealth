@@ -123,11 +123,13 @@ public class DoctorServiceImpl implements DoctorService{
 				doctor.setCreateTime(now);
 				doctorMapper.insert(doctor);
 				ret.setSuccess(true);
-			}else
+			}else {
 				ret.setSuccess(false);
+				ret.setMessage("添加失败");
+			}
 		}catch(Exception e) {
 			ret.setSuccess(false);
-			ret.setMessage("系统正忙，请联系管理员！");
+			ret.setMessage("系统异常");
 			logger.error("changePwd exception", e);
 		}
 		return ret;
