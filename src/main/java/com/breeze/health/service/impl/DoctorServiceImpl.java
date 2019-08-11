@@ -102,4 +102,35 @@ public class DoctorServiceImpl implements DoctorService{
 		return ret;
 	}
 
+	@Override
+	public Result<Void> addDoctor(String mobile,String name,String jobTitle, String unit) {
+		Result<Void> ret = new Result<Void>();
+		try {
+			DoctorExample example = new DoctorExample();
+			example.createCriteria().andMobileEqualTo(mobile);
+			int count = doctorMapper.countByExample(example);
+			if (count==0)
+			{
+				Date now = new Date();
+				Doctor doctor = new Doctor();
+				doctor.setAdmin(0);
+				doctor.setMobile(mobile);
+				doctor.setPassword(MD5Util.hash("1111"));
+				doctor.setName(name);
+				doctor.setUnit(unit);
+				doctor.setJobTitle(jobTitle);
+				doctor.setUpdateTime(now);
+				doctor.setCreateTime(now);
+				doctorMapper.insert(doctor);
+				ret.setSuccess(true);
+			}else
+				ret.setSuccess(false);
+		}catch(Exception e) {
+			ret.setSuccess(false);
+			ret.setMessage("系统正忙，请联系管理员！");
+			logger.error("changePwd exception", e);
+		}
+		return ret;
+	}
+
 }

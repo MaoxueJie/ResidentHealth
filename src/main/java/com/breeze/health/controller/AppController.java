@@ -76,6 +76,21 @@ public class AppController{
 		return ret; 
 	}
 	
+	@RequestMapping(value="/add")
+	@ResponseBody
+	public Result<Void> add(HttpServletRequest request, String mobile,String name,String jobTitle,String unit){
+		Result<Void> ret = null;
+		DoctorVo doc = (DoctorVo)request.getAttribute("user");
+		if (doc!=null && doc.getAdmin()!=null && doc.getAdmin()==1)
+		{
+			ret = doctorService.addDoctor(mobile, name, jobTitle, unit);
+		}else {
+			ret = new Result<Void>();
+			ret.setSuccess(false);
+		}
+		return ret;
+	}
+	
 	@RequestMapping(value="/test")
 	@ResponseBody
 	public Result<Void> test(HttpServletRequest request){
