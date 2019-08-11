@@ -15,6 +15,8 @@ public class Doctor {
 
     private String unit;
 
+    private Integer admin;
+
     private Date createTime;
 
     private Date updateTime;
@@ -65,6 +67,14 @@ public class Doctor {
 
     public void setUnit(String unit) {
         this.unit = unit == null ? null : unit.trim();
+    }
+
+    public Integer getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Integer admin) {
+        this.admin = admin;
     }
 
     public Date getCreateTime() {

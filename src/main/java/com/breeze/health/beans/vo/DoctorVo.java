@@ -12,6 +12,8 @@ public class DoctorVo {
     private String jobTitle;
 
     private String unit;
+    
+    private Integer admin;
 
     private Date createTime;
 
@@ -91,6 +93,14 @@ public class DoctorVo {
 
 	public void setQr(String qr) {
 		this.qr = qr;
+	}
+
+	public Integer getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Integer admin) {
+		this.admin = admin;
 	}
 
 }
