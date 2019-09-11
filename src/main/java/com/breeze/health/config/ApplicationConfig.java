@@ -73,6 +73,7 @@ public class ApplicationConfig {
 	    urlPatterns.add("/app/msgs");
 	    urlPatterns.add("/app/msg/get");
 	    urlPatterns.add("/app/add");
+	    urlPatterns.add("/app/getLink");
 	    registrationBean.setUrlPatterns(urlPatterns);
 	    return registrationBean;
     }

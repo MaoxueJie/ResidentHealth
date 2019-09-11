@@ -247,4 +247,13 @@ public class AppController{
 	public Result<DoctorMsg> getMessage(HttpServletRequest request,Long msgId){
 		return appService.getDocMsgById(msgId);
 	}
+	
+	@RequestMapping(value="/getLink")
+	@ResponseBody
+	public Result<String> getLink(HttpServletRequest request,Long max,Long min,Integer page,Integer size){
+		Result<String> ret = new Result<String>();
+		ret.setSuccess(true);
+		ret.setData("http://pku_ehealth.baiduux.com/h5/cfbff22c-82be-d15c-1dea-6aba6fb1e276.html");
+		return ret;
+	}
 }
