@@ -309,6 +309,7 @@ public class AppController{
 	  				}
 	  			}
 	  		}
+			ret = new Result<Void>();
 			ret.setSuccess(true);
 		}else {
 			ret = new Result<Void>();
