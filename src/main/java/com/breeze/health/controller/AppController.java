@@ -263,6 +263,7 @@ public class AppController{
 		Properties prop = new Properties();
 		 		FileInputStream inStream = null;
 		  		try {
+		  			logger.info("config="+Config.getConfig());
 		  			inStream = new FileInputStream(Config.getConfig());
 		  			prop.load(inStream);//加载数据
 		  			//http://pku_ehealth.baiduux.com/h5/cfbff22c-82be-d15c-1dea-6aba6fb1e276.html
