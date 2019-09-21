@@ -10,6 +10,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -40,6 +42,7 @@ import com.breeze.health.service.ReportService;
 import com.breeze.health.service.SickService;
 import com.breeze.health.service.TCMService;
 import com.breeze.health.service.UserService;
+import com.breeze.health.service.impl.AppServiceImpl;
 import com.breeze.health.util.DesUtil;
 import com.breeze.health.util.RequestUtils;
 
@@ -49,7 +52,7 @@ import com.breeze.health.util.RequestUtils;
 @RequestMapping("/app")
 @SuppressWarnings("all")
 public class AppController{
-	
+	private static Logger logger = LoggerFactory.getLogger(AppController.class);
 	@Autowired
 	AppService appService;
 	
@@ -265,15 +268,14 @@ public class AppController{
 		  			//http://pku_ehealth.baiduux.com/h5/cfbff22c-82be-d15c-1dea-6aba6fb1e276.html
 		  			ret.setData(prop.getProperty("link"));
 		  		} catch (IOException e) {
-		  			// TODO Auto-generated catch block
-		  			e.printStackTrace();
+		  			logger.error("",e);
 		  		} finally{
 		  			if(inStream != null){
 		  				try {
 		  					inStream.close();
 		  				} catch (IOException e) {
-		  					// TODO Auto-generated catch block
-		 					throw new RuntimeException();
+		  					logger.error("",e);
+		 					throw new RuntimeException(e);
 		  				}
 		  		}
 		}
@@ -295,13 +297,14 @@ public class AppController{
 			 	fos = new FileOutputStream(Config.getConfig());
 			 	prop.store(fos, "link");//第二个参数为注释信息
 			} catch (IOException e) {
-	 			e.printStackTrace();
+				logger.error("",e);
 	  		} finally{
 	  			if(fos != null){
 	  				try {
 	  					fos.close();
 	  				} catch (IOException e) {
-	  					throw new RuntimeException();
+	  					logger.error("",e);
+	  					throw new RuntimeException(e);
 	  				}
 	  			}
 	  		}

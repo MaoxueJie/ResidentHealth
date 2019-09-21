@@ -1,6 +1,6 @@
 app:
     basepath: http://9vk892.natappfree.cc
-    config:c://link.properties
+    config: c://link.properties
 server:
     port: 8080
     context-path: /cfd
