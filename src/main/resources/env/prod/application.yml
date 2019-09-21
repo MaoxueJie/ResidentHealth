@@ -1,6 +1,6 @@
 app:
     basepath: http://ehealth.drshuo.com/cfd
-    config:/opt/soft/link.properties
+    config: /opt/soft/link.properties
 server:
     port: 80
     context-path: /cfd
