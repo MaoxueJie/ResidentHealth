@@ -27,4 +27,10 @@ public class Config {
 		return config;
 	}
 
+	public static void setConfig(String config) {
+		Config.config = config;
+	}
+	
+	
+
 }
