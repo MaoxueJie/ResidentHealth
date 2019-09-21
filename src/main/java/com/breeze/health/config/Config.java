@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "app")
 public class Config {
 	private static String basepath;
+	
+	private static String config;
 
 	public static String getBasepath() {
 		if (basepath.endsWith("/"))
@@ -19,6 +21,10 @@ public class Config {
 
 	public static void setBasepath(String basepath) {
 		Config.basepath = basepath;
+	}
+
+	public static String getConfig() {
+		return config;
 	}
 
 }

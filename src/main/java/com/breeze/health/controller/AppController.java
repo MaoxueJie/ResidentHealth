@@ -1,6 +1,10 @@
 package com.breeze.health.controller;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +29,7 @@ import com.breeze.health.beans.vo.UserSickVo;
 import com.breeze.health.beans.vo.UserTCMVo;
 import com.breeze.health.beans.vo.UserVo;
 import com.breeze.health.beans.vo.req.SicksQuery;
+import com.breeze.health.config.Config;
 import com.breeze.health.entity.DoctorMsg;
 import com.breeze.health.service.AppService;
 import com.breeze.health.service.DoctorService;
@@ -250,10 +255,62 @@ public class AppController{
 	
 	@RequestMapping(value="/getLink")
 	@ResponseBody
-	public Result<String> getLink(HttpServletRequest request,Long max,Long min,Integer page,Integer size){
+	public Result<String> getLink(HttpServletRequest request){
 		Result<String> ret = new Result<String>();
+		Properties prop = new Properties();
+		 		FileInputStream inStream = null;
+		  		try {
+		  			inStream = new FileInputStream(Config.getConfig());
+		  			prop.load(inStream);//加载数据
+		  			//http://pku_ehealth.baiduux.com/h5/cfbff22c-82be-d15c-1dea-6aba6fb1e276.html
+		  			ret.setData(prop.getProperty("link"));
+		  		} catch (IOException e) {
+		  			// TODO Auto-generated catch block
+		  			e.printStackTrace();
+		  		} finally{
+		  			if(inStream != null){
+		  				try {
+		  					inStream.close();
+		  				} catch (IOException e) {
+		  					// TODO Auto-generated catch block
+		 					throw new RuntimeException();
+		  				}
+		  		}
+		}
 		ret.setSuccess(true);
-		ret.setData("http://pku_ehealth.baiduux.com/h5/cfbff22c-82be-d15c-1dea-6aba6fb1e276.html");
+		
+		return ret;
+	}
+	@RequestMapping(value="/updateLink")
+	@ResponseBody
+	public Result<Void> updateLink(HttpServletRequest request, String link){
+		Result<Void> ret = null;
+		DoctorVo doc = (DoctorVo)request.getAttribute("user");
+		if (doc!=null && doc.getAdmin()!=null && doc.getAdmin()==1)
+		{
+			Properties prop = new Properties();
+			prop.setProperty("link", link);
+			FileOutputStream fos = null;
+			try {
+			 	fos = new FileOutputStream(Config.getConfig());
+			 	prop.store(fos, "link");//第二个参数为注释信息
+			} catch (IOException e) {
+	 			e.printStackTrace();
+	  		} finally{
+	  			if(fos != null){
+	  				try {
+	  					fos.close();
+	  				} catch (IOException e) {
+	  					throw new RuntimeException();
+	  				}
+	  			}
+	  		}
+			ret.setSuccess(true);
+		}else {
+			ret = new Result<Void>();
+			ret.setSuccess(false);
+			ret.setMessage("没有权限");
+		}
 		return ret;
 	}
 }
