@@ -425,6 +425,13 @@ public class UserPhysiologicalVo {
 	}
 	
 	public Integer getBloodPressureValLevel() {
+		if (bloodPressureVal5!=null && bloodPressureVal6!=null)
+		{
+			if (bloodPressureVal5 >=139 || bloodPressureVal5 <=90 || bloodPressureVal6 >=90 || bloodPressureVal6 <=60) {
+				return 1;
+			}else
+				return 0;
+		}
 		return null;
 	}
 
