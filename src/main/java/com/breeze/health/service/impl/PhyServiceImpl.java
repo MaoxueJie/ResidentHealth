@@ -185,7 +185,7 @@ public class PhyServiceImpl implements PhyService{
 				Calendar cal = Calendar.getInstance();
 				cal.add(Calendar.DATE, -7);
 				example.createCriteria().andUserIdEqualTo(userId).andCreateTimeGreaterThan(cal.getTime());
-			}else if(type!=null && type == 1)
+			}else if(type!=null && type == 2)
 			{
 				Calendar cal = Calendar.getInstance();
 				cal.add(Calendar.MONTH, -1);
