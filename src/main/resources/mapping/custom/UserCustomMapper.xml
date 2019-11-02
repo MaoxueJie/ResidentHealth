@@ -15,7 +15,7 @@
     select d.mobile,d.user_id,d.doctor_id,i.name,i.birthday,i.gender,d.last_time from (
 	  select * from (
 	  	select  DISTINCT doctor_id,user_id from t_doctor_user where doctor_id in 
-	  	<foreach collection="doctorId" item="doctorId" index="index" open="(" close=")" separator=",">
+	  	<foreach collection="doctorIds" item="doctorId" index="index" open="(" close=")" separator=",">
 	  		#{doctorId}
 		</foreach>
 	  ) tu LEFT join t_user u on u.id = tu.user_id 
