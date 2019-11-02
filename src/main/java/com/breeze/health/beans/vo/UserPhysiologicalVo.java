@@ -143,6 +143,22 @@ public class UserPhysiologicalVo {
 			return "无法计算";
 	}
 	
+	public Float getBmi() {
+		
+		if (this.height!=null && this.weight!=null)
+		{
+			if (height!=0f)
+			{
+				Float bmi = weight/((height/100)*(height/100));
+				return bmi;
+			}else
+			{
+				return null;
+			}
+		}else
+			return null;
+	}
+	
 	
 	public String getAbdominalCircumferenceStr() {
 		if (abdominalCircumference==null)
