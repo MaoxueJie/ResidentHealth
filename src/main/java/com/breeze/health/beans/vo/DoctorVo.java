@@ -13,6 +13,12 @@ public class DoctorVo {
 
     private String unit;
     
+    private String head;
+
+    private String about;
+
+    private Long groupId;
+    
     private Integer admin;
 
     private Date createTime;
@@ -103,4 +109,29 @@ public class DoctorVo {
 		this.admin = admin;
 	}
 
+	public String getHead() {
+		return head;
+	}
+
+	public void setHead(String head) {
+		this.head = head;
+	}
+
+	public String getAbout() {
+		return about;
+	}
+
+	public void setAbout(String about) {
+		this.about = about;
+	}
+
+	public Long getGroupId() {
+		return groupId;
+	}
+
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
+	}
+
+	
 }

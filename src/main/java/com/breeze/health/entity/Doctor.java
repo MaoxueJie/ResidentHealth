@@ -15,6 +15,12 @@ public class Doctor {
 
     private String unit;
 
+    private String head;
+
+    private String about;
+
+    private Long groupId;
+
     private Integer admin;
 
     private Date createTime;
@@ -67,6 +73,30 @@ public class Doctor {
 
     public void setUnit(String unit) {
         this.unit = unit == null ? null : unit.trim();
+    }
+
+    public String getHead() {
+        return head;
+    }
+
+    public void setHead(String head) {
+        this.head = head == null ? null : head.trim();
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about == null ? null : about.trim();
+    }
+
+    public Long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Long groupId) {
+        this.groupId = groupId;
     }
 
     public Integer getAdmin() {

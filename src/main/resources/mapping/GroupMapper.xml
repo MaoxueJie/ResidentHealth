@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.breeze.health.mapper.DoctorMapper" >
-  <resultMap id="BaseResultMap" type="com.breeze.health.entity.Doctor" >
+<mapper namespace="com.breeze.health.mapper.GroupMapper" >
+  <resultMap id="BaseResultMap" type="com.breeze.health.entity.Group" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="job_title" property="jobTitle" jdbcType="VARCHAR" />
-    <result column="unit" property="unit" jdbcType="VARCHAR" />
-    <result column="head" property="head" jdbcType="VARCHAR" />
+    <result column="logo" property="logo" jdbcType="VARCHAR" />
     <result column="about" property="about" jdbcType="VARCHAR" />
-    <result column="group_id" property="groupId" jdbcType="BIGINT" />
-    <result column="admin" property="admin" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -45,16 +39,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, mobile, name, password, job_title, unit, head, about, group_id, admin, create_time, 
-    update_time
+    id, name, logo, about, create_time, update_time
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.DoctorExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.breeze.health.entity.GroupExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from t_doctor
+    from t_group
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -65,52 +58,30 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
-    from t_doctor
+    from t_group
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from t_doctor
+    delete from t_group
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.breeze.health.entity.Doctor" useGeneratedKeys="true" keyProperty="id" >
-    insert into t_doctor (mobile, name, password, 
-      job_title, unit, head, 
-      about, group_id, admin, 
+  <insert id="insert" parameterType="com.breeze.health.entity.Group" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_group (name, logo, about, 
       create_time, update_time)
-    values (#{mobile,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{jobTitle,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR}, #{head,jdbcType=VARCHAR}, 
-      #{about,jdbcType=VARCHAR}, #{groupId,jdbcType=BIGINT}, #{admin,jdbcType=INTEGER}, 
+    values (#{name,jdbcType=VARCHAR}, #{logo,jdbcType=VARCHAR}, #{about,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.breeze.health.entity.Doctor" useGeneratedKeys="true" keyProperty="id" >
-    insert into t_doctor
+  <insert id="insertSelective" parameterType="com.breeze.health.entity.Group" useGeneratedKeys="true" keyProperty="id" >
+    insert into t_group
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="mobile != null" >
-        mobile,
-      </if>
       <if test="name != null" >
         name,
       </if>
-      <if test="password != null" >
-        password,
-      </if>
-      <if test="jobTitle != null" >
-        job_title,
-      </if>
-      <if test="unit != null" >
-        unit,
-      </if>
-      <if test="head != null" >
-        head,
+      <if test="logo != null" >
+        logo,
       </if>
       <if test="about != null" >
         about,
-      </if>
-      <if test="groupId != null" >
-        group_id,
-      </if>
-      <if test="admin != null" >
-        admin,
       </if>
       <if test="createTime != null" >
         create_time,
@@ -120,32 +91,14 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="mobile != null" >
-        #{mobile,jdbcType=VARCHAR},
-      </if>
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="password != null" >
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="jobTitle != null" >
-        #{jobTitle,jdbcType=VARCHAR},
-      </if>
-      <if test="unit != null" >
-        #{unit,jdbcType=VARCHAR},
-      </if>
-      <if test="head != null" >
-        #{head,jdbcType=VARCHAR},
+      <if test="logo != null" >
+        #{logo,jdbcType=VARCHAR},
       </if>
       <if test="about != null" >
         #{about,jdbcType=VARCHAR},
-      </if>
-      <if test="groupId != null" >
-        #{groupId,jdbcType=BIGINT},
-      </if>
-      <if test="admin != null" >
-        #{admin,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -155,41 +108,23 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.breeze.health.entity.DoctorExample" resultType="java.lang.Integer" >
-    select count(*) from t_doctor
+  <select id="countByExample" parameterType="com.breeze.health.entity.GroupExample" resultType="java.lang.Integer" >
+    select count(*) from t_group
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.Doctor" >
-    update t_doctor
+  <update id="updateByPrimaryKeySelective" parameterType="com.breeze.health.entity.Group" >
+    update t_group
     <set >
-      <if test="mobile != null" >
-        mobile = #{mobile,jdbcType=VARCHAR},
-      </if>
       <if test="name != null" >
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="password != null" >
-        password = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="jobTitle != null" >
-        job_title = #{jobTitle,jdbcType=VARCHAR},
-      </if>
-      <if test="unit != null" >
-        unit = #{unit,jdbcType=VARCHAR},
-      </if>
-      <if test="head != null" >
-        head = #{head,jdbcType=VARCHAR},
+      <if test="logo != null" >
+        logo = #{logo,jdbcType=VARCHAR},
       </if>
       <if test="about != null" >
         about = #{about,jdbcType=VARCHAR},
-      </if>
-      <if test="groupId != null" >
-        group_id = #{groupId,jdbcType=BIGINT},
-      </if>
-      <if test="admin != null" >
-        admin = #{admin,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -200,17 +135,11 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.Doctor" >
-    update t_doctor
-    set mobile = #{mobile,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      job_title = #{jobTitle,jdbcType=VARCHAR},
-      unit = #{unit,jdbcType=VARCHAR},
-      head = #{head,jdbcType=VARCHAR},
+  <update id="updateByPrimaryKey" parameterType="com.breeze.health.entity.Group" >
+    update t_group
+    set name = #{name,jdbcType=VARCHAR},
+      logo = #{logo,jdbcType=VARCHAR},
       about = #{about,jdbcType=VARCHAR},
-      group_id = #{groupId,jdbcType=BIGINT},
-      admin = #{admin,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}

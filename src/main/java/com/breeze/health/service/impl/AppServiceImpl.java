@@ -1,5 +1,6 @@
 package com.breeze.health.service.impl;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -14,13 +15,17 @@ import org.springframework.stereotype.Service;
 
 import com.breeze.health.beans.vo.Result;
 import com.breeze.health.beans.vo.req.SicksQuery;
+import com.breeze.health.entity.Doctor;
+import com.breeze.health.entity.DoctorExample;
 import com.breeze.health.entity.DoctorFavorites;
 import com.breeze.health.entity.DoctorFavoritesExample;
 import com.breeze.health.entity.DoctorMsg;
 import com.breeze.health.entity.DoctorMsgExample;
 import com.breeze.health.entity.custom.SickUser;
 import com.breeze.health.mapper.DoctorFavoritesMapper;
+import com.breeze.health.mapper.DoctorMapper;
 import com.breeze.health.mapper.DoctorMsgMapper;
+import com.breeze.health.mapper.GroupMapper;
 import com.breeze.health.mapper.custom.UserCustomMapper;
 import com.breeze.health.service.AppService;
 import com.github.pagehelper.PageHelper;
@@ -36,9 +41,12 @@ public class AppServiceImpl implements AppService{
 	
 	@Autowired
 	DoctorMsgMapper doctorMsgMapper;
-
+	
+	@Autowired
+	DoctorMapper doctorMapper;
+	
 	@Override
-	public Result<List> getUsersPage(Long doctorId,SicksQuery query) {
+	public Result<List> getUsersPage(Long doctorId,Long groupId,SicksQuery query) {
 		Result<List> ret = new Result<List>();
 		try {
 			Integer page = query.getPage();
@@ -60,13 +68,23 @@ public class AppServiceImpl implements AppService{
 				end = cal.getTime();
 			} 
 			
-			List<SickUser> sickUsers = userCustomMapper.selectDoctorSicks(doctorId,query.getMobile(),query.getSex(),start,end,query.getSicks());
+			List<Long> doctorIds = new ArrayList<Long>();
+			if (groupId!=null)
+			{
+				DoctorExample example = new DoctorExample();
+				example.createCriteria().andGroupIdEqualTo(groupId);
+				List<Doctor> doctors = doctorMapper.selectByExample(example);
+				doctorIds = doctors.stream().map(doctor->doctor.getId()).collect(Collectors.toList());
+			}else {
+				doctorIds.add(doctorId);
+			}
+			List<SickUser> sickUsers = userCustomMapper.selectDoctorSicks(doctorIds,query.getMobile(),query.getSex(),start,end,query.getSicks());
 			
 			List<Long> userIds = sickUsers.stream().map(sick->sick.getUserId()).collect(Collectors.toList());
 			
 			Map<Long,DoctorFavorites> favoritesMap = new HashMap<Long,DoctorFavorites>();
 			DoctorFavoritesExample example = new DoctorFavoritesExample();
-			example.createCriteria().andUserIdIn(userIds).andRemoveNotEqualTo(1);
+			example.createCriteria().andUserIdIn(userIds).andDoctorIdEqualTo(doctorId).andRemoveNotEqualTo(1);
 			List<DoctorFavorites> favorites = doctorFavoritesMapper.selectByExample(example);
 			if (favorites!=null)
 			{

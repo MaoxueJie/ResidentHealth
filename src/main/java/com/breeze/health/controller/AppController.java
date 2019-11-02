@@ -132,14 +132,14 @@ public class AppController{
 		query.setMobile(mobile);
 		query.setPage(page);
 		query.setSize(size);
-		Result<List> ret = appService.getUsersPage(((DoctorVo)request.getAttribute("user")).getId(),query);
+		Result<List> ret = appService.getUsersPage(((DoctorVo)request.getAttribute("user")).getId(),((DoctorVo)request.getAttribute("user")).getGroupId(),query);
 		return ret; 
 	}
 	
 	@RequestMapping(value="/getSicks_new")
 	@ResponseBody
 	public Result<List> getSicksNew(HttpServletRequest request,@RequestBody SicksQuery query){
-		Result<List> ret = appService.getUsersPage(((DoctorVo)request.getAttribute("user")).getId(),query);
+		Result<List> ret = appService.getUsersPage(((DoctorVo)request.getAttribute("user")).getId(),((DoctorVo)request.getAttribute("user")).getGroupId(),query);
 		return ret; 
 	}
 	
