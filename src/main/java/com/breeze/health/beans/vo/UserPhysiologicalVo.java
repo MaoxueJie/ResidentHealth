@@ -4,6 +4,9 @@ import java.text.DecimalFormat;
 import java.util.Date;
 
 public class UserPhysiologicalVo {
+	
+	private Integer gender;
+	
 	private Long id;
 
     private Long userId;
@@ -83,6 +86,14 @@ public class UserPhysiologicalVo {
     private Date updateTime;
     
     private String dateStr;
+    
+    public UserPhysiologicalVo(Integer gender) {
+    	this.gender = gender;
+    }
+    
+    public UserPhysiologicalVo() {
+    	
+    }
 
 	public Long getId() {
 		return id;
@@ -159,13 +170,45 @@ public class UserPhysiologicalVo {
 			return null;
 	}
 	
+	public Integer getBmiLevel() {
+		Float bmi = this.getBmi();
+		if (bmi==null)
+			return null;
+		if (bmi <18.5)
+			return -1;
+		if (bmi >=18.5 && bmi <24)
+			return 0;
+		if (bmi >=24 && bmi <28)
+		    return 1;
+		if (bmi >=28)
+			return 2;
+		return null;
+	}
+	
 	
 	public String getAbdominalCircumferenceStr() {
 		if (abdominalCircumference==null)
 			return "未填写";
 		return formatInteger(abdominalCircumference) +"cm";
 	}
-
+	public Integer getAbdominalCircumferenceLevel() {
+		if (abdominalCircumference==null || gender==null)
+			return null;
+		if (gender==1)
+		{
+			if (abdominalCircumference<90)
+				return 0;
+			else
+				return 1;
+		}
+		if (gender==2) {
+			if (abdominalCircumference<85)
+				return 0;
+			else
+				return 1;
+		}
+		return null;
+	}
 
 	public Float getAbdominalCircumference() {
 		return abdominalCircumference;
@@ -195,6 +238,31 @@ public class UserPhysiologicalVo {
 		}else
 			return "无法计算";
 	}
+	
+	public Integer getWHRLevel() {
+		if (this.abdominalCircumference!=null && this.hipCircumference!=null)
+		{
+			if (hipCircumference!=0f)
+			{
+				Float whr = abdominalCircumference/(hipCircumference);
+				if (gender!=null && gender==1)
+				{
+					if (whr<=0.9)
+						return 0;
+					else
+						return 1;
+				}
+				if (gender!=null && gender==2)
+				{
+					if (whr<=0.85)
+						return 0;
+					else
+						return 1;
+				}
+			}
+		}
+		return null;
+	}
 
 	public Float getHipCircumference() {
 		return hipCircumference;
@@ -214,6 +282,18 @@ public class UserPhysiologicalVo {
 		return this.heartRate;
 	}
 
+	public Integer getHeartRateLevel() {
+		if (this.heartRate == null)
+			return null;
+		if (this.heartRate<60)
+			return -1;
+		if (this.heartRate>=60 && this.heartRate <=100)
+			return 0;
+		if (this.heartRate>100) 
+			return 1;
+		return null;
+	}
+	
 	public void setHeartRate(Integer heartRate) {
 		this.heartRate = heartRate;
 	}
@@ -226,6 +306,18 @@ public class UserPhysiologicalVo {
 	
 	public Integer getBreatheRate() {
 		return breatheRate;
+	}
+	
+	public Integer getBreatheRateLevel() {
+		if (this.breatheRate == null)
+			return null;
+		if (this.breatheRate<12)
+			return -1;
+		if (this.breatheRate>=12 && this.breatheRate <=20)
+			return 0;
+		if (this.breatheRate>20) 
+			return 1;
+		return null;
 	}
 
 	public void setBreatheRate(Integer breatheRate) {
@@ -242,6 +334,40 @@ public class UserPhysiologicalVo {
 	
 	public Float getTemperature() {
 		return temperature;
+	}
+	
+	public Integer getTemperatureLevel() {
+        if (this.temperature==null)
+        	return null;
+        if (this.temperature < 35)
+        {
+        	return -2;
+        }
+        if (this.temperature >= 35 && this.temperature <36.3)
+        {
+        	return -1;
+        }
+        if (this.temperature >= 36.3 && this.temperature <37.3)
+        {
+        	return 0;
+        }
+        if (this.temperature >= 37.3 && this.temperature <38)
+        {
+        	return 1;
+        }
+        if (this.temperature >= 38 && this.temperature <39)
+        {
+        	return 2;
+        }
+        if (this.temperature >= 39 && this.temperature <41)
+        {
+        	return 3;
+        }
+        if (this.temperature >= 41)
+        {
+        	return 4;
+        }
+        return null;
 	}
 
 	public void setTemperature(Float temperature) {
@@ -296,6 +422,10 @@ public class UserPhysiologicalVo {
 			return "最近一次血压为"+formatInteger(bloodPressureVal5) + "/" + formatInteger(bloodPressureVal5) +"mmHg";
 		}
 		return "";
+	}
+	
+	public Integer getBloodPressureValLevel() {
+		return null;
 	}
 
 	public Float getBloodPressureVal1() {
@@ -410,6 +540,58 @@ public class UserPhysiologicalVo {
 		}
 		return bloodSugarValStr;
 	}
+	
+	public Integer getBloodSugarVal1Level() {
+		if (this.bloodSugarVal1==null)
+			return null;
+		if (this.bloodSugarVal1 < 2.8)
+			return -2;
+		if (this.bloodSugarVal1 < 3.9)
+			return -1;
+		if (this.bloodSugarVal1 <= 6.1 && this.bloodSugarVal1 >= 3.9)
+			return 0;
+		if (this.bloodSugarVal1 <= 7.0  && this.bloodSugarVal1 > 6.1)
+			return 1;
+		if (this.bloodSugarVal1 <= 8.4  && this.bloodSugarVal1 > 7.0)
+			return 2;
+		if (this.bloodSugarVal1 <= 10.1  && this.bloodSugarVal1 > 8.4)
+			return 3;
+		if (this.bloodSugarVal1 > 10.1)
+			return 4;
+		return null;
+	}
+	public Integer getBloodSugarVal2Level() {
+		if (this.bloodSugarVal2==null)
+			return null;
+		if (this.bloodSugarVal2 < 4)
+			return -1;
+		if (this.bloodSugarVal2 < 6 && this.bloodSugarVal2 >= 4)
+			return 0;
+		if (this.bloodSugarVal2 < 6.5 && this.bloodSugarVal2 >= 6)
+			return 1;
+		if (this.bloodSugarVal2 >= 6.5)
+			return 2;
+		return null;
+	}
+	public Integer getBloodSugarVal3Level() {
+		if (this.bloodSugarVal3==null)
+			return null;
+		if (this.bloodSugarVal3 < 7.8)
+			return 0;
+		if (this.bloodSugarVal3 < 11.1 && this.bloodSugarVal3 >= 7.8)
+			return 1;
+		if (this.bloodSugarVal3 >= 11.1)
+			return 2;
+		return null;
+	}
+	public Integer getBloodSugarVal4Level() {
+		if (this.bloodSugarVal4==null)
+			return null;
+		if (this.bloodSugarVal3 >= 11.1)
+			return 1;
+		else 
+			return 0;
+	}
 
 	public Float getBloodSugarVal1() {
 		return bloodSugarVal1;
@@ -471,7 +653,7 @@ public class UserPhysiologicalVo {
 	public String getBloodLipidValStr() {
 		String bloodLipidValStr = "";
 		if (bloodLipidVal1!=null) {
-			bloodLipidValStr += "总胆固醇(TC):" + formatFloat(bloodLipidVal1) + "mmol/L";
+			bloodLipidValStr += "总胆固醇(TC):<span style='color:red'>" + formatFloat(bloodLipidVal1) + "mmol/L</span>";
 		}
 		if (bloodLipidVal2!=null) {
 			if (!"".equals(bloodLipidValStr))
@@ -489,6 +671,51 @@ public class UserPhysiologicalVo {
 			bloodLipidValStr += "低密度脂蛋白胆固醇(LDL-C):" + formatFloat(bloodLipidVal4) + "mmol/L";
 		}
 		return bloodLipidValStr;
+	}
+	
+	public Integer getBloodLipidVal1Level() {
+		if (bloodLipidVal1==null)
+			return null;
+		if (bloodLipidVal1<5.2)
+			return 0;
+		if (bloodLipidVal1>=5.2 && bloodLipidVal1<=6.2)
+			return 1;
+		if (bloodLipidVal1>6.2)
+			return 2;
+		return null;
+	}
+	public Integer getBloodLipidVal2Level() {
+		if (bloodLipidVal2==null)
+			return null;
+		if (bloodLipidVal2<0.56)
+			return -1;
+		if (bloodLipidVal2>=0.56 && bloodLipidVal2<1.7)
+			return 0;
+		if (bloodLipidVal2>=1.7 && bloodLipidVal2<=2.3)
+			return 1;
+		if (bloodLipidVal2>2.3)
+			return 2;
+		return null;
+	}
+	public Integer getBloodLipidVal3Level() {
+		if (bloodLipidVal3==null)
+			return null;
+		if (bloodLipidVal3<=1.0)
+			return -1;
+		if (bloodLipidVal3>1.0)
+			return 0;
+		return null;
+	}
+	public Integer getBloodLipidVal4Level() {
+		if (bloodLipidVal4==null)
+			return null;
+		if (bloodLipidVal4<=3.4)
+			return 0;
+		if (bloodLipidVal4>3.4 && bloodLipidVal4<=4.1)
+			return 1;
+		if (bloodLipidVal4>4.1)
+			return 2;
+		return null;
 	}
 
 	public Float getBloodLipidVal1() {
@@ -574,6 +801,16 @@ public class UserPhysiologicalVo {
 	public Float getUricAcidVal() {
 		return uricAcidVal;
 	}
+	
+	public Integer getUricAcidValLevel() {
+		if (uricAcidVal==null)
+			return null;
+		if (uricAcidVal<=420)
+			return 0;
+		if (uricAcidVal>420)
+			return 1;
+		return null;
+	}
 
 	public void setUricAcidVal(Float uricAcidVal) {
 		this.uricAcidVal = uricAcidVal;
@@ -629,6 +866,16 @@ public class UserPhysiologicalVo {
 
 	public Float getBloodOxygenVal() {
 		return bloodOxygenVal;
+	}
+	
+	public Integer getBloodOxygenValLevel() {
+		if (bloodOxygenVal==null)
+			return null;
+		if (bloodOxygenVal<95)
+			return -1;
+		if (bloodOxygenVal>=95)
+			return 0;
+		return null;
 	}
 
 	public void setBloodOxygenVal(Float bloodOxygenVal) {
