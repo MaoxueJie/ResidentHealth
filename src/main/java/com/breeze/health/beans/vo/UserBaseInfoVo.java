@@ -12,6 +12,8 @@ public class UserBaseInfoVo {
 
     private Long userId;
     
+    private String name;
+    
     @DateTimeFormat(pattern="yyyy/MM/dd")
     @JsonFormat(pattern = "yyyy/MM/dd", locale = "zh" , timezone="GMT+8")
     private Date birthday;
@@ -469,6 +471,14 @@ public class UserBaseInfoVo {
 
 	public void setMedicalPayDesc6(String medicalPayDesc6) {
 		this.medicalPayDesc6 = medicalPayDesc6;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }
