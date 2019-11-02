@@ -544,25 +544,25 @@ public class UserPhysiologicalVo {
 	public String getBloodSugarVal1Str() {
 		if (bloodSugarVal1 == null)
 			return "";
-		return formatFloat(bloodSugarVal1) + "mmol/L";
+		return "空腹血糖:" + formatFloat(bloodSugarVal1) + "mmol/L";
 	}
 	
 	public String getBloodSugarVal2Str() {
 		if (bloodSugarVal2 == null)
 			return "";
-		return formatFloat(bloodSugarVal2) + "%";
+		return "糖化血红蛋白:" + formatFloat(bloodSugarVal2) + "%";
 	}
 	
 	public String getBloodSugarVal3Str() {
 		if (bloodSugarVal3 == null)
 			return "";
-		return formatFloat(bloodSugarVal3) + "mmol/L";
+		return "餐后2小时血糖:" + formatFloat(bloodSugarVal3) + "mmol/L";
 	}
 	
 	public String getBloodSugarVal4Str() {
 		if (bloodSugarVal4 == null)
 			return "";
-		return formatFloat(bloodSugarVal4) + "mmol/L";
+		return  "随机血糖:" + formatFloat(bloodSugarVal4) + "mmol/L";
 	}
 	
 	public Integer getBloodSugarVal1Level() {
@@ -700,25 +700,25 @@ public class UserPhysiologicalVo {
 	public String getBloodLipidVal1Str() {
 		if (bloodLipidVal1 == null)
 			return "";
-		return formatFloat(bloodLipidVal1) + "mmol/L";
+		return "总胆固醇(TC):" +  formatFloat(bloodLipidVal1) + "mmol/L";
 	}
 	
     public String getBloodLipidVal2Str() {
     	if (bloodLipidVal2 == null)
 			return "";
-		return formatFloat(bloodLipidVal2) + "mmol/L";
+		return "甘油三酯(TG):" + formatFloat(bloodLipidVal2) + "mmol/L";
 	}
 
     public String getBloodLipidVal3Str() {
     	if (bloodLipidVal3 == null)
 			return "";
-		return formatFloat(bloodLipidVal3) + "mmol/L";
+		return "高密度脂蛋白胆固醇(HDL-C):" + formatFloat(bloodLipidVal3) + "mmol/L";
     }
 
     public String getBloodLipidVal4Str() {
     	if (bloodLipidVal4 == null)
 			return "";
-		return formatFloat(bloodLipidVal4) + "mmol/L";
+		return "低密度脂蛋白胆固醇(LDL-C):" + formatFloat(bloodLipidVal4) + "mmol/L";
     }
 	
 	public Integer getBloodLipidVal1Level() {
