@@ -7,7 +7,7 @@ import com.breeze.health.beans.vo.UserPhysiologicalVo;
 
 public interface PhyService {
 	public Result<Void> addOrUpdatePhy(UserPhysiologicalVo vo);
-	public Result<UserPhysiologicalVo> getPhy(Long userId);
+	public Result<UserPhysiologicalVo> getPhy(Long userId,Integer type);
 	Result<List<UserPhysiologicalVo>> getPhyDate(Long userId);
 	Result<UserPhysiologicalVo> getPhyById(Long id);
 }

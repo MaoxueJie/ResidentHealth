@@ -176,12 +176,25 @@ public class PhyServiceImpl implements PhyService{
 	}
 
 	@Override
-	public Result<UserPhysiologicalVo> getPhy(Long userId) {
+	public Result<UserPhysiologicalVo> getPhy(Long userId,Integer type) {
 		Result<UserPhysiologicalVo> ret = new Result<UserPhysiologicalVo>();
 		try{
 			UserPhysiologicalExample example = new UserPhysiologicalExample();
-			example.createCriteria().andUserIdEqualTo(userId);
+			if (type!=null && type == 1)
+			{
+				Calendar cal = Calendar.getInstance();
+				cal.add(Calendar.DATE, -7);
+				example.createCriteria().andUserIdEqualTo(userId).andCreateTimeGreaterThan(cal.getTime());
+			}else if(type!=null && type == 1)
+			{
+				Calendar cal = Calendar.getInstance();
+				cal.add(Calendar.MONTH, -1);
+				example.createCriteria().andUserIdEqualTo(userId).andCreateTimeGreaterThan(cal.getTime());
+			}else {
+				example.createCriteria().andUserIdEqualTo(userId);
+			}
 			example.setOrderByClause(" id desc");
+			
 			PageHelper.startPage(1, 1);
 			List phys = userPhysiologicalMapper.selectByExample(example);
 			if (phys!= null && phys.size()>0)

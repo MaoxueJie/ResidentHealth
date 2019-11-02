@@ -176,8 +176,8 @@ public class AppController{
 
 	@RequestMapping(value="/phy/get")
 	@ResponseBody
-	public Result<UserPhysiologicalVo> getPhy(HttpServletRequest request,Long userId){
-		return phyService.getPhy(userId);
+	public Result<UserPhysiologicalVo> getPhy(HttpServletRequest request,Long userId,Integer type){
+		return phyService.getPhy(userId,type);
 	}
 	
 	@RequestMapping(value="/phy/date")
