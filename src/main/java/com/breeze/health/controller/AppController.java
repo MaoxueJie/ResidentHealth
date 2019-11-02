@@ -176,14 +176,14 @@ public class AppController{
 
 	@RequestMapping(value="/phy/get")
 	@ResponseBody
-	public Result<UserPhysiologicalVo> getPhy(HttpServletRequest request,Long userId,Integer type){
-		return phyService.getPhy(userId,type);
+	public Result<UserPhysiologicalVo> getPhy(HttpServletRequest request,Long userId){
+		return phyService.getPhy(userId);
 	}
 	
 	@RequestMapping(value="/phy/date")
 	@ResponseBody
-	public Result<List<UserPhysiologicalVo>> getPhyDate(HttpServletRequest request,Long userId){
-		return phyService.getPhyDate(userId);
+	public Result<List<UserPhysiologicalVo>> getPhyDate(HttpServletRequest request,Long userId,Integer type){
+		return phyService.getPhyDate(userId,type);
 	}
 	
 	@RequestMapping(value="/phy/id")

@@ -176,23 +176,13 @@ public class PhyServiceImpl implements PhyService{
 	}
 
 	@Override
-	public Result<UserPhysiologicalVo> getPhy(Long userId,Integer type) {
+	public Result<UserPhysiologicalVo> getPhy(Long userId) {
 		Result<UserPhysiologicalVo> ret = new Result<UserPhysiologicalVo>();
 		try{
 			UserPhysiologicalExample example = new UserPhysiologicalExample();
-			if (type!=null && type == 1)
-			{
-				Calendar cal = Calendar.getInstance();
-				cal.add(Calendar.DATE, -7);
-				example.createCriteria().andUserIdEqualTo(userId).andCreateTimeGreaterThan(cal.getTime());
-			}else if(type!=null && type == 2)
-			{
-				Calendar cal = Calendar.getInstance();
-				cal.add(Calendar.MONTH, -1);
-				example.createCriteria().andUserIdEqualTo(userId).andCreateTimeGreaterThan(cal.getTime());
-			}else {
-				example.createCriteria().andUserIdEqualTo(userId);
-			}
+			
+			example.createCriteria().andUserIdEqualTo(userId);
+			
 			example.setOrderByClause(" id desc");
 			
 			PageHelper.startPage(1, 1);
@@ -239,11 +229,23 @@ public class PhyServiceImpl implements PhyService{
 	private static SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 	
 	@Override
-	public Result<List<UserPhysiologicalVo>> getPhyDate(Long userId) {
+	public Result<List<UserPhysiologicalVo>> getPhyDate(Long userId,Integer type) {
 		Result<List<UserPhysiologicalVo>> ret = new Result<List<UserPhysiologicalVo>>();
 		try{
 			UserPhysiologicalExample example = new UserPhysiologicalExample();
-			example.createCriteria().andUserIdEqualTo(userId);
+			if (type!=null && type == 1)
+			{
+				Calendar cal = Calendar.getInstance();
+				cal.add(Calendar.DATE, -7);
+				example.createCriteria().andUserIdEqualTo(userId).andCreateTimeGreaterThan(cal.getTime());
+			}else if(type!=null && type == 2)
+			{
+				Calendar cal = Calendar.getInstance();
+				cal.add(Calendar.MONTH, -1);
+				example.createCriteria().andUserIdEqualTo(userId).andCreateTimeGreaterThan(cal.getTime());
+			}else {
+				example.createCriteria().andUserIdEqualTo(userId);
+			}
 			example.setOrderByClause(" id desc");
 			List<UserPhysiological> phys = userPhysiologicalMapper.selectByExample(example);
 			if (phys!= null && phys.size()>0)
