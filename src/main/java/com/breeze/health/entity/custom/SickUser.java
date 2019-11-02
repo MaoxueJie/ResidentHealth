@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class SickUser {
 	private Long userId;
+	private String name;
 	private Long doctorId;
 	private String mobile;
 	private String gender;
@@ -58,6 +59,12 @@ public class SickUser {
 	}
 	public void setAge(Integer age) {
 		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }
