@@ -5,7 +5,6 @@ import java.util.Date;
 public class SickUser {
 	private Long userId;
 	private String name;
-	private Long doctorId;
 	private String mobile;
 	private String gender;
 	private Date birthday;
@@ -41,12 +40,6 @@ public class SickUser {
 	}
 	public void setLastTime(Date lastTime) {
 		this.lastTime = lastTime;
-	}
-	public Long getDoctorId() {
-		return doctorId;
-	}
-	public void setDoctorId(Long doctorId) {
-		this.doctorId = doctorId;
 	}
 	public boolean isInFavotires() {
 		return inFavotires;
