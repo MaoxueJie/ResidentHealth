@@ -417,11 +417,23 @@ public class LivingServiceImpl implements LivingService {
 	private static SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 
 	@Override
-	public Result<List<UserLivingVo>> getLivingDate(Long userId) {
+	public Result<List<UserLivingVo>> getLivingDate(Long userId,Integer type) {
 		Result<List<UserLivingVo>> ret = new Result<List<UserLivingVo>>();
 		try{
 			UserLivingExample example = new UserLivingExample();
-			example.createCriteria().andUserIdEqualTo(userId);
+			if (type!=null && type == 1)
+			{
+				Calendar cal = Calendar.getInstance();
+				cal.add(Calendar.DATE, -7);
+				example.createCriteria().andUserIdEqualTo(userId).andCreateTimeGreaterThan(cal.getTime());
+			}else if(type!=null && type == 2)
+			{
+				Calendar cal = Calendar.getInstance();
+				cal.add(Calendar.MONTH, -1);
+				example.createCriteria().andUserIdEqualTo(userId).andCreateTimeGreaterThan(cal.getTime());
+			}else {
+				example.createCriteria().andUserIdEqualTo(userId);
+			}
 			example.setOrderByClause(" id desc");
 			List<UserLiving> livings = userLivingMapper.selectByExample(example);
 			if (livings!= null && livings.size()>0)

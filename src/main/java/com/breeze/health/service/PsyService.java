@@ -13,6 +13,6 @@ public interface PsyService {
 	public Result<Void> addOrUpdatePsySuicide(UserPsySuicideVo vo);
 	public Result<UserPsySuicideVo> getPsySuicide(Long userId);
 	
-	Result<List<UserPsychologicalVo>> getPsyDate(Long userId);
+	Result<List<UserPsychologicalVo>> getPsyDate(Long userId,Integer type);
 	Result<UserPsychologicalVo> getPsyById(Long id);
 }

@@ -14,6 +14,6 @@ public interface LivingService {
 
     Result<Void> addOrUpdateLiving(UserLivingVo vo);
     Result<UserLivingVo> getLiving(Long userId);
-    Result<List<UserLivingVo>> getLivingDate(Long userId);
+    Result<List<UserLivingVo>> getLivingDate(Long userId,Integer type);
     Result<UserLivingVo> getLivingById(Long id);
 }

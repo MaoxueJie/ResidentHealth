@@ -158,8 +158,8 @@ public class AppController{
 	
 	@RequestMapping(value="/living/date")
 	@ResponseBody
-	public Result<List<UserLivingVo>> getUserLivingDate(HttpServletRequest request,Long userId){
-		return livingService.getLivingDate(userId);
+	public Result<List<UserLivingVo>> getUserLivingDate(HttpServletRequest request,Long userId,Integer type){
+		return livingService.getLivingDate(userId,type);
 	}
 	
 	@RequestMapping(value="/living/id")
@@ -205,8 +205,8 @@ public class AppController{
 	}
 	@RequestMapping(value = "/psy/date")
 	@ResponseBody
-	public Result<List<UserPsychologicalVo>> getPsychologicalDate(HttpServletRequest request,Long userId){
-		return psyService.getPsyDate(userId);
+	public Result<List<UserPsychologicalVo>> getPsychologicalDate(HttpServletRequest request,Long userId,Integer type){
+		return psyService.getPsyDate(userId,type);
 	}
 	@RequestMapping(value = "/psy/id")
 	@ResponseBody

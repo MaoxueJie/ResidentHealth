@@ -687,11 +687,23 @@ public class PsyServiceImpl implements PsyService{
 	private static SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 
 	@Override
-	public Result<List<UserPsychologicalVo>> getPsyDate(Long userId) {
+	public Result<List<UserPsychologicalVo>> getPsyDate(Long userId,Integer type) {
 		Result<List<UserPsychologicalVo>> ret = new Result<List<UserPsychologicalVo>>();
 		try{
 			UserPsychologicalExample example = new UserPsychologicalExample();
-			example.createCriteria().andUserIdEqualTo(userId);
+			if (type!=null && type == 1)
+			{
+				Calendar cal = Calendar.getInstance();
+				cal.add(Calendar.DATE, -7);
+				example.createCriteria().andUserIdEqualTo(userId).andCreateTimeGreaterThan(cal.getTime());
+			}else if(type!=null && type == 2)
+			{
+				Calendar cal = Calendar.getInstance();
+				cal.add(Calendar.MONTH, -1);
+				example.createCriteria().andUserIdEqualTo(userId).andCreateTimeGreaterThan(cal.getTime());
+			}else {
+				example.createCriteria().andUserIdEqualTo(userId);
+			}
 			example.setOrderByClause(" id desc");
 			List<UserPsychological> psys = userPsychologicalMapper.selectByExample(example);
 			if (psys!= null && psys.size()>0)
