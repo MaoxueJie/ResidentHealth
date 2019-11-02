@@ -541,6 +541,30 @@ public class UserPhysiologicalVo {
 		return bloodSugarValStr;
 	}
 	
+	public String getBloodSugarVal1Str() {
+		if (bloodSugarVal1 == null)
+			return "";
+		return formatFloat(bloodSugarVal1) + "mmol/L";
+	}
+	
+	public String getBloodSugarVal2Str() {
+		if (bloodSugarVal2 == null)
+			return "";
+		return formatFloat(bloodSugarVal2) + "%";
+	}
+	
+	public String getBloodSugarVal3Str() {
+		if (bloodSugarVal3 == null)
+			return "";
+		return formatFloat(bloodSugarVal3) + "mmol/L";
+	}
+	
+	public String getBloodSugarVal4Str() {
+		if (bloodSugarVal4 == null)
+			return "";
+		return formatFloat(bloodSugarVal4) + "mmol/L";
+	}
+	
 	public Integer getBloodSugarVal1Level() {
 		if (this.bloodSugarVal1==null)
 			return null;
@@ -653,7 +677,7 @@ public class UserPhysiologicalVo {
 	public String getBloodLipidValStr() {
 		String bloodLipidValStr = "";
 		if (bloodLipidVal1!=null) {
-			bloodLipidValStr += "总胆固醇(TC):<span style='color:red'>" + formatFloat(bloodLipidVal1) + "mmol/L</span>";
+			bloodLipidValStr += "总胆固醇(TC):" + formatFloat(bloodLipidVal1) + "mmol/L";
 		}
 		if (bloodLipidVal2!=null) {
 			if (!"".equals(bloodLipidValStr))
@@ -672,6 +696,30 @@ public class UserPhysiologicalVo {
 		}
 		return bloodLipidValStr;
 	}
+	
+	public String getBloodLipidVal1Str() {
+		if (bloodLipidVal1 == null)
+			return "";
+		return formatFloat(bloodLipidVal1) + "mmol/L";
+	}
+	
+    public String getBloodLipidVal2Str() {
+    	if (bloodLipidVal2 == null)
+			return "";
+		return formatFloat(bloodLipidVal2) + "mmol/L";
+	}
+
+    public String getBloodLipidVal3Str() {
+    	if (bloodLipidVal3 == null)
+			return "";
+		return formatFloat(bloodLipidVal3) + "mmol/L";
+    }
+
+    public String getBloodLipidVal4Str() {
+    	if (bloodLipidVal4 == null)
+			return "";
+		return formatFloat(bloodLipidVal4) + "mmol/L";
+    }
 	
 	public Integer getBloodLipidVal1Level() {
 		if (bloodLipidVal1==null)
