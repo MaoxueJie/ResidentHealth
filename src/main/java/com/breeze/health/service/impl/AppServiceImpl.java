@@ -55,7 +55,7 @@ public class AppServiceImpl implements AppService{
 				page = 1;
 			if (size==null || size <0)
 				size = 20;
-			PageHelper.startPage(page,size);
+			
 			
 			Date start = null;
 			Date end = null;
@@ -78,6 +78,8 @@ public class AppServiceImpl implements AppService{
 			}else {
 				doctorIds.add(doctorId);
 			}
+			
+			PageHelper.startPage(page,size);
 			List<SickUser> sickUsers = userCustomMapper.selectDoctorSicks(doctorIds,query.getMobile(),query.getSex(),start,end,query.getSicks());
 			
 			List<Long> userIds = sickUsers.stream().map(sick->sick.getUserId()).collect(Collectors.toList());

@@ -103,7 +103,7 @@ public class DoctorServiceImpl implements DoctorService{
 	}
 
 	@Override
-	public Result<Void> addDoctor(String mobile,String name,String jobTitle, String unit) {
+	public Result<Void> addDoctor(String mobile,String name,String jobTitle, String unit,Long groupId) {
 		Result<Void> ret = new Result<Void>();
 		try {
 			DoctorExample example = new DoctorExample();
@@ -118,6 +118,7 @@ public class DoctorServiceImpl implements DoctorService{
 				doctor.setPassword(MD5Util.hash("1111"));
 				doctor.setName(name);
 				doctor.setUnit(unit);
+				doctor.setGroupId(groupId);
 				doctor.setJobTitle(jobTitle);
 				doctor.setUpdateTime(now);
 				doctor.setCreateTime(now);

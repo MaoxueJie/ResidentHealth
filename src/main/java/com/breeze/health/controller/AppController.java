@@ -86,12 +86,12 @@ public class AppController{
 	
 	@RequestMapping(value="/add")
 	@ResponseBody
-	public Result<Void> add(HttpServletRequest request, String mobile,String name,String jobTitle,String unit){
+	public Result<Void> add(HttpServletRequest request, String mobile,String name,String jobTitle,String unit,Long groupId){
 		Result<Void> ret = null;
 		DoctorVo doc = (DoctorVo)request.getAttribute("user");
 		if (doc!=null && doc.getAdmin()!=null && doc.getAdmin()==1)
 		{
-			ret = doctorService.addDoctor(mobile, name, jobTitle, unit);
+			ret = doctorService.addDoctor(mobile, name, jobTitle, unit,groupId);
 		}else {
 			ret = new Result<Void>();
 			ret.setSuccess(false);
