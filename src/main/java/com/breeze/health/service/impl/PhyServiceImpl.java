@@ -73,67 +73,104 @@ public class PhyServiceImpl implements PhyService{
 			User user = userMapper.selectByPrimaryKey(vo.getUserId());
 			user.setLastTime(now);
 			userMapper.updateByPrimaryKeySelective(user);
-			
 			try {
 			
-				Float bmi = null;
-				try {
-					bmi = phy.getWeight()/((phy.getHeight()/100f)*(phy.getHeight()/100f));
-				}catch(Exception e)
-				{
-					logger.error("bmi计算异常", e);
-				}
-				Float yaowei = phy.getAbdominalCircumference();//腰围
-				Float whr = null;
-				try {
-					whr = phy.getAbdominalCircumference()/phy.getHipCircumference();
-				}catch(Exception e)
-				{
-					logger.error("whr计算异常", e);
+				String msgContent = "居民" + user.getMobile()+"指标异常:";
+				if (vo.getBloodPressureValLevel()!=null && vo.getBloodPressureValLevel()!=0){
+					//血压
+					msgContent += "血压值异常;";
 				}
 				
-				Integer heartRate = phy.getHeartRate();//心率
-				
-				Integer breathRate = phy.getBreatheRate();//呼吸
-				
-				Float temperature = phy.getTemperature();//体温
-				
-				Float gaoya = phy.getBloodPressureVal5();//高压
-				
-				Float diya = phy.getBloodPressureVal6();//低压
-				
-				Float kongfu = phy.getBloodSugarVal1();//空腹血糖
-				
-				Float canhou = phy.getBloodSugarVal3();//餐后2小时血糖
-				
-				Float suiji = phy.getBloodSugarVal4();//随机血糖
-				
-				Float tanghua = phy.getBloodSugarVal2();//糖化血红蛋白
-				
-				Float tc = phy.getBloodLipidVal1();//总胆固醇(TC)
-				
-				Float tg = phy.getBloodLipidVal2();//甘油三酯(TG)
-				
-				Float hdl_c = phy.getBloodLipidVal3();//高密度脂蛋白胆固醇(HDL-C)
-				
-				Float ldl_c = phy.getBloodLipidVal4();//低密度脂蛋白胆固醇(LDL-C)
-				
-				Float uricacid = phy.getUricAcidVal();//血尿酸
-				
-				Float oxygen = phy.getBloodOxygenVal();//血氧饱和度
-				String xueya = "";
-				if (gaoya!=null || diya!=null)
-				{
-					if (gaoya!=null && diya!=null && (gaoya>=180 || diya>=110))
-						xueya = "重度高血压";
-					else if(gaoya!=null && gaoya>=180) {
-						xueya = "重度高血压";
-					}else if(diya!=null && diya>=110) {
-						xueya = "重度高血压";
-					}
+				if (vo.getAbdominalCircumferenceLevel()!=null && vo.getAbdominalCircumferenceLevel()!=0) {
+					//腹围
+					msgContent += "腹围异常;";
 				}
 				
-				if (!"".equals(xueya))
+				if (vo.getBmiLevel()!=null && vo.getBmiLevel()!=0)
+				{
+					//bmi
+					msgContent += "BMI异常;";
+				}
+				
+				if (vo.getWHRLevel()!=null && vo.getWHRLevel()!=0)
+				{
+					//WHR
+					msgContent += "腰臀比异常;";
+				}
+				
+				if (vo.getHeartRateLevel()!=null && vo.getHeartRateLevel()!=0)
+				{
+					//心率
+					msgContent += "心率异常;";
+				}
+				
+				if (vo.getBreatheRateLevel()!=null && vo.getBreatheRateLevel()!=0)
+				{
+					//呼吸频率
+					msgContent += "呼吸异常;";
+				}
+				
+				if (vo.getTemperatureLevel()!=null && vo.getTemperatureLevel()!=0)
+				{
+					//体温
+					msgContent += "体温异常;";
+				}
+				
+				if (vo.getBloodSugarVal1Level()!=null && vo.getBloodSugarVal1Level()!=0)
+				{
+					//空腹血糖
+					msgContent += "空腹血糖异常;";
+				}
+				if (vo.getBloodSugarVal2Level()!=null && vo.getBloodSugarVal2Level()!=0)
+				{
+					//糖化血红蛋白
+					msgContent += "糖化血红蛋白异常;";
+				}
+				if (vo.getBloodSugarVal3Level()!=null && vo.getBloodSugarVal3Level()!=0)
+				{
+					//餐后两小时血糖
+					msgContent += "餐后两小时血糖异常;";
+				}
+				if (vo.getBloodSugarVal4Level()!=null && vo.getBloodSugarVal4Level()!=0)
+				{
+					//随机血糖
+					msgContent += "随机血糖异常;";
+				}
+				
+				if (vo.getBloodLipidVal1Level()!=null && vo.getBloodLipidVal1Level()!=0)
+				{
+					//总胆固醇
+					msgContent += "总胆固醇异常;";
+				}
+				if (vo.getBloodLipidVal2Level()!=null && vo.getBloodLipidVal2Level()!=0)
+				{
+					//甘油三酯
+					msgContent += "甘油三酯异常;";
+				}
+				if (vo.getBloodLipidVal3Level()!=null && vo.getBloodLipidVal3Level()!=0)
+				{
+					//高密度脂蛋白胆固醇
+					msgContent += "高密度脂蛋白胆固醇异常;";
+				}
+				if (vo.getBloodLipidVal4Level()!=null && vo.getBloodLipidVal4Level()!=0)
+				{
+					//低密度脂蛋白胆固醇
+					msgContent += "低密度脂蛋白胆固醇异常;";
+				}
+				
+				
+				if (vo.getUricAcidValLevel()!=null && vo.getUricAcidValLevel()!=0)
+				{
+					//尿酸
+					msgContent += "尿酸值异常;";
+				}
+				if (vo.getBloodOxygenValLevel()!=null && vo.getBloodOxygenValLevel()!=0)
+				{
+					//血氧值
+					msgContent += "血氧值异常;";
+				}
+				
+				if (!("居民" + user.getMobile()+"指标异常:").equals(msgContent))
 				{
 					DoctorUserMappingExample example =  new DoctorUserMappingExample();
 					example.createCriteria().andUserIdEqualTo(user.getId());
@@ -142,7 +179,6 @@ public class PhyServiceImpl implements PhyService{
 					if (mappings!=null && mappings.size()>0)
 					{
 					  for(DoctorUserMapping mapping:mappings) {
-						String msgContent = "居民" + user.getMobile()+"指标异常:" +xueya;
 						DoctorMsg msg = new DoctorMsg();
 						msg.setTitle("生理指标异常");
 						msg.setMsg(msgContent);
