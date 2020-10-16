@@ -1,5 +1,5 @@
 app:
-    basepath: http://ehealth.drshuo.com/cfd
+    basepath: http://ehealth.yidudao.cn/cfd
     config: /opt/soft/link.properties
 server:
     port: 80
